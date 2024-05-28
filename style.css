@@ -1,3 +1,8 @@
-h1{
-    font-family:roboto;
+:root{
+    --section-title:#000000;
+    --button:#FFFFFF;
+    --decoration:#EEE0CB;
+    --box-color:#839788;
+    --top-text:#FFFFFF;
+    --dots:#839788;
 }
