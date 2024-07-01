@@ -88,6 +88,7 @@ img{
 
 a.btn{
     color:var(--black);
+    font-weight:bold;
     font-size:14px;
    
     
@@ -96,6 +97,7 @@ a.btn{
 a.btn:hover{
     box-shadow:inset 200px 0 0 0 var(--black);
     transition:ease-in-out 0.5s; 
+    color:var(--white);
 
 }
 .btn.new{
@@ -858,7 +860,8 @@ textarea{
 .review-btn{
     border:none;
     background:var(--cambridge-blue);
-    color:var(--white);
+    color:var(--);black;
+    font-weight:bold;
     padding:6px;
     width:100px;
     margin-top:33px;
