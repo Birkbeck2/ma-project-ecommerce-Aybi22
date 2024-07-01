@@ -115,6 +115,7 @@ a.btn.new:hover{
      border:none;
     display:block;
      background:var(--cambridge-blue);
+     
      cursor:pointer;
      padding:13px 14px;
      max-width:200px;
@@ -1102,7 +1103,8 @@ footer a{
 .container{
     display:grid;
     grid-template-columns: repeat(2,1fr);
-   
+    margin:auto;
+    gap:13px;
    
 
 }
