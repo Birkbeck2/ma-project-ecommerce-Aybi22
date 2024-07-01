@@ -1152,7 +1152,7 @@ footer a{
     font-weight:bold;
     font-size:14px;
     text-transform:capitalize;
-    color:var(--cambridge-blue);
+    color:var(--black);
     white-space:nowrap;
     padding:11px;
     
@@ -1191,7 +1191,7 @@ footer a{
 }
 
 .comment{
-    color:var(--cambridge-blue);
+    color:var(--black);
     font-weight:900;
 }
 
