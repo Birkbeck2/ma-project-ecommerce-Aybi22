@@ -1530,8 +1530,14 @@ flex-direction:column;
     width:100%;
     grid-template-columns:repeat(2,1fr);
 }
-
-
+.modal-box{
+   
+    width:70%;
+    z-index:99;
+}
+.overlay-box{
+    width:30%;
+   }
 }
 
 
@@ -1572,14 +1578,8 @@ flex-direction:column;
 /* Styles for tablets */
 @media screen and (max-width: 767px) {
     
-  .modal-box{
+  /* Your tablet styles here */
    
-        width:70%;
-        z-index:99;
-    }/* Your tablet styles here */
-   .overlay-box{
-    width:30%;
-   }
 }
 
 /* Styles for phones */
