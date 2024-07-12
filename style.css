@@ -1325,10 +1325,20 @@ footer a{
  
   
 }
-textarea{
+.text-box{
     width:300px;
-    height:80px;
+    height:95px;
+
+
 }
+.text-box:focus{
+    outline:2px solid orange;
+     box-shadow: 2px 3px 2px  orange;
+}
+
+
+
+
 
    /*shop page styling*/
 
@@ -1544,12 +1554,13 @@ flex-direction:column;
 
 /* Styles for desktop screens */
 @media screen and (min-width: 768px) {
-    /* Your desktop styles here */
+   /* Your desktop styles here */
 }
 
 /* Styles for tablets */
 @media screen and (max-width: 767px) {
-    .modal-box{
+    
+  .modal-box{
    
         width:100%;
         z-index:99;
