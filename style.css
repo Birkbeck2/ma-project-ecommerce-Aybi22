@@ -1345,10 +1345,11 @@ footer a{
    .shop-container{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-   max-width:100%;
+   max-width:70%;
    margin: auto;
    gap:25px;
    row-gap: 100px;
+   margin-bottom:45px;
  
    }
 .shop-container a{
