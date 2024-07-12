@@ -1436,7 +1436,7 @@ body{
 .banner{
    display:flex;
    flex-direction:column;
-   align-content: center;
+   
    
 }
 
@@ -1574,7 +1574,7 @@ flex-direction:column;
 /* Styles for phones */
 @media screen and (max-width: 480px) {
 h1{
-    width:600px;
+    width:400px;
 }
 
     .modal-box{
