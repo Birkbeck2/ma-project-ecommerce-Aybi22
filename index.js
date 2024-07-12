@@ -1,30 +1,7 @@
 
 
 
-const hamburger=document.querySelector('.hamburger');
-const mobileMenu=document.querySelector('.mobileMenu');
-hamburger.addEventListener('click',showNav);
-function showNav(){
-    if(mobileMenu.style.width==="0%"){
-        mobileMenu.style.width="100%";
-    }else{
-          mobileMenu.style.width="0%";
-    }
 
-}
-
-    
-    function closeMobile(event){
-        const mobileMenu=document.querySelector('.mobileMenu');
-        
-        if(event.target===close){
-            mobileMenu.style.width="0%";
-           
-        
-        }else{
-            mobileMenu.style.width="100%";
-        }
-    }
      
 
     
@@ -36,44 +13,52 @@ const body=document.getElementsByTagName('body');
 const overlay=document.querySelector('.overlay');
 
 function showCart(){
-    
-   if(modal.style.width==="0%"){
-        
-    modal.style.width="25%";
-    overlay.style.width="75%";  
+   if(modal.className==="modal"){
+   modal.classList.add("modal-box");
+   overlay.classList.add("overlay-box");
+
        
-    }else{
-        modal.style.width="0%";
-        overlay.style.width="0%";
-    }
+}else{
+    modal.classList.remove("modal-box");
+    overlay.classList.remove("overlay-box");
+} 
+}
+
+
 
     
 
    overlay.addEventListener('click',closeOver);
    function closeOver(e){
       if(e.target===overlay){
-        overlay.style.width="0%";
-        modal.style.width="0%";
+        overlay.classList.remove('overlay-box');
+        modal.classList.remove('modal-box');
     }
    }
    
-
-
 const close=document.querySelector('.close');
-close.addEventListener("click",closeBasket);
-function closeBasket(e){
-    const modal=document.querySelector('.modal');
-    
+close.addEventListener('click', closeModal);
+function closeModal(e){
     if(e.target===close){
-        modal.style.width="0%";
-        overlay.style.width="0%";
-    
+        modal.classList.remove("modal-box");
+        overlay.classList.remove("overlay-box"); 
     }
 }
- 
- 
 
 
+const mobileMenu=document.querySelector('.mobileMenu');
+const hamburger=document.querySelector('.hamburger');
+hamburger.addEventListener('click',showMobileMenu);
+function showMobileMenu(){
+    mobileMenu.classList.toggle('mobile-box');
+}
+
+const closeMobile=document.querySelector('.closeMobile');
+closeMobile.addEventListener('click',mobileClose);
+function mobileClose(e){
+    if(e.target===closeMobile){
+        mobileMenu.classList.remove('mobile-box');
+    }
 }
 
 

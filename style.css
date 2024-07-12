@@ -51,7 +51,7 @@ li.phone,li.mail{
 }
 
 .circle{
-    font-size:19px;
+    font-size:13px;
     color:var(--cambridge-blue);
     margin-left:20px;
 }
@@ -66,10 +66,21 @@ h2{
 
 }
 
+
+
+
 hr{
     border-top:5px solid var(--champagne);
-    width:25%;
+    max-width:400px;
     margin:auto;
+   
+}
+
+h2:not(.banner h2){
+    text-decoration:underline;
+    text-decoration-color: var(--champagne);
+    text-decoration-thickness:4px;
+    text-underline-offset: 19px;
    
 }
 
@@ -130,9 +141,9 @@ a.btn.new:hover{
     
 
    }
- .txt{
-   
- } 
+
+ 
+ 
 
  .send-btn{
     border:none;
@@ -196,9 +207,14 @@ a.btn.new:hover{
         font-family:verdana;
         text-transform:uppercase;
         font-size: 12px;
+       
+        
         
     }
-
+nav ul li a{
+    display:block;
+    padding:6px;
+}
    
    
    .user-icon{
@@ -1086,7 +1102,7 @@ li.phone{
 .container p{
     max-width:500px;
     padding:11px;
-    
+
     text-align:center;
 }
 
@@ -1213,6 +1229,19 @@ footer a{
     align-items:center;
     overflow:hidden;
    }
+.mobile-box{
+    width:100%;
+}
+.closeMobile{
+    position:absolute;
+    cursor:pointer;
+    
+    top:55px;
+    right:22px;
+    font-size:33px;
+    color:var(--black);
+    cursor:pointer;  
+}
 
    .mobile ul,li{
      display:flex;
@@ -1242,39 +1271,63 @@ footer a{
 
   
   .modal{
+   
+   
     background:var(--white);
     box-shadow:7px 2px 3px 6px rgba(0, 0, 0, 0.4);
     bottom:0;
-    position:relative;
-    overflow:hidden;
+    position:absolute;
+    width:0px;
     right:0px;
     top:0px;
-    position:fixed;
-    width:0%;
+   position:fixed; 
+   overflow:hidden;
+ 
     transition:0.2s;
     display:flex;
     flex-direction:column;
-   
     
+   
 }
+.modal-box{
+    width:25%;  /*classlist comes after existing class*/
+    }
+   
+      
+
 
 .overlay{
 
     background:var(--black);
     bottom:0;
-    width:0%;
-   opacity:45%;
-    right:0px;
-    top:0px;
+   width:0px;
+    opacity:45%;
+    right:0;
+    top:0;
     left:0;
     position:fixed;
     transition:0.1s;
+    overflow: hidden;
+   
 
 }
+
+.overlay-box{
+    width:75%;
+  }
+
+
 
 #home{
   display:flex;
   flex-direction:column;
+  gap:35px;
+ 
+  
+}
+textarea{
+    width:300px;
+    height:80px;
 }
 
    /*shop page styling*/
@@ -1348,6 +1401,7 @@ h2{
    header{
     display:flex;
     justify-content:space-between;
+    
     width:100%;
    }
 
@@ -1369,16 +1423,10 @@ body{
    
 }
 
-
-
-
-
 .banner{
    display:flex;
    flex-direction:column;
-  justify-content:center;
-
-  
+   
 }
 
 h1{
@@ -1501,12 +1549,20 @@ flex-direction:column;
 
 /* Styles for tablets */
 @media screen and (max-width: 767px) {
-    /* Your tablet styles here */
+    .modal-box{
+   
+        width:100%;
+        z-index:99;
+    }/* Your tablet styles here */
 }
 
 /* Styles for phones */
 @media screen and (max-width: 480px) {
-    /* Your phone styles here */
+.modal-box{
+   
+    width:100%;
+    z-index:99;
+}
 
 
 }  
