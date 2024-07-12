@@ -1336,8 +1336,16 @@ footer a{
      box-shadow: 2px 3px 2px  orange;
 }
 
-
-
+.review-message{
+    display:none;
+    font-style:italic;
+    margin-top:23px;
+    color:red;
+}
+.show-message{
+    display:block;
+    font-style:italic;
+}
 
 
    /*shop page styling*/
@@ -1364,8 +1372,7 @@ footer a{
     letter-spacing:10px;
  }
 
-  
-   
+ 
    
 
    
@@ -1527,8 +1534,9 @@ flex-direction:column;
 
 .shop-container{
     display:grid;
-    width:100%;
+    max-width:100%;
     grid-template-columns:repeat(2,1fr);
+    width:100%;
 }
 .modal-box{
    

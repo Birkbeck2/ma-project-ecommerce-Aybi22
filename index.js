@@ -63,6 +63,10 @@ function mobileClose(e){
 
 
 
+
+
+
+
 const reviewImages=[ 
     {picture:'images/jack.jpg',  name:"Jack Kelly", job:"web developer"},
     {picture:'images/james.jpg',  name:"James smith", job:"web designer"},
@@ -124,19 +128,21 @@ function prev(){
         
     }
 }
-
-
+let reviewBox=document.querySelector('.review-box');
+let reviewText=document.querySelector('.review-message');
 let reviewBtn=document.querySelector('.review-btn');
 reviewBtn.addEventListener('click',showReviewBox);
-let reviewBox=document.querySelector('.review-box');
+
 
 function showReviewBox(){
-    
+     
        if(reviewBox.style.display==="none"){
         reviewBox.style.display="block";
+        reviewText.style.display="none";
        }else{
         reviewBox.style.display="none";
-       }
+        
+    }
 }
   
     let sendBtn=document.querySelector('.send-btn');
@@ -145,15 +151,29 @@ function showReviewBox(){
     function sendText(){
        if(reviewBox.style.display==="block"){
         reviewBox.style.display="none";
-      
+        reviewText.style.display="block";
     
     }else{
          reviewBox.style.display="block";
-        
+         reviewText.style.display="none";
         }
        } 
         
- function myfunction(event){
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+       function myfunction(event){
     event.preventDefault();
     const text=document.querySelector('.text').value;
  if(text.value){
