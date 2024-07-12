@@ -1582,8 +1582,9 @@ h1{
 
     .modal-box{
    
-    width:70%;
+    width: 10px;
     z-index:99;
+    overflow:hidden;
 }
 
 .overlay-box{
