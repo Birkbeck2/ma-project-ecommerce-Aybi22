@@ -1582,6 +1582,10 @@ h1{
     width:100%;
     z-index:99;
 }
+
+.overlay-box{
+    width:100%;
+}
 .circle{
     font-size:10px;
 }
