@@ -1592,10 +1592,7 @@ h1{
 .circle{
     font-size:10px;
 }
-.shop-container{
-    display:grid;
-    grid-template-columns: 1fr;
-}
+
 
 
 }
