@@ -1345,8 +1345,8 @@ footer a{
    .shop-container{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-   max-width:60%;
-   margin:50px auto;
+   max-width:100%;
+   margin: auto;
    gap:25px;
    row-gap: 100px;
  
