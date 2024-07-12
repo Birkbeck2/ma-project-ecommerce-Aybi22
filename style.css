@@ -1582,7 +1582,7 @@ h1{
 
     .modal-box{
    
-    width: 10px;
+    width: 100%;
     z-index:99;
     overflow:hidden;
 }
