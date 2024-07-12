@@ -1574,7 +1574,7 @@ flex-direction:column;
 /* Styles for phones */
 @media screen and (max-width: 480px) {
 h1{
-    width:380px;
+    width:300px;
 }
 
     .modal-box{
