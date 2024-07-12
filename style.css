@@ -1577,6 +1577,9 @@ flex-direction:column;
         width:70%;
         z-index:99;
     }/* Your tablet styles here */
+   .overlay-box{
+    width:30%;
+   }
 }
 
 /* Styles for phones */
