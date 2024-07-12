@@ -1436,7 +1436,7 @@ body{
 .banner{
    display:flex;
    flex-direction:column;
-   align-items: center;
+   align-content: center;
    
 }
 
@@ -1576,7 +1576,7 @@ flex-direction:column;
     z-index:99;
 }
 .circle{
-    fony-size:10px;
+    font-size:10px;
 }
 
 }  
