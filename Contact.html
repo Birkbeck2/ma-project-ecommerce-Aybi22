@@ -177,48 +177,20 @@ function showReviewBox(){
  
 
       
-
-
-
-     
-
     
-    
-const grey=document.getElementById('grey');
+
+
+const charcoal=document.getElementById('charcoal');
 const navy=document.getElementById('navy');
 const black=document.getElementById('black');
 const blue=document.getElementById('blue');
 
+charcoal.addEventListener('click',charcoalSuit);
 
-grey.addEventListener('mouseover',greySuit);
-
-function greySuit(){
+function charcoalSuit(){
+    
+    
     const img=document.getElementById('special');
-    img.src="images/regularfitgrey.jpg";
-}
-
-
-navy.addEventListener('mouseover',navySuit);
-
-function navySuit(){
-    const img=document.getElementById('special');
-    img.src="images/regularfitnavy.jpg";
-}
-
-
-black.addEventListener('mouseover',blackSuit);
-
-function blackSuit(){
-    const img=document.getElementById('special');
-    img.src="images/regularfitblack.jpg";
-}
-
-
-
-
-blue.addEventListener('mouseover',blueSuit);
-
-function blueSuit(){
-    const img=document.getElementById('special');
-    img.src="images/regularfitnavy.jpg";
+    
+    img.src="images/bluesuit.jpg";
 }

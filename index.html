@@ -143,7 +143,25 @@
 
 
 
-    <main id="home">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main id="home">
         
    
         <section class="banner">
@@ -223,16 +241,16 @@
         
         
             <div class="image">
-                <a href="Shop/html">
+                <a href="product2.html">
         
         
                 <img src="images/blacksuit.jpg" width="400" height="400" alt="black suit">
-            </a>
+         
         
         
         </div>
         
-        <a href="Shop/html">
+        
                        <div class="item-title">
                         
                         
@@ -269,14 +287,14 @@
             <h3>trends</h3>
         
         <div class="image">
-            <a href="Shop/html"> 
+            <a href="product3.html"> 
         
         <img src="images/greysuit.jpg"   width="400" height="400"  alt="greysuit">
-        </a>
+       
         
     </div>
         
-        <a href="Shop/html">
+        
         <div class="item-title">
             <span class="item-name">Grey suit</span>
             <span class="item-price">350£</span>
@@ -308,23 +326,23 @@
         
             
             <div class="image">
-                <a href="Shop/html">
+                <a href="product7.html">
         
         
                 <img src="images/justcouturesuit.jpg" width="400" height="400" alt="justcouture suit">
-            </a>
+            
         
         </div>
         
         
-        <a href="Shop/html">
+       
             
         <div class="item-title">
             <span class="item-name">Just couture suit</span>
             <span class="item-price">295£</span>
             </div>
         
-        </a>
+       
         
         <span class="stars">
             <i class="fa-solid fa-star"></i>
@@ -387,7 +405,7 @@
         <div class="product-container">
         
             <div class="pic">
-            <a href="Shop/html">
+            <a href="product10.html">
         
             <img src="images/oxfordleathershoes.png"  alt="black leather shoe">
         </a>
@@ -405,7 +423,7 @@
         
         
         <div class="pic">
-            <a href="Shop/html">
+            <a href="product10.html">
             
             <img src="images/Oxfordleathershoecoffee.png"  alt=" brown leather shoe" >
         </a>
@@ -437,13 +455,13 @@
                 <article class="section-list">
                    <h3>new</h3>
                 <div class="image">
-                    <a href="Shop/html">
+                    <a href="product9.html">
         
         
                     <img src="images/stretchsuit.jpg" width="400" height="400"  alt="stretch suit">
-        </a>
+       
     </div>
-             <a href="Shop/html">
+             
             
              <div class="item-title">
                 <span class="item-name">Stretch suit</span>
@@ -481,7 +499,7 @@
         <article class="section-list">
            <h3>new</h3>
         <div class="image">
-            <a href="Shop/html">
+            <a href="product4.html">
         
             <img src="images/cowleathershoe.jpg"   width="400" height="400" alt="leather shoe">
            </a> 
@@ -521,13 +539,13 @@
         <h3>new</h3>
            
             <div class="image">
-                <a href="Shop/html"> 
+                <a href="product6.html"> 
         
             <img src="images/greenslimsuit.jpg" width="400" height="400"  alt="grey suit">
-            </a>
+         
         
         </div>
-            <a href="Shop/html">
+           
             
             <div class="item-title">
                 <span class="item-name">Green slim fit suit</span>
@@ -578,7 +596,7 @@
             
         
             <div class="offer-image">
-                <a href="Shop/html">  
+                <a href="product5.html">  
         
         
                 <img src="images/specialoffer.jpg"   width="400" height="600" alt="special offer suit">
@@ -614,7 +632,7 @@
         
         
         <div class="offer-image">
-            <a href="Shop/html">
+            <a href="product5.html">
         
         
             <img src="images/bluetailoredsuit.png" width="400" height="600" alt="blue tailored suit">
@@ -625,8 +643,9 @@
            
         
             <div class="offer-image">
+                <a href="product5.html">
+        
                 
-                <a href="Shop/html">
         
         
                 <img src="images/charcoaltailoredsuit.png" width="400" height="600" alt="charcoal tailored suit">
@@ -726,12 +745,26 @@
         <h3>customers</h3>
         
                 <div class="image">
-            <img id="userpic" src="images/jack.jpg" alt="jack imageazz">
+            <img id="userpic" src="images/jack.jpg" alt="jack image">
                 </div> 
                <div class="buttons">
         
-                <abbr title="previous" > <i class="fa-solid fa-angle-left" onclick="prev()"></i></abbr>
-                <abbr title="next" > <i class="fa-solid fa-angle-right" onclick="next()"></i> </abbr>
+                <button type="button" class="next" onclick="showNext()">
+                    <i class="fa-solid fa-angle-left" ></i>
+                   </button>
+                
+                
+                
+                <button type="button" class="previous"  onclick="prev()"> 
+                    <i class="fa-solid fa-angle-right" ></i>
+                </button> 
+                
+                
+               
+                
+                
+                
+                
           
           </div>
         </article>
@@ -769,12 +802,11 @@
             your review was successfully sent!
         </div>
         
-        <div class="review-box">
-<form>
-<textarea class="text-box"  name="review"  required></textarea>
+<form id="review-box">
+ <textarea class="text-box"  name="review" placeholder="what do you like?, what do you dislike?..." required></textarea>
 
 
-<input type="submit" class="send-btn" value="submit">
+<input type="button" class="send-btn" value="submit">
 </form>
        
      
