@@ -1,0 +1,119 @@
+
+[
+
+{
+    
+    "smallPic1":"images/texturesuit.jpg",
+    "smallPic2":"images/texturesuit1.jpg",
+    "smallPic3":"images/texturesuit2.jpg",
+    "main-pic1":"images/texturesuit.jpg",
+    "h1":"texture suit",
+    "item-price":250
+    
+    
+    
+    },
+
+
+
+
+    {
+    
+        "smallPic1":"images/blacksuit.jpg",
+        "smallPic2":"images/blacksuit1.jpg",
+        "smallPic3":"images/blacksuit2.jpg",
+        "main-pic1":"images/blacksuit.jpg",
+        "h1":"black suit",
+        "item-price":370
+        
+        
+        
+        },
+
+
+
+
+
+
+
+
+        {
+    
+            "smallPic1":"images/greysuit.jpg",
+            "smallPic2":"images/greysuit1.jpg",
+            "smallPic3":"images/greysuit2.jpg",
+            "main-pic1":"images/greysuit.jpg",
+            "h1":"grey suit",
+            "item-price":450
+            
+            
+            
+            },
+            
+
+            {
+    
+                "smallPic1":"images/cowleathershoe.jpg",
+                "smallPic2":"images/cowleathershoe1.jpg",
+                "smallPic3":"images/cowleathershoe2.jpg",
+                "main-pic1":"images/cowleathershoe.jpg",
+                "h1":"cow leather shoe",
+                "item-price":655
+                
+                
+                
+                },
+                
+
+                {
+    
+                    "smallPic1":"images/regularfitgrey.jpg",
+                    "smallPic2":"images/regularfitblue.jpg",
+                    "smallPic3":"images/regularfitblack.jpg",
+                    "main-pic1":"images/specialoffer.jpg",
+                    "h1":"regular fit suit",
+                    "item-price":490
+                    
+                    
+                    
+                    },
+
+
+
+                    {
+    
+                        "smallPic1":"images/greenslimfit.jpg",
+                        "smallPic2":"images/greenslimfit1.jpg",
+                        "smallPic3":"images/greenslimfit2.jpg",
+                        "main-pic1":"images/greenslimfit.jpg",
+                        "h1":"green slim fit",
+                        "item-price":525
+
+                    },
+
+
+
+                    {
+    
+                        "smallPic1":"images/justcouturesuit.jpg",
+                        "smallPic2":"images/justcouturesuit1.jpg",
+                        "smallPic3":"images/justcouturesuit2.jpg",
+                        "main-pic1":"images/justcouturesuit.jpg",
+                        "h1":"just couture suit",
+                        "item-price":450
+
+                    },
+
+
+                    {
+    
+                        "smallPic1":"images/navychechsuit.jpg",
+                        "smallPic2":"images/navychech1.jpg",
+                        "smallPic3":"images/navychech2.jpg",
+                        "main-pic1":"images/navychechsuit.jpg",
+                        "h1":"just couture suit",
+                        "item-price":350
+
+                    }
+
+        ]
