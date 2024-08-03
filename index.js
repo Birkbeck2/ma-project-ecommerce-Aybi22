@@ -97,8 +97,8 @@ let index=0;
 
 
 
-
-
+document.addEventListener('DOMContentLoaded', function prev(){
+document.getElementById('previous').addEventListener('click', prev);
 function prev(){
   
     let userpic=document.getElementById('userpic');
@@ -123,9 +123,11 @@ function prev(){
         jobTitle.textContent=reviewImages[index]["job"];
         stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> ' 
     }  
-} 
+}
+}); 
     
-
+document.addEventListener('DOMContentLoaded', function next(){
+    document.getElementById('next').addEventListener('click', next);
 function next(){
     
     let userpic=document.getElementById('userpic');
@@ -153,15 +155,15 @@ function next(){
     
     }
 }
+});
 
 
+document.addEventListener('DOMContentLoaded', function showReviewBox(){
+document.querySelector('.review-btn').addEventListener('click',showReviewBox)
 
+function showReviewBox(){
 
-
-
-function showReviewBox(){    
-    
-             let reviewBox=document.querySelector('.review-box');
+      let reviewBox=document.querySelector('.review-box');
             let reviewText=document.querySelector('.review-message');
                
             if(reviewBox.style.display==="none"){
@@ -177,12 +179,14 @@ function showReviewBox(){
             }
         
         }
+});
+
 
     
     
         
-        
- 
+       document.addEventListener('DOMContentLoaded',function sendText(){
+        document.querySelector('.send-btn').addEventListener('click', sendText);
         function sendText(){
             let reviewBox=document.querySelector('.review-box');
             let reviewText=document.querySelector('.review-message');
@@ -196,6 +200,7 @@ function showReviewBox(){
              reviewText.style.display="none";
             }
         }
+    })
     
 
         
@@ -465,18 +470,17 @@ const pics1=['images/texturesuit.jpg','images/texturesuit1.jpg',
 
 
 
-
-               let grey=document.getElementById('grey');
-    
-    
-           grey.addEventListener('mouseover',greySuit);
-         function greySuit(){
-       
-               
-           let img=document.getElementById("special");
-           img.src="images/regularfitgrey.jpg";
-       
-       }
+               document.addEventListener('DOMContentLoaded',function greySuit(){    
+                document.getElementById('grey').addEventListener('mouseover',greySuit)
+                  function greySuit(){
+                
+                let img=document.getElementById("special");
+                    img.src="images/regularfitgrey.jpg";
+                
+                }
+                });
+                     
+              
            
        
        
