@@ -1,7 +1,6 @@
 
 
 
-
 let cart=document.querySelector('.top-icons');
 cart.addEventListener('click',showCart);
 
@@ -468,8 +467,6 @@ const pics1=['images/texturesuit.jpg','images/texturesuit1.jpg',
 
 
 
-
-
                document.addEventListener('DOMContentLoaded',function greySuit(){    
                 document.getElementById('grey').addEventListener('mouseover',greySuit)
                   function greySuit(){
@@ -487,7 +484,8 @@ const pics1=['images/texturesuit.jpg','images/texturesuit1.jpg',
        
        
        
-       
+                document.addEventListener('DOMContentLoaded',function navySuit(){    
+                    document.getElementById('navy').addEventListener('mouseover',navySuit)
        
        let navy=document.getElementById('navy');
        navy.addEventListener('mouseover',navySuit);
@@ -497,10 +495,12 @@ const pics1=['images/texturesuit.jpg','images/texturesuit1.jpg',
            let img=document.getElementById("special");
            img.src="images/regularfitnavy.jpg";
        }
+    });
        
        
        
-       
+    document.addEventListener('DOMContentLoaded',function blackSuit(){    
+        document.getElementById('black').addEventListener('mouseover',blackSuit) 
       
        let black=document.getElementById('black');
        black.addEventListener('mouseover',blackSuit);
@@ -511,13 +511,14 @@ const pics1=['images/texturesuit.jpg','images/texturesuit1.jpg',
            let img=document.getElementById("special");
            img.src="images/regularfitblack.jpg";
        }
+    });
        
        
        
        
        
-       
-       
+    document.addEventListener('DOMContentLoaded',function blueSuit(){    
+        document.getElementById('blue').addEventListener('mouseover',blueSuit)  
        
        let blue=document.getElementById('blue');
        
@@ -529,4 +530,6 @@ const pics1=['images/texturesuit.jpg','images/texturesuit1.jpg',
            let img=document.getElementById ("special");
            img.src="images/regularfitnavy.jpg";
        }
+    });
         
+               

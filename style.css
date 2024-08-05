@@ -532,7 +532,29 @@ h3{
    
     
 }
+.ad-section{
+    width:70%;
+    height:400px;
+    background:var(--cambridge-blue);
+    margin:auto;
+   
+}
+.ad-section  p{
+    font-size:50px;
+    color:var(--white);
+  font-family: 'Red Rose';
+    line-height:55px;
+    text-transform:capitalize;
+    font-weight:900;
+    
+}
 
+.ad-content{
+    text-align:center;
+    width:60%;
+    margin:auto;
+    border:3px solid red;
+}
 
 .info{
     color:var(--black);
@@ -1369,6 +1391,96 @@ footer a{
         height:20px;
         cursor:pointer;
 }
+
+/*product page styling*/
+.right-side p{
+    border-bottom:none;
+}
+.right-side h1{
+    border-bottom:1px solid var(--black);
+}
+.payments{
+    display:flex;
+   
+}
+.shipping-info{
+    text-transform:capitalize;
+    font-weight:900;
+    color:var(--cambridge-blue);
+    font-size:11px;
+}
+
+.p-review{
+    display:flex;
+    gap:11px;
+    align-items:baseline;
+    width:300px;
+    
+}
+
+.review-num{
+   
+    font-size:12px;
+    
+}
+.round{
+    border-radius:100%;
+}
+.ratings{
+    max-width:100%;
+   display:flex;
+  justify-content:center;
+  margin-top:33px;
+gap:7px;
+   
+}
+.ratings article{
+    display:flex;
+    flex-direction:column;
+    border:1px solid var(--black);
+  padding:22px;
+}
+
+.p-rating{
+    display:flex;
+    max-width:70%;
+    
+    
+    padding:22px;
+    
+    
+}
+
+
+.p-rating p{
+    width:300px;
+    
+   
+}
+
+.word{
+    width:80%;
+    padding:21px;
+    background:var(--cambridge-blue);
+    margin:auto;
+    display:flex;
+    align-items:center;
+}
+
+.word p{
+    text-align:center;
+    flex:1;
+}
+
+
+
+
+/*with display block vertical align should not be used*/
+
+
+
+
+
 .related-items{
     padding:133px;
 }
