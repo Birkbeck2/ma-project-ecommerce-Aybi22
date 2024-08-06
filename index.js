@@ -95,7 +95,7 @@ let index=0;
 
 
 
-let previous=document.getElementById('previous');
+
 document.addEventListener('DOMContentLoaded', function prev(){
 document.getElementById('previous').addEventListener('click', prev);
 function prev(){
@@ -157,9 +157,9 @@ function next(){
 });
 
 
-document.addEventListener('DOMContentLoaded', function showReviewBox(){
-document.querySelector('.review-btn').addEventListener('click',showReviewBox)
-
+window.onload=showReviewBox;
+let reviewBtn=document.querySelector('.review-btn');
+reviewBtn.addEventListener('click',showReviewBox)
 function showReviewBox(){
 
       let reviewBox=document.querySelector('.review-box');
@@ -178,7 +178,6 @@ function showReviewBox(){
             }
         
         }
-});
 
 
     
@@ -464,32 +463,78 @@ const pics1=['images/texturesuit.jpg','images/texturesuit1.jpg',
                }
                }   
  
-               let suitColor=['images/regularfitgrey.jpg',
-               'images/regularfitnavy.jpg',
-              'images/regularfitblack.jpg',
-               'images/regularfitblue.jpg'
-            ]
+               
        
        
-       
-       
-        
-
-        
-             let suitType=document.getElementsByClassName('suit-color');
-                 for(let i=0; i<suitType.length; i++){
-                    suitType[i].addEventListener('mouseover', changeSuit)
-             function changeSuit(){
-                for(let i=0; i<suitColor.length; i++){
+               document.addEventListener('DOMContentLoaded',function greySuit(){    
+                document.getElementById('grey').addEventListener('mouseover',greySuit)
+                  function greySuit(){
+                
                 let img=document.getElementById("special");
                     img.setAttribute('src', suitColor[i]);
                 
                 }
             
-             }
             
+            });
+                     
+          
+           
+       
+       
+      
+       
+                document.addEventListener('DOMContentLoaded',function navySuit(){    
+                    document.getElementById('navy').addEventListener('mouseover',navySuit)
+       
+       let navy=document.getElementById('navy');
+       navy.addEventListener('mouseover',navySuit);
+       
+       function navySuit(){
+       
+           let img=document.getElementById("special");
+          img.setAttribute('src',suitColor[i]);
+       }
+    });
+       
+       
+       
+    document.addEventListener('DOMContentLoaded',function blackSuit(){    
+        document.getElementById('black').addEventListener('mouseover',blackSuit) 
+      
+       let black=document.getElementById('black');
+       black.addEventListener('mouseover',blackSuit);
+       
+       function blackSuit(){
+       
+        
+           let img=document.getElementById("special");
+           img.setAttribute('src',suitColor[i]);
+       }
+    });
+       
+       
+       
+       
+       
+    document.addEventListener('DOMContentLoaded',function blueSuit(){    
+        document.getElementById('blue').addEventListener('mouseover',blueSuit)  
+       
+       let blue=document.getElementById('blue');
+       
+       blue.addEventListener('mouseover',blueSuit);
+       
+       function blueSuit(){
+       
          
-        }        
+           let img=document.getElementById ("special");
+           img.setAttribute('src',suitColor[i]);
+       }
+    });
+        
+
+        
+             
           
            
        
