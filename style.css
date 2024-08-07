@@ -1323,36 +1323,7 @@ footer a{
   
   
 
-.left-gallery{
-    max-width:200px;
-    display:flex;
-    flex-direction:column;
-    height:auto;
-    gap:5px;
-}
 
-   
-  .right-side{
-    display:flex;
-    flex-direction:column;
-    padding-left:11px;
-    gap:22px;
-    max-width:500px;
-    height:700px;
-    
-  }
-
-  .right-side p{
-    font-size:13px;
-    border-bottom:1px solid black;
-  }
-
-  .product{
-    display:flex;
-    gap:33px;
-    justify-content:center;
-    margin-top:33px;
-  }
   .suit-color{
     font-size:20px;
     margin-left:9px;
@@ -1387,12 +1358,54 @@ footer a{
 }
 
 /*product page styling*/
+
+
+.left-gallery{
+    max-width:200px;
+    display:flex;
+    flex-direction:column;
+    height:auto;
+    gap:5px;
+}
+
+   
+  .right-side{
+    display:flex;
+    flex-direction:column;
+    padding-left:11px;
+    gap:22px;
+    max-width:500px;
+    height:700px;
+   
+  }
+
+  .right-side p{
+    font-size:13px;
+    border-bottom:1px solid black;
+  }
+
+  .product{
+    display:flex;
+    gap:33px;
+    justify-content:center;
+    margin-top:33px;
+  }
+
+
+
+
+
 .right-side p{
     border-bottom:none;
 }
 .right-side h1{
     border-bottom:1px solid var(--black);
 }
+
+
+
+
+
 .payments{
     display:flex;
    
@@ -1466,7 +1479,10 @@ gap:7px;
     flex:1;
 }
 
-
+.ratings{
+    background-image:linear-gradient(to right,#EEE0CB,#888074);
+    padding:61px;
+}
 
 
 /*with display block vertical align should not be used*/
@@ -1635,7 +1651,9 @@ font-weight:900;
     }
 
 
-
+textarea::-moz-focus-inner{
+    border:1px solid orange;
+}
 
      
 
