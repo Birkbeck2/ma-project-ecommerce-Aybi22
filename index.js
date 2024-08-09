@@ -1,3 +1,12 @@
+fetch("products.json")
+.then(function(response){
+    return response.json();
+})
+.then(function(data){
+    localStorage.setItem("products",JSON.stringify(data));
+});
+
+
 
 
 let cart = document.querySelector('.top-icons');
@@ -5,7 +14,7 @@ cart.addEventListener('click', showCart);
 
 function showCart() {
     let modal = document.querySelector('.modal');
-    let body = document.getElementsByTagName('body');
+    
     let overlay = document.querySelector('.overlay');
 
 
@@ -65,12 +74,182 @@ function mobileClose(e) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+   
+ 
+   
+document.addEventListener('DOMContentLoaded',function showReviewBox(){    
+let reviewBtn = document.querySelector('.review-btn');
+reviewBtn.addEventListener('click', showReviewBox);
+function showReviewBox() {
+
+    let reviewBox=document.querySelector('.review-box');
+    let reviewText=document.querySelector('.review-message');
+
+    if (reviewBox.style.display === "none") {
+        reviewBox.style.display = "block";
+        reviewText.style.display = "none";
+
+
+
+
+    } else {
+        reviewBox.style.display = "none";
+
+    }
+
+}
+});
+document.addEventListener('DOMContentLoaded',function sendText(){
+let sendBtn = document.querySelector('.send-btn');
+sendBtn.addEventListener('click', sendText);
+function sendText() {
+    let reviewBox = document.querySelector('.review-box');
+    let reviewText = document.querySelector('.review-message');
+
+    if (reviewBox.style.display === "block") {
+        reviewBox.style.display = "none";
+        reviewText.style.display = "block";
+
+    } else {
+        reviewBox.style.display = "block";
+        reviewText.style.display = "none";
+    }
+}
+});
+
+let reviewImages = [
+    { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
+    { userpic: 'images/james.jpg', name: "James smith", job: "web designer" },
+    { userpic: 'images/amanda.jpg', name: "Amanda fisher", job: "Teacher" },
+    { userpic: 'images/mark.jpg', name: "mark jones", job: "software engineer" },
+    { userpic: 'images/michael.jpg', name: "michael damon", job: "marketer" },
+    { userpic: 'images/heather.jpg', name: "heather smith", job: "Assistant" },
+
+
+]
+
+let index = 0;
+    
+
+document.addEventListener('DOMContentLoaded',function prev(){
+let previous = document.getElementById('previous');
+previous.addEventListener('click', prev);
+function prev() {
+
+    let userpic=document.getElementById('userpic');
+    let customerName=document.querySelector('.name');
+    let jobTitle=document.querySelector('.job');
+    let stars=document.querySelector('.stars');
+    if (index===0) {
+        index=reviewImages.length - 1;
+        userpic.src=reviewImages[index]["userpic"];
+        customerName.textContent=reviewImages[index]["name"];
+        jobTitle.textContent=reviewImages[index]["job"];
+        stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+    } else {
+
+
+        index--;
+
+
+
+        userpic.src=reviewImages[index]["userpic"];
+        customerName.textContent=reviewImages[index]["name"];
+        jobTitle.textContent=reviewImages[index]["job"];
+        stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+    }
+}
+});
+
+
+document.addEventListener('DOMContentLoaded',function showNext(){
+let next = document.getElementById('next');
+next.addEventListener('click', showNext);
+function showNext() {
+
+    let userpic = document.getElementById('userpic');
+    let customerName = document.querySelector('.name');
+    let jobTitle = document.querySelector('.job');
+    let stars = document.querySelector('.stars');
+
+    if (index < reviewImages.length - 1) {
+        index++;
+        userpic.src = reviewImages[index]["userpic"];
+        customerName.textContent = reviewImages[index]["name"];
+        jobTitle.textContent = reviewImages[index]["job"];
+        stars.innerHTML = `<i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>`
+
+    } else if (index === reviewImages.length - 1) {
+        index = 0;
+        userpic.src = reviewImages[index]["userpic"];
+        customerName.textContent = reviewImages[index]["name"];
+        jobTitle.textContent = reviewImages[index]["job"];
+        stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+
+    }
+}
+}); 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
 let pics1 = ['images/texturesuit.jpg', 'images/texturesuit1.jpg',
     'images/texturesuit2.jpg']
-
-
-
-
 
 let smallPic1 = document.querySelectorAll('.small-pic1');
 for (let i = 0; i < smallPic1.length; i++) {
@@ -84,6 +263,9 @@ for (let i = 0; i < smallPic1.length; i++) {
 
     }
 }
+
+  
+        
 
 
 
@@ -151,6 +333,80 @@ for (let i = 0; i < smallPic4.length; i++) {
 
 
 
+
+
+
+
+document.addEventListener('DOMContentLoaded',function grey(){
+    let grey=document.getElementById('grey');
+grey.addEventListener('click',greySuit);
+           function greySuit(){
+         
+         let img=document.getElementById("special");
+             img.setAttribute('src', 'images/regularfitgrey.jpg');
+             
+         }
+
+
+        });
+
+        document.addEventListener('DOMContentLoaded',function navySuit(){
+
+let navy=document.getElementById('navy');
+navy.addEventListener('click',navySuit);
+
+function navySuit(){
+
+let img=document.getElementById("special");
+img.setAttribute('src','images/regularfitnavy.jpg');
+}
+});
+
+
+
+
+
+document.addEventListener('DOMContentLoaded',function blackSuit(){
+
+let black=document.getElementById('black');
+black.addEventListener('click',blackSuit);
+function blackSuit(){
+
+
+let img=document.getElementById("special");
+img.setAttribute('src','images/regularfitblack.jpg');
+
+
+}
+
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded',function blueSuit(){
+let blue=document.getElementById('blue');
+blue.addEventListener('click',blueSuit);
+
+function blueSuit(){
+
+
+let img=document.getElementById ("special");
+img.setAttribute('src','images/regularfitblue.jpg');
+}
+});
+
+
+
+
+     
+        
+              
+
+
+
+
+
 let pics5 = ['images/regularfitgrey.jpg', 'images/regularfitblue.jpg', 'images/regularfitblack.jpg']
 
 let smallPic5 = document.getElementsByClassName('small-pic5');
@@ -169,9 +425,6 @@ for (let i = 0; i < smallPic5.length; i++) {
     }
 
 }
-
-
-
 
 
 let pics6 = ['images/greenslimsuit.jpg', 'images/greenslimsuit1.jpg', 'images/greenslimsuit2.jpg']
@@ -215,6 +468,7 @@ for (let i = 0; i < smallPic7.length; i++) {
 }
 
 
+
 let pics8 = ['images/navychechsuit.jpg', 'images/navychech1.jpg', 'images/navychech2.jpg']
 
 let smallPic8 = document.getElementsByClassName('small-pic8');
@@ -255,6 +509,15 @@ for (let i = 0; i < smallPic9.length; i++) {
     }
 
 }
+
+
+
+
+
+
+
+
+
 let pics10 = ['images/blackoxfordleathershoe.jpg', 'images/oxfordleather1.jpg', 'images/oxfordleather2.jpg']
 
 let smallPic10 = document.getElementsByClassName('small-pic10');
@@ -454,11 +717,10 @@ for (let i = 0; i < smallPic18.length; i++) {
 
 }
 
-
 let decrease = document.getElementById('decrease');
 decrease.addEventListener('click', decreaseNum);
 function decreaseNum() {
-
+    
     let number=document.getElementById('number');
 
     if (number.value > 1) {
@@ -467,229 +729,31 @@ function decreaseNum() {
     } else {
         number.value = 1;
     }
+
 }
+
+
 
 let increase = document.getElementById('increase');
 increase.addEventListener('click', increaseNum);
 function increaseNum() {
 
-
     let number=document.getElementById('number');
     number.value++;
-}
+}       
 
 
 let qBtn = document.getElementsByClassName('q-btn');
 
-for (let i = 0; i < qBtn.length; i++) {
-
-    qBtn[i].addEventListener('click', show);
-
-    function show(e) {
-        const resp = document.getElementsByClassName('resp');
-        const qtitle = e.currentTarget.parentNode.parentNode;
-
-        qtitle.classList.toggle('show-text');
-    }
-}
-
-
-
-
-
-
-
-
-
-window.onload = showReviewBox;
-let reviewBtn = document.querySelector('.review-btn');
-reviewBtn.addEventListener('click', showReviewBox)
-function showReviewBox() {
-
-    let reviewBox=document.querySelector('.review-box');
-    let reviewText=document.querySelector('.review-message');
-
-    if (reviewBox.style.display === "none") {
-        reviewBox.style.display = "block";
-        reviewText.style.display = "none";
-
-
-
-
-    } else {
-        reviewBox.style.display = "none";
-
-    }
-
-}
-
-
-
-
-
-let sendBtn = document.querySelector('.send-btn');
-sendBtn.addEventListener('click', sendText);
-function sendText() {
-    let reviewBox = document.querySelector('.review-box');
-    let reviewText = document.querySelector('.review-message');
-
-    if (reviewBox.style.display === "block") {
-        reviewBox.style.display = "none";
-        reviewText.style.display = "block";
-
-    } else {
-        reviewBox.style.display = "block";
-        reviewText.style.display = "none";
-    }
-}
-
-
-
-
-let reviewImages = [
-    { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
-    { userpic: 'images/james.jpg', name: "James smith", job: "web designer" },
-    { userpic: 'images/amanda.jpg', name: "Amanda fisher", job: "Teacher" },
-    { userpic: 'images/mark.jpg', name: "mark jones", job: "software engineer" },
-    { userpic: 'images/michael.jpg', name: "michael damon", job: "marketer" },
-    { userpic: 'images/heather.jpg', name: "heather smith", job: "Assistant" },
-
-
-]
-
-
-
-
-let index = 0;
-
-
-
-let previous = document.getElementById('previous');
-previous.addEventListener('click', prev);
-function prev() {
-
-    let userpic=document.getElementById('userpic');
-    let customerName=document.querySelector('.name');
-    let jobTitle=document.querySelector('.job');
-    let stars=document.querySelector('.stars');
-    if (index===0) {
-        index=reviewImages.length - 1;
-        userpic.src=reviewImages[index]["userpic"];
-        customerName.textContent=reviewImages[index]["name"];
-        jobTitle.textContent=reviewImages[index]["job"];
-        stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
-    } else {
-
-
-        index--;
-
-
-
-        userpic.src=reviewImages[index]["userpic"];
-        customerName.textContent=reviewImages[index]["name"];
-        jobTitle.textContent=reviewImages[index]["job"];
-        stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
-    }
-}
-
-
-let next = document.getElementById('next');
-next.addEventListener('click', showNext);
-function showNext() {
-
-    let userpic = document.getElementById('userpic');
-    let customerName = document.querySelector('.name');
-    let jobTitle = document.querySelector('.job');
-    let stars = document.querySelector('.stars');
-
-    if (index < reviewImages.length - 1) {
-        index++;
-        userpic.src = reviewImages[index]["userpic"];
-        customerName.textContent = reviewImages[index]["name"];
-        jobTitle.textContent = reviewImages[index]["job"];
-        stars.innerHTML = `<i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>`
-
-    } else if (index === reviewImages.length - 1) {
-        index = 0;
-        userpic.src = reviewImages[index]["userpic"];
-        customerName.textContent = reviewImages[index]["name"];
-        jobTitle.textContent = reviewImages[index]["job"];
-        stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
-
-    }
-}
-
-
-
-
-let grey = document.getElementById('grey');
-console.log(grey);
-grey.addEventListener('onclick', greySuit);
-function greySuit() {
-
-    let img = document.getElementById("special");
-    img.setAttribute('src', 'images/regularfitgrey.jpg');
-
-}
-
-
-
-
-
-
-let navy = document.getElementById('navy');
-navy.addEventListener('onclick', navySuit);
-
-function navySuit() {
-
-    let img = document.getElementById("special");
-    img.setAttribute('src', 'images/regularfitnavy.jpg');
-}
-
-
-let black = document.getElementById('black');
-black.addEventListener('onclick', blackSuit);
-function blackSuit() {
-
-
-    let img = document.getElementById("special");
-    img.setAttribute('src', 'images/regularfitblack.jpg');
-}
-
-
-
-let blue = document.getElementById('blue');
-blue.addEventListener('onclick', blueSuit);
-
-function blueSuit() {
-
-
-    let img = document.getElementById("special");
-    img.setAttribute('src', 'images/regularfitblue.jpg');
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        for (let i = 0; i < qBtn.length; i++) {
+        
+            qBtn[i].addEventListener('click', show);
+        
+            function show(e) {
+                
+                const qtitle = e.currentTarget.parentNode.parentNode;
+        
+                qtitle.classList.toggle('show-text');
+            }
+       
+        }
