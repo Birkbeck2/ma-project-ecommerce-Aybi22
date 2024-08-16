@@ -1,15 +1,28 @@
-fetch("products.json")
-.then(function(response){
-    return response.json();
-})
-.then(function(data){
-    localStorage.setItem("products",JSON.stringify(data));
-});
+
+
+fetch('products.json')
+   .then(response=> response.json())
+   .then(data=>{
+     productList=data;
+   });
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 let cart = document.querySelector('.top-icons');
+console.log(cart);
+
 cart.addEventListener('click', showCart);
 
 function showCart() {
@@ -85,48 +98,39 @@ function mobileClose(e) {
 
 
 
-   
+document.addEventListener('DOMContentLoaded',function showReviewBox(){    
+    let reviewBtn = document.querySelector('.review-btn');
+    console.log(reviewBtn);
+    reviewBtn.addEventListener('click', showReviewBox);
+    function showReviewBox() {
+    
+        let reviewBox=document.querySelector('.review-box');
+        let reviewText=document.querySelector('.review-message');
+    
+       reviewBox.classList.toggle('show-Box');
+       reviewText.innerHTML=``;
+    }  
+    });
+    
+    
+    document.addEventListener('DOMContentLoaded',function sendText(){
+    let sendBtn = document.querySelector('.send-btn');
+    sendBtn.addEventListener('click', sendText);
+    function sendText() {
+        let reviewBox = document.querySelector('.review-box');
+        let reviewText = document.querySelector('.review-message');
+    
+       
+            reviewBox.classList.toggle('show-Box')
+            reviewText.innerHTML=`
+            <p>your review was successfully sent!</p>`
+    }
+    
+        
+    });
  
    
-document.addEventListener('DOMContentLoaded',function showReviewBox(){    
-let reviewBtn = document.querySelector('.review-btn');
-reviewBtn.addEventListener('click', showReviewBox);
-function showReviewBox() {
 
-    let reviewBox=document.querySelector('.review-box');
-    let reviewText=document.querySelector('.review-message');
-
-    if (reviewBox.style.display === "none") {
-        reviewBox.style.display = "block";
-        reviewText.style.display = "none";
-
-
-
-
-    } else {
-        reviewBox.style.display = "none";
-
-    }
-
-}
-});
-document.addEventListener('DOMContentLoaded',function sendText(){
-let sendBtn = document.querySelector('.send-btn');
-sendBtn.addEventListener('click', sendText);
-function sendText() {
-    let reviewBox = document.querySelector('.review-box');
-    let reviewText = document.querySelector('.review-message');
-
-    if (reviewBox.style.display === "block") {
-        reviewBox.style.display = "none";
-        reviewText.style.display = "block";
-
-    } else {
-        reviewBox.style.display = "block";
-        reviewText.style.display = "none";
-    }
-}
-});
 
 let reviewImages = [
     { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
@@ -262,9 +266,10 @@ for (let i = 0; i < smallPic1.length; i++) {
         img1.setAttribute('src', pics1[i]);
 
     }
+    
 }
 
-  
+ 
         
 
 
@@ -339,6 +344,7 @@ for (let i = 0; i < smallPic4.length; i++) {
 
 document.addEventListener('DOMContentLoaded',function grey(){
     let grey=document.getElementById('grey');
+    console.log(grey);
 grey.addEventListener('click',greySuit);
            function greySuit(){
          
@@ -502,9 +508,9 @@ for (let i = 0; i < smallPic9.length; i++) {
 
 
     function showMainPic9() {
-        let img8 = document.getElementById('main-pic9');
+        let img9 = document.getElementById('main-pic9');
 
-        img8.setAttribute('src', pics9[i]);
+        img9.setAttribute('src', pics9[i]);
 
     }
 
@@ -564,6 +570,18 @@ for (let i = 0; i < smallPic11.length; i++) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 let pics12 = ['images/greycheckjacket.jpg', 'images/greycheckjacket1.jpg', 'images/greycheckjacket2.jpg']
 
 let smallPic12 = document.getElementsByClassName('small-pic12');
@@ -584,6 +602,62 @@ for (let i = 0; i < smallPic12.length; i++) {
 }
 
 
+    
+    
+document.addEventListener('DOMContentLoaded',function navySuit1(){
+
+    let navy1=document.getElementById('navy1');
+    navy1.addEventListener('click',navySuit1);
+    
+    function navySuit1(){
+    
+    let img=document.getElementById("special");
+    img.setAttribute('src','images/navypanamasuit.jpg');
+    }
+    });
+    
+    
+    
+    
+    
+    document.addEventListener('DOMContentLoaded',function blackSuit1(){
+    
+    let black=document.getElementById('black1');
+    black.addEventListener('click',blackSuit1);
+    function blackSuit1(){
+    
+    
+    let img=document.getElementById("special");
+    img.setAttribute('src','images/blackpanamasuit.jpg');
+    
+    
+    }
+    
+    });
+    
+    
+
+    document.addEventListener('DOMContentLoaded',function blueSuit1(){
+    
+        let blue1=document.getElementById('blue1');
+        blue1.addEventListener('click',blueSuit1);
+        function blueSuit1(){
+        
+        
+        let img=document.getElementById("special");
+        img.setAttribute('src','images/bluepanamasuit.jpg');
+        
+        
+        }
+        
+        });
+
+  
+    
+    
+    
+    
+         
 
 
 
@@ -605,6 +679,10 @@ for (let i = 0; i < smallPic13.length; i++) {
     }
 
 }
+
+
+
+
 
 
 
@@ -633,7 +711,7 @@ for (let i = 0; i < smallPic14.length; i++) {
 
 
 
-let pics15 = ['images/blazerjacket.jpg', 'images/blazerjacket1.jpg', 'images/blazerjacket2.jpg']
+let pics15 = ['images/fullbrogueoxford.jpg', 'images/fullbrogueoxford1.jpg', 'images/fullbrogueoxford2.jpg']
 
 let smallPic15 = document.getElementsByClassName('small-pic15');
 
@@ -658,7 +736,7 @@ for (let i = 0; i < smallPic15.length; i++) {
 
 
 
-let pics16 = ['images/blazerjacket.jpg', 'images/blazerjacket1.jpg', 'images/blazerjacket2.jpg']
+let pics16 = ['images/brogueoxford.jpg', 'images/brogueoxford1.jpg', 'images/brogueoxford2.jpg']
 
 let smallPic16 = document.getElementsByClassName('small-pic16');
 
@@ -677,7 +755,7 @@ for (let i = 0; i < smallPic16.length; i++) {
 
 }
 
-let pics17 = ['images/blazerjacket.jpg', 'images/blazerjacket1.jpg', 'images/blazerjacket2.jpg']
+let pics17 = ['images/wingtipoxford.jpg', 'images/wingtipoxford1.jpg', 'images/wingtipoxford2.jpg']
 
 let smallPic17 = document.getElementsByClassName('small-pic17');
 
@@ -698,7 +776,7 @@ for (let i = 0; i < smallPic17.length; i++) {
 
 
 
-let pics18 = ['images/blazerjacket.jpg', 'images/blazerjacket1.jpg', 'images/blazerjacket2.jpg']
+let pics18 = ['images/topgraincowleather.jpg', 'images/topgraincowleather1.jpg', 'images/topgraincowleather2.jpg']
 
 let smallPic18 = document.getElementsByClassName('small-pic18');
 
@@ -709,13 +787,104 @@ for (let i = 0; i < smallPic18.length; i++) {
 
 
     function showMainPic18() {
-        let img18 = document.getElementById('main-pic16');
+        let img18 = document.getElementById('main-pic18');
 
         img18.setAttribute('src', pics18[i]);
 
     }
 
 }
+
+
+
+let pics19 = ['images/greypocketblazer.jpg', 'images/greypocketblazer1.jpg', 'images/greypocketblazer2.jpg']
+
+let smallPic19 = document.getElementsByClassName('small-pic19');
+
+
+for (let i = 0; i < smallPic19.length; i++) {
+
+    smallPic19[i].addEventListener('click', showMainPic19)
+
+
+    function showMainPic19() {
+        let img19 = document.getElementById('main-pic19');
+
+        img19.setAttribute('src', pics19[i]);
+
+    }
+
+}
+
+
+let pics20 = ['images/textureblazer.jpg', 'images/textureblazer1.jpg', 'images/textureblazer2.jpg']
+
+let smallPic20 = document.getElementsByClassName('small-pic20');
+
+
+for (let i = 0; i < smallPic20.length; i++) {
+
+    smallPic20[i].addEventListener('click', showMainPic20)
+
+
+    function showMainPic20() {
+        let img20 = document.getElementById('main-pic20');
+
+        img20.setAttribute('src', pics20[i]);
+
+    }
+
+}
+
+
+
+let pics21 = ['images/stoneblazer.jpg', 'images/stoneblazer1.jpg', 'images/stoneblazer2.jpg']
+
+let smallPic21 = document.getElementsByClassName('small-pic21');
+
+
+for (let i = 0; i < smallPic21.length; i++) {
+
+    smallPic21[i].addEventListener('click', showMainPic21)
+
+
+    function showMainPic21() {
+        let img21 = document.getElementById('main-pic21');
+
+        img21.setAttribute('src', pics21[i]);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let decrease = document.getElementById('decrease');
 decrease.addEventListener('click', decreaseNum);
@@ -734,6 +903,32 @@ function decreaseNum() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let increase = document.getElementById('increase');
 increase.addEventListener('click', increaseNum);
 function increaseNum() {
@@ -741,6 +936,16 @@ function increaseNum() {
     let number=document.getElementById('number');
     number.value++;
 }       
+
+
+
+
+
+
+
+
+
+
 
 
 let qBtn = document.getElementsByClassName('q-btn');
@@ -757,3 +962,154 @@ let qBtn = document.getElementsByClassName('q-btn');
             }
        
         }
+
+
+
+
+       let products= [
+
+            {
+                "id":"p1",
+                "smallPic1":"images/texturesuit.jpg",
+                "smallPic2":"images/texturesuit1.jpg",
+                "smallPic3":"images/texturesuit2.jpg",
+                "main-pic1":"images/texturesuit.jpg",
+                "h1":"texture suit",
+                "item-price":250
+                
+                
+                
+                },
+            
+            
+            
+            
+                {
+                    "id":"p2",
+                    "smallPic1":"images/blacksuit.jpg",
+                    "smallPic2":"images/blacksuit1.jpg",
+                    "smallPic3":"images/blacksuit2.jpg",
+                    "main-pic1":"images/blacksuit.jpg",
+                    "h1":"black suit",
+                    "item-price":370
+                    
+                    
+                    
+                    },
+            
+            
+            
+            
+            
+            
+            
+            
+                    {
+                        "id":"p3",
+                        "smallPic1":"images/greysuit.jpg",
+                        "smallPic2":"images/greysuit1.jpg",
+                        "smallPic3":"images/greysuit2.jpg",
+                        "main-pic1":"images/greysuit.jpg",
+                        "h1":"grey suit",
+                        "item-price":450
+                        
+                        
+                        
+                        },
+                        
+            
+                        {
+                
+                            "smallPic1":"images/cowleathershoe.jpg",
+                            "smallPic2":"images/cowleathershoe1.jpg",
+                            "smallPic3":"images/cowleathershoe2.jpg",
+                            "main-pic1":"images/cowleathershoe.jpg",
+                            "h1":"cow leather shoe",
+                            "item-price":655
+                            
+                            
+                            
+                            },
+                            
+            
+                            {
+                
+                                "smallPic1":"images/regularfitgrey.jpg",
+                                "smallPic2":"images/regularfitblue.jpg",
+                                "smallPic3":"images/regularfitblack.jpg",
+                                "main-pic1":"images/specialoffer.jpg",
+                                "h1":"regular fit suit",
+                                "item-price":490
+                                
+                                
+                                
+                                },
+            
+            
+            
+                                {
+                
+                                    "smallPic1":"images/greenslimfit.jpg",
+                                    "smallPic2":"images/greenslimfit1.jpg",
+                                    "smallPic3":"images/greenslimfit2.jpg",
+                                    "main-pic1":"images/greenslimfit.jpg",
+                                    "h1":"green slim fit",
+                                    "item-price":525
+            
+                                },
+            
+            
+            
+                                {
+                
+                                    "smallPic1":"images/justcouturesuit.jpg",
+                                    "smallPic2":"images/justcouturesuit1.jpg",
+                                    "smallPic3":"images/justcouturesuit2.jpg",
+                                    "main-pic1":"images/justcouturesuit.jpg",
+                                    "h1":"just couture suit",
+                                    "item-price":450
+            
+                                },
+            
+            
+                                {
+                
+                                    "smallPic1":"images/navychechsuit.jpg",
+                                    "smallPic2":"images/navychech1.jpg",
+                                    "smallPic3":"images/navychech2.jpg",
+                                    "main-pic1":"images/navychechsuit.jpg",
+                                    "h1":"just couture suit",
+                                    "item-price":350
+            
+                                }
+            
+                    ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  let product=[];
+
+
+   let leftGallery=document.querySelector('.left-gallery');
+   let leftSide=document.querySelector('.left-side'); 
+ let mapProducts=product.map((x)=>{
+    console.log(x.h1);
+ 
+
+
+
+});
+  

@@ -2,7 +2,7 @@
 [
 
 {
-    
+    "id":"p1",
     "smallPic1":"images/texturesuit.jpg",
     "smallPic2":"images/texturesuit1.jpg",
     "smallPic3":"images/texturesuit2.jpg",
@@ -18,7 +18,7 @@
 
 
     {
-    
+        "id":"p2",
         "smallPic1":"images/blacksuit.jpg",
         "smallPic2":"images/blacksuit1.jpg",
         "smallPic3":"images/blacksuit2.jpg",
@@ -38,7 +38,7 @@
 
 
         {
-    
+            "id":"p3",
             "smallPic1":"images/greysuit.jpg",
             "smallPic2":"images/greysuit1.jpg",
             "smallPic3":"images/greysuit2.jpg",

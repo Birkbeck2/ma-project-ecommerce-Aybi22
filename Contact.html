@@ -1,196 +1,354 @@
-let cart=document.querySelector('.top-icons');
-cart.addEventListener('click',showCart);
-const modal=document.querySelector('.modal');
-const body=document.getElementsByTagName('body');
-const overlay=document.querySelector('.overlay');
+<!DOCTYPE html>
+<html lang="en">
 
-function showCart(){
-   if(modal.className==="modal"){
-   modal.classList.add("modal-box");
-   overlay.classList.add("overlay-box");
+<head>
 
-       
-}else{
-    modal.classList.remove("modal-box");
-    overlay.classList.remove("overlay-box");
-} 
-}
+<title>Contact page</title>
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"  href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Dots&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Dots&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/798e587ede.js" crossorigin="anonymous"></script>
 
 
+</head>
 
+
+<body>
     
-
-   overlay.addEventListener('click',closeOver);
-   function closeOver(e){
-      if(e.target===overlay){
-        overlay.classList.remove('overlay-box');
-        modal.classList.remove('modal-box');
-    }
-   }
-   
-const close=document.querySelector('.close');
-close.addEventListener('click', closeModal);
-function closeModal(e){
-    if(e.target===close){
-        modal.classList.remove("modal-box");
-        overlay.classList.remove("overlay-box"); 
-    }
-}
-
-
-const mobileMenu=document.querySelector('.mobileMenu');
-const hamburger=document.querySelector('.hamburger');
-hamburger.addEventListener('click',showMobileMenu);
-function showMobileMenu(){
-    mobileMenu.classList.toggle('mobile-box');
-}
-
-const closeMobile=document.querySelector('.closeMobile');
-closeMobile.addEventListener('click',mobileClose);
-function mobileClose(e){
-    if(e.target===closeMobile){
-        mobileMenu.classList.remove('mobile-box');
-    }
-}
-
-
-
-
-
-
-
-const reviewImages=[ 
-    {userpic:'images/jack.jpg',  name:"Jack Kelly", job:"web developer"},
-    {userpic:'images/james.jpg',  name:"James smith", job:"web designer"},
-    {userpic:'images/amanda.jpg',  name:"Amanda fisher", job:"Teacher"},
-    {userpic:'images/mark.jpg',     name:"mark jones", job:"software engineer"},
-    {userpic:'images/michael.jpg',  name:"michael damon", job:"marketer"},
-    {userpic:'images/heather.jpg',  name:"heather smith", job:"Assistant"},
-    
-
-]
-
-
-
-let index=0;
-
-  let customerName=document.querySelector('.name');
-  let jobTitle=document.querySelector('.job');
-  let stars=document.querySelector('.stars');
-  
-  
-  function showNext(){
-   
-    let userpic=document.getElementById('userpic');
-  
-   
-    if(index<reviewImages.length){
-        index++;
-        userpic.src=reviewImages[index]["userpic"];
-        customerName.textContent=reviewImages[index]["name"];
-       jobTitle.textContent=reviewImages[index]["job"];
-       stars.innerHTML=`<i class="fa-solid fa-star"></i>
-       <i class="fa-solid fa-star"></i>
-       <i class="fa-solid fa-star"></i>
-       <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>`
-    } 
-    if(index===reviewImages.length){
-        index=0;
-        userpic.src=reviewImages[index]["userpic"];
-        customerName.textContent=reviewImages[index]["name"];
-        jobTitle.textContent=reviewImages[index]["job"];
-        stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> ' 
-    
-    }
-}
-
-
-
-  
-function prev(){
-    let userpic=document.getElementById('userpic');
-   
-    if(index===0){
-        index=reviewImages.length-1;
-        userpic.src=reviewImages[index]["userpic"];
-        customerName.textContent=reviewImages[index]["name"];
-        jobTitle.textContent=reviewImages[index]["job"];
-        stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> ' 
-}else{
-
- index--;
-        userpic.src=reviewImages[index]["userpic"];
-        customerName.textContent=reviewImages[index]["name"];
-        jobTitle.textContent=reviewImages[index]["job"];
-        stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> ' 
-    }  
+    <div class="modal">
+        <p class="cart-title">shopping cart</p>
         
+        <p class="section-text">Your cart is empty.</p>
+        
+        <a href="Shop.html" target="_blank" class="cart-btn">
+
+            continue shopping
+
+        </a>
+        
+        
+<span class="close">&times;</span>
+    </div>
+
+
+<div class="overlay">
+
     
-}
+</div>
+
+<div class="mobileMenu">
+
+   
+    <ul class="mobile">
+<li><a href="index.html">Home</a></li>
+<li><a href="About.html">About</a></li>
+<li><a href="Shop.html">Shop</a></li>
+<li><a href="Contact.html">Contact</a></li>
+    </ul>
+
+<span class="closeMobile">&times;</span>
 
 
-window.onload=showReviewBox;
-let reviewBox=document.getElementById('review-box');
-let reviewText=document.querySelector('.review-message');
-let reviewBtn=document.querySelector('.review-btn');
-reviewBtn.addEventListener('click',showReviewBox);
-
-
-function showReviewBox(){
+</div>
+    
+    
+    
+    
+    
+        
+        <header>
+        <nav>
+            <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Shop.html">Shop</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        
+        
+        </div>
+        
+        
+        <div class="logo">
+        
+        <a href="index.html"><p>SUITME<span class="log">Fashion</span></p>
+        </a>
+        </div>
+        
+        
+        
+        <div class="top-icons">
+   
+            <i class="fa-solid fa-bag-shopping"></i>
+             <div class="quantity-box">0</div>
+             
      
-       if(reviewBox.style.display==="none"){
-        reviewBox.style.display="block";
-        reviewText.style.display="none";
-       }else{
-        reviewBox.style.display="none";
+         </div>
+     
         
-    }
-}
-  
-    let sendBtn=document.querySelector('.send-btn');
-    let txt=document.querySelector('.txt');
-    sendBtn.addEventListener('click',sendText);
-    function sendText(){
-       if(reviewBox.style.display==="block"){
-        reviewBox.style.display="none";
-        reviewText.style.display="block";
-    
-    }else{
-         reviewBox.style.display="block";
-         reviewText.style.display="none";
-        }
-       } 
+        
+        
+        
+       
+        
+        
+        
+        </header>
+        
         
     
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+    <main id="contact">
+        
 
+        
+        
+        
+        
+
+
+
+
+    </main> 
+
+          
+            
+    <footer>
+        
+        <div class="footer-top-text">
+    
+        
+        <div class="logo">
+    
+            <p>SUITME<span class="log">Fashion</span></p>
+          </div>
+          
+    
+    
+        <ul class="footer-links">
+    
+        
+    <li class="bold-text">Quick links</li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+    
+        </ul>
+    
+    
+    
       
+       
+       <ul class="conditions">
+       
     
+        <li class="bold-text">Terms and conditions</li>
+            <li>Privacy</li>
+            <li>Accessbility</li>
+            <li>Blog</li>
+            <li>Guides</li>
+    
+        </ul>
+    
+        <ul class="support">
+       
+    
+            <li class="bold-text">support</li>
+                <li>contact us</li>
+                <li>delivery</li>
+                <li>return and exchanges</li>
+                <li>terms and use</li>
+        
+            </ul>
+       
+        <ul class="contacts">
+    
+    <li class="bold-text">Contacts</li>
+    <li>Tel:00 222 444 555</li>
+    <li>Email:suitme@gmail.com</li>
+    <li>social media:
+    
+        
+    </li>
+    
+    
+    
+    
+    </ul>
+    
+    
+    
+    
+    
+   
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+    
+          
+        <div class="footer-bottom">
+                
+            <p>Copyright.2024|power by IBK</p>
+                        
+                        
+            
+                       
+                        
+                               
+            <div class="media">
+                                
+                    <i class="fa-brands fa-square-facebook"></i>
+                                <i class="fa-brands fa-square-instagram"></i>
+                                <i class="fa-brands fa-tiktok"></i>
+                                <i class="fa-brands fa-square-whatsapp"></i>
+                    
+                        </div>
+                   
+                   <div class="footer-icons"> 
+                        
+                   <div class="paypal-icon">
+                
+                    <img src="images/paypal.svg" width="50" alt="paypal card">
+                    </div>
+                <div class="visa-icon">
+                    <img src="images/visa.svg" width="50" alt="visa card">
+                    </div>
+                    <div class="klarna-icon">
+                        <img src="images/klarna.svg" width="50" alt="klarna card" >
+                </div>
+                <div class="master-icon">
+                    <img src="images/mastercard.svg"  width="50" alt="mastercard card">
+                
+                </div>
+                <div class="amex-icon">
+                    <img src="images/americanexpress.svg" width="50" alt="amex card">
+                    
+                </div>
+            </div>
+          
+                        
+                        
+                        
+                        </div>
+            
+           
+    
+    
+    
+    
+    
+        </footer>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+      
+            
+            
+            
+         
+            
+            
+            
+            </body>
+            <script src="index.js"></script>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </html>
 
 
-const charcoal=document.getElementById('charcoal');
-const navy=document.getElementById('navy');
-const black=document.getElementById('black');
-const blue=document.getElementById('blue');
 
-charcoal.addEventListener('click',charcoalSuit);
+            
+            
+           
+            
+            
+               
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <script src="index.js"></script>
+            
+            
+            
+            
+            
+            </body>
+            
+            
+            
+            
+            
+            
+            
 
-function charcoalSuit(){
-    
-    
-    const img=document.getElementById('special');
-    
-    img.src="images/bluesuit.jpg";
-}
+
+
+
+
+</html>
