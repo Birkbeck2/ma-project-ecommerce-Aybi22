@@ -9,8 +9,8 @@
 <meta name="description" content=" high-quality and trendy men suits and leather shoes">
 <meta name="keywords"    content="suit,luxury, leather shoes,jacket,trends">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="stylesheet"  href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +25,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Rose:wght@300..700&display=swap" rel="stylesheet">
+  
+
+
 <script src="https://kit.fontawesome.com/798e587ede.js" crossorigin="anonymous"></script>
 
 
@@ -52,8 +55,17 @@
    </div>
 
 
-    <div class="overlay"></div>
+    <div class="overlay">
+   
+    
+    </div>
 
+    
+    
+    
+    
+    
+    
     <div class="mobileMenu">
 
    
@@ -76,15 +88,22 @@
          <nav>
            <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="Shop.html">Shop</a></li>
+            <li class="shop"><a href="Shop.html" id="shop">Shop</a></li>
+
             <li><a href="About.html">About</a></li>
              <li><a href="Contact.html">Contact</a></li>
             </ul>
           </nav>
 
-        <div class="hamburger">
-          <i class="fa-solid fa-bars"></i>
-       </div>   
+    
+    
+    
+    
+    
+    
+          <div class="hamburger">
+    <i class="fa-solid fa-bars"></i>
+    </div>   
   
 
     <div class="logo">
@@ -92,27 +111,69 @@
       <a href="index.html">
     
         <p>SUITME<span class="log">Fashion</span></p>
-      
+      </a>
 
     </div>
-</a>
-
 
     <div class="top-icons">
+
+        <i class="fa-solid fa-bag-shopping"></i>
+         <div class="quantity-box">0</div>
+         
+     
+     </div>
    
-       <i class="fa-solid fa-bag-shopping"></i>
-        <div class="quantity-box">0</div>
-        
 
+   
+
+    </header>
+
+<div class="sub">
+    
+    <a href="suit.html">
+   <div class="sub-box">
+    <h3>regular suits</h3>
+    
+    <div class="image">
+
+        <img src="images/blacksuit.jpg">
     </div>
+    
+   
+    </div>
+</a>
+<a href="blazer.html">
+    <div class="sub-box">
+    <h3>blazer suits</h3>
+    
+    
+    <div class="image">
+
+        <img src="images/textureblazer.jpg">
+    </div>
+    </div>
+</a>
+<a href="leather shoes.html">
+    <div class="sub-box">
+    <h3>leather shoes</h3>
+    
+  
+    <div class="image">
+
+        <img src="images/cowleathershoe.jpg">
+    </div>
+    
+
+</div>
+</a>
+
+</div>
+
+<div class="sub-overlay"></div>
 
 
-</header>
 
-
-
-
-
+    <main id="home">
         
    
         <section class="banner">
@@ -121,11 +182,11 @@
                 <article class="main-text">
                    
                     <h1>Best quality men trends and fashion<i class="fa-solid fa-circle circle"></i><i class="fa-solid fa-circle circle"></i></h1>
-                    <h2>welcome to your luxury suits online store</h2>
+            
                    
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                         Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
                     </p>
         
                                 <a href="Shop.html"  class="btn">
@@ -137,8 +198,8 @@
         
                 </article>
         
-                    <div class="main-picture">
-                     <img src="images/bluesuit.png"  alt="blue suit image">
+                    <div>
+                     <img src="images/bluesuit.png" width="500" alt="blue suit image" class="main-picture">
         
                     </div>
         
@@ -173,15 +234,14 @@
         
                <a href="product2.html">
               <div class="image">
-    
-        
+                
         
                 <img src="images/blacksuit.jpg" width="400" height="400" alt="black suit">
          
              
-                
+            </div>
             
-            
+           
         
         
               <div class="item-title">
@@ -192,9 +252,9 @@
                     
                        
               </div>
-                </a>
-
-                
+              
+              
+            </a>
                     
                     <span class="stars">
                         <i class="fa-solid fa-star"></i>
@@ -209,14 +269,14 @@
         
         <article class="section-list">
             <h3>trends</h3>
-           
+        
         <div class="image">
-            <a href="product3.html">
+            <a href="product3.html"> 
         
         <img src="images/greysuit.jpg"   width="400" height="400"  alt="greysuit">
        
         
-  
+    </div>
         
         
         <div class="item-title">
@@ -227,7 +287,7 @@
         </div>
     </a>  
        
-    <div class="stars">
+    <span class="stars">
         <i class="fa-solid fa-star"></i>
     
     <i class="fa-solid fa-star"></i>
@@ -238,9 +298,9 @@
     <i class="fa-solid fa-star"></i>
     
     
-    </div>
+    </span>
     
-    </article>
+       </article>
     
         
         
@@ -278,7 +338,7 @@
     </article>
         
         
-   
+       </div> 
         
         
         
@@ -308,10 +368,10 @@
             <div class="pic">
                  <a href="product10.html">
         
-                <img src="images/oxfordleathershoes.png"  alt="black oxforfd leather shoe">
-               
+                <img src="images/oxfordleathershoes.png"  alt="black leather shoe">
+               </a>
             </div>
-        </a>
+        
         <article class="image-text">
         <h3>Men's leather oxford shoes</h3>
         
@@ -330,7 +390,7 @@
         <div class="pic">
             <a href="product10.html">
             
-            <img src="images/Oxfordleathershoecoffee.png"  alt=" oxford leather shoe coffee image" >
+            <img src="images/Oxfordleathershoecoffee.png"  alt=" brown leather shoe" >
         </a>
         
     </div>
@@ -363,8 +423,11 @@
                    <div class="image">
                     <a href="product9.html">
                     <img src="images/stretchsuit.jpg" width="400" height="400"  alt="stretch suit">
-                   </div>
-             
+                   
+                    
+                
+                </div>
+                   
             
              <div class="item-title">
                 <span class="item-name">Stretch suit</span>
@@ -390,21 +453,29 @@
         
         <article class="section-list">
            <h3>new</h3>
-         
+          
            <div class="image">
             <a href="product4.html">
            <img src="images/cowleathershoe.jpg"   width="400" height="400" alt="leather shoe">
+         
+        </div>
+        
             
-           
-            
-                <div class="item-title">
+          
+        
+        
+        
+        
+        <div class="item-title">
                      <span class="item-name">Cow leather shoe </span>
                      <span class="item-price">475£</span>
                 </div>
+                
+           
+           
+           
+           
             </a>
-
-
-            
         
             <span class="stars">
                 <i class="fa-solid fa-star"></i>
@@ -437,8 +508,6 @@
                 <span class="item-name">Green slim fit suit</span>
                 <span class="item-price">245£</span>
                 </div>
-            </a>
-
                 <span class="stars">
                     <i class="fa-solid fa-star"></i>
                 
@@ -451,7 +520,7 @@
                 
                 
                 </span>
-            
+            </a>
         
         
         
@@ -473,10 +542,7 @@
         
         <article class="section-title">
         
-            <h2>Special Offer
-                <i class="fa-solid fa-circle circle"></i>
-                <i class="fa-solid fa-circle circle"></i>
-            </h2>
+            <h2>Special Offer<i class="fa-solid fa-circle circle"></i><i class="fa-solid fa-circle circle"></i></h2>
            
             <p class="section-text">Discover the special offer at Your favorite men fashion store</p>
         
@@ -491,10 +557,10 @@
         
         
             <img src="images/specialoffer.jpg"   width="400" height="600" alt="special offer suit">
-        
+         </a>
         
         </div>
-    </a>
+        
         
         
         
@@ -563,113 +629,114 @@
         
         
     
-    
     <section>
 
-        <h2>blazer collection
 
-            <i class="fa-solid fa-circle circle"></i>
-            <i class="fa-solid fa-circle circle"></i>
 
-        </h2>
-        <p class="section-text">Discover the blazer collection at Your favorite men fashion store</p>
 
-        <div class="mid-section">
+
+
+        <h2>blazer suits<i class="fa-solid fa-circle circle"></i><i class="fa-solid fa-circle circle"></i></h2>
+           
+        <p class="section-text">Discover the blazer suits at Your favorite men fashion store</p>
+
+
+        <div class="blazer">
 
 <div class="image">
 
-<img src="images/blazer.jpg"  alt="blazer image"  style="width:100%;">
+<img src="images/blazer.jpg"  alt="blazer image">
 
 </div>
 
-<div class="mid-right">
-<p class="blazer">Timeless style. Any occassion.</p>
+<div class="gallery-section">
 
-<p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua".
+<h1>timeless style.any occasion</h1>
+
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+    incididunt ut labore et dolore magna aliqua.
+
+
 </p>
 
-<div class="mid-container">
-    <a href="product19.html">
-<div class="image">
-    <img src='images/greypocketblazer.jpg' max-width="200"  height="200"  alt="tailored strecth suit image" style="width:100%;">
-
-
-    <div class="item-title">
-        <span class="item-name">grey pocket blazer</span>
-        <span class="item-price">275£</span>
-        
-  
-    </div>
-
-</a>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="image">
-    <a href="product20.html">
+<div class="blazer-gallery">
     
-    <img src='images/textureblazer.jpg'  width="200"  height="200" alt="tailored knit suit image">
-
-    <div class="item-title">
-        <span class="item-name">texture blazer</span>
-        <span class="item-price">415£</span>
-        
-  
-    </div>
-
-</a>
-
-
-
-</div>
-
-
-
-<div class="image">
+    
     <a href="product21.html">
-    
-    <img src='images/stoneblazer.jpg' width="200"  height="200" alt="polo suit image">
+    <div class="image">
 
-    <div class="item-title">
-        <span class="item-name">stone blazer</span>
-        <span class="item-price">565£</span>
+        <img src="images/stoneblazer.jpg"   width="600"  height="600">
         
-  
-    </div>
-
-</a>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-</div>
-<a href="Shop.html"  class="btn">
         
-    shop now
 
-</a>
+        
 
 </div>
+
+
+
+    </a>
+
+           
+<a href="product19.html">
+
+<div class="image">
+
+            <img src="images/greypocketblazer.jpg"   width="600"  height="600">
+            
+        </div>
+
+            
+            </a> 
+
+
+            <a href="product20.html">
+            <div class="image">
+
+                <img src="images/textureblazer.jpg"   width="600"  height="600">
+                
+              
+                
+               
+            
+            
+            
+            
+            
+            
+</div>
+   </a> 
+</div>
+           
+        
+            
+            <a href="Shop.html"  class="btn">
+        
+                shop now
+
+            </a>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
 
 
 
@@ -689,12 +756,13 @@
     
     
     
+    
+    
+    
+    
     <section>
         <article class="section-title">
-            <h2>You also need to know
-                <i class="fa-solid fa-circle circle"></i>
-                <i class="fa-solid fa-circle circle"></i>
-            </h2>
+            <h2>You also need to know<i class="fa-solid fa-circle circle"></i><i class="fa-solid fa-circle circle"></i></h2>
           
             <p class="section-text">Discover other useful information at Your favorite men fashion store</p>
         
@@ -710,7 +778,7 @@
         
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor.
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             
         </p>
         
@@ -722,7 +790,7 @@
             <span class="icon-title">Discount</span>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor.
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 
             </p>
             
@@ -737,7 +805,7 @@
                 
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor.
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     
                 </p>
                 
@@ -749,7 +817,7 @@
                     
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor.
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         
                     </p>
                     
@@ -816,36 +884,30 @@
         </span>
             
            <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua".
-           </p>
+            </p>
         
         
-            <button type="submit" class="review-btn">write a review</button>
+            <button type="button" class="review-btn">write a review</button>
         
-            
+            <div class="review-message">
+                    your review was successfully sent!
+                </div>
             
             <div class="review-box">
-            <form>
-                  <textarea class="text-box" name="review" placeholder="what do you like?, what do you dislike?..."required></textarea>
-                  <button type="submit" class="send-btn">submit</button>
-          
-            </form>
-          
-                </div>
+        
+                  <textarea class="text-box"  name="review" placeholder="what do you like?, what do you dislike?..." required></textarea>
+                  <button type="button" class="send-btn">submit</button>
+           </div>
        
-           
-            <div class="review-message">
-           
-            </div>
-        
-        
         </article>
         
         
-      </section>
+    </section>
         
-  
+        
+        </main>
         
         
         
@@ -920,12 +982,12 @@
     <div class="footer-icons"> 
                 
         <div class="paypal-icon">
-              <img src="images/paypal.svg" width="50" alt="paypal card">
-        </div>
+         <img src="images/paypal.svg" width="50" alt="paypal card">
+         </div>
         
         <div class="visa-icon">
-              <img src="images/visa.svg" width="50" alt="visa card">
-        </div>
+         <img src="images/visa.svg" width="50" alt="visa card">
+         </div>
             
         <div class="klarna-icon">
             <img src="images/klarna.svg" width="50" alt="klarna card" >

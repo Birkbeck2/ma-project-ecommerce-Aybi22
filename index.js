@@ -1,4 +1,30 @@
 
+let sub=document.querySelector('.sub');
+let shop=document.getElementById('shop');
+shop.addEventListener('onmouseover', showSub);
+
+
+ 
+ function showSub(){
+    sub.classList.toggle('sublist');
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 fetch('products.json')
    .then(response=> response.json())
