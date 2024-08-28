@@ -231,7 +231,7 @@ nav{
     text-transform:uppercase;
     font-size: 12px;
     display:block;
-    padding:7px;
+    padding:11px;
     
    }
 
@@ -245,6 +245,7 @@ nav{
  nav a:hover{
     color:#000000;
     background:#FFFFFF;
+    
 }
 
 
@@ -1768,9 +1769,7 @@ margin:auto;
     display:block;
 }
 
-.blazer img{
-    
-}
+
 
 .blazer-gallery{
     display:flex;
@@ -1785,6 +1784,11 @@ margin:auto;
     align-items:center;
     text-align: center;
     width:100%;
+   
+}
+.blazer-pic{
+    height:auto;
+    max-width:700px;
 }
 
 
@@ -1939,9 +1943,12 @@ form{
    overflow:hidden;
 
    
-   
 }
 
+.sublist{
+    height:300px;
+  
+}
 
 
 .sub a{
@@ -1985,10 +1992,7 @@ form{
 
 
 
-.sublist{
-    height:300px;
-  
-}
+
 
 .sub-box{
     width:150px;
@@ -2002,6 +2006,7 @@ form{
 .sub-box h3{
     color:black;
     font-weight:900;
+   
 }
 
 
@@ -2020,6 +2025,21 @@ form{
     overflow: hidden;
    
 
+}
+
+.sublist .sub-overlay{
+    display:block;
+}
+
+.blazer-gallery .image{
+
+
+}
+
+
+.info-box{
+   
+  
 }
  
 

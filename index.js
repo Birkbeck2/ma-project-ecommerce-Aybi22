@@ -1,14 +1,20 @@
 
 let sub=document.querySelector('.sub');
 let shop=document.getElementById('shop');
-shop.addEventListener('onmouseover', showSub);
-
-
- 
+shop.addEventListener('mouseover', showSub);
+shop.addEventListener('mouseout', hideSub);
+sub.addEventListener('mouseover',showSub);
+sub.addEventListener('mouseout',hideSub);
  function showSub(){
-    sub.classList.toggle('sublist');
+    sub.classList.add('sublist');
+   
  }
 
+
+function hideSub(){
+    sub.classList.remove('sublist');
+    
+ }
 
 
 
@@ -147,9 +153,8 @@ document.addEventListener('DOMContentLoaded',function showReviewBox(){
         let reviewText = document.querySelector('.review-message');
     
        
-            reviewBox.classList.toggle('show-Box')
-            reviewText.innerHTML=`
-            <p>your review was successfully sent!</p>`
+            reviewBox.classList.toggle('show-Box');
+            reviewText.classList.toggle('show-message');
     }
     
         
