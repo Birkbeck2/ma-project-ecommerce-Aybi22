@@ -1783,6 +1783,7 @@ margin:auto;
     flex-direction:column;
     align-items:center;
     text-align: center;
+    gap:11px;
     width:100%;
    
 }
@@ -2031,9 +2032,9 @@ form{
     display:block;
 }
 
-.blazer-gallery .image{
+.blazer-gallery img{
 
-
+flex:0 0 600px;
 }
 
 

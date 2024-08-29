@@ -132,7 +132,7 @@ function mobileClose(e) {
 
 document.addEventListener('DOMContentLoaded',function showReviewBox(){    
     let reviewBtn = document.querySelector('.review-btn');
-    console.log(reviewBtn);
+  
     reviewBtn.addEventListener('click', showReviewBox);
     function showReviewBox() {
     
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded',function showReviewBox(){
         let reviewText=document.querySelector('.review-message');
     
        reviewBox.classList.toggle('show-Box');
-       reviewText.innerHTML=``;
+       reviewText.classList.remove('show-message');
     }  
     });
     
