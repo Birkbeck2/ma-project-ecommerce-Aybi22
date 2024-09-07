@@ -20,7 +20,15 @@
         
     }
     
-
+    img{
+       max-width: 100%;
+       height:100%;
+        width:100%;
+        display:block;
+        object-fit: cover;
+        
+        }
+     
 
 
 p{
@@ -101,13 +109,6 @@ h2:not(.banner h2){
     align-items:center;
 }
 
-img{
-    object-fit:cover;
-    max-width:100%;
-    width:100%;
-    display:block;
-    height:100%;
-   }
 
  
 
@@ -125,6 +126,8 @@ a.btn:hover{
 }
 .btn.new{
     background:var(--champagne);
+    display:block;
+    width:100%;
 }
 a.btn.new{
     color:var(--black);
@@ -376,54 +379,83 @@ a.cart-btn{
 
 
 
-
-
-
-
-
 .item-title{
-    display:flex;
-    text-align:center;
-    margin-top:11px;
-    max-width:100%;
-   width:100%;
+   display:flex;
  
-    }
+    width:100%;
+  flex-direction: column;
 
+  padding:11px;
+}
 
 
 
 .section-list{
     display:flex;
     flex-direction:column;
+    max-width:1400px;
+  
+    width:100%;
+   }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.shop-container .image{
+   height:100%;
+   width:100%;
+
+    
+    
 }
 
-
-.section-list .image{
-    flex:1;
+ .section-list h3{
+    background:#FFD700;
+    text-align:center;
+    width:100px;
+    margin:auto;
+    padding:0;
+    margin-bottom:5px;
+   
 }
 
 
 .item-name{
-   max-width:70%;
-   white-space: nowrap;
-    padding:12px;
-    text-transform:capitalize;
-    font-style:italic;
-    width:100%;
-    font-size:15px;
-    color:var(--black);
-}
-
-.item-price{
-    max-width:30%;
-    padding:12px;
-    color:var(--black);
-    font-weight: bold;
-    width:100%;
-    font-size:14px;
     
-}
+    white-space:nowrap;
+    max-width: 200px;
+     text-transform:capitalize;
+     font-style:italic;
+     
+     font-size:15px;
+     color:var(--black);
+   
+ }
+ 
+ .item-price{
+     
+    
+     color:var(--black);
+     font-weight: bold;
+     max-width: 200px;
+     font-size:14px;
+     
+ }
+
+
 
 header p{
     color:var(--white);
@@ -471,18 +503,26 @@ header p{
     font-family: verdana;
 }
 
-
+.section{
+    margin-bottom: 67px;
+}
 
 
 .list-wrapper{
     display:flex;
-    gap:45px;
-    justify-content:center;
-    max-width:100%;
-    width:100%;
-    
    
-}
+    
+   max-width:1200px;
+    width:100%;
+   margin:auto;
+  
+  }
+  .list-wrapper .image{
+    height:100%;
+  }
+   
+
+
 figure{
     display:block;
 }
@@ -660,6 +700,9 @@ h3{
     max-width:400px;
    width:100%;
     text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-content: center;
    
     
 }
@@ -690,12 +733,19 @@ h3{
 .offer-wrapper{
     display:flex;
     max-width:100%;
+    width:100%;
+ 
     justify-content:center;
     margin:0;
     padding:43px;
     background:linear-gradient(to right,#EEE0CB,#888074);
 }
 
+.offer-image.img{
+display:block;
+width:100%;
+height:100%;
+}
 
 
 .icon p{
@@ -1705,13 +1755,12 @@ max-width:1200px;
 gap:23px;
 margin:auto;
     margin-bottom:141px;
+   width:100%;
    
 }
 
-.shop-container .img{
-  max-width:100%;
-   width:100%;
-}
+
+
 
 
 
@@ -1719,18 +1768,18 @@ margin:auto;
     display:flex;
     flex-wrap:wrap;
  
-    max-width:100%;
+    max-width:1200px;
    width:100%;
     gap:11px;
   justify-content: center;
-   
+   margin: auto;
     column-gap:13px;
     row-gap:137px;
     margin-bottom:141px;
  
    }
    .blazer-container .image{
-    flex:0 0 15%;
+    flex:0 0 25%;
    }
 
 
@@ -1742,8 +1791,7 @@ margin:auto;
     margin-bottom:141px;
  gap:13px;
 
-   margin:auto;
-    
+   row-gap:137px;  
 }
 
 .shoe-container img{
@@ -1761,21 +1809,24 @@ margin:auto;
     padding:33px;
     max-width:1400px;
 }
-.item-title{
-    width:100%;
-}
+
 .blazer-gallery .btn{
     margin-top:31px;
     display:block;
 }
 
-
+.blazer-gallery .image{
+    max-width:500px;
+    width:100%;
+    height:auto;
+}
 
 .blazer-gallery{
     display:flex;
     gap:11px;
     max-width:600px;
     width:100%;
+    
 }
 .gallery-section{
     max-width:600px;
@@ -1783,6 +1834,7 @@ margin:auto;
     flex-direction:column;
     align-items:center;
     text-align: center;
+    
     gap:11px;
     width:100%;
    
@@ -1958,13 +2010,9 @@ form{
 }
 
 
- .image{
+ .gallery-section .image{
     
-
-  
-}
-
-
+ }
 
 .ad{
     background:#FFD700;
@@ -2012,21 +2060,7 @@ form{
 
 
 
-.sub-overlay{
 
-    background:var(--black);
-    bottom:0;
-    display:none;
-    opacity:45%;
-    right:0;
-    top:0;
-    left:0;
-    position:fixed;
-   
-    overflow: hidden;
-   
-
-}
 
 .sublist .sub-overlay{
     display:block;
@@ -2042,7 +2076,91 @@ flex:0 0 600px;
    
   
 }
- 
+
+.first-price{
+    text-decoration: line-through;
+    text-decoration-color: black;
+    color:grey;
+    margin-right:7px;
+
+}
+
+
+
+.blink{ 
+    font-size:31px;
+    font-style:italic;
+    font-family:dancing script;
+    text-transform:capitalize;
+    font-weight:900;
+    margin-bottom:22px;
+    
+}
+
+
+.blink{
+   animation:blink 1s steps(5,start) infinite;
+}
+ @keyframes blink{
+  to{
+    visibility:hidden;
+  }
+ }
+
+.offer-price{
+    font-size:23px;
+    background:black;
+    color:white;
+    font-weight:900;
+    width:100px;
+    height:100px;
+    border-radius:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+}
+
+.stock-info{
+    font-size:12px;
+   
+    font-weight:lighter;
+    margin-left:22px;
+   width:100%;
+   text-align:center;
+}
+
+.main-text.btn{
+    width: 100%;
+    display: block;
+}
+
+.list-wrapper{
+    gap:11px;
+}
+.list-wrapper img{
+    width:100%;
+    height:100%;
+}
+
+
+.section-list .image{
+    height:80%;
+    object-fit:cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width:767px){
 
@@ -2118,7 +2236,8 @@ body{
 .banner{
    display:flex;
    flex-direction:column;
-   
+  
+   justify-content: center;
    
 }
 
@@ -2129,6 +2248,7 @@ font-size:40px;
 display:flex;
 flex-direction: column;
 flex-wrap:wrap;
+
 
 }
 
@@ -2149,7 +2269,9 @@ flex-wrap:wrap;
 
 
 
-
+.item-title{
+    margin-left:22px;
+}
 
 
 
@@ -2244,6 +2366,7 @@ flex-direction:column;
 
 
 
+
 }
 
 
@@ -2284,9 +2407,7 @@ flex-direction:column;
 
 /* Styles for phones */
 @media screen and (max-width: 480px) {
-body{
-    overflow: hidden;
-}
+
 .shoe-container{
     
   
