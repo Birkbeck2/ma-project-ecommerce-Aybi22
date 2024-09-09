@@ -2175,8 +2175,14 @@ flex:0 0 600px;
 
 
 @media screen and (max-width:480px){
-header{
-    
+    .logo p{
+   font-size:14px; 
+}
+.log{
+  font-size: 11px;
+}
+.top-icons{
+    font-size:9px;
 }
 
 .banner{
