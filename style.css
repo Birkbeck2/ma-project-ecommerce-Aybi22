@@ -2302,7 +2302,7 @@ footer .media{
 
  @media screen and (max-width:480px){
     .shop-container{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
         
     }
  .blazer-container{
