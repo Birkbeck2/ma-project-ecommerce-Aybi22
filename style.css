@@ -194,11 +194,11 @@ a.btn.new:hover{
    
 header{
     display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items:center;
     max-width:100%;
     background-color:var(--black) ;
-   
+   width:100%;
    
     position:sticky;
     top:0;
@@ -1500,15 +1500,22 @@ footer a{
    width: 200px;
 }
 .ratings{
-    max-width:90%;
+    max-width:100%;
+    width: 100%;
     display:flex;
    justify-content:center;
    margin-top:33px;
    gap:7px;
    margin:auto;
    flex-wrap:wrap;
+ 
   
    
+}
+
+
+.ratings article{
+    flex:1 0 3%;
 }
 .top-info{
     margin:11px;
@@ -1852,7 +1859,6 @@ textarea::-moz-focus-inner{
 }
 
 
-
 #contact{
     display:flex;
     flex-direction:column;
@@ -1921,7 +1927,7 @@ textarea::-moz-focus-inner{
     padding:22px;
 }
 #contact .banner{
-    height:590px;
+    height:auto;
 }
 #contact .main-picture{
     height:100%;
@@ -2175,21 +2181,12 @@ flex:0 0 600px;
 
 
 @media screen and (max-width:480px){
-    .logo p{
-   font-size:14px; 
-}
-.log{
-  font-size: 11px;
-}
-.top-icons{
-    font-size:9px;
-}
+   
+
+
 
 .banner{
-    display:flex;
-    flex-direction: column;
-    text-align: center;
-    align-items:center;
+    
 }
 
 .shop-container{
@@ -2214,8 +2211,8 @@ nav ul{
     flex-direction:column;
 }
 h1{
-    font-size:33px;
-    width:250px;
+    font-size:37px;
+    width:260px;
 }
 h2{
     font-size:17px;
@@ -2231,10 +2228,7 @@ h2{
     flex-direction:column;
 }
 
-.banner{
-    display:flex;
-    flex-direction:column;
-}
+
      
 .icon-wrapper{
     display:flex;
@@ -2302,8 +2296,35 @@ footer .media{
 }
 
 
+.modal-box{
+   
+    width:100%;
+    z-index:99;
+}
+.overlay-box{
+    
+   }
+
+header{
+    padding:9px;
+}
 
 
+
+
+   .banner{
+    display:flex;
+    flex-direction: column;
+    align-content:center;
+    
+}
+
+
+   .main-text{
+    display:flex;
+    flex-direction:column;
+    margin:33px;
+}
 
 }
 
