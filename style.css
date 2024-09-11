@@ -177,11 +177,30 @@ a.btn.new:hover{
     max-width:100%;
     display:flex;
     flex-direction:column;
-    
-
-   
     }
-     .main-picture{
+     
+    
+    .main-text .btn{
+        width: 100%;
+        display: block;
+        margin-top:63px;
+    }   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    .main-picture{
         width:500px;
         display:block;
     }
@@ -194,12 +213,13 @@ a.btn.new:hover{
    
 header{
     display:flex;
-    justify-content:space-between;
+   justify-content:space-around;
     align-items:center;
     max-width:100%;
     background-color:var(--black) ;
    width:100%;
-   
+   margin:0;
+   padding: 0;
     position:sticky;
     top:0;
   
@@ -219,10 +239,11 @@ nav{
     color:var(--white);
     font-weight:900;
     display:flex;
-    gap:12px;
+    gap:7px;
     align-items:center;
     margin:0;
     padding:0;
+    
  }
 
 
@@ -231,9 +252,10 @@ nav{
     text-decoration:none;
     font-family:verdana;
     text-transform:uppercase;
-    font-size: 12px;
+    font-size: 11px;
     display:block;
-    padding:11px;
+   padding:11px;
+
     
    }
 
@@ -287,6 +309,7 @@ header i{
     line-height:11px;
     font-family:zen dots;
     text-align:center;
+   
 }
 
 
@@ -686,13 +709,13 @@ h3{
     background:var(--cambridge-blue);
     color:var(--black);
     padding:33px;
-    max-width:400px;
+  
    width:100%;
     text-align:center;
     display:flex;
     flex-direction:column;
     align-content: center;
-   
+ 
     
 }
 
@@ -1762,17 +1785,28 @@ textarea::-moz-focus-inner{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     
-   max-width:70%;
-   justify-content: center;
+   max-width:1300px;
+ 
    width:100%;
-    margin-bottom:141px;
-    margin: auto;
-    gap:22px;
+    justify-content: center;
+   
+   margin-bottom:141px;
+   margin:auto;
+   
    
    }
 
-.shop-container .image{
+   .shop-container .image{
     height:100%;
+
+   }
+
+
+
+.shop-container img{
+   width:100%;
+    height:100%;
+   
 }
 
 
@@ -1805,7 +1839,7 @@ textarea::-moz-focus-inner{
   width:100%;
     margin-bottom:141px;
  gap:13px;
-
+margin:auto;
    row-gap:137px;  
 }
 
@@ -1867,25 +1901,31 @@ textarea::-moz-focus-inner{
 .contact-block{
     
     display:flex;
-    margin:auto;
-    gap:17px;
-    flex-wrap:wrap;
-    justify-content: center;
 
+    max-width:860px;
+   
+   flex-wrap: wrap;
+   gap:13px;
+   margin:auto;
+ 
 }
 
 .contact-block article{
-    flex:1 0 25%;
+    
+    margin:auto;
+   
 }
 #contact .main-text{
     max-width:900px;
 }
 
 
+
 .contact-box{
     max-width:400px;
     width:100%;
     display:flex;
+   
     flex-direction:column;
     background: var(--champagne);
     align-items:center;
@@ -1999,7 +2039,7 @@ form{
 
 .sub{
     max-width:100%;
-    background:white;
+    background:var(--champagne);
     box-shadow:1px 1px 1px black;
    display: flex;
    justify-content:space-around;
@@ -2013,7 +2053,7 @@ form{
 
 .sublist{
     height:300px;
-  
+
 }
 
 
@@ -2143,10 +2183,7 @@ flex:0 0 600px;
    text-align:center;
 }
 
-.main-text.btn{
-    width: 100%;
-    display: block;
-}
+
 
 
 
@@ -2185,13 +2222,14 @@ flex:0 0 600px;
 
 
 
-.banner{
-    
+header{
+    display:flex;
+    justify-content:space-around;
 }
 
 .shop-container{
     grid-template-columns:repeat(2,1fr);
-  
+    width:100%;
 }
 
 nav ul{
@@ -2318,7 +2356,11 @@ header{
     align-content:center;
     
 }
-
+.shop-container{
+    grid-template-columns:repeat(3,1fr);
+    
+    
+}
 
    .main-text{
     display:flex;
@@ -2326,19 +2368,14 @@ header{
     margin:33px;
 }
 
+.shoe-container{
+    grid-template-columns:repeat(2,1fr);
 }
 
- @media screen and (max-width:480px){
-    .shop-container{
-        grid-template-columns:repeat(2,1fr);
-        width:100%;
-    }
- .blazer-container{
-    flex-direction:column;
-   
- }
-
 }
+
+
+
     
  
     
@@ -2352,17 +2389,35 @@ header{
     /* Styles for desktop screens */
     @media screen and (min-width: 768px) {
        /* Your desktop styles here */
+    .shop-container{
+        grid-template-columns:repeat(3,1fr);
     }
+
+    }
+    
+    
     
     /* Styles for tablets */
     @media screen and (max-width: 767px) {
         
       /* Your tablet styles here */
-       
+      .main-text{
+        display:flex;
+        flex-direction:column;
+        margin:33px;
     }
     
+}
+    
     /* Styles for phones */
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 480px){
+        .shoe-container{
+            grid-template-columns:repeat(2,1fr);
+        }
+    
+        .shop-container{
+            grid-template-columns:repeat(2,1fr);
+        }
     
     }
     
