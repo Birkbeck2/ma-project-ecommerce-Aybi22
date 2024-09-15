@@ -2273,16 +2273,15 @@ flex:0 0 600px;
 .product{
     display:flex;
     flex-direction:column;
-  
+   
+    
   
 }
-.add-btn{
-   margin-right:8px;
-}
+
 .left-gallery{
     display:flex;
     flex-direction:row;
-    justify-content:center;
+  
    
 }
 .left-side img{
