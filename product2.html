@@ -111,24 +111,34 @@
 
 </div>
 
+<div class="modal">
+    <div class="cart-container">
+    <div id="root"></div>
     
+    <p class="cart-title">shopping cart</p>
     
-    
-    
-    
-    
-    
-    <div class="modal">
-        <p class="cart-title">Basket</p>
-        
-        <p class="section-text">Your basket is empty.</p>
-        
-        <a href="Shop.html" target="_blank" class="cart-btn">
+    <div id="cartItem">Your cart is empty.</div>
+   <div class="cart-footer">
 
-            continue shopping
+    <h3>total</h3>
+    <h3 id="total">$0.00</h3>
+   </div>
+    
+    
+    
+    <a href="Shop.html" target="_blank" class="cart-btn">
 
-        </a>
-        
+        continue shopping
+
+    </a>
+    </div>
+    
+    
+    
+    
+    
+    
+   
         
 <span class="close">&times;</span>
     </div>
@@ -299,7 +309,7 @@
     
     
     
-    <a href="Shop.html"  class="add-btn">
+    <a class="add-btn" onclick='addtocart(a)'>
         
         add to cart
 
