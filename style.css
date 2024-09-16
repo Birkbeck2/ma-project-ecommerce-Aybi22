@@ -1786,8 +1786,8 @@ textarea::-moz-focus-inner{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     
-   max-width:1300px;
- 
+   max-width:1000px;
+   gap: 22px;
    width:100%;
     justify-content: center;
    
@@ -1799,6 +1799,12 @@ textarea::-moz-focus-inner{
 
    .shop-container .image{
     height:100%;
+    flex-grow: 1;
+
+   }
+   .shop-container .image{
+    
+    border: 3px solid red;
 
    }
 
@@ -1815,20 +1821,20 @@ textarea::-moz-focus-inner{
 
 .blazer-container{
     display:flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
  
-    max-width:60%;
+    max-width:900px;
    width:100%;
-    gap:11px;
+    
   justify-content: center;
    margin: auto;
-    column-gap:13px;
+    
     row-gap:137px;
     margin-bottom:141px;
  
    }
-   .blazer-container .image{
-    flex:0 0 25%;
+   .blazer-container img{
+   
     object-fit: cover;
    }
 
@@ -1836,12 +1842,13 @@ textarea::-moz-focus-inner{
    .shoe-container{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-  max-width:1200px;
+  max-width:1000px;
   width:100%;
     margin-bottom:141px;
  gap:13px;
 margin:auto;
-   row-gap:137px;  
+   row-gap:137px;
+   margin-bottom: 147px;  
 }
 
 .shoe-container img{
@@ -2306,8 +2313,10 @@ nav ul{
 
 }
 .list-wrapper{
- flex-direction: column;
+flex-direction: column;
 }
+
+
 
 .product-container{
     display:flex;
@@ -2435,6 +2444,7 @@ header{
 
 .shoe-container{
     grid-template-columns:repeat(2,1fr);
+    width: 100%;
 }
 
 
@@ -2443,7 +2453,11 @@ header{
     flex-direction: column;
    
 }
-
+.blazer-container{
+    display:flex;
+    flex-wrap: wrap;
+   width: 73%;
+}
 
 }
 
@@ -2489,8 +2503,20 @@ header{
         margin:0;
         padding:0;
     }
+    .shoe-container{
+        grid-template-columns:repeat(3,1fr);
+    }
+    .left-side .image{
+height: 60%;
+width: 300px;
+flex: 1;
+object-fit:cover;
+    }
+.right-side{
+font-size: 12px;
+margin-right: 11px;
 
-
+}
 }
 
 
@@ -2499,7 +2525,8 @@ header{
     /* Styles for phones */
     @media screen and (max-width: 480px){
         .shoe-container{
-            grid-template-columns:repeat(2,1fr);
+            grid-template-columns:1fr;
+            width: 75%;
         }
     
         .shop-container{
