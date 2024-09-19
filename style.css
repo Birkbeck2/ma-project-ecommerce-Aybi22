@@ -2613,7 +2613,7 @@ font-size: 12px;
         }
     
         .shop-container{
-            grid-template-columns:1fr;
+            grid-template-columns:repeat(2,1fr);
         }
         .blazer-gallery{
             flex-direction: column;
