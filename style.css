@@ -1809,14 +1809,13 @@ textarea::-moz-focus-inner{
    max-width:1000px;
   
    width:100%;
-    justify-content: center;
+  border:5px solid orange;
    gap:11px;
    margin-bottom:141px;
    margin:auto;
-   
-   
-   }
 
+   }
+   
    
    .shop-container .section-list img{
     display: block;
@@ -1825,17 +1824,12 @@ textarea::-moz-focus-inner{
     width:500px;
    }
 
-
-
-
-   .section-list{
-    display:flex;
-    flex-direction:column;
-    max-width:400px;
-    border:2px solid red;
-    width:100%;
    
-   }
+
+
+
+
+   
 
   
  
@@ -2376,6 +2370,7 @@ header{
 
 
 
+
 h1{
     font-size:37px;
     width:260px;
@@ -2488,7 +2483,7 @@ footer .media{
 }
 .shop-container{
     grid-template-columns:repeat(3,1fr);
-    width:50%;
+=
     
 }
 
@@ -2613,8 +2608,12 @@ font-size: 12px;
         }
     
         .shop-container{
-            grid-template-columns:repeat(2,1fr);
+            grid-template-columns:1fr;
         }
+        .shop-container.image{
+            min-height:100%;
+        }
+        
         .blazer-gallery{
             flex-direction: column;
         }
