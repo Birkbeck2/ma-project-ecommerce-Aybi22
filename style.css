@@ -227,7 +227,7 @@ header{
    
  max-width:100%;
   display:flex;
-justify-content:space-between;
+justify-content:space-around;
 align-items:center;
   
 
@@ -1157,12 +1157,10 @@ footer a{
 }
 .container{
     display:grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
     margin:auto;
     gap:13px;
-   
-
-}
+   }
 
 .message{
     font-size:73px;
@@ -1171,11 +1169,18 @@ footer a{
     padding:33px;
 }
 
-
+.job{
+    white-space:nowrap;
+}
 
 .staff-section{
     display:flex;
     
+    
+}
+.staff-section img{
+    
+    display:block;
 }
 .staff{
     display:flex;
@@ -1184,13 +1189,19 @@ footer a{
 
 .seller-wrapper{
     display:flex;
-    justify-content:center;
+    
     align-items:center;
     gap:17px;
-    max-width:100%;
+    max-width:900px;
+    
+    margin:auto;
     padding:22px;
    
     
+}
+
+.seller-wrapper .image{
+    height:100%;
 }
 .num{
     display:block;
@@ -2181,7 +2192,9 @@ form{
     text-transform:capitalize;
     font-weight:900;
     margin-bottom:22px;
-    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:var(--champagne);
+    font-family:roboto;
 }
 
 
@@ -2253,11 +2266,6 @@ form{
 
 
 
-.container{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-    border:4px solid red;
-}
 
 .left-block{
     border:2px solid red;
@@ -2635,8 +2643,18 @@ font-size: 12px;
 }
 
 
-
+  h2{
+    font-size:21px;
+  }
+    .hamburger{
+        width:11px;
     }
+  .logo p{
+    font-size:15px;
+  }
+  header{
+padding:4px;
+}
     
     
     
