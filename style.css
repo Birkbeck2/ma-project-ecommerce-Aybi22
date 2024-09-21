@@ -58,9 +58,10 @@ li.phone,li.mail{
 }
 
 .circle{
-    font-size:13px;
+    font-size:11px;
     color:var(--cambridge-blue);
-    margin-left:20px;
+    margin-left:13px;
+    white-space: nowrap;
 }
 
 h2{
@@ -275,7 +276,11 @@ nav{
    }
 
 
-
+#About{
+    display:flex;
+    flex-direction:column;
+    gap:62px;
+}
 
 
 
@@ -969,7 +974,7 @@ footer{
     z-index:-99;
     display:flex;
     flex-direction:column;
-   
+
     
    
 }
@@ -1899,11 +1904,11 @@ margin:auto;
 
 .blazer{
     display:flex;
-    max-width:1500px;
+    max-width:1200px;
     width:100%;
-    justify-content: center;
     align-items: center;
     margin:auto;
+    gap:11px;
     
 }
 .blazer-pic{
@@ -1914,30 +1919,38 @@ margin:auto;
 .blazer-gallery .btn{
     margin-top:31px;
     display:block;
+    width:100%;
 }
 
 
 .blazer-gallery{
     display:flex;
-    
+    max-width:100%;
+    gap:11px;
  
    width:100%;
     
     
 }
 
+.blazer-gallery .img{
+   
+}
+
 .gallery-section{
     
-max-width: 600px;
+    max-width: 600px;
     display:flex;
     flex-direction:column;
     align-items:center;
     text-align: center;
     width:100%;
-    
-   border:5px solid blue;
-   
-}
+    gap:11px;
+    }
+    .blazer-gallery .image{
+        height:100%;
+       
+    }
 
 
 
@@ -1984,10 +1997,10 @@ max-width: 600px;
     margin-bottom:11px;
 }
 
-
 .info-box{
     max-width:500px;
     margin-top:60px;
+   
     
 }
 
@@ -2001,6 +2014,8 @@ max-width: 600px;
   
     margin-bottom:74px;
 }
+
+
 
 .contact-box p{
     
@@ -2282,7 +2297,7 @@ form{
 
 
 @media screen and (max-width:767px){
-
+   
 
     .icon-wrapper{
         display:flex;
@@ -2412,7 +2427,14 @@ form{
 
 
 }
-    
+   footer{
+    margin-bottom:121px;
+   }
+
+   
+   
+
+
     
     
         
@@ -2655,7 +2677,18 @@ font-size: 12px;
   header{
 padding:4px;
 }
-    
+ .info-box{
+    margin:13px;
+   
+}
+.main-text{
+    margin:13px;
+}
+.contact-wrapper{
+    flex-direction: column;
+}
+ 
+    }
     
     
     

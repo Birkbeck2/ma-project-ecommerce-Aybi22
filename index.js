@@ -234,15 +234,7 @@ const items= [
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    var cartBox =[];
+
 
 
     
