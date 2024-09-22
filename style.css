@@ -803,7 +803,7 @@ font-family:verdana;
     margin-top:45px;
     align-items:center;
     gap:22px;
-   
+    flex-wrap:wrap;
     max-width:90%;
    margin: auto;
     width:100%;
@@ -2301,8 +2301,7 @@ form{
 @media screen and (max-width:767px){
     .icon-wrapper{
         display:flex;
-        flex-direction: column;
-    
+       
     }
     .offer-wrapper{
         display:flex;
@@ -2385,7 +2384,7 @@ form{
     
        .banner{
         display:flex;
-        flex-direction: column;
+       
         align-content:center;
         
     }
