@@ -2301,6 +2301,7 @@ form{
 @media screen and (max-width:767px){
     .icon-wrapper{
         display:flex;
+        flex-wrap: wrap;
        
     }
     .offer-wrapper{
@@ -2335,12 +2336,12 @@ form{
     }
     .product-wrapper{
         display:flex;
-        flex-direction:column;
+        
     }
     
     .product-container{
         display:flex;
-        flex-direction:column;
+        
     }
     
     
