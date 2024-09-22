@@ -16,7 +16,7 @@
         margin:0;
         padding:0;
         font-family:verdana;
-       
+        height:100vh;
         
     }
     
@@ -321,8 +321,8 @@ header i{
     font-size:20px;
     font-weight:bold;
     color:var(--cambridge-blue);
-    transform:translate(-50%,50%);
-    margin-bottom:15px;
+    
+    
     line-height:11px;
     font-family:zen dots;
     text-align:center;
@@ -702,7 +702,7 @@ h3{
     color:var(--black);
   
    max-width:400px;
-   width:100%;
+    width:100%;
   
     text-align:center;
     display:flex;
@@ -743,7 +743,7 @@ h3{
   
     justify-content:center;
     margin:auto;
-   padding:43px;
+   padding:63px;
     background:linear-gradient(to right,#EEE0CB,#888074);
 }
 
@@ -751,8 +751,12 @@ h3{
     width:100%;
     height:100%;
 }
+.offer-wrapper .offer-info{
+   
+}
 .offer-wrapper img{
     object-fit:fill;
+    object-fit: cover;
 }
 
 
@@ -976,6 +980,7 @@ footer{
     z-index:-99;
     display:flex;
     flex-direction:column;
+    margin-top:111px;
 
     
    
@@ -984,7 +989,9 @@ li.list-title{
     font-weight:bold;
   
 }
-
+.gategory-list{
+    margin-top:66px;
+}
 
   .footer-top-text{
     display:flex;
@@ -1470,7 +1477,7 @@ footer a{
     width:100%;
     display:flex;
     flex-direction:column;
-    height:auto;
+    
     gap:11px;
 
 
@@ -1555,11 +1562,11 @@ footer a{
    width: 200px;
 }
 .ratings{
-    max-width:100%;
+    max-width:1500px;
     width: 100%;
     display:flex;
    justify-content:center;
-   margin-top:33px;
+   
    gap:21px;
    margin:auto;
    flex-wrap:wrap;
@@ -1600,7 +1607,7 @@ footer a{
     flex-direction:column;
     border:3px solid var(--cambridge-blue);
     gap:11px;
-    padding:22px;
+    
     max-width:500px;
     height:auto;
   
@@ -1817,7 +1824,7 @@ textarea::-moz-focus-inner{
 
    width:100%;
   
-   row-gap:77px;
+   row-gap:107px;
    column-gap:22px;
    margin-bottom:341px;
    margin:auto;
@@ -2033,7 +2040,6 @@ margin:auto;
     height:100%;
 }
 
-   
 
 form{
     display:flex;
@@ -2298,7 +2304,16 @@ form{
 
 
 
-@media screen and (max-width:767px){
+@media screen and (max-width:768px){
+    
+    
+ .banner{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+ }
+    
+ 
     .icon-wrapper{
         display:flex;
        flex-direction:column ;
@@ -2311,6 +2326,7 @@ form{
     .reviews{
         display:flex;
         flex-direction: column;
+        align-items: center;
     }
     footer .media{
         display:flex;
@@ -2383,12 +2399,7 @@ form{
     
     
     
-       .banner{
-        display:flex;
-       
-        align-content:center;
-        
-    }
+      
     .shop-container{
         grid-template-columns:repeat(3,1fr);
       
@@ -2396,11 +2407,7 @@ form{
     }
    
     
-       .main-text{
-        display:flex;
-        flex-direction:column;
-        margin:33px;
-    }
+      
     
     .shoe-container{
         grid-template-columns:repeat(2,1fr);
@@ -2415,13 +2422,7 @@ form{
        
     }
     
-    .gallery-section{
-        width:50%;
-    }
    
-    .right-side img{
-        height:600px;
-    }
 
 
 
@@ -2436,6 +2437,30 @@ form{
 }
 
 
+ .offer-wrapper{
+     margin:0;
+     padding:0;
+ }
+ .shoe-container{
+     grid-template-columns:repeat(3,1fr);
+ }
+
+ .shop-container.image{
+
+ }
+
+ .offer-info{
+    max-width:100%;
+   
+ }
+ .right-side{
+    margin-right:7px;
+ }
+ .left-gallery img{
+    height:100px;
+ }
+
+ 
 
 
     
@@ -2453,68 +2478,13 @@ form{
         /* Styles for desktop screens */
         @media screen and (min-width: 768px) {
            /* Your desktop styles here */
-        .shop-container{
-            grid-template-columns:repeat(3,1fr);
-        }
+        
     
         }
         
         
         
-        /* Styles for tablets */
-        @media screen and (max-width: 768px) {
-            
-          /* Your tablet styles here */
-          .main-text h1{
-           font-size:39px;
-        }
-        nav ul{
-            display:none;
-        }
-        
-        .hamburger{
-            display:block;
-        
-        } 
-        .offer-wrapper{
-            margin:0;
-            padding:0;
-        }
-        .shoe-container{
-            grid-template-columns:repeat(3,1fr);
-        }
-    
-        .shop-container.image{
-    
-        }
-        .left-side .image{
-    height: 100%;
-    width: 300px;
-    flex: 1;
-    object-fit:cover;
-        }
-    
-    .left-gallery img{
-        height: 140px;
-    }
-    
-    
-    
-        .right-side{
-    font-size: 12px;
-    
-    }
-    .product{
        
-    }
-    .shop-container .section-list{
-        height:100%;
-    }
-    
-    .main-text{
-      
-    }
-    } 
 
     
     
@@ -2524,71 +2494,18 @@ form{
     
     
     
-    /* Styles for desktop screens */
+    /* Styles for desktop screens*/ 
     @media screen and (min-width: 768px) {
        /* Your desktop styles here */
-    .shop-container{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    }
-    
-    
-    
-    /* Styles for tablets */
-    @media screen and (max-width: 768px) {
+       .offer-wrapper .offer-info{
         
-      /* Your tablet styles here */
-      .main-text h1{
-       font-size:39px;
-    }
-    nav ul{
-        display:none;
+        
+       }
     }
     
-    .hamburger{
-        display:block;
     
-    } 
-    .offer-wrapper{
-        margin:0;
-        padding:0;
-    }
-    .shoe-container{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .shop-container.image{
-
-    }
-    .left-side .image{
-height: 100%;
-width: 300px;
-flex: 1;
-object-fit:cover;
-    }
-
-.left-gallery img{
-    height: 140px;
-}
-
-
-
-    .right-side{
-font-size: 12px;
-
-}
-.product{
+    
    
-}
-.shop-container .section-list{
-    height:100%;
-}
-
-.main-text{
-  
-}
-}
 
 
 
@@ -2660,6 +2577,7 @@ font-size: 12px;
        
        .right-side{
         width:80%;
+        margin-top:33px;
        }
 
 .left-block{
@@ -2677,9 +2595,7 @@ font-size: 12px;
   .logo p{
     font-size:15px;
   }
-  header{
-padding:4px;
-}
+ 
  .info-box{
     margin:13px;
    
@@ -2687,7 +2603,9 @@ padding:4px;
 .main-text{
     margin:13px;
 }
-
+   .offer-info{
+    width:100%;
+   }
  
     }
     
