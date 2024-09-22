@@ -1,4 +1,29 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let sub=document.querySelector('.sub');
 let shop=document.getElementById('shop');
 shop.addEventListener('mouseover', showSub);
@@ -19,200 +44,7 @@ function hideSub(){
 
 
 
-const items= [
 
-    {
-    "id":"p1",
-    "image":"images/texturesuit.jpg",
-    "name":"texture suit",
-    "price":"250",
-    "quantity":1
-    
-    },
-    
-    
-    
-    {
-        "id":"p2",
-        "image":"images/blacksuit.jpg",
-        "name":"black suit",
-        "price":"370",
-        "quantity":1
-        
-    },
-    
-    
-    
-    
-    {
-       "id":"p3",
-       "image":"images/greysuit.jpg",
-       "name":"Grey suit",
-       "price":"450",
-       "quantity":1
-            
-        },
-    
-    
-    
-    
-        {
-            "id":"p4",
-            "image":"images/cowleathershoe.jpg",
-            "name":"leather shoe",
-            "price":"475",
-            "quantity":1
-            
-            },
-    
-    
-            {
-                "id":"p5",
-                "image":"images/specialoffer.jpg",
-                "name":"regular fit suit",
-                "price":"400",
-                "quantity":1
-                
-            },
-    
-    
-    
-    
-            {
-                    "id":"p6",
-                    "image":"images/greenslimsuit.jpg",
-                    "name":"green slim suit",
-                    "price":"525",
-                    "quantity":1
-                    
-            }, 
-    
-    
-    
-    
-            {
-                        "id":"p7",
-                        "image":"images/justcouturesuit.jpg",
-                        "name":"just couture",
-                        "price":"450",
-                        "quantity":1
-                        
-            },
-                        
-                        
-                        {
-                            "id":"p8",
-                            "image":"images/navychechsuit.jpg",
-                            "name":"navy suit",
-                            "price":"655",
-                            "quantity":1
-                            
-                            },
-                            
-                            
-    
-                            {
-                                "id":"p9",
-                                "image":"images/stretchsuit.jpg",
-                                "name":"stretch chino blazer",
-                                "price":"525",
-                                "quantity":1
-                                
-                                },
-                                
-                                
-    
-                                {
-                                    "id":"p10",
-                                    "image":"images/oxfordshoe.jpg",
-                                    "name":"oxford leather shoe",
-                                    "price":"655",
-                                    "quantity":1
-                                    
-                                    },
-                                    
-                                    
-    
-    
-                                    {
-                                        "id":"p11",
-                                        "image":"images/velvetjacket.jpg",
-                                        "name":"velvet jacket",
-                                        "price":"355",
-                                        "quantity":1
-                                        
-                                        },
-                                        
-                                        
-                                        {
-                                            "id":"p12",
-                                            "image":"images/greycheckjacket.jpg",
-                                            "name":"grey check jacket",
-                                            "price":"415",
-                                            "quantity":1
-                                            
-                                            },  
-                             
-                          
-                                            {
-                                                "id":"p13",
-                                                "image":"images/navypanamasuit.jpg",
-                                                "name":"navy panama suit",
-                                                "price":"625",
-                                                "quantity":1
-                                                
-                                                },  
-                                 
-                
-             
-                                                {
-                                                    "id":"p14",
-                                                    "image":"images/blazerjacket.jpg",
-                                                    "name":"blazer jacket",
-                                                    "price":"565",
-                                                    "quantity":1
-                                                },  
-                                     
-    
-                                                {
-                                                    "id":"p15",
-                                                    "image":"images/fullbrogueoxford.jpg",
-                                                    "name":"full brogue oxford",
-                                                    "price":"355",
-                                                    "quantity":1
-                                                },  
-    
-                                                {
-                                                    "id":"p16",
-                                                    "image":"images/brogueoxford.jpg",
-                                                    "name":"brogue oxford shoe",
-                                                    "price":"415",
-                                                    "quantity":1
-                                                },  
-    
-                                                {
-                                                    "id":"p17",
-                                                    "image":"images/wingtioxfordshoe.jpg",
-                                                    "name":"wingti oxford shoe",
-                                                    "price":"625",
-                                                    "quantity":1
-                                                },  
-    
-                                                {
-                                                    "id":"p18",
-                                                    "image":"images/topgraincowleather.jpg",
-                                                    "name":"top grain leather shoe",
-                                                    "price":"565",
-                                                    "quantity":1
-                                                } 
-    
-    
-    ];
-
-
-    
-    
-    
     
     
     
@@ -1222,125 +1054,239 @@ let qBtn = document.getElementsByClassName('q-btn');
 
 
 
-
-       let products= [
+        let products= [
 
             {
-                "id":"p1",
-                "smallPic1":"images/texturesuit.jpg",
-                "smallPic2":"images/texturesuit1.jpg",
-                "smallPic3":"images/texturesuit2.jpg",
-                "main-pic1":"images/texturesuit.jpg",
-                "h1":"texture suit",
-                "item-price":250
+            "id":"p1",
+            "image":"images/texturesuit.jpg",
+            "name":"texture suit",
+            "price":"250",
+            "quantity":1
+            
+            },
+            
+            
+            
+            {
+                "id":"p2",
+                "image":"images/blacksuit.jpg",
+                "name":"black suit",
+                "price":"370",
+                "quantity":1
                 
-                
-                
+            },
+            
+            
+            
+            
+            {
+               "id":"p3",
+               "image":"images/greysuit.jpg",
+               "name":"Grey suit",
+               "price":"450",
+               "quantity":1
+                    
                 },
             
             
             
             
                 {
-                    "id":"p2",
-                    "smallPic1":"images/blacksuit.jpg",
-                    "smallPic2":"images/blacksuit1.jpg",
-                    "smallPic3":"images/blacksuit2.jpg",
-                    "main-pic1":"images/blacksuit.jpg",
-                    "h1":"black suit",
-                    "item-price":370
+                    "id":"p4",
+                    "image":"images/cowleathershoe.jpg",
+                    "name":"leather shoe",
+                    "price":"475",
+                    "quantity":1
                     
-                    
-                    
+                    },
+            
+            
+                    {
+                        "id":"p5",
+                        "image":"images/specialoffer.jpg",
+                        "name":"regular fit suit",
+                        "price":"400",
+                        "quantity":1
+                        
                     },
             
             
             
             
+                    {
+                            "id":"p6",
+                            "image":"images/greenslimsuit.jpg",
+                            "name":"green slim suit",
+                            "price":"525",
+                            "quantity":1
+                            
+                    }, 
             
             
             
             
                     {
-                        "id":"p3",
-                        "smallPic1":"images/greysuit.jpg",
-                        "smallPic2":"images/greysuit1.jpg",
-                        "smallPic3":"images/greysuit2.jpg",
-                        "main-pic1":"images/greysuit.jpg",
-                        "h1":"grey suit",
-                        "item-price":450
-                        
-                        
-                        
-                        },
-                        
-            
-                        {
-                
-                            "smallPic1":"images/cowleathershoe.jpg",
-                            "smallPic2":"images/cowleathershoe1.jpg",
-                            "smallPic3":"images/cowleathershoe2.jpg",
-                            "main-pic1":"images/cowleathershoe.jpg",
-                            "h1":"cow leather shoe",
-                            "item-price":655
-                            
-                            
-                            
-                            },
-                            
-            
-                            {
-                
-                                "smallPic1":"images/regularfitgrey.jpg",
-                                "smallPic2":"images/regularfitblue.jpg",
-                                "smallPic3":"images/regularfitblack.jpg",
-                                "main-pic1":"images/specialoffer.jpg",
-                                "h1":"regular fit suit",
-                                "item-price":490
+                                "id":"p7",
+                                "image":"images/justcouturesuit.jpg",
+                                "name":"just couture",
+                                "price":"450",
+                                "quantity":1
+                                
+                    },
                                 
                                 
-                                
-                                },
-            
-            
-            
                                 {
+                                    "id":"p8",
+                                    "image":"images/navychechsuit.jpg",
+                                    "name":"navy suit",
+                                    "price":"655",
+                                    "quantity":1
+                                    
+                                    },
+                                    
+                                    
+            
+                                    {
+                                        "id":"p9",
+                                        "image":"images/stretchsuit.jpg",
+                                        "name":"stretch chino blazer",
+                                        "price":"525",
+                                        "quantity":1
+                                        
+                                        },
+                                        
+                                        
+            
+                                        {
+                                            "id":"p10",
+                                            "image":"images/oxfordshoe.jpg",
+                                            "name":"oxford leather shoe",
+                                            "price":"655",
+                                            "quantity":1
+                                            
+                                            },
+                                            
+                                            
+            
+            
+                                            {
+                                                "id":"p11",
+                                                "image":"images/velvetjacket.jpg",
+                                                "name":"velvet jacket",
+                                                "price":"355",
+                                                "quantity":1
+                                                
+                                                },
+                                                
+                                                
+                                                {
+                                                    "id":"p12",
+                                                    "image":"images/greycheckjacket.jpg",
+                                                    "name":"grey check jacket",
+                                                    "price":"415",
+                                                    "quantity":1
+                                                    
+                                                    },  
+                                     
+                                  
+                                                    {
+                                                        "id":"p13",
+                                                        "image":"images/navypanamasuit.jpg",
+                                                        "name":"navy panama suit",
+                                                        "price":"625",
+                                                        "quantity":1
+                                                        
+                                                        },  
+                                         
+                        
+                     
+                                                        {
+                                                            "id":"p14",
+                                                            "image":"images/blazerjacket.jpg",
+                                                            "name":"blazer jacket",
+                                                            "price":"565",
+                                                            "quantity":1
+                                                        },  
+                                             
+            
+                                                        {
+                                                            "id":"p15",
+                                                            "image":"images/fullbrogueoxford.jpg",
+                                                            "name":"full brogue oxford",
+                                                            "price":"355",
+                                                            "quantity":1
+                                                        },  
+            
+                                                        {
+                                                            "id":"p16",
+                                                            "image":"images/brogueoxford.jpg",
+                                                            "name":"brogue oxford shoe",
+                                                            "price":"415",
+                                                            "quantity":1
+                                                        },  
+            
+                                                        {
+                                                            "id":"p17",
+                                                            "image":"images/wingtioxfordshoe.jpg",
+                                                            "name":"wingti oxford shoe",
+                                                            "price":"625",
+                                                            "quantity":1
+                                                        },  
+            
+                                                        {
+                                                            "id":"p18",
+                                                            "image":"images/topgraincowleather.jpg",
+                                                            "name":"top grain leather shoe",
+                                                            "price":"565",
+                                                            "quantity":1
+                                                        } 
+            
+            
+            ];
+        
+        
+            
+            
+            
+            function addToCart() {
+                // check if prodcut already exist in cart
                 
-                                    "smallPic1":"images/greenslimfit.jpg",
-                                    "smallPic2":"images/greenslimfit1.jpg",
-                                    "smallPic3":"images/greenslimfit2.jpg",
-                                    "main-pic1":"images/greenslimfit.jpg",
-                                    "h1":"green slim fit",
-                                    "item-price":525
-            
-                                },
+              }    
             
             
             
-                                {
-                
-                                    "smallPic1":"images/justcouturesuit.jpg",
-                                    "smallPic2":"images/justcouturesuit1.jpg",
-                                    "smallPic3":"images/justcouturesuit2.jpg",
-                                    "main-pic1":"images/justcouturesuit.jpg",
-                                    "h1":"just couture suit",
-                                    "item-price":450
             
-                                },
+              function renderProdcuts() {
+                products.forEach((product) => {
+                  productsEl.innerHTML += `
+                          <div class="item">
+                              <div class="item-container">
+                                  <div class="item-img">
+                                      <img src="${product.imgSrc}" alt="${product.name}">
+                                  </div>
+                                  <div class="desc">
+                                      <h2>${product.name}</h2>
+                                      <h2><small>$</small>${product.price}</h2>
+                                      <p>
+                                          ${product.description}
+                                      </p>
+                                  </div>
+                                  <div class="add-to-wishlist">
+                                      <img src="./icons/heart.png" alt="add to wish list">
+                                  </div>
+                                  <div class="add-to-cart" onclick="addToCart(${product.id})">
+                                      <img src="./icons/bag-plus.png" alt="add to cart">
+                                  </div>
+                              </div>
+                          </div>
+                      `;
+                });
+              }   
             
             
-                                {
-                
-                                    "smallPic1":"images/navychechsuit.jpg",
-                                    "smallPic2":"images/navychech1.jpg",
-                                    "smallPic3":"images/navychech2.jpg",
-                                    "main-pic1":"images/navychechsuit.jpg",
-                                    "h1":"just couture suit",
-                                    "item-price":350
             
-                                }
             
-                    ]
+       
 
 
 
@@ -1350,23 +1296,4 @@ let qBtn = document.getElementsByClassName('q-btn');
 
 
 
-
-
-
-
-
-
-
-  let product=[];
-
-
-   let leftGallery=document.querySelector('.left-gallery');
-   let leftSide=document.querySelector('.left-side'); 
- let mapProducts=product.map((x)=>{
-    console.log(x.h1);
- 
-
-
-
-});
-  
+                    

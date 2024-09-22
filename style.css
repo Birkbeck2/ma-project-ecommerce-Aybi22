@@ -96,6 +96,7 @@ h2:not(.banner h2){
 }
 .hamburger{
     margin-left:7px;
+    flex:0;
 }
 
    .quantity-box{
@@ -228,7 +229,7 @@ header{
    
  max-width:100%;
   display:flex;
-justify-content:space-around;
+justify-content:space-between;
 align-items:center;
   
 
@@ -317,10 +318,11 @@ header i{
 
 
 .logo p{
-    font-size:25px;
+    font-size:20px;
     font-weight:bold;
     color:var(--cambridge-blue);
-    
+    transform:translate(-50%,50%);
+    margin-bottom:15px;
     line-height:11px;
     font-family:zen dots;
     text-align:center;
@@ -1587,16 +1589,11 @@ footer a{
 }
 
 
-.ratings img{
-    flex:0 0 200px;
-}
 
 
 
 
-.ratings article{
-    flex:0 0 350px;
-}
+
 
 .ratings article{
     display:flex;
@@ -2102,15 +2099,19 @@ form{
 
 .sub{
     max-width:100%;
-    background:var(--champagne);
-    box-shadow:1px 1px 1px black;
+    background:white;
+    box-shadow:2px 2px 3px  rgba(0, 0, 0, 0.4);
    display: flex;
    justify-content:space-around;
    height:0px;
    transition:0.3s;
+  position:fixed;
+  right:0;
+  left:0;
   
-   overflow:hidden;
-
+  overflow:hidden;
+   
+  
    
 }
 
@@ -2152,6 +2153,7 @@ form{
 }
 #shop:hover{
     color:black;
+    
 }
 
 
@@ -2431,8 +2433,9 @@ form{
     margin-bottom:121px;
    }
 
-   
-   
+   .total-amount{
+   display: flex;
+}
 
 
     
