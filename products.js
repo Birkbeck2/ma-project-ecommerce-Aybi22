@@ -189,7 +189,17 @@ let products= [
     ];
 
 
-    
+    const body=document.querySelector('body');
+    products=document.querySelector('.products');
+
+    function onInIt(){
+        products.forEach((item,key)=>{
+         console.log(item);
+        });
+        
+        
+        
+    }
     
     
     
