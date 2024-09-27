@@ -189,33 +189,84 @@ let products= [
     
                                         ];
 
-
-    
-
-const body=document.querySelector('body');
-products=document.querySelector('.products');
-
-function onInIt() {
-  products.forEach((item,key) => {
-      let div=document.createElement('div');
-      div.classList.add('item')
-div.innerHTML=`<img src="${image}> `
-products.appendChild('div');
-
-  });
-}
-onInIt();
-
-
-
+                                        
+                                           
+                                        const productsHTML = products.map(
+                                            (product) => `
+                                           
+                                            
+                                            
+                                            <div class="product-card">
+                                                 
+                                            
+                                            <h3 class="product-name">${product.name}</h3>
+                                                  <strong>$${product.price}</strong>
+                                                  <button class="product-btn" id=${product.id}>Add to Cart</button>
+                                              </div>`
+                                          );
+                                          const result = document.querySelector(".result");
+                                          result.innerHTML = productsHTML.join("");
 
 
 
 
 
-
-
-let sub=document.querySelector('.sub');
+                                          function updateCart() {
+                                            const cartHTML = carts.map(
+                                              (item) => `<div class="cart-item">
+                                                      <h3>${item.name}</h3>
+                                                      <div class="cart-detail"><div class="mid">
+                                                          <button onclick={decrItem(${item.id})}>-</button>
+                                                          <p>${item.quantity}</p>
+                                                          <button onclick={incrItem(${item.id})}>+</button>
+                                                      </div>
+                                                      <p>$${item.price}</p>
+                                                      <button onclick={deleteItem(${item.id})} class="cart-product" id=${item.id}>D</button></div>
+                                                     </div>`
+                                            );
+                                          
+                                            const cartItems = document.querySelector(".cart-items");
+                                            cartItems.innerHTML = cartHTML.join("");
+                                          } 
+                                          
+                                          let num = document.querySelectorAll(".product-btn").length;
+                                          for (let i = 0; i < num; i++) {
+                                            document
+                                              .querySelectorAll(".product-btn")
+                                            [i].addEventListener("click", function (e) {
+                                              addToCart(products, parseInt(e.target.id));
+                                            });
+                                          }
+                    
+                                         
+                                          
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+               
+                    
+                   
+                 
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    let sub=document.querySelector('.sub');
 let shop=document.getElementById('shop');
 shop.addEventListener('mouseover', showSub);
 shop.addEventListener('mouseout', hideSub);
