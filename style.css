@@ -1550,7 +1550,7 @@ footer a{
     margin-top:33px;
     max-width:100%;
     width:100%;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
   }
 
 
@@ -1695,7 +1695,7 @@ footer a{
     
     display:flex;
     
-    max-width:800px;
+    max-width:1200px;
     width:100%;
     
     margin: auto;
@@ -1705,8 +1705,9 @@ footer a{
    
 }
 .item-container img{
+
  
- display: block;
+ 
 }
 
 .item-container .image{
@@ -2705,6 +2706,7 @@ body,html{
 
  .left-gallery img{
     height:auto;
+    width:30%;
  }
 
 .item-container{
