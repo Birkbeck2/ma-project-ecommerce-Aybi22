@@ -1,4 +1,4 @@
-let products= [
+ [
 
     {
     "id":"p1",
