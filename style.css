@@ -1694,18 +1694,28 @@ footer a{
     
     display:flex;
     
-    max-width:1200px;
+    max-width:800px;
     width:100%;
-    background-image:linear-gradient(to right,#EEE0CB,#888074);
-    padding:72px;
-    margin:auto;
+    
+    margin: auto;
+   
    gap:11px;
     margin-bottom:67px;
    
 }
-.item-container .image{
+.item-container img{
  
+ display: block;
 }
+
+.item-container .image{
+    
+    height:100%;
+   }
+   
+
+
+
 
 
 
@@ -2472,6 +2482,8 @@ h2{
     display:none;
 }
 
+
+
 @media screen and (max-width:350px){
     #contact{
         width:100%;
@@ -2484,14 +2496,22 @@ h2{
     
 
 
-@media screen and (max-width:950px){
+@media screen and (max-width:1205px){
     
     .main-text{
         margin:33px;
         width:55%;
        
     }
-nav ul{
+
+ .product{
+    flex-wrap:wrap;
+ }
+
+
+
+
+    nav ul{
  
     display:none;
 }
@@ -2514,12 +2534,10 @@ body,html{
     overflow-x:hidden;
 }
 
-.right-side{
-    margin-right:7px;
-}
+
     
 .left-side img{
-    height:auto;
+    height:100%;
 }
 
 
@@ -2556,10 +2574,12 @@ body,html{
         flex-direction: column;
         align-items: center;
     }
-    
+    header{
+        padding:4px;
+    }
     
     .footer-top-text{
-    
+    font-size:7px;
    flex-wrap: nowrap;
    gap: 2px;   
     }
@@ -2580,8 +2600,7 @@ body,html{
         margin:11px;
     }
     .product-wrapper{
-        display:flex;
-        flex-direction: column;
+        
     }
     
     .product-container{
@@ -2660,8 +2679,8 @@ body,html{
 
 
  .offer-wrapper{
-     margin:0;
-     padding:0;
+     flex-direction:column;
+     width:80%;
  }
  .shoe-container{
      grid-template-columns:repeat(3,1fr);
@@ -2675,6 +2694,7 @@ body,html{
  }
  .right-side{
     margin-top:22px;
+    
  }
 
  .left-side img{
@@ -2683,12 +2703,12 @@ body,html{
  }
 
  .left-gallery img{
-    height:100px;
+    height:auto;
  }
 
 .item-container{
   
-  
+ 
 }
 
 .blazer-container{
@@ -2765,6 +2785,14 @@ body,html{
           white-space:nowrap;
          
        } 
+       
+       header{
+        padding:9px;
+    }
+       
+       
+       
+       
        .circle{
         margin-left:3px;
        }
@@ -2918,7 +2946,7 @@ body,html{
 
 .item-container{
     flex-direction:column;
-    width:100%;
+    width:80%;
 }
 
 .figures-wrapper{
@@ -2947,7 +2975,7 @@ body,html{
         padding: 22px;
 }
 
-
+""
 
 }
     
