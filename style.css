@@ -1538,7 +1538,7 @@ footer a{
   }
 
   .right-side p{
-    font-size:13px;
+   font-size:17px;
     border-bottom:1px solid black;
   }
 
@@ -1550,7 +1550,7 @@ footer a{
     margin-top:33px;
     max-width:100%;
     width:100%;
-    flex-wrap:nowrap;
+    flex-wrap:wrap;
   }
 
 
@@ -2540,6 +2540,7 @@ body,html{
     
 .left-side img{
     height:100%;
+    width:50%;
 }
 
 
