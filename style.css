@@ -1544,7 +1544,7 @@ footer a{
 
   .product{
     display:flex;
-    gap:33px;
+    
     align-items:flex-start;
     justify-content:center;
     margin-top:33px;
@@ -2507,9 +2507,10 @@ h2{
     }
 
  .product{
-   2n
- }
 
+ }
+.left-gallery{
+}
 
 
     nav ul{
