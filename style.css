@@ -2463,7 +2463,7 @@ h2{
     background: var(--cambridge-blue);
     border:none;
     padding:11px;
-    color:white;
+    color:orange;
     margin:11px;
     cursor:pointer;
     text-transform:uppercase;
@@ -2787,17 +2787,17 @@ body,html{
 
     
     /* Styles for phones */
-    @media screen and (max-width:540px){
+    @media screen and(max-width:540px){
         
        .main-text h1{
+          font-size:22px;
           
           
-          white-space:nowrap;
          
        } 
        
        header{
-        padding:9px;
+        padding:7px;
     }
        
        
@@ -2860,9 +2860,7 @@ body,html{
             flex-direction:column;
            
         }
-        h1{
-            font-size:31px;
-        }
+        
         
         
         .blazer{
@@ -2985,7 +2983,10 @@ body,html{
         padding: 22px;
 }
 
-
+.main-text h1{
+    font-size:11px;
+    width:50px;
+}
 
 }
     
