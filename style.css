@@ -1531,14 +1531,14 @@ footer a{
     flex-direction:column;
    
     gap:22px;
-    max-width:500px;
+    max-width:900px;
     
     width:100%;
    
   }
 
   .right-side p{
-   font-size:17px;
+   font-size:13px;
     border-bottom:1px solid black;
   }
 
@@ -2506,11 +2506,7 @@ h2{
        
     }
 
- .product{
-
- }
-.left-gallery{
-}
+ 
 
 
     nav ul{
@@ -2602,9 +2598,7 @@ body,html{
     .footer-icons{
         margin:11px;
     }
-    .product-wrapper{
-        
-    }
+    
     
     .product-container{
         display:flex;
@@ -2696,7 +2690,9 @@ body,html{
    
  }
  .right-side{
-    margin-top:22px;
+    margin:22px;
+    
+    
     
  }
 
