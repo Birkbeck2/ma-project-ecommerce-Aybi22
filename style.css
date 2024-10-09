@@ -2507,7 +2507,7 @@ h2{
     }
 
  .product{
-    flex-wrap:wrap;
+   2n
  }
 
 
@@ -2723,9 +2723,7 @@ body,html{
 
 }
 .product{
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    
 }
 
 
