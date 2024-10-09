@@ -1544,13 +1544,13 @@ footer a{
 
   .product{
     display:flex;
-    
+    gap:22px;
     align-items:flex-start;
     justify-content:center;
     margin-top:33px;
     max-width:100%;
     width:100%;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
   }
 
 
