@@ -2460,7 +2460,7 @@ h2{
 
 
 .cart-btn{
-    background:orange;
+    background:#FFD700;
     border:none;
     padding:11px;
     color:var(--black);
@@ -2494,7 +2494,15 @@ h2{
         display:flex;
         flex-direction:column;
      }
-}
+     .banner{
+        display:flex;
+        flex-direction:column;
+       
+    }
+    
+
+
+    }
     
 
 
@@ -2789,12 +2797,14 @@ body,html{
     /* Styles for phones */
     @media screen and(max-width:540px){
         
-       .main-text h1{
+        h1{
           font-size:22px;
           
           
          
        } 
+       
+      
        
        header{
         padding:7px;
@@ -2849,9 +2859,7 @@ body,html{
         #contact{
             width:100%;
         }
-          .banner{
-            width:100%;
-          }  
+           
         
       
         
@@ -2983,10 +2991,7 @@ body,html{
         padding: 22px;
 }
 
-.main-text h1{
-    font-size:11px;
-    width:50px;
-}
+
 
 }
     
