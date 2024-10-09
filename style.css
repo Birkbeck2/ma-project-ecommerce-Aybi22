@@ -1693,9 +1693,9 @@ footer a{
 
 .item-container{
     
-    display:flex;
-    
-    max-width:1200px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    max-width:900px;
     width:100%;
     
     margin: auto;
@@ -2512,7 +2512,6 @@ h2{
 
 
 
-
     nav ul{
  
     display:none;
@@ -2706,12 +2705,12 @@ body,html{
 
  .left-gallery img{
     height:auto;
-    width:30%;
+   
  }
 
 .item-container{
   
- 
+ grid-template-columns: repeat(2,1fr);
 }
 
 .blazer-container{
@@ -2723,7 +2722,11 @@ body,html{
     font-size:11px;
 
 }
-
+.product{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
 
 }
@@ -2954,11 +2957,11 @@ body,html{
 .ratings{
     grid-template-columns: 1fr;
 }
-
 .item-container{
-    flex-direction:column;
-    width:80%;
-}
+  
+    grid-template-columns:1fr;
+   }
+
 
 .figures-wrapper{
     grid-template-columns:1fr;
