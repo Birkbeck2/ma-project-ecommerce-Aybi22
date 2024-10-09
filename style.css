@@ -2460,10 +2460,10 @@ h2{
 
 
 .cart-btn{
-    background: var(--cambridge-blue);
+    background:orange;
     border:none;
     padding:11px;
-    color:orange;
+    color:var(--black);
     margin:11px;
     cursor:pointer;
     text-transform:uppercase;
