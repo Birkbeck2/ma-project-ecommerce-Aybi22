@@ -2804,7 +2804,7 @@ body,html{
         
        
        .main-text{
-        font-size:12px;
+        margin:17px;
        }
        
        
@@ -2959,7 +2959,7 @@ body,html{
 
 .offer-wrapper{
     flex-direction:column;
-    width:80%;
+    width:90%;
     margin: auto;
 
 }
