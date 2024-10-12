@@ -86,7 +86,7 @@ li.phone,li.mail{
 }
 
 h2{
-    font-family: zen dots;
+    font-family: "zen dots";
     text-align:center;
     padding:21px;
     text-transform:capitalize;
@@ -336,7 +336,7 @@ header i{
     color:var(--cambridge-blue);
   
     line-height:11px;
-    font-family:zen dots;
+    font-family:"zen dots";
     text-align: center;
  
 
@@ -432,7 +432,7 @@ a.cart-btn{
     }
 
 .sale{
-    font-family:dancing script;
+    font-family:"dancing script";
     
 }
 
@@ -500,7 +500,7 @@ header p{
 .log{
     display:block;
     color:var(--champagne);
-    font-family:dancing script;
+    font-family:"dancing script";
 
 }
 .small-title{
@@ -523,7 +523,7 @@ header p{
 }
 
 .banner h2{
-    font-family:dancing script;
+    font-family:"dancing script";
     font-size:43px;
 }
 
@@ -596,7 +596,7 @@ section{
     right:0;
     top:0;
     padding:22px;
-    font-family:dancing script;
+    font-family:"dancing script";
 
 }
 .product-wrapper{
@@ -658,7 +658,7 @@ h3{
 }
 
 .featured{
-    font-family:dancing script;
+    font-family:"dancing script";
     color:var(--black);
     font-size:43px;
     font-weight:900;
@@ -667,7 +667,7 @@ h3{
 
 .left{
     color:var(--white);
-    background:var(--white);
+    background:var(--black);
     width:500px;
     margin:0;
     flex:1;
@@ -1202,7 +1202,7 @@ footer a{
 
 .message{
     font-size:73px;
-    font-family:dancing script;
+    font-family:"dancing script";
     text-align: center;
     padding:33px;
 }
@@ -1212,17 +1212,16 @@ footer a{
 }
 
 .staff-section{
-    display:flex;
-    max-width:1200px;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    max-width:100%;
+    width:100%;
     gap:17px;
-   
-    margin:auto;
-    
-}
-.staff-section img{
-    
-    display:block;
-}
+  justify-content: center;
+ 
+   }
+
+
 .staff{
     display:flex;
     flex-direction:column;
@@ -1231,15 +1230,18 @@ footer a{
 .seller-wrapper{
     display:flex;
     
+    
     align-items:center;
     gap:17px;
-    max-width:900px;
-    
-    margin:auto;
+    max-width:1200px;
+    width:100%;
+    justify-content: center;
     padding:22px;
    
     
 }
+
+
 
 .staff-info{
     margin:22px;
@@ -1291,7 +1293,7 @@ footer a{
     width:100%;
     color:var(--black);
     gap:22px;
-    margin:auto;
+   justify-content: center;
     
     
 }
@@ -1301,9 +1303,7 @@ footer a{
     height:100%;
 }
 
-.staff-section .image{
-    flex:1;
-}
+
 
 .figure-icon{
     font-size:33px;
@@ -1707,11 +1707,6 @@ footer a{
     margin-bottom:67px;
    
 }
-.item-container img{
-
- 
- 
-}
 
 .item-container .image{
     
@@ -1891,7 +1886,7 @@ textarea::-moz-focus-inner{
   .shop-container{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    max-width:1200px;
+    max-width:1000px;
    column-gap:17px;
    row-gap: 107px;
    width:100%;
@@ -1904,9 +1899,6 @@ textarea::-moz-focus-inner{
   
    
 
-   .shop-container .section-list{
-  
-   }
    .shop-container .image{
     height:100%;
    }
@@ -2012,9 +2004,7 @@ margin:auto;
     
 }
 
-.blazer-gallery .img{
-   
-}
+
 
 .gallery-section{
     
@@ -2096,10 +2086,6 @@ margin:auto;
 
 
 
-.contact-box p{
-    
-    
-}
 
 .info-box p{
     font-size:12px;
@@ -2173,9 +2159,7 @@ form .send-btn{
     }
 
 
-
-
-
+   
 
 .section-text{
     font-size:17px;
@@ -2214,9 +2198,7 @@ form .send-btn{
 }
 
 
- .gallery-section .image{
-    
- }
+ 
 
 .ad{
     background:#FFD700;
@@ -2270,10 +2252,7 @@ form .send-btn{
 
 
 
-.info-box{
-   
-  
-}
+
 
 .first-price{
     text-decoration: line-through;
@@ -2288,7 +2267,7 @@ form .send-btn{
 .blink{ 
     font-size:31px;
     font-style:italic;
-    font-family:dancing script;
+    font-family:"dancing script";
     text-transform:capitalize;
     font-weight:900;
     margin-bottom:22px;
@@ -2375,7 +2354,7 @@ form .send-btn{
 
 
 .left-block{
-    border:2px solid red;
+  
     display:flex;
     
 }
@@ -2525,7 +2504,11 @@ h2{
        
     }
 
- 
+ .staff-section{
+    grid-template-columns: repeat(2,1fr);
+    width:70%;
+    
+ }
 
 
     nav ul{
@@ -2540,10 +2523,7 @@ h2{
         width:80%;
         margin:auto;
     }
-.right-box{
-  
-}
-   
+ 
 
     .blazer{
         width:90%;
@@ -2634,9 +2614,7 @@ body,html{
     }
     
   
-    .container{
-        
-    }
+   
     
     
     
@@ -2740,9 +2718,7 @@ body,html{
     font-size:11px;
 
 }
-.product{
-    
-}
+
 
 
 }
@@ -2846,7 +2822,9 @@ body,html{
           
         }
         
-        
+        .seller-wrapper{
+            flex-direction: column;
+        }
     .seller-wrapper .item-title{
         margin-left:10px;
     }    
@@ -2995,7 +2973,7 @@ body,html{
 }
 
 .staff-section{
-    flex-direction: column;
+    grid-template-columns:1fr;
 }
 
 
@@ -3017,7 +2995,7 @@ body,html{
     
   
     
- @media screen and(max-width:767){
+ @media screen and (max-width:767px){
     .shop-container{
         width:50%;
        
