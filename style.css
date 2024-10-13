@@ -36,13 +36,7 @@
         margin-top:auto;
     }
     
-    
-    
-    
-    
-    
-    
-    img{
+img{
        max-width:100%;
        width:100%;
        height:100%;
@@ -251,17 +245,14 @@ header{
  position:sticky;
  top:0;
  overflow: hidden;
-   
+ 
     
 }
 
 
    
    
-.user-icon{
-    color:var(--white);
-    
-   }
+
    
 nav{
   margin:0;
@@ -298,13 +289,25 @@ nav{
 
 
 
-
-
- nav a:hover{
+nav a:hover{
     color:#000000;
     background:#FFFFFF;
     
 }
+
+
+
+
+.shop:hover{
+
+    background:white;
+}
+
+#shop:hover{
+    color:black;
+    
+}
+
 
 
 
@@ -323,8 +326,6 @@ nav li{
     font-family:verdana;
 }
 
-
-
 header i{
     font-size:26px;
 }
@@ -334,7 +335,6 @@ header i{
     font-size:20px;
     font-weight:bold;
     color:var(--cambridge-blue);
-  
     line-height:11px;
     font-family:"zen dots";
     text-align: center;
@@ -346,15 +346,10 @@ header .logo{
   width:100px;
   margin:auto;
    
-    
 }
 
 
-.basket-name{
-    margin-left:11px;
-    text-transform:capitalize;
-    font-size:11px;
-}
+
 
 
 a.cart-btn{
@@ -437,22 +432,22 @@ a.cart-btn{
 }
 
 
-
-
-
-
 .item-title{
    display:flex;
- max-width:400px;
-    width:100%;
+   max-width:400px;
+   width:100%;
   flex-direction: column;
- align-items:start;
-  padding:11px;
+justify-content: flex-start;
+ padding:7px;
+
 }
 
 
 
-
+.shop-section{
+ 
+  margin-top: 73px;
+}
 
  
  
@@ -1696,23 +1691,18 @@ footer a{
 
 .item-container{
     
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    max-width:900px;
-    width:100%;
-    
-    margin: auto;
-   
-   gap:11px;
-    margin-bottom:67px;
-   
+    display:flex;
+align-items:flex-start;
+   max-width:1200px;
+   margin:auto;
+   gap:4px;
+  
 }
 
 .item-container .image{
-    
-    height:100%;
+ flex:0 0 24%;
    }
-   
+ 
 
 
 
@@ -1886,11 +1876,11 @@ textarea::-moz-focus-inner{
   .shop-container{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    max-width:1000px;
+    max-width:1200px;
    column-gap:17px;
-   row-gap: 107px;
+  row-gap: 107px;
    width:100%;
-   margin:auto;
+  margin:auto;
    
    
 
@@ -2172,22 +2162,21 @@ form .send-btn{
     max-width:100%;
     background:white;
     box-shadow:2px 2px 3px  rgba(0, 0, 0, 0.4);
-   display: flex;
+    display: flex;
    justify-content:space-around;
-   height:0px;
+   height:0;
    transition:0.3s;
-  position:fixed;
-  right:0;
-  left:0;
-  
-  overflow:hidden;
-   
+   position:fixed;
+   right:0;
+   left:0;
+   overflow: hidden;
   
    
 }
 
 .sublist{
     height:300px;
+    top:32px;
 
 }
 
@@ -2212,18 +2201,6 @@ form .send-btn{
     
 }
 
-
-.shop:hover{
-
-    background:white;
-   
-  
-    
-}
-#shop:hover{
-    color:black;
-    
-}
 
 
 
@@ -2472,7 +2449,10 @@ h2{
 }
 
 
-
+.image-bottom{
+    display:flex;
+    align-items:center;
+}
 
 
 
@@ -2489,7 +2469,12 @@ h2{
         flex-direction:column;
        
     }
-    
+    .item-name{
+        font-size:11px;
+    }
+    .stock-info{
+        font-size:7px;
+    }
 
 
     }
@@ -2503,6 +2488,7 @@ h2{
        
        
     }
+
 
  .staff-section{
     grid-template-columns: repeat(2,1fr);
@@ -2706,7 +2692,7 @@ body,html{
 
 .item-container{
   
- grid-template-columns: repeat(2,1fr);
+ 
 }
 
 .blazer-container{
@@ -2791,9 +2777,7 @@ body,html{
         margin-left: 22px;
        }
        
-       
-       
-       
+      
        
        .container{
         grid-template-columns: 1fr;
@@ -2892,7 +2876,8 @@ body,html{
     
         .shop-container{
             grid-template-columns:1fr;
-            width:80%;
+           
+           
         }
         
         
@@ -2909,9 +2894,10 @@ body,html{
        
         }
         .list-wrapper{
-            display:flex;
-            flex-direction:column;
-            align-items: center;
+           width:100%;
+           display:flex;
+           flex-direction:column;
+           
         }
          .blazer{
             flex-direction:column;
@@ -2960,7 +2946,9 @@ body,html{
 .item-container{
   
     grid-template-columns:1fr;
-   }
+    flex-direction:column;
+    width:80%;
+}
 
 
 .figures-wrapper{
