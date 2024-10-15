@@ -1639,8 +1639,8 @@ footer a{
 .ratings article{
     display:flex;
     flex-direction:column;
-    background:var(--cambridge-blue);
-    color:black;
+    background:var(--black);
+    color:#fff;
     gap:11px;
     
     max-width:400px;
