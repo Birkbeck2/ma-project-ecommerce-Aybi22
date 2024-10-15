@@ -1640,7 +1640,7 @@ footer a{
     display:flex;
     flex-direction:column;
     background:var(--champagne);
-    color:#fff;
+    color:var(--black);
     gap:11px;
     
     max-width:400px;
