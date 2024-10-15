@@ -1639,7 +1639,7 @@ footer a{
 .ratings article{
     display:flex;
     flex-direction:column;
-    background:var(--black);
+    background:var(--champagne);
     color:#fff;
     gap:11px;
     
