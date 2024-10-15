@@ -1573,7 +1573,7 @@ footer a{
 .shipping-info{
     text-transform:capitalize;
     font-weight:900;
-    color:var(--cambridge-blue);
+   
     font-size:11px;
 }
 
@@ -1636,12 +1636,11 @@ footer a{
 
 
 
-
 .ratings article{
     display:flex;
     flex-direction:column;
     background:var(--cambridge-blue);
-    color:white;
+    color:black;
     gap:11px;
     
     max-width:400px;
@@ -1848,7 +1847,6 @@ width:100%;
 .stock{
     font-size:13px;
     font-weight: 900;
-    color: var(--cambridge-blue);
     text-transform:capitalize;
     }
 
