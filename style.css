@@ -34,6 +34,7 @@
 
     footer{
         margin-top:auto;
+        
     }
     
 img{
@@ -1626,8 +1627,20 @@ footer a{
    
 }
 
-
-
+.product-detail p{
+    max-width:500px;
+    padding:11px;
+   
+}
+fieldset{
+    max-width:500px;
+    border:1px solid var(--champagne);
+   
+}
+legend{
+    padding:4px 5px;
+    margin-left:11px;
+}
 
 
 
