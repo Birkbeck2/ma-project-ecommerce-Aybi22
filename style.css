@@ -2290,9 +2290,9 @@ form .send-btn{
    
     max-width:1200px;
     width:100%;
-    display:grid;
-grid-template-columns: repeat(3,1fr);
-  border:3px solid yellow;
+    display:flex;
+
+  
     margin-bottom: 137px;
     margin:auto;
 }
@@ -2451,10 +2451,7 @@ h2{
     display:flex;
     align-items:center;
 }
-.product-wrapper{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-}
+
 
 
 @media screen and (max-width:350px){
