@@ -2290,9 +2290,9 @@ form .send-btn{
    
     max-width:1200px;
     width:100%;
-    display:flex;
-
-  
+    display:grid;
+grid-template-columns: repeat(3,1fr);
+  border:3px solid yellow;
     margin-bottom: 137px;
     margin:auto;
 }
@@ -2475,6 +2475,12 @@ h2{
     }
 
 
+    }
+
+    .list-wrapper{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        border: 3px solid yellow;
     }
     
 
