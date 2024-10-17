@@ -1609,11 +1609,7 @@ footer a{
   
    
 }
-.left-block{
-    border:5px solid red;
-    display:flex;
-    gap:7px;
-}
+
 
 
 .top-info{
@@ -2328,11 +2324,7 @@ form .send-btn{
 
 
 
-.left-block{
-  
-    display:flex;
-    
-}
+
 
 h2{
     font-family:roboto;
