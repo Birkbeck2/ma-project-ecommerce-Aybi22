@@ -1774,7 +1774,7 @@ align-items:flex-start;
 }
     
 
-h4{
+.q-container h3{
     text-transform:capitalize;
     display:flex;
     justify-content: space-between;
@@ -2212,7 +2212,10 @@ form .send-btn{
 
 
 
-
+legend{
+    font-weight: 900;
+    text-transform:capitalize;
+}
 
 
 
