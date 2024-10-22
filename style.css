@@ -1935,7 +1935,6 @@ textarea::-moz-focus-inner{
 
 
 
-
 .blazer-container{
     display:grid;
     grid-template-columns: repeat(3,1fr);
@@ -2042,7 +2041,7 @@ margin:auto;
     max-width:1200px;
    width:100%;
    flex-wrap: wrap;
-   gap:17px;
+  gap:17px;
    margin:auto;
  
 }
