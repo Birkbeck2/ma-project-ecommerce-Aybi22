@@ -1923,7 +1923,7 @@ textarea::-moz-focus-inner{
   
  
  .section-list h3{
-    background:#FFD700;
+    background:var(--champagne);
     text-align:center;
     width:100px;
     margin:auto;
