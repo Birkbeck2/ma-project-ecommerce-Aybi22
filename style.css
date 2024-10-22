@@ -777,7 +777,9 @@ h3{
     margin-top:97px;
 }
 
-
+h4{
+    text-transform: capitalize;;
+}
 
 
 
@@ -1976,7 +1978,7 @@ margin:auto;
     display:flex;
     max-width:1200px;
     width:100%;
-    align-items: center;
+    align-items:center;
     margin:auto;
     gap:11px;
     
@@ -1984,6 +1986,7 @@ margin:auto;
 .blazer-pic{
     object-fit:contain;
     max-width:700px;
+   width:100%;
 }
 
 .blazer-gallery .btn{
