@@ -170,6 +170,193 @@
                                                                 
                                                                 
                                                                 
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                let cart = JSON.parse(localStorage.getItem("CART")) || [];
+
+
+                                                                updateCart();
+                                
+                                   
+                                                                    
+                                                                    
+                                                                    
+                                                                    const productsHTML = products.map(
+                                                                        (product) => `
+                                
+                                
+                                <button class="add-btn" id=${product.id}>Add to Cart</button>
+                                                                          </div>
+                                
+                                
+                                
+                                `
+                                
+                                                                       
+                                                                              
+                                                                      );  
+                                                                      
+                                                                 const result=document.querySelector('.result');
+                                                                 result.innerHTML=productsHTML.join("");   
+                                
+                                                                       
+                                                                      function updateCart() {
+                                                                        const cartHTML = cart.map(
+                                                                          (item) => `<div class="cart-item">
+                                                                              <img src=${item.image}>    
+                                                                          
+                                                                          <h3>${item.name}</h3>
+                                                                                  <div class="cart-detail"><div class="mid">
+                                                                                      <button onclick={decrItem(${item.id})}>-</button>
+                                                                                      <p>${item.quantity}</p>
+                                                                                      <button onclick={incrItem(${item.id})}>+</button>
+                                                                                  </div>
+                                                                                  <p>$${item.price}</p>
+                                                                                  <button onclick={deleteItem(${item.id})} class="cart-product" id=${item.id}> 
+                                                                                  <i class="fa-solid fa-trash"></i>
+                                                                                  
+                                                                                  
+                                                                                  </button></div>
+                                                                                 </div>`
+                                                                        );
+                                                                      
+                                                                        const cartItems = document.querySelector(".cart-items");
+                                                                        cartItems.innerHTML = cartHTML.join("");
+                                                                        localStorage.setItem("CART", JSON.stringify(cart));
+                                                                      
+                                                                      
+                                                                      }
+                                
+                                                                      
+                                
+                                                                      let nums = document.querySelectorAll(".product-btn").length;
+                                                                      for (let i = 0; i < nums; i++) {
+                                                                        document.querySelectorAll(".product-btn")
+                                                                        [i].addEventListener("click", function (e) {
+                                                                          addToCart(products, parseInt(e.target.id));
+                                                                        });
+                                                                      }
+                                
+                                
+                                
+                                                                      function addToCart(products, id){
+                                                                        const product = products.find((product) => product.id === id);
+                                                                        const cartProduct = cart.find((product) => product.id === id);
+                                                                        if (cartProduct != undefined && product.id == cartProduct.id) {
+                                                                          incrItem(id);
+                                                                        } else {
+                                                                          cart.unshift(product);
+                                                                        }
+                                                                        updateCart();
+                                                                        getTotal(cart);
+                                                                      
+                                                                       
+                                                                    
+                                                                    };     
+                                
+                                
+                                
+                                                                      function getTotal(cart) {
+                                                                        let { totalItem, cartTotal } = cart.reduce(
+                                                                          (total, cartItem) => {
+                                                                            total.cartTotal += cartItem.price * cartItem.quantity;
+                                                                            total.totalItem += cartItem.quantity;
+                                                                            return total;
+                                                                          },
+                                                                          { totalItem: 0, cartTotal: 0 }
+                                                                        );
+                                                                        const totalItemsHTML = document.querySelector(".noOfItems");
+                                                                        totalItemsHTML.innerHTML = `${totalItem}`;
+                                                                        const totalAmountHTML = document.querySelector(".total");
+                                                                        totalAmountHTML.innerHTML = `$${cartTotal}`;
+                                                                       
+                                                                      }              
+                                                
+                                                
+                                                                      function incrItem(id) {
+                                                                        for (let i = 0; i < cart.length; i++) {
+                                                                          if (cart[i] && cart[i].id == id) {
+                                                                            cart[i].quantity += 1;
+                                                                          }
+                                                                        }
+                                                                        updateCart();
+                                                                        getTotal(cart);
+                                                                      }
+                                                                      
+                                                                      function decrItem(id) {
+                                                                        for (let i = 0; i < cart.length; i++) {
+                                                                          if (cart[i].id == id && cart[i].quantity > 1) {
+                                                                            cart[i].quantity -= 1;
+                                                                          }
+                                                                        }
+                                                                        updateCart();
+                                                                        getTotal(cart);
+                                                                      }
+                                                                      
+                                                                      function deleteItem(id) {
+                                                                        for (let i = 0; i < cart.length; i++) {
+                                                                          if (cart[i].id === id) {
+                                                                            cart[i].quantity = 1;
+                                                                            cart.splice(i, 1);
+                                                                          }
+                                                                        }
+                                                                        updateCart();
+                                                                        getTotal(cart);
+                                                                      }
+                                                
+                                                                      function deleteItem(id) {
+                                                                        for (let i = 0; i < cart.length; i++) {
+                                                                          if (cart[i].id === id) {
+                                                                            cart[i].quantity = 1;
+                                                                            cart.splice(i, 1);
+                                                                          }
+                                                                        }
+                                                                        updateCart();
+                                                                        getTotal(cart);
+                                                                      }
+                                       
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                       
+                                                  
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                let productId = new URLSearchParams(window.location.search).get('id');
+                                                                let thisProduct = products.filter(value => value.id == productId)[0];
+                                                                if(!thisProduct){
+                                                                    window.location.href = "/";
+                                                                }
+                                                                                                              
+                                                                
+                                                                
                                 
                                 
                                 

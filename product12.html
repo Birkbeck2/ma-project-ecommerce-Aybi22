@@ -857,7 +857,7 @@
         
         
         
-
+                <div id="myDiv" data-name="john"  data-date-of-birth="July"></div>
 
 
 
@@ -865,6 +865,22 @@
 
 
 
+<script>
+
+let myDiv=document.getElementById('myDiv');
+console.log(myDiv.dataset);
+console.log(myDiv.dataset.name);
+myDiv.dataset.name="";
+console.log(myDiv.dataset);/
+
+
+
+
+
+
+
+
+</script>
 
 
 
