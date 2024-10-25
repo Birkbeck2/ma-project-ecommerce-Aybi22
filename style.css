@@ -1544,7 +1544,7 @@ footer a{
     border-bottom:1px solid black;
   }
 
-  .product{
+  .result{
     display:flex;
     gap:22px;
     align-items:flex-start;
@@ -1555,7 +1555,6 @@ footer a{
     flex-wrap:wrap;
    
   }
-
 
 
 

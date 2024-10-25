@@ -2,7 +2,19 @@
          
                                 let products= [
 
-                                    {id:1,image:"images/texturesuit.jpg", name:"texture suit",price:250,quantity:1, },
+                                    {
+                                        id:1,
+                                    image:"images/texturesuit.jpg",
+                                   
+                                    name:"texture suit",
+                                    price:250,
+                                    quantity:1, 
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    },
                                     {id:2,image:"images/blacksuit.jpg",name:"black suit",price:"370",quantity:1,},
                                     {id:3,image:"images/greysuit.jpg",name:"Grey suit",price:"450",quantity:1, href:"product3.html"},
                                     {id:4,image:"images/cowleathershoe.jpg",name:"leather shoe",price:475,quantity:1,href:"product4.html"},
@@ -185,25 +197,144 @@
                                 
                                    
                                                                     
+                                                                        
+                                        const productsHTML = products.map(
+                                            (product) => `
+    
+    
+    
+
+
+        <div class="left-gallery">
+
+            <div class="image">
+            <img src=${product.image} width="150" height="150" class="small-pic2">
+            
+            
+            </div>
+            
+            <div class="image">
+                <img src= ${product.image}  width="150" height="150" class="small-pic2" >
+                
+                
+                </div>
+            
+            
+                <div class="image">
+                    <img src=${product.image} width="150" height="150"  class="small-pic2">
+                    
+                    
+                    </div>
+            
+            
+            
+            
+            </div>
+            
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+        <div class="left-side">
+
+
+
+        <div class="image">
+            
+            <img src=${product.image}  width="500" height="500" alt="black suit image" id="main-pic2">
+           
+            
+       
+            </div>
+        
+          
+           
+       
+</div>
+
+<div class="right-side">
+
+<h1>${product.name}<span class="item-price"><span class="first-price">£400</span>${product.price}</span></h1>
+<span class="stock">in stock</span>
+
+<span class="stars">
+    <i class="fa-solid fa-star"></i>
+
+<i class="fa-solid fa-star"></i>
+
+<i class="fa-solid fa-star"></i> 
+<i class="fa-solid fa-star"></i>
+
+
+
+
+</span>
+
+
+
+
+
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+    
+    </p>
+    
+    <div class="size">
+        <span class="xsmall">XS</span>
+        <span class="small">S</span>
+        <span class="medium">M</span>
+        <span class="large">L</span>
+        <span class="extralarge">XL</span>
+        
+        </div>
+   
+   
+   
+   
+   
+   
+   
+   
+    <div class="add-cart">
+    
+    <div class="counter">
+
+<input type="button" value="-" id="decrease">
+<input type="button" value="1"  id="number">
+<input type="button" value="+" id="increase">
+
+
+
+
+
+    </div>
+    
+    <button class="add-btn" id=${product.id}>Add to Cart</button>
+                                              </div>
+
+    
+   
+    </div> `
+
+
+  
                                                                     
-                                                                    
-                                                                    const productsHTML = products.map(
-                                                                        (product) => `
-                                
-                                
-                                <button class="add-btn" id=${product.id}>Add to Cart</button>
-                                                                          </div>
-                                
-                                
-                                
-                                `
-                                
-                                                                       
-                                                                              
-                                                                      );  
-                                                                      
-                                                                 const result=document.querySelector('.result');
-                                                                 result.innerHTML=productsHTML.join("");   
+);  
+         const result=document.querySelector('.result');
+         result.innerHTML=productsHTML.join('');                                                         
+                                                              
                                 
                                                                        
                                                                       function updateCart() {
@@ -235,9 +366,9 @@
                                 
                                                                       
                                 
-                                                                      let nums = document.querySelectorAll(".product-btn").length;
+                                                                      let nums = document.querySelectorAll(".add-btn").length;
                                                                       for (let i = 0; i < nums; i++) {
-                                                                        document.querySelectorAll(".product-btn")
+                                                                        document.querySelectorAll(".add-btn")
                                                                         [i].addEventListener("click", function (e) {
                                                                           addToCart(products, parseInt(e.target.id));
                                                                         });
@@ -348,13 +479,6 @@
                                                                 
                                                                 
                                                                 
-                                                                
-                                                                let productId = new URLSearchParams(window.location.search).get('id');
-                                                                let thisProduct = products.filter(value => value.id == productId)[0];
-                                                                if(!thisProduct){
-                                                                    window.location.href = "/";
-                                                                }
-                                                                                                              
                                                                 
                                                                 
                                 
