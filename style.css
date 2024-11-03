@@ -1602,7 +1602,7 @@ footer a{
    width: 200px;
 }
 .ratings{
-    max-width:800px;
+    max-width:900px;
     width: 100%;
     display:grid;
     grid-template-columns: repeat(2,1fr);
@@ -1657,7 +1657,7 @@ legend{
     color:var(--black);
     gap:11px;
     font-weight: 900;
-    max-width:400px;
+    max-width:600px;
     height:auto;
   
 }
