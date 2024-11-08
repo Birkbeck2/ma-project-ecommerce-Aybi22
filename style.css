@@ -387,7 +387,7 @@ a.cart-btn{
     color:var(--champagne);
     font-weight:bold;
 }
-.section-list >.stars{
+article >.stars{
     text-align:center;
 }
 
@@ -1215,11 +1215,10 @@ footer a{
 .staff-section{
     display:grid;
     grid-template-columns: repeat(4,1fr);
-    max-width:100%;
+    max-width:1200px;
     width:100%;
     gap:17px;
-  justify-content: center;
- 
+    margin:auto;
    }
 
 
@@ -1278,11 +1277,12 @@ footer a{
 .figures{
     display:flex;
     flex-direction:column;
-    max-width:400px;
+    max-width: 400px;
+    width:100%;
     align-items:center;
     padding:22px;
     background: var(--champagne);
-    width:100%;
+    
     margin:auto;
 
 }
@@ -1290,7 +1290,7 @@ footer a{
     display:grid;
     grid-template-columns: repeat(4,1fr);
    
-    max-width:100%;
+    max-width:1200px;
     width:100%;
     color:var(--black);
     gap:22px;
