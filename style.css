@@ -389,6 +389,7 @@ a.cart-btn{
 }
 article >.stars{
     text-align:center;
+    padding:22px;
 }
 
 .close{
@@ -2817,7 +2818,10 @@ body,html{
         padding:7px;
     }
        
-       
+     .product-container{
+        display: flex;
+        flex-direction:column;
+     }  
        
        
        .circle{
@@ -2959,8 +2963,7 @@ body,html{
 
 .offer-wrapper{
     flex-direction:column;
-    width:90%;
-    margin: auto;
+   
 
 }
 
@@ -3005,7 +3008,10 @@ body,html{
         padding: 22px;
 }
 
-
+.q-container{
+ width:100%;
+  border: 2px solid red;;
+}
 
 }
     
