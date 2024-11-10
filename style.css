@@ -38,14 +38,13 @@
         
     }
     
-img{
-       max-width:100%;
-       width:100%;
-       height:100%;
-       display: block;
-       object-fit:cover;
-     
-    }
+    img{
+        max-width:100%;
+        width:100%;
+        height:100%;
+        object-fit:cover;
+      
+     }
      
 
 
@@ -591,16 +590,22 @@ section{
 
 }
 .product-wrapper{
-    
-background-image:linear-gradient(to right,#EEE0CB,#888074);
+    background-image:linear-gradient(to right,#EEE0CB,#888074);
+
    
 }
 
 .product-container{
     display:flex;
+    max-width:100%;
+    width:100%; 
     gap:40px;
+    
     align-items:center;
+    
 }
+
+.
 
 h3{
    text-align:center;
@@ -749,24 +754,14 @@ h3{
     max-width:100%;
     width:100%;
     margin-top:67px;
-    justify-content:center;
+    
     margin:auto;
    padding:63px;
     background:linear-gradient(to right,#EEE0CB,#888074);
 
 }
 
-.offer-wrapper img{
-    width:100%;
-    height:100%;
-}
-.offer-wrapper .offer-info{
-   
-}
-.offer-wrapper img{
-    object-fit:fill;
-    object-fit: cover;
-}
+
 
 .section-title{
     margin-top:97px;
@@ -778,9 +773,7 @@ h4{
 
 
 
-.product-list{
-   
-}
+
 .product-list section{
     display:flex;
     flex-direction:column;
@@ -1914,11 +1907,14 @@ textarea::-moz-focus-inner{
 
    .shop-container .image{
     height:100%;
-
+   
    }
    .shop-container img{
+    
+    
     height:100%;
     object-fit:cover;
+   
    }
    
    
@@ -1991,17 +1987,19 @@ margin:auto;
 
 .blazer{
     display:flex;
-    max-width:1200px;
+    max-width:100%;
     width:100%;
     align-items:center;
     margin:auto;
-    gap:11px;
+    gap:43px;
+    background:var(--champagne);
+    padding:33px;
     
 }
-.blazer-pic{
-    object-fit:contain;
-    max-width:700px;
-   width:100%;
+.blazer-pic img{
+    
+    width:100%;
+    height:auto;
 }
 
 .blazer-gallery .btn{
@@ -2009,12 +2007,24 @@ margin:auto;
     display:block;
     width:100%;
 }
-
+.blazer-title{
+    font-weight:900;
+    font-size:36px;
+    text-transform:capitalize;
+    max-width:400px;
+    width:100%;
+    line-height:42px;
+}
+.gallery-btn{
+    margin-top:32px;
+    display:block;
+    width:200px;
+}
 
 .blazer-gallery{
     display:flex;
     max-width:100%;
-    gap:11px;
+    gap:23px;
  
    width:100%;
     
@@ -2331,12 +2341,7 @@ legend{
 .list-wrapper .image{
     height:100%;
 }
-.list-wrapper img{
-    
-    width:80%;
-    margin:auto;
-    object-fit:cover;
-}
+
 
 
 .item-title{
@@ -2482,6 +2487,8 @@ h2{
 
 
 
+
+
 @media screen and (max-width:350px){
     #contact{
         width:100%;
@@ -2520,7 +2527,7 @@ h2{
 
  .staff-section{
     grid-template-columns: repeat(2,1fr);
-    width:70%;
+   
     
  }
 
@@ -2534,7 +2541,7 @@ h2{
     display:block;
 }
     .list-wrapper{
-        width:80%;
+       
         margin:auto;
     }
  
@@ -2578,10 +2585,7 @@ body,html{
         grid-template-columns:repeat(2,1fr);
        
     }
-    .offer-wrapper{
-     padding: 33px;
-    }
-
+    
 
     .reviews{
         display:flex;
@@ -2616,8 +2620,7 @@ body,html{
     
     
     .product-container{
-        display:flex;
-        flex-direction: column;
+        width:100%;
     }
     
     
@@ -2688,10 +2691,7 @@ body,html{
 }
 
 
- .offer-wrapper{
-     flex-direction:column;
-     width:80%;
- }
+ 
  .shoe-container{
      grid-template-columns:repeat(3,1fr);
  }
@@ -2719,10 +2719,7 @@ body,html{
    
  }
 
-.item-container{
-  
- 
-}
+
 
 .blazer-container{
     grid-template-columns: repeat(2,1fr);
@@ -2749,23 +2746,7 @@ body,html{
 
 
 
-/* Styles for desktop screens */
-        @media screen and (min-width: 768px) {
-           /* Your desktop styles here */
-        
-    
-        }
-        
-        
-        @media screen and (min-width: 1024px) {
-            /* Your desktop styles here */
-           body{
-            width:100%;
-           }
-            .main-text{
-                margin:22px;
-            }
-         }
+
             
        
 
@@ -2886,7 +2867,7 @@ body,html{
         
         
         .blazer{
-            width:80%;
+           
         }
         
         
@@ -2908,7 +2889,6 @@ body,html{
     
         .shop-container{
             grid-template-columns:1fr;
-             
            
            
         }
@@ -2926,7 +2906,7 @@ body,html{
        
         }
         .list-wrapper{
-           width:100%;
+          
            display:flex;
            flex-direction:column;
            
@@ -2961,15 +2941,9 @@ body,html{
   
 
 
-.offer-wrapper{
-    flex-direction:column;
-   
 
-}
 
-.offer-info{
-    width:100%;
-   }
+
  
 .ratings{
     grid-template-columns: 1fr;
@@ -2988,7 +2962,7 @@ body,html{
 
 .blazer-container{
     grid-template-columns: 1fr;
-    width:80%;
+    width:100%;
 }
 
 .staff-section{
@@ -3017,13 +2991,7 @@ body,html{
     
   
     
- @media screen and (max-width:767px){
-    .shop-container{
-        width:50%;
-       
-    }
- }  
-    
+ 
     
     
     
