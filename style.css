@@ -605,7 +605,7 @@ section{
     
 }
 
-.
+
 
 h3{
    text-align:center;
@@ -1934,6 +1934,8 @@ textarea::-moz-focus-inner{
     margin:auto;
     padding:0;
     margin-bottom:5px;
+    font-size:13px;
+    text-transform: capitalize;
    
 }
 
@@ -1986,21 +1988,16 @@ margin:auto;
 }
 
 .blazer{
-    display:flex;
-    max-width:100%;
+   display:flex;
+   
+    gap:22px;
     width:100%;
-    align-items:center;
     margin:auto;
-    gap:43px;
-    background:var(--champagne);
-    padding:33px;
-    
+    background: var(--champagne);
+    padding: 33px;
 }
-.blazer-pic img{
-    
-    width:100%;
-    height:auto;
-}
+
+
 
 .blazer-gallery .btn{
     margin-top:31px;
@@ -2022,32 +2019,39 @@ margin:auto;
 }
 
 .blazer-gallery{
-    display:flex;
-    max-width:100%;
-    gap:23px;
- 
-   width:100%;
-    
+   display:flex;
+    gap:11px;
+    max-width:50%;
+    width:100%;
     
 }
-
+.blazer-section img{
+  
+  
+}
+.blazer-pic{
+    
+height:auto;
+   
+}
 
 
 .gallery-section{
     
-    max-width: 600px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    text-align: center;
-    width:100%;
-    gap:11px;
+  display:flex;
+  flex-direction:column;
+  margin:auto;
+  text-align:center;
+   gap:22px;
+   max-width:500px; 
+    
+    
     }
     .blazer-gallery .image{
-        height:100%;
+       height:100%;
        
     }
-
+   
 
 
 #contact{
@@ -2487,8 +2491,6 @@ h2{
 
 
 
-
-
 @media screen and (max-width:350px){
     #contact{
         width:100%;
@@ -2546,9 +2548,7 @@ h2{
     }
  
 
-    .blazer{
-        width:90%;
-    }
+    
 body,html{
     max-width:100%;
     overflow-x:hidden;
@@ -2730,7 +2730,10 @@ body,html{
     font-size:11px;
 
 }
-
+.blazer{
+    display:flex;
+    flex-direction:column;
+}
 
 
 }
@@ -2867,8 +2870,11 @@ body,html{
         
         
         .blazer{
-           
+           display:flex;
+           flex-direction:column;
         }
+
+        
         
         
         .contact-block{
