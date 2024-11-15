@@ -17,25 +17,30 @@
         margin:0;
         padding:0;
         font-family:verdana;
-        min-height:100vh;
        
     }
-    
+    body{
+       border:5px solid red;
+      min-height:100vh;
+    }
+
+    html{
+       border:4px solid blue;
+    }
+   
    
    #home section{
    margin-top:53px;
    padding:22px;
     width:100%;
    } 
-    body{
-        display:flex;
-        flex-direction:column;
-        
-    }
+   body{
+    
+    
+}
 
     footer{
-        margin-top:auto;
-        
+       
     }
     
     img{
@@ -2550,7 +2555,7 @@ h2{
 
     
 body,html{
-    max-width:100%;
+   max-width: 100%;
     overflow-x:hidden;
 }
 
@@ -2784,12 +2789,14 @@ body,html{
     /* Styles for phones */
     @media screen and (max-width:540px){
         
-       
        .main-text{
         margin-top:17px;
         margin-left: 22px;
        }
        
+      .questions h2{
+        font-size:18px;
+      }
       
        
        .container{
@@ -2988,13 +2995,13 @@ body,html{
         padding: 22px;
 }
 
-.q-container{
- width:100%;
-  border: 2px solid red;;
-}
+.q-container h3{
+font-size: 10px;
 
 }
+.q-btn{
     
+}    
   
     
  
