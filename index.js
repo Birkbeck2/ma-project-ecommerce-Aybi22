@@ -180,940 +180,606 @@
                                                                     ];
                                                                     
                                                                     
+                                                                 
+                                                                    let sub=document.querySelector('.sub');
+                                                                    let shop=document.getElementById('shop');
+                                                                    shop.addEventListener('mouseover', showSub);
+                                                                    shop.addEventListener('mouseout', hideSub);
+                                                                    sub.addEventListener('mouseover',showSub);
+                                                                    sub.addEventListener('mouseout',hideSub);
+                                                                     function showSub(){
+                                                                        sub.classList.add('sublist');
+                                                                       
+                                                                     }
+                                                                    
+                                                                    
+                                                                    function hideSub(){
+                                                                        sub.classList.remove('sublist');
+                                                                        
+                                                                     }
+                                                                                      
+                                                                                             
+                                                                
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                                 
+                                                             
+                                                             
+                                                             
+                                                             let topIcon = document.querySelector('.top-icons');
+                                                             
+                                                             topIcon.addEventListener('click', showCart);
+                                                             
+                                                             function showCart() {
+                                                                 let cart = document.querySelector('.cart');
+                                                                 
+                                                                 let overlay = document.querySelector('.overlay');
+                                                             
+                                                             
+                                                                 if (cart.className === "cart") {
+                                                                     cart.classList.add("modal-box");
+                                                                     overlay.classList.add("overlay-box");
+                                                             
+                                                             
+                                                                 } else {
+                                                                     cart.classList.remove("modal-box");
+                                                                     overlay.classList.remove("overlay-box");
+                                                                 }
+                                                             }
+                                                             
+                                                             let overlay = document.querySelector('.overlay');
+                                                             
+                                                             overlay.addEventListener('click', closeOver);
+                                                             function closeOver(e) {
+                                                                 overlay = document.querySelector('.overlay');
+                                                                 let cart = document.querySelector('.cart');
+                                                                 if (e.target === overlay) {
+                                                                     overlay.classList.remove('overlay-box');
+                                                                     cart.classList.remove('modal-box');
+                                                                 }
+                                                             }
+                                                             
+                                                             let close = document.querySelector('.close');
+                                                             close.addEventListener('click', closeModal);
+                                                             function closeModal(e) {
+                                                                 overlay = document.querySelector('.overlay');
+                                                                 let cart = document.querySelector('.cart');
+                                                                 if (e.target === close) {
+                                                                     cart.classList.remove("modal-box");
+                                                                     overlay.classList.remove("overlay-box");
+                                                                 }
+                                                             }
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             let hamburger = document.querySelector('.hamburger');
+                                                             hamburger.addEventListener('click', showMobileMenu);
+                                                             function showMobileMenu() {
+                                                                 let mobileMenu = document.querySelector('.mobileMenu');
+                                                                 mobileMenu.classList.toggle('mobile-box');
+                                                             }
+                                                             
+                                                             let closeMobile = document.querySelector('.closeMobile');
+                                                             closeMobile.addEventListener('click', mobileClose);
+                                                             function mobileClose(e) {
+                                                                 let mobileMenu = document.querySelector('.mobileMenu');
+                                                             
+                                                                 if (e.target === closeMobile) {
+                                                                     mobileMenu.classList.remove('mobile-box');
+                                                                 }
+                                                             }
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             document.addEventListener('DOMContentLoaded',function showReviewBox(){    
+                                                                 let reviewBtn = document.querySelector('.review-btn');
                                                                
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     
-                                     let cart = JSON.parse(localStorage.getItem("CART")) || [];
-
-
-                                                                updateCart();
-                                
-                                   
+                                                                 reviewBtn.addEventListener('click', showReviewBox);
+                                                                 function showReviewBox() {
+                                                                 
+                                                                     let reviewBox=document.querySelector('.review-box');
+                                                                     let reviewText=document.querySelector('.review-message');
+                                                                 
+                                                                    reviewBox.classList.toggle('show-Box');
+                                                                    reviewText.classList.remove('show-message');
+                                                                 }  
+                                                                 });
+                                                                 
+                                                                 
+                                                                 document.addEventListener('DOMContentLoaded',function sendText(){
+                                                                 let sendBtn = document.querySelector('.send-btn');
+                                                                 sendBtn.addEventListener('click', sendText);
+                                                                 function sendText() {
+                                                                     let reviewBox = document.querySelector('.review-box');
+                                                                     let reviewText = document.querySelector('.review-message');
+                                                                 
                                                                     
-                                                                    
-                                                                    
-                                                                    const productsHTML = products.map(
-                                                                        (product) => `
-                               
-                               
-                               
-                               
-                               
-                                                                        <article class="section-list">
-                                
-                                <div class="image">
-                               <a href="/details.html?id=${product.id}">
-
-                                
-                                    <img src=${product.image} width="400" height="400">
-                                
-                                </div>
-                                </a>
-                                <div class="item-title">
-                                    <div class="item-name">${product.name}<span class="stock-info">only 11 left</span></div>
-                                    <div class="item-price">${product.price}</div>
-                                    
-                                </a>    
-                                    
-                                    <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                
-                                <i class="fa-solid fa-star"></i>
-                                
-                                <i class="fa-solid fa-star"></i> 
-                                <i class="fa-solid fa-star"></i>
-                                
-                                <i class="fa-solid fa-star"></i>
-                                
-                                
-                                </div>
-                                
-                                </div>
-                                
-                                <button class="product-btn" id=${product.id}>Add to Cart</button>
-                                                                          </div>
-                                
-                                
-                                
-                                </article>`
-                                
-                                                                       
-                                                                              
-                                                                      );  
+                                                                         reviewBox.classList.toggle('show-Box');
+                                                                         reviewText.classList.toggle('show-message');
+                                                                 }
+                                                                 
+                                                                     
+                                                                 });
+                                                              
+                                                                
+                                                             
+                                                             
+                                                             let reviewImages = [
+                                                                 { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
+                                                                 { userpic: 'images/james.jpg', name: "James smith", job: "web designer" },
+                                                                 { userpic: 'images/amanda.jpg', name: "Amanda fisher", job: "Teacher" },
+                                                                 { userpic: 'images/mark.jpg', name: "mark jones", job: "software engineer" },
+                                                                 { userpic: 'images/michael.jpg', name: "michael damon", job: "marketer" },
+                                                                 { userpic: 'images/heather.jpg', name: "heather smith", job: "Assistant" },
+                                                             
+                                                             
+                                                             ]
+                                                             
+                                                             let index = 0;
+                                                                 
+                                                             
+                                                             document.addEventListener('DOMContentLoaded',function prev(){
+                                                             let previous = document.getElementById('previous');
+                                                             previous.addEventListener('click', prev);
+                                                             function prev() {
+                                                             
+                                                                 let userpic=document.getElementById('userpic');
+                                                                 let customerName=document.querySelector('.name');
+                                                                 let jobTitle=document.querySelector('.job');
+                                                                 let stars=document.querySelector('.stars');
+                                                                 if (index===0) {
+                                                                     index=reviewImages.length - 1;
+                                                                     userpic.src=reviewImages[index]["userpic"];
+                                                                     customerName.textContent=reviewImages[index]["name"];
+                                                                     jobTitle.textContent=reviewImages[index]["job"];
+                                                                     stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+                                                                 } else {
+                                                             
+                                                             
+                                                                     index--;
+                                                             
+                                                             
+                                                             
+                                                                     userpic.src=reviewImages[index]["userpic"];
+                                                                     customerName.textContent=reviewImages[index]["name"];
+                                                                     jobTitle.textContent=reviewImages[index]["job"];
+                                                                     stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+                                                                 }
+                                                             }
+                                                             });
+                                                             
+                                                             
+                                                             document.addEventListener('DOMContentLoaded',function showNext(){
+                                                             let next = document.getElementById('next');
+                                                             next.addEventListener('click', showNext);
+                                                             function showNext() {
+                                                             
+                                                                 let userpic = document.getElementById('userpic');
+                                                                 let customerName = document.querySelector('.name');
+                                                                 let jobTitle = document.querySelector('.job');
+                                                                 let stars = document.querySelector('.stars');
+                                                             
+                                                                 if (index < reviewImages.length - 1) {
+                                                                     index++;
+                                                                     userpic.src = reviewImages[index]["userpic"];
+                                                                     customerName.textContent = reviewImages[index]["name"];
+                                                                     jobTitle.textContent = reviewImages[index]["job"];
+                                                                     stars.innerHTML = `<i class="fa-solid fa-star"></i>
+                                                                                                <i class="fa-solid fa-star"></i>
+                                                                                                <i class="fa-solid fa-star"></i>
+                                                                                                <i class="fa-solid fa-star"></i>
+                                                                                                <i class="fa-solid fa-star"></i>`
+                                                             
+                                                                 } else if (index === reviewImages.length - 1) {
+                                                                     index = 0;
+                                                                     userpic.src = reviewImages[index]["userpic"];
+                                                                     customerName.textContent = reviewImages[index]["name"];
+                                                                     jobTitle.textContent = reviewImages[index]["job"];
+                                                                     stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+                                                             
+                                                                 }
+                                                             }
+                                                             });                             
+                                                                                             
+                                                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                                
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             let pics1 = ['images/texturesuit.jpg', 'images/texturesuit1.jpg',
+                                                                 'images/texturesuit2.jpg']
+                                                             
+                                                             let smallPic1 = document.querySelectorAll('.small-pic1');
+                                                             for (let i = 0; i < smallPic1.length; i++) {
+                                                                 smallPic1[i].addEventListener('click', showMainPic1)
+                                                             
+                                                             
+                                                                 function showMainPic1() {
+                                                                     let img1 = document.getElementById('main-pic1');
+                                                             
+                                                                     img1.setAttribute('src', pics1[i]);
+                                                             
+                                                                 }
+                                                                 
+                                                             }
+                                                             
+                                                              
+                                                                     
+                                                             
+                                                             
+                                                             
+                                                             let pics2 = ['images/blacksuit.jpg', 'images/blacksuit1.jpg',
+                                                                 'images/blacksuit2.jpg']
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             let smallPic2 = document.getElementsByClassName('small-pic2');
+                                                             for (let i = 0; i < smallPic2.length; i++) {
+                                                                 smallPic2[i].addEventListener('click', showMainPic2)
+                                                             
+                                                             
+                                                                 function showMainPic2() {
+                                                                     const img2 = document.getElementById('main-pic2');
+                                                             
+                                                                     img2.setAttribute('src', pics2[i]);
+                                                             
+                                                                 }
+                                                             }
+                                                             
+                                                             
+                                                             let pics3 = ['images/greysuit.jpg', 'images/greysuit1.jpg', 'images/greysuit2.jpg']
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             let smallPic3 = document.getElementsByClassName('small-pic3');
+                                                             for (let i = 0; i < smallPic3.length; i++) {
+                                                                 smallPic3[i].addEventListener('click', showMainPic3)
+                                                             
+                                                             
+                                                                 function showMainPic3() {
+                                                                     let img3 = document.getElementById('main-pic3');
+                                                             
+                                                                     img3.setAttribute('src', pics3[i]);
+                                                             
+                                                                 }
+                                                             }
+                                                             
+                                                             
+                                                             let pics4 = ["images/cowleathershoe.jpg", "images/cowleathershoe1.jpg", "images/cowleathershoe2.jpg"];
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             let smallPic4 = document.getElementsByClassName('small-pic4');
+                                                             for (let i = 0; i < smallPic4.length; i++) {
+                                                                 smallPic4[i].addEventListener('click', showMainPic4)
+                                                             
+                                                             
+                                                                 function showMainPic4() {
+                                                                     const img4 = document.getElementById('main-pic4');
+                                                             
+                                                                     img4.setAttribute('src', pics4[i]);
+                                                             
+                                                                 }
+                                                             }
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             document.addEventListener('DOMContentLoaded',function grey(){
+                                                                 let grey=document.getElementById('grey');
+                                                                 console.log(grey);
+                                                             grey.addEventListener('click',greySuit);
+                                                                        function greySuit(){
                                                                       
-                                                                      const result = document.querySelector(".result");
-                                                                      result.innerHTML = productsHTML.join("");
-                                
-                                                                       
-                                                                      function updateCart() {
-                                                                        const cartHTML = cart.map(
-                                                                          (item) => `<div class="cart-item">
-                                                                              <img src=${item.image}>    
+                                                                      let img=document.getElementById("special");
+                                                                          img.setAttribute('src', 'images/regularfitgrey.jpg');
                                                                           
-                                                                          <h3>${item.name}</h3>
-                                                                                  <div class="cart-detail"><div class="mid">
-                                                                                      <button onclick={decrItem(${item.id})}>-</button>
-                                                                                      <p>${item.quantity}</p>
-                                                                                      <button onclick={incrItem(${item.id})}>+</button>
-                                                                                  </div>
-                                                                                  <p>$${item.price}</p>
-                                                                                  <button onclick={deleteItem(${item.id})} class="cart-product" id=${item.id}> 
-                                                                                  <i class="fa-solid fa-trash"></i>
-                                                                                  
-                                                                                  
-                                                                                  </button>
-                                                                                  </div>
-                                                                                 </div>`
-                                                                        );
-                                                                      
-                                                                        const cartItems = document.querySelector(".cart-items");
-                                                                        cartItems.innerHTML = cartHTML.join("");
-                                                                        localStorage.setItem("CART", JSON.stringify(cart));
-                                                                      
-                                                                      
                                                                       }
-                                
-                                                                      
-                                
-                                                                      let nums = document.querySelectorAll(".product-btn").length;
-                                                                      for (let i = 0; i < nums; i++) {
-                                                                        document.querySelectorAll(".product-btn")
-                                                                        [i].addEventListener("click", function (e) {
-                                                                          addToCart(products, parseInt(e.target.id));
-                                                                        });
-                                                                      }
-                                
-                                
-                                
-                                                                      function addToCart(products, id){
-                                                                        const product = products.find((product) => product.id === id);
-                                                                        const cartProduct = cart.find((product) => product.id === id);
-                                                                        if (cartProduct != undefined && product.id == cartProduct.id) {
-                                                                          incrItem(id);
-                                                                        } else {
-                                                                          cart.unshift(product);
-                                                                        }
-                                                                        updateCart();
-                                                                        getTotal(cart);
-                                                                      
-                                                                       
-                                                                    
-                                                                    };     
-                                
-                                
-                                
-                                                                      function getTotal(cart) {
-                                                                        let { totalItem, cartTotal } = cart.reduce(
-                                                                          (total, cartItem) => {
-                                                                            total.cartTotal += cartItem.price * cartItem.quantity;
-                                                                            total.totalItem += cartItem.quantity;
-                                                                            return total;
-                                                                          },
-                                                                          { totalItem: 0, cartTotal: 0 }
-                                                                        );
-                                                                        const totalItemsHTML = document.querySelector(".noOfItems");
-                                                                        totalItemsHTML.innerHTML = `${totalItem}`;
-                                                                        const totalAmountHTML = document.querySelector(".total");
-                                                                        totalAmountHTML.innerHTML = `$${cartTotal}`;
-                                                                       
-                                                                      }              
-                                                
-                                                
-                                                                      function incrItem(id) {
-                                                                        for (let i = 0; i < cart.length; i++) {
-                                                                          if (cart[i] && cart[i].id == id) {
-                                                                            cart[i].quantity += 1;
-                                                                          }
-                                                                        }
-                                                                        updateCart();
-                                                                        getTotal(cart);
-                                                                      }
-                                                                      
-                                                                      function decrItem(id) {
-                                                                        for (let i = 0; i < cart.length; i++) {
-                                                                          if (cart[i].id == id && cart[i].quantity > 1) {
-                                                                            cart[i].quantity -= 1;
-                                                                          }
-                                                                        }
-                                                                        updateCart();
-                                                                        getTotal(cart);
-                                                                      }
-                                                                      
-                                                                      function deleteItem(id) {
-                                                                        for (let i = 0; i < cart.length; i++) {
-                                                                          if (cart[i].id === id) {
-                                                                            cart[i].quantity = 1;
-                                                                            cart.splice(i, 1);
-                                                                          }
-                                                                        }
-                                                                        updateCart();
-                                                                        getTotal(cart);
-                                                                      }
-                                                
-                                                                      function deleteItem(id) {
-                                                                        for (let i = 0; i < cart.length; i++) {
-                                                                          if (cart[i].id === id) {
-                                                                            cart[i].quantity = 1;
-                                                                            cart.splice(i, 1);
-                                                                          }
-                                                                        }
-                                                                        updateCart();
-                                                                        getTotal(cart);
-                                                                      }
-                                                       
-                                                                
-                                                                      
-                                                                      let details = document.querySelector('.details');
-                                                                      details.querySelector('.image img').src = thisProduct.image;
-                                                                      details.querySelector('.name').innerText = thisProduct.name;
-                                                                      details.querySelector('.price').innerText = '$' + thisProduct.price;
-                                                                      details.querySelector('.description').innerText = '$' + thisProduct.description;
-                                                                      details.querySelector('.addCart').dataset.id = thisProduct.id;
+                                                             
+                                                             
+                                                                     });
+                                                             
+                                                                     document.addEventListener('DOMContentLoaded',function navySuit(){
+                                                             
+                                                             let navy=document.getElementById('navy');
+                                                             navy.addEventListener('click',navySuit);
+                                                             
+                                                             function navySuit(){
+                                                             
+                                                             let img=document.getElementById("special");
+                                                             img.setAttribute('src','images/regularfitnavy.jpg');
+                                                             }
+                                                             });
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             document.addEventListener('DOMContentLoaded',function blackSuit(){
+                                                             
+                                                             let black=document.getElementById('black');
+                                                             black.addEventListener('click',blackSuit);
+                                                             function blackSuit(){
+                                                             
+                                                             
+                                                             let img=document.getElementById("special");
+                                                             img.setAttribute('src','images/regularfitblack.jpg');
+                                                             
+                                                             
+                                                             }
+                                                             
+                                                             });
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             document.addEventListener('DOMContentLoaded',function blueSuit(){
+                                                             let blue=document.getElementById('blue');
+                                                             blue.addEventListener('click',blueSuit);
+                                                             
+                                                             function blueSuit(){
+                                                             
+                                                             
+                                                             let img=document.getElementById ("special");
+                                                             img.setAttribute('src','images/regularfitblue.jpg');
+                                                             }
+                                                             });
+                                                             
+                                                             
+                                                             
+                                                             
                                                                   
-                                                                  
-                                                                      let listProductHTML = document.querySelector('.listProduct');
-                                                                      products.forEach(product => {
-                                                                          let newProduct = document.createElement('div');
-                                                                          newProduct.classList.add('item');
-                                                                          newProduct.innerHTML = 
-                                                                          `<a href="/details.html?id=${product.id}">
-                                                                              <img src="${product.image}">
-                                                                          </a>
-                                                                          <h2>${product.name}</h2>
-                                                                          <div class="price">$${product.price}</div>
-                                                                          <button 
-                                                                              class="addCart" 
-                                                                              data-id='${product.id}'>
-                                                                                  Add To Cart
-                                                                          </button>`;
-                                                                          listProductHTML.appendChild(newProduct);
-                                                                      });
-                                                                  
-                                        
-                                                                
-                                                                
-                                                                
-                                                               
-                                                                                                
-                                                                                                
-                                                                                                
-                                                                                                
-                                                                                                
-                                                                                                
-                                                                                                
-                                                                                                
-                                                                                       
-                                                  
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                                     
-                               
-                                
-
-        
-              
-
-              
-       
-       
-       
-       
-       
-       
-       let sub=document.querySelector('.sub');
-       let shop=document.getElementById('shop');
-       shop.addEventListener('mouseover', showSub);
-       shop.addEventListener('mouseout', hideSub);
-       sub.addEventListener('mouseover',showSub);
-       sub.addEventListener('mouseout',hideSub);
-        function showSub(){
-           sub.classList.add('sublist');
-          
-        }
-       
-       
-       function hideSub(){
-           sub.classList.remove('sublist');
-           
-        }
-                         
-                                
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-let topIcon = document.querySelector('.top-icons');
-
-topIcon.addEventListener('click', showCart);
-
-function showCart() {
-    let cart = document.querySelector('.cart');
-    
-    let overlay = document.querySelector('.overlay');
-
-
-    if (cart.className === "cart") {
-        cart.classList.add("modal-box");
-        overlay.classList.add("overlay-box");
-
-
-    } else {
-        cart.classList.remove("modal-box");
-        overlay.classList.remove("overlay-box");
-    }
-}
-
-let overlay = document.querySelector('.overlay');
-
-overlay.addEventListener('click', closeOver);
-function closeOver(e) {
-    overlay = document.querySelector('.overlay');
-    let cart = document.querySelector('.cart');
-    if (e.target === overlay) {
-        overlay.classList.remove('overlay-box');
-        cart.classList.remove('modal-box');
-    }
-}
-
-let close = document.querySelector('.close');
-close.addEventListener('click', closeModal);
-function closeModal(e) {
-    overlay = document.querySelector('.overlay');
-    let cart = document.querySelector('.cart');
-    if (e.target === close) {
-        cart.classList.remove("modal-box");
-        overlay.classList.remove("overlay-box");
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let hamburger = document.querySelector('.hamburger');
-hamburger.addEventListener('click', showMobileMenu);
-function showMobileMenu() {
-    let mobileMenu = document.querySelector('.mobileMenu');
-    mobileMenu.classList.toggle('mobile-box');
-}
-
-let closeMobile = document.querySelector('.closeMobile');
-closeMobile.addEventListener('click', mobileClose);
-function mobileClose(e) {
-    let mobileMenu = document.querySelector('.mobileMenu');
-
-    if (e.target === closeMobile) {
-        mobileMenu.classList.remove('mobile-box');
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded',function showReviewBox(){    
-    let reviewBtn = document.querySelector('.review-btn');
-  
-    reviewBtn.addEventListener('click', showReviewBox);
-    function showReviewBox() {
-    
-        let reviewBox=document.querySelector('.review-box');
-        let reviewText=document.querySelector('.review-message');
-    
-       reviewBox.classList.toggle('show-Box');
-       reviewText.classList.remove('show-message');
-    }  
-    });
-    
-    
-    document.addEventListener('DOMContentLoaded',function sendText(){
-    let sendBtn = document.querySelector('.send-btn');
-    sendBtn.addEventListener('click', sendText);
-    function sendText() {
-        let reviewBox = document.querySelector('.review-box');
-        let reviewText = document.querySelector('.review-message');
-    
-       
-            reviewBox.classList.toggle('show-Box');
-            reviewText.classList.toggle('show-message');
-    }
-    
-        
-    });
- 
-   
-
-
-let reviewImages = [
-    { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
-    { userpic: 'images/james.jpg', name: "James smith", job: "web designer" },
-    { userpic: 'images/amanda.jpg', name: "Amanda fisher", job: "Teacher" },
-    { userpic: 'images/mark.jpg', name: "mark jones", job: "software engineer" },
-    { userpic: 'images/michael.jpg', name: "michael damon", job: "marketer" },
-    { userpic: 'images/heather.jpg', name: "heather smith", job: "Assistant" },
-
-
-]
-
-let index = 0;
-    
-
-document.addEventListener('DOMContentLoaded',function prev(){
-let previous = document.getElementById('previous');
-previous.addEventListener('click', prev);
-function prev() {
-
-    let userpic=document.getElementById('userpic');
-    let customerName=document.querySelector('.name');
-    let jobTitle=document.querySelector('.job');
-    let stars=document.querySelector('.stars');
-    if (index===0) {
-        index=reviewImages.length - 1;
-        userpic.src=reviewImages[index]["userpic"];
-        customerName.textContent=reviewImages[index]["name"];
-        jobTitle.textContent=reviewImages[index]["job"];
-        stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
-    } else {
-
-
-        index--;
-
-
-
-        userpic.src=reviewImages[index]["userpic"];
-        customerName.textContent=reviewImages[index]["name"];
-        jobTitle.textContent=reviewImages[index]["job"];
-        stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
-    }
-}
-});
-
-
-document.addEventListener('DOMContentLoaded',function showNext(){
-let next = document.getElementById('next');
-next.addEventListener('click', showNext);
-function showNext() {
-
-    let userpic = document.getElementById('userpic');
-    let customerName = document.querySelector('.name');
-    let jobTitle = document.querySelector('.job');
-    let stars = document.querySelector('.stars');
-
-    if (index < reviewImages.length - 1) {
-        index++;
-        userpic.src = reviewImages[index]["userpic"];
-        customerName.textContent = reviewImages[index]["name"];
-        jobTitle.textContent = reviewImages[index]["job"];
-        stars.innerHTML = `<i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>`
-
-    } else if (index === reviewImages.length - 1) {
-        index = 0;
-        userpic.src = reviewImages[index]["userpic"];
-        customerName.textContent = reviewImages[index]["name"];
-        jobTitle.textContent = reviewImages[index]["job"];
-        stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
-
-    }
-}
-});                             
-                                
-                                
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-let pics1 = ['images/texturesuit.jpg', 'images/texturesuit1.jpg',
-    'images/texturesuit2.jpg']
-
-let smallPic1 = document.querySelectorAll('.small-pic1');
-for (let i = 0; i < smallPic1.length; i++) {
-    smallPic1[i].addEventListener('click', showMainPic1)
-
-
-    function showMainPic1() {
-        let img1 = document.getElementById('main-pic1');
-
-        img1.setAttribute('src', pics1[i]);
-
-    }
-    
-}
-
- 
-        
-
-
-
-let pics2 = ['images/blacksuit.jpg', 'images/blacksuit1.jpg',
-    'images/blacksuit2.jpg']
-
-
-
-
-
-let smallPic2 = document.getElementsByClassName('small-pic2');
-for (let i = 0; i < smallPic2.length; i++) {
-    smallPic2[i].addEventListener('click', showMainPic2)
-
-
-    function showMainPic2() {
-        const img2 = document.getElementById('main-pic2');
-
-        img2.setAttribute('src', pics2[i]);
-
-    }
-}
-
-
-let pics3 = ['images/greysuit.jpg', 'images/greysuit1.jpg', 'images/greysuit2.jpg']
-
-
-
-
-
-let smallPic3 = document.getElementsByClassName('small-pic3');
-for (let i = 0; i < smallPic3.length; i++) {
-    smallPic3[i].addEventListener('click', showMainPic3)
-
-
-    function showMainPic3() {
-        let img3 = document.getElementById('main-pic3');
-
-        img3.setAttribute('src', pics3[i]);
-
-    }
-}
-
-
-let pics4 = ["images/cowleathershoe.jpg", "images/cowleathershoe1.jpg", "images/cowleathershoe2.jpg"];
-
-
-
-
-
-let smallPic4 = document.getElementsByClassName('small-pic4');
-for (let i = 0; i < smallPic4.length; i++) {
-    smallPic4[i].addEventListener('click', showMainPic4)
-
-
-    function showMainPic4() {
-        const img4 = document.getElementById('main-pic4');
-
-        img4.setAttribute('src', pics4[i]);
-
-    }
-}
-
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded',function grey(){
-    let grey=document.getElementById('grey');
-    console.log(grey);
-grey.addEventListener('click',greySuit);
-           function greySuit(){
-         
-         let img=document.getElementById("special");
-             img.setAttribute('src', 'images/regularfitgrey.jpg');
-             
-         }
-
-
-        });
-
-        document.addEventListener('DOMContentLoaded',function navySuit(){
-
-let navy=document.getElementById('navy');
-navy.addEventListener('click',navySuit);
-
-function navySuit(){
-
-let img=document.getElementById("special");
-img.setAttribute('src','images/regularfitnavy.jpg');
-}
-});
-
-
-
-
-
-document.addEventListener('DOMContentLoaded',function blackSuit(){
-
-let black=document.getElementById('black');
-black.addEventListener('click',blackSuit);
-function blackSuit(){
-
-
-let img=document.getElementById("special");
-img.setAttribute('src','images/regularfitblack.jpg');
-
-
-}
-
-});
-
-
-
-
-document.addEventListener('DOMContentLoaded',function blueSuit(){
-let blue=document.getElementById('blue');
-blue.addEventListener('click',blueSuit);
-
-function blueSuit(){
-
-
-let img=document.getElementById ("special");
-img.setAttribute('src','images/regularfitblue.jpg');
-}
-});
-
-
-
-
-     
-        
-              
-
-
-
-
-
-let pics5 = ['images/regularfitgrey.jpg', 'images/regularfitblue.jpg', 'images/regularfitblack.jpg']
-
-let smallPic5 = document.getElementsByClassName('small-pic5');
-
-
-for (let i = 0; i < smallPic5.length; i++) {
-
-    smallPic5[i].addEventListener('click', showMainPic5)
-
-
-    function showMainPic5() {
-        let img5 = document.getElementById('main-pic5');
-
-        img5.setAttribute('src', pics5[i]);
-
-    }
-
-}
-
-
-let pics6 = ['images/greenslimsuit.jpg', 'images/greenslimsuit1.jpg', 'images/greenslimsuit2.jpg']
-
-let smallPic6 = document.getElementsByClassName('small-pic6');
-
-
-for (let i = 0; i < smallPic6.length; i++) {
-
-    smallPic6[i].addEventListener('click', showMainPic6)
-
-
-    function showMainPic6() {
-        let img6 = document.getElementById('main-pic6');
-
-        img6.setAttribute('src', pics6[i]);
-
-    }
-
-}
-
-
-
-let pics7 = ['images/justcouturesuit.jpg', 'images/justcouturesuit1.jpg', 'images/justcouturesuit2.jpg']
-
-let smallPic7 = document.getElementsByClassName('small-pic7');
-
-
-for (let i = 0; i < smallPic7.length; i++) {
-
-    smallPic7[i].addEventListener('click', showMainPic7)
-
-
-    function showMainPic7() {
-        const img7 = document.getElementById('main-pic7');
-
-        img7.setAttribute('src', pics7[i]);
-
-    }
-
-}
-
-
-
-let pics8 = ['images/navychechsuit.jpg', 'images/navychech1.jpg', 'images/navychech2.jpg']
-
-let smallPic8 = document.getElementsByClassName('small-pic8');
-
-
-for (let i = 0; i < smallPic8.length; i++) {
-
-    smallPic8[i].addEventListener('click', showMainPic8)
-
-
-    function showMainPic8() {
-        let img8 = document.getElementById('main-pic8');
-
-        img8.setAttribute('src', pics8[i]);
-
-    }
-
-}
-
-
-
-
-let pics9 = ['images/stretchsuit.jpg', 'images/stretchsuit1.jpg', 'images/stretchsuit2.jpg']
-
-let smallPic9 = document.getElementsByClassName('small-pic9');
-
-
-for (let i = 0; i < smallPic9.length; i++) {
-
-    smallPic9[i].addEventListener('click', showMainPic9)
-
-
-    function showMainPic9() {
-        let img9 = document.getElementById('main-pic9');
-
-        img9.setAttribute('src', pics9[i]);
-
-    }
-
-}
-
-
-
-
-
-
-
-
-
-let pics10 = ['images/blackoxfordleathershoe.jpg', 'images/oxfordleather1.jpg', 'images/oxfordleather2.jpg']
-
-let smallPic10 = document.getElementsByClassName('small-pic10');
-
-
-for (let i = 0; i < smallPic10.length; i++) {
-
-    smallPic10[i].addEventListener('click', showMainPic10)
-
-
-    function showMainPic10() {
-        let img10 = document.getElementById('main-pic10');
-
-        img10.setAttribute('src', pics10[i]);
-
-    }
-
-}
-
-
-let pics11 = ['images/velvetjacket.jpg', 'images/velvetjacket1.jpg', 'images/velvetjacket2.jpg']
-
-let smallPic11 = document.getElementsByClassName('small-pic11');
-
-
-for (let i = 0; i < smallPic11.length; i++) {
-
-    smallPic11[i].addEventListener('click', showMainPic11)
-
-
-    function showMainPic11() {
-        let img11 = document.getElementById('main-pic11');
-
-        img11.setAttribute('src', pics11[i]);
-
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let pics12 = ['images/greycheckjacket.jpg', 'images/greycheckjacket1.jpg', 'images/greycheckjacket2.jpg']
-
-let smallPic12 = document.getElementsByClassName('small-pic12');
-
-
-for (let i = 0; i < smallPic12.length; i++) {
-
-    smallPic12[i].addEventListener('click', showMainPic12)
-
-
-    function showMainPic12() {
-        let img12 = document.getElementById('main-pic12');
-
-        img12.setAttribute('src', pics12[i]);
-
-    }
-
-}
-
-
-    
-    
-document.addEventListener('DOMContentLoaded',function navySuit1(){
-
-    let navy1=document.getElementById('navy1');
-    navy1.addEventListener('click',navySuit1);
-    
-    function navySuit1(){
-    
-    let img=document.getElementById("special");
-    img.setAttribute('src','images/navypanamasuit.jpg');
-    }
-    });
-    
-    
-    
-    
-    
-    document.addEventListener('DOMContentLoaded',function blackSuit1(){
-    
-    let black=document.getElementById('black1');
-    black.addEventListener('click',blackSuit1);
-    function blackSuit1(){
-    
-    
-    let img=document.getElementById("special");
-    img.setAttribute('src','images/blackpanamasuit.jpg');
-    
-    
-    }
-    
-    });
-    
-    
-
-    document.addEventListener('DOMContentLoaded',function blueSuit1(){
-    
-        let blue1=document.getElementById('blue1');
-        blue1.addEventListener('click',blueSuit1);
-        function blueSuit1(){
-        
-        
-        let img=document.getElementById("special");
-        img.setAttribute('src','images/bluepanamasuit.jpg');
-        
-        
-        }
-        
-        });
-
-  
-    
-    
-    
-    
+                                                                     
+                                                                           
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             let pics5 = ['images/regularfitgrey.jpg', 'images/regularfitblue.jpg', 'images/regularfitblack.jpg']
+                                                             
+                                                             let smallPic5 = document.getElementsByClassName('small-pic5');
+                                                             
+                                                             
+                                                             for (let i = 0; i < smallPic5.length; i++) {
+                                                             
+                                                                 smallPic5[i].addEventListener('click', showMainPic5)
+                                                             
+                                                             
+                                                                 function showMainPic5() {
+                                                                     let img5 = document.getElementById('main-pic5');
+                                                             
+                                                                     img5.setAttribute('src', pics5[i]);
+                                                             
+                                                                 }
+                                                             
+                                                             }
+                                                             
+                                                             
+                                                             let pics6 = ['images/greenslimsuit.jpg', 'images/greenslimsuit1.jpg', 'images/greenslimsuit2.jpg']
+                                                             
+                                                             let smallPic6 = document.getElementsByClassName('small-pic6');
+                                                             
+                                                             
+                                                             for (let i = 0; i < smallPic6.length; i++) {
+                                                             
+                                                                 smallPic6[i].addEventListener('click', showMainPic6)
+                                                             
+                                                             
+                                                                 function showMainPic6() {
+                                                                     let img6 = document.getElementById('main-pic6');
+                                                             
+                                                                     img6.setAttribute('src', pics6[i]);
+                                                             
+                                                                 }
+                                                             
+                                                             }
+                                                             
+                                                             
+                                                             
+                                                             let pics7 = ['images/justcouturesuit.jpg', 'images/justcouturesuit1.jpg', 'images/justcouturesuit2.jpg']
+                                                             
+                                                             let smallPic7 = document.getElementsByClassName('small-pic7');
+                                                             
+                                                             
+                                                             for (let i = 0; i < smallPic7.length; i++) {
+                                                             
+                                                                 smallPic7[i].addEventListener('click', showMainPic7)
+                                                             
+                                                             
+                                                                 function showMainPic7() {
+                                                                     const img7 = document.getElementById('main-pic7');
+                                                             
+                                                                     img7.setAttribute('src', pics7[i]);
+                                                             
+                                                                 }
+                                                             
+                                                             }
+                                                             
+                                                             
+                                                             
+                                                             let pics8 = ['images/navychechsuit.jpg', 'images/navychech1.jpg', 'images/navychech2.jpg']
+                                                             
+                                                             let smallPic8 = document.getElementsByClassName('small-pic8');
+                                                             
+                                                             
+                                                             for (let i = 0; i < smallPic8.length; i++) {
+                                                             
+                                                                 smallPic8[i].addEventListener('click', showMainPic8)
+                                                             
+                                                             
+                                                                 function showMainPic8() {
+                                                                     let img8 = document.getElementById('main-pic8');
+                                                             
+                                                                     img8.setAttribute('src', pics8[i]);
+                                                             
+                                                                 }
+                                                             
+                                                             }
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             let pics9 = ['images/stretchsuit.jpg', 'images/stretchsuit1.jpg', 'images/stretchsuit2.jpg']
+                                                             
+                                                             let smallPic9 = document.getElementsByClassName('small-pic9');
+                                                             
+                                                             
+                                                             for (let i = 0; i < smallPic9.length; i++) {
+                                                             
+                                                                 smallPic9[i].addEventListener('click', showMainPic9)
+                                                             
+                                                             
+                                                                 function showMainPic9() {
+                                                                     let img9 = document.getElementById('main-pic9');
+                                                             
+                                                                     img9.setAttribute('src', pics9[i]);
+                                                             
+                                                                 }
+                                                             
+                                                             }
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             let pics10 = ['images/blackoxfordleathershoe.jpg', 'images/oxfordleather1.jpg', 'images/oxfordleather2.jpg']
+                                                             
+                                                             let smallPic10 = document.getElementsByClassName('small-pic10');
+                                                             
+                                                             
+                                                             for (let i = 0; i < smallPic10.length; i++) {
+                                                             
+                                                                 smallPic10[i].addEventListener('click', showMainPic10)
+                                                             
+                                                             
+                                                                 function showMainPic10() {
+                                                                     let img10 = document.getElementById('main-pic10');
+                                                             
+                                                                     img10.setAttribute('src', pics10[i]);
+                                                             
+                                                                 }
+                                                             
+                                                             }
+                                                             
+                                                             
+                                                             let pics11 = ['images/velvetjacket.jpg', 'images/velvetjacket1.jpg', 'images/velvetjacket2.jpg']
+                                                             
+                                                             let smallPic11 = document.getElementsByClassName('small-pic11');
+                                                             
+                                                             
+                                                             for (let i = 0; i < smallPic11.length; i++) {
+                                                             
+                                                                 smallPic11[i].addEventListener('click', showMainPic11)
+                                                             
+                                                             
+                                                                 function showMainPic11() {
+                                                                     let img11 = document.getElementById('main-pic11');
+                                                             
+                                                                     img11.setAttribute('src', pics11[i]);
+                                                             
+                                                                 }
+                                                             
+                                                             }
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             
+                                                             let pics12 = ['images/greycheckjacket.jpg', 'images/greycheckjacket1.jpg', 'images/greycheckjacket2.jpg']
+                                                             
+                                                             let smallPic12 = document.getElementsByClassName('small-pic12');
+                                                             
+                                                             
+                                                             for (let i = 0; i < smallPic12.length; i++) {
+                                                             
+                                                                 smallPic12[i].addEventListener('click', showMainPic12)
+                                                             
+                                                             
+                                                                 function showMainPic12() {
+                                                                     let img12 = document.getElementById('main-pic12');
+                                                             
+                                                                     img12.setAttribute('src', pics12[i]);
+                                                             
+                                                                 }
+                                                             
+                                                             }                                                            
          
 
 
