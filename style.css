@@ -717,12 +717,7 @@ h3{
     
 }
 
-.offer-content{
-   display: flex;;
-}
-.offer-content .image{
-    height:auto;
-}
+
 
 .offer-info a{
     margin:23px auto;
