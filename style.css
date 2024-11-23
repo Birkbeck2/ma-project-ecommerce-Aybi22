@@ -707,8 +707,8 @@ h3{
     color:var(--black);
   
    max-width:400px;
-   height:100%;
- 
+   width:100%;
+
     text-align:center;
     display:flex;
     flex-direction:column;
@@ -754,10 +754,20 @@ h3{
    padding:33px;
 
 }
+.offer-section{
+    gap:11px;
+}
+.offer-wrapper .image{
+    
+   
+}
 
-
-
-
+.q-container{
+  background:var(--champagne);
+}
+.qtitle{
+    margin:auto;
+}
 .section-title{
     margin-top:97px;
 }
@@ -1723,7 +1733,9 @@ align-items:flex-start;
  
 
 
-
+.offer-wrapper .image{
+    height:100%;
+}
 
 
 
@@ -2645,10 +2657,7 @@ body,html{
     }
     
     
-.ratings{
-    
-}
-    
+
     
     
     
@@ -2693,10 +2702,7 @@ body,html{
 
  
 
- .offer-info{
-   
-   
- }
+ 
  .right-side{
     margin:22px;
     
@@ -2803,7 +2809,7 @@ body,html{
         display: flex;
         flex-direction:column;
      }  
-       
+      
        
        .circle{
         margin-left:3px;
@@ -2987,6 +2993,7 @@ font-size: 10px;
 }
    
 .offer-wrapper{
+  
     flex-direction:column;
 }
  
