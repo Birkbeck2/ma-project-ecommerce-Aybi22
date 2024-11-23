@@ -1,186 +1,195 @@
 
          
                                      
-                                     
-                                     let products= [
-
-                                        {
-                                            id:1,
-                                        image:"images/texturesuit.jpg",
-                                       
-                                        name:"texture suit",
-                                        price:250,
-                                        quantity:1, 
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        },
-                                        {id:2,image:"images/blacksuit.jpg",name:"black suit",price:"370",quantity:1,},
-                                        {id:3,image:"images/greysuit.jpg",name:"Grey suit",price:"450",quantity:1, href:"product3.html"},
-                                        {id:4,image:"images/cowleathershoe.jpg",name:"leather shoe",price:475,quantity:1,href:"product4.html"},
-                                        
-                                        {
-                                            id:5,
-                                            image:"images/specialoffer.jpg",
-                                            name:"regular fit suit",
-                                            price:400,
-                                            quantity:1
-                                            
-                                        },
-                                        
-                                        
-                                        
-                                        
-                                        {
-                                                id:6,
-                                                image:"images/greenslimsuit.jpg",
-                                                name:"green slim suit",
-                                                price:525,
-                                                quantity:1
-                                                
-                                        }, 
-                                        
-                                        
-                                        
-                                        
-                                        {
-                                                    id:7,
-                                                    image:"images/justcouturesuit.jpg",
-                                                    name:"just couture",
-                                                    price:450,
-                                                    quantity:1,
-                                                    href:"product7.html"  
-                                        },
-                                                    
-                                                    
-                                                    {
-                                                        id:8,
-                                                        image:"images/navychechsuit.jpg",
-                                                        name:"navy suit",
-                                                        price:"655",
-                                                        quantity:1,
-                                                         href:"product8.html"
-                                                        },
-                                                        
-                                                        
-                                        
-                                                        {
-                                                            id:9,
-                                                            image:"images/stretchsuit.jpg",
-                                                            name:"stretch chino blazer",
-                                                            price:525,
-                                                            quantity:1,
-                                                             href:"product9.html"
-                                                            },
-                                                            
-                                                            
-                                        
-                                                            {
-                                                                id:10,
-                                                                image:"images/oxfordshoe.jpg",
-                                                                name:"oxford leather shoe",
-                                                                price:"655",
-                                                                quantity:1,
-                                                                 href:"product10.html"
-                                                                },
+              let listCartHTML=document.querySelector('.listCart')
+              let noOfItems=document.querySelector('.noOfItems');                                                          
+            let listProductHTML = document.querySelector('.listProduct');
+          let  listProducts = [];
+        let carts=[];                                                            
+                                                                      
+        
+       
+        
+        
+       
+       
+       
+       
+       
+       
+        const addToHTML=()=>{
+            listProductHTML.innerHTML="";
+            if(listProducts.length>0){
+                listProducts.forEach(product=>{
+                 let newProduct=document.createElement('div');
+                 newProduct.classList.add('item');
+                 newProduct.dataset.id=product.id;
+                 newProduct.innerHTML=`
+             
+               <a href="/details.html?id=${product.id}">
+                <div class="image">
+                 <img src="${product.image}">
+                 </div>
+                 </a>
+                 <div class="item-name">${product.name}</div>
+                 <div class="item-price">£${product.price}</div>
+                 <button class="add-btn">Add To Cart</button>
+          
+                 
+                 </div>`
+                
+                
+                listProductHTML.appendChild(newProduct);
+                })
+            }
+    
+            
+        }
+         listProductHTML.addEventListener('click',(event) =>{
+            let positionClick=event.target;
+            if(positionClick.classList.contains('add-btn')){
+           let product_id=positionClick.parentElement.dataset.id;
+           addToCart(product_id);
+            }
+         })
+        
+        const addToCart= (product_id)=>{
+            let positionThisProductInCart= carts.findIndex((value)=>value.product_id == product_id);
                                                                 
+    
+            if(carts.length<=0){
+                carts=[{
+                    product_id:product_id,
+                    quantity: 1
+                }]
+          
+            
+                                                                   
+        }else if(positionThisProductInCart < 0){
+      carts.push({
+          product_id: product_id,
+          quantity:1
+      });
+      
+    }else{
+      carts[positionThisProductInCart].quantity= carts[positionThisProductInCart].quantity+1;
+    }                                       
+    
+    
+    
+            
+           addCartToHTML();
+           addCartToMemory();
+           
+        }
+         
+        const addCartToMemory=()=>{
+            localStorage.setItem('cart',JSON.stringify(carts));
+        }
+          
+        
+       
+         const addCartToHTML=()=>{
+            
+            
+    
+            listCartHTML.innerHTML="";
+            let totalQuantity=0;
+            
+            if(carts.length > 0){
+                carts.forEach(cart=>{
+                   totalQuantity=totalQuantity+cart.quantity; 
+                    let newCart=document.createElement('div');
+                    newCart.classList.add('item');
+                    newCart.dataset.id= cart.product_id;
+                    let positionProduct=listProducts.findIndex((value)=>value.id == cart.product_id);
+                    let info=listProducts[positionProduct];
+                    newCart.innerHTML=`
+                    <div class="image">
+                    <img src="${info.image}">
+                    <div class="item-name">${info.name}</div>
+                    <div class="totalprice">
+                    £${info.price*cart.quantity}
+                </div>
+                    <div class="quantity>
+                    <span class="minus"><</span>
+                    <span>${cart.quantity}</span>
+                    <span class="plus">></span>
+    
+                    </span>
+                    
+                 
+                 
+                 
+                 
+                 </div>
+                    `
+                    
+                    
+                    listCartHTML.appendChild(newCart);
+                    
+                    
+                    
+                    
+                })
+            }
+        
+            noOfItems.innerText=totalQuantity;
+        
+        }
+        
+      
+        
+    
+        const initApp=()=>{
+            fetch('/product.json')
+              .then(response => response.json())                
+              .then(data => {
+               listProducts=data;
+                addToHTML();
+            
+                if(localStorage.getItem('cart')){
+                    carts=JSON.parse(localStorage.getItem('cart'));
+                    addCartToHTML();
+                 }
+            
+            
+            
+            
+            })
+       
+           
+        
+        }                                                           
+           initApp();                                                                
+                   
+        
+        
+    
+    
+    
+      
+                                                                  
+              
+      
                                                                 
-                                        
-                                        
-                                                                {
-                                                                    id:11,
-                                                                    image:"images/velvetjacket.jpg",
-                                                                    name:"velvet jacket",
-                                                                    price:355,
-                                                                    quantity:1,
-                                                                     href:"product11.html"
-                                                                    },
-                                                                    
-                                                                    
-                                                                    {
-                                                                        id:12,
-                                                                        image:"images/greycheckjacket.jpg",
-                                                                        name:"grey check jacket",
-                                                                        price:"415",
-                                                                        quantity:1,
-                                                                         href:"product12.html"
-                                                                        },  
-                                                         
-                                                      
-                                                                        {
-                                                                            id:13,
-                                                                            image:"images/navypanamasuit.jpg",
-                                                                            name:"navy panama suit",
-                                                                            price:625,
-                                                                            quantity:1,
-                                                                             href:"product13.html"
-                                                                            },  
-                                                             
+                                                                        
+                                           
                                             
-                                         
-                                                                            {
-                                                                                id:14,
-                                                                                image:"images/blazerjacket.jpg",
-                                                                                name:"blazer jacket",
-                                                                                price:565,
-                                                                                quantity:1,
-                                                                             href:"product14.html"
-                                                                            
-                                                                            
-                                                                            
-                                                                            },  
-                                                                 
-                                        
-                                                                            {
-                                                                                id:15,
-                                                                                image:"images/fullbrogueoxford.jpg",
-                                                                                name:"full brogue oxford",
-                                                                                price:355,
-                                                                                quantity:1,
-                                                                             href:"product15.html"
-                                                                            
-                                                                            
-                                                                            },  
-                                        
-                                                                            {
-                                                                                id:16,
-                                                                                image:"images/brogueoxford.jpg",
-                                                                                name:"brogue oxford shoe",
-                                                                                price:415,
-                                                                                quantity:1,
-                                                                             href:"product16.html"
-                                                                            
-                                                                            },  
-                                        
-                                                                            {
-                                                                                id:17,
-                                                                                image:"images/wingtioxfordshoe.jpg",
-                                                                                name:"wingti oxford shoe",
-                                                                                price:"625",
-                                                                                quantity :1,
-                                                                             href:"product17.html"
-                                                                            
-                                                                            
-                                                                            
-                                                                            },  
-                                        
-                                                                            {
-                                                                                id:18,
-                                                                                image:"images/topgraincowleather.jpg",
-                                                                                name:"top grain leather shoe",
-                                                                                price:565,
-                                                                                quantity:1,
-                                                                             href:"product19.html"
-                                                                            
-                                                                            } 
-                                        
-                                        
-                                                                    ];
                                                                     
                                                                     
-                                                                 
+                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
                                                                     let sub=document.querySelector('.sub');
                                                                     let shop=document.getElementById('shop');
                                                                     shop.addEventListener('mouseover', showSub);

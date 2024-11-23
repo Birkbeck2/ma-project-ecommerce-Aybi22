@@ -1,10 +1,8 @@
- [
+const products=[
 
     {
     "id":"p1",
     "image":"images/texturesuit.jpg",
-    "image1":"images/texturesuit1.jpg",
-    "image2":"images/texturesuit2.jpg",
     "name":"texture suit",
     "price":"250",
     "quantity":1
@@ -17,8 +15,6 @@
         "id":"p2",
         "image":"images/blacksuit.jpg",
         "name":"black suit",
-        "image1":"images/blacksuit1.jpg",
-        "image2":"images/blacksuit2.jpg",
         "price":"370",
         "quantity":1
         
@@ -175,7 +171,7 @@
     
                                                 {
                                                     "id":"p17",
-                                                    "image":"images/wingtipoxford.jpg",
+                                                    "image":"images/wingtioxfordshoe.jpg",
                                                     "name":"wingti oxford shoe",
                                                     "price":"625",
                                                     "quantity":1
@@ -190,7 +186,7 @@
                                                 } 
     
     
-    ]
+    ];
 
 
     

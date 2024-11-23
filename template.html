@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<title>details page</title>
+<meta charset="UTF-8">
+<meta name="author" content="Ibrahima Kamagate">
+<meta name="description" content=" high-quality and trendy men suits and leather shoes">
+<meta name="keywords"    content="suit,luxury, leather shoes,jacket,trends">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet"  href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Dots&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Dots&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/798e587ede.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+
+<body>
+    <header>
+        
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        
+        
+        </div>
+    
+     
+        
+    
+    
+        <nav>
+            
+            
+        
+        <ul>
+    <li><a href="index.html">Home</a></li>
+    <li class="shop"><a href="shop.html" id="shop">Shop</a></li>
+    <li><a href="About.html">About</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+   
+    
+    <div class="logo">
+    
+    <a href="index.html"><p>SUITME<span class="log">Fashion</span></p>
+    </a>
+    </div>
+    
+    
+    
+    <div class="top-icons">
+
+        <i class="fa-solid fa-bag-shopping"></i>
+         <div class="noOfItems">0</div>
+         
+ 
+     </div>
+ 
+    
+    
+    
+    
+   
+    
+    
+    
+    </header>
+    
+    <div id="contentTab">
+        if you don't know how to run this project. You need to watch the detailed instructional video to understand how the project works
+    </div>
+    
+    <div class="cart">
+        <div class="cart-header">
+          <h3>shopping CART</h3>
+         
+        </div>
+        <div class="listCart">
+     
+        </div>
+  
+        
+        
+        
+        
+        
+        <hr>
+        
+        <hr>
+        <div class="cart-footer cart-header">
+          <h4>Total</h4>
+          <p class="total">$0.00</p>
+        </div>
+        <button class="cart-btn">check out</button>
+      
+        <span class="close">&times;</span>
+      
+      
+      
+      
+      </div>
+    
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="cart.js" type="module"></script>
+    
+    </body>
+    </html>
+
+
+
+
+
+
+
+
+                                                              
+    let listCartHTML=document.querySelector('.listCart')
+    let noOfItems=document.querySelector('.noOfItems');                                                          
+  let listProductHTML = document.querySelector('.listProduct');
+let  listProducts = [];
+let carts=[];                                                            
+                                                            
+
+
+
+
+
+
+
+
+
+
+const addToHTML=()=>{
+  listProductHTML.innerHTML="";
+  if(listProducts.length>0){
+      listProducts.forEach(product=>{
+       let newProduct=document.createElement('div');
+       newProduct.classList.add('item');
+       newProduct.dataset.id=product.id;
+       newProduct.innerHTML=`
+   
+     <a href="/details.html?id=${product.id}">
+      <div class="image">
+       <img src="${product.image}">
+       </div>
+       </a>
+       <div class="item-name">${product.name}</div>
+       <div class="item-price">£${product.price}</div>
+       <button class="add-btn">Add To Cart</button>
+
+       
+       </div>`
+      
+      
+      listProductHTML.appendChild(newProduct);
+      })
+  }
+
+  
+}
+listProductHTML.addEventListener('click',(event) =>{
+  let positionClick=event.target;
+  if(positionClick.classList.contains('add-btn')){
+ let product_id=positionClick.parentElement.dataset.id;
+ addToCart(product_id);
+  }
+})
+
+const addToCart= (product_id)=>{
+  let positionThisProductInCart= carts.findIndex((value)=>value.product_id == product_id);
+                                                      
+
+  if(carts.length<=0){
+      carts=[{
+          product_id:product_id,
+          quantity: 1
+      }]
+
+  
+                                                         
+}else if(positionThisProductInCart < 0){
+carts.push({
+product_id: product_id,
+quantity:1
+});
+
+}else{
+carts[positionThisProductInCart].quantity= carts[positionThisProductInCart].quantity+1;
+}                                       
+
+
+
+  
+ addCartToHTML();
+ addCartToMemory();
+ 
+}
+
+const addCartToMemory=()=>{
+  localStorage.setItem('cart',JSON.stringify(carts));
+}
+
+
+
+const addCartToHTML=()=>{
+  
+  
+
+  listCartHTML.innerHTML="";
+  let totalQuantity=0;
+  
+  if(carts.length > 0){
+      carts.forEach(cart=>{
+         totalQuantity=totalQuantity+cart.quantity; 
+          let newCart=document.createElement('div');
+          newCart.classList.add('item');
+          let positionProduct=listProducts.findIndex((value)=>value.id == cart.product_id);
+          let info=listProducts[positionProduct];
+          newCart.innerHTML=`
+          <div class="image">
+          <img src="${info.image}">
+          <div class="item-name">${info.name}</div>
+          <div class="totalprice">
+          £${info.price* cart.quantity}
+      </div>
+          <div class="quantity>
+          <span class="minus"></span>
+          <span>${cart.quantity}</span>
+          <span class="plus"></span>
+
+          </span>
+          
+       
+       
+       
+       
+       </div>
+          `
+          
+          
+          listCartHTML.appendChild(newCart);
+          
+          
+          
+          
+      })
+  }
+
+  noOfItems.innerText=totalQuantity;
+
+}
+
+
+
+
+
+
+
+
+const initApp=()=>{
+  fetch('/product.json')
+    .then(response => response.json())                
+    .then(data => {
+     listProducts=data;
+      addToHTML();
+  
+      if(localStorage.getItem('cart')){
+          carts=JSON.parse(localStorage.getItem('cart'));
+          addCartToHTML();
+       }
+  
+  
+  
+  
+  })
+
+ 
+
+}                                                           
+ initApp();                                                                
+         
+
+
+
+
+
+
