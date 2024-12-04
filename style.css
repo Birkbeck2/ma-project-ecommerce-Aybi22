@@ -772,6 +772,7 @@ h3{
     margin-top:97px;
 }
 
+
 h4{
     text-transform: capitalize;;
 }
@@ -1734,9 +1735,8 @@ align-items:flex-start;
 
 
 .offer-wrapper .image{
-    height:100%;
+    flex:1 1 auto;
 }
-
 
 
 .qtitle{
@@ -1948,7 +1948,7 @@ textarea::-moz-focus-inner{
   
  
  .section-list h3{
-    background:var(--champagne);
+    background:var(--cambridge-blue);
     text-align:center;
     width:100px;
     margin:auto;
@@ -1993,16 +1993,19 @@ textarea::-moz-focus-inner{
     margin-bottom:141px;
  gap:13px;
 margin:auto;
-   row-gap:137px;
+ 
    margin-bottom: 147px;  
   
 }
 
 .shoe-container img{
    
-   height:100%;
+  
    
 }
+
+
+
 .shoe-container.image{
     height:100%;
 }
@@ -2087,10 +2090,10 @@ height:auto;
     display:grid;
     grid-template-columns: repeat(3,1fr);
     max-width:1200px;
-   width:100%;
-   flex-wrap: wrap;
-  gap:17px;
-   margin:auto;
+    width:100%;
+    flex-wrap: wrap;
+    gap:17px;
+    margin:auto;
  
 }
 
@@ -2538,7 +2541,7 @@ h2{
        
        
     }
-
+   
 
  .staff-section{
     grid-template-columns: repeat(2,1fr);
@@ -2994,7 +2997,7 @@ font-size: 10px;
    
 .offer-wrapper{
   
-    flex-direction:column;
+   flex-direction:column;
 }
  
 

@@ -73,38 +73,46 @@
 </div>
 
   </header>
-
   <div class="cart">
+      
     <div class="cart-header">
       <h3>shopping CART</h3>
      
     </div>
-    <div class="listCart"></div>
+    <div class="listProduct">
+    <div class="detail">
+      <div class="image">
+       
+      </div>
+      <button class="addCart">
+        Add To Cart
+      </button>
+
+
+    </div>
+    
+    
+    
+    
+    </div>
 
     
     
     
     
     
-    <hr>
+    <hr size=>
     
     <hr>
     <div class="cart-footer cart-header">
       <h4>Total</h4>
       <p class="total">$0.00</p>
     </div>
-    <button class="cart-btn">checkout</button>
+    <button class="product-btn">check out</button>
   
     <span class="close">&times;</span>
   
   
-  
-  
-  </div>
-
-
-<div id="app"></div>
-<div id="temporaryContent">
 
 <div class="detail">
 
@@ -133,9 +141,6 @@
     
     
     </div>
-
-
-
 
 
 
@@ -337,7 +342,7 @@
 </div>
 
 
-
+<div class="listProduct"></div>
 
 
 
@@ -418,7 +423,69 @@
 
 
 
-<script src="index.js"></script>
+<script src="detail.js">
+
+
+
+
+
+
+
+
+
+
+
+
+const initApp = () => {
+    let productId = new URLSearchParams(window.location.search).get('id');
+    let thisProduct = products.filter(value => value.id == productId)[0];
+    if(!thisProduct){
+        window.location.href = "/";
+    }
+
+    let detail = document.querySelector('.detail');
+    detail.querySelector('.image img').src = thisProduct.image;
+    detail.querySelector('.name').innerText = thisProduct.name;
+    detail.querySelector('.price').innerText = '$' + thisProduct.price;
+    detail.querySelector('.description').innerText = '$' + thisProduct.description;
+    detail.querySelector('.addCart').dataset.id = thisProduct.id;
+
+
+    let listProductHTML = document.querySelector('.listProduct');
+    products.forEach(product => {
+        let newProduct = document.createElement('div');
+        newProduct.classList.add('item');
+        newProduct.innerHTML = 
+        `<a href="/details.html?id=${product.id}">
+            <img src="${product.image}">
+        </a>`
+        
+        listProductHTML.appendChild(newProduct);
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 
 
 
