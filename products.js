@@ -1,10 +1,11 @@
-const products= [
+const products=[
 
     {
-    "id":1,
+    "id":"p1",
+   "picture":"images/texturesuit1.jpg",
+    "photo":"images/texturesuit2.jpg",
     "image":"images/texturesuit.jpg",
-    "image1":"images/texturesuit1.jpg",
-    "image2":"images/texturesuit2.jpg",
+   
     "name":"texture suit",
     "price":"250",
     "quantity":1
@@ -14,11 +15,9 @@ const products= [
     
     
     {
-        "id":2,
+        "id":"p2",
         "image":"images/blacksuit.jpg",
         "name":"black suit",
-        "image1":"images/blacksuit1.jpg",
-        "image2":"images/blacksuit2.jpg",
         "price":"370",
         "quantity":1
         
@@ -28,7 +27,7 @@ const products= [
     
     
     {
-       "id":3,
+       "id":"p3",
        "image":"images/greysuit.jpg",
        "name":"Grey suit",
        "price":"450",
@@ -40,7 +39,7 @@ const products= [
     
     
         {
-            "id":4,
+            "id":"p4",
             "image":"images/cowleathershoe.jpg",
             "name":"leather shoe",
             "price":"475",
@@ -50,7 +49,7 @@ const products= [
     
     
             {
-                "id":5,
+                "id":"p5",
                 "image":"images/specialoffer.jpg",
                 "name":"regular fit suit",
                 "price":"400",
@@ -62,7 +61,7 @@ const products= [
     
     
             {
-                    "id":6,
+                    "id":"p6",
                     "image":"images/greenslimsuit.jpg",
                     "name":"green slim suit",
                     "price":"525",
@@ -74,7 +73,7 @@ const products= [
     
     
             {
-                        "id":7,
+                        "id":"p7",
                         "image":"images/justcouturesuit.jpg",
                         "name":"just couture",
                         "price":"450",
@@ -84,7 +83,7 @@ const products= [
                         
                         
                         {
-                            "id":8,
+                            "id":"p8",
                             "image":"images/navychechsuit.jpg",
                             "name":"navy suit",
                             "price":"655",
@@ -95,7 +94,7 @@ const products= [
                             
     
                             {
-                                "id":9,
+                                "id":"p9",
                                 "image":"images/stretchsuit.jpg",
                                 "name":"stretch chino blazer",
                                 "price":"525",
@@ -106,7 +105,7 @@ const products= [
                                 
     
                                 {
-                                    "id":10,
+                                    "id":"p10",
                                     "image":"images/oxfordshoe.jpg",
                                     "name":"oxford leather shoe",
                                     "price":"655",
@@ -118,7 +117,7 @@ const products= [
     
     
                                     {
-                                        "id":11,
+                                        "id":"p11",
                                         "image":"images/velvetjacket.jpg",
                                         "name":"velvet jacket",
                                         "price":"355",
@@ -128,7 +127,7 @@ const products= [
                                         
                                         
                                         {
-                                            "id":12,
+                                            "id":"p12",
                                             "image":"images/greycheckjacket.jpg",
                                             "name":"grey check jacket",
                                             "price":"415",
@@ -138,7 +137,7 @@ const products= [
                              
                           
                                             {
-                                                "id":13,
+                                                "id":"p13",
                                                 "image":"images/navypanamasuit.jpg",
                                                 "name":"navy panama suit",
                                                 "price":"625",
@@ -149,7 +148,7 @@ const products= [
                 
              
                                                 {
-                                                    "id":14,
+                                                    "id":"p14",
                                                     "image":"images/blazerjacket.jpg",
                                                     "name":"blazer jacket",
                                                     "price":"565",
@@ -158,7 +157,7 @@ const products= [
                                      
     
                                                 {
-                                                    "id":15,
+                                                    "id":"p15",
                                                     "image":"images/fullbrogueoxford.jpg",
                                                     "name":"full brogue oxford",
                                                     "price":"355",
@@ -166,7 +165,7 @@ const products= [
                                                 },  
     
                                                 {
-                                                    "id":16,
+                                                    "id":"p16",
                                                     "image":"images/brogueoxford.jpg",
                                                     "name":"brogue oxford shoe",
                                                     "price":"415",
@@ -174,25 +173,25 @@ const products= [
                                                 },  
     
                                                 {
-                                                    "id":17,
-                                                    "image":"images/wingtipoxford.jpg",
+                                                    "id":"p17",
+                                                    "image":"images/wingtioxfordshoe.jpg",
                                                     "name":"wingti oxford shoe",
                                                     "price":"625",
                                                     "quantity":1
                                                 },  
     
                                                 {
-                                                    "id":18,
+                                                    "id":"p18",
                                                     "image":"images/topgraincowleather.jpg",
                                                     "name":"top grain leather shoe",
                                                     "price":"565",
                                                     "quantity":1
-                                                }
+                                                } 
     
     
-    ]
+    ];
 
-
+export default products;
     
     
     

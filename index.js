@@ -1,180 +1,74 @@
 
-         
+import products from '/products.js';
+
+import cart from './cart.js';
+let listProduct = document.getElementById('listProduct');
+let app = document.getElementById('app');
+let temporaryContent = document.getElementById('temporaryContent');
              
 
-                                                                    
-       let listCartHTML=document.querySelector('.listCart')
-let noOfItems=document.querySelector('.noOfItems');                                                          
-let listProductHTML = document.querySelector('.listProduct');
-let  listProducts = [];
-let carts=[];                                                            
-                                                        
+const loadTemplate = () => {
+    fetch('/template.html')
+    .then(response => response.text())
+    .then(html => {
+        app.innerHTML = html;
+        let contentTab = document.getElementById('contentTab');
+        contentTab.innerHTML = temporaryContent.innerHTML;
+        temporaryContent.innerHTML = null;
+        cart();
+        initApp();
+    
+    })
 
 
 
 
 
-const addToHTML=()=>{
-listProductHTML.innerHTML="";
-if(listProducts.length>0){
-  listProducts.forEach(product=>{
-   let newProduct=document.createElement('div');
-   newProduct.classList.add('item');
-   newProduct.dataset.id=product.id;
-   newProduct.innerHTML=`
-<a href="/details.html?id=${product.id}">
 
-  <div class="image">
-   <img src="${product.image}">
-   </div>
-   </a>
-   <div class="item-name">${product.name}</div>
-   <div class="item-price">£${product.price}</div>
-   <button class="add-btn">Add To Cart</button>
+}
+loadTemplate();
 
+const initApp = () => {
+    let listProductHTML = document.querySelector('.listProduct');
+    listProductHTML.innerHTML = null;
+    
+    products.forEach(product => {
+        let newProduct = document.createElement('div');
+        newProduct.classList.add('item');
+        newProduct.innerHTML = 
+        `<a href="/detail.html?id=${product.id}">
+            <img src="${product.image}">
+        </a>
+        <h2>${product.name}</h2>
+        <div class="price">$${product.price}</div>
+        <button 
+            class="addCart" 
+            data-id='${product.id}'>
+                Add To Cart
+        </button>`;
+        listProductHTML.appendChild(newProduct);
+   });
+}
+                                                
+                                                    
+let sub=document.querySelector('.sub');
+let shop=document.getElementById('shop');
+shop.addEventListener('mouseover', showSub);
+shop.addEventListener('mouseout', hideSub);
+sub.addEventListener('mouseover',showSub);
+sub.addEventListener('mouseout',hideSub);
+ function showSub(){
+    sub.classList.add('sublist');
    
-   </div>`
-  
-  
-  listProductHTML.appendChild(newProduct);
-  })
-}
+ }
 
 
-}
-
-
-
-
-
-listProductHTML.addEventListener('click',(event) =>{
-let positionClick=event.target;
-if(positionClick.classList.contains('add-btn')){
-let product_id=positionClick.parentElement.dataset.id;
-addToCart(product_id);
-}
-})
-
-const addToCart= (product_id)=>{
-let positionThisProductInCart= carts.findIndex((value)=>value.product_id == product_id);
-                                                  
-
-if(carts.length<=0){
-  carts=[{
-      product_id:product_id,
-      quantity: 1
-  }]
-
-
+function hideSub(){
+    sub.classList.remove('sublist');
+    
+ }
+                  
                                                      
-}else if(positionThisProductInCart < 0){
-carts.push({
-product_id: product_id,
-quantity:1
-});
-
-}else{
-carts[positionThisProductInCart].quantity= carts[positionThisProductInCart].quantity+1;
-}                                       
-
-
-
-
-addCartToHTML();
-addCartToMemory();
-
-}
-
-const addCartToMemory=()=>{
-localStorage.setItem('cart',JSON.stringify(carts));
-}
-
-
-
-
-const addCartToHTML=()=>{
-
-
-
-listCartHTML.innerHTML="";
-let totalQuantity=0;
-
-if(carts.length > 0){
-  carts.forEach(cart=>{
-      totalQuantity=totalQuantity+cart.quantity;   
-      let newCart=document.createElement('div');
-      
- 
-      let positionProduct=listProducts.findIndex((value)=>value.id == cart.product_id);
-      let info=listProducts[positionProduct];
-      newCart.innerHTML=`
-     
-     
-      <img src="${info.image}">
-     
-      
-      <div class="item-name">${info.name}</div>
-      <div class="totalprice">
-      £${info.price*cart.quantity}
-      </div>
-      </div>
-  </div>
-      <div class="quantity>
-      <span class="minus"><</span>
-      <span>${cart.quantity}</span>
-      <span class="plus">></span>
-
-      </span>
-      
-   
-   
-   
-   
-  
-      `
-      
-      
-      listCartHTML.appendChild(newCart);
-      
-      
-      
-      
-  })
-}
-
-noOfItems.innerText=totalQuantity;
-
-}
-
-
-
-
-const initApp=()=>{
-fetch('\product.json')
-.then(response => response.json())                
-.then(data => {
- listProducts=data;
-  addToHTML();
-
-  if(localStorage.getItem('cart')){
-    carts=JSON.parse(localStorage.getItem('cart'));
-  
-  addCartToHTML();
-  } 
-
-
-})
-
-
-}
-                                                    
-initApp();                                                                
-     
-
-
-
-                                                             
-                                                    
                                                                     
                                                                     
                                                                     
@@ -185,25 +79,7 @@ initApp();
                                                                     
                                                                     
                                                                     
-                                                                    
-                                                                    let sub=document.querySelector('.sub');
-                                                                    let shop=document.getElementById('shop');
-                                                                    shop.addEventListener('mouseover', showSub);
-                                                                    shop.addEventListener('mouseout', hideSub);
-                                                                    sub.addEventListener('mouseover',showSub);
-                                                                    sub.addEventListener('mouseout',hideSub);
-                                                                     function showSub(){
-                                                                        sub.classList.add('sublist');
-                                                                       
-                                                                     }
-                                                                    
-                                                                    
-                                                                    function hideSub(){
-                                                                        sub.classList.remove('sublist');
-                                                                        
-                                                                     }
-                                                                                      
-                                                                                             
+                                                                            
                                                                 
                                                                  
                                                                  
@@ -220,53 +96,7 @@ initApp();
                                                              
                                                              
                                                              
-                                                             let topIcon = document.querySelector('.top-icons');
-                                                             
-                                                             topIcon.addEventListener('click', showCart);
-                                                             
-                                                             function showCart() {
-                                                                 let cart = document.querySelector('.cart');
-                                                                 
-                                                                 let overlay = document.querySelector('.overlay');
-                                                             
-                                                             
-                                                                 if (cart.className === "cart") {
-                                                                     cart.classList.add("modal-box");
-                                                                     overlay.classList.add("overlay-box");
-                                                             
-                                                             
-                                                                 } else {
-                                                                     cart.classList.remove("modal-box");
-                                                                     overlay.classList.remove("overlay-box");
-                                                                 }
-                                                             }
-                                                             
-                                                             let overlay = document.querySelector('.overlay');
-                                                             
-                                                             overlay.addEventListener('click', closeOver);
-                                                             function closeOver(e) {
-                                                                 overlay = document.querySelector('.overlay');
-                                                                 let cart = document.querySelector('.cart');
-                                                                 if (e.target === overlay) {
-                                                                     overlay.classList.remove('overlay-box');
-                                                                     cart.classList.remove('modal-box');
-                                                                 }
-                                                             }
-                                                             
-                                                             let close = document.querySelector('.close');
-                                                             close.addEventListener('click', closeModal);
-                                                             function closeModal(e) {
-                                                                 overlay = document.querySelector('.overlay');
-                                                                 let cart = document.querySelector('.cart');
-                                                                 if (e.target === close) {
-                                                                     cart.classList.remove("modal-box");
-                                                                     overlay.classList.remove("overlay-box");
-                                                                 }
-                                                             }
-                                                             
-                                                             
-                                                             
-                                                             
+                                                            
                                                              
                                                              
                                                              
