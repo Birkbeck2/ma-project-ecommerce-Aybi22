@@ -1,62 +1,19 @@
 import products from "./products.js";
 
-const cart=()=>{
-
-let topIcon = document.querySelector('.top-icons');
-
-let overlay = document.querySelector('.overlay');  
-let close=document.querySelector('.close') ;  
-
-let cart=[];                                                  
-
-
-
-                                                             
-topIcon.addEventListener('click',() =>{
-
-
-    
-    
-    
-
-
-    if (cart.className === "cart") {
-        cart.classList.add("modal-box");
-        overlay.classList.add("overlay-box");
-    
-
-
-
-    } else {
-        cart.classList.remove("modal-box");
-        overlay.classList.remove("overlay-box")
-    }
-})
 
 
 
 
 
-overlay.addEventListener('click',()=>{
-
-    overlay = document.querySelector('.overlay');
-    let cart = document.querySelector('.cart');
-    if (e.target === overlay) {
-        overlay.classList.remove('overlay-box');
-        cart.classList.remove('modal-box');
-    }
-})
 
 
-close.addEventListener('click',()=>{
 
-    overlay = document.querySelector('.overlay');
-    let cart = document.querySelector('.cart');
-    if (e.target === close) {
-        cart.classList.remove("modal-box");
-        overlay.classList.remove("overlay-box");
-    }
-})
+
+
+
+
+
+
 
 
 const setProductInCart = (idProduct, quantity,position) => {
