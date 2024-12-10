@@ -37,15 +37,13 @@ const initApp = () => {
         newProduct.classList.add('item');
         newProduct.innerHTML = 
         `<a href="/detail.html?id=${product.id}">
-            <img src="${product.image}">
+          <div class="image"> 
+        <img src="${product.image}">
+        </div>
         </a>
-        <h2>${product.name}</h2>
-        <div class="price">$${product.price}</div>
-        <button 
-            class="addCart" 
-            data-id='${product.id}'>
-                Add To Cart
-        </button>`;
+        <div class="item-name">${product.name}</div>
+        <div class="item-price">£${product.price}</div>
+       `;
         listProductHTML.appendChild(newProduct);
    });
 }
