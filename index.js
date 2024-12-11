@@ -2,7 +2,7 @@
 import products from '/products.js';
 
 import cart from './cart.js';
-let listProduct = document.getElementById('listProduct');
+
 let app = document.getElementById('app');
 let temporaryContent = document.getElementById('temporaryContent');
              
@@ -15,22 +15,18 @@ const loadTemplate = () => {
         let contentTab = document.getElementById('contentTab');
         contentTab.innerHTML = temporaryContent.innerHTML;
         temporaryContent.innerHTML = null;
-        cart();
+       cart();
         initApp();
     
     })
-
-
-
-
 
 
 }
 loadTemplate();
 
 const initApp = () => {
-    let listProductHTML = document.querySelector('.listProduct');
-    listProductHTML.innerHTML = null;
+    let listProduct = document.querySelector('.listProduct');
+    listProduct.innerHTML = null;
     
     products.forEach(product => {
         let newProduct = document.createElement('div');
@@ -43,8 +39,11 @@ const initApp = () => {
         </a>
         <div class="item-name">${product.name}</div>
         <div class="item-price">£${product.price}</div>
+        <a class="add-btn">
+        add To Cart
+        </a>
        `;
-        listProductHTML.appendChild(newProduct);
+        listProduct.appendChild(newProduct);
    });
 }
                                                 
@@ -55,7 +54,8 @@ shop.addEventListener('mouseover', showSub);
 shop.addEventListener('mouseout', hideSub);
 sub.addEventListener('mouseover',showSub);
 sub.addEventListener('mouseout',hideSub);
- function showSub(){
+ 
+function showSub(){
     sub.classList.add('sublist');
    
  }

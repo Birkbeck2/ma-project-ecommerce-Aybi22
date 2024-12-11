@@ -26,9 +26,7 @@ const initApp = () => {
     }
 
     let detail = document.querySelector('.detail');
-    detail.querySelector('.images img').src = thisProduct.images;
-    detail.querySelector('.photo img').src = thisProduct.picture;
-    detail.querySelector('.picture img').src = thisProduct.photo;
+   
     detail.querySelector('.image img').src = thisProduct.image;
     detail.querySelector('.name').innerText = thisProduct.name;
     detail.querySelector('.price').innerText = '$' + thisProduct.price;
@@ -46,9 +44,7 @@ const initApp = () => {
     <a href="/detail.html?id=${product.id}">
      
         <img src="${product.image}">
-          <img src="${product.images}">
-            <img src="${product.photo}">
-              <img src="${product.picture}">
+          
         </a>
        
        
