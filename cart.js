@@ -2,7 +2,8 @@ import products from "./products.js";
 
 const cart= () =>{
     let topIcon = document.querySelector('.top-icons');
-                                                             
+       
+let cart=[];                                                      
     topIcon.addEventListener('click', showCart);
     
     function showCart() {
@@ -50,17 +51,17 @@ const cart= () =>{
     
     
 
-let cart=[];
 
 
 
 const setProductInCart=(idProduct,quantity,position)=>{
-    if(quantity>0) {
-      if(position< 0){
+    
+    if(quantity > 0) {
+      if(position < 0){
         cart.push({
 
-            product_id:idProduct,
-            quantity:quantity
+            product_id: idProduct,
+            quantity: quantity
 
         });
       }else{
@@ -76,26 +77,27 @@ const refreshCartHTML= () =>{
     let listHTML=document.querySelector('.listCart');
     let totalHTML=document.querySelector('.noOfItems');
     let totalQuantity= 0;
-    listHTML.innerText=null,
+    listHTML.innerText=null;
     cart.forEach(item => {
         totalQuantity=totalQuantity + item.quantity;
-        let position=products.findIndex((value)=>value.id==item.product_id);
+        let position= products.findIndex((value)=> value.id == item.product_id);
         let info=products[position];
        let newItem=document.createElement('div');
        newItem.classList.add('item');
        newItem.innerHTML=
        `
-       <div class="image">
-       <img src="${info.image}">
-       </div>
-       <div class="name">${info.name}</div>
+      <img src="${info.image}">
+       
+    
+    
        
        `;
        listHTML.appendChild(newItem);
         
     })
-     totalHTML.innerText=totalQuantity;
+     totalHTML.innerText= totalQuantity;
 }
+
   
 
 
@@ -112,8 +114,6 @@ document.addEventListener ('click', (event)=>{
         setProductInCart(idProduct,quantity, position);
      }
 })
-
-
 
 
 
