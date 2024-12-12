@@ -54,7 +54,7 @@ let cart=[];
 
 
 
-const setProductInCart=(idProduct,quantity,position)=>{
+const setProductInCart= (idProduct,quantity,position) =>{
     
     if(quantity > 0) {
       if(position < 0){
@@ -64,7 +64,8 @@ const setProductInCart=(idProduct,quantity,position)=>{
             quantity: quantity
 
         });
-      }else{
+      
+    }else{
         cart[position].quantity=quantity;
       }
    
@@ -81,14 +82,14 @@ const refreshCartHTML= () =>{
     cart.forEach(item => {
         totalQuantity=totalQuantity + item.quantity;
         let position= products.findIndex((value)=> value.id == item.product_id);
-        let info=products[position];
+        let info= products[position];
        let newItem=document.createElement('div');
        newItem.classList.add('item');
        newItem.innerHTML=
        `
       <img src="${info.image}">
        
-    
+    <div class="name">${info.name}</div>
     
        
        `;
