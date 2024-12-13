@@ -108,21 +108,22 @@ function hideSub(){
                                                              
                                                              
                                                              
- let hamburger = document.querySelector('.hamburger')
- hamburger.addEventListener('click', showMobileMenu);
-function showMobileMenu() {
-let mobileMenu = document.querySelector('.mobileMenu');
-mobileMenu.classList.toggle('mobile-box');
-}
-let closeMobile = document.querySelector('.closeMobile');
-closeMobile.addEventListener('click', mobileClose);
-function mobileClose(e) {
-let mobileMenu = document.querySelector('.mobileMenu');
+                                                             let hamburger = document.querySelector('.hamburger');
+                                                             hamburger.addEventListener('click', showMobileMenu);
+                                                             function showMobileMenu() {
+                                                                 let mobileMenu = document.querySelector('.mobileMenu');
+                                                                 mobileMenu.classList.toggle('mobile-box');
+                                                             }
                                                              
-if (e.target === closeMobile) {
-mobileMenu.classList.remove('mobile-box');
-}
-}
+                                                             let closeMobile = document.querySelector('.closeMobile');
+                                                             closeMobile.addEventListener('click', mobileClose);
+                                                             function mobileClose(e) {
+                                                                 let mobileMenu = document.querySelector('.mobileMenu');
+                                                             
+                                                                 if (e.target === closeMobile) {
+                                                                     mobileMenu.classList.remove('mobile-box');
+                                                                 }
+                                                             }
                                                              
                                                              
                                                              
@@ -264,21 +265,21 @@ mobileMenu.classList.remove('mobile-box');
                                                              
                                                              
                                                              
-let pics1 = ['images/texturesuit.jpg', 'images/texturesuit1.jpg','images/texturesuit2.jpg']
+                                                             let pics1 = ['images/texturesuit.jpg', 'images/texturesuit1.jpg', 'images/texturesuit2.jpg']
                                                              
-let smallPic1 = document.querySelectorAll('.small-pic1');
-for (let i = 0; i < smallPic1.length; i++) {
-smallPic1[i].addEventListener('click', showMainPic1)
+                                                             let smallPic1 = document.querySelectorAll('.small-pic1');
+                                                             for (let i = 0; i < smallPic1.length; i++) {
+                                                                 smallPic1[i].addEventListener('click', showMainPic1)
                                                              
                                                              
-function showMainPic1() {
-let img1 = document.getElementById('main-pic1');
+                                                                 function showMainPic1() {
+                                                                     let img1 = document.getElementById('main-pic1');
                                                              
-img1.setAttribute('src', pics1[i]);
+                                                                     img1.setAttribute('src', pics1[i]);
                                                              
-}
+                                                                 }
                                                                  
-}
+                                                             }
                                                              
                                                               
                                                                      
