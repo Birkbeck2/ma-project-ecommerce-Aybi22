@@ -1791,7 +1791,7 @@ width:100%;
     }
 
 
-textarea::focus-inner{
+textarea:focus-within{
     border:1px solid orange;
 
 }
