@@ -2281,13 +2281,7 @@ h2{
 
 
 .item-price{
-     
-  
-    color:var(--black);
-    font-weight: bold;
-    max-width: 200px;
-
-    
+    font-size:67px;
 }
 
 @media screen and (max-width:350px){
@@ -2510,36 +2504,6 @@ body,html{
 
 
             
-       
-
-    
-    
-    
-    
-    
-    
-    
-    
-    /* Styles for desktop screens*/ 
-    @media screen and (max-width: 768px) {
-       /* Your desktop styles here */
-       nav li,a{
-            padding:0;
-            margin:0;
-            width:80px;
-       }
-    }
-    
-    
-   
-
-
-
-
-
-
-
-    
     /* Styles for phones */
     @media screen and (max-width:540px){
         
