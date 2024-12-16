@@ -2281,7 +2281,7 @@ h2{
 
 
 .item-price{
-    font-size:67px;
+    max-width:200px;
 }
 
 @media screen and (max-width:350px){
