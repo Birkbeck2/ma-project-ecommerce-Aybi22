@@ -196,6 +196,71 @@ function hideSub(){
  });                             
                                  
                                  
+ document.addEventListener('DOMContentLoaded',function grey(){
+    let grey=document.getElementById('grey');
+    console.log(grey);
+grey.addEventListener('click',greySuit);
+           function greySuit(){
+         
+         let img=document.getElementById("special");
+             img.setAttribute('src', 'images/regularfitgrey.jpg');
+             
+         }
+
+
+        });
+
+        document.addEventListener('DOMContentLoaded',function navySuit(){
+
+let navy=document.getElementById('navy');
+navy.addEventListener('click',navySuit);
+
+function navySuit(){
+
+let img=document.getElementById("special");
+img.setAttribute('src','images/regularfitnavy.jpg');
+}
+});
+
+
+
+
+
+document.addEventListener('DOMContentLoaded',function blackSuit(){
+
+let black=document.getElementById('black');
+black.addEventListener('click',blackSuit);
+function blackSuit(){
+
+
+let img=document.getElementById("special");
+img.setAttribute('src','images/regularfitblack.jpg');
+
+
+}
+
+});
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  let pics1 = ['images/texturesuit.jpg', 'images/texturesuit1.jpg', 'images/texturesuit2.jpg']
  
  let smallPic1 = document.querySelectorAll('.small-pic1');
@@ -217,9 +282,6 @@ let pics2 = ['images/blacksuit.jpg', 'images/blacksuit1.jpg',
      'images/blacksuit2.jpg']
  
  
- 
- 
- 
  let smallPic2 = document.getElementsByClassName('small-pic2');
  for (let i = 0; i < smallPic2.length; i++) {
      smallPic2[i].addEventListener('click', showMainPic2)
@@ -235,9 +297,6 @@ let pics2 = ['images/blacksuit.jpg', 'images/blacksuit1.jpg',
  
  
  let pics3 = ['images/greysuit.jpg', 'images/greysuit1.jpg', 'images/greysuit2.jpg']
- 
- 
- 
  
  
  let smallPic3 = document.getElementsByClassName('small-pic3');
@@ -273,50 +332,6 @@ let pics2 = ['images/blacksuit.jpg', 'images/blacksuit1.jpg',
      }
  }
  
- document.addEventListener('DOMContentLoaded',function grey(){
-     let grey=document.getElementById('grey');
-     console.log(grey);
- grey.addEventListener('click',greySuit);
-            function greySuit(){
-          
-          let img=document.getElementById("special");
-              img.setAttribute('src', 'images/regularfitgrey.jpg');
-              
-          }
- 
- 
-         });
- 
-         document.addEventListener('DOMContentLoaded',function navySuit(){
- 
- let navy=document.getElementById('navy');
- navy.addEventListener('click',navySuit);
- 
- function navySuit(){
- 
- let img=document.getElementById("special");
- img.setAttribute('src','images/regularfitnavy.jpg');
- }
- });
- 
- 
- 
- 
- 
- document.addEventListener('DOMContentLoaded',function blackSuit(){
- 
- let black=document.getElementById('black');
- black.addEventListener('click',blackSuit);
- function blackSuit(){
- 
- 
- let img=document.getElementById("special");
- img.setAttribute('src','images/regularfitblack.jpg');
- 
- 
- }
- 
- });
  
  
  
@@ -437,13 +452,6 @@ let pics5 = ['images/regularfitgrey.jpg', 'images/regularfitblue.jpg', 'images/r
      }
  
  }
- 
- 
- 
- 
- 
- 
- 
  
  
  let pics10 = ['images/blackoxfordleathershoe.jpg', 'images/oxfordleather1.jpg', 'images/oxfordleather2.jpg']
