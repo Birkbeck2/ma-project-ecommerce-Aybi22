@@ -268,19 +268,6 @@ let smallPic4 = document.getElementsByClassName('small-pic4');
  
  
  
- document.addEventListener('DOMContentLoaded',function blueSuit(){
- let blue=document.getElementById('blue');
- blue.addEventListener('click',blueSuit);
- 
- function blueSuit(){
- 
- 
- let img=document.getElementById ("special");
- img.setAttribute('src','images/regularfitblue.jpg');
- }
- });
- 
- 
  
 let pics5 = ['images/regularfitgrey.jpg', 'images/regularfitblue.jpg', 'images/regularfitblack.jpg']
  
