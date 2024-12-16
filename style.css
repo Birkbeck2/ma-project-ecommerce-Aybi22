@@ -1503,24 +1503,7 @@ footer a{
     border-bottom:1px solid var(--black);
 }
 
-.listProduct{
-    
-    display:grid;
-    max-width:65%;
-  
-    grid-template-columns: repeat(3,1fr);
-    margin:auto;
-    row-gap:137px;
- 
-}
 
-.listProduct .item img{
-    width:75%;
-    
-}
-.listProduct .image{
-   
-}
 
 
 
@@ -2295,11 +2278,7 @@ h2{
     display:flex;
     align-items:center;
 }
-.detail{
 
-display:flex;
-max-width:100%;
-}
 
 .item-price{
      

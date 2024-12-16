@@ -3,7 +3,7 @@ import products from "./products.js";
 const cart = () =>{
    
    let topIcon=document.querySelector('.top-icons')  
-let cart=[];                                                      
+let cart=document.querySelector('.cart')                                                     
 
 topIcon.addEventListener('click', showCart);
     
