@@ -3,7 +3,7 @@
     --white:#FFFFFF;
     --champagne:#EEE0CB;
     --cambridge-blue:#839788;
-   
+   --white:#FFFFFF;
 }
 /*general style*/
 *{
@@ -602,7 +602,7 @@ figure{
     margin-top:22px;
 }
 .title{
-       background:var(--section-title);
+       
        color:var(--white);
        width:100%;
        padding:30px;
