@@ -558,17 +558,7 @@ header p{
         
      
 
-
-
-
-
-
-
-
-
-
-
-    h3{
+h3{
    text-align:center;
    text-transform:uppercase;
    font-family:verdana;
@@ -1801,7 +1791,7 @@ width:100%;
     }
 
 
-textarea::-moz-focus-inner{
+textarea::focus-inner{
     border:1px solid orange;
 
 }
@@ -1858,15 +1848,7 @@ textarea::-moz-focus-inner{
    
    
    
-
-
-
-
-   
-
-  
- 
- .section-list h3{
+.section-list h3{
     background:var(--cambridge-blue);
     text-align:center;
     width:100px;
@@ -1907,20 +1889,13 @@ textarea::-moz-focus-inner{
    .shoe-container{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-  max-width:1000px;
-  width:100%;
+    max-width:1000px;
+    width:100%;
     margin-bottom:141px;
- gap:13px;
-margin:auto;
- 
-   margin-bottom: 147px;  
+    gap:13px;
+    margin:auto;
+    margin-bottom: 147px;  
   
-}
-
-.shoe-container img{
-   
-  
-   
 }
 
 
@@ -2066,13 +2041,9 @@ form .send-btn{
     }
 
 
-   
-
-.section-text{
+   .section-text{
     font-size:17px;
 }
-
-
 
 
 .sub{
@@ -2104,12 +2075,7 @@ form .send-btn{
 }
 
 
- 
-
-
-
-
-legend{
+ legend{
     font-weight: 900;
     text-transform:capitalize;
 }
@@ -2133,13 +2099,6 @@ legend{
 
 
 
-
-
-
-
-
-
-
 .first-price{
     text-decoration: line-through;
     text-decoration-color:red;
@@ -2147,7 +2106,6 @@ legend{
     margin-right:7px;
 
 }
-
 
 
 .blink{ 
@@ -2188,17 +2146,11 @@ legend{
 
 .stock-info{
     font-size:12px;
-   
-    font-weight:lighter;
-    margin-left:22px;
+   font-weight:lighter;
+ margin-left:22px;
    width:100%;
    text-align:center;
 }
-
-
-
-
-
 
 
 .item-title{
@@ -2214,21 +2166,14 @@ legend{
 
 
 h2{
-    font-family:roboto;
+   margin-top:33px;
     font-family:verdana;
 }
-
-
-
 
 .cart-footer{
     display:flex;
     justify-content: space-around;
 }
-
-
-
-  
 
 .product-btn{
     background:var(--cambridge-blue);
@@ -2278,7 +2223,6 @@ h2{
     display:flex;
     align-items:center;
 }
-
 
 .item-price{
     max-width:200px;
