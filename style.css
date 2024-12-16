@@ -29,12 +29,7 @@
     width:100%;
    } 
   
-   img{
-    max-width:100%;
-    height:100%;
-    display:block;
-    object-fit: cover;
-}
+  
     
     p{
     line-height:25px;
@@ -1627,16 +1622,6 @@ legend{
 }
 
 
-
-
-/*with display block vertical align should not be used*/
-
-
-
-
-
-
-
 .item-container{
     
     display:flex;
@@ -1653,14 +1638,7 @@ align-items:flex-start;
  
 
 
-.offer-wrapper .image{
-    flex:1 1 auto;
-}
-
-
-
-
- .resp{
+.resp{
     max-width:70%;
     width:100%;
     font-size:13px;
@@ -2218,11 +2196,12 @@ h2{
 }
 
 
-.image-bottom{
-    display:flex;
-    align-items:center;
+img{
+    max-width:100%;
+    height:100%;
+    display:block;
+    object-fit: cover;
 }
-
 
 
 
