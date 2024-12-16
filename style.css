@@ -2224,10 +2224,8 @@ h2{
     align-items:center;
 }
 
-.item-price{
-    max-width:200px;
-    font-weight:900;
-}
+
+
 
 @media screen and (max-width:350px){
     #contact{
@@ -2465,7 +2463,11 @@ body,html{
        .container{
         grid-template-columns: 1fr;
        }
-       
+       .questions h2{
+        white-space: nowrap;
+        font-size:17px;
+        font-weight: 900;
+    } 
        
        
        header{
