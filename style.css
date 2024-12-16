@@ -725,11 +725,21 @@ section{
 
 
 .q-container{
-  background:var(--champagne);
+ max-width:100%;
+ width:100%;
 }
 .qtitle{
+    
+    max-width:100%;
+    width:100%;
+    padding:11px;
+    border-bottom: 1px solid var(--champagne);
     margin:auto;
-}
+    cursor:pointer;
+    margin-bottom:22px;
+   
+  }
+
 .section-title{
     margin-top:97px;
 }
@@ -1648,17 +1658,6 @@ align-items:flex-start;
 }
 
 
-.qtitle{
-    background:white;
-    max-width:1000px;
-    width:100%;
-    padding:15px;
-    border-bottom: 1px solid var(--champagne);
-    overflow:hidden;
-    cursor:pointer;
-    margin-bottom:22px;
-   
-  }
 
 
  .resp{
@@ -2246,7 +2245,7 @@ h2{
     .stock-info{
         font-size:7px;
     }
-
+     
 
     }
 
@@ -2458,7 +2457,10 @@ body,html{
       .questions h2{
         font-size:18px;
       }
-      
+      h2{
+        font-size:13px;
+        white-space: nowrap;
+     }
        
        .container{
         grid-template-columns: 1fr;
@@ -2652,8 +2654,13 @@ body,html{
 }
 
 .q-container h3{
-font-size: 10px;
+font-size:10px;
+text-align:center;
 
+}
+
+h2{
+  
 }
    
 .offer-wrapper {
