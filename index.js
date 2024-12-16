@@ -251,10 +251,7 @@ let pics2 = ['images/blacksuit.jpg', 'images/blacksuit1.jpg',
  let pics4 = ["images/cowleathershoe.jpg", "images/cowleathershoe1.jpg", "images/cowleathershoe2.jpg"];
  
  
- 
- 
- 
- let smallPic4 = document.getElementsByClassName('small-pic4');
+let smallPic4 = document.getElementsByClassName('small-pic4');
  for (let i = 0; i < smallPic4.length; i++) {
      smallPic4[i].addEventListener('click', showMainPic4)
  
