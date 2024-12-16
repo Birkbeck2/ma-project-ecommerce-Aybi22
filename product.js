@@ -1,6 +1,6 @@
 const products=[
 
-    {
+{
     "id":1,
     "image":"images/texturesuit.jpg",
     "name":"texture suit",
