@@ -57,6 +57,7 @@ h1{
     max-width:700px;
     text-transform:capitalize;
     font-family:roboto;
+    margin-top:33px;
     
 
 }
@@ -2434,10 +2435,14 @@ footer{
         white-space: nowrap;
      }
       h1{
-          margin-top:22px;
+          margin-top:52px;
       }
      footer{
      margin-bottom:0;
+     }
+
+     footer{
+        margin-top:-60px;
      }
        
        .container{
