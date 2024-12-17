@@ -2140,7 +2140,9 @@ form .send-btn{
     gap:44px;
 }
 
-
+#shop footer{
+    margin-top:43px;
+}
 h2{
    margin-top:33px;
     font-family:verdana;
