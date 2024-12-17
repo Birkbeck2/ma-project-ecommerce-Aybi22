@@ -23,7 +23,7 @@
 
    
    #home section{
-   margin-top:53px;
+   
    padding:22px;
     width:100%;
    } 
@@ -220,7 +220,6 @@ header{
  padding: 0;
  margin:0;
  background-color:var(--black) ;
-
  top:0;
  overflow: hidden;
  position:fixed;
