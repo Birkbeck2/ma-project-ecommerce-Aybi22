@@ -952,11 +952,13 @@ footer{
     background:linear-gradient(to right,#EEE0CB,#888074);
     color:var(--black);
     position:relative;
+   
     max-width:100%;
     z-index:-99;
     display:flex;
     flex-direction:column;
     margin-top:99px;
+    
     
    }
 
@@ -1408,38 +1410,7 @@ footer a{
   
 
 
-  .suit-color{
-    font-size:20px;
-    margin-left:9px;
-    display:flex;
-    justify-content:center;
-    gap:17px;
-  }
-#grey{
-    background-color:#36454f;
   
-}
-
-#navy{
-    background-color:navy;
-}
-#black{
-    background-color:var(--black);
-}
-
-#blue{
-    background-color:darkblue;
-}
-
-
-
-.suit-color div{
-        border-radius:100%;
-        border:none;
-        width:20px;
-        height:20px;
-        cursor:pointer;
-}
 
 /*product page styling*/
 
@@ -2032,13 +2003,13 @@ form .send-btn{
     background:white;
     box-shadow:2px 2px 3px  rgba(0, 0, 0, 0.4);
     display: flex;
-   justify-content:space-around;
-   height:0;
-   transition:0.3s;
-   position:fixed;
-   right:0;
-   left:0;
-   overflow: hidden;
+    justify-content:space-around;
+    height:0;
+    transition:0.3s;
+    position:fixed;
+    right:0;
+    left:0;
+    overflow: hidden;
   
    
 }
@@ -2133,7 +2104,7 @@ form .send-btn{
 .stock-info{
     font-size:12px;
    font-weight:lighter;
- margin-left:22px;
+   margin-left:22px;
    width:100%;
    text-align:center;
 }
@@ -2274,6 +2245,7 @@ img{
 body,html{
    max-width: 100%;
     overflow-x:hidden;
+    
 }
 
 
