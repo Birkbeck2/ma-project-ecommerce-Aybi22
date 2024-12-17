@@ -17,11 +17,10 @@
         margin:0;
         padding:0;
         font-family:verdana;
+        height:100%;
       
     }
-   
-    
-   
+
    
    #home section{
    margin-top:53px;
@@ -30,7 +29,7 @@
    } 
   
   
-    
+   
     p{
     line-height:25px;
     
@@ -76,7 +75,7 @@ hr{
 
 
 
-h2:not(.banner h2){
+h2{
     text-decoration:underline;
     text-decoration-color: var(--champagne);
     text-decoration-thickness:4px;
@@ -474,12 +473,19 @@ header p{
 .offer-info{
         background:var(--cambridge-blue);
         color:var(--black);
-        max-width:400px;
+        max-width:900px;
         width:100%;
         text-align:center;
         display:flex;
         flex-direction:column;
         align-content: center;
+        margin-top:-80px;
+     }
+
+     .offer-content{
+ 
+        display:flex;
+       margin:auto;
      }
     
     .offer-info a{
@@ -579,9 +585,7 @@ h3{
     font-family: verdana;
 }
 
-.section{
-    margin-bottom: 67px;
-}
+
 
 figure{
     display:block;
@@ -2108,17 +2112,20 @@ form .send-btn{
  }
 
 .offer-price{
-    font-size:23px;
+    font-size:17px;
     background:black;
     color:white;
     font-weight:900;
-    width:100px;
-    height:100px;
+    width:70px;
+    height:70px;
     border-radius:100%;
     display:flex;
     align-items:center;
     justify-content:center;
     margin:auto;
+}
+.offer-info p{
+    font-size:13px;
 }
 
 .stock-info{
@@ -2204,6 +2211,7 @@ img{
 }
 
 
+ 
 
 @media screen and (max-width:350px){
     #contact{
@@ -2246,7 +2254,9 @@ img{
    
     
  }
-
+.offer-info{
+    width:80%;
+}
 
     nav ul{
  
@@ -2450,6 +2460,9 @@ body,html{
         font-weight: 900;
     } 
        
+    .offer-info{
+        width:80%;
+    }
        
        header{
         padding:7px;
@@ -2642,10 +2655,7 @@ h2{
   
 }
    
-.offer-wrapper {
-  flex-direction:column;
 
-}
  
 
 }
