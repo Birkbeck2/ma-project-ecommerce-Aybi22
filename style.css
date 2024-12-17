@@ -2472,6 +2472,7 @@ footer{
        
     .seller-wrapper{
             flex-direction: column;
+             gap:55px;
         }
     
     .seller-wrapper .item-title{
