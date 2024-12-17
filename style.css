@@ -2055,20 +2055,21 @@ form .send-btn{
 
 
 
+
 .sub-box{
     width:150px;
     height:200px;
+   
 }
-.sub-box .image{
+.sub-box img{
    width:100%;
-   height:100%;
+   height:200px;
 
 }
 .sub-box h3{
     color:black;
     font-weight:900;
-   
-}
+   }
 
 
 
