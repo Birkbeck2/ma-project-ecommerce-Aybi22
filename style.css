@@ -2269,7 +2269,6 @@ body,html{
 
 footer{
     
-    
     margin-bottom:0;
  }
     
@@ -2367,9 +2366,7 @@ footer{
       }
    
 
-   footer{
-    margin-bottom:121px;
-   }
+   
 
    .total-amount{
    display: flex;
