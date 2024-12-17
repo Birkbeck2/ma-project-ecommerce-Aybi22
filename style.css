@@ -2127,7 +2127,9 @@ form .send-btn{
 .offer-info p{
     font-size:13px;
 }
-
+.item-price{
+    font-size: 900;
+}
 .stock-info{
     font-size:12px;
    font-weight:lighter;
