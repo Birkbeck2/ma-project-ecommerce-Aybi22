@@ -573,7 +573,7 @@ h3{
    text-align:center;
    text-transform:uppercase;
    font-family:verdana;
-   font-weight:900;
+  
    padding:22px;
    white-space:nowrap;
    font-size:13px;
@@ -1218,7 +1218,7 @@ footer a{
 }
 
 .num-text{
-    font-weight:bold;
+    
     font-size:14px;
     text-transform:capitalize;
     color:var(--black);
@@ -1269,7 +1269,7 @@ footer a{
 
 .comment{
     color:var(--black);
-    font-weight:900;
+   
 }
 
 .mobileMenu{

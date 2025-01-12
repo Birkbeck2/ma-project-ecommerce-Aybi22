@@ -1,49 +1,4 @@
-let topIcon=document.querySelector('.top-icons')  
-let cart=document.querySelector('.cart')                                                     
 
-topIcon.addEventListener('click', showCart);
-    
-function showCart() {
-    let cart = document.querySelector('.cart');
-    
-    let overlay = document.querySelector('.overlay');
-
-
-    if (cart.className === "cart") {
-        cart.classList.add("modal-box");
-        overlay.classList.add("overlay-box");
-
-
-    } else {
-        cart.classList.remove("modal-box");
-        overlay.classList.remove("overlay-box");
-    }
-}
-
-let overlay = document.querySelector('.overlay');
-
-overlay.addEventListener('click', closeOver);
-function closeOver(e) {
-    overlay = document.querySelector('.overlay');
-    let cart = document.querySelector('.cart');
-    if (e.target === overlay) {
-        overlay.classList.remove('overlay-box');
-        cart.classList.remove('modal-box');
-    }
-}
-
-let close = document.querySelector('.close');
-close.addEventListener('click', closeModal);
-function closeModal(e) {
-    overlay = document.querySelector('.overlay');
-    let cart = document.querySelector('.cart');
-    if (e.target === close) {
-        cart.classList.remove("modal-box");
-        overlay.classList.remove("overlay-box");
-    } 
-
-
-}
 
                            
                                                     
