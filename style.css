@@ -892,7 +892,7 @@ font-weight:900;
 }
 .name{
     text-transform:capitalize;
-    font-weight:bold;
+    
     font-size:17px;
     padding: 7px;
     }
@@ -904,7 +904,7 @@ font-weight:900;
     padding:5px;
     width:100px;
     cursor:pointer;
-    font-weight:900;
+   
     
 }
 
@@ -1578,7 +1578,7 @@ legend{
     background:var(--cambridge-blue);
     color:var(--black);
     gap:11px;
-    font-weight: 900;
+    
     max-width:600px;
     height:auto;
   
@@ -1785,17 +1785,29 @@ textarea:focus-within{
     grid-template-columns:repeat(4,1fr);
     max-width:1200px;
     width:100%;
-    margin:auto;
-    align-items:stretch;
+   margin: auto;
    column-gap:17px;
   row-gap: 127px;
+ 
  
    
    
 
    }
 
-  h4{
+  
+   .shop-container .image{
+    height:100%;
+   
+   }
+   
+  
+  
+  
+  
+  
+  
+   h4{
     font-size:9px;
     text-transform:uppercase;
  
@@ -1803,17 +1815,7 @@ textarea:focus-within{
   }
    
 
-   .shop-container .image{
-    height:100%;
    
-   }
-   .shop-container img{
-    
-    
-    height:100%;
-    object-fit:cover;
-   
-   }
    
    
    
@@ -1999,7 +2001,7 @@ form .send-btn{
     text-transform:uppercase;
     text-align:center;
     max-width:600px;
-    font-size:20px;
+    font-size:15px;
     margin:auto;
     text-transform:capitalize;
     line-height:40px;
@@ -2010,9 +2012,6 @@ form .send-btn{
     }
 
 
-   .section-text{
-    font-size:17px;
-}
 
 
 .sub{
@@ -2117,7 +2116,7 @@ form .send-btn{
     font-size:13px;
 }
 .item-price{
-    font-weight:900;
+    font-weight:600;
 }
 .stock-info{
     font-size:12px;
@@ -2204,30 +2203,10 @@ img{
 }
 
 
- 
+p{
+    font-size:13px;
+}
 
-@media screen and (max-width:350px){
-    #contact{
-        width:100%;
-    }
-     .contact-block{
-        display:flex;
-        flex-direction:column;
-     }
-     .banner{
-       display:flex;
-        flex-direction:column;
-       
-    }
-    .item-name{
-        font-size:11px;
-    }
-    .stock-info{
-        font-size:7px;
-    }
-     
-
-    }
 
    
     
@@ -2354,7 +2333,7 @@ body,html{
     
     .shop-container{
         grid-template-columns:repeat(2,1fr);
-       
+        
        
     }
    
@@ -2374,6 +2353,7 @@ body,html{
  
  .shoe-container{
      grid-template-columns:repeat(3,1fr);
+     margin: auto;
  }
 
  
@@ -2399,7 +2379,7 @@ body,html{
 
 .blazer-container{
     grid-template-columns: repeat(2,1fr);
-    width:70%;
+    
 }
 
 .footer-top-text{
@@ -2413,6 +2393,7 @@ body,html{
 
 
 }
+ 
 
 /* Styles for phones */
     @media screen and (max-width:540px){
@@ -2517,6 +2498,7 @@ body,html{
     .blazer{
         
            flex-direction:column;
+           width:100%;
         }
 
         
@@ -2535,17 +2517,20 @@ body,html{
         
     .shoe-container{
             grid-template-columns:1fr;
-            width: 100%;
+            width:100%;
+            
         }
     
     .shop-container{
             grid-template-columns:1fr;
+            width:100%;
            
            
         }
         
     .blazer-gallery{
             flex-direction: column;
+            width: 100%;
         }
         
     nav ul{
@@ -2566,6 +2551,8 @@ body,html{
     .blazer{
             
         flex-direction:column;
+        width: 100%;
+
     }
 
     .product{
