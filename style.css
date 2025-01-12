@@ -1213,7 +1213,7 @@ footer a{
 .num{
     display:block;
     font-size:40px;
-    font-weight:bold;
+    
     
 }
 
@@ -2207,9 +2207,28 @@ p{
     font-size:13px;
 }
 
+.listProduct{
+    display:grid;
+    max-width:100%;
+    width:100%;
+    grid-template-columns: repeat(3,1fr);
+    margin:auto;
+    row-gap: 55px;
+    column-gap: 22px;
+}
+.listProduct .image{
+    height:100%;
+}
 
-   
-    
+
+.detail{
+    display:flex;
+    max-width:100%;
+    width:100%;
+    gap:22px;
+    margin-top:73px;
+    margin:auto;
+}
 
 
 @media screen and (max-width:1205px){

@@ -2,8 +2,7 @@ const products=[
 
     {
     "id":"p1",
-   "picture":"images/texturesuit1.jpg",
-    "photo":"images/texturesuit2.jpg",
+   
     "image":"images/texturesuit.jpg",
    
     "name":"texture suit",
