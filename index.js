@@ -30,15 +30,19 @@ const initApp = () => {
         let newProduct = document.createElement('div');
         newProduct.classList.add('item');
         newProduct.innerHTML = 
-        `<a href="/detail.html?id=${product.id}">
-            <div class="image">
+        `
+   
+        
+        <a href="/detail.html?id=${product.id}">
+            
         <img src="${product.image}">
-        </div>
+       
         </a>
         <div class="item-title">
         <div class="item-name">${product.name}</div>
         <div class="item-price">£${product.price}</div>
         </div>
+        
        `;
         listProductHTML.appendChild(newProduct);
    });
