@@ -2227,6 +2227,7 @@ p{
 .detail{
     display:flex;
     max-width:100%;
+   
     width:100%;
     gap:22px;
     margin-top:67px;
@@ -2235,11 +2236,31 @@ p{
     }
 
 .left-side{
-   
+   max-width:600px;
+   width:100%;
+   height:auto;
 }
-.right-side{
-   
+.left-gallery img{
+    border:2px solid red;
 }
+
+.right-side h1{
+    color:red;
+}
+    
+.left-side img{
+    height:100%;
+    margin:auto;
+}
+ .picture{
+ border:9px solid blue;
+ }
+
+ .mainpic{
+    border:9px solid green;
+    width:200px;
+    }
+
 
 @media screen and (max-width:1205px){
     
@@ -2277,11 +2298,8 @@ body,html{
 }
 
 
-    
-.left-side img{
-    height:100%;
-    margin:auto;
-}
+
+
 
 
 .main-text h1{

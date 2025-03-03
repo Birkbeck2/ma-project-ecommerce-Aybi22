@@ -3,8 +3,8 @@ const products=[
     {
     "id":"p1",
     "picture":"images/texturesuit1.jpg",
-    "images":"images/Texturesuit.jpg",
-    "photo":"images/texturesuit2.jpg",
+    "photo":"images/Texturesuit.jpg",
+    "images":"images/texturesuit2.jpg",
     "image":"images/texturesuit.jpg",
     "name":"texture suit",
     "price":"250",
@@ -60,9 +60,10 @@ const products=[
     
             {
                 "id":"p5",
-                "picture":"images/blacksuit1.jpg",
-                "photo":"images/blacksuit2.jpg",
-                "images":"images/Blacksuit.jpg",
+                
+                "photo":"images/regularfitnavy.jpg",
+                "images":"images/Specialoffer.jpg",
+                "picture":"images/greyregularsuit.jpg",
                 "image":"images/specialoffer.jpg",
                 "name":"regular fit suit",
                 "price":"400",
@@ -103,9 +104,9 @@ const products=[
                         
                         {
                             "id":"p8",
-                            "picture":"images/navychechsuit1.jpg",
-                            "photo":"images/navysuit2.jpg",
-                            "images":"images/Navysuit.jpg",
+                            "picture":"images/navychech1.jpg",
+                            "photo":"images/navychech2.jpg",
+                            "images":"images/Navychechsuit.jpg",
                             "image":"images/navychechsuit.jpg",
                             "name":"navy suit",
                             "price":"655",
@@ -117,9 +118,9 @@ const products=[
     
                             {
                                 "id":"p9",
-                                "picture":"images/blacksuit1.jpg",
-                                "photo":"images/blacksuit2.jpg",
-                                "images":"images/Blacksuit.jpg",
+                                "picture":"images/stretchsuit1.jpg",
+                                "photo":"images/stretchsuit2.jpg",
+                                "images":"images/Stretchsuit.jpg",
 
                                 "image":"images/stretchsuit.jpg",
                                 "name":"stretch chino blazer",
@@ -162,9 +163,9 @@ const products=[
                                         
                                         {
                                             "id":"p12",
-                                            "picture":"images/blacksuit1.jpg",
-                                             "photo":"images/blacksuit2.jpg",
-                                            "images":"images/Blacksuit.jpg",
+                                            "picture":"images/greycheckjacket1.jpg",
+                                             "photo":"images/greycheckjacket2.jpg",
+                                            "images":"images/Greycheckjacket.jpg",
                                             "image":"images/greycheckjacket.jpg",
                                             "name":"grey check jacket",
                                             "price":"415",
@@ -175,9 +176,9 @@ const products=[
                           
                                             {
                                                 "id":"p13",
-                                                "picture":"images/blacksuit1.jpg",
-                                                "photo":"images/blacksuit2.jpg",
-                                               "images":"images/Blacksuit.jpg",
+                                                "picture":"images/navypanamsuit1.jpg",
+                                                "photo":"images/navypanamasuit2.jpg",
+                                               "images":"images/Navypanamasuit.jpg",
 
 
                                                 "image":"images/navypanamasuit.jpg",
@@ -191,9 +192,9 @@ const products=[
              
                                                 {
                                                     "id":"p14",
-                                                    "picture":"images/blacksuit1.jpg",
-                                                    "photo":"images/blacksuit2.jpg",
-                                                    "images":"images/Blacksuit.jpg",
+                                                    "picture":"images/blazerjacket1.jpg",
+                                                    "photo":"images/blazerjacket2.jpg",
+                                                    "images":"images/Blazerjacket.jpg",
 
 
                                                     "image":"images/blazerjacket.jpg",
@@ -257,6 +258,7 @@ export default products;
     
     
     
+
     
     
     
