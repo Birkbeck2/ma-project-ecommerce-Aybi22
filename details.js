@@ -1,285 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
+import products from'./products.js';
 
-<title>Product2</title>
-<meta charset="UTF-8">
-<meta name="author" content="Ibrahima Kamagate">
-<meta name="description" content=" high-quality and trendy men suits and leather shoes">
-<meta name="keywords"  content="suit,luxury, leather shoes,jacket,trends">
+ const renderProduct=()=>{
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet"  href="style.css">
+    let productId = new URLSearchParams(window.location.search).get('id');
+    let thisProduct = products.filter(value => value.id == productId)[0];
+    
+    
+    const productDetails=document.querySelector('.details');
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Dots&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zen+Dots&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/798e587ede.js" crossorigin="anonymous"></script>
-
-
-</head>
-<body>
-
-<header>
-       
-    <div class="hamburger">
-        <i class="fa-solid fa-bars"></i>
+    if(thisProduct){
+        productDetails.innerHTML=`
         
+        <div class="product">
         
-        </div>   
-
-    <nav>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li class="shop"><a href="Shop.html" id="shop">Shop</a></li>
-<li><a href="About.html">About</a></li>
-<li><a href="Contact.html">Contact</a></li>
-
-
-</ul>
-</nav>
-
-
-
-<div class="logo">
-
-<a href="index.html"><p>SUITME<span class="log">Fashion</span></p>
-</a>
-</div>
-
-
-
-<div class="top-icons">
-   
-    <i class="fa-solid fa-bag-shopping"></i>
-     <div class="noOfItems">0</div>
-     
-
- </div>
-
-
-
-
-
-
-
-</header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="sub">
-    
-    <a href="suit.html">
-   <div class="sub-box">
-    <h3>regular suits</h3>
-    
-    <div class="image">
-
-        <img src="images/blacksuit.jpg"   alt="black suit image">
-    </div>
-    
-   
-    </div>
-</a>
-<a href="blazer.html">
-    <div class="sub-box">
-    <h3>blazer suits</h3>
-    
-    
-    <div class="image">
-
-        <img src="images/textureblazer.jpg"   alt="texture blazer image">
-    </div>
-    </div>
-</a>
-<a href="leather shoes.html">
-    <div class="sub-box">
-    <h3>leather shoes</h3>
-    
-  
-    <div class="image">
-
-        <img src="images/cowleathershoe.jpg"  alt="cow leather shoe image">
-    </div>
-    
-
-</div>
-</a>
-
-</div>
-
-
-    
-    <div class="cart">
-      <div class="cart-header">
-        <h3>shopping cart</h3>
-       
-      </div>
-      <div class="cart-items">
-   
-      </div>
-
-      
-      
-      
-      
-      
-      
-      <div class="cart-footer cart-header">
-        <h4>Total</h4>
-        <p class="total">$0.00</p>
-      </div>
-      <button class="cart-btn">check out</button>
-      <span class="close">&times;</span>
-    
-    
-    
-    
-    </div>
-  
-  
-  
-
-    
-   
-
-
- 
-    
-
-   
-
-<div class="overlay">
-
-    
-</div>
-
-<div class="mobileMenu">
-
-   
-        <ul class="mobile">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="About.html">About</a></li>
-    <li><a href="Shop.html">Shop</a></li>
-    <li><a href="Contact.html">Contact</a></li>
-        </ul>
-   
-<span class="closeMobile">&times;</span>
-
-
-</div>
-    
-    
-
-    
-    
-   
-    
-    <section class="product">
-
-
         <div class="left-gallery">
-
-            <div class="image">
-            <img src="images/blacksuit.jpg" width="150" height="150" class="small-pic2" alt="black suit image">
-            
-            
-            </div>
-            
-            <div class="image">
-                <img src="images/blacksuit1.jpg"  width="150" height="150" class="small-pic2" alt="black suit image">
-                
-                
-                </div>
-            
-            
-                <div class="image">
-                    <img src="images/blacksuit2.jpg" width="150" height="150"  class="small-pic2"  alt="black suit image">
-                    
-                    
-                    </div>
-            
-            
-            
-            
-            </div>
-            
-            
-            
-<div class="left-side">
-
-
-
-        <div class="image">
-            
-            <img src="images/blacksuit.jpg"  width="500" height="500" alt="black suit image" id="main-pic2" alt="black suit image">
-           
-            
-       
-            </div>
+    
+    <div class="image">
+    <img src=${thisProduct.image} width="150" height="150" class="small-pic1" alt="texture suit image">
+    
+    
+    </div>
+    
+    <div class="image">
+        <img src=${thisProduct.image1} width="150" height="150" class="small-pic1" alt="texture suit image">
         
-          
+        
+        </div>
+    
+    
+        <div class="image">
+            <img src=${thisProduct.image2} width="150" height="150" class="small-pic1"    alt="texture suit image">
+            
+            
+            </div>
+    
+    
+    
+    
+    </div>
+    
+    
+    <div class="left-side">
+    
+    
+    
+            <div class="image">
+                
+               <img src=${thisProduct.image} id="main-pic1" width="500" height="500" alt="texture suit image"> 
+                
+                
            
-       
-</div>
+                </div>
+        
+        
+        
+        
+        
+        
+            </div> 
+              
+        
+    <div class="right-side">
 
-<div class="right-side">
+<h1>${thisProduct.name}<span class="item-price">£${thisProduct.price}</span></h1>
 
-<h1>black suit<span class="item-price"><span class="first-price">£400</span>370£</span></h1>
-<div class="stock">10 in stock</div>
+
+<span class="stock">in stock</span>
+
 <div class="p-review">
 <div class="stars">
     <i class="fa-solid fa-star"></i>
-
-<i class="fa-solid fa-star"></i>
-
-<i class="fa-solid fa-star"></i> 
-<i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i> 
+    <i class="fa-solid fa-star"></i>
+    <i class="fa-solid fa-star"></i>
 </div>
+
 <div class="review-num">1200 customer's reviews</div>
 </div>
 
 
-
-
-
-
-
- 
-    
-    <div class="size">
+<div class="size">
         <span class="xsmall">XS</span>
         <span class="small">S</span>
         <span class="medium">M</span>
@@ -289,13 +91,7 @@
         </div>
    
    
-   
-   
-   
-   
-   
-   
-    <div class="add-cart">
+   <div class="add-cart">
     
     <div class="counter">
 
@@ -303,44 +99,26 @@
 <input type="button" value="1"  id="number">
 <input type="button" value="+" id="increase">
 
-
-
-
-
-    </div>
+</div>
     
     
-    
-    
-    
-    
- 
-    
-    
-    
-    
-    
-    
-    
-    <a class="add-btn">
+    <a class="add-btn" href="shop.html">
         
         add to cart
 
     </a>
-    </div>
+    
+</div>
 
     <div class="shipping-info">
-        <p>Free standard delivery on all orders</p>
-    
+        <p>FREE STANDARD DELIVERY ON ALL ORDERS</p>
         <i class="fa-solid fa-truck"></i>
     
     
+    
     </div>
-    
-    
-    
-    
-    <div class="product-detail"> <fieldset> 
+    <div class="product-detail">
+        <fieldset> 
             <legend> description </legend>
            <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -351,7 +129,8 @@
               </p> 
           </fieldset>      
              </div>
-       
+   
+        
        <div class="payments">
         <p class="pay">Payment:</p>
     
@@ -377,15 +156,9 @@
 
 </div>
 
-
-
 </div>
 
-
-
-
 </section>
-
 
 <section>
 
@@ -504,12 +277,8 @@
     </div>
     </section>
     
-
-
-
-
 <section class="related-items">
-    <h2>related products<i class="fa-solid fa-circle circle"></i><i class="fa-solid fa-circle circle"></i></h1></h2>
+    <h2>related products<i class="fa-solid fa-circle circle"></i><i class="fa-solid fa-circle circle"></i></h2>
     <p class="section-text">Discover other items you may also like at Your favorite men fashion store</p>
     
     
@@ -534,8 +303,8 @@
 </article>
     
     
-    <article class="section-list">
-        <h3>suit</h3>
+<article class="section-list">
+    <h3>suit</h3>
     <a href="product12.html"> 
     <div class="image">
         
@@ -550,10 +319,10 @@
         </div>
     
     </a>
+   </article> 
     
     
-    
-</article>
+
     
     <article class="section-list">
         <h3>suit</h3>
@@ -572,18 +341,19 @@
         
         
         
-   
-</article>
+    
+    </article>
     
     
     <article class="section-list">
-    
         <h3>suit</h3>
+    
     <a href="product14.html">
     <div class="image">
         <img src='images/blazerjacket.jpg' width="300"  height="300" alt="blazer jacket image">
     </div>
-        <div class="item-title">
+        
+     <div class="item-title">
             <div class="item-name">blazer jacket</div>
             <div class="item-price">£565</div>
             
@@ -593,97 +363,96 @@
     </a>
     
 </article>
-    
-    
-    
     </div>
     
+    
+   
     
     
     </section>
     
 
+
 <section class="questions">
 
 
-        <h2>frequently asked questions<i class="fa-solid fa-circle circle"></i><i class="fa-solid fa-circle circle"></i></h2>
-        <p class="section-text">Discover the frequently asked questions at Your favorite men fashion store</p>
-        
-        
-        <div class="q-container">
+    <h2>frequently asked questions<i class="fa-solid fa-circle circle"></i><i class="fa-solid fa-circle circle"></i></h2>
+    <p class="section-text">Discover the frequently asked questions at Your favorite men fashion store</p>
     
-      <div class="qtitle">
-            <h3>do accept all major credit cards?
-              
-                <span class="q-btn">
-              
-                <span class="plus">
-                 <i class="fa-regular fa-square-plus "></i> 
-                
-                
-              </span>
-              <span class="minus">
-                <i class="fa-regular fa-square-minus "></i> 
-             </span>
-            </span>
-            </h3>
-            
-            <p class="resp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            
-            
-          </div>
     
-            
-          <div class="qtitle">
-            <h3>what is your return policy?
-              
-              <span class="q-btn">
-                <span class="plus">
-                 <i class="fa-regular fa-square-plus "></i> 
-                
-               </span>
-               <span class="minus">
-                <i class="fa-regular fa-square-minus "></i> 
-             </span>
-              
-            </span>
-            
-            </h3>
-            
-            
-            <p class="resp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            
-          </div>
+    <div class="q-container">
+
+  <div class="qtitle">
+        <h3>do accept all major credit cards?
           
-          <div class="qtitle">
-            
-            <h3>when will I receive my order?
-                <span class="q-btn">
-              
-                <span class="plus">
-                 <i class="fa-regular fa-square-plus "></i> 
-                
-                
-            </span>
-            <span class="minus">
-                <i class="fa-regular fa-square-minus "></i> 
-             </span> 
-            </span> 
-            
-            </h3>
+            <span class="q-btn">
+          
+            <span class="plus">
+             <i class="fa-regular fa-square-plus "></i> 
             
             
-            <p class="resp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </span>
+          <span class="minus">
+            <i class="fa-regular fa-square-minus "></i> 
+         </span>
+        </span>
+        </h3>
+        
+        <p class="resp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        
+        
+      </div>
+
+        
+      <div class="qtitle">
+        <h3>what is your return policy?
+          
+          <span class="q-btn">
+            <span class="plus">
+             <i class="fa-regular fa-square-plus "></i> 
             
-          </div>
-          </div>
-    
-    
-    
+           </span>
+           <span class="minus">
+            <i class="fa-regular fa-square-minus "></i> 
+         </span>
+          
+        </span>
+        
+        </h3>
+        
+        
+        <p class="resp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+      </div>
+      
+      <div class="qtitle">
+        
+        <h3>when will I receive my order?
+            <span class="q-btn">
+          
+            <span class="plus">
+             <i class="fa-regular fa-square-plus "></i> 
+            
+            
+        </span>
+        <span class="minus">
+            <i class="fa-regular fa-square-minus "></i> 
+         </span> 
+        </span> 
+        
+        </h3>
+        
+        
+        <p class="resp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+      </div>
+      </div>
+
+
 </section>
-    
-    
-    <footer>
+
+
+<footer>
         
     <div class="footer-top-text">
 
@@ -737,9 +506,15 @@
 <li class="bold-text">Contacts</li>
 <li>Tel:00 222 444 555</li>
 <li>Email:suitme@gmail.com</li>
-<li>social media:</li>
+
 
 </ul>
+
+
+
+
+
+
 
 </div>
 
@@ -785,7 +560,7 @@
         </div>
     </div>
   
-                
+            
                 
                 
                 </div>
@@ -795,11 +570,22 @@
 
 
 
-<script src="index.js"></script>
+       <script src="index.js"></script> 
 
 
 </body>
             
+             
+               
+            
+            
+            
+            
+            
+            
+            
+
+
 </html>
 
 
@@ -808,3 +594,59 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+        
+        `;
+    }
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+ 
+
+
+
+
+export default renderProduct

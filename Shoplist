@@ -9,7 +9,7 @@
 <meta name="description" content=" high-quality and trendy men suits and leather shoes">
 <meta name="keywords"    content="suit,luxury, leather shoes,jacket,trends">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"  href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,19 +29,16 @@
 
 <body>
 
+<div class="shop-container">
+
+
+
+
+</body>
 
 
 
 
 
 
-<div id="app"></div>
-        <div id="temporaryContent"></div>
-
-
-
-        <script src="index.js" type="module"></script>  
-
-        </body>
-
-        </html>
+</html>

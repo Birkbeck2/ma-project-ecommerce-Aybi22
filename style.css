@@ -13,6 +13,8 @@
 
     
     }
+
+    
     
     body,html{
         margin:0;
@@ -2118,6 +2120,10 @@ form .send-btn{
 .item-price{
     font-weight:600;
 }
+.right-side .item-price{
+    font-weight: 200;
+    font-size:23px;
+}
 .stock-info{
     font-size:12px;
    font-weight:lighter;
@@ -2130,6 +2136,14 @@ form .send-btn{
 .item-title{
     margin-left:33px;
 }
+
+.shop-container img{
+    width:300px;
+    height:430px;
+    object-fit: cover;
+    
+}
+
 
 #contact,#home,#about{
     display:flex;
@@ -2240,13 +2254,9 @@ p{
    width:100%;
    height:auto;
 }
-.left-gallery img{
-    border:2px solid red;
-}
 
-.right-side h1{
-    color:red;
-}
+
+
     
 .left-side img{
     height:100%;
@@ -2440,7 +2450,16 @@ body,html{
 
 
 }
- 
+ .error{
+    display:none;
+    font-style:italic;
+     font-weight:900;
+     color:white;
+     background:red;
+     width:300px;
+     margin:auto;
+    
+ }
 
 /* Styles for phones */
     @media screen and (max-width:540px){
