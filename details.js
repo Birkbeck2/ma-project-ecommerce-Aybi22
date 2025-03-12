@@ -17,20 +17,20 @@ import products from'./products.js';
         <div class="left-gallery">
     
     <div class="image">
-    <img src=${thisProduct.image} width="150" height="150" class="small-pic1" alt="texture suit image">
+    <img src=${thisProduct.image} width="150" height="150" class="small-pic" alt="texture suit image">
     
     
     </div>
     
     <div class="image">
-        <img src=${thisProduct.image1} width="150" height="150" class="small-pic1" alt="texture suit image">
+        <img src=${thisProduct.image1} width="150" height="150" class="small-pic" alt="texture suit image">
         
         
         </div>
     
     
         <div class="image">
-            <img src=${thisProduct.image2} width="150" height="150" class="small-pic1"    alt="texture suit image">
+            <img src=${thisProduct.image2} width="150" height="150" class="small-pic"    alt="texture suit image">
             
             
             </div>
@@ -47,7 +47,7 @@ import products from'./products.js';
     
             <div class="image">
                 
-               <img src=${thisProduct.image} id="main-pic1" width="500" height="500" alt="texture suit image"> 
+               <img src=${thisProduct.image} id="main-pic" width="500" height="500" alt="texture suit image"> 
                 
                 
            
@@ -588,52 +588,34 @@ import products from'./products.js';
 
 </html>
 
+    
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-        
-        `;
+`;
+    
     }
-}
+
     
     
-    
+
+
+let pics=[`${thisProduct.image}`,`${thisProduct.image1}`,`${thisProduct.image2}`]
+       
+
+let smallPic = document.getElementsByClassName('small-pic');
+for (let i = 0; i < smallPic.length; i++) {
+    smallPic[i].addEventListener('click', showMainPic)
+
+
+    function showMainPic() {
+        const img = document.getElementById('main-pic');
+        
+        img.setAttribute('src',pics[i]);
+        
+
+    }
+} 
+ } 
     
     
     

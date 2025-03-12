@@ -1,6 +1,7 @@
 import products from'./products.js';
 import {showCart,closeOver,closeModal} from './cart.js';
 import renderProduct from './details.js'
+import suits from'./suit.js'
 
 
 
@@ -259,7 +260,7 @@ fetch('./template.html')
 
 
  renderProduct();  
-
+ suits();
 
 
 
