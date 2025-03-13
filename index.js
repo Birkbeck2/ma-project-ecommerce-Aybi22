@@ -1,7 +1,9 @@
 import products from'./products.js';
-import {showCart,closeOver,closeModal} from './cart.js';
+import {showCart,closeOver,closeModal,showCart} from './cart.js';
 import renderProduct from './details.js'
 import suits from'./suit.js'
+
+
 
 
 
@@ -28,7 +30,7 @@ fetch('products.json')
    </div>    
        </div>
        
-    <button type="button"  class="cart-btn" onclick="addToCart()"> Add To Cart</button>   
+    <button type="button" class="cart-btn">Add To Cart</button>   
        
        `;
 
@@ -43,7 +45,7 @@ fetch('products.json')
 })
                                                        
                                                                  
-                                                                 
+                                                             
                                                                     
              
 
@@ -58,6 +60,8 @@ fetch('./template.html')
    app.innerHTML=html;
    let topIcon=document.querySelector('.top-icons');
    topIcon.addEventListener('click', showCart);
+   
+   
    let overlay=document.querySelector('.overlay');
    overlay.addEventListener('click', closeOver);
    let close=document.querySelector('.close');
@@ -101,244 +105,237 @@ fetch('./template.html')
     }
     
     
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- document.addEventListener('DOMContentLoaded',function showReviewBox(){    
-     let reviewBtn = document.querySelector('.review-btn');
-   
-     reviewBtn.addEventListener('click', showReviewBox);
-     function showReviewBox() {
-     
-         let reviewBox=document.querySelector('.review-box');
-         let reviewText=document.querySelector('.review-message');
-     
-        reviewBox.classList.toggle('show-Box');
-        reviewText.classList.remove('show-message');
-     }  
-     
-     
-    
-    
-    
-    
-    });
-     
-     
-     document.addEventListener('DOMContentLoaded',function sendText(){
-     let sendBtn = document.querySelector('.send-btn');
-     sendBtn.addEventListener('click', sendText);
-     function sendText() {
-         let error=document.querySelector('.error');
-         let reviewBox = document.querySelector('.review-box');
-         let reviewText = document.querySelector('.review-message');
-         let textBox=document.querySelector('.text-box');
-         if(textBox.value){
-         
-    
+    document.addEventListener('DOMContentLoaded',function showReviewBox(){    
+        let reviewBtn = document.querySelector('.review-btn');
+      
+        reviewBtn.addEventListener('click', showReviewBox);
+        function showReviewBox() {
         
-     
-     
-                reviewBox.classList.toggle('show-Box');
-                reviewText.classList.toggle('show-message'); 
-
-            }else{
-                error.style.display="block";
-            }
-          
-            setTimeout(()=>{
-                let error=document.querySelector('.error');
-                error.style.display="none";
-            },3000);
-         
-        }
-         
+            let reviewBox=document.querySelector('.review-box');
+            let reviewText=document.querySelector('.review-message');
+        
+           reviewBox.classList.toggle('show-Box');
+           reviewText.classList.remove('show-message');
+        }  
+        
+        
+    });
+       
+       
+       
+       });
+        
+        
+        document.addEventListener('DOMContentLoaded',function sendText(){
+        let sendBtn = document.querySelector('.send-btn');
+        sendBtn.addEventListener('click', sendText);
+        function sendText() {
+            let error=document.querySelector('.error');
+            let reviewBox = document.querySelector('.review-box');
+            let reviewText = document.querySelector('.review-message');
+            let textBox=document.querySelector('.text-box');
+            if(textBox.value){
+            
+       
+           
+        
+        
+                   reviewBox.classList.toggle('show-Box');
+                   reviewText.classList.toggle('show-message'); 
    
+               }else{
+                   error.style.display="block";
+               }
+             
+               setTimeout(()=>{
+                   let error=document.querySelector('.error');
+                   error.style.display="none";
+               },3000);
+            
+           }
+            
+      
+      
+       
+       });
+       
+   
+       
     
     
+    let reviewImages = [
+        { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
+        { userpic: 'images/james.jpg', name: "James smith", job: "web designer" },
+        { userpic: 'images/amanda.jpg', name: "Amanda fisher", job: "Teacher" },
+        { userpic: 'images/mark.jpg', name: "mark jones", job: "software engineer" },
+        { userpic: 'images/michael.jpg', name: "michael damon", job: "marketer" },
+        { userpic: 'images/heather.jpg', name: "heather smith", job: "Assistant" },
+    
+    
+    ]
+    
+     let index = 0;
+        
+    
+    document.addEventListener('DOMContentLoaded',function prev(){
+    let previous = document.getElementById('previous');
+    previous.addEventListener('click', prev);
+    function prev() {
+    
+        let userpic=document.getElementById('userpic');
+        let customerName=document.querySelector('.name');
+        let jobTitle=document.querySelector('.job');
+        let stars=document.querySelector('.stars');
+        if (index===0) {
+            index=reviewImages.length - 1;
+            userpic.src=reviewImages[index]["userpic"];
+            customerName.textContent=reviewImages[index]["name"];
+            jobTitle.textContent=reviewImages[index]["job"];
+            stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+        } else {
+    
+    
+            index--;
+    
+    
+    
+            userpic.src=reviewImages[index]["userpic"];
+            customerName.textContent=reviewImages[index]["name"];
+            jobTitle.textContent=reviewImages[index]["job"];
+            stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+        }
+    }
     });
     
-
     
- 
- 
- let reviewImages = [
-     { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
-     { userpic: 'images/james.jpg', name: "James smith", job: "web designer" },
-     { userpic: 'images/amanda.jpg', name: "Amanda fisher", job: "Teacher" },
-     { userpic: 'images/mark.jpg', name: "mark jones", job: "software engineer" },
-     { userpic: 'images/michael.jpg', name: "michael damon", job: "marketer" },
-     { userpic: 'images/heather.jpg', name: "heather smith", job: "Assistant" },
- 
- 
- ]
- 
-  let index = 0;
-     
- 
- document.addEventListener('DOMContentLoaded',function prev(){
- let previous = document.getElementById('previous');
- previous.addEventListener('click', prev);
- function prev() {
- 
-     let userpic=document.getElementById('userpic');
-     let customerName=document.querySelector('.name');
-     let jobTitle=document.querySelector('.job');
-     let stars=document.querySelector('.stars');
-     if (index===0) {
-         index=reviewImages.length - 1;
-         userpic.src=reviewImages[index]["userpic"];
-         customerName.textContent=reviewImages[index]["name"];
-         jobTitle.textContent=reviewImages[index]["job"];
-         stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
-     } else {
- 
- 
-         index--;
- 
- 
- 
-         userpic.src=reviewImages[index]["userpic"];
-         customerName.textContent=reviewImages[index]["name"];
-         jobTitle.textContent=reviewImages[index]["job"];
-         stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
-     }
- }
- });
- 
- 
- document.addEventListener('DOMContentLoaded',function showNext(){
- let next = document.getElementById('next');
- next.addEventListener('click', showNext);
- function showNext() {
- 
-     let userpic = document.getElementById('userpic');
-     let customerName = document.querySelector('.name');
-     let jobTitle = document.querySelector('.job');
-     let stars = document.querySelector('.stars');
- 
-     if (index < reviewImages.length - 1) {
-         index++;
-         userpic.src = reviewImages[index]["userpic"];
-         customerName.textContent = reviewImages[index]["name"];
-         jobTitle.textContent = reviewImages[index]["job"];
-         stars.innerHTML = `<i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>`
- 
-     } else if (index === reviewImages.length - 1) {
-         index = 0;
-         userpic.src = reviewImages[index]["userpic"];
-         customerName.textContent = reviewImages[index]["name"];
-         jobTitle.textContent = reviewImages[index]["job"];
-         stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
- 
-     }
- }
- });                             
-                                 
-                                 
- 
-
-
- renderProduct();  
- suits();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    document.addEventListener('DOMContentLoaded',function showNext(){
+    let next = document.getElementById('next');
+    next.addEventListener('click', showNext);
+    function showNext() {
+    
+        let userpic = document.getElementById('userpic');
+        let customerName = document.querySelector('.name');
+        let jobTitle = document.querySelector('.job');
+        let stars = document.querySelector('.stars');
+    
+        if (index < reviewImages.length - 1) {
+            index++;
+            userpic.src = reviewImages[index]["userpic"];
+            customerName.textContent = reviewImages[index]["name"];
+            jobTitle.textContent = reviewImages[index]["job"];
+            stars.innerHTML = `<i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>`
+    
+        } else if (index === reviewImages.length - 1) {
+            index = 0;
+            userpic.src = reviewImages[index]["userpic"];
+            customerName.textContent = reviewImages[index]["name"];
+            jobTitle.textContent = reviewImages[index]["job"];
+            stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+    
+        }
+    }
+    });                             
+                                    
+   
+   
 let decrease = document.getElementById('decrease');
-decrease.addEventListener('click', decreaseNum);
+   decrease.addEventListener('click', decreaseNum);
+   
+   
+   function decreaseNum() {
+   
+   let number=document.getElementById('number');
+   
+   if (number.value > 1) {
+   number.value--;
+   
+   } else {
+   number.value = 1;
+   }
+   }
+   
+   
+   let increase = document.getElementById('increase');
+   decrease.addEventListener('click', increaseNum);
+   
+   function increaseNum() {
+   
+   let number=document.getElementById('number');
+   number.value++;
+   }    
+   
 
 
-function decreaseNum() {
+   
+   
+   let qBtn = document.getElementsByClassName('q-btn');
+   
+   for (let i = 0; i < qBtn.length; i++) {
+   
+   qBtn[i].addEventListener('click', show);
+   
+   function show(e) {
+   
+   const qtitle = e.currentTarget.parentNode.parentNode;
+   
+   qtitle.classList.toggle('show-text');
+   }
+   }
+   
+   
+                                         
+                                                                        
+                                                          
+                                                                  
+                                                                       
+                                                                       
+   
 
-let number=document.getElementById('number');
+renderProduct();
 
-if (number.value > 1) {
-number.value--;
-
-} else {
-number.value = 1;
-}
-}
-
-
-let increase = document.getElementById('increase');
-decrease.addEventListener('click', increaseNum);
-
-function increaseNum() {
-
-let number=document.getElementById('number');
-number.value++;
-}       
-
-
-let qBtn = document.getElementsByClassName('q-btn');
-
-for (let i = 0; i < qBtn.length; i++) {
-
-qBtn[i].addEventListener('click', show);
-
-function show(e) {
-
-const qtitle = e.currentTarget.parentNode.parentNode;
-
-qtitle.classList.toggle('show-text');
-}
-}
+ 
+ suits();  
+                              
 
 
-                                      
-                                                                    
-                                                       
-addToCart();                                                                  
-                                                                    
-                                                                    
 
-                                                                           
-                                                                
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                 
                                                                  
                                                                  
                                                                  

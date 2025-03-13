@@ -3,6 +3,15 @@ import products from'./products.js';
 
  const renderProduct=()=>{
 
+    
+   
+ 
+    
+    
+    
+    
+    
+    
     let productId = new URLSearchParams(window.location.search).get('id');
     let thisProduct = products.filter(value => value.id == productId)[0];
     
@@ -593,9 +602,6 @@ import products from'./products.js';
 
 `;
     
-    }
-
-    
     
 
 
@@ -615,7 +621,24 @@ for (let i = 0; i < smallPic.length; i++) {
 
     }
 } 
- } 
+
+
+
+
+
+
+
+}
+
+
+
+
+
+} 
+    
+
+
+
     
     
     
