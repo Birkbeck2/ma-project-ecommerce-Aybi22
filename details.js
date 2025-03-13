@@ -102,7 +102,7 @@ import products from'./products.js';
 </div>
     
     
-    <a class="add-btn" href="shop.html">
+    <a class="add-btn">
         
         add to cart
 

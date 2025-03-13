@@ -1,5 +1,10 @@
 
+export function addToCart(){
 
+    let cartItems=document.querySelector('.cart-items');
+    cartItems.innerHTML='image added';
+ }
+  
 
     
    export const showCart=()=>{
@@ -44,6 +49,8 @@ let overlay = document.querySelector('.overlay');
 
 
 
-
+  
+    
+ 
 
 

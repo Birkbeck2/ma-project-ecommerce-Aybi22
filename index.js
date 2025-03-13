@@ -28,7 +28,7 @@ fetch('products.json')
    </div>    
        </div>
        
-    <button type="button"  class="cart-btn">Add To Cart</button>   
+    <button type="button"  class="cart-btn" onclick="addToCart()"> Add To Cart</button>   
        
        `;
 
@@ -42,7 +42,7 @@ fetch('products.json')
 
 })
                                                        
-                                                                    
+                                                                 
                                                                  
                                                                     
              
@@ -254,9 +254,6 @@ fetch('./template.html')
                                  
                                  
  
-  
-
-
 
 
  renderProduct();  
@@ -329,7 +326,7 @@ qtitle.classList.toggle('show-text');
                                       
                                                                     
                                                        
-                                                                    
+addToCart();                                                                  
                                                                     
                                                                     
 
