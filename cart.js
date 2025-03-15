@@ -11,6 +11,7 @@
 
     if (cart.className === "cart") {
         cart.classList.add("modal-box");
+        
         overlay.classList.add("overlay-box");
 
 
