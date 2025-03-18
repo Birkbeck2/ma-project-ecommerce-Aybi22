@@ -1,7 +1,7 @@
 
 import products from'./products.js';
 
- const renderProduct=()=>{
+ 
 
     
    
@@ -10,7 +10,7 @@ import products from'./products.js';
     
     
     
-    
+    export  const detail=()=>{
     
     let productId = new URLSearchParams(window.location.search).get('id');
     let thisProduct = products.filter(value => value.id == productId)[0];
@@ -631,10 +631,9 @@ for (let i = 0; i < smallPic.length; i++) {
 }
 
 
+    }
 
 
-
-} 
     
 
 
@@ -654,4 +653,3 @@ for (let i = 0; i < smallPic.length; i++) {
 
 
 
-export default renderProduct
