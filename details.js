@@ -10,7 +10,7 @@ import products from'./products.js';
     
     
     
-    export  const detail=()=>{
+     const detail=()=>{
     
     let productId = new URLSearchParams(window.location.search).get('id');
     let thisProduct = products.filter(value => value.id == productId)[0];
@@ -26,7 +26,7 @@ import products from'./products.js';
         <div class="left-gallery">
     
     <div class="image">
-    <img src=${thisProduct.image} width="150" height="150" class="small-pic" alt="texture suit image">
+    <img src=${thisProduct.image} width="150" height="150" class="small-pic alt="texture suit image">
     
     
     </div>
@@ -57,7 +57,22 @@ import products from'./products.js';
             <div class="image">
                 
                <img src=${thisProduct.image} id="main-pic" width="500" height="500" alt="texture suit image"> 
+                <div class="buttons">
+        
+            <button class="previous">
+               
+                 <i class="fa-solid fa-angle-left"></i> 
                 
+                </button>
+                
+            <button class="next"> 
+            
+                <i class="fa-solid fa-angle-right"></i>
+               
+            
+            </button> 
+                
+        </div>
                 
            
                 </div>
@@ -586,7 +601,7 @@ import products from'./products.js';
             
              
                
-            
+      
             
             
             
@@ -597,30 +612,72 @@ import products from'./products.js';
 
 </html>
 
+  
+   
+
+
+
+
+
+
+
     
+    
+       
 
 
 `;
     
+
+
+
+
+
+  
+   
+   
+   
+   
+   
     
+
 
 
 let pics=[`${thisProduct.image}`,`${thisProduct.image1}`,`${thisProduct.image2}`]
        
+ 
+
+
+
+   
 
 let smallPic = document.getElementsByClassName('small-pic');
 for (let i = 0; i < smallPic.length; i++) {
-    smallPic[i].addEventListener('click', showMainPic)
+    smallPic[i].addEventListener('click', showMainPic);
 
 
-    function showMainPic() {
+    function showMainPic(event) {
+ 
         const img = document.getElementById('main-pic');
         
         img.setAttribute('src',pics[i]);
-        
-
+        event.preventDefault();
+        let smallPic = document.getElementsByTagName('img');
+        for (let i = 0; i < smallPic.length; i++) {
+        smallPic[i].className="small-pic";
+        if(smallPic[i].className==="small-pic"){
+        this.className="picborder";
+    } else{
+        this.className="small-pic";
+    } 
+    }  
     }
-} 
+    } 
+      
+    }
+ 
+   
+   
 
 
 
@@ -628,17 +685,78 @@ for (let i = 0; i < smallPic.length; i++) {
 
 
 
+
+
+
+
+
+
+
+
+
+let qBtn = document.getElementsByClassName('q-btn');
+
+for (let i = 0; i < qBtn.length; i++) {
+
+qBtn[i].addEventListener('click', show);
+
+function show(e) {
+
+const qtitle = e.currentTarget.parentNode.parentNode;
+
+qtitle.classList.toggle('show-text');
 }
 
 
+
+     }
+
+/*
+     let previous=document.querySelector('.previous');
+     let next=document.document.querySelector('.next'); 
+     next.addEventListener('click',nextPic);  
+  function nextPic(){
+     let img=document.getElementById('mainPic'); 
+    
+     if(index<pics.length){
+        
+         index++
+         img.src=pics[index];
+     }
+  }
+  
+     previous.addEventListener('click',prevPic);
+  function prevPic(){
+  
+  
+     if(index<pics.length){
+     index--;
+     img.src=pics[index];
+ }
+ 
+ }
+     }
+
+
+*/
+
+
+
+    
+
     }
-
-
     
 
-
-
     
+    
+
+     
+
+
+export default detail;
+
+
+
     
     
     

@@ -2272,8 +2272,11 @@ p{
     }
 .small-pic{
     cursor:pointer;
+    border:none;
 }
-
+.picborder{
+    border:2px solid black;
+}
 
 @media screen and (max-width:1205px){
     

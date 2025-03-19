@@ -1,19 +1,54 @@
 import products from'./products.js'
-import {showCart,closeModal,closeOver} from './cart.js'
-import  {detail} from'./details.js';
+import {showCart,closeOver,closeModal} from './cart.js'
+import  detail from'./details.js';
 
 
-fetch('./template.html')
+detail();
+
+
+let decrease = document.getElementById('decrease');
+decrease.addEventListener('click', decreaseNum);
+
+
+function decreaseNum() {
+
+let number=document.getElementById('number');
+
+if (number.value > 1) {
+number.value--;
+
+} else {
+number.value = 1;
+}
+}
+
+
+let increase = document.getElementById('increase');
+increase.addEventListener('click', increaseNum);
+
+function increaseNum() {
+
+let number=document.getElementById('number');
+number.value++;
+}       
+
+
+
+
+
+   
+   fetch('./template.html')
 .then(response=>response.text())
 .then(html=>{
-   
+       
    let app=document.getElementById('app')
    app.innerHTML=html;
-   let topIcon=document.querySelector('.top-icons');
+
+let topIcon=document.querySelector('.top-icons');
    topIcon.addEventListener('click', showCart);
-   let overlay=document.querySelector('.overlay');
+   let overlay=document.querySelector('.overlay')
    overlay.addEventListener('click', closeOver);
-   let close=document.querySelector('.close');
+  let close=document.querySelector('.close');
    close.addEventListener('click', closeModal); 
 
    let sub=document.querySelector('.sub');
@@ -50,31 +85,88 @@ fetch('./template.html')
         if (e.target === closeMobile) {
             mobileMenu.classList.remove('mobile-box');
         }
+    
+          
+    
+    
     }
       
-});   
-     
+});
+    
 
+fetch('products.json')
+.then(response=> response.json())
+.then(products=>{
+    
+    products.forEach(product=>{
+        let container=document.querySelector('.shop-container');  
+     let newPara=document.createElement('div')
+       newPara.innerHTML=`
+       
 
+    <div class="section-list">
+       <a href="details.html?id=${product.id}">
+    
+    <img src= ${product.image}>
+    </a>
+<div class="item-title">
+       <div class='item-name'>${product.name}</div>
+       <div class='item-price'>£${product.price}</div>
+   </div>    
+       </div>
+       
+    <button type="button"  class="cart-btn">Add To Cart</button>   
+       
+       `;
 
+       
+      
+       container.appendChild(newPara);
+    
+         
+    });
+   
+      
+});
+            
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- document.addEventListener('DOMContentLoaded',function showReviewBox(){    
-     let reviewBtn = document.querySelector('.review-btn');
+let next = document.getElementById('next');
+        next.addEventListener('click', showNext);
+        function showNext() {
+        
+            let userpic = document.getElementById('userpic');
+            let customerName = document.querySelector('.name');
+            let jobTitle = document.querySelector('.job');
+            let stars = document.querySelector('.stars');
+        
+            if (index < reviewImages.length - 1) {
+                index++;
+                userpic.src = reviewImages[index]["userpic"];
+                customerName.textContent = reviewImages[index]["name"];
+                jobTitle.textContent = reviewImages[index]["job"];
+                stars.innerHTML = `<i class="fa-solid fa-star"></i>
+                                           <i class="fa-solid fa-star"></i>
+                                           <i class="fa-solid fa-star"></i>
+                                           <i class="fa-solid fa-star"></i>
+                                           <i class="fa-solid fa-star"></i>`
+        
+            } else if (index === reviewImages.length - 1) {
+                index = 0;
+                userpic.src = reviewImages[index]["userpic"];
+                customerName.textContent = reviewImages[index]["name"];
+                jobTitle.textContent = reviewImages[index]["job"];
+                stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+        
+            }
+          
+        
+        
+           }
+                                  
+                                        
+                                   
+        
+       let reviewBtn = document.querySelector('.review-btn');
    
      reviewBtn.addEventListener('click', showReviewBox);
      function showReviewBox() {
@@ -85,10 +177,9 @@ fetch('./template.html')
         reviewBox.classList.toggle('show-Box');
         reviewText.classList.remove('show-message');
      }  
-     });
+    
      
-     
-     document.addEventListener('DOMContentLoaded',function sendText(){
+    
      let sendBtn = document.querySelector('.send-btn');
      sendBtn.addEventListener('click', sendText);
      function sendText() {
@@ -99,12 +190,12 @@ fetch('./template.html')
              reviewBox.classList.toggle('show-Box');
              reviewText.classList.toggle('show-message');
      }
-     
-         
-     });
-  
     
- 
+         
+    
+  
+       
+    
  
  let reviewImages = [
      { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
@@ -120,7 +211,6 @@ fetch('./template.html')
   let index = 0;
      
  
- document.addEventListener('DOMContentLoaded',function prev(){
  let previous = document.getElementById('previous');
  previous.addEventListener('click', prev);
  function prev() {
@@ -148,208 +238,27 @@ fetch('./template.html')
          stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
      }
  }
- });
- 
- 
- document.addEventListener('DOMContentLoaded',function showNext(){
- let next = document.getElementById('next');
- next.addEventListener('click', showNext);
- function showNext() {
- 
-     let userpic = document.getElementById('userpic');
-     let customerName = document.querySelector('.name');
-     let jobTitle = document.querySelector('.job');
-     let stars = document.querySelector('.stars');
- 
-     if (index < reviewImages.length - 1) {
-         index++;
-         userpic.src = reviewImages[index]["userpic"];
-         customerName.textContent = reviewImages[index]["name"];
-         jobTitle.textContent = reviewImages[index]["job"];
-         stars.innerHTML = `<i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>`
- 
-     } else if (index === reviewImages.length - 1) {
-         index = 0;
-         userpic.src = reviewImages[index]["userpic"];
-         customerName.textContent = reviewImages[index]["name"];
-         jobTitle.textContent = reviewImages[index]["job"];
-         stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
- 
-     }
- }
-                           
-                                 
-                            
  
 
  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
     
 
 
 
-
-
-
-
-
-
-
-
-
-
-                                                       
-                                                                 
-document.addEventListener('DOMContentLoaded', () => {
-
-
     
-    fetch('products.json')
-    .then(response=> response.json())
-    .then(products=>{
-        let container=document.querySelector('.shop-container');
-        products.forEach(product=>{
-            
-         let newPara=document.createElement('div')
-           newPara.innerHTML=`
-           
-    
-        <div class="section-list">
-           <a href="details.html">
-        
-        <img src= ${product.image}>
-        </a>
-    <div class="item-title">
-           <div class='item-name'>${product.name}</div>
-           <div class='item-price'>£${product.price}</div>
-       </div>    
-           </div>
-           
-        <button type="button"  class="cart-btn">Add To Cart</button>   
-           
-           `;
-    
-           
-          
-           container.appendChild(newPara);
-        
-        
-        })
-       
-        
-    })
-    })                                                           
-                                                                    
-             
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-
-let decrease = document.getElementById('decrease');
-decrease.addEventListener('click', decreaseNum);
-
-
-function decreaseNum() {
-
-let number=document.getElementById('number');
-
-if (number.value > 1) {
-number.value--;
-
-} else {
-number.value = 1;
-}
-}
-
-
-let increase = document.getElementById('increase');
-decrease.addEventListener('click', increaseNum);
-
-function increaseNum() {
-
-let number=document.getElementById('number');
-number.value++;
-}       
-
-
-let qBtn = document.getElementsByClassName('q-btn');
-
-for (let i = 0; i < qBtn.length; i++) {
-
-qBtn[i].addEventListener('click', show);
-
-function show(e) {
-
-const qtitle = e.currentTarget.parentNode.parentNode;
-
-qtitle.classList.toggle('show-text');
-}
-}
-
-
-                                      
-                                                                    
-});                                                   
-                                                               
-                                                                    
-                                                                    
-                                                                            
-                                                        
+                                             
                                                                  
                                                                  
-                                                                 
-});                                                           
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                 
+                                                  
+                                                            
                                                              
                                                              
                                                              
                                                             
                                                              
-                                                             
+                                                     
                                                              
                                                          
                                                              

@@ -1,11 +1,11 @@
 
 
 
-
+ 
     
-   export const showCart=()=>{
+ export function showCart(){
     
-    let cart = document.querySelector('.cart');
+  let cart = document.querySelector('.cart');
     let overlay = document.querySelector('.overlay'); 
 
 
@@ -19,11 +19,12 @@
         cart.classList.remove("modal-box");
         overlay.classList.remove("overlay-box");
     }
-}
+
+ }
 
 
 
- export const closeOver=()=> {
+  export function closeOver() {
     let cart = document.querySelector('.cart');
 let overlay = document.querySelector('.overlay');
   
@@ -35,19 +36,20 @@ let overlay = document.querySelector('.overlay');
 
 
 
- export const closeModal=()=> {
+export function closeModal(){
 
     let cart = document.querySelector('.cart');
     let overlay = document.querySelector('.overlay');
     
         cart.classList.remove("modal-box");
         overlay.classList.remove("overlay-box");
-    } 
+     
+ }
+
 
 
 
   
-    
- 
+
 
 
