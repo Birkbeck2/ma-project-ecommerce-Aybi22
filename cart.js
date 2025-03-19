@@ -34,7 +34,7 @@ let overlay = document.querySelector('.overlay');
 
 
 
-
+    
 
 export function closeModal(){
 
@@ -46,10 +46,16 @@ export function closeModal(){
      
  }
 
-
-
-
-  
+export const cartContent=()=>{
+ 
+ cartBtn.addEventListener('click', addToCart);
+ 
+ function addToCart(){
+   document.body.style.backgroundColor="red";
+     
+ }
+}
+ 
 
 
 

@@ -1,40 +1,13 @@
 import products from'./products.js'
-import {showCart,closeOver,closeModal} from './cart.js'
+import {showCart,closeOver,closeModal,cartContent} from './cart.js'
 import  detail from'./details.js';
+
 
 
 detail();
 
 
-let decrease = document.getElementById('decrease');
-decrease.addEventListener('click', decreaseNum);
-
-
-function decreaseNum() {
-
-let number=document.getElementById('number');
-
-if (number.value > 1) {
-number.value--;
-
-} else {
-number.value = 1;
-}
-}
-
-
-let increase = document.getElementById('increase');
-increase.addEventListener('click', increaseNum);
-
-function increaseNum() {
-
-let number=document.getElementById('number');
-number.value++;
-}       
-
-
-
-
+  
 
    
    fetch('./template.html')
@@ -57,7 +30,7 @@ let topIcon=document.querySelector('.top-icons');
    shop.addEventListener('mouseout', hideSub);
    sub.addEventListener('mouseover',showSub);
    sub.addEventListener('mouseout',hideSub);
-   
+      
    function showSub(){
        sub.classList.add('sublist');
       
@@ -92,7 +65,7 @@ let topIcon=document.querySelector('.top-icons');
     }
       
 });
-    
+
 
 fetch('products.json')
 .then(response=> response.json())
@@ -115,7 +88,7 @@ fetch('products.json')
    </div>    
        </div>
        
-    <button type="button"  class="cart-btn">Add To Cart</button>   
+    <button class="cart-btn"  data.id=${product.id}>Add To Cart</button>   
        
        `;
 
@@ -126,10 +99,29 @@ fetch('products.json')
          
     });
    
-      
+       
 });
-            
 
+const cartBtn=document.querySelector('.cart-btn');    
+cartBtn.addEventListener('click', addToCart);
+
+
+function addToCart(){
+   let cartItem=document.querySelector('.cart-items');
+   cartItem.textContent='item added';
+      
+  }
+ 
+
+
+
+
+
+
+
+
+
+/*
 let next = document.getElementById('next');
         next.addEventListener('click', showNext);
         function showNext() {
@@ -192,11 +184,11 @@ let next = document.getElementById('next');
      }
     
          
-    
+    */
   
        
     
- 
+ /*
  let reviewImages = [
      { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
      { userpic: 'images/james.jpg', name: "James smith", job: "web designer" },
@@ -241,13 +233,41 @@ let next = document.getElementById('next');
  
 
  
-
+/*
    
-    
+ let decrease = document.getElementById('decrease');
+ decrease.addEventListener('click', decreaseNum);
+ 
+ 
+ function decreaseNum() {
+ 
+ let number=document.getElementById('number');
+ 
+ if (number.value > 1) {
+ number.value--;
+ 
+ } else {
+ number.value = 1;
+ }
+ }
+ 
+ 
+ let increase = document.getElementById('increase');
+ increase.addEventListener('click', increaseNum);
+ 
+ function increaseNum() {
+ 
+ let number=document.getElementById('number');
+ number.value++;
+ }       
+ 
+ 
+ */
+   
+ 
 
 
 
-    
                                              
                                                                  
                                                                  
