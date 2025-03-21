@@ -126,7 +126,7 @@ import products from'./products.js';
 </div>
     
     
-    <a class="add-btn">
+    <a class="add-btn" ${thisProduct.id}>
         
         add to cart
 

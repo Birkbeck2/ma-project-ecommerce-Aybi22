@@ -1,10 +1,11 @@
 import products from'./products.js'
-import {showCart,closeOver,closeModal,cartContent} from './cart.js'
+import {showCart,closeModal,closeOver,updateCartDisplay,addToCart} from './cart.js'
 import  detail from'./details.js';
 
 
 
 detail();
+
 
 
   
@@ -16,14 +17,14 @@ detail();
        
    let app=document.getElementById('app')
    app.innerHTML=html;
-
+   
 let topIcon=document.querySelector('.top-icons');
    topIcon.addEventListener('click', showCart);
    let overlay=document.querySelector('.overlay')
    overlay.addEventListener('click', closeOver);
   let close=document.querySelector('.close');
    close.addEventListener('click', closeModal); 
-
+    
    let sub=document.querySelector('.sub');
    let shop=document.getElementById('shop');
    shop.addEventListener('mouseover', showSub);
@@ -64,64 +65,9 @@ let topIcon=document.querySelector('.top-icons');
     
     }
       
-});
-
-
-fetch('products.json')
-.then(response=> response.json())
-.then(products=>{
-    
-    products.forEach(product=>{
-        let container=document.querySelector('.shop-container');  
-     let newPara=document.createElement('div')
-       newPara.innerHTML=`
-       
-
-    <div class="section-list">
-       <a href="details.html?id=${product.id}">
-    
-    <img src= ${product.image}>
-    </a>
-<div class="item-title">
-       <div class='item-name'>${product.name}</div>
-       <div class='item-price'>£${product.price}</div>
-   </div>    
-       </div>
-       
-    <button class="cart-btn"  data.id=${product.id}>Add To Cart</button>   
-       
-       `;
-
-       
-      
-       container.appendChild(newPara);
-    
-         
-    });
-   
-       
-});
-
-const cartBtn=document.querySelector('.cart-btn');    
-cartBtn.addEventListener('click', addToCart);
-
-
-function addToCart(){
-   let cartItem=document.querySelector('.cart-items');
-   cartItem.textContent='item added';
-      
-  }
- 
 
 
 
-
-
-
-
-
-
-/*
 let next = document.getElementById('next');
         next.addEventListener('click', showNext);
         function showNext() {
@@ -184,11 +130,11 @@ let next = document.getElementById('next');
      }
     
          
-    */
+    
   
        
     
- /*
+ 
  let reviewImages = [
      { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
      { userpic: 'images/james.jpg', name: "James smith", job: "web designer" },
@@ -233,38 +179,96 @@ let next = document.getElementById('next');
  
 
  
-/*
+ 
+});
    
- let decrease = document.getElementById('decrease');
- decrease.addEventListener('click', decreaseNum);
- 
- 
- function decreaseNum() {
- 
- let number=document.getElementById('number');
- 
- if (number.value > 1) {
- number.value--;
- 
- } else {
- number.value = 1;
- }
- }
- 
- 
- let increase = document.getElementById('increase');
- increase.addEventListener('click', increaseNum);
- 
- function increaseNum() {
- 
- let number=document.getElementById('number');
- number.value++;
- }       
- 
- 
- */
+
+
+
+
+
+
+
+
+
+
+
+
    
+
+
+
+
+
+fetch('products.json')
+.then(response=> response.json())
+.then(products=>{
+    
+    products.forEach(product=>{
+        let container=document.querySelector('.shop-container');  
+     let newPara=document.createElement('div')
+       newPara.innerHTML=`
+       
+
+    <div class="section-list">
+       <a href="details.html?id=${product.id}">
+    
+    <img src= ${product.image}>
+    </a>
+<div class="item-title">
+       <div class='item-name'>${product.name}</div>
+       <div class='item-price'>£${product.price}</div>
+   </div>    
+       </div>
+       
+    <button onclick="addToCart(${product.id})">Add To Cart</button>   
+       
+       `;
+
+       
+      
+       container.appendChild(newPara);
+    
+         
+    });
+   
+
+}); 
+  
+    
+let decrease = document.getElementById('decrease');
+decrease.addEventListener('click', decreaseNum);
+
+
+function decreaseNum() {
+
+let number=document.getElementById('number');
+
+if (number.value > 1) {
+number.value--;
+
+} else {
+number.value = 1;
+}
+}
+
+
+let increase = document.getElementById('increase');
+increase.addEventListener('click', increaseNum);
+
+function increaseNum() {
+
+let number=document.getElementById('number');
+number.value++;
+}       
  
+
+
+
+updateCartDisplay()
+addToCart();
+
+
 
 
 

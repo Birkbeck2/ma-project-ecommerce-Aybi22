@@ -1,13 +1,12 @@
 
 
-
  
     
  export function showCart(){
     
-  let cart = document.querySelector('.cart');
-    let overlay = document.querySelector('.overlay'); 
 
+    let cart = document.querySelector('.cart');
+    let overlay = document.querySelector('.overlay');
 
     if (cart.className === "cart") {
         cart.classList.add("modal-box");
@@ -26,8 +25,7 @@
 
   export function closeOver() {
     let cart = document.querySelector('.cart');
-let overlay = document.querySelector('.overlay');
-  
+    let overlay = document.querySelector('.overlay');
         overlay.classList.remove('overlay-box');
         cart.classList.remove('modal-box');
     }
@@ -37,7 +35,6 @@ let overlay = document.querySelector('.overlay');
     
 
 export function closeModal(){
-
     let cart = document.querySelector('.cart');
     let overlay = document.querySelector('.overlay');
     
@@ -46,16 +43,68 @@ export function closeModal(){
      
  }
 
-export const cartContent=()=>{
- 
- cartBtn.addEventListener('click', addToCart);
- 
- function addToCart(){
-   document.body.style.backgroundColor="red";
+
+ export const updateCartDisplay=()=>{
+    const cartItem=document.querySelector('.cart-items');   
      
- }
-}
+      cartItem.innerHTML='';
+      cart.forEach(item=>{
+        const cartItemElement=document.createElement('div');
+        cartItemElement.innerHTML=`
+        <div class="cart-item">
+        <img src=${item.image}>
+        <div>
+        <div>${item.name}</div>
+        <div>£${item.price}</div>
+        <div>${item.quantity}</div>
+        <button onclick="removeFromCart(${item.id})">Remove</button>
+        </div>
+        </div>
+        `;
+        cartItem.appendChild(cartItemElement);
+      });
+   
+   
+    }
+
+  export function addToCart(productId){
+    const product=products.find(product=>product.id===productId);
+    const cartItem=cart.find(item=>item.id===productId);
+    if(cartItem){
+     cartItem.quantity++;
+      }else{
+         cart.push({...product,quantity:1});
+      
+     }
+     
+ }    
+  
  
+   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

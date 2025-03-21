@@ -39,14 +39,7 @@
     
     
     
-        {
-            "id":4,
-            "image":"images/cowleathershoe.jpg",
-            "name":"leather shoe",
-            "price":"475",
-            "quantity":1
-            
-            },
+       
     
     
             {
@@ -105,14 +98,7 @@
                                 
                                 
     
-                                {
-                                    "id":10,
-                                    "image":"images/oxfordshoe.jpg",
-                                    "name":"oxford leather shoe",
-                                    "price":"655",
-                                    "quantity":1
-                                    
-                                    },
+                               
                                     
                                     
     
@@ -154,42 +140,12 @@
                                                     "name":"blazer jacket",
                                                     "price":"565",
                                                     "quantity":1
-                                                },  
+                                                }  
                                      
     
-                                                {
-                                                    "id":15,
-                                                    "image":"images/fullbrogueoxford.jpg",
-                                                    "name":"full brogue oxford",
-                                                    "price":"355",
-                                                    "quantity":1
-                                                },  
+                                               
     
-                                                {
-                                                    "id":16,
-                                                    "image":"images/brogueoxford.jpg",
-                                                    "name":"brogue oxford shoe",
-                                                    "price":"415",
-                                                    "quantity":1
-                                                },  
-    
-                                                {
-                                                    "id":17,
-                                                    "image":"images/wingtipoxford.jpg",
-                                                    "name":"wingti oxford shoe",
-                                                    "price":"625",
-                                                    "quantity":1
-                                                },  
-    
-                                                {
-                                                    "id":18,
-                                                    "image":"images/topgraincowleather.jpg",
-                                                    "name":"top grain leather shoe",
-                                                    "price":"565",
-                                                    "quantity":1
-                                                }
-    
-    
+                                                
     ]
 
 
