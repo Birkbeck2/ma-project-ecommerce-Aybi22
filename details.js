@@ -126,7 +126,7 @@ import products from'./products.js';
 </div>
     
     
-    <a class="add-btn" ${thisProduct.id}>
+    <a class="add-btn">
         
         add to cart
 
@@ -627,13 +627,26 @@ import products from'./products.js';
 
 
 `;
+ 
+
+let suitImage=['images/regularfitblue.jpg','images/regularfitgrey.jpg','images/regularfitblack.jpg'];
+   
+
+
+
+
+let blue=document.getElementById('blue');
+blue.addEventListener('click',changeBlue);
+    function changeBlue(){
+        
+        img.src=suitImage[index];
+    }
     
 
+ 
 
 
-
-
-  
+ 
    
    
    
@@ -656,12 +669,12 @@ for (let i = 0; i < smallPic.length; i++) {
     smallPic[i].addEventListener('click', showMainPic);
 
 
-    function showMainPic(event) {
+    function showMainPic() {
  
         const img = document.getElementById('main-pic');
         
         img.setAttribute('src',pics[i]);
-        event.preventDefault();
+        
         let smallPic = document.getElementsByTagName('img');
         for (let i = 0; i < smallPic.length; i++) {
         smallPic[i].className="small-pic";
@@ -677,16 +690,6 @@ for (let i = 0; i < smallPic.length; i++) {
     }
  
    
-   
-
-
-
-
-
-
-
-
-
 
 
 

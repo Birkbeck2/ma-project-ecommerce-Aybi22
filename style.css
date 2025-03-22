@@ -2277,6 +2277,46 @@ p{
 .picborder{
     border:2px solid black;
 }
+.suitcolor{
+    display:flex;
+    gap:11px;
+    width:80px;
+    margin:auto;
+}
+#black{
+    width:20px;
+    height:20px;
+    border-radius:100%;
+    background-color: black;
+    cursor:pointer;
+}
+
+
+#blue{
+    width:20px;
+    height:20px;
+    border-radius:100%;
+    background-color: blue;
+    cursor:pointer;
+}
+
+
+#grey{
+    width:20px;
+    height:20px;
+    border-radius:100%;
+    background-color: grey;
+    cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width:1205px){
     

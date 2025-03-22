@@ -1,7 +1,16 @@
+import products from'./products.js'
+import  detail from'./details.js';
 
-
- 
+ let cart=[];
     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  export function showCart(){
     
 
@@ -44,6 +53,7 @@ export function closeModal(){
  }
 
 
+ 
  export const updateCartDisplay=()=>{
     const cartItem=document.querySelector('.cart-items');   
      
@@ -67,7 +77,20 @@ export function closeModal(){
    
     }
 
-  export function addToCart(productId){
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ export function addToCart(productId){
     const product=products.find(product=>product.id===productId);
     const cartItem=cart.find(item=>item.id===productId);
     if(cartItem){
@@ -79,9 +102,21 @@ export function closeModal(){
      
  }    
   
- 
+
    
-    
+ detail()
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 
 
 

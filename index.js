@@ -1,12 +1,16 @@
-import products from'./products.js'
+import products from'./products.json'
 import {showCart,closeModal,closeOver,updateCartDisplay,addToCart} from './cart.js'
+
+
+
 import  detail from'./details.js';
-
-
 
 detail();
 
 
+ 
+
+   
 
   
 
@@ -17,7 +21,7 @@ detail();
        
    let app=document.getElementById('app')
    app.innerHTML=html;
-   
+  
 let topIcon=document.querySelector('.top-icons');
    topIcon.addEventListener('click', showCart);
    let overlay=document.querySelector('.overlay')
@@ -31,6 +35,12 @@ let topIcon=document.querySelector('.top-icons');
    shop.addEventListener('mouseout', hideSub);
    sub.addEventListener('mouseover',showSub);
    sub.addEventListener('mouseout',hideSub);
+
+
+   
+
+   
+
       
    function showSub(){
        sub.classList.add('sublist');
@@ -175,7 +185,11 @@ let next = document.getElementById('next');
          jobTitle.textContent=reviewImages[index]["job"];
          stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
      }
- }
+ 
+  
+   
+ 
+    }
  
 
  
@@ -219,9 +233,11 @@ fetch('products.json')
        <div class='item-name'>${product.name}</div>
        <div class='item-price'>£${product.price}</div>
    </div>    
-       </div>
+       <div class="colors">${product.colors}</div>
+   
+   </div>
        
-    <button onclick="addToCart(${product.id})">Add To Cart</button>   
+      
        
        `;
 
@@ -232,10 +248,13 @@ fetch('products.json')
          
     });
    
-
-}); 
   
     
+}); 
+
+   
+
+ 
 let decrease = document.getElementById('decrease');
 decrease.addEventListener('click', decreaseNum);
 
@@ -265,9 +284,11 @@ number.value++;
 
 
 
-updateCartDisplay()
-addToCart();
-
+addToCart(); 
+     
+updateCartDisplay();
+ 
+changeBlue()
 
 
 

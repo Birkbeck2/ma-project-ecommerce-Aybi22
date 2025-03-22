@@ -1,4 +1,4 @@
-const products= [
+[
 
     {
     "id":1,
@@ -51,8 +51,8 @@ const products= [
                 "image2":"images/regularfitblack.jpg",
                 "name":"regular fit suit",
                 "price":"400",
-                "quantity":1
-                
+                "quantity":1,
+                 "colors":"<div class='suitcolor'> <div id='black'></div> <div id='blue'></div> <div id='grey'></div> </div>"
             },
     
     
