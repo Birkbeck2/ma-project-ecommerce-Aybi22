@@ -1,9 +1,7 @@
-import products from'./products.js'
+
 import  detail from'./details.js';
 
  let cart=[];
-    
- 
  
  
  
@@ -53,62 +51,6 @@ export function closeModal(){
  }
 
 
- 
- export const updateCartDisplay=()=>{
-    const cartItem=document.querySelector('.cart-items');   
-     
-      cartItem.innerHTML='';
-      cart.forEach(item=>{
-        const cartItemElement=document.createElement('div');
-        cartItemElement.innerHTML=`
-        <div class="cart-item">
-        <img src=${item.image}>
-        <div>
-        <div>${item.name}</div>
-        <div>£${item.price}</div>
-        <div>${item.quantity}</div>
-        <button onclick="removeFromCart(${item.id})">Remove</button>
-        </div>
-        </div>
-        `;
-        cartItem.appendChild(cartItemElement);
-      });
-   
-   
-    }
-
-  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- export function addToCart(productId){
-    const product=products.find(product=>product.id===productId);
-    const cartItem=cart.find(item=>item.id===productId);
-    if(cartItem){
-     cartItem.quantity++;
-      }else{
-         cart.push({...product,quantity:1});
-      
-     }
-     
- }    
-  
-
-   
- detail()
- 
- 
- 
- 
  
  
  

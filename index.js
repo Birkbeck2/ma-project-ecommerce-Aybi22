@@ -1,16 +1,16 @@
-import products from'./products.json'
-import {showCart,closeModal,closeOver,updateCartDisplay,addToCart} from './cart.js'
-
-
-
+import products from'./products.js'
+import {showCart,closeModal,closeOver} from './cart.js'
 import  detail from'./details.js';
 
-detail();
 
+
+
+detail();
+     
 
  
 
-   
+ 
 
   
 
@@ -21,6 +21,7 @@ detail();
        
    let app=document.getElementById('app')
    app.innerHTML=html;
+
   
 let topIcon=document.querySelector('.top-icons');
    topIcon.addEventListener('click', showCart);
@@ -37,7 +38,7 @@ let topIcon=document.querySelector('.top-icons');
    sub.addEventListener('mouseout',hideSub);
 
 
-   
+    
 
    
 
@@ -191,22 +192,9 @@ let next = document.getElementById('next');
  
     }
  
-
- 
- 
+    
 });
-   
-
-
-
-
-
-
-
-
-
-
-
+ 
 
    
 
@@ -214,9 +202,11 @@ let next = document.getElementById('next');
 
 
 
-fetch('products.json')
-.then(response=> response.json())
-.then(products=>{
+
+
+
+
+
     
     products.forEach(product=>{
         let container=document.querySelector('.shop-container');  
@@ -247,48 +237,26 @@ fetch('products.json')
     
          
     });
-   
-  
     
-}); 
-
-   
+  
 
  
-let decrease = document.getElementById('decrease');
-decrease.addEventListener('click', decreaseNum);
 
 
-function decreaseNum() {
-
-let number=document.getElementById('number');
-
-if (number.value > 1) {
-number.value--;
-
-} else {
-number.value = 1;
-}
-}
 
 
-let increase = document.getElementById('increase');
-increase.addEventListener('click', increaseNum);
 
-function increaseNum() {
 
-let number=document.getElementById('number');
-number.value++;
-}       
+
+
+  
+
  
 
 
 
-addToCart(); 
-     
-updateCartDisplay();
- 
-changeBlue()
+
+
 
 
 

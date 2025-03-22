@@ -610,52 +610,54 @@ import products from'./products.js';
             
 
 
-</html>
-
-  
-   
+</html>`;
 
 
 
 
-
-
-
+let decrease = document.getElementById('decrease');
+    decrease.addEventListener('click', decreaseNum);
     
     
-       
-
-
-`;
- 
-
-let suitImage=['images/regularfitblue.jpg','images/regularfitgrey.jpg','images/regularfitblack.jpg'];
-   
-
-
-
-
-let blue=document.getElementById('blue');
-blue.addEventListener('click',changeBlue);
-    function changeBlue(){
-        
-        img.src=suitImage[index];
+    function decreaseNum() {
+    
+    let number=document.getElementById('number');
+    
+    if (number.value > 1) {
+    number.value--;
+    
+    } else {
+    number.value = 1;
+    }
     }
     
-
- 
-
-
- 
-   
-   
-   
-   
-   
+    
+    let increase = document.getElementById('increase');
+    increase.addEventListener('click', increaseNum);
+    
+    function increaseNum() {
+    
+    let number=document.getElementById('number');
+    number.value++;
+    }       
+     
+    
     
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+ 
 let pics=[`${thisProduct.image}`,`${thisProduct.image1}`,`${thisProduct.image2}`]
        
  
@@ -692,9 +694,7 @@ for (let i = 0; i < smallPic.length; i++) {
    
 
 
-
-
-
+    
 
 
 let qBtn = document.getElementsByClassName('q-btn');
@@ -714,49 +714,14 @@ qtitle.classList.toggle('show-text');
 
      }
 
-/*
-     let previous=document.querySelector('.previous');
-     let next=document.document.querySelector('.next'); 
-     next.addEventListener('click',nextPic);  
-  function nextPic(){
-     let img=document.getElementById('mainPic'); 
-    
-     if(index<pics.length){
-        
-         index++
-         img.src=pics[index];
-     }
-  }
-  
-     previous.addEventListener('click',prevPic);
-  function prevPic(){
-  
-  
-     if(index<pics.length){
-     index--;
-     img.src=pics[index];
- }
- 
- }
+
+
+
      }
 
-
-*/
-
-
-
     
 
-    }
-    
-
-    
-    
-
-     
-
-
-export default detail;
+export default detail
 
 
 
