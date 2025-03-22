@@ -1,38 +1,8 @@
 import products from'./products.js';
 
-const suits=()=>{
+export function filteredProducts(){
 
-let container=document.querySelector('.container');
-fetch('products.json')
-.then(response=> response.json())
-.then(products=>{
-    let suitProducts=products.slice(0,5);
-      suitProducts.forEach(suitPoduct=>{
-    
-    
-    let newPara=document.createElement('div');
-      newPara.innerHTML=`
-      
-      <img src=${suitPoduct.image}>
-      
-      `;
+products.filter(product=>product.category==="regular");
 
-   container.appendChild(newPara);
-    
-      });
-       
-      
-       
-    
-    });
 }
-   
 
-
-
-       
-
-
-
-
-export default suits;        

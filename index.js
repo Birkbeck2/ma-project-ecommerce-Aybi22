@@ -1,12 +1,12 @@
 import products from'./products.js'
 import {showCart,closeModal,closeOver} from './cart.js'
 import  detail from'./details.js';
-
+import { filteredProducts } from './suit.js';
 
 
 
 detail();
-     
+filteredProducts(); 
 
  
 
@@ -42,20 +42,29 @@ let topIcon=document.querySelector('.top-icons');
 
    
 
-      
    function showSub(){
-       sub.classList.add('sublist');
-      
-    }
+    sub.style.height="300px";
+   
+ }
+
+ function hideSub(){
+     sub.style.height="0px";
+     
+  }  
+   
+ 
    
    
-   function hideSub(){
-       sub.classList.remove('sublist');
-       
-    }
-   
-   
-    let hamburger = document.querySelector('.hamburger');
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     let hamburger = document.querySelector('.hamburger');
     hamburger.addEventListener('click', showMobileMenu);
     function showMobileMenu() {
         let mobileMenu = document.querySelector('.mobileMenu');
@@ -78,39 +87,39 @@ let topIcon=document.querySelector('.top-icons');
       
 
 
+    let next = document.getElementById('next');
+    next.addEventListener('click', showNext);
+    function showNext() {
+    
+        let userpic = document.getElementById('userpic');
+        let customerName = document.querySelector('.name');
+        let jobTitle = document.querySelector('.job');
+        let stars = document.querySelector('.stars');
+    
+        if (index < reviewImages.length - 1) {
+            index++;
+            userpic.src = reviewImages[index]["userpic"];
+            customerName.textContent = reviewImages[index]["name"];
+            jobTitle.textContent = reviewImages[index]["job"];
+            stars.innerHTML = `<i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>
+                                       <i class="fa-solid fa-star"></i>`
+    
+        } else if (index === reviewImages.length - 1) {
+            index = 0;
+            userpic.src = reviewImages[index]["userpic"];
+            customerName.textContent = reviewImages[index]["name"];
+            jobTitle.textContent = reviewImages[index]["job"];
+            stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+    
+        }
+      
+    
+    
+       }
 
-let next = document.getElementById('next');
-        next.addEventListener('click', showNext);
-        function showNext() {
-        
-            let userpic = document.getElementById('userpic');
-            let customerName = document.querySelector('.name');
-            let jobTitle = document.querySelector('.job');
-            let stars = document.querySelector('.stars');
-        
-            if (index < reviewImages.length - 1) {
-                index++;
-                userpic.src = reviewImages[index]["userpic"];
-                customerName.textContent = reviewImages[index]["name"];
-                jobTitle.textContent = reviewImages[index]["job"];
-                stars.innerHTML = `<i class="fa-solid fa-star"></i>
-                                           <i class="fa-solid fa-star"></i>
-                                           <i class="fa-solid fa-star"></i>
-                                           <i class="fa-solid fa-star"></i>
-                                           <i class="fa-solid fa-star"></i>`
-        
-            } else if (index === reviewImages.length - 1) {
-                index = 0;
-                userpic.src = reviewImages[index]["userpic"];
-                customerName.textContent = reviewImages[index]["name"];
-                jobTitle.textContent = reviewImages[index]["job"];
-                stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
-        
-            }
-          
-        
-        
-           }
                                   
                                         
                                    
@@ -193,11 +202,22 @@ let next = document.getElementById('next');
     }
  
     
+
+
+
+
+
+
+
+
+
+
+
+
 });
  
 
    
-
 
 
 
@@ -241,7 +261,7 @@ let next = document.getElementById('next');
   
 
  
-
+    
 
 
 

@@ -7,7 +7,8 @@
     image2:"images/texturesuit2.jpg",
     name:"texture suit",
     price:"250",
-    quantity:1
+    quantity:1,
+    category:"regular"
     
     },
     
@@ -20,8 +21,8 @@
         image1:"images/blacksuit1.jpg",
         image2:"images/blacksuit2.jpg",
         price:"370",
-        quantity:1
-        
+        quantity:1,
+        category:"regular"
     },
     
     
@@ -34,8 +35,8 @@
         image2:"images/greysuit2.jpg",
        name:"Grey suit",
        price:"450",
-       quantity:1
-            
+       quantity:1,
+       category:"regular"   
         },
     
     
@@ -52,8 +53,12 @@
                 name:"regular fit suit",
                 price:"400",
                 quantity:1,
-                 colors:"<div class='suitcolor'> <div id='black'></div> <div id='blue'></div> <div id='grey'></div> </div>"
-            },
+                 colors:"<div class='suitcolor'> <div id='black'></div> <div id='blue'></div> <div id='grey'></div> </div>",
+            
+                category:"regular"
+            
+            
+                },
     
     
     
@@ -65,7 +70,8 @@
                     image2:"images/greenslimsuit2.jpg",
                     name:"green slim suit",
                     price:"525",
-                    quantity:1
+                    quantity:1,
+                    category:"regular"
                     
             }, 
     
@@ -79,7 +85,8 @@
                         image2:"images/justcouturesuit2.jpg",
                         name:"just couture",
                         price:450,
-                        quantity:1
+                        quantity:1,
+                        category:"regular"
                         
             },
                         
@@ -91,7 +98,8 @@
                              image2:"images/navychech2.jpg",
                             name:"navy suit",
                             price:655,
-                            quantity:1
+                            quantity:1,
+                            category:"regular"
                             
                             },
                             
@@ -105,7 +113,8 @@
                                 image2:"images/stretchsuit2.jpg",
                                 name:"stretch chino blazer",
                                 price:525,
-                                quantity:1
+                                quantity:1,
+                                category:"regular"
                                 
                                 },
                                 
@@ -123,7 +132,8 @@
                                         image2:"images/velvetjacket2.jpg",
                                         name:"velvet jacket",
                                         price:"355",
-                                        quantity:1
+                                        quantity:1,
+                                        category:"regular"
                                         
                                         },
                                         
@@ -135,7 +145,8 @@
                                             image2:"images/greysuit2.jpg",
                                             name:"grey check jacket",
                                             price:"415",
-                                            quantity:1
+                                            quantity:1,
+                                            category:"regular"
                                             
                                             },  
                              
@@ -147,8 +158,8 @@
                                                 image2:"images/navypanamasuit2.jpg",
                                                 name:"navy panama suit",
                                                 price:"625",
-                                                quantity:1
-                                                
+                                                quantity:1,
+                                                category:"regular"
                                                 },  
                                  
                 
@@ -160,7 +171,8 @@
                                                     image2:"images/blazerjacket2.jpg",
                                                     name:"blazer jacket",
                                                     price:565,
-                                                    quantity:1
+                                                    quantity:1,
+                                                    category:"blazer"
                                                 },  
                                      
     
