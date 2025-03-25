@@ -309,7 +309,7 @@ import products from'./products.js';
     <div class="item-container">
        <article class="section-list">
         <h3>suit</h3>
-        <a href="product11.html">  
+        <a href="/details.html?id=10">
     <div class="image">
         <img src='images/velvetjacket.jpg' width="300"  height="300"  alt="velvet jacket image">
     </div>
@@ -329,7 +329,7 @@ import products from'./products.js';
     
 <article class="section-list">
     <h3>suit</h3>
-    <a href="product12.html"> 
+   <a href="/details.html?id=12">
     <div class="image">
         
         
@@ -351,7 +351,7 @@ import products from'./products.js';
     <article class="section-list">
         <h3>suit</h3>
     
-    <a href="product13.html">    
+      <a href="/details.html?id=13">
         <div class="image">
         <img src='images/navypanamasuit.jpg' width="300"  height="300"  alt="navy panama suit image">
     </div>
@@ -372,7 +372,7 @@ import products from'./products.js';
     <article class="section-list">
         <h3>suit</h3>
     
-    <a href="product14.html">
+    <a href="/details.html?id=14">
     <div class="image">
         <img src='images/blazerjacket.jpg' width="300"  height="300" alt="blazer jacket image">
     </div>

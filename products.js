@@ -180,8 +180,8 @@
                                                 {
                                                     id:15,
                                                     image:"images/stoneblazer.jpg",
-                                                    image1:"images/stoneblazer.jpg1",
-                                                    image2:"images/stoneblazer.jpg2",
+                                                    image1:"images/stoneblazer1.jpg",
+                                                    image2:"images/stoneblazer2.jpg",
                                                     name:"stone blazer",
                                                     price:565,
                                                     quantity:1,
@@ -192,8 +192,8 @@
                                                 {
                                                     id:16,
                                                     image:"images/greypocketblazer.jpg",
-                                                    image1:"images/greypocketblazer.jpg1",
-                                                    image2:"images/greypocketblazer.jpg2",
+                                                    image1:"images/greypocketblazer1.jpg",
+                                                    image2:"images/greypocketblazer2.jpg",
                                                     name:"Grey pocket blazer",
                                                     price:275,
                                                     quantity:1,
@@ -204,8 +204,8 @@
                                                 {
                                                     id:17,
                                                     image:"images/textureblazer.jpg",
-                                                    image1:"images/textureblazer.jpg1",
-                                                    image2:"images/textureblazer.jpg2",
+                                                    image1:"images/textureblazer1.jpg",
+                                                    image2:"images/textureblazer2.jpg",
                                                     name:"texture blazer",
                                                     price:415,
                                                     quantity:1,
