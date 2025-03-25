@@ -38,13 +38,15 @@ let topIcon=document.querySelector('.top-icons');
    sub.addEventListener('mouseout',hideSub);
 
 
-    
+   
 
    
 
    function showSub(){
+
+    let overlay = document.querySelector('.overlay'); 
     sub.style.height="300px";
-   
+   overlay.style.width="100";
  }
 
  function hideSub(){
@@ -147,7 +149,30 @@ let topIcon=document.querySelector('.top-icons');
         
              reviewBox.classList.toggle('show-Box');
              reviewText.classList.toggle('show-message');
-     }
+         
+    
+             let error=document.querySelector('.error');
+    
+             let textBox=document.querySelector('.text-box');
+     if(!textBox.value){
+        
+        error.style.display="block";
+        reviewText.classList.toggle('show-message');
+
+     }else{
+        error.style.display="none";
+       
+    
+    }
+     
+     
+     
+            
+
+
+
+
+}
     
          
     

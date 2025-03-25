@@ -1307,7 +1307,16 @@ footer a{
      flex-direction:column;
      color:var(--black);
      }
-
+.cart{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+.cart-btn{
+    width:90%;
+   
+}
    
 .mobile a{
     color:var(--black);
@@ -1387,12 +1396,21 @@ footer a{
      box-shadow: 2px 3px 2px  orange;
 }
 
-.review-message{
+.review-message, .error{
     display:none;
     font-style:italic;
-    margin-top:23px;
-   font-weight: 900;
+    font-weight:900;
+    color:var(--black);
+    background:#FFD700;
+    width:300px;
+    margin:auto;
+    font-size:12px;
+    padding:11px;
+   
 }
+
+
+
 .show-message{
     display:block;
     font-style:italic;
@@ -2500,16 +2518,7 @@ body,html{
 
 
 }
- .error{
-    display:none;
-    font-style:italic;
-     font-weight:900;
-     color:white;
-     background:red;
-     width:300px;
-     margin:auto;
-    
- }
+ 
 
 /* Styles for phones */
     @media screen and (max-width:540px){

@@ -126,7 +126,7 @@
     
     
                                     {
-                                        id:11,
+                                        id:10,
                                         image:"images/velvetjacket.jpg",
                                         image1:"images/velvetjacket1.jpg",
                                         image2:"images/velvetjacket2.jpg",
@@ -177,11 +177,69 @@
                                      
     
                                                
-    
+                                                {
+                                                    id:15,
+                                                    image:"images/stoneblazer.jpg",
+                                                    image1:"images/stoneblazer.jpg1",
+                                                    image2:"images/stoneblazer.jpg2",
+                                                    name:"stone blazer",
+                                                    price:565,
+                                                    quantity:1,
+                                                    category:"blazer"
+                                                },  
+                                     
                                                
+                                                {
+                                                    id:16,
+                                                    image:"images/greypocketblazer.jpg",
+                                                    image1:"images/greypocketblazer.jpg1",
+                                                    image2:"images/greypocketblazer.jpg2",
+                                                    name:"Grey pocket blazer",
+                                                    price:275,
+                                                    quantity:1,
+                                                    category:"blazer"
+                                                },  
+                                     
     
+                                                {
+                                                    id:17,
+                                                    image:"images/textureblazer.jpg",
+                                                    image1:"images/textureblazer.jpg1",
+                                                    image2:"images/textureblazer.jpg2",
+                                                    name:"texture blazer",
+                                                    price:415,
+                                                    quantity:1,
+                                                    category:"blazer"
+                                                },  
+                                     
     
-    ]
+                                                {
+                                                    id:14,
+                                                    image:"images/blazerjacket.jpg",
+                                                    image1:"images/blazerjacket1.jpg",
+                                                    image2:"images/blazerjacket2.jpg",
+                                                    name:"blazer jacket",
+                                                    price:565,
+                                                    quantity:1,
+                                                    category:"blazer"
+                                                },  
+                                     
+    
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            ]
 
 
     export default products;
