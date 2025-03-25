@@ -214,27 +214,81 @@
                                      
     
                                                 {
-                                                    id:14,
-                                                    image:"images/blazerjacket.jpg",
-                                                    image1:"images/blazerjacket1.jpg",
-                                                    image2:"images/blazerjacket2.jpg",
-                                                    name:"blazer jacket",
-                                                    price:565,
+                                                    id:18,
+                                                    image:"images/cowleathershoe.jpg",
+                                                    image1:"images/cowleathershoe1.jpg",
+                                                    image2:"images/cowleathershoe2.jpg",
+                                                    name:"cow leather shoe",
+                                                    price:625,
                                                     quantity:1,
-                                                    category:"blazer"
+                                                    category:"leather shoe"
                                                 },  
                                      
     
                                             
+                                                {
+                                                    id:19,
+                                                    image:"images/oxfordleather2.jpg",
+                                                    image1:"images/oxfordleather1.jpg",
+                                                    image2:"images/oxfordleather2.jpg",
+                                                    name:"oxford leather shoe",
+                                                    price:655,
+                                                    quantity:1,
+                                                    category:"leather shoe"
+                                                },  
+                                            
+                                            
+                                            
+                                                {
+                                                    id:20,
+                                                    image:"images/fullbrogueoxford.jpg",
+                                                    image1:"images/fullbrogueoxford1.jpg",
+                                                    image2:"images/fullbrogueoxford2.jpg",
+                                                    name:"full brogue oxford",
+                                                    price:450,
+                                                    quantity:1,
+                                                    category:"leather shoe"
+                                                },  
                                             
                                             
                                             
                                             
+                                                {
+                                                    id:21,
+                                                    image:"images/brogueoxford.jpg",
+                                                    image1:"images/brogueoxford1.jpg",
+                                                    image2:"images/brogueoxford2.jpg",
+                                                    name:"brogue oxford shoe",
+                                                    price:415,
+                                                    quantity:1,
+                                                    category:"leather shoe"
+                                                },  
                                             
                                             
                                             
                                             
+                                                {
+                                                    id:22,
+                                                    image:"images/wingtipoxford.jpg",
+                                                    image1:"images/wingtipoxford1.jpg",
+                                                    image2:"images/wingtipoxford2.jpg",
+                                                    name:"wingtip oxford shoe",
+                                                    price:625,
+                                                    quantity:1,
+                                                    category:"leather shoe"
+                                                },  
                                             
+                                            
+                                                {
+                                                    id:23,
+                                                    image:"images/topgraincowleather.jpg",
+                                                    image1:"images/topgraincowleather1.jpg",
+                                                    image2:"images/topgraincowleather2.jpg",
+                                                    name:"top grain leather shoe",
+                                                    price:565,
+                                                    quantity:1,
+                                                    category:"leather shoe"
+                                                },  
                                             
                                             
                                             
