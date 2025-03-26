@@ -84,6 +84,8 @@ h2{
 </div>
 <button class="showquantity" onclick="showQuant()">showquantity</button>
 <button class="addtocart" onclick="addToBasket()">addtocart</button>
+<button class="plusOne" onclick="addOne()">+1</button>
+
 <button class="plustwo" onclick="addTwo()">+2</button>
 <button class="plusthree"onclick="addThree()">+3</button>
 <button class="reset"onclick="Reset()">reset</button>
@@ -120,6 +122,14 @@ let plus=document.querySelector('.plustwo');
 let add=document.querySelector('.plusthree');
 let reset=document.querySelector('.reset');
 let quantity=0;
+
+
+function addOne(){
+    return quantity+=1;
+}
+
+
+
 
 function addTwo(){
    

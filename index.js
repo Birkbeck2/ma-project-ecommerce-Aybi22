@@ -18,9 +18,10 @@ filteredProducts();
    fetch('./template.html')
 .then(response=>response.text())
 .then(html=>{
-       
+     
    let app=document.getElementById('app')
    app.innerHTML=html;
+   
 
   
 let topIcon=document.querySelector('.top-icons');
@@ -37,7 +38,8 @@ let topIcon=document.querySelector('.top-icons');
    sub.addEventListener('mouseover',showSub);
    sub.addEventListener('mouseout',hideSub);
 
-
+   let productQuantity=document.querySelector('.noOfItems');
+   productQuantity.innerText="yes";
    
 
    
