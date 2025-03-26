@@ -154,8 +154,8 @@
                                             {
                                                 id:13,
                                                 image:"images/navypanamasuit.jpg",
-                                                image1:"images/navypanamasuit1.jpg",
-                                                image2:"images/navypanamasuit2.jpg",
+                                                image1:"images/navypanamablue1.jpg",
+                                                image2:"images/navypanamablue2.jpg",
                                                 name:"navy panama suit",
                                                 price:"625",
                                                 quantity:1,
