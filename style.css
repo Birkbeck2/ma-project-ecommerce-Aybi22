@@ -129,14 +129,32 @@ h2{
  .add-btn{
     cursor:pointer;
  }
-
+.blazer-section-btn{
+    border:none;
+     display:block;
+     
+     cursor:pointer;
+     padding:13px 14px;
+     max-width:200px;
+     width:100%;
+     margin-top:22px;
+     font-weight:bold;
+     text-transform:capitalize;
+     text-align:center;
+     box-shadow:inset 0 0 0 0 var(--cambridge-blue);
+     transition:ease-in-out 0.5s;
+     color:var(--black);
+     white-space: nowrap;
+     margin:auto;
+    background:var(--cambridge-blue);
+}
 a.btn{
     color:var(--black);
     font-weight:bold;
     font-size:14px;
    }
   
-a.btn:hover{
+a.btn :hover{
     box-shadow:inset 200px 0 0 0 var(--black);
     transition:ease-in-out 0.5s; 
     color:var(--white);
@@ -158,7 +176,7 @@ a.btn.new:hover{
 .btn{
      border:none;
      display:block;
-     background:var(--cambridge-blue);
+     background:var(--champagne);
      cursor:pointer;
      padding:13px 14px;
      max-width:200px;
@@ -171,9 +189,29 @@ a.btn.new:hover{
      transition:ease-in-out 0.5s;
      color:white;
      white-space: nowrap;
+     margin:auto;
     }
 
- 
+ .gallery-btn{
+    background:var(--cambridge-blue)!important;
+    border:none;
+    display:block;
+   
+    cursor:pointer;
+    padding:13px 14px;
+    max-width:200px;
+    width:100%;
+    margin-top:22px;
+    font-weight:bold;
+    text-transform:capitalize;
+    text-align:center;
+    box-shadow:inset 0 0 0 0 var(--cambridge-blue);
+    transition:ease-in-out 0.5s;
+    color:var(--black);
+    white-space: nowrap;
+    margin:auto;
+    
+ }
  
 
  .send-btn{
@@ -1800,7 +1838,7 @@ textarea:focus-within{
   }
   
   
-  .shop-container{
+  .shop-container,.suit-container{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     max-width:1200px;
@@ -2333,7 +2371,11 @@ p{
 
 
 
-
+.suit-container img{
+    width:400px;
+    height:450px;
+    object-fit:cover;
+}
 
 
 

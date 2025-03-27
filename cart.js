@@ -1,11 +1,11 @@
-
+import products from'./products.js'
 import  detail from'./details.js';
 
- let cart=[];
+detail();
  
+
  
- 
- 
+
  
  
  
@@ -50,12 +50,11 @@ export function closeModal(){
      
  }
 
+ 
+ 
+ 
+ 
 
- 
- 
- 
- 
- 
  
  
  

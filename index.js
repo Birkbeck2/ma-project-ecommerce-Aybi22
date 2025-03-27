@@ -1,14 +1,14 @@
 import products from'./products.js'
 import {showCart,closeModal,closeOver} from './cart.js'
 import  detail from'./details.js';
-import { filteredProducts } from './suit.js';
-
 
 
 detail();
-filteredProducts(); 
 
- 
+  
+
+
+
 
  
 
@@ -38,10 +38,7 @@ let topIcon=document.querySelector('.top-icons');
    sub.addEventListener('mouseover',showSub);
    sub.addEventListener('mouseout',hideSub);
 
-   let productQuantity=document.querySelector('.noOfItems');
-   productQuantity.innerText="yes";
    
-
    
 
    function showSub(){
@@ -230,32 +227,9 @@ let topIcon=document.querySelector('.top-icons');
  
     
 
-
-
-
-
-
-
-
-
-
-
-
 });
  
-
-   
-
-
-
-
-
-
-
-
-
-    
-    products.forEach(product=>{
+products.forEach(product=>{
         let container=document.querySelector('.shop-container');  
      let newPara=document.createElement('div')
        newPara.innerHTML=`
@@ -271,7 +245,7 @@ let topIcon=document.querySelector('.top-icons');
        <div class='item-price'>£${product.price}</div>
    </div>    
        <div class="colors">${product.colors}</div>
-   
+   <a class="btn" onclick="addToCart()">add to cart</a>
    </div>
        
       
@@ -286,24 +260,57 @@ let topIcon=document.querySelector('.top-icons');
     });
     
   
-
- 
+   
+    function filteredByCategory(category){
+        return products.filter(product=>product.category===category);
+       
+    }   
+    const filteredProducts=filteredByCategory("regular");
+    console.log(filteredProducts);
+     
+    document.querySelector('.suit-container').innerHTML=
+    filteredProducts.map(product=>
+       
+        `
+        <article class="section-list">
+        <h3>${product.h3}</h3>
+         <a href="details.html?id=${product.id}">
+        <div class="image">
+        <img src=${product.image}>
+    </div>
+    </a>
+        
+       <div class="item-title">
+           <div class='item-name'>${product.name}</div>
+           <div class='item-price'>£${product.price}</div>
+       </div>    
+           <div class="colors">${product.colors}</div>
+       <a class="btn" onclick="addToCart()">add to cart</a>
+       </div> 
+        
+        </div>
+    
+        
+    </article>
+               
+    `).join(''); 
+    
+    
+    
+    
+    
+    
+    
+        
+    
+    
+    
+   
+    
+    
     
 
-
-
-
-
-
-
   
-
- 
-
-
-
-
-
 
 
 

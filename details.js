@@ -120,7 +120,7 @@ import products from'./products.js';
     <div class="counter">
 
 <input type="button" value="-" id="decrease">
-<input type="button" value="1"  id="number">
+<input type="button" value="0"  id="number">
 <input type="button" value="+" id="increase">
 
 </div>
@@ -627,7 +627,7 @@ let decrease = document.getElementById('decrease');
     number.value--;
     
     } else {
-    number.value = 1;
+    number.value = 0;
     }
     }
     
@@ -643,6 +643,20 @@ let decrease = document.getElementById('decrease');
      
     
     
+    let counter=document.querySelector('.counter');
+   
+  counter.addEventListener('click',showQuantity)  
+ function showQuantity(e){
+   ;
+    let productQuantity=document.querySelector('.noOfItems');
+
+     let input=document.getElementById('number');
+     if(e.target===increase || e.target===decrease){
+     
+     productQuantity.innerText=input.value;
+ 
+ }
+ } 
 
 
 

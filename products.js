@@ -8,7 +8,8 @@
     name:"texture suit",
     price:"250",
     quantity:1,
-    category:"regular"
+    category:"regular",
+     h3:"regular"
     
     },
     
@@ -22,7 +23,8 @@
         image2:"images/blacksuit2.jpg",
         price:"370",
         quantity:1,
-        category:"regular"
+        category:"regular",
+         h3:"regular"
     },
     
     
@@ -36,7 +38,9 @@
        name:"Grey suit",
        price:"450",
        quantity:1,
-       category:"regular"   
+       category:"regular",
+        h3:"regular"
+       
         },
     
     
@@ -55,8 +59,8 @@
                 quantity:1,
                  colors:"<div class='suitcolor'> <div id='black'></div> <div id='blue'></div> <div id='grey'></div> </div>",
             
-                category:"regular"
-            
+                category:"regular",
+             h3:"regular"
             
                 },
     
@@ -71,7 +75,8 @@
                     name:"green slim suit",
                     price:"525",
                     quantity:1,
-                    category:"regular"
+                    category:"regular",
+                     h3:"regular"
                     
             }, 
     
@@ -86,7 +91,8 @@
                         name:"just couture",
                         price:450,
                         quantity:1,
-                        category:"regular"
+                        category:"regular",
+                         h3:"regular"
                         
             },
                         
@@ -99,8 +105,8 @@
                             name:"navy suit",
                             price:655,
                             quantity:1,
-                            category:"regular"
-                            
+                            category:"regular",
+                             h3:"regular"
                             },
                             
                             
@@ -114,8 +120,8 @@
                                 name:"stretch chino blazer",
                                 price:525,
                                 quantity:1,
-                                category:"regular"
-                                
+                                category:"regular",
+                                 h3:"regular"
                                 },
                                 
                                 
@@ -133,7 +139,8 @@
                                         name:"velvet jacket",
                                         price:"355",
                                         quantity:1,
-                                        category:"regular"
+                                        category:"regular",
+                                        h3:"regular"
                                         
                                         },
                                         
@@ -146,8 +153,8 @@
                                             name:"grey check jacket",
                                             price:"415",
                                             quantity:1,
-                                            category:"regular"
-                                            
+                                            category:"regular",
+                                             h3:"regular"
                                             },  
                              
                           
@@ -159,7 +166,8 @@
                                                 name:"navy panama suit",
                                                 price:"625",
                                                 quantity:1,
-                                                category:"regular"
+                                                category:"regular",
+                                                  h3:"regular"
                                                 },  
                                  
                 
