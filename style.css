@@ -1860,7 +1860,7 @@ textarea:focus-within{
     display:grid;
     grid-template-columns: repeat(4,1fr);
  
-    max-width:900px;
+    max-width:1300px;
    width:100%;
     gap:11px;
  
