@@ -180,6 +180,7 @@
                                                     name:"blazer jacket",
                                                     price:565,
                                                     quantity:1,
+                                                    h3:"blazer",
                                                     category:"blazer"
                                                 },  
                                      
@@ -193,6 +194,7 @@
                                                     name:"stone blazer",
                                                     price:565,
                                                     quantity:1,
+                                                    h3:"blazer",
                                                     category:"blazer"
                                                 },  
                                      
@@ -205,6 +207,7 @@
                                                     name:"Grey pocket blazer",
                                                     price:275,
                                                     quantity:1,
+                                                    h3:"blazer",
                                                     category:"blazer"
                                                 },  
                                      
@@ -217,6 +220,7 @@
                                                     name:"texture blazer",
                                                     price:415,
                                                     quantity:1,
+                                                    h3:"blazer",
                                                     category:"blazer"
                                                 },  
                                      
@@ -302,16 +306,27 @@
                                             
                                                 {
                                                     id:24,
-                                                    image:"images/greenherringbone.jpg",
-                                                    image1:"images/greenherringbone1.jpg",
-                                                    image2:"images/greenherringbone2.jpg",
+                                                    image:"images/greenherringboneblazer.jpg",
+                                                    image1:"images/greenherringboneblazer1.jpg",
+                                                    image2:"images/greenherringboneblazer2.jpg",
                                                     name:"green herringbone blazer",
                                                     price:465,
                                                     quantity:1,
+                                                    h3:"blazer",
                                                     category:"blazer"
                                                 },  
                                             
-                                            
+                                                {
+                                                    id:25,
+                                                    image:"images/greyminiblazer.jpg",
+                                                    image1:"images/greyminiblazer1.jpg",
+                                                    image2:"images/greyminiblazer2.jpg",
+                                                    name:"grey mini blazer",
+                                                    price:330,
+                                                    quantity:1,
+                                                    h3:"blazer",
+                                                    category:"blazer"
+                                                },  
                                             
                                             
                                             

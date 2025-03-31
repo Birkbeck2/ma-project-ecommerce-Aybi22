@@ -1,7 +1,8 @@
 import products from'./products.js'
 import {showCart,closeModal,closeOver} from './cart.js'
 import  detail from'./details.js';
-import {filteredByCategory} from './suit.js';
+import {filteredByCategory} from './suit.js'
+import {filteredByCategoryBlazer} from './blazer.js'
 
 detail();
 
@@ -243,10 +244,12 @@ let topIcon=document.querySelector('.top-icons');
                  
 
 });
-
-
-
+filteredByCategoryBlazer('blazer');
 filteredByCategory('regular');
+
+
+
+
 
 
 products.forEach(product=>{
@@ -278,7 +281,6 @@ products.forEach(product=>{
    
      
 });
-
 
 
 
