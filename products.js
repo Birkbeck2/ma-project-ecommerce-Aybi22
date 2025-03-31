@@ -300,6 +300,26 @@
                                             
                                             
                                             
+                                                {
+                                                    id:24,
+                                                    image:"images/greenherringbone.jpg",
+                                                    image1:"images/greenherringbone1.jpg",
+                                                    image2:"images/greenherringbone2.jpg",
+                                                    name:"green herringbone blazer",
+                                                    price:465,
+                                                    quantity:1,
+                                                    category:"blazer"
+                                                },  
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
                                             
                                             ]
 

@@ -1,11 +1,22 @@
 import products from'./products.js'
 import {showCart,closeModal,closeOver} from './cart.js'
 import  detail from'./details.js';
-
+import {filteredByCategory} from './suit.js';
 
 detail();
 
-  
+
+
+
+
+                                                  
+                                              
+                                                        
+                                                         
+          
+
+
+
 
 
 
@@ -37,7 +48,7 @@ let topIcon=document.querySelector('.top-icons');
    shop.addEventListener('mouseout', hideSub);
    sub.addEventListener('mouseover',showSub);
    sub.addEventListener('mouseout',hideSub);
-
+   
    
    
 
@@ -54,9 +65,9 @@ let topIcon=document.querySelector('.top-icons');
   }  
    
  
+  
+  
    
-   
-    
     
     
     
@@ -86,7 +97,7 @@ let topIcon=document.querySelector('.top-icons');
     
     }
       
-
+   
 
     let next = document.getElementById('next');
     next.addEventListener('click', showNext);
@@ -174,7 +185,7 @@ let topIcon=document.querySelector('.top-icons');
 }
     
          
-    
+ 
   
        
     
@@ -226,102 +237,56 @@ let topIcon=document.querySelector('.top-icons');
     }
  
     
+    
+                                     
+                                                                 
+                 
 
 });
- 
+
+
+
+filteredByCategory('regular');
+
+
 products.forEach(product=>{
-        let container=document.querySelector('.shop-container');  
-     let newPara=document.createElement('div')
-       newPara.innerHTML=`
-       
+    let container=document.querySelector('.shop-container');  
+ let newPara=document.createElement('div')
+   newPara.innerHTML=`
+   
 
-    <div class="section-list">
-       <a href="details.html?id=${product.id}">
-    
-    <img src= ${product.image}>
-    </a>
+<div class="section-list">
+   <a href="details.html?id=${product.id}">
+
+<img src= ${product.image}>
+</a>
 <div class="item-title">
-       <div class='item-name'>${product.name}</div>
-       <div class='item-price'>£${product.price}</div>
-   </div>    
-       <div class="colors">${product.colors}</div>
-   <a class="btn" onclick="addToCart()">add to cart</a>
-   </div>
-       
-      
-       
-       `;
-
-       
-      
-       container.appendChild(newPara);
-    
-         
-    });
-    
+   <div class='item-name'>${product.name}</div>
+   <div class='item-price'>£${product.price}</div>
+</div>    
+   <div class="colors">${product.colors}</div>
+<a class="btn" onclick="addToCart()">add to cart</a>
+</div>
+   
   
    
-    function filteredByCategory(category){
-        return products.filter(product=>product.category===category);
-       
-    }   
-    const filteredProducts=filteredByCategory("regular");
-    console.log(filteredProducts);
+   `;
+
+   
+  
+   container.appendChild(newPara);
+   
      
-    document.querySelector('.suit-container').innerHTML=
-    filteredProducts.map(product=>
-       
-        `
-        <article class="section-list">
-        <h3>${product.h3}</h3>
-         <a href="details.html?id=${product.id}">
-        <div class="image">
-        <img src=${product.image}>
-    </div>
-    </a>
-        
-       <div class="item-title">
-           <div class='item-name'>${product.name}</div>
-           <div class='item-price'>£${product.price}</div>
-       </div>    
-           <div class="colors">${product.colors}</div>
-       <a class="btn" onclick="addToCart()">add to cart</a>
-       </div> 
-        
-        </div>
-    
-        
-    </article>
-               
-    `).join(''); 
-    
-    
-    
-    
-    
-    
-    
-        
-    
-    
-    
-   
-    
-    
-    
-
-  
+});
 
 
 
 
-                                             
-                                                                 
-                                                                 
-                                                  
-                                                            
-                                                             
-                                                             
+
+    
+
+
+                                               
                                                              
                                                             
                                                              
