@@ -97,6 +97,13 @@ h2{
 <button class="rock">scissors</button>
 
 
+<audio id="myaudio"  src="ringtone1.mp3"></audio>
+  <button onclick="playMusic()">play</button>
+  
+
+
+
+
 <script>
 
 let move=[2,9,4,93,22,90,1,10];
@@ -393,7 +400,10 @@ filteredProducts.map(product=>
 
 
 
-
+function playMusic(){
+    let audio=document.getElmenentById('myaudio');
+    audio.play()
+}
 
 
 

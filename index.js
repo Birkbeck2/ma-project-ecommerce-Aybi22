@@ -9,12 +9,26 @@ detail();
 
 
 
-
                                                   
                                               
-                                                        
+ /*                                                       
                                                          
-          
+ let productUpdate=products.find(product=>product.id===5);
+ if(productUpdate){
+    productUpdate.innerHTML=`
+    
+     colors:"<div class='suitcolor'> <div id='black'></div> <div id='blue'></div> <div id='grey'></div> </div>",
+            
+    
+    
+    
+    
+    
+    `
+ }
+ */
+
+    
 
 
 
@@ -238,19 +252,18 @@ let topIcon=document.querySelector('.top-icons');
     }
  
     
+});  
     
-                                     
+                                       
                                                                  
                  
 
-});
-filteredByCategoryBlazer('blazer');
-filteredByCategory('regular');
 
 
 
 
 
+function displayProducts(){
 
 products.forEach(product=>{
     let container=document.querySelector('.shop-container');  
@@ -279,18 +292,26 @@ products.forEach(product=>{
   
    container.appendChild(newPara);
    
-     
+ 
+
+        
 });
 
+}
 
 
 
-    
 
 
-                                               
-                                                             
-                                                            
+
+                                              
+
+filteredByCategoryBlazer('blazer');                                                           
+filteredByCategory('regular');
+
+
+
+displayProducts();                                                           
                                                              
                                                      
                                                              

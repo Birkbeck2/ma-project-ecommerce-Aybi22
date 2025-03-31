@@ -57,7 +57,7 @@
                 name:"regular fit suit",
                 price:"400",
                 quantity:1,
-                 colors:"<div class='suitcolor'> <div id='black'></div> <div id='blue'></div> <div id='grey'></div> </div>",
+                 
             
                 category:"regular",
              h3:"regular"
@@ -233,6 +233,7 @@
                                                     name:"cow leather shoe",
                                                     price:625,
                                                     quantity:1,
+                                                    h3:"shoe",
                                                     category:"leather shoe"
                                                 },  
                                      
@@ -246,6 +247,7 @@
                                                     name:"oxford leather shoe",
                                                     price:655,
                                                     quantity:1,
+                                                    h3:"shoe",
                                                     category:"leather shoe"
                                                 },  
                                             
@@ -259,6 +261,7 @@
                                                     name:"full brogue oxford",
                                                     price:450,
                                                     quantity:1,
+                                                    h3:"shoe",
                                                     category:"leather shoe"
                                                 },  
                                             
@@ -273,6 +276,7 @@
                                                     name:"brogue oxford shoe",
                                                     price:415,
                                                     quantity:1,
+                                                    h3:"shoe",
                                                     category:"leather shoe"
                                                 },  
                                             
@@ -287,6 +291,7 @@
                                                     name:"wingtip oxford shoe",
                                                     price:625,
                                                     quantity:1,
+                                                    h3:"shoe",
                                                     category:"leather shoe"
                                                 },  
                                             
@@ -299,6 +304,7 @@
                                                     name:"top grain leather shoe",
                                                     price:565,
                                                     quantity:1,
+                                                    h3:"shoe",
                                                     category:"leather shoe"
                                                 },  
                                             
@@ -329,11 +335,41 @@
                                                 },  
                                             
                                             
+                                                {
+                                                    id:26,
+                                                    image:"images/regularstretchsuit.jpg",
+                                                    image1:"images/regularstretchsuit1.jpg",
+                                                    image2:"images/regularstretchsuit2.jpg",
+                                                    name:"regular stretch suit",
+                                                    price:430,
+                                                    quantity:1,
+                                                    h3:"regular",
+                                                    category:"regular"
+                                                },  
                                             
+                                                {
+                                                    id:27,
+                                                    image:"images/navycheckedblazer.jpg",
+                                                    image1:"images/navycheckedblazer1.jpg",
+                                                    image2:"images/navycheckedblazer2.jpg",
+                                                    name:"navy checked blazer",
+                                                    price:440,
+                                                    quantity:1,
+                                                    h3:"blazer",
+                                                    category:"blazer"
+                                                },  
                                             
-                                            
-                                            
-                                            
+                                                {
+                                                    id:28,
+                                                    image:"images/navyblazer.jpg",
+                                                    image1:"images/navyblazer1.jpg",
+                                                    image2:"images/navyblazer2.jpg",
+                                                    name:"navy blazer",
+                                                    price:530,
+                                                    quantity:1,
+                                                    h3:"blazer",
+                                                    category:"blazer"
+                                                },  
                                             
                                             
                                             ]
