@@ -57,22 +57,7 @@ import products from'./products.js';
             <div class="image">
                 
                <img src=${thisProduct.image} id="main-pic" width="500" height="500" alt="texture suit image"> 
-                <div class="buttons">
-        
-            <button class="previous">
-               
-                 <i class="fa-solid fa-angle-left"></i> 
                 
-                </button>
-                
-            <button class="next"> 
-            
-                <i class="fa-solid fa-angle-right"></i>
-               
-            
-            </button> 
-                
-        </div>
                 
            
                 </div>

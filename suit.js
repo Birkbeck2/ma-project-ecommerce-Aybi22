@@ -1,15 +1,14 @@
 import products from'./products.js';
 
 
-
- export function filteredByCategory(category){
+export function filteredByCategoryBlazer(category){
  
     let filteredProducts= products.filter(product=>product.category===category);
-    let suitContainer=document.querySelector('.suit-container');
+    let blazerContainer=document.querySelector('.suit-container');
     
     
      
-    suitContainer.innerHTML=
+    blazerContainer.innerHTML=
     filteredProducts.map(product=>
        
         `
@@ -38,5 +37,6 @@ import products from'./products.js';
     
     }
     
+ 
    
-   
+ 
