@@ -2,15 +2,17 @@
 import products from'./products.js'
 
 
+
+
 export function filteredByCategoryBlazer(category){
  
-    let filteredProducts= products.filter(product=>product.category===category);
+    let filteredBlazerProducts= products.filter(product=>product.category===category);
     let blazerContainer=document.querySelector('.blazer-container');
     
     
      
     blazerContainer.innerHTML=
-    filteredProducts.map(product=>
+    filteredBlazerProducts.map(product=>
        
         `
         <article class="section-list">
@@ -37,6 +39,3 @@ export function filteredByCategoryBlazer(category){
     `).join(''); 
     
     }
-    
- 
-   

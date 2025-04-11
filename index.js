@@ -1,10 +1,13 @@
 import products from'./products.js'
 import {showCart,closeModal,closeOver} from './cart.js'
 import  detail from'./details.js';
+
+import { filteredByCategoryRegular } from './suit.js';
 import { filteredByCategoryBlazer } from './blazer.js';
-import { filteredByCategory } from './suit.js';
 detail();
-              
+   
+
+           
 
  
 
@@ -27,8 +30,8 @@ detail();
     `
  }
  */
-
  
+
   
  fetch('./template.html')
  .then(response=>response.text())
@@ -51,7 +54,7 @@ let close=document.querySelector('.close');
  shop.addEventListener('mouseout', hideSub);
  sub.addEventListener('mouseover',showSub);
  sub.addEventListener('mouseout',hideSub);
- let next=document.getElementById('next');
+ const next=document.getElementById('next');
  next.addEventListener('click',showNext);
  let reviewBtn = document.querySelector('.review-btn');
 
@@ -66,7 +69,6 @@ let close=document.querySelector('.close');
 
 
 
- 
  
  
  
@@ -125,8 +127,8 @@ let hamburger = document.querySelector('.hamburger');
   
   
   }
-});
-    
+
+
 
 
  
@@ -203,15 +205,10 @@ function showNext() {
 }
  
  
- 
-        
-
-
-
-
 }
 
-     
+    
+ 
 
 
 
@@ -263,16 +260,15 @@ function prev() {
      stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
  }
 
-
-});
-
+}
 
 
+)
+})
 
-document.addEventListener('DOMContentLoaded', () => 
 
 products.forEach(product=>{
-    let container=document.querySelector('.suit-container');
+    let container=document.querySelector('.shop-container');
  let newPara=document.createElement('div')
    newPara.innerHTML=`
    
@@ -298,75 +294,90 @@ products.forEach(product=>{
   
    container.appendChild(newPara);
    
-  
-        
 })
-);
-                                  
-                                                             
-filteredByCategoryBlazer('blazer');          
-
-filteredByCategory('regular');  
-
-        
- 
-
-   
-    
-   
-
- 
 
 
-    
+
+
+                                                          
         
 
-     
-    
-    
-    
-
-            
-
-      
-                                              
-                                                                 
-                                                             
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                 
-                                                                
-
-
-
-
-
 
 
  
 
-  
-
-  
-  
-
-
-
-
-
-
-
+ let categoryList=document.querySelector('.category-list');
+categoryList.addEventListener('click',displayCategory);
+function displayCategory(event){
    
-    
-                                                      
-     
-     
+   let categoryTitle=document.querySelector('.category-title');
+   let text=event.target.getAttribute('id');
+   if(text){
+      categoryTitle.textContent=text;
       
-               
+   }
+   
+   let filterByCategoryList;
+   
+    let allCategory=document.getElementsByTagName('input');
+    let model=event.target;
+    for(model of allCategory){
+    if (event.target===model){
      
-    
+       filterByCategoryList=products.filter(product=>product.category===model.getAttribute('id')); 
+       let container=document.querySelector('.shop-container');
+   container.innerHTML=
+   filterByCategoryList.map(product=>
+      `
+      
+      <div class="section-list">
+   <a href="details.html?id=${product.id}">
+
+<img src= ${product.image}>
+</a>
+<div class="item-title">
+   <div class='item-name'>${product.name}</div>
+   <div class='item-price'>£${product.price}</div>
+</div>    
+   <div class="colors">${product.colors}</div>
+<a class="btn" onclick="addToCart()">add to cart</a>
+</div>
+
+
+
+   `).join('');
+   
+   }
+}
+
+
+ 
+let productPrice=document.querySelector('.product-price');
+productPrice.addEventListener('click',filterByPrice);
+   function filterByPrice(){
+    let filterByPrice=products.filter(product=>product.price>400 );
+   let container=document.querySelector('.shop-container');
+
+   container.innerHTML=
+   filterByPrice.map(product=>
+`
+
+<div class="section-list">
+   <a href="details.html?id=${product.id}">
+
+<img src= ${product.image}>
+</a>
+<div class="item-title">
+   <div class='item-name'>${product.name}</div>
+   <div class='item-price'>£${product.price}</div>
+</div>    
+   <div class="colors">${product.colors}</div>
+<a class="btn" onclick="addToCart()">add to cart</a>
+</div>
+
+
+
+   `).join('');
+   }
+
+}

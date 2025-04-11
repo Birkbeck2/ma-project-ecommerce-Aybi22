@@ -14,7 +14,13 @@
     
     }
 
-    
+   .price-btn{
+    width:150px;
+   } 
+
+   .product-list{
+    margin-top:0;
+   }
     
     body,html{
         margin:0;
@@ -589,9 +595,33 @@ h3{
    
     
 }
+.category-title{
+    text-transform:capitalize;
+    font-weight:900;
+    
+}
+.category-list{
+    text-transform:capitalize;
+    margin-bottom:11px;
+    width:100px;
+    
+}
 
-
-
+.category-list input{
+   
+}
+.filter-section{
+    margin:11px;
+    text-transform:capitalize;
+    
+}
+.filter-section p{
+    margin:11px;
+    text-transform:capitalize;
+    font-weight:900;
+    text-transforM:capitalize;
+    
+}
 
 
 .main-text p{
@@ -1822,7 +1852,9 @@ textarea:focus-within{
    
 
    }
-
+.category-list li{
+cursor:pointer;
+}
   
    .shop-container .image{
     height:100%;

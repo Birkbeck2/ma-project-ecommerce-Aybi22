@@ -1,15 +1,19 @@
-import products from'./products.js';
+
+import products from'./products.js'
 
 
-export function filteredByCategoryBlazer(category){
+
+
+
+export function filteredByCategoryRegular(category){
  
-    let filteredProducts= products.filter(product=>product.category===category);
-    let blazerContainer=document.querySelector('.suit-container');
+    let filteredRegularProducts= products.filter(product=>product.category===category);
+    let regularContainer=document.querySelector('.suit-container');
     
     
      
-    blazerContainer.innerHTML=
-    filteredProducts.map(product=>
+    regularContainer.innerHTML=
+    filteredRegularProducts.map(product=>
        
         `
         <article class="section-list">
@@ -37,6 +41,3 @@ export function filteredByCategoryBlazer(category){
     
     }
     
- 
-   
- 

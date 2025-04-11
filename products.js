@@ -230,11 +230,11 @@
                                                     image:"images/cowleathershoe.jpg",
                                                     image1:"images/cowleathershoe1.jpg",
                                                     image2:"images/cowleathershoe2.jpg",
-                                                    name:"cow leather shoe",
+                                                    name:"cow leathershoe",
                                                     price:625,
                                                     quantity:1,
                                                     h3:"shoe",
-                                                    category:"leather shoe"
+                                                    category:"leathershoe"
                                                 },  
                                      
     
@@ -248,7 +248,7 @@
                                                     price:655,
                                                     quantity:1,
                                                     h3:"shoe",
-                                                    category:"leather shoe"
+                                                    category:"leathershoe"
                                                 },  
                                             
                                             
@@ -262,7 +262,7 @@
                                                     price:450,
                                                     quantity:1,
                                                     h3:"shoe",
-                                                    category:"leather shoe"
+                                                    category:"leathershoe"
                                                 },  
                                             
                                             
@@ -277,7 +277,7 @@
                                                     price:415,
                                                     quantity:1,
                                                     h3:"shoe",
-                                                    category:"leather shoe"
+                                                    category:"leathershoe"
                                                 },  
                                             
                                             
@@ -292,7 +292,7 @@
                                                     price:625,
                                                     quantity:1,
                                                     h3:"shoe",
-                                                    category:"leather shoe"
+                                                    category:"leathershoe"
                                                 },  
                                             
                                             
@@ -305,7 +305,7 @@
                                                     price:565,
                                                     quantity:1,
                                                     h3:"shoe",
-                                                    category:"leather shoe"
+                                                    category:"leathershoe"
                                                 },  
                                             
                                             
