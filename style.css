@@ -613,8 +613,37 @@ h3{
 .filter-section{
     margin:11px;
     text-transform:capitalize;
+    border-right:1px solid var(--champagne);
+    height:300px;
+    
+   
+    
     
 }
+
+.filter-section p{
+    margin:11px;
+   
+    font-weight: 900;
+    font-size:1rem;
+    
+    
+    
+}
+
+
+
+
+
+
+.section-wrapper{
+    display:flex;
+   
+  }
+
+
+
+
 .filter-section p{
     margin:11px;
     text-transform:capitalize;
@@ -1852,7 +1881,12 @@ textarea:focus-within{
    
 
    }
-.category-list li{
+
+ 
+
+
+
+   .category-list li{
 cursor:pointer;
 }
   

@@ -6,8 +6,14 @@ import { filteredByCategoryRegular } from './suit.js';
 import { filteredByCategoryBlazer } from './blazer.js';
 detail();
    
-
-           
+                                             
+document.addEventListener('DOMContentLoaded',() => {
+   filteredByCategoryRegular('regular');
+ });                                                  
+ 
+ document.addEventListener('DOMContentLoaded',() => {
+   filteredByCategoryBlazer('blazer');
+ });        
 
  
 
@@ -31,7 +37,7 @@ detail();
  }
  */
  
-
+ 
   
  fetch('./template.html')
  .then(response=>response.text())
@@ -54,10 +60,10 @@ let close=document.querySelector('.close');
  shop.addEventListener('mouseout', hideSub);
  sub.addEventListener('mouseover',showSub);
  sub.addEventListener('mouseout',hideSub);
- const next=document.getElementById('next');
- next.addEventListener('click',showNext);
+ 
  let reviewBtn = document.querySelector('.review-btn');
-
+ let next=document.getElementById('next');
+ next.addEventListener('click',showNext);
  reviewBtn.addEventListener('click', showReviewBox);
  let sendBtn = document.querySelector('.send-btn');
  sendBtn.addEventListener('click', sendText);
@@ -128,41 +134,10 @@ let hamburger = document.querySelector('.hamburger');
   
   }
 
-
-
-
+  
+ 
  
 
-function showNext() {
-
-    let userpic = document.getElementById('userpic');
-    let customerName = document.querySelector('.name');
-    let jobTitle = document.querySelector('.job');
-    let stars = document.querySelector('.stars');
-
-    if (index < reviewImages.length - 1) {
-        index++;
-        userpic.src = reviewImages[index]["userpic"];
-        customerName.textContent = reviewImages[index]["name"];
-        jobTitle.textContent = reviewImages[index]["job"];
-        stars.innerHTML = `<i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>
-                                   <i class="fa-solid fa-star"></i>`
-
-    } else if (index === reviewImages.length - 1) {
-        index = 0;
-        userpic.src = reviewImages[index]["userpic"];
-        customerName.textContent = reviewImages[index]["name"];
-        jobTitle.textContent = reviewImages[index]["job"];
-        stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
-
-    }
-  
-
-
-   }
 
                               
                                     
@@ -209,7 +184,7 @@ function showNext() {
 
     
  
-
+  
 
 
 
@@ -230,7 +205,7 @@ let reviewImages = [
 ]
 
 let index = 0;
-document.addEventListener('DOMContentLoaded', () => 
+
 
  
 
@@ -261,11 +236,66 @@ function prev() {
  }
 
 }
+ 
+
+index=0;
+
+function showNext() {
+  
+    let userpic = document.getElementById('userpic');
+    let customerName = document.querySelector('.name');
+    let jobTitle = document.querySelector('.job');
+    let stars = document.querySelector('.stars');
+
+    if (index < reviewImages.length - 1) {
+        index++;
+        userpic.src = reviewImages[index]["userpic"];
+        customerName.textContent = reviewImages[index]["name"];
+        jobTitle.textContent = reviewImages[index]["job"];
+        stars.innerHTML = `<i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>`
+
+    } else if (index === reviewImages.length - 1) {
+        index = 0;
+        userpic.src = reviewImages[index]["userpic"];
+        customerName.textContent = reviewImages[index]["name"];
+        jobTitle.textContent = reviewImages[index]["job"];
+        stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
+
+    }
+  
 
 
-)
-})
+   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+
+
+
+function renderProducts(){
 
 products.forEach(product=>{
     let container=document.querySelector('.shop-container');
@@ -296,12 +326,10 @@ products.forEach(product=>{
    
 })
 
-
-
-
-                                                          
-        
-
+}
+renderProducts();
+ 
+ 
 
 
  
@@ -381,3 +409,5 @@ productPrice.addEventListener('click',filterByPrice);
    }
 
 }
+
+
