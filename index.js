@@ -4,6 +4,8 @@ import  detail from'./details.js';
 
 import { filteredByCategoryRegular } from './suit.js';
 import { filteredByCategoryBlazer } from './blazer.js';
+import { filteredByCategoryLeatherShoe } from './leathershoe.js';
+
 detail();
    
                                              
@@ -15,9 +17,9 @@ document.addEventListener('DOMContentLoaded',() => {
    filteredByCategoryBlazer('blazer');
  });        
 
- 
-
-
+ document.addEventListener('DOMContentLoaded',()=>{
+filteredByCategoryLeatherShoe('leathershoe');
+ });
                                                   
                                               
  /*                                                       
