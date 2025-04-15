@@ -22,6 +22,25 @@ filteredByCategoryLeatherShoe('leathershoe');
  });
                                                   
                                               
+ 
+
+   
+   
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  /*                                                       
                                                          
  let productUpdate=products.find(product=>product.id===5);
@@ -73,36 +92,7 @@ let close=document.querySelector('.close');
  previous.addEventListener('click', prev);
  
  
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- function showSub(){
+function showSub(){
 
   let overlay = document.querySelector('.overlay'); 
   sub.style.height="300px";
@@ -138,14 +128,6 @@ let hamburger = document.querySelector('.hamburger');
 
   
  
- 
-
-
-                              
-                                    
-                               
-    
-   
  function showReviewBox() {
  
      let reviewBox=document.querySelector('.review-box');
@@ -183,17 +165,6 @@ let hamburger = document.querySelector('.hamburger');
  
  
 }
-
-    
- 
-  
-
-
-
-
-
-   
-
 
 let reviewImages = [
  { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
@@ -379,13 +350,59 @@ function displayCategory(event){
    
    }
 }
-
+}
 
  
+
+document.addEventListener('DOMContentLoaded',()=>{
+   let overFourHundred=document.querySelector('.overfourhundred');
+   overFourHundred.addEventListener('click',filterByPriceOver);
+      function filterByPriceOver(){
+       let filterByPriceOver=products.filter(product=>product.price>600);
+      let container=document.querySelector('.shop-container');
+   
+      container.innerHTML=
+      filterByPriceOver.map(product=>
+   `
+   
+   <div class="section-list">
+      <a href="details.html?id=${product.id}">
+   
+   <img src= ${product.image}>
+   </a>
+   <div class="item-title">
+      <div class='item-name'>${product.name}</div>
+      <div class='item-price'>£${product.price}</div>
+   </div>    
+      <div class="colors">${product.colors}</div>
+   <a class="btn" onclick="addToCart()">add to cart</a>
+   </div>
+   
+   
+   
+      `).join('');
+      }
+   
+   filterByPriceOver()
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let productPrice=document.querySelector('.product-price');
 productPrice.addEventListener('click',filterByPrice);
    function filterByPrice(){
-    let filterByPrice=products.filter(product=>product.price>400 );
+    let filterByPrice=products.filter(product=>product.price<=600 );
    let container=document.querySelector('.shop-container');
 
    container.innerHTML=
@@ -409,7 +426,78 @@ productPrice.addEventListener('click',filterByPrice);
 
    `).join('');
    }
+   
+   let priceList=document.querySelector('.price-list');
+   priceList.addEventListener('click',filterProductsByPrice);
 
-}
+
+function filterProductsByPrice(event){
+   let filterProductsByPrice;
+   let inputs=document.getElementsByTagName('input');
+   let input=event.target;
+   for( input of inputs){
+     
+      if(event.target===input && input.classList.contains('low-btn')){
+         filterProductsByPrice=products.sort((a,b)=>a.price-b.price);
+
+         let container=document.querySelector('.shop-container')     
+         container.innerHTML=
+      filterProductsByPrice.map(product=>
+            `
+            <div class="section-list">
+            <a href="details.html?id=${product.id}">
+         
+         <img src= ${product.image}>
+         </a>
+         <div class="item-title">
+            <div class='item-name'>${product.name}</div>
+            <div class='item-price'>£${product.price}</div>
+         </div>    
+            <div class="colors">${product.colors}</div>
+         <a class="btn" onclick="addToCart()">add to cart</a>
+         </div>
+         
+            
+            
+            
+            
+            `).join('');
+         
 
 
+   
+       }else if(event.target===input && input.classList.contains('high-btn')){
+   
+         filterProductsByPrice=products.sort((a,b)=>b.price-a.price);
+             
+        
+         let container=document.querySelector('.shop-container')     
+         container.innerHTML=
+      filterProductsByPrice.map(product=>
+            `
+            <div class="section-list">
+            <a href="details.html?id=${product.id}">
+         
+         <img src= ${product.image}>
+         </a>
+         <div class="item-title">
+            <div class='item-name'>${product.name}</div>
+            <div class='item-price'>£${product.price}</div>
+         </div>    
+            <div class="colors">${product.colors}</div>
+         <a class="btn" onclick="addToCart()">add to cart</a>
+         </div>
+         
+            
+            
+            
+            
+            `).join(''); 
+         
+       }
+      }
+   }
+         
+      
+      
+      

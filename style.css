@@ -600,57 +600,52 @@ h3{
     font-weight:900;
     
 }
-.category-list{
-    text-transform:capitalize;
-    margin-bottom:11px;
-    width:100px;
-    
-}
 
-.category-list input{
-   
-}
-.filter-section{
-    margin:11px;
-    text-transform:capitalize;
-    border-right:1px solid var(--champagne);
-    height:300px;
-    
-   
-    
-    
-}
+.price-list,.category-list{
+display:flex;
+align-items:center;
+gap:11px;
 
-.filter-section p{
-    margin:11px;
-   
-    font-weight: 900;
-    font-size:1rem;
-    
-    
-    
+
 }
 
 
 
-
-
-
-.section-wrapper{
+.filter-section-wrapper{
     display:flex;
+    width:100%;
+    justify-content: center;
    
-  }
+    gap:33px;
+   border:1px solid gainsboro;
+    margin-bottom:11px;
+}
 
+.filter-section-wrapper input{
+    display:flex;
+    align-items: center;
+   gap:33px;
+}
 
-
-
-.filter-section p{
-    margin:11px;
+.filter-section-wrapper p{
     text-transform:capitalize;
-    font-weight:900;
-    text-transforM:capitalize;
+    font-weight: 900;
+    margin-right:23px;
+    
+  
     
 }
+
+
+.price-container{
+    display:flex;
+    justify-content: space-between;
+    border-right: 1px solid gainsboro;
+    padding:11px;
+}
+
+
+
 
 
 .main-text p{
