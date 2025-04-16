@@ -24,7 +24,7 @@ filteredByCategoryLeatherShoe('leathershoe');
                                               
  
 
-   
+ let cart;
    
    
  
@@ -285,7 +285,7 @@ products.forEach(product=>{
    <div class='item-name'>${product.name}</div>
    <div class='item-price'>£${product.price}</div>
 </div>    
-   <div class="colors">${product.colors}</div>
+  
 <a class="btn" onclick="addToCart()">add to cart</a>
 </div>
    
@@ -340,7 +340,7 @@ function displayCategory(event){
    <div class='item-name'>${product.name}</div>
    <div class='item-price'>£${product.price}</div>
 </div>    
-   <div class="colors">${product.colors}</div>
+   
 <a class="btn" onclick="addToCart()">add to cart</a>
 </div>
 
@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       <div class='item-name'>${product.name}</div>
       <div class='item-price'>£${product.price}</div>
    </div>    
-      <div class="colors">${product.colors}</div>
+      
    <a class="btn" onclick="addToCart()">add to cart</a>
    </div>
    
@@ -418,7 +418,7 @@ productPrice.addEventListener('click',filterByPrice);
    <div class='item-name'>${product.name}</div>
    <div class='item-price'>£${product.price}</div>
 </div>    
-   <div class="colors">${product.colors}</div>
+   
 <a class="btn" onclick="addToCart()">add to cart</a>
 </div>
 
@@ -453,7 +453,7 @@ function filterProductsByPrice(event){
             <div class='item-name'>${product.name}</div>
             <div class='item-price'>£${product.price}</div>
          </div>    
-            <div class="colors">${product.colors}</div>
+            
          <a class="btn" onclick="addToCart()">add to cart</a>
          </div>
          
@@ -484,7 +484,7 @@ function filterProductsByPrice(event){
             <div class='item-name'>${product.name}</div>
             <div class='item-price'>£${product.price}</div>
          </div>    
-            <div class="colors">${product.colors}</div>
+           
          <a class="btn" onclick="addToCart()">add to cart</a>
          </div>
          
@@ -499,5 +499,10 @@ function filterProductsByPrice(event){
    }
          
       
-      
-      
+      function addToCart(){
+         let btn=document.querySelector('.btn');
+         let carItems=document.querySelector('.cart-items')
+         carItems.innerHTML='items added';
+         cart.push('item added');
+      }
+      addToCart();

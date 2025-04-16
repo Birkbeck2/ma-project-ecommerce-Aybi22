@@ -28,7 +28,7 @@ export function filteredByCategoryRegular(category){
            <div class='item-name'>${product.name}</div>
            <div class='item-price'>£${product.price}</div>
        </div>    
-           <div class="colors">${product.colors}</div>
+         
        <a class="btn" onclick="addToCart()">add to cart</a>
        </div> 
         
