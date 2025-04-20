@@ -627,7 +627,7 @@ let decrease = document.getElementById('decrease');
     }       
      
     
-    
+    /*
     let counter=document.querySelector('.counter');
    
   counter.addEventListener('click',showQuantity)  
@@ -642,7 +642,7 @@ let decrease = document.getElementById('decrease');
  
  }
  } 
-
+*/
 
 
 

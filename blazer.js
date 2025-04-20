@@ -4,6 +4,7 @@ import products from'./products.js'
 
 
 
+
 export function filteredByCategoryBlazer(category){
  
     let filteredBlazerProducts= products.filter(product=>product.category===category);
@@ -28,7 +29,7 @@ export function filteredByCategoryBlazer(category){
            <div class='item-price'>£${product.price}</div>
        </div>    
            
-       <a class="btn" onclick="addToCart()">add to cart</a>
+       <a class="btn"   data-id='${product.id}'>add to cart</a>
        </div> 
         
         </div>

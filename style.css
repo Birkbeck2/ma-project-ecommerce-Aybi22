@@ -160,7 +160,12 @@ a.btn.new:hover{
     color:var(--white);
 }
 
-
+.cart-items{
+   width:200px;
+   height:200px;
+   border:2px solid green;
+    
+}
 a.btn{
      border:none;
      display:block;

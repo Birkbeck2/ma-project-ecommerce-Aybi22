@@ -1,15 +1,14 @@
-import products from'./products.js'
+
 import  detail from'./details.js';
+import products from'./products.js'
 
 detail();
- 
 
- 
 
- 
- 
- 
- export function showCart(){
+
+
+
+export function showCart(){
     
 
     let cart = document.querySelector('.cart');
@@ -49,14 +48,9 @@ export function closeModal(){
         overlay.classList.remove("overlay-box");
      
  }
-
- 
- 
- 
  
 
- 
- 
+
  
 
 
@@ -82,5 +76,5 @@ export function closeModal(){
 
 
 
-
-
+ 
+    

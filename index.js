@@ -1,14 +1,20 @@
+
+let cart=[];
+
+
 import products from'./products.js'
-import {showCart,closeModal,closeOver} from './cart.js'
+
+
 import  detail from'./details.js';
 
 import { filteredByCategoryRegular } from './suit.js';
 import { filteredByCategoryBlazer } from './blazer.js';
 import { filteredByCategoryLeatherShoe } from './leathershoe.js';
+import{showCart,closeOver,closeModal} from'./cart.js';
 
 detail();
-   
-                                             
+
+
 document.addEventListener('DOMContentLoaded',() => {
    filteredByCategoryRegular('regular');
  });                                                  
@@ -20,11 +26,45 @@ document.addEventListener('DOMContentLoaded',() => {
  document.addEventListener('DOMContentLoaded',()=>{
 filteredByCategoryLeatherShoe('leathershoe');
  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+     
+
+
+
+
+
+
+
+
+
+
+
+                                             
+
                                                   
-                                              
+ 
  
 
- let cart;
+
+
+
+
+
+   
    
    
  
@@ -58,18 +98,24 @@ filteredByCategoryLeatherShoe('leathershoe');
  }
  */
  
- 
+
   
  fetch('./template.html')
  .then(response=>response.text())
  .then(html=>{
-      
+   
     let app=document.getElementById('app')
     app.innerHTML=html;
-    
+   
 
+
+
+
+   
+  
 let topIcon=document.querySelector('.top-icons');
  topIcon.addEventListener('click', showCart);
+ 
  let overlay=document.querySelector('.overlay')
  overlay.addEventListener('click', closeOver);
 let close=document.querySelector('.close');
@@ -81,6 +127,7 @@ let close=document.querySelector('.close');
  shop.addEventListener('mouseout', hideSub);
  sub.addEventListener('mouseover',showSub);
  sub.addEventListener('mouseout',hideSub);
+
  
  let reviewBtn = document.querySelector('.review-btn');
  let next=document.getElementById('next');
@@ -92,7 +139,12 @@ let close=document.querySelector('.close');
  previous.addEventListener('click', prev);
  
  
-function showSub(){
+
+
+
+
+
+ function showSub(){
 
   let overlay = document.querySelector('.overlay'); 
   sub.style.height="300px";
@@ -125,9 +177,35 @@ let hamburger = document.querySelector('.hamburger');
   
   
   }
+ 
+
 
   
- 
+
+        
+    
+    
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+
+
+
  function showReviewBox() {
  
      let reviewBox=document.querySelector('.review-box');
@@ -167,7 +245,7 @@ let hamburger = document.querySelector('.hamburger');
 }
 
 let reviewImages = [
- { userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
+ {userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
  { userpic: 'images/james.jpg', name: "James smith", job: "web designer" },
  { userpic: 'images/amanda.jpg', name: "Amanda fisher", job: "Teacher" },
  { userpic: 'images/mark.jpg', name: "mark jones", job: "software engineer" },
@@ -244,27 +322,13 @@ function showNext() {
 
    }
 
+ 
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});
 
 
 
@@ -286,7 +350,7 @@ products.forEach(product=>{
    <div class='item-price'>£${product.price}</div>
 </div>    
   
-<a class="btn" onclick="addToCart()">add to cart</a>
+<a class="btn"    data-id=${product.id}>add to cart</a>
 </div>
    
   
@@ -341,7 +405,8 @@ function displayCategory(event){
    <div class='item-price'>£${product.price}</div>
 </div>    
    
-<a class="btn" onclick="addToCart()">add to cart</a>
+<a class="btn"  data-id=${product.id}>add to cart</a>
+
 </div>
 
 
@@ -375,7 +440,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       <div class='item-price'>£${product.price}</div>
    </div>    
       
-   <a class="btn" onclick="addToCart()">add to cart</a>
+   <a class="btn"   data-id=${product.id}>add to cart</a>
    </div>
    
    
@@ -419,7 +484,7 @@ productPrice.addEventListener('click',filterByPrice);
    <div class='item-price'>£${product.price}</div>
 </div>    
    
-<a class="btn" onclick="addToCart()">add to cart</a>
+<a class="btn"   data-id=${product.id}>add to cart</a>
 </div>
 
 
@@ -454,7 +519,7 @@ function filterProductsByPrice(event){
             <div class='item-price'>£${product.price}</div>
          </div>    
             
-         <a class="btn" onclick="addToCart()">add to cart</a>
+         <a class="btn"   data-id=${product.id}>add to cart</a>
          </div>
          
             
@@ -485,7 +550,7 @@ function filterProductsByPrice(event){
             <div class='item-price'>£${product.price}</div>
          </div>    
            
-         <a class="btn" onclick="addToCart()">add to cart</a>
+         <a class="btn"   data-id=${product.id}>add to cart</a>
          </div>
          
             
@@ -496,13 +561,76 @@ function filterProductsByPrice(event){
          
        }
       }
-   }
-         
+}
+document.addEventListener('DOMContentLoaded',()=>{
+let btn=document.querySelectorAll('a.btn');
+
+btn.forEach(btns=>{
+
+btns.addEventListener('click',(e)=>{
+const productId=e.target.dataset.id;
+addToCart(productId);
+
+})
+
+})
+})
+
+   function addToCart(productId){
+    
+    
+        
+            let product=products.find(product=>product.id==productId);
       
-      function addToCart(){
-         let btn=document.querySelector('.btn');
-         let carItems=document.querySelector('.cart-items')
-         carItems.innerHTML='items added';
-         cart.push('item added');
-      }
-      addToCart();
+              cart.push({...product});
+
+                             
+              displayCartItems();            
+   }
+ 
+
+
+
+  
+
+           
+                 
+        
+  function displayCartItems(){
+         let cartItems=document.querySelector('.cart-items');
+         
+         cartItems.innerHTML= "";
+        
+         cart.forEach(product=>{
+            let newCart=document.createElement('div');
+             newCart.innerHTML=`
+            <div class="image">
+             <img src="${product.image}">
+             </div>
+            <div class="item-title">
+            <div class='item-name'>${product.name}</div>
+            <div class='item-price'>£${product.price}</div>
+         </div>    
+             
+             `;
+             cartItems.appendChild(newCart);
+         })
+             
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
