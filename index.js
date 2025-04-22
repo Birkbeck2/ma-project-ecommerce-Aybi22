@@ -1,6 +1,6 @@
 
 let cart=[];
-
+let box=[];
 
 import products from'./products.js'
 
@@ -576,33 +576,48 @@ addToCart(productId);
 })
 })
 
+
+
+
+
+
+
+
    function addToCart(productId){
-    
-    
-        
-            let product=products.find(product=>product.id==productId);
       
-              cart.push({...product});
-
-                             
-              displayCartItems();            
-   }
- 
-
-
-
-  
-
+            let product=products.find(product=>product.id==productId);
+          
+      
+            let existingProduct=cart.find(item=>item.id==productId);
+          if(existingProduct){
+          existingProduct.quantity+=1;
            
-                 
-        
-  function displayCartItems(){
-         let cartItems=document.querySelector('.cart-items');
+             }else{
+      
+            cart.push({...product,quantity:1});
          
+ 
+            
+         displayCartItems(); 
+              
+            showCart()
+           }
+            
+   
+   
+            }
+
+ 
+console.log(cart);
+
+function displayCartItems(){
+         let cartItems=document.querySelector('.cart-items');
+        
          cartItems.innerHTML= "";
         
          cart.forEach(product=>{
             let newCart=document.createElement('div');
+           
              newCart.innerHTML=`
             <div class="image">
              <img src="${product.image}">
@@ -610,13 +625,48 @@ addToCart(productId);
             <div class="item-title">
             <div class='item-name'>${product.name}</div>
             <div class='item-price'>£${product.price}</div>
-         </div>    
-             
+         </div>   
+           
+    <div class="counter">
+
+    <input type="button" value="-" class="decrease">
+    <input type="button" value="0"  id="number">
+    <input type="button" value="+" class="increase">
+
+</div>
+              
              `;
-             cartItems.appendChild(newCart);
-         })
+             cartItems.appendChild(newCart);  
              
-     }
+            
+             })  
+             updateTotal(); 
+          
+            }
+  
+           
+        
+        
+        
+            function updateTotal(){
+  let newNum=cart.map(number=>{
+         return (number.price);
+      })   
+    
+console.log(newNum)
+  
+     
+    let total=document.querySelector('.total')  
+
+
+let currentTotal=number.price;
+let reduceSum=newNum.reduce((currentTotal,number)=>currentTotal+number);
+    console.log(reduceSum);
+     
+     total.textContent=`£${reduceSum}`; 
+   
+   }
+    
 
 
 
@@ -625,11 +675,11 @@ addToCart(productId);
 
 
 
+     
 
 
-
-
-
+   
+        
 
 
 

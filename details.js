@@ -111,7 +111,7 @@ import products from'./products.js';
 </div>
     
     
-    <a class="add-btn">
+    <a class="add-btn"  data-id=${thisProduct.id}>
         
         add to cart
 
@@ -627,22 +627,20 @@ let decrease = document.getElementById('decrease');
     }       
      
     
-    /*
     let counter=document.querySelector('.counter');
    
-  counter.addEventListener('click',showQuantity)  
- function showQuantity(e){
-   ;
-    let productQuantity=document.querySelector('.noOfItems');
-
-     let input=document.getElementById('number');
-     if(e.target===increase || e.target===decrease){
-     
-     productQuantity.innerText=input.value;
- 
- }
- } 
-*/
+    counter.addEventListener('click',showQuantity)  
+   function showQuantity(e){
+     ;
+      let productQuantity=document.querySelector('.noOfItems');
+  
+       let input=document.getElementById('number');
+       if(e.target===increase || e.target===decrease){
+       
+       productQuantity.innerText=input.value;
+   
+   }
+   } 
 
 
 

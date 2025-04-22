@@ -6,7 +6,7 @@
     image1:"images/texturesuit1.jpg",
     image2:"images/texturesuit2.jpg",
     name:"texture suit",
-    price:"250",
+    price:250,
     quantity:1,
     category:"regular",
      h3:"regular"
@@ -21,7 +21,7 @@
         name:"black suit",
         image1:"images/blacksuit1.jpg",
         image2:"images/blacksuit2.jpg",
-        price:"370",
+        price:370,
         quantity:1,
         category:"regular",
          h3:"regular"
@@ -36,7 +36,7 @@
        image1:"images/greysuit1.jpg",
         image2:"images/greysuit2.jpg",
        name:"Grey suit",
-       price:"450",
+       price:450,
        quantity:1,
        category:"regular",
         h3:"regular"
@@ -55,7 +55,7 @@
                 image1:"images/regularfitblue.jpg",
                 image2:"images/regularfitblack.jpg",
                 name:"regular fit suit",
-                price:"400",
+                price:400,
                 quantity:1,
                  
             
@@ -73,7 +73,7 @@
                     image1:"images/greenslimsuit1.jpg",
                     image2:"images/greenslimsuit2.jpg",
                     name:"green slim suit",
-                    price:"525",
+                    price:525,
                     quantity:1,
                     category:"regular",
                      h3:"regular"
@@ -137,7 +137,7 @@
                                         image1:"images/velvetjacket1.jpg",
                                         image2:"images/velvetjacket2.jpg",
                                         name:"velvet jacket",
-                                        price:"355",
+                                        price:355,
                                         quantity:1,
                                         category:"regular",
                                         h3:"regular"
@@ -151,7 +151,7 @@
                                             image1:"images/greysuit1.jpg",
                                             image2:"images/greysuit2.jpg",
                                             name:"grey check jacket",
-                                            price:"415",
+                                            price:415,
                                             quantity:1,
                                             category:"regular",
                                              h3:"regular"
@@ -164,7 +164,7 @@
                                                 image1:"images/navypanamablue1.jpg",
                                                 image2:"images/navypanamablue2.jpg",
                                                 name:"navy panama suit",
-                                                price:"625",
+                                                price:625,
                                                 quantity:1,
                                                 category:"regular",
                                                   h3:"regular"

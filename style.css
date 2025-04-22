@@ -160,12 +160,33 @@ a.btn.new:hover{
     color:var(--white);
 }
 
+
 .cart-items{
-   width:200px;
-   height:200px;
-   border:2px solid green;
+    width:200px;
+    display:flex;
+    flex-direction:column;
     
 }
+
+.total{
+    font-size:21px;
+    font-weight:900;
+    margin-bottom:33px;
+}
+h4{
+    font-size:33px;
+}
+
+
+
+
+
+
+
+
+
+
+
 a.btn{
      border:none;
      display:block;
@@ -2256,10 +2277,7 @@ h2{
     font-family:verdana;
 }
 
-.cart-footer{
-    display:flex;
-    justify-content: space-around;
-}
+
 
 .product-btn{
     background:var(--cambridge-blue);
@@ -2277,8 +2295,14 @@ h2{
 
 
 .cart-footer{
-    padding:33px;
+    display:flex;
+    align-items:center;
+    gap:57px;
+    max-width:100%;
+    margin-top:auto;
+   
 }
+
 
 
 .cart-btn{
