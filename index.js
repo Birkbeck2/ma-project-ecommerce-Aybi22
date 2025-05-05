@@ -1,160 +1,74 @@
 
 let cart=[];
-let box=[];
-
-import products from'./products.js'
 
 
+import products from'./products.js';
 import  detail from'./details.js';
 
-import { filteredByCategoryRegular } from './suit.js';
-import { filteredByCategoryBlazer } from './blazer.js';
-import { filteredByCategoryLeatherShoe } from './leathershoe.js';
-import{showCart,closeOver,closeModal} from'./cart.js';
+import{ showCart,closeOver,closeModal } from'./cart.js';
+import { filteredByCategoryBlazer } from'./blazer.js';
+import {  filteredByCategoryLeatherShoe } from'./leathershoe.js';
+import { filteredByCategoryRegular } from'./suit.js';
 
 detail();
 
-
 document.addEventListener('DOMContentLoaded',() => {
-   filteredByCategoryRegular('regular');
- });                                                  
+   filteredByCategoryBlazer('blazer');
+   activateCartButtons();
+ }); 
  
  document.addEventListener('DOMContentLoaded',() => {
-   filteredByCategoryBlazer('blazer');
- });        
+   filteredByCategoryLeatherShoe('leathershoe');
+   activateCartButtons();
 
- document.addEventListener('DOMContentLoaded',()=>{
-filteredByCategoryLeatherShoe('leathershoe');
- });
+}); 
+                                                      
 
+ document.addEventListener('DOMContentLoaded',() => {
+   filteredByCategoryRegular('regular');
+   activateCartButtons();
 
-
-
-
-
-
-
-
-
-
-
-
-
-   
-     
-
-
-
-
-
-
-
-
-
-
-
-                                             
-
-                                                  
- 
- 
-
-
-
-
-
-
-   
-   
-   
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- /*                                                       
-                                                         
- let productUpdate=products.find(product=>product.id===5);
- if(productUpdate){
-    productUpdate.innerHTML=`
-    
-     colors:"<div class='suitcolor'> <div id='black'></div> <div id='blue'></div> <div id='grey'></div> </div>",
-            
-    
-    
-    
-    
-    
-    `
- }
- */
- 
-
-  
- fetch('./template.html')
+}); 
+                                                      
+fetch('./template.html')
  .then(response=>response.text())
  .then(html=>{
    
     let app=document.getElementById('app')
     app.innerHTML=html;
-   
-
-
-
-
-   
-  
-let topIcon=document.querySelector('.top-icons');
- topIcon.addEventListener('click', showCart);
+    let cartBtn=document.querySelector('.cart-btn');
+    console.log(cartBtn);
+    cartBtn.addEventListener('click',removeItems);
+    let topIcon=document.querySelector('.top-icons');
+    topIcon.addEventListener('click', showCart);
+    let overlay=document.querySelector('.overlay')
+    overlay.addEventListener('click', closeOver);
+    let close=document.querySelector('.close');
+    close.addEventListener('click', closeModal); 
+    let sub=document.querySelector('.sub');
+    let shop=document.getElementById('shop');
+    shop.addEventListener('mouseover', showSub);
+    shop.addEventListener('mouseout', hideSub);
+    sub.addEventListener('mouseover',showSub);
+    sub.addEventListener('mouseout',hideSub);
+    let reviewBtn = document.querySelector('.review-btn');
+    let next=document.getElementById('next');
+    next.addEventListener('click',showNext);
+    reviewBtn.addEventListener('click', showReviewBox);
+    let sendBtn = document.querySelector('.send-btn');
+    sendBtn.addEventListener('click', sendText);
+    let previous = document.getElementById('previous');
+    previous.addEventListener('click', prev);
  
- let overlay=document.querySelector('.overlay')
- overlay.addEventListener('click', closeOver);
-let close=document.querySelector('.close');
- close.addEventListener('click', closeModal); 
-  
- let sub=document.querySelector('.sub');
- let shop=document.getElementById('shop');
- shop.addEventListener('mouseover', showSub);
- shop.addEventListener('mouseout', hideSub);
- sub.addEventListener('mouseover',showSub);
- sub.addEventListener('mouseout',hideSub);
-
- 
- let reviewBtn = document.querySelector('.review-btn');
- let next=document.getElementById('next');
- next.addEventListener('click',showNext);
- reviewBtn.addEventListener('click', showReviewBox);
- let sendBtn = document.querySelector('.send-btn');
- sendBtn.addEventListener('click', sendText);
- let previous = document.getElementById('previous');
- previous.addEventListener('click', prev);
- 
- 
-
-
-
-
-
  function showSub(){
-
-  let overlay = document.querySelector('.overlay'); 
-  sub.style.height="300px";
+let overlay = document.querySelector('.overlay'); 
+sub.style.height="300px";
  overlay.style.width="100";
 }
 
 function hideSub(){
    sub.style.height="0px";
-   
-}  
+   }  
  
 
 let hamburger = document.querySelector('.hamburger');
@@ -172,77 +86,33 @@ let hamburger = document.querySelector('.hamburger');
       if (e.target === closeMobile) {
           mobileMenu.classList.remove('mobile-box');
       }
-  
-        
-  
-  
   }
  
-
-
-  
-
-        
-    
-    
-
-
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
 
 
 
  function showReviewBox() {
- 
      let reviewBox=document.querySelector('.review-box');
      let reviewText=document.querySelector('.review-message');
- 
-    reviewBox.classList.toggle('show-Box');
-    reviewText.classList.remove('show-message');
+     reviewBox.classList.toggle('show-Box');
+     reviewText.classList.remove('show-message');
  }  
-
- 
-
 
  function sendText() {
      let reviewBox = document.querySelector('.review-box');
      let reviewText = document.querySelector('.review-message');
- 
-    
          reviewBox.classList.toggle('show-Box');
          reviewText.classList.toggle('show-message');
-     
-
          let error=document.querySelector('.error');
-
          let textBox=document.querySelector('.text-box');
  if(!textBox.value){
-    
     error.style.display="block";
     reviewText.classList.toggle('show-message');
-
- }else{
+}else{
     error.style.display="none";
-   
-
-}
- 
- 
-}
+   }
+ }
 
 let reviewImages = [
  {userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer" },
@@ -258,10 +128,7 @@ let reviewImages = [
 let index = 0;
 
 
- 
-
-
-function prev() {
+ function prev() {
 
  let userpic=document.getElementById('userpic');
  let customerName=document.querySelector('.name');
@@ -274,22 +141,15 @@ function prev() {
      jobTitle.textContent=reviewImages[index]["job"];
      stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
  } else {
-
-
-     index--;
-
-
-
+    index--;
      userpic.src=reviewImages[index]["userpic"];
      customerName.textContent=reviewImages[index]["name"];
      jobTitle.textContent=reviewImages[index]["job"];
      stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
- }
-
+}
 }
  
-
-index=0;
+  index=0;
 
 function showNext() {
   
@@ -317,61 +177,129 @@ function showNext() {
         stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
 
     }
+  }
+
+   document.addEventListener('DOMContentLoaded',()=>{  //At page load (DOMContentLoaded) → 
+   // renderProducts with full products array immediately.
+
+      renderProducts('.shop-container',products);
+      activateCartButtons();
+   
+   
+      let categoryList = document.querySelector('.category-list');
+   categoryList.addEventListener('click', displayCategory);
+   });   
+   
+   function displayCategory(event) {
+     const clicked = event.target;
+     const categoryId = clicked.getAttribute('id');
+   
+     if (categoryId) {
+       document.querySelector('.category-title').textContent = categoryId;
+       const filtered = products.filter(product => product.category === categoryId);
+      renderProducts('.shop-container',filtered);
+       activateCartButtons()
+       
+     } 
+   
+}
+   function renderProducts(containerSelector,filtered){
+          let container=document.querySelector(containerSelector);
+          container.innerHTML = ''; // Clear any old content
+          filtered.forEach(product=>{  
+          let newPara=document.createElement('div')
+          newPara.innerHTML=`
+         <div class="section-list">
+         <a href="details.html?id=${product.id}">
+      
+      <img src= ${product.image}>
+      </a>
+      <div class="item-title">
+         <div class='item-name'>${product.name}</div>
+         <div class='item-price'data-id=${product.price}>£${product.price}</div>
+      </div>    
+        
+      <a class="btn"    data-id=${product.id}>add to cart</a>
+      </div>
+         `;
+      container.appendChild(newPara);
+      
+          });
+          
+         }   
+         
+      
+function activateCartButtons(){
+   
+      let btn=document.querySelectorAll('a.btn');
+      btn.forEach(btns=>{
+      btns.addEventListener('click',(e)=>{
+      const productId=e.target.dataset.id;
+      showCart();
+      addToCart(productId);
+      });
+   });
+   
+}
   
+document.addEventListener('DOMContentLoaded',()=>{
+   let allProducts=document.querySelector('.products');
+   allProducts.addEventListener('click',displayAllProducts);
 
-
+function displayAllProducts(){
+  renderProducts('.shop-container',products);
+      console.log(products);
+      activateCartButtons()
+ }  
+})      
+   
+let overFourHundred=document.querySelector('.overfourhundred');
+overFourHundred.addEventListener('click',filterByPriceOver);
+      
+   function filterByPriceOver(){
+       let filtered=products.filter(product=>product.price>600);
+      
+   renderProducts('.shop-container',filtered)
+      activateCartButtons()
    }
 
- 
 
-
-
-
-
-
-
-
-
-function renderProducts(){
-
-products.forEach(product=>{
-    let container=document.querySelector('.shop-container');
- let newPara=document.createElement('div')
-   newPara.innerHTML=`
-   
-
-<div class="section-list">
-   <a href="details.html?id=${product.id}">
-
-<img src= ${product.image}>
-</a>
-<div class="item-title">
-   <div class='item-name'>${product.name}</div>
-   <div class='item-price'>£${product.price}</div>
-</div>    
-  
-<a class="btn"    data-id=${product.id}>add to cart</a>
-</div>
-   
-  
-   
-   `;
-
-   
-  
-   container.appendChild(newPara);
-   
-})
-
+let productPrice=document.querySelector('.product-price');
+productPrice.addEventListener('click',filterByPrice);
+   function filterByPrice(){
+    let filtered=products.filter(product=>product.price<=600 );
+   renderProducts('.shop-container',filtered);
+   activateCartButtons()
 }
-renderProducts();
- 
- 
+   
+   let priceList=document.querySelector('.price-list');
+   priceList.addEventListener('click',filterProductsByPrice);
 
 
+function filterProductsByPrice(event){
  
+   let inputs=document.getElementsByTagName('input');
+   let input=event.target;
+   for( input of inputs){
+     
+      if(event.target===input && input.classList.contains('low-btn')){
+        let filtered=[...products].sort((a,b)=>a.price-b.price);//make a copy first before sorting/filtering.
+        // because.sort() mutates the original array (products) permanently!
 
- let categoryList=document.querySelector('.category-list');
+       renderProducts('.shop-container',filtered)
+            activateCartButtons()
+
+}else if(event.target===input && input.classList.contains('high-btn')){
+   let filtered=[...products].sort((a,b)=>b.price-a.price);
+         renderProducts('.shop-container',filtered)
+         activateCartButtons();
+       }
+      }
+}
+
+/*     
+   
+let categoryList=document.querySelector('.category-list');
 categoryList.addEventListener('click',displayCategory);
 function displayCategory(event){
    
@@ -402,7 +330,7 @@ function displayCategory(event){
 </a>
 <div class="item-title">
    <div class='item-name'>${product.name}</div>
-   <div class='item-price'>£${product.price}</div>
+   <div class='item-price'data-id=${product.price}>£${product.price}</div>
 </div>    
    
 <a class="btn"  data-id=${product.id}>add to cart</a>
@@ -416,271 +344,137 @@ function displayCategory(event){
    }
 }
 }
-
+*/
  
-
-document.addEventListener('DOMContentLoaded',()=>{
-   let overFourHundred=document.querySelector('.overfourhundred');
-   overFourHundred.addEventListener('click',filterByPriceOver);
-      function filterByPriceOver(){
-       let filterByPriceOver=products.filter(product=>product.price>600);
-      let container=document.querySelector('.shop-container');
-   
-      container.innerHTML=
-      filterByPriceOver.map(product=>
-   `
-   
-   <div class="section-list">
-      <a href="details.html?id=${product.id}">
-   
-   <img src= ${product.image}>
-   </a>
-   <div class="item-title">
-      <div class='item-name'>${product.name}</div>
-      <div class='item-price'>£${product.price}</div>
-   </div>    
-      
-   <a class="btn"   data-id=${product.id}>add to cart</a>
-   </div>
-   
-   
-   
-      `).join('');
-      }
-   
-   filterByPriceOver()
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let productPrice=document.querySelector('.product-price');
-productPrice.addEventListener('click',filterByPrice);
-   function filterByPrice(){
-    let filterByPrice=products.filter(product=>product.price<=600 );
-   let container=document.querySelector('.shop-container');
-
-   container.innerHTML=
-   filterByPrice.map(product=>
-`
-
-<div class="section-list">
-   <a href="details.html?id=${product.id}">
-
-<img src= ${product.image}>
-</a>
-<div class="item-title">
-   <div class='item-name'>${product.name}</div>
-   <div class='item-price'>£${product.price}</div>
-</div>    
-   
-<a class="btn"   data-id=${product.id}>add to cart</a>
-</div>
-
-
-
-   `).join('');
-   }
-   
-   let priceList=document.querySelector('.price-list');
-   priceList.addEventListener('click',filterProductsByPrice);
-
-
-function filterProductsByPrice(event){
-   let filterProductsByPrice;
-   let inputs=document.getElementsByTagName('input');
-   let input=event.target;
-   for( input of inputs){
-     
-      if(event.target===input && input.classList.contains('low-btn')){
-         filterProductsByPrice=products.sort((a,b)=>a.price-b.price);
-
-         let container=document.querySelector('.shop-container')     
-         container.innerHTML=
-      filterProductsByPrice.map(product=>
-            `
-            <div class="section-list">
-            <a href="details.html?id=${product.id}">
+function addToCart(productId){
+let product=products.find(product=>product.id==productId);
+       let existingProduct=cart.find(item=>item.id==productId);
+       if(existingProduct){
          
-         <img src= ${product.image}>
-         </a>
-         <div class="item-title">
-            <div class='item-name'>${product.name}</div>
-            <div class='item-price'>£${product.price}</div>
-         </div>    
-            
-         <a class="btn"   data-id=${product.id}>add to cart</a>
-         </div>
-         
-            
-            
-            
-            
-            `).join('');
-         
-
-
+       existingProduct.quantity+=1;
+       
+    }else{
    
-       }else if(event.target===input && input.classList.contains('high-btn')){
-   
-         filterProductsByPrice=products.sort((a,b)=>b.price-a.price);
-             
-        
-         let container=document.querySelector('.shop-container')     
-         container.innerHTML=
-      filterProductsByPrice.map(product=>
-            `
-            <div class="section-list">
-            <a href="details.html?id=${product.id}">
-         
-         <img src= ${product.image}>
-         </a>
-         <div class="item-title">
-            <div class='item-name'>${product.name}</div>
-            <div class='item-price'>£${product.price}</div>
-         </div>    
-           
-         <a class="btn"   data-id=${product.id}>add to cart</a>
-         </div>
-         
-            
-            
-            
-            
-            `).join(''); 
-         
-       }
-      }
-}
-document.addEventListener('DOMContentLoaded',()=>{
-let btn=document.querySelectorAll('a.btn');
-
-btn.forEach(btns=>{
-
-btns.addEventListener('click',(e)=>{
-const productId=e.target.dataset.id;
-addToCart(productId);
-
-})
-
-})
-})
-
-
-
-
-
-
-
-
-   function addToCart(productId){
-      
-            let product=products.find(product=>product.id==productId);
-          
-      
-            let existingProduct=cart.find(item=>item.id==productId);
-          if(existingProduct){
-          existingProduct.quantity+=1;
-           
-             }else{
-      
-            cart.push({...product,quantity:1});
-         
- 
-            
+         cart.push({...product,quantity:1});
+         updateTotal();  
          displayCartItems(); 
-              
-            showCart()
-           }
-            
-   
-   
-            }
-
- 
-console.log(cart);
+     }
+         
+      }
 
 function displayCartItems(){
          let cartItems=document.querySelector('.cart-items');
-        
          cartItems.innerHTML= "";
-        
-         cart.forEach(product=>{
-            let newCart=document.createElement('div');
-           
-             newCart.innerHTML=`
-            <div class="image">
+        cart.forEach(product=>{
+         let newCart=document.createElement('div');
+         newCart.classList.add('cart-content');
+         newCart.innerHTML=`
+         <div class="product" data-id='${product.id}'>
+         <div class="image">
              <img src="${product.image}">
-             </div>
-            <div class="item-title">
+         </div>
+         <div class="item-title">
             <div class='item-name'>${product.name}</div>
             <div class='item-price'>£${product.price}</div>
          </div>   
-           
-    <div class="counter">
+            <div class="cart-action">     
+               <div class="counter">
+                <input type="button" value="-" class="decrease">
+                <input type="button" value="1"  class="quantity">
+                <input type="button" value="+" class="increase">
+               </div>
+             </div>
 
-    <input type="button" value="-" class="decrease">
-    <input type="button" value="0"  id="number">
-    <input type="button" value="+" class="increase">
-
+<button class="del-btn">delete</button>
 </div>
-              
-             `;
+           `;
              cartItems.appendChild(newCart);  
-             
-            
              })  
-             updateTotal(); 
-          
+                
             }
-  
-           
+            
         
-        
-        
-            function updateTotal(){
-  let newNum=cart.map(number=>{
-         return (number.price);
-      })   
-    
-console.log(newNum)
-  
-     
-    let total=document.querySelector('.total')  
-
-
-let currentTotal=number.price;
-let reduceSum=newNum.reduce((currentTotal,number)=>currentTotal+number);
-    console.log(reduceSum);
-     
-     total.textContent=`£${reduceSum}`; 
+   function updateTotal(){
+       let total=document.querySelector('.total');
+       let reduceSum=cart.reduce((currentTotal,product)=>{;
    
+        return currentTotal + (product.price*product.quantity);
+},0);
+     
+total.textContent=`£${reduceSum}`; 
+ console.log(reduceSum);
+  
+}
+    
+  function removeItems(){
+   let cartItems=document.querySelector('.cart-items');
+   cartItems.innerHTML=`<div class="purchase-message">
+   check out was succesfull! 
+   thank you for shopping with us"
+   </div>`
+   
+   let purchaseMessage=document.querySelector('.purchase-message');
+     setTimeout(()=>{
+      
+      purchaseMessage.style.marginTop="-50rem";
+
+    },2000);
+  }
+  
+  
+  document.addEventListener('click', function (e) {
+   if (e.target.classList.contains('increase') || e.target.classList.contains('decrease')) {
+     const productDiv = e.target.closest('.product');
+ 
+     const productId = productDiv.dataset.id;
+     const product = cart.find(p => p.id == productId);
+     if (!product) return;
+ 
+     const quantityInput = productDiv.querySelector('.quantity');
+     let currentQuantity = parseInt(quantityInput.value);
+
+     if (e.target.classList.contains('increase')) {
+       currentQuantity++;
+     } else if (e.target.classList.contains('decrease')&& currentQuantity > 1) {
+       currentQuantity--;
+     }
+ 
+     quantityInput.value = currentQuantity;
+     product.quantity = currentQuantity;
+ 
+     // Update item total price
+     
+     const itemPrice = productDiv.querySelector('.item-price');
+     itemPrice.textContent = `£${(product.price * currentQuantity).toFixed(2)}`;
+    
+     // Update cart total
+     updateTotal();
    }
+ });
+ 
+         
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+   
+       
     
-
-
-
-
-
-
-
-
      
-
-
-   
-        
+  
 
 
 
-   
+

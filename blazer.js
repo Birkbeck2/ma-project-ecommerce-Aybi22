@@ -1,11 +1,6 @@
 
 import products from'./products.js'
-
-
-
-
-
-export function filteredByCategoryBlazer(category){
+ function filteredByCategoryBlazer(category){
  
     let filteredBlazerProducts= products.filter(product=>product.category===category);
     let blazerContainer=document.querySelector('.blazer-container');
@@ -26,7 +21,7 @@ export function filteredByCategoryBlazer(category){
         
        <div class="item-title">
            <div class='item-name'>${product.name}</div>
-           <div class='item-price'>£${product.price}</div>
+           <div class='item-price'data-id=${product.price}>£${product.price}</div>
        </div>    
            
        <a class="btn"   data-id=${product.id}>add to cart</a>
@@ -40,3 +35,6 @@ export function filteredByCategoryBlazer(category){
     `).join(''); 
     
     }
+
+   export {filteredByCategoryBlazer}
+  

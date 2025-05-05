@@ -2,10 +2,7 @@
 import products from'./products.js'
 
 
-
-
-
-export function filteredByCategoryRegular(category){
+ function filteredByCategoryRegular(category){
  
     let filteredRegularProducts= products.filter(product=>product.category===category);
     let regularContainer=document.querySelector('.suit-container');
@@ -26,7 +23,7 @@ export function filteredByCategoryRegular(category){
         
        <div class="item-title">
            <div class='item-name'>${product.name}</div>
-           <div class='item-price'>£${product.price}</div>
+           <div class='item-price'data-id=${product.price}>£${product.price}</div>
        </div>    
          
        <a class="btn"  data-id=${product.id}>add to cart</a>
@@ -41,3 +38,4 @@ export function filteredByCategoryRegular(category){
     
     }
     
+    export{filteredByCategoryRegular}

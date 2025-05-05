@@ -105,7 +105,7 @@ import products from'./products.js';
     <div class="counter">
 
 <input type="button" value="-" id="decrease">
-<input type="button" value="0"  id="number">
+<input type="button" value="0"  id="quantity">
 <input type="button" value="+" id="increase">
 
 </div>

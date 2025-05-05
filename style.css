@@ -162,9 +162,15 @@ a.btn.new:hover{
 
 
 .cart-items{
-    width:200px;
+    width:400px;
     display:flex;
-    flex-direction:column;
+   flex-direction:column;
+    border:3px solid red;
+    
+}
+.product{
+   
+    display:flex;
     
 }
 
@@ -177,11 +183,46 @@ h4{
     font-size:33px;
 }
 
+.cart-action{
+    display:flex;
+    align-items:center;
+    gap:11px;
+   
+}
+
+.product{
+   
+    display:flex;
+    
+    align-items:center;
+
+}
+
+.purchase-message {
+    background: linear-gradient(135deg, #4CAF50, #81C784); /* green gradient */
+    color: #fff;
+    text-transform:capitalize;
+    padding: 1.2rem 1rem;
+    border-radius: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-top: 1.5rem;
+    animation: slideUpFade 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:0.9s;
+  }
 
 
 
-
-
+  @keyframes slideUpFade {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
 
 
@@ -639,6 +680,7 @@ gap:11px;
 
 .filter-section-wrapper{
     display:flex;
+    max-width:100%;
     width:100%;
     justify-content: center;
    
@@ -2637,7 +2679,10 @@ body,html{
           margin-top:52px;
       }
      
-
+.filter-section-wrapper{
+    display: flex;
+    flex-direction: column;
+}
      
        
        .container{

@@ -1,9 +1,5 @@
 import products from'./products.js'
-
-
-
-
-export function filteredByCategoryLeatherShoe(category){
+function filteredByCategoryLeatherShoe(category){
  
     let filteredBlazerProducts= products.filter(product=>product.category===category);
     let shoeContainer=document.querySelector('.shoe-container');
@@ -24,7 +20,7 @@ export function filteredByCategoryLeatherShoe(category){
         
        <div class="item-title">
            <div class='item-name'>${product.name}</div>
-           <div class='item-price'>£${product.price}</div>
+           <div class='item-price'data-id=${product.price}>£${product.price}</div>
        </div>    
           
        <a class="btn"  data-id=${product.id}>add to cart</a>
@@ -37,6 +33,8 @@ export function filteredByCategoryLeatherShoe(category){
                
     `).join(''); 
     
-    }
+    
 
+}
 
+export {filteredByCategoryLeatherShoe}
