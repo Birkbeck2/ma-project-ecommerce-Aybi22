@@ -38,3 +38,30 @@ function filteredByCategoryLeatherShoe(category){
 }
 
 export {filteredByCategoryLeatherShoe}
+
+
+
+
+
+
+
+
+
+
+
+
+   /*
+function removeItems(){
+   let cartItems=document.querySelector('.cart-items');
+   cartItems.innerHTML=`<div class="purchase-message">
+   check out was succesfull! 
+   thank you for shopping with us"
+   </div>`
+   
+let purchaseMessage=document.querySelector('.purchase-message');
+     setTimeout(()=>{
+      purchaseMessage.style.marginTop="-50rem";
+
+    },2000);
+  }
+  */

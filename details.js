@@ -503,10 +503,10 @@ import products from'./products.js';
    
 
         <li class="bold-text">support</li>
-            <li>contact us</li>
-            <li>delivery</li>
-            <li>return and exchanges</li>
-            <li>terms and use</li>
+            <li>Contact us</li>
+            <li>Delivery</li>
+            <li>Return and exchanges</li>
+            <li>Terms and use</li>
     
         </ul>
    

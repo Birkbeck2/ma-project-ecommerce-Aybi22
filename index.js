@@ -1,5 +1,4 @@
-
-let cart=[];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 
 import products from'./products.js';
@@ -10,25 +9,36 @@ import { filteredByCategoryBlazer } from'./blazer.js';
 import {  filteredByCategoryLeatherShoe } from'./leathershoe.js';
 import { filteredByCategoryRegular } from'./suit.js';
 
+
+
+
+
 detail();
 
-document.addEventListener('DOMContentLoaded',() => {
+document.addEventListener('DOMContentLoaded',() => {  //DOMContentLoaded only fires once,
    filteredByCategoryBlazer('blazer');
    activateCartButtons();
- }); 
- 
- document.addEventListener('DOMContentLoaded',() => {
-   filteredByCategoryLeatherShoe('leathershoe');
-   activateCartButtons();
 
-}); 
-                                                      
+});
+   
 
- document.addEventListener('DOMContentLoaded',() => {
-   filteredByCategoryRegular('regular');
-   activateCartButtons();
+document.addEventListener('DOMContentLoaded',() => { 
 
-}); 
+filteredByCategoryLeatherShoe('leathershoe');
+activateCartButtons();
+});
+
+
+document.addEventListener('DOMContentLoaded',() => {  
+
+filteredByCategoryRegular('regular');
+activateCartButtons();
+
+});
+
+//This function is called when the page loads to display the cart items and update the total price.
+
+
                                                       
 fetch('./template.html')
  .then(response=>response.text())
@@ -36,9 +46,19 @@ fetch('./template.html')
    
     let app=document.getElementById('app')
     app.innerHTML=html;
+
+   
+      updateTotal();  
+      displayCartItems();
+      updateCartIcon();
+ 
+
+
+
+
     let cartBtn=document.querySelector('.cart-btn');
     console.log(cartBtn);
-    cartBtn.addEventListener('click',removeItems);
+    
     let topIcon=document.querySelector('.top-icons');
     topIcon.addEventListener('click', showCart);
     let overlay=document.querySelector('.overlay')
@@ -235,7 +255,7 @@ function activateCartButtons(){
       btn.forEach(btns=>{
       btns.addEventListener('click',(e)=>{
       const productId=e.target.dataset.id;
-      showCart();
+
       addToCart(productId);
       });
    });
@@ -252,7 +272,8 @@ function displayAllProducts(){
       activateCartButtons()
  }  
 })      
-   
+
+
 let overFourHundred=document.querySelector('.overfourhundred');
 overFourHundred.addEventListener('click',filterByPriceOver);
       
@@ -346,23 +367,32 @@ function displayCategory(event){
 }
 */
  
-function addToCart(productId){
-let product=products.find(product=>product.id==productId);
+function addToCart(productId){   //This function is called when a user wants to add a product to the shopping cart, 
+// using that product's id (passed as productId).
+let product=products.find(product=>product.id==productId);// find the product in the products array using the id.
+//The find() method returns the value of the first element in the array that satisfies the provided testing function.
        let existingProduct=cart.find(item=>item.id==productId);
        if(existingProduct){
          
        existingProduct.quantity+=1;
-       
+      
     }else{
    
-         cart.push({...product,quantity:1});
-         updateTotal();  
-         displayCartItems(); 
+         cart.push({...product,quantity:1});//...product copies all properties of the product 
+         // into the new object.
+        
+          
      }
-         
+     updateTotal();  
+     displayCartItems();
+       updateCartIcon();
+         localStorage.setItem('cart',JSON.stringify(cart));
       }
+      //this function push new items to the cart array if the item is not already in the cart
 
-function displayCartItems(){
+
+
+ function displayCartItems(){
          let cartItems=document.querySelector('.cart-items');
          cartItems.innerHTML= "";
         cart.forEach(product=>{
@@ -378,21 +408,41 @@ function displayCartItems(){
             <div class='item-price'>£${product.price}</div>
          </div>   
             <div class="cart-action">     
-               <div class="counter">
+            <div class="counter">
                 <input type="button" value="-" class="decrease">
-                <input type="button" value="1"  class="quantity">
+                <input type="button" value="${product.quantity}"  class="quantity">
                 <input type="button" value="+" class="increase">
-               </div>
+            </div>
              </div>
 
-<button class="del-btn">delete</button>
+            <button class="del-btn">delete</button>
 </div>
-           `;
-             cartItems.appendChild(newCart);  
+     
+
+
+
+`;
+           cartItems.appendChild(newCart);
+             
+          
+
              })  
                 
             }
             
+            
+            function updateCartIcon() {
+               const numberOfItems = document.querySelector('.noOfItems');
+               if (!numberOfItems) return;// Check if the element exists
+             
+               const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+               numberOfItems.innerText = totalQuantity;
+             
+            
+            
+            
+            }    
+         
         
    function updateTotal(){
        let total=document.querySelector('.total');
@@ -405,22 +455,9 @@ total.textContent=`£${reduceSum}`;
  console.log(reduceSum);
   
 }
-    
-  function removeItems(){
-   let cartItems=document.querySelector('.cart-items');
-   cartItems.innerHTML=`<div class="purchase-message">
-   check out was succesfull! 
-   thank you for shopping with us"
-   </div>`
-   
-   let purchaseMessage=document.querySelector('.purchase-message');
-     setTimeout(()=>{
-      
-      purchaseMessage.style.marginTop="-50rem";
 
-    },2000);
-  }
-  
+
+ 
   
   document.addEventListener('click', function (e) {
    if (e.target.classList.contains('increase') || e.target.classList.contains('decrease')) {
@@ -449,12 +486,11 @@ total.textContent=`£${reduceSum}`;
     
      // Update cart total
      updateTotal();
+       updateCartIcon();
    }
  });
  
-         
-
-
+ 
 
 
 
