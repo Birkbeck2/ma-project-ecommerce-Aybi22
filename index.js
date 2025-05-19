@@ -56,8 +56,8 @@ fetch('./template.html')
 
 
 
-    let cartBtn=document.querySelector('.cart-btn');
-    console.log(cartBtn);
+      let deleteBtn=document.querySelectorAll('.del-btn');
+      console.log(deleteBtn);
     
     let topIcon=document.querySelector('.top-icons');
     topIcon.addEventListener('click', showCart);
@@ -227,9 +227,10 @@ function showNext() {
           let container=document.querySelector(containerSelector);
           container.innerHTML = ''; // Clear any old content
           filtered.forEach(product=>{  
-          let newPara=document.createElement('div')
+          let newPara=document.createElement('div');
+          newPara.classList.add('section-list');
           newPara.innerHTML=`
-         <div class="section-list">
+  
          <a href="details.html?id=${product.id}">
       
       <img src= ${product.image}>
@@ -387,6 +388,9 @@ let product=products.find(product=>product.id==productId);// find the product in
      displayCartItems();
        updateCartIcon();
          localStorage.setItem('cart',JSON.stringify(cart));
+         
+      
+      
       }
       //this function push new items to the cart array if the item is not already in the cart
 
@@ -397,7 +401,7 @@ let product=products.find(product=>product.id==productId);// find the product in
          cartItems.innerHTML= "";
         cart.forEach(product=>{
          let newCart=document.createElement('div');
-         newCart.classList.add('cart-content');
+        
          newCart.innerHTML=`
          <div class="product" data-id='${product.id}'>
          <div class="image">
@@ -407,7 +411,7 @@ let product=products.find(product=>product.id==productId);// find the product in
             <div class='item-name'>${product.name}</div>
             <div class='item-price'>£${product.price}</div>
          </div>   
-            <div class="cart-action">     
+              <div class="cart-action">    
             <div class="counter">
                 <input type="button" value="-" class="decrease">
                 <input type="button" value="${product.quantity}"  class="quantity">
@@ -427,9 +431,9 @@ let product=products.find(product=>product.id==productId);// find the product in
           
 
              })  
-                
+             attachDeleteEvents() // re-attach event listeners to new delete buttons  
             }
-            
+                   
             
             function updateCartIcon() {
                const numberOfItems = document.querySelector('.noOfItems');
@@ -491,7 +495,50 @@ total.textContent=`£${reduceSum}`;
  });
  
  
+  //deleteBtn.forEach(btn=>btn.addEventListener('click',removeItems));
+ 
+  // Loop through each delete button and add an event listener
+  // to remove the corresponding item from the cart.
+ 
+  // Use forEach to iterate over each delete button
+  // and add an event listener to each one.
+ 
+ 
+ function attachDeleteEvents(){   //function can be called any time new buttons 
+ // are added to the DOM:
+ 
+ const deleteBtns=document.querySelectorAll('.del-btn');
+ deleteBtns.forEach(btn=>{
+  btn.addEventListener('click',(e)=>{;
+   const productId = e.target.closest('.product').dataset.id;//e.target refers to the 
+   // clicked button.
+   //closest('.product') finds the closest ancestor element with the class 'product'.
+   // dataset.id retrieves the value of the data-id attribute of that element.
+   // This gives us the id of the product to be removed.
+   //.closest('.product') moves up the DOM tree to find the container with class product, 
+   // which holds the data-id of the product.
+   
+   
+   removeItems(productId);
+ });
+ })
+}
+function removeItems(productId){
+const id=parseInt(productId);
+//parseInt converts the string to an integer
+let productPosition=cart.findIndex(product=>product.id===id);//find product position
+if(productPosition!==-1){
+   cart.splice(productPosition,1);// removes the item at that index
+   localStorage.setItem('cart',JSON.stringify(cart));
+   displayCartItems();// updates the cart view
+   updateTotal(); // updates the total cost
+   updateCartIcon();// updates the cart icon count
 
+
+
+}
+
+}
 
 
 
