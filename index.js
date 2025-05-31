@@ -147,24 +147,32 @@ let reviewImages = [
 
 let index = 0;
 
+let reviewContent=document.querySelector('.review-content');
+let userpic=document.getElementById('userpic');
+ let customerName=document.querySelector('.name');
+ let jobTitle=document.querySelector('.job');
+  let stars = document.querySelector('.stars');
 
  function prev() {
 
- let userpic=document.getElementById('userpic');
- let customerName=document.querySelector('.name');
- let jobTitle=document.querySelector('.job');
+ 
+ 
  let stars=document.querySelector('.stars');
  if (index===0) {
      index=reviewImages.length - 1;
      userpic.src=reviewImages[index]["userpic"];
      customerName.textContent=reviewImages[index]["name"];
      jobTitle.textContent=reviewImages[index]["job"];
+     reviewContent.textContent=reviewImages[index]['review'];
      stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
- } else {
+ 
+ 
+   } else {
     index--;
      userpic.src=reviewImages[index]["userpic"];
      customerName.textContent=reviewImages[index]["name"];
      jobTitle.textContent=reviewImages[index]["job"];
+      reviewContent.textContent=reviewImages[index]['review'];
      stars.innerHTML='<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
 }
 }
@@ -172,17 +180,18 @@ let index = 0;
   index=0;
 
 function showNext() {
-  
-    let userpic = document.getElementById('userpic');
-    let customerName = document.querySelector('.name');
-    let jobTitle = document.querySelector('.job');
-    let stars = document.querySelector('.stars');
+   
+    
+    
+    
+    
 
     if (index < reviewImages.length - 1) {
         index++;
         userpic.src = reviewImages[index]["userpic"];
         customerName.textContent = reviewImages[index]["name"];
         jobTitle.textContent = reviewImages[index]["job"];
+         reviewContent.textContent=reviewImages[index]['review'];
         stars.innerHTML = `<i class="fa-solid fa-star"></i>
                                    <i class="fa-solid fa-star"></i>
                                    <i class="fa-solid fa-star"></i>
@@ -194,6 +203,7 @@ function showNext() {
         userpic.src = reviewImages[index]["userpic"];
         customerName.textContent = reviewImages[index]["name"];
         jobTitle.textContent = reviewImages[index]["job"];
+         reviewContent.textContent=reviewImages[index]['review'];
         stars.innerHTML = '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> '
 
     }
