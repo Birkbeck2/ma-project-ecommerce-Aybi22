@@ -250,7 +250,10 @@ width:300px;
     }
   }
 
-
+.banner p{
+    font-size:1rem;
+    margin-top:1rem;
+}
 
 
 
