@@ -21,7 +21,7 @@ import products from'./products.js';
     if(thisProduct){
         productDetails.innerHTML=`
         
-        <div class="product">
+        <div class="product-display">
         
         <div class="left-gallery">
     

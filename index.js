@@ -231,7 +231,7 @@ function showNext() {
           newPara.classList.add('section-list');
           newPara.innerHTML=`
   
-         <a href="details.html?id=${product.id}">
+<a href="details.html?id=${product.id}">
       
       <img src= ${product.image}>
       </a>

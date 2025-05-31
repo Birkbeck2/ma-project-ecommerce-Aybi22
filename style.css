@@ -1645,20 +1645,24 @@ footer a{
     border-bottom:1px solid black;
   }
 
-  .product{
+  .product-display{
     display:flex;
     gap:22px;
     align-items:flex-start;
-    justify-content:center;
+   margin:auto;
     margin-top:53px;
-    max-width:100%;
+    max-width:1200px;
     width:100%;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
     row-gap:23px;
-   
+    border:2px solid red;
   }
-
-
+.left-side{
+    border:1px solid green;
+}
+.left-gallery{
+    border:2px solid blue;
+}
 
 .right-side p{
     border-bottom:none;
@@ -2877,7 +2881,7 @@ body,html{
 
     }
 
-    .product{
+    .product-display{
             
             flex-direction:column;
             align-items:center;
