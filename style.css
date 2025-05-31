@@ -564,9 +564,14 @@ header p{
 
 .list-wrapper .image{
     height:100%;
-    border:1px solid red;
+    
 }
-
+.list-wrapper img{
+    width:600px;
+    height:500px;
+    object-fit:cover;
+    display:block;
+}
 
 .product-wrapper{
     background-image:linear-gradient(to right,#EEE0CB,#888074);
@@ -1987,7 +1992,9 @@ textarea:focus-within{
 
  .section-list {    /*Inline content (text, inline elements like <span>, <a>)	
     text-align: center on the parent*/
-   
+   display:flex;
+   flex-direction: column;
+   border:2px solid blue;
     padding: 1rem;
     text-align:center;
   }
@@ -1997,6 +2004,9 @@ textarea:focus-within{
     display: block;
     margin: 0 auto;
     max-width: 100%;
+  }
+  .section-list .image{
+    height:100%;
   }
   
   .section-list .btn{
@@ -2599,11 +2609,9 @@ body,html{
  .main-picture{
     height:100%;
  }
- 
- .list-wrapper{
-    
+.list-wrapper{
     flex-wrap: nowrap;
-  }  
+}
  
     .icon-wrapper{
         grid-template-columns:repeat(2,1fr);
