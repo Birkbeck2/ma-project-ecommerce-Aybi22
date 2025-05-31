@@ -140,6 +140,7 @@ a.btn{
     color:var(--black);
     font-weight:bold;
     font-size:14px;
+    cursor:pointer;
    }
   
 a.btn:hover{
@@ -2535,7 +2536,11 @@ p{
 
 
 
-
+@media screen and (min-width:768px) and (max-width:1203px){
+    .shop-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
 
 
 
