@@ -560,6 +560,7 @@ header p{
 
 .list-wrapper .image{
     height:100%;
+    border:1px solid red;
 }
 
 
