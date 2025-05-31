@@ -135,12 +135,12 @@ let hamburger = document.querySelector('.hamburger');
  }
 
 let reviewImages = [
- {userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer",review:"The blazer suit I ordered exceeded my expectations. The fit was perfect right out of the box, and the fabric feels premium. Got so many compliments at my event!" },
- { userpic: 'images/james.jpg', name: "James smith", job: "web designer",review:"Super impressed with the leather shoes. Stylish, comfortable, and very well-made. I’ve worn them daily and they still look brand new." },
- { userpic: 'images/amanda.jpg', name: "Amanda fisher", job: "Teacher",review:"Fast delivery, excellent packaging, and even better quality than I expected. This store is now my go-to for formal wear." },
- { userpic: 'images/mark.jpg', name: "mark jones", job: "software engineer",review:"The customer service team was amazing — helped me choose the right size, and the return process was super easy when I wanted to exchange a jacket" },
- { userpic: 'images/michael.jpg', name: "michael damon", job: "marketer",review:"High-quality materials and attention to detail. The shoes are both dressy and comfortable — perfect for all-day wear at work" },
- { userpic: 'images/heather.jpg', name: "heather smith", job: "Assistant",review:"I was hesitant to order a suit online, but the measurements guide was spot on. The fit is sleek, and the tailoring feels custom" },
+ {userpic: 'images/jack.jpg', name: "Jack Kelly", job: "web developer",review:'"The blazer suit I ordered exceeded my expectations. The fit was perfect right out of the box, and the fabric feels premium. Got so many compliments at my event!"' },
+ { userpic: 'images/james.jpg', name: "James smith", job: "web designer",review:'"Super impressed with the leather shoes. Stylish, comfortable, and very well-made. I’ve worn them daily and they still look brand new."' },
+ { userpic: 'images/amanda.jpg', name: "Amanda fisher", job: "Teacher",review:'"Fast delivery, excellent packaging, and even better quality than I expected. This store is now my go-to for formal wear."' },
+ { userpic: 'images/mark.jpg', name: "mark jones", job: "software engineer",review:'"The customer service team was amazing — helped me choose the right size, and the return process was super easy when I wanted to exchange a jacket"' },
+ { userpic: 'images/michael.jpg', name: "michael damon", job: "marketer",review:'"High-quality materials and attention to detail. The shoes are both dressy and comfortable — perfect for all-day wear at work"' },
+ { userpic: 'images/heather.jpg', name: "heather smith", job: "Assistant",review:'"I was hesitant to order a suit online, but the measurements guide was spot on. The fit is sleek, and the tailoring feels custom"' },
 
 
 ]

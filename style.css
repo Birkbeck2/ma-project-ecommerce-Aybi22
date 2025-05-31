@@ -2540,16 +2540,14 @@ p{
 
 
 @media screen and (min-width:768px) and (max-width:1203px){
-    .shop-container{
+    .shop-container,.suit-container,.shoe-container,.blazer-container{
         grid-template-columns: repeat(2,1fr);
     }
 }
-
-
-
 @media screen and (max-width:1205px){
     
-    .main-text{
+
+.main-text{
         margin-left:11px;
        
        
@@ -2728,7 +2726,7 @@ body,html{
  
 
 /* Styles for phones */
-    @media screen and (max-width:540px){
+    @media screen and (max-width:768px){
         
        .main-text{
         margin-top:17px;
@@ -2858,13 +2856,9 @@ body,html{
             width:90%;
         }
         
-    .shoe-container{
-            grid-template-columns:1fr;
-            width:100%;
-            
-        }
     
-    .shop-container{
+    
+    .shop-container, .shoe-container,.suit-container,.blazer-container{
             grid-template-columns:1fr;
             width:100%;
            
