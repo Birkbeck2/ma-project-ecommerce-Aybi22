@@ -1994,7 +1994,7 @@ textarea:focus-within{
     text-align: center on the parent*/
    display:flex;
    flex-direction: column;
-   border:2px solid blue;
+   
     padding: 1rem;
     text-align:center;
   }
