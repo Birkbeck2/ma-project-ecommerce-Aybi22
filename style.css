@@ -219,10 +219,7 @@ width:300px;
     height: auto;
     display: block; /* remove inline gap */
   }
-  
-  .item-title {
-    flex-grow: 1; /* take all remaining space */
-  }
+ 
 
 .purchase-message {
     background: linear-gradient(135deg, #4CAF50, #81C784); /* green gradient */
@@ -501,14 +498,8 @@ article >.stars{
     
 }
 
-
-.item-title{
-   display:flex;
-   max-width:400px;
-   width:100%;
-   flex-direction: column;
-   justify-content: flex-start;
-   padding:7px;
+.right-box .job{
+    margin-bottom:1rem;
 }
 
 .item-name{
@@ -1405,15 +1396,17 @@ object-fit:cover;
     display:flex;
     align-items:center;
     gap:17px;
+    flex-wrap:nowrap;
     max-width:1200px;
     width:100%;
     margin:auto;
     padding:22px;
-   
+   }
+
+.seller-wrapper a.btn{
     
+    margin:auto;
 }
-
-
 
 .staff-info{
     margin:22px;
@@ -1422,13 +1415,30 @@ object-fit:cover;
 .seller-wrapper .image{
     height:100%;
 }
+
+.seller-wrapper article{
+    display:flex;
+    flex-direction:column;
+    border:2px solid red;
+}
+.item-title{
+    border:1px solid blue;
+    max-width:100%;
+     display:flex;
+   
+    width:100%;
+  }
+.seller-wrapper a.btn{
+    border:7px solid yellow;
+    margin-top:2rem;
+}
+
+
 .num{
     display:block;
     font-size:40px;
     font-weight: 900;
-    
-    
-}
+    }
 
 .num-text{
     
@@ -2383,6 +2393,7 @@ form .send-btn{
 }
 .item-price{
     font-weight:600;
+    margin-left:auto;
 }
 .right-side .item-price{
     font-weight: 200;
@@ -2397,9 +2408,7 @@ form .send-btn{
 }
 
 
-.item-title{
-    margin-left:33px;
-}
+
 
 .shop-container img,.suit-container img,.blazer-container img{
     width:300px;
@@ -2473,7 +2482,9 @@ h2{
 .right-box{
     background: var(--cambridge-blue);
 }
-
+.right-box .stars{
+    margin-top:1rem;
+}
 
 img{
     max-width:100%;
@@ -2586,64 +2597,7 @@ p{
     object-fit:cover;
 }
 
-@media screen and (max-width:480px){
-    .container img{
-        height:auto;
-    }
-     .seller-wrapper img{
-       height:auto;
-     }
-
-     .staff-section img{
-        height:auto;
-     }
-}
-
-@media screen and (min-width:768px) and (max-width:1203px){
-    .shop-container,.suit-container,.shoe-container,.blazer-container{
-        grid-template-columns: repeat(2,1fr);
-    }
-}
 @media screen and (max-width:1205px){
-    
-
-.main-text{
-        margin-left:11px;
-       
-       
-    }
-   
-
- .staff-section{
-    grid-template-columns: repeat(2,1fr);
-   
-    
- }
-.offer-info{
-    width:80%;
-}
-
-    nav ul{
- 
-    display:none;
-}
-
-.hamburger{
-    display:block;
-}
-   
-
-    
-body,html{
-   max-width: 100%;
-    overflow-x:hidden;
-    
-}
-
-
-
-
-
 
 .main-text h1{
         font-size:39px;
@@ -2779,9 +2733,47 @@ body,html{
     flex-direction:column;
 }
 
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:480px){
+    .container img{
+        height:auto;
+    }
+     .seller-wrapper img{
+       height:auto;
+     }
+
+     .staff-section img{
+        height:auto;
+     }
+ .right-box{
+    padding:2rem;
+ }
+
+    }
+
+
+@media screen and (min-width:768px) and (max-width:1203px){
+    .shop-container,.suit-container,.shoe-container,.blazer-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+     .staff-section{
+       grid-template-columns: repeat(2,1fr);
+
+     }
+  
 
 }
- 
+
+
 
 /* Styles for phones */
     @media screen and (max-width:768px){
@@ -2853,11 +2845,7 @@ body,html{
             
         }
     
-    .seller-wrapper .item-title{
-        
-        margin-left:10px;
     
-    }    
         
         
     .left-gallery{
@@ -3025,16 +3013,6 @@ text-align:center;
  
 
 }
-    
- 
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
