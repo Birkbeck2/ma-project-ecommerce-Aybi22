@@ -209,10 +209,14 @@ function showNext() {
     }
   }
 
-   document.addEventListener('DOMContentLoaded',()=>{  //At page load (DOMContentLoaded) → 
+   
+  
+  
+  document.addEventListener('DOMContentLoaded',()=>{  //At page load (DOMContentLoaded) → 
    // renderProducts with full products array immediately.
 
-      renderProducts('.shop-container',products);
+
+      renderProducts('.shop-container', products);
       activateCartButtons();
    
    
@@ -223,17 +227,24 @@ function showNext() {
    function displayCategory(event) {
      const clicked = event.target;
      const categoryId = clicked.getAttribute('id');
+     
    
      if (categoryId) {
        document.querySelector('.category-title').textContent = categoryId;
        const filtered = products.filter(product => product.category === categoryId);
-      renderProducts('.shop-container',filtered);
-       activateCartButtons()
-       
-     } 
+      
+     
+         
+       renderProducts('.shop-container',filtered);
+      
+       activateCartButtons();
+      } 
+     
+   }
    
-}
-   function renderProducts(containerSelector,filtered){
+
+
+function renderProducts(containerSelector,filtered){
           let container=document.querySelector(containerSelector);
           container.innerHTML = ''; // Clear any old content
           filtered.forEach(product=>{  
@@ -257,9 +268,15 @@ function showNext() {
       
           });
           
-         }   
          
+         
+         
+         }   
+      products.addEventListener('click',renderProducts);
+         renderProducts('.shop-container',products);
       
+       activateCartButtons()     
+         
 function activateCartButtons(){
    
       let btn=document.querySelectorAll('a.btn');
@@ -273,16 +290,7 @@ function activateCartButtons(){
    
 }
   
-document.addEventListener('DOMContentLoaded',()=>{
-   let allProducts=document.querySelector('.products');
-   allProducts.addEventListener('click',displayAllProducts);
 
-function displayAllProducts(){
-  renderProducts('.shop-container',products);
-      console.log(products);
-      activateCartButtons()
- }  
-})      
 
 
 let overFourHundred=document.querySelector('.overfourhundred');
