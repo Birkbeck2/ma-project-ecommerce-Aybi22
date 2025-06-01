@@ -1342,6 +1342,8 @@ footer a{
 
    .container img{
 height:500px;
+display:block;
+object-fit:cover;
    }
 
 .container a.btn{
@@ -1401,13 +1403,11 @@ height:500px;
 
 .seller-wrapper{
     display:flex;
-    
-    
     align-items:center;
     gap:17px;
     max-width:1200px;
     width:100%;
-    justify-content: center;
+    margin:auto;
     padding:22px;
    
     
@@ -1425,6 +1425,7 @@ height:500px;
 .num{
     display:block;
     font-size:40px;
+    font-weight: 900;
     
     
 }
@@ -2585,7 +2586,18 @@ p{
     object-fit:cover;
 }
 
+@media screen and (max-width:480px){
+    .container img{
+        height:auto;
+    }
+     .seller-wrapper img{
+       height:auto;
+     }
 
+     .staff-section img{
+        height:auto;
+     }
+}
 
 @media screen and (min-width:768px) and (max-width:1203px){
     .shop-container,.suit-container,.shoe-container,.blazer-container{
@@ -2838,7 +2850,7 @@ body,html{
        
     .seller-wrapper{
             flex-direction: column;
-             gap:55px;
+            
         }
     
     .seller-wrapper .item-title{
