@@ -1449,18 +1449,20 @@ height:500px;
 .figures{
     display:flex;
     flex-direction:column;
-    max-width:500px;
+    max-width:700px;
     width:100%;
     align-items:center;
     padding:22px;
+    gap:23px;
     background: var(--champagne);
     margin:auto;
 
 }
 .figures-wrapper{
     display:grid;
-    grid-template-columns: repeat(4,1fr);
-    max-width:100%;
+    grid-template-columns: repeat(2,500px);
+    max-width:1200px;
+    padding:2rem;
     width:100%;
     color:var(--black);
     gap:22px;
@@ -1476,7 +1478,7 @@ height:500px;
 }
 
 .figure-icon{
-    font-size:33px;
+    font-size:43px;
 }
 
 .comment{
