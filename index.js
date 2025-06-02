@@ -423,22 +423,43 @@ let product=products.find(product=>product.id==productId);// find the product in
         
          newCart.innerHTML=`
          <div class="product" data-id='${product.id}'>
+          
+         <div class="product-items">
+
+ 
+
+<div class="image-box">
          <div class="image">
              <img src="${product.image}">
-         </div>
-         <div class="item-title">
-            <div class='item-name'>${product.name}</div>
-            <div class='item-price'>£${product.price}</div>
-         </div>   
+          
+         
+             </div>
+<div class='item-name'>${product.name}</div>
+
+</div>
               <div class="cart-action">    
             <div class="counter">
                 <input type="button" value="-" class="decrease">
                 <input type="button" value="${product.quantity}"  class="quantity">
                 <input type="button" value="+" class="increase">
             </div>
-             </div>
-
-            <button class="del-btn">delete</button>
+            
+           
+           
+          <div class='item-price'>£${product.price}</div>
+            
+            <div class="del-btn">
+           
+            <i class="fa-solid fa-trash"></i>
+            
+            
+            </div>
+            
+           
+            
+            
+            
+            </div>
 </div>
      
 

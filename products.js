@@ -388,10 +388,10 @@
                                             
                                             {
                                                     id:30,
-                                                    image:"images/tailorfitlinensuit.jpg",
-                                                    image1:"images/tailorfitlinen1.jpg",
-                                                    image2:"images/tailorfitlinen2.jpg",
-                                                    name:"tailor fit suit",
+                                                    image:"images/tailoredfitlinensuit.jpg",
+                                                    image1:"images/tailoredfitlinen1.jpg",
+                                                    image2:"images/tailoredfitlinen2.jpg",
+                                                    name:"tailored fit suit",
                                                     price:630,
                                                     quantity:1,
                                                     h3:"regular",
@@ -418,9 +418,11 @@
 
     export default products;
     
+
+
+
     
-    
-    
+   
     
     
     
