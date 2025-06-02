@@ -496,7 +496,7 @@ let product=products.find(product=>product.id==productId);// find the product in
         return currentTotal + (product.price*product.quantity);
 },0);
      
-total.textContent=`£${reduceSum}`; 
+total.textContent=`subtotal :£${reduceSum}`; 
  console.log(reduceSum);
   
 }

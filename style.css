@@ -213,9 +213,10 @@ a.btn.new:hover{
 }
 
 .total{
-    font-size:21px;
-    font-weight:900;
+    font-size:1rem;
+    font-weight:700;
     margin-bottom:33px;
+    text-transform:capitalize;
 }
 h4{
     font-size:33px;
@@ -2040,10 +2041,13 @@ align-items:flex-start;
 .counter .decrease{
     background:var(--cambridge-blue);
     color:var(--black);
+    font-weight:900;
+  
 }
 .counter .increase{
     background:var(--champagne);
     color:var(--black);
+     font-weight:900;
 }
 
 .add-cart{
@@ -2534,11 +2538,13 @@ h2{
 }
 
 
-.cart-footer{
+ .cart-footer .total{
     
     display:flex;
-    width:500px;
-    margin-top:auto;
+    justify-content: space-between;
+    width:100%;
+    margin:auto;
+   
   
 }
 
