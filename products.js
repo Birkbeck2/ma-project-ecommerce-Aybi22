@@ -372,6 +372,47 @@
                                                 },  
                                             
                                             
+                                            
+                                            
+                                                {
+                                                    id:29,
+                                                    image:"images/tedbakersuit.jpg",
+                                                    image1:"images/tedbaker1.jpg",
+                                                    image2:"images/tedbaker2.jpg",
+                                                    name:"ted baker suit",
+                                                    price:730,
+                                                    quantity:1,
+                                                    h3:"regular",
+                                                    category:"regular"
+                                                },  
+                                            
+                                            {
+                                                    id:30,
+                                                    image:"images/tailorfitlinensuit.jpg",
+                                                    image1:"images/tailorfitlinen1.jpg",
+                                                    image2:"images/tailorfitlinen2.jpg",
+                                                    name:"tailor fit suit",
+                                                    price:630,
+                                                    quantity:1,
+                                                    h3:"regular",
+                                                    category:"regular"
+                                                },  
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
                                             ]
 
 
