@@ -101,17 +101,8 @@ import products from'./products.js';
    
    
    <div class="add-cart">
-    
-    <div class="counter">
-
-<input type="button" value="-" id="decrease">
-<input type="button" value="0"  id="quantity">
-<input type="button" value="+" id="increase">
-
-</div>
-    
-    
-    <a class="add-btn"  data-id=${thisProduct.id}>
+   
+    <a class="add-btn">
         
         add to cart
 
@@ -600,47 +591,12 @@ import products from'./products.js';
 
 
 
-let decrease = document.getElementById('decrease');
-    decrease.addEventListener('click', decreaseNum);
+
     
     
-    function decreaseNum() {
-    
-    let number=document.getElementById('number');
-    
-    if (number.value > 1) {
-    number.value--;
-    
-    } else {
-    number.value = 0;
-    }
-    }
     
     
-    let increase = document.getElementById('increase');
-    increase.addEventListener('click', increaseNum);
     
-    function increaseNum() {
-    
-    let number=document.getElementById('number');
-    number.value++;
-    }       
-     
-    
-    let counter=document.querySelector('.counter');
-   
-    counter.addEventListener('click',showQuantity)  
-   function showQuantity(e){
-     ;
-      let productQuantity=document.querySelector('.noOfItems');
-  
-       let input=document.getElementById('number');
-       if(e.target===increase || e.target===decrease){
-       
-       productQuantity.innerText=input.value;
-   
-   }
-   } 
 
 
 

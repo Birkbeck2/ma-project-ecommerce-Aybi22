@@ -46,6 +46,21 @@ fetch('./template.html')
    
     let app=document.getElementById('app')
     app.innerHTML=html;
+    
+   let cartBtn=document.querySelector('.cart-btn');
+  console.log(cartBtn);
+
+   cartBtn.addEventListener('click',emptyCart);
+  function emptyCart(){
+   let total=document.querySelector('.total');
+   localStorage.removeItem('cart');
+    let cartItems=document.querySelector('.cart-items');
+   cartItems.textContent='check out was successfull , Thank you for your purchase';
+   total.innerHTML=`£0`;
+
+  }
+
+ 
 
    let hamburger = document.querySelector('.hamburger');
   hamburger.addEventListener('click', showMobileMenu);
@@ -584,8 +599,11 @@ if(productPosition!==-1){
 
 
   
+
+
+ 
   
-  
+
   
   
   
