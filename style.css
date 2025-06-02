@@ -560,7 +560,7 @@ header p{
 
 .list-wrapper{
     display:flex;
-   
+ 
     gap:21px;
     max-width:1500px;
     margin:auto;
@@ -2658,7 +2658,11 @@ p{
    
    
 }
-
+.list-wrapper{
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+}
 
  .hamburger {
     display: block;
