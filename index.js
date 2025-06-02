@@ -47,8 +47,24 @@ fetch('./template.html')
     let app=document.getElementById('app')
     app.innerHTML=html;
 
-   
-      updateTotal();  
+   let hamburger = document.querySelector('.hamburger');
+  hamburger.addEventListener('click', showMobileMenu);
+  function showMobileMenu() {
+      let mobileMenu = document.querySelector('.mobileMenu');
+      mobileMenu.classList.toggle('mobile-box');
+  }
+  
+  let closeMobile = document.querySelector('.closeMobile');
+  closeMobile.addEventListener('click', mobileClose);
+  function mobileClose(e) {
+      let mobileMenu = document.querySelector('.mobileMenu');
+  
+      if (e.target === closeMobile) {
+          mobileMenu.classList.remove('mobile-box');
+      }
+  }
+      
+    updateTotal();  
       displayCartItems();
       updateCartIcon();
  
@@ -91,22 +107,7 @@ function hideSub(){
    }  
  
 
-let hamburger = document.querySelector('.hamburger');
-  hamburger.addEventListener('click', showMobileMenu);
-  function showMobileMenu() {
-      let mobileMenu = document.querySelector('.mobileMenu');
-      mobileMenu.classList.toggle('mobile-box');
-  }
-  
-  let closeMobile = document.querySelector('.closeMobile');
-  closeMobile.addEventListener('click', mobileClose);
-  function mobileClose(e) {
-      let mobileMenu = document.querySelector('.mobileMenu');
-  
-      if (e.target === closeMobile) {
-          mobileMenu.classList.remove('mobile-box');
-      }
-  }
+
  
 });
 
