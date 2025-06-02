@@ -113,7 +113,7 @@
     
                             {
                                 id:9,
-                                image:"images/stretchsuit.jpg",
+                                image:"images/stretchsuits.jpg",
 
                                 image1:"images/stretchsuit1.jpg",
                                 image2:"images/stretchsuit2.jpg",

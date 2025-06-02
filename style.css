@@ -41,7 +41,7 @@
    
    #home section{
    
-   padding:22px;
+   padding:2rem;
     width:100%;
    } 
   
@@ -499,7 +499,7 @@ article >.stars{
 }
 
 .right-box .job{
-    margin-bottom:1rem;
+    margin-bottom:2rem;
 }
 
 .item-name{
@@ -560,21 +560,24 @@ header p{
 
 .list-wrapper{
     display:flex;
+   
     gap:21px;
-    max-width:1000px;
-    width:100%;
-    margin-bottom: 137px;
+    max-width:1200px;
     margin:auto;
+    width:100%;
+   
+   
    
 }
 
 .list-wrapper .image{
-    height:100%;
+   
     
 }
 .list-wrapper img{
-    width:600px;
-    height:500px;
+   width:400px;
+   
+    height:550px;
     object-fit:cover;
     display:block;
 }
@@ -629,6 +632,7 @@ header p{
 
     .blazer{
         display:flex;
+       
         max-width:1350px;
          gap:22px;
          width:100%;
@@ -1029,14 +1033,22 @@ font-family:verdana;
 /*testimonials section styling*/
 .reviews{
     display: flex;
-    justify-content: center;
+  
     margin-top: 45px;
-    max-width: 100%; 
+    max-width: 1200px; 
     width:100%;
+    margin:auto;
     gap:22px;
     padding:15px;
     border-top:1px solid var(--champagne);
     }
+
+.reviews img{
+    max-width:100%;
+    height:auto;
+}
+
+
     
 .buttons{
     display:flex;
@@ -1047,13 +1059,19 @@ font-family:verdana;
 }
 
 .left-box{
-    height:auto;
+  
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     
     
+}
+
+.left-box img{
+    max-width:100%;
+    height:auto;
+    display:block;
 }
 
 #userpic{
@@ -1394,14 +1412,19 @@ object-fit:cover;
 
 .seller-wrapper{
     display:flex;
-    align-items:center;
-    gap:17px;
-    flex-wrap:nowrap;
+   
     max-width:1200px;
     width:100%;
-    margin:auto;
-    padding:22px;
-   }
+    margin:0 auto;
+    border:2px solid green;
+}
+
+
+
+
+
+
+
 
 .seller-wrapper a.btn{
     
@@ -1425,6 +1448,7 @@ object-fit:cover;
     border:1px solid blue;
     max-width:100%;
      display:flex;
+    
    
     width:100%;
   }
@@ -2034,8 +2058,7 @@ textarea:focus-within{
     max-width:1200px;
     width:100%;
   margin:0 auto;
-   column-gap:17px;
-  row-gap: 127px;
+   
  }
 
  .section-list {    /*Inline content (text, inline elements like <span>, <a>)	
@@ -2068,11 +2091,7 @@ textarea:focus-within{
 cursor:pointer;
 }
   
-   .shop-container .image{
-    height:100%;
-   
-   }
-   
+ 
   
   
   
@@ -2408,13 +2427,34 @@ form .send-btn{
 }
 
 
+.shop-container .image, 
+.blazer-container .image,
+.shoe-container .image,
+.suit-container .image,
+.regular-container  .image{
+    width:100%;
+    max-width:450px;
+   
+    aspect-ratio:2/3;
+    overflow:hidden;
+    margin:0 auto;
+    border:2px solid red;
+}
 
 
-.shop-container img,.suit-container img,.blazer-container img{
-    width:300px;
-    height:430px;
-    object-fit: cover;
-    
+
+
+
+.shop-container .image img,
+.suit-container  .image img,
+.blazer-container .image img,
+.shoe-container .image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;/*crop image to
+    fill container*/
+    display:block;/*removes inline gap*/
+
 }
 
 
@@ -2597,7 +2637,98 @@ p{
     object-fit:cover;
 }
 
+/*media queries*/
+
+@media screen and (min-width:600px){
+
+
+}
+
+
+
+
+@media screen and (min-width:768px) and (max-width:1203px){
+    .shop-container,.suit-container,.shoe-container,.blazer-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+   
+ 
+.seller-wrapper img{
+    height:auto;
+   
+   
+}
+
+
+ .hamburger {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+
+
+
+
+
+.shop-container{
+    grid-template-columns: repeat(2,1fr);
+}
+
+.shop-container .image{
+        width:100%;
+        height:600px;
+        aspect-ratio: unset;
+    }
+
+ .shop-container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width:1205px){
+    
+
+.main-text{
+        margin-left:11px;
+       
+       
+    }
+   
+
+ .staff-section{
+    grid-template-columns: repeat(2,1fr);
+   
+    
+ }
+.offer-info{
+    width:80%;
+}
+
+body,html{
+   max-width: 100%;
+    overflow-x:hidden;
+    
+}
+
+
+
+
+
 
 .main-text h1{
         font-size:39px;
@@ -2613,7 +2744,7 @@ p{
     height:100%;
  }
 .list-wrapper{
-    flex-wrap: nowrap;
+    
 }
  
     .icon-wrapper{
@@ -2673,11 +2804,6 @@ p{
         z-index:99;
     }
     
-    .shop-container{
-        grid-template-columns:repeat(2,1fr);
-        
-       
-    }
    
     
 .contact-block{
@@ -2733,56 +2859,27 @@ p{
     flex-direction:column;
 }
 
-}
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:480px){
-    .container img{
-        height:auto;
-    }
-     .seller-wrapper img{
-       height:auto;
-     }
-
-     .staff-section img{
-        height:auto;
-     }
- .right-box{
-    padding:2rem;
- }
-
-    }
-
-
-@media screen and (min-width:768px) and (max-width:1203px){
-    .shop-container,.suit-container,.shoe-container,.blazer-container{
-        grid-template-columns: repeat(2,1fr);
-    }
-     .staff-section{
-       grid-template-columns: repeat(2,1fr);
-
-     }
-  
 
 }
-
-
+ 
 
 /* Styles for phones */
-    @media screen and (max-width:768px){
+    @media screen and (max-width:767px){
         
        .main-text{
         margin-top:17px;
         margin-left: 22px;
        }
-       
+        .list-wrapper img{
+    height:auto;
+ }
+
+ .container img{
+    height:auto;
+ }
+.right-box{
+    padding:2rem;
+}
       .questions h2{
         font-size:18px;
       }
@@ -2842,11 +2939,14 @@ p{
        
     .seller-wrapper{
             flex-direction: column;
-            
+            align-items:center;
+            justify-content:center;
+           
         }
     
-    
-        
+    .seller-wrapper img{
+        height:auto;
+    }
         
     .left-gallery{
         display:flex;
@@ -2906,10 +3006,16 @@ p{
     
     .shop-container, .shoe-container,.suit-container,.blazer-container{
             grid-template-columns:1fr;
-            width:100%;
+        
            
            
         }
+
+ 
+
+
+
+
         
     .blazer-gallery{
             flex-direction: column;
@@ -3014,21 +3120,23 @@ text-align:center;
 
 }
     
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
     
            
     
-    
-    
-    
-    
-    
-    
-    
-    
-       
-    
-    
-    
+
+
+
+

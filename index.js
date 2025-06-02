@@ -253,8 +253,9 @@ function renderProducts(containerSelector,filtered){
           newPara.innerHTML=`
   
 <a href="details.html?id=${product.id}">
-      
+      <div class="image">
       <img src= ${product.image}>
+      </div>
       </a>
       <div class="item-title">
          <div class='item-name'>${product.name}</div>
