@@ -55,11 +55,18 @@ fetch('./template.html')
    let total=document.querySelector('.total');
    localStorage.removeItem('cart');
     let cartItems=document.querySelector('.cart-items');
+    if(cartItems && total && cartItems.children.length>0){//element.children.length	Number	
+    // Number of child elements
    cartItems.textContent='check out was successfull , Thank you for your purchase';
    total.innerHTML=`£0`;
 
+  }else{
+ 
+cartItems.textContent="fill cart before checking out"
   }
-
+   
+  }
+  
  
 
    let hamburger = document.querySelector('.hamburger');
@@ -278,7 +285,10 @@ function renderProducts(containerSelector,filtered){
          <div class='item-price'data-id=${product.price}>£${product.price}</div>
       </div>    
         
-      <a class="btn"    data-id=${product.id}>add to cart</a>
+      
+       <a class="btn"    data-id=${product.id}>add to cart</a>
+      
+      
       </div>
          `;
       container.appendChild(newPara);
@@ -403,7 +413,7 @@ function displayCategory(event){
 }
 */
  
-function addToCart(productId){   //This function is called when a user wants to add a product to the shopping cart, 
+ function addToCart(productId){   //This function is called when a user wants to add a product to the shopping cart, 
 // using that product's id (passed as productId).
 let product=products.find(product=>product.id==productId);// find the product in the products array using the id.
 //The find() method returns the value of the first element in the array that satisfies the provided testing function.
@@ -598,11 +608,10 @@ if(productPosition!==-1){
 
 
 
-  
 
 
  
-  
+ export {addToCart};
 
   
   

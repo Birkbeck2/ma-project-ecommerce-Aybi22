@@ -1,13 +1,23 @@
 
 import products from'./products.js';
-
+import {addToCart} from'./index.js';
+ 
  
 
-    
-   
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+let addBtn=document.querySelector('.add-btn');
+console.log(addBtn);
+addBtn.addEventListener('click',(e)=>{
  
-    
-    
+ const productId=e.target.dataset.id;
+ addToCart(productId); 
+})     
+
+});
+ 
     
     
      const detail=()=>{
@@ -102,7 +112,7 @@ import products from'./products.js';
    
    <div class="add-cart">
    
-    <a class="add-btn">
+    <a class="add-btn" data-id="${thisProduct.id}">
         
         add to cart
 
@@ -590,8 +600,7 @@ import products from'./products.js';
 
 
 
-
-
+ 
     
     
     
@@ -672,6 +681,8 @@ qtitle.classList.toggle('show-text');
 
      }
 
+
+    
     
 
 export default detail

@@ -2052,6 +2052,8 @@ align-items:flex-start;
 
 .add-cart{
     display:flex;
+    max-width:400px;
+    width:100%;
     align-items:flex-end;
     gap:37px;
     flex-wrap: wrap;
@@ -2061,7 +2063,9 @@ align-items:flex-start;
 background:#FFD700;
 color:var(--black);
 padding:11px;
-max-width:400px;
+max-width:400px;/*Even though width: 100% makes it flexible, 
+it depends on the parent container. If the parent is fixed width, 
+the button won’t fully respond.*/
 text-align:center;
 text-transform:capitalize;
 font-weight:900;
