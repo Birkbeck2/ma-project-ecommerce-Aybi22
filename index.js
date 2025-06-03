@@ -57,12 +57,12 @@ fetch('./template.html')
     let cartItems=document.querySelector('.cart-items');
     if(cartItems && total && cartItems.children.length>0){//element.children.length	Number	
     // Number of child elements
-   cartItems.textContent='check out was successfull , Thank you for your purchase';
+   cartItems.textContent='Check out was successfull , Thank you for your purchase';
    total.innerHTML=`£0`;
 
   }else{
  
-cartItems.textContent="fill cart before checking out"
+cartItems.textContent="Fill cart before checking out"
   }
    
   }
