@@ -245,7 +245,7 @@ function showNext() {
    
       let categoryList = document.querySelector('.category-list');
    categoryList.addEventListener('click', displayCategory);
-   });   
+     
    
    function displayCategory(event) {
      const clicked = event.target;
@@ -299,8 +299,6 @@ function renderProducts(containerSelector,filtered){
          
          
          }   
-      products.addEventListener('click',renderProducts);
-         renderProducts('.shop-container',products);
       
        activateCartButtons()     
          
@@ -313,7 +311,7 @@ function activateCartButtons(){
 
       addToCart(productId);
       });
-   });
+      });
    
 }
   
@@ -363,7 +361,7 @@ function filterProductsByPrice(event){
        }
       }
 }
-
+  });
 /*     
    
 let categoryList=document.querySelector('.category-list');
