@@ -1791,7 +1791,7 @@ object-fit:cover;
     width:100%;
     flex-wrap:nowrap;
     row-gap:23px;
-    border:2px solid red;
+   
   }
 .left-side{
     border:1px solid green;
@@ -2515,6 +2515,7 @@ form .send-btn{
     object-fit:cover;/*crop image to
     fill container*/
     display:block;/*removes inline gap*/
+    margin-bottom:1rem;
 
 }
 
