@@ -2941,7 +2941,9 @@ body,html{
         .list-wrapper img{
     height:auto;
  }
-
+.featured-text{
+    line-height: 1.6;
+}
  .container img{
     height:auto;
  }
