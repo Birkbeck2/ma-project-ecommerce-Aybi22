@@ -654,6 +654,8 @@ header p{
         display:flex;
         flex-direction:column;
         align-content: center;
+        padding:1rem;
+        gap:23px;
         margin-top:-80px;
      }
 
@@ -1065,7 +1067,7 @@ font-family:verdana;
 .image-text a{
     margin:25px auto;
 }
-.featured-text{
+.featured-text,.offer-text{
     font-size:2rem;
     font-weight:900;
     text-transform:capitalize;
@@ -2451,12 +2453,13 @@ form .send-btn{
  }
 
 .offer-price{
-    font-size:17px;
+    font-size:1.5rem;
     background:black;
     color:white;
     font-weight:900;
-    width:70px;
-    height:70px;
+    width:90px;
+    height:90px;
+    padding:1rem;
     border-radius:100%;
     display:flex;
     align-items:center;
@@ -2464,7 +2467,7 @@ form .send-btn{
     margin:auto;
 }
 .offer-info p{
-    font-size:13px;
+   
 }
 .item-price{
     font-weight:600;
