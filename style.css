@@ -1465,7 +1465,9 @@ object-fit:cover;
     gap:1.5rem;
 }
 
-
+.seller-wrapper img{
+    margin-bottom:1rem;
+}
 
 
 
@@ -1474,7 +1476,7 @@ object-fit:cover;
 
 .seller-wrapper a.btn{
     
-    margin:auto;
+    margin: auto;
 }
 
 .staff-info{
