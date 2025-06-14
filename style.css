@@ -2130,6 +2130,7 @@ textarea:focus-within{
     display: block;
     margin: 0 auto;
     max-width: 100%;
+    margin-bottom:1rem;
   }
   .section-list .image{
     height:100%;
