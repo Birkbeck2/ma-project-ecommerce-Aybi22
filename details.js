@@ -308,7 +308,7 @@ addBtn.addEventListener('click',(e)=>{
         </div>
  
     </a>
-    
+     <a class="btn"  href="/details.html?id=10">view product</a>
     
 </article>
     
@@ -329,6 +329,10 @@ addBtn.addEventListener('click',(e)=>{
         </div>
     
     </a>
+
+ <a class="btn"  href="/details.html?id=12">view product</a>
+
+
    </article> 
     
     
@@ -349,7 +353,7 @@ addBtn.addEventListener('click',(e)=>{
         </div>
     </a>
         
-        
+        <a class="btn"  href="/details.html?id=13">view product</a> 
         
     
     </article>
@@ -371,7 +375,7 @@ addBtn.addEventListener('click',(e)=>{
         </div>
     
     </a>
-    
+     <a class="btn"  href="/details.html?id=14">view product</a>
 </article>
     </div>
     
