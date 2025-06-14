@@ -1486,11 +1486,9 @@ object-fit:cover;
     border:2px solid red;
 }
 .item-title{
-    border:1px solid blue;
-    max-width:100%;
-     display:flex;
     
-   
+    max-width:100%;
+    display:flex;
     width:100%;
   }
 .seller-wrapper a.btn{
