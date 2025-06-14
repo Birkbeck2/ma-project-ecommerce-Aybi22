@@ -1793,8 +1793,9 @@ object-fit:cover;
     row-gap:23px;
    
   }
-.left-side{
-  
+section{
+ 
+    margin-bottom:2rem;
 }
 
 
