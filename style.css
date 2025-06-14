@@ -1488,7 +1488,7 @@ object-fit:cover;
 .seller-wrapper article{
     display:flex;
     flex-direction:column;
-    border:2px solid red;
+   
 }
 .item-title{
     
