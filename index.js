@@ -86,7 +86,7 @@ cartItems.textContent="Fill cart before checking out"
       }
   }
       
-    updateTotal();  
+       updateTotal();  
       displayCartItems();
       updateCartIcon();
  
