@@ -1490,9 +1490,10 @@ object-fit:cover;
     max-width:100%;
     display:flex;
     width:100%;
+    margin-bottom: 2rem;
   }
 .seller-wrapper a.btn{
-    border:7px solid yellow;
+    
     margin-top:2rem;
 }
 
