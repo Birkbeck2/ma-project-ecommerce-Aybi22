@@ -709,6 +709,9 @@ header p{
          margin:auto;
          
      }
+     .blazer-gallery img{
+        margin-bottom:1rem;
+     }
     
      .blazer-pic{
          
