@@ -2434,7 +2434,7 @@ form .send-btn{
 
 
 .blink{ 
-    font-size:31px;
+    font-size:2rem;
     font-style:italic;
     font-family:"dancing script";
     text-transform:capitalize;
@@ -2941,7 +2941,7 @@ body,html{
         .list-wrapper img{
     height:auto;
  }
-.featured-text{
+.featured-text,.offer-text,.blink{
     line-height: 1.6;
 }
  .container img{
