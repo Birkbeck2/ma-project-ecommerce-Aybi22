@@ -1,14 +1,13 @@
-import products from'./products.js'
-function filteredByCategoryLeatherShoe(category){
- 
-    let filteredBlazerProducts= products.filter(product=>product.category===category);
-    let shoeContainer=document.querySelector('.shoe-container');
-    
-    
-     
-    shoeContainer.innerHTML=
-    filteredBlazerProducts.map(product=>
-       
+import products from "./products.js";
+function filteredByCategoryLeatherShoe(category) {
+  let filteredBlazerProducts = products.filter(
+    (product) => product.category === category
+  );
+  let shoeContainer = document.querySelector(".shoe-container");
+
+  shoeContainer.innerHTML = filteredBlazerProducts
+    .map(
+      (product) =>
         `
         <article class="section-list">
         <h3>${product.h3}</h3>
@@ -31,26 +30,14 @@ function filteredByCategoryLeatherShoe(category){
         
     </article>
                
-    `).join(''); 
-    
-    
-
+    `
+    )
+    .join("");
 }
 
-export {filteredByCategoryLeatherShoe}
+export { filteredByCategoryLeatherShoe };
 
-
-
-
-
-
-
-
-
-
-
-
-   /*
+/*
 function removeItems(){
    let cartItems=document.querySelector('.cart-items');
    cartItems.innerHTML=`<div class="purchase-message">

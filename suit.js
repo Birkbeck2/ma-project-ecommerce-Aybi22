@@ -1,17 +1,14 @@
+import products from "./products.js";
 
-import products from'./products.js'
+function filteredByCategoryRegular(category) {
+  let filteredRegularProducts = products.filter(
+    (product) => product.category === category
+  );
+  let regularContainer = document.querySelector(".suit-container");
 
-
- function filteredByCategoryRegular(category){
- 
-    let filteredRegularProducts= products.filter(product=>product.category===category);
-    let regularContainer=document.querySelector('.suit-container');
-    
-    
-     
-    regularContainer.innerHTML=
-    filteredRegularProducts.map(product=>
-       
+  regularContainer.innerHTML = filteredRegularProducts
+    .map(
+      (product) =>
         `
         <article class="section-list">
         <h3>${product.h3}</h3>
@@ -34,8 +31,9 @@ import products from'./products.js'
         
     </article>
                
-    `).join(''); 
-    
-    }
-    
-    export{filteredByCategoryRegular}
+    `
+    )
+    .join("");
+}
+
+export { filteredByCategoryRegular };

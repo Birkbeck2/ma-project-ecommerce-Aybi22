@@ -641,7 +641,7 @@ header p{
         margin:auto;
         background:linear-gradient(to right,#EEE0CB,#888074);
         padding:33px;
-     
+        margin-bottom: 0;
      
      }
 
@@ -655,8 +655,8 @@ header p{
         flex-direction:column;
         align-content: center;
         padding:1rem;
-        gap:23px;
-        margin-top:-80px;
+        gap:1.5rem;
+        margin:auto;
      }
 
      .offer-content{
