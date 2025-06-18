@@ -556,3 +556,27 @@ function removeItems(productId) {
 }
 
 export { addToCart };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const shop = document.getElementById("shop");
+  const sub = document.getElementById("sub");
+  const overlay = document.querySelector(".overlay");
+
+  // Detect if device is mobile (simple screen width check)
+  const isMobile = window.innerWidth <= 768;
+
+  if (isMobile) {
+    // On mobile: toggle submenu on click
+    shop.addEventListener("click", () => {
+      const isOpen = sub.style.height === "300px";
+
+      if (isOpen) {
+        sub.style.height = "0px";
+        overlay.style.width = "0";
+      } else {
+        sub.style.height = "300px";
+        overlay.style.width = "100%";
+      }
+    });
+  }
+});
