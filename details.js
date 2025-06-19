@@ -1,38 +1,26 @@
+import products from "./products.js";
+import { addToCart } from "./index.js";
 
-import products from'./products.js';
-import {addToCart} from'./index.js';
- 
- 
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-
-let addBtn=document.querySelector('.add-btn');
-console.log(addBtn);
-addBtn.addEventListener('click',(e)=>{
- 
- const productId=e.target.dataset.id;
- addToCart(productId); 
-})     
-
+document.addEventListener("DOMContentLoaded", () => {
+  let addBtn = document.querySelector(".add-btn");
+  console.log(addBtn);
+  addBtn.addEventListener("click", (e) => {
+    const productId = e.target.dataset.id;
+    addToCart(productId);
+  });
 });
- 
-    
-    
-     const detail=()=>{
-    
-    let productId = new URLSearchParams(window.location.search).get('id');
-    let thisProduct = products.filter(value => value.id == productId)[0];
-    
-    
-    const productDetails=document.querySelector('.details');
 
-    if(thisProduct){
-        productDetails.innerHTML=`
+const detail = () => {
+  let productId = new URLSearchParams(window.location.search).get("id");
+  let thisProduct = products.filter((value) => value.id == productId)[0];
+
+  const productDetails = document.querySelector(".details");
+
+  if (thisProduct) {
+    productDetails.innerHTML = `
         
         <div class="product-display">
-        
+       
         <div class="left-gallery">
     
     <div class="image">
@@ -73,11 +61,11 @@ addBtn.addEventListener('click',(e)=>{
                 </div>
         
         
+        </div>
         
         
         
-        
-            </div> 
+         
               
         
     <div class="right-side">
@@ -602,108 +590,45 @@ addBtn.addEventListener('click',(e)=>{
 
 </html>`;
 
+    let pics = [
+      `${thisProduct.image}`,
+      `${thisProduct.image1}`,
+      `${thisProduct.image2}`,
+    ];
 
+    let smallPic = document.getElementsByClassName("small-pic");
+    for (let i = 0; i < smallPic.length; i++) {
+      smallPic[i].addEventListener("click", showMainPic);
 
- 
-    
-    
-    
-    
-    
+      function showMainPic() {
+        const img = document.getElementById("main-pic");
 
+        img.setAttribute("src", pics[i]);
 
-
-
-
-
-
-
-
-
-
-
-
- 
-let pics=[`${thisProduct.image}`,`${thisProduct.image1}`,`${thisProduct.image2}`]
-       
- 
-
-
-
-   
-
-let smallPic = document.getElementsByClassName('small-pic');
-for (let i = 0; i < smallPic.length; i++) {
-    smallPic[i].addEventListener('click', showMainPic);
-
-
-    function showMainPic() {
- 
-        const img = document.getElementById('main-pic');
-        
-        img.setAttribute('src',pics[i]);
-        
-        let smallPic = document.getElementsByTagName('img');
+        let smallPic = document.getElementsByTagName("img");
         for (let i = 0; i < smallPic.length; i++) {
-        smallPic[i].className="small-pic";
-        if(smallPic[i].className==="small-pic"){
-        this.className="picborder";
-    } else{
-        this.className="small-pic";
-    } 
-    }  
+          smallPic[i].className = "small-pic";
+          if (smallPic[i].className === "small-pic") {
+            this.className = "picborder";
+          } else {
+            this.className = "small-pic";
+          }
+        }
+      }
     }
-    } 
-      
+  }
+
+  let qBtn = document.getElementsByClassName("q-btn");
+
+  for (let i = 0; i < qBtn.length; i++) {
+    qBtn[i].addEventListener("click", show);
+
+    function show(e) {
+      const qtitle = e.currentTarget.parentNode.parentNode;
+
+      qtitle.classList.toggle("show-text");
     }
- 
-   
+  }
+};
 
-
-    
-
-
-let qBtn = document.getElementsByClassName('q-btn');
-
-for (let i = 0; i < qBtn.length; i++) {
-
-qBtn[i].addEventListener('click', show);
-
-function show(e) {
-
-const qtitle = e.currentTarget.parentNode.parentNode;
-
-qtitle.classList.toggle('show-text');
-}
-
-
-
-     }
-
-
-
-
-     }
-
-
-    
-    
-
-export default detail
-
-
-
-    
-    
-    
-    
-    
-
-
-
-
- 
-
-
-
-
+export default detail;
