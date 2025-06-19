@@ -142,6 +142,11 @@ a.btn{
     font-size:14px;
     cursor:pointer;
    }
+
+   .list-wrapper a.btn{
+    margin-top:2rem;
+   
+   }
   
 a.btn:hover{
     box-shadow:inset 200px 0 0 0 var(--black);
@@ -2719,7 +2724,13 @@ p{
    grid-template-columns: repeat(2,1fr);
 }
 
-
+.item-title{
+    display:flex;
+    justify-content:center;
+   
+    width:70%;
+    margin:auto;
+}
 
 
  .hamburger {
@@ -2755,7 +2766,21 @@ p{
 
 }
 
+@media (max-width: 540px) {
+  /* styles specifically for phones smaller or equal to 540px */
 
+.list-wrapper{
+    grid-template-columns:1fr;
+}
+.item-title{
+    width:70%;
+    margin:auto;
+}
+
+
+
+
+}
 
 
 
