@@ -2788,12 +2788,6 @@ p{
 
 }
 
-@media screen and (max-width:344px){
-    .item-title{
-        display:flex;
-        flex-wrap:wrap;
-    }
-}
 
 
 

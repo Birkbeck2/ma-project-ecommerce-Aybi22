@@ -330,7 +330,7 @@ const products = [
     image: "images/tailoredfitlinensuit.jpg",
     image1: "images/tailoredfitlinen1.jpg",
     image2: "images/tailoredfitlinen2.jpg",
-    name: "tailored fit suit",
+    name: "linen suit",
     price: 630,
     quantity: 1,
     h3: "regular",
