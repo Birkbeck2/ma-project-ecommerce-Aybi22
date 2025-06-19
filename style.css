@@ -2777,7 +2777,13 @@ p{
     margin:auto;
 }
 
+.blazer-section{
+  
+   flex-direction: column;
+   justify-content: center;
+   margin: auto;
 
+}
 
 
 }
