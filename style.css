@@ -2779,16 +2779,21 @@ p{
 
 .blazer-section{
   
-   flex-direction: column;
-   justify-content: center;
-   margin: auto;
+  display:flex;
+  flex-direction: column;
+  margin:auto;
 
 }
 
 
 }
 
-
+@media screen and (max-width:344px){
+    .item-title{
+        display:flex;
+        flex-wrap:wrap;
+    }
+}
 
 
 

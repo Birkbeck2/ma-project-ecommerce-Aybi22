@@ -1,432 +1,341 @@
- const products=[
-    
-    {
-    id:1,
-    image:"images/texturesuit.jpg",
-    image1:"images/texturesuit1.jpg",
-    image2:"images/texturesuit2.jpg",
-    name:"texture suit",
-    price:250,
-    quantity:1,
-    category:"regular",
-     h3:"regular"
-    
-    },
-    
-    
-    
-    {
-        id:2,
-        image:"images/blacksuit.jpg",
-        name:"black suit",
-        image1:"images/blacksuit1.jpg",
-        image2:"images/blacksuit2.jpg",
-        price:370,
-        quantity:1,
-        category:"regular",
-         h3:"regular"
-    },
-    
-    
-    
-    
-    {
-       id:3,
-       image:"images/greysuit.jpg",
-       image1:"images/greysuit1.jpg",
-        image2:"images/greysuit2.jpg",
-       name:"Grey suit",
-       price:450,
-       quantity:1,
-       category:"regular",
-        h3:"regular"
-       
-        },
-    
-    
-    
-    
-       
-    
-    
-            {
-                id:5,
-                image:"images/specialoffer.jpg",
-                image1:"images/regularfitblue.jpg",
-                image2:"images/regularfitblack.jpg",
-                name:"regular fit suit",
-                price:400,
-                quantity:1,
-                 
-            
-                category:"regular",
-             h3:"regular"
-            
-                },
-    
-    
-    
-    
-            {
-                    id:6,
-                    image:"images/greenslimsuit.jpg",
-                    image1:"images/greenslimsuit1.jpg",
-                    image2:"images/greenslimsuit2.jpg",
-                    name:"green slim suit",
-                    price:525,
-                    quantity:1,
-                    category:"regular",
-                     h3:"regular"
-                    
-            }, 
-    
-    
-    
-    
-            {
-                        id:7,
-                        image:"images/justcouturesuit.jpg",
-                        image1:"images/justcouturesuit1.jpg",
-                        image2:"images/justcouturesuit2.jpg",
-                        name:"just couture",
-                        price:450,
-                        quantity:1,
-                        category:"regular",
-                         h3:"regular"
-                        
-            },
-                        
-                        
-                        {
-                            id:8,
-                            image:"images/navychechsuit.jpg",
-                            image1:"images/navychech1.jpg",
-                             image2:"images/navychech2.jpg",
-                            name:"navy suit",
-                            price:655,
-                            quantity:1,
-                            category:"regular",
-                             h3:"regular"
-                            },
-                            
-                            
-    
-                            {
-                                id:9,
-                                image:"images/stretchsuits.jpg",
+const products = [
+  {
+    id: 1,
+    image: "images/texturesuit.jpg",
+    image1: "images/texturesuit1.jpg",
+    image2: "images/texturesuit2.jpg",
+    name: "texture suit",
+    price: 250,
+    quantity: 1,
+    category: "regular",
+    h3: "regular",
+  },
 
-                                image1:"images/stretchsuit1.jpg",
-                                image2:"images/stretchsuit2.jpg",
-                                name:"stretch chino blazer",
-                                price:525,
-                                quantity:1,
-                                category:"regular",
-                                 h3:"regular"
-                                },
-                                
-                                
-    
-                                
-                                    
-                                    
-    
-    
-                                    {
-                                        id:10,
-                                        image:"images/velvetjacket.jpg",
-                                        image1:"images/velvetjacket1.jpg",
-                                        image2:"images/velvetjacket2.jpg",
-                                        name:"velvet jacket",
-                                        price:355,
-                                        quantity:1,
-                                        category:"regular",
-                                        h3:"regular"
-                                        
-                                        },
-                                        
-                                        
-                                        {
-                                            id:12,
-                                            image:"images/greycheckjacket.jpg",
-                                            image1:"images/greysuit1.jpg",
-                                            image2:"images/greysuit2.jpg",
-                                            name:"grey check jacket",
-                                            price:415,
-                                            quantity:1,
-                                            category:"regular",
-                                             h3:"regular"
-                                            },  
-                             
-                          
-                                            {
-                                                id:13,
-                                                image:"images/navypanamasuit.jpg",
-                                                image1:"images/navypanamablue1.jpg",
-                                                image2:"images/navypanamablue2.jpg",
-                                                name:"navy panama suit",
-                                                price:625,
-                                                quantity:1,
-                                                category:"regular",
-                                                  h3:"regular"
-                                                },  
-                                 
-                
-             
-                                                {
-                                                    id:14,
-                                                    image:"images/blazerjacket.jpg",
-                                                    image1:"images/blazerjacket1.jpg",
-                                                    image2:"images/blazerjacket2.jpg",
-                                                    name:"blazer jacket",
-                                                    price:565,
-                                                    quantity:1,
-                                                    h3:"blazer",
-                                                    category:"blazer"
-                                                },  
-                                     
-    
-                                               
-                                                {
-                                                    id:15,
-                                                    image:"images/stoneblazer.jpg",
-                                                    image1:"images/stoneblazer1.jpg",
-                                                    image2:"images/stoneblazer2.jpg",
-                                                    name:"stone blazer",
-                                                    price:565,
-                                                    quantity:1,
-                                                    h3:"blazer",
-                                                    category:"blazer"
-                                                },  
-                                     
-                                               
-                                                {
-                                                    id:16,
-                                                    image:"images/greypocketblazer.jpg",
-                                                    image1:"images/greypocketblazer1.jpg",
-                                                    image2:"images/greypocketblazer2.jpg",
-                                                    name:"Grey pocket blazer",
-                                                    price:275,
-                                                    quantity:1,
-                                                    h3:"blazer",
-                                                    category:"blazer"
-                                                },  
-                                     
-    
-                                                {
-                                                    id:17,
-                                                    image:"images/textureblazer.jpg",
-                                                    image1:"images/textureblazer1.jpg",
-                                                    image2:"images/textureblazer2.jpg",
-                                                    name:"texture blazer",
-                                                    price:415,
-                                                    quantity:1,
-                                                    h3:"blazer",
-                                                    category:"blazer"
-                                                },  
-                                     
-    
-                                                {
-                                                    id:18,
-                                                    image:"images/cowleathershoe.jpg",
-                                                    image1:"images/cowleathershoe1.jpg",
-                                                    image2:"images/cowleathershoe2.jpg",
-                                                    name:"cow leathershoe",
-                                                    price:625,
-                                                    quantity:1,
-                                                    h3:"shoe",
-                                                    category:"leathershoe"
-                                                },  
-                                     
-    
-                                            
-                                                {
-                                                    id:19,
-                                                    image:"images/oxfordleather2.jpg",
-                                                    image1:"images/oxfordleather1.jpg",
-                                                    image2:"images/oxfordleather2.jpg",
-                                                    name:"oxford leather shoe",
-                                                    price:655,
-                                                    quantity:1,
-                                                    h3:"shoe",
-                                                    category:"leathershoe"
-                                                },  
-                                            
-                                            
-                                            
-                                                {
-                                                    id:20,
-                                                    image:"images/fullbrogueoxford.jpg",
-                                                    image1:"images/fullbrogueoxford1.jpg",
-                                                    image2:"images/fullbrogueoxford2.jpg",
-                                                    name:"full brogue oxford",
-                                                    price:450,
-                                                    quantity:1,
-                                                    h3:"shoe",
-                                                    category:"leathershoe"
-                                                },  
-                                            
-                                            
-                                            
-                                            
-                                                {
-                                                    id:21,
-                                                    image:"images/brogueoxford.jpg",
-                                                    image1:"images/brogueoxford1.jpg",
-                                                    image2:"images/brogueoxford2.jpg",
-                                                    name:"brogue oxford shoe",
-                                                    price:415,
-                                                    quantity:1,
-                                                    h3:"shoe",
-                                                    category:"leathershoe"
-                                                },  
-                                            
-                                            
-                                            
-                                            
-                                                {
-                                                    id:22,
-                                                    image:"images/wingtipoxford.jpg",
-                                                    image1:"images/wingtipoxford1.jpg",
-                                                    image2:"images/wingtipoxford2.jpg",
-                                                    name:"wingtip oxford shoe",
-                                                    price:625,
-                                                    quantity:1,
-                                                    h3:"shoe",
-                                                    category:"leathershoe"
-                                                },  
-                                            
-                                            
-                                                {
-                                                    id:23,
-                                                    image:"images/topgraincowleather.jpg",
-                                                    image1:"images/topgraincowleather1.jpg",
-                                                    image2:"images/topgraincowleather2.jpg",
-                                                    name:"top grain leather shoe",
-                                                    price:565,
-                                                    quantity:1,
-                                                    h3:"shoe",
-                                                    category:"leathershoe"
-                                                },  
-                                            
-                                            
-                                            
-                                                {
-                                                    id:24,
-                                                    image:"images/greenherringboneblazer.jpg",
-                                                    image1:"images/greenherringboneblazer1.jpg",
-                                                    image2:"images/greenherringboneblazer2.jpg",
-                                                    name:"green herringbone blazer",
-                                                    price:465,
-                                                    quantity:1,
-                                                    h3:"blazer",
-                                                    category:"blazer"
-                                                },  
-                                            
-                                                {
-                                                    id:25,
-                                                    image:"images/greyminiblazer.jpg",
-                                                    image1:"images/greyminiblazer1.jpg",
-                                                    image2:"images/greyminiblazer2.jpg",
-                                                    name:"grey mini blazer",
-                                                    price:330,
-                                                    quantity:1,
-                                                    h3:"blazer",
-                                                    category:"blazer"
-                                                },  
-                                            
-                                            
-                                                {
-                                                    id:26,
-                                                    image:"images/regularstretchsuit.jpg",
-                                                    image1:"images/regularstretchsuit1.jpg",
-                                                    image2:"images/regularstretchsuit2.jpg",
-                                                    name:"regular stretch suit",
-                                                    price:430,
-                                                    quantity:1,
-                                                    h3:"regular",
-                                                    category:"regular"
-                                                },  
-                                            
-                                                {
-                                                    id:27,
-                                                    image:"images/navycheckedblazer.jpg",
-                                                    image1:"images/navycheckedblazer1.jpg",
-                                                    image2:"images/navycheckedblazer2.jpg",
-                                                    name:"navy checked blazer",
-                                                    price:440,
-                                                    quantity:1,
-                                                    h3:"blazer",
-                                                    category:"blazer"
-                                                },  
-                                            
-                                                {
-                                                    id:28,
-                                                    image:"images/navyblazer.jpg",
-                                                    image1:"images/navyblazer1.jpg",
-                                                    image2:"images/navyblazer2.jpg",
-                                                    name:"navy blazer",
-                                                    price:530,
-                                                    quantity:1,
-                                                    h3:"blazer",
-                                                    category:"blazer"
-                                                },  
-                                            
-                                            
-                                            
-                                            
-                                                {
-                                                    id:29,
-                                                    image:"images/tedbakersuit.jpg",
-                                                    image1:"images/tedbaker1.jpg",
-                                                    image2:"images/tedbaker2.jpg",
-                                                    name:"ted baker suit",
-                                                    price:730,
-                                                    quantity:1,
-                                                    h3:"regular",
-                                                    category:"regular"
-                                                },  
-                                            
-                                            {
-                                                    id:30,
-                                                    image:"images/tailoredfitlinensuit.jpg",
-                                                    image1:"images/tailoredfitlinen1.jpg",
-                                                    image2:"images/tailoredfitlinen2.jpg",
-                                                    name:"tailored fit suit",
-                                                    price:630,
-                                                    quantity:1,
-                                                    h3:"regular",
-                                                    category:"regular"
-                                                },  
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            ]
+  {
+    id: 2,
+    image: "images/blacksuit.jpg",
+    name: "black suit",
+    image1: "images/blacksuit1.jpg",
+    image2: "images/blacksuit2.jpg",
+    price: 370,
+    quantity: 1,
+    category: "regular",
+    h3: "regular",
+  },
 
+  {
+    id: 3,
+    image: "images/greysuit.jpg",
+    image1: "images/greysuit1.jpg",
+    image2: "images/greysuit2.jpg",
+    name: "Grey suit",
+    price: 450,
+    quantity: 1,
+    category: "regular",
+    h3: "regular",
+  },
 
-    export default products;
-    
+  {
+    id: 5,
+    image: "images/specialoffer.jpg",
+    image1: "images/regularfitblue.jpg",
+    image2: "images/regularfitblack.jpg",
+    name: "regular fit suit",
+    price: 400,
+    quantity: 1,
 
+    category: "regular",
+    h3: "regular",
+  },
 
+  {
+    id: 6,
+    image: "images/greenslimsuit.jpg",
+    image1: "images/greenslimsuit1.jpg",
+    image2: "images/greenslimsuit2.jpg",
+    name: "green suit",
+    price: 525,
+    quantity: 1,
+    category: "regular",
+    h3: "regular",
+  },
 
-    
-   
-    
-    
-    
-    
-    
-    
-    
+  {
+    id: 7,
+    image: "images/justcouturesuit.jpg",
+    image1: "images/justcouturesuit1.jpg",
+    image2: "images/justcouturesuit2.jpg",
+    name: "just couture",
+    price: 450,
+    quantity: 1,
+    category: "regular",
+    h3: "regular",
+  },
+
+  {
+    id: 8,
+    image: "images/navychechsuit.jpg",
+    image1: "images/navychech1.jpg",
+    image2: "images/navychech2.jpg",
+    name: "navy suit",
+    price: 655,
+    quantity: 1,
+    category: "regular",
+    h3: "regular",
+  },
+
+  {
+    id: 9,
+    image: "images/stretchsuits.jpg",
+
+    image1: "images/stretchsuit1.jpg",
+    image2: "images/stretchsuit2.jpg",
+    name: "stretch chino blazer",
+    price: 525,
+    quantity: 1,
+    category: "regular",
+    h3: "regular",
+  },
+
+  {
+    id: 10,
+    image: "images/velvetjacket.jpg",
+    image1: "images/velvetjacket1.jpg",
+    image2: "images/velvetjacket2.jpg",
+    name: "velvet jacket",
+    price: 355,
+    quantity: 1,
+    category: "regular",
+    h3: "regular",
+  },
+
+  {
+    id: 12,
+    image: "images/greycheckjacket.jpg",
+    image1: "images/greysuit1.jpg",
+    image2: "images/greysuit2.jpg",
+    name: "grey check jacket",
+    price: 415,
+    quantity: 1,
+    category: "regular",
+    h3: "regular",
+  },
+
+  {
+    id: 13,
+    image: "images/navypanamasuit.jpg",
+    image1: "images/navypanamablue1.jpg",
+    image2: "images/navypanamablue2.jpg",
+    name: "navy panama suit",
+    price: 625,
+    quantity: 1,
+    category: "regular",
+    h3: "regular",
+  },
+
+  {
+    id: 14,
+    image: "images/blazerjacket.jpg",
+    image1: "images/blazerjacket1.jpg",
+    image2: "images/blazerjacket2.jpg",
+    name: "blazer jacket",
+    price: 565,
+    quantity: 1,
+    h3: "blazer",
+    category: "blazer",
+  },
+
+  {
+    id: 15,
+    image: "images/stoneblazer.jpg",
+    image1: "images/stoneblazer1.jpg",
+    image2: "images/stoneblazer2.jpg",
+    name: "stone blazer",
+    price: 565,
+    quantity: 1,
+    h3: "blazer",
+    category: "blazer",
+  },
+
+  {
+    id: 16,
+    image: "images/greypocketblazer.jpg",
+    image1: "images/greypocketblazer1.jpg",
+    image2: "images/greypocketblazer2.jpg",
+    name: "Grey pocket blazer",
+    price: 275,
+    quantity: 1,
+    h3: "blazer",
+    category: "blazer",
+  },
+
+  {
+    id: 17,
+    image: "images/textureblazer.jpg",
+    image1: "images/textureblazer1.jpg",
+    image2: "images/textureblazer2.jpg",
+    name: "texture blazer",
+    price: 415,
+    quantity: 1,
+    h3: "blazer",
+    category: "blazer",
+  },
+
+  {
+    id: 18,
+    image: "images/cowleathershoe.jpg",
+    image1: "images/cowleathershoe1.jpg",
+    image2: "images/cowleathershoe2.jpg",
+    name: "cow leathershoe",
+    price: 625,
+    quantity: 1,
+    h3: "shoe",
+    category: "leathershoe",
+  },
+
+  {
+    id: 19,
+    image: "images/oxfordleather2.jpg",
+    image1: "images/oxfordleather1.jpg",
+    image2: "images/oxfordleather2.jpg",
+    name: "oxford leather shoe",
+    price: 655,
+    quantity: 1,
+    h3: "shoe",
+    category: "leathershoe",
+  },
+
+  {
+    id: 20,
+    image: "images/fullbrogueoxford.jpg",
+    image1: "images/fullbrogueoxford1.jpg",
+    image2: "images/fullbrogueoxford2.jpg",
+    name: "full brogue oxford",
+    price: 450,
+    quantity: 1,
+    h3: "shoe",
+    category: "leathershoe",
+  },
+
+  {
+    id: 21,
+    image: "images/brogueoxford.jpg",
+    image1: "images/brogueoxford1.jpg",
+    image2: "images/brogueoxford2.jpg",
+    name: "brogue oxford shoe",
+    price: 415,
+    quantity: 1,
+    h3: "shoe",
+    category: "leathershoe",
+  },
+
+  {
+    id: 22,
+    image: "images/wingtipoxford.jpg",
+    image1: "images/wingtipoxford1.jpg",
+    image2: "images/wingtipoxford2.jpg",
+    name: "wingtip oxford shoe",
+    price: 625,
+    quantity: 1,
+    h3: "shoe",
+    category: "leathershoe",
+  },
+
+  {
+    id: 23,
+    image: "images/topgraincowleather.jpg",
+    image1: "images/topgraincowleather1.jpg",
+    image2: "images/topgraincowleather2.jpg",
+    name: "top grain leather shoe",
+    price: 565,
+    quantity: 1,
+    h3: "shoe",
+    category: "leathershoe",
+  },
+
+  {
+    id: 24,
+    image: "images/greenherringboneblazer.jpg",
+    image1: "images/greenherringboneblazer1.jpg",
+    image2: "images/greenherringboneblazer2.jpg",
+    name: "green herringbone blazer",
+    price: 465,
+    quantity: 1,
+    h3: "blazer",
+    category: "blazer",
+  },
+
+  {
+    id: 25,
+    image: "images/greyminiblazer.jpg",
+    image1: "images/greyminiblazer1.jpg",
+    image2: "images/greyminiblazer2.jpg",
+    name: "grey mini blazer",
+    price: 330,
+    quantity: 1,
+    h3: "blazer",
+    category: "blazer",
+  },
+
+  {
+    id: 26,
+    image: "images/regularstretchsuit.jpg",
+    image1: "images/regularstretchsuit1.jpg",
+    image2: "images/regularstretchsuit2.jpg",
+    name: "regular stretch suit",
+    price: 430,
+    quantity: 1,
+    h3: "regular",
+    category: "regular",
+  },
+
+  {
+    id: 27,
+    image: "images/navycheckedblazer.jpg",
+    image1: "images/navycheckedblazer1.jpg",
+    image2: "images/navycheckedblazer2.jpg",
+    name: "navy checked blazer",
+    price: 440,
+    quantity: 1,
+    h3: "blazer",
+    category: "blazer",
+  },
+
+  {
+    id: 28,
+    image: "images/navyblazer.jpg",
+    image1: "images/navyblazer1.jpg",
+    image2: "images/navyblazer2.jpg",
+    name: "navy blazer",
+    price: 530,
+    quantity: 1,
+    h3: "blazer",
+    category: "blazer",
+  },
+
+  {
+    id: 29,
+    image: "images/tedbakersuit.jpg",
+    image1: "images/tedbaker1.jpg",
+    image2: "images/tedbaker2.jpg",
+    name: "ted baker suit",
+    price: 730,
+    quantity: 1,
+    h3: "regular",
+    category: "regular",
+  },
+
+  {
+    id: 30,
+    image: "images/tailoredfitlinensuit.jpg",
+    image1: "images/tailoredfitlinen1.jpg",
+    image2: "images/tailoredfitlinen2.jpg",
+    name: "tailored fit suit",
+    price: 630,
+    quantity: 1,
+    h3: "regular",
+    category: "regular",
+  },
+];
+
+export default products;
