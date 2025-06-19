@@ -2468,16 +2468,14 @@ form .send-btn{
     justify-content:center;
     margin:auto;
 }
-.offer-info p{
-   
-}
+
 .item-price{
     font-weight:600;
     margin-left:auto;
 }
 .right-side .item-price{
     font-weight: 200;
-    font-size:23px;
+    font-size:1.5rem;
 }
 .stock-info{
     font-size:12px;
@@ -2702,10 +2700,7 @@ p{
 
 /*media queries*/
 
-@media screen and (min-width:600px){
 
-
-}
 
 
 
@@ -2810,9 +2805,7 @@ body,html{
  .main-picture{
     height:100%;
  }
-.list-wrapper{
-    
-}
+
  
     .icon-wrapper{
         grid-template-columns:repeat(2,1fr);
@@ -2936,6 +2929,10 @@ body,html{
        .main-text{
         margin-top:17px;
         margin-left: 22px;
+       }
+
+       .item-title, .item-name{
+        font-size:0.9rem;
        }
         .list-wrapper img{
     height:auto;
