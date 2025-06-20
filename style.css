@@ -1796,10 +1796,7 @@ object-fit:cover;
     object-fit:contain;
   
 }
-   .left-box{
-    border:7px solid red;
-    
-   }
+  
   .right-side{
     display:flex;
     flex-direction:column;
