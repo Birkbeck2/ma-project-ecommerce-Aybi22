@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
 <a href="details.html?id=${product.id}">
       <div class="image">
-      <img src= ${product.image}>
+      <img src= ${product.image} alt=${product.alt}>
       </div>
       </a>
       <div class="item-title">
