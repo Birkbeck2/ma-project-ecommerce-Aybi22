@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>    
         
       
-       <a class="btn" data-id=${product.id}>add to cart</a>
+       <a  href="#" class="btn" data-id=${product.id}>add to cart</a>
       
       
       </div>
