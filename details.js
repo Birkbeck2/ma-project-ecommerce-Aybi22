@@ -24,7 +24,7 @@ const detail = () => {
         <div class="left-gallery">
     
     <div class="image">
-    <img src=${thisProduct.image} width="150" height="150" class="small-pic alt="texture suit image">
+    <img src=${thisProduct.image} width="150" height="150" class="small-pic" alt="texture suit image">
     
     
     </div>
@@ -100,7 +100,7 @@ const detail = () => {
    
    <div class="add-cart">
    
-    <a class="add-btn" data-id="${thisProduct.id}">
+    <a class="add-btn" href="#" data-id="${thisProduct.id}">
         
         add to cart
 
