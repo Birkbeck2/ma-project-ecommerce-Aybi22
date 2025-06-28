@@ -308,8 +308,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  let overFourHundred = document.querySelector(".overfourhundred");
-  overFourHundred.addEventListener("click", filterByPriceOver);
+  let overSixHundred = document.querySelector(".oversixhundred");
+  console.log(overSixHundred);
+  overSixHundred.addEventListener("click", filterByPriceOver);
 
   function filterByPriceOver() {
     let filtered = products.filter((product) => product.price > 600);
@@ -318,10 +319,11 @@ document.addEventListener("DOMContentLoaded", () => {
     activateCartButtons();
   }
 
-  let productPrice = document.querySelector(".product-price");
-  productPrice.addEventListener("click", filterByPrice);
+  let underSixHundred = document.querySelector(".undersixhundred");
+  underSixHundred.addEventListener("click", filterByPrice);
   function filterByPrice() {
     let filtered = products.filter((product) => product.price <= 600);
+
     renderProducts(".shop-container", filtered);
     activateCartButtons();
   }
@@ -330,26 +332,22 @@ document.addEventListener("DOMContentLoaded", () => {
   priceList.addEventListener("click", filterProductsByPrice);
 
   function filterProductsByPrice(event) {
-    let inputs = document.getElementsByTagName("input");
-    let input = event.target;
-    for (input of inputs) {
-      if (event.target === input && input.classList.contains("low-btn")) {
-        let filtered = [...products].sort((a, b) => a.price - b.price); //make a copy first before sorting/filtering.
-        // because.sort() mutates the original array (products) permanently!
+    let li = event.target;
 
-        renderProducts(".shop-container", filtered);
-        activateCartButtons();
-      } else if (
-        event.target === input &&
-        input.classList.contains("high-btn")
-      ) {
-        let filtered = [...products].sort((a, b) => b.price - a.price);
-        renderProducts(".shop-container", filtered);
-        activateCartButtons();
-      }
+    if (li.classList.contains("low-high")) {
+      let filtered = [...products].sort((a, b) => a.price - b.price); //make a copy first before sorting/filtering.
+      // because.sort() mutates the original array (products) permanently!
+
+      renderProducts(".shop-container", filtered);
+      activateCartButtons();
+    } else if (li.classList.contains("high-low")) {
+      let filtered = [...products].sort((a, b) => b.price - a.price);
+      renderProducts(".shop-container", filtered);
+      activateCartButtons();
     }
   }
 });
+
 /*     
    
 let categoryList=document.querySelector('.category-list');
