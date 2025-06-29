@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    image: "images/texturesuit.jpg",
+    image: "images/texturesuit.webp",
     image1: "images/texturesuit1.jpg",
     image2: "images/texturesuit2.jpg",
     name: "texture suit",
@@ -13,7 +13,7 @@ const products = [
 
   {
     id: 2,
-    image: "images/blacksuit.jpg",
+    image: "images/blacksuit.webp",
     name: "black suit",
     image1: "images/blacksuit1.jpg",
     image2: "images/blacksuit2.jpg",
@@ -25,7 +25,7 @@ const products = [
 
   {
     id: 3,
-    image: "images/greysuit.jpg",
+    image: "images/greysuit.webp",
     image1: "images/greysuit1.jpg",
     image2: "images/greysuit2.jpg",
     name: "Grey suit",
