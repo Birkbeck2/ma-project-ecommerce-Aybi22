@@ -37,7 +37,7 @@ const products = [
 
   {
     id: 5,
-    image: "images/specialoffer.jpg",
+    image: "images/specialoffer.webp",
     image1: "images/regularfitblue.jpg",
     image2: "images/regularfitblack.jpg",
     name: "regular fit suit",
@@ -50,7 +50,7 @@ const products = [
 
   {
     id: 6,
-    image: "images/greenslimsuit.jpg",
+    image: "images/greenslimsuit.webp",
     image1: "images/greenslimsuit1.jpg",
     image2: "images/greenslimsuit2.jpg",
     name: "green suit",
@@ -62,7 +62,7 @@ const products = [
 
   {
     id: 7,
-    image: "images/justcouturesuit.jpg",
+    image: "images/justcouturesuit.webp",
     image1: "images/justcouturesuit1.jpg",
     image2: "images/justcouturesuit2.jpg",
     name: "just couture",
@@ -74,7 +74,7 @@ const products = [
 
   {
     id: 8,
-    image: "images/navychechsuit.jpg",
+    image: "images/navychechsuit.webp",
     image1: "images/navychech1.jpg",
     image2: "images/navychech2.jpg",
     name: "navy suit",
@@ -86,7 +86,7 @@ const products = [
 
   {
     id: 9,
-    image: "images/stretchsuits.jpg",
+    image: "images/stretchsuits.webp",
 
     image1: "images/stretchsuit1.jpg",
     image2: "images/stretchsuit2.jpg",
@@ -99,7 +99,7 @@ const products = [
 
   {
     id: 10,
-    image: "images/velvetjacket.jpg",
+    image: "images/velvetjacket.webp",
     image1: "images/velvetjacket1.jpg",
     image2: "images/velvetjacket2.jpg",
     name: "velvet jacket",
@@ -111,7 +111,7 @@ const products = [
 
   {
     id: 12,
-    image: "images/greycheckjacket.jpg",
+    image: "images/greycheckjacket.webp",
     image1: "images/greysuit1.jpg",
     image2: "images/greysuit2.jpg",
     name: "grey check jacket",
@@ -123,7 +123,7 @@ const products = [
 
   {
     id: 13,
-    image: "images/navypanamasuit.jpg",
+    image: "images/navypanamasuit.webp",
     image1: "images/navypanamablue1.jpg",
     image2: "images/navypanamablue2.jpg",
     name: "navy panama suit",
@@ -135,7 +135,7 @@ const products = [
 
   {
     id: 14,
-    image: "images/blazerjacket.jpg",
+    image: "images/blazerjacket.webp",
     image1: "images/blazerjacket1.jpg",
     image2: "images/blazerjacket2.jpg",
     name: "blazer jacket",
@@ -147,7 +147,7 @@ const products = [
 
   {
     id: 15,
-    image: "images/stoneblazer.jpg",
+    image: "images/stoneblazer.webp",
     image1: "images/stoneblazer1.jpg",
     image2: "images/stoneblazer2.jpg",
     name: "stone blazer",
@@ -159,7 +159,7 @@ const products = [
 
   {
     id: 16,
-    image: "images/greypocketblazer.jpg",
+    image: "images/greypocketblazer.webp",
     image1: "images/greypocketblazer1.jpg",
     image2: "images/greypocketblazer2.jpg",
     name: "Grey pocket blazer",
@@ -171,7 +171,7 @@ const products = [
 
   {
     id: 17,
-    image: "images/textureblazer.jpg",
+    image: "images/textureblazer.webp",
     image1: "images/textureblazer1.jpg",
     image2: "images/textureblazer2.jpg",
     name: "texture blazer",
@@ -183,7 +183,7 @@ const products = [
 
   {
     id: 18,
-    image: "images/cowleathershoe.jpg",
+    image: "images/cowleathershoe.webp",
     image1: "images/cowleathershoe1.jpg",
     image2: "images/cowleathershoe2.jpg",
     name: "cow leathershoe",
@@ -195,7 +195,7 @@ const products = [
 
   {
     id: 19,
-    image: "images/oxfordleather2.jpg",
+    image: "images/oxfordleather2.webp",
     image1: "images/oxfordleather1.jpg",
     image2: "images/oxfordleather2.jpg",
     name: "oxford leather shoe",
@@ -207,7 +207,7 @@ const products = [
 
   {
     id: 20,
-    image: "images/fullbrogueoxford.jpg",
+    image: "images/fullbrogueoxford.webp",
     image1: "images/fullbrogueoxford1.jpg",
     image2: "images/fullbrogueoxford2.jpg",
     name: "full brogue oxford",
@@ -219,7 +219,7 @@ const products = [
 
   {
     id: 21,
-    image: "images/brogueoxford.jpg",
+    image: "images/brogueoxford.webp",
     image1: "images/brogueoxford1.jpg",
     image2: "images/brogueoxford2.jpg",
     name: "brogue oxford shoe",
@@ -231,7 +231,7 @@ const products = [
 
   {
     id: 22,
-    image: "images/wingtipoxford.jpg",
+    image: "images/wingtipoxford.webp",
     image1: "images/wingtipoxford1.jpg",
     image2: "images/wingtipoxford2.jpg",
     name: "wingtip oxford shoe",
@@ -243,7 +243,7 @@ const products = [
 
   {
     id: 23,
-    image: "images/topgraincowleather.jpg",
+    image: "images/topgraincowleather.webp",
     image1: "images/topgraincowleather1.jpg",
     image2: "images/topgraincowleather2.jpg",
     name: "top grain leather shoe",
@@ -255,7 +255,7 @@ const products = [
 
   {
     id: 24,
-    image: "images/greenherringboneblazer.jpg",
+    image: "images/greenherringboneblazer.webp",
     image1: "images/greenherringboneblazer1.jpg",
     image2: "images/greenherringboneblazer2.jpg",
     name: "green herringbone blazer",
@@ -267,7 +267,7 @@ const products = [
 
   {
     id: 25,
-    image: "images/greyminiblazer.jpg",
+    image: "images/greyminiblazer.webp",
     image1: "images/greyminiblazer1.jpg",
     image2: "images/greyminiblazer2.jpg",
     name: "grey mini blazer",
@@ -279,7 +279,7 @@ const products = [
 
   {
     id: 26,
-    image: "images/regularstretchsuit.jpg",
+    image: "images/regularstretchsuit.webp",
     image1: "images/regularstretchsuit1.jpg",
     image2: "images/regularstretchsuit2.jpg",
     name: "regular stretch suit",
@@ -291,7 +291,7 @@ const products = [
 
   {
     id: 27,
-    image: "images/navycheckedblazer.jpg",
+    image: "images/navycheckedblazer.webp",
     image1: "images/navycheckedblazer1.jpg",
     image2: "images/navycheckedblazer2.jpg",
     name: "navy checked blazer",
@@ -303,7 +303,7 @@ const products = [
 
   {
     id: 28,
-    image: "images/navyblazer.jpg",
+    image: "images/navyblazer.webp",
     image1: "images/navyblazer1.jpg",
     image2: "images/navyblazer2.jpg",
     name: "navy blazer",
@@ -315,7 +315,7 @@ const products = [
 
   {
     id: 29,
-    image: "images/tedbakersuit.jpg",
+    image: "images/tedbakersuit.webp",
     image1: "images/tedbaker1.jpg",
     image2: "images/tedbaker2.jpg",
     name: "ted baker suit",
@@ -327,7 +327,7 @@ const products = [
 
   {
     id: 30,
-    image: "images/tailoredfitlinensuit.jpg",
+    image: "images/tailoredfitlinensuit.webp",
     image1: "images/tailoredfitlinen1.jpg",
     image2: "images/tailoredfitlinen2.jpg",
     name: "linen suit",
