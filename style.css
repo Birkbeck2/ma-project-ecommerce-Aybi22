@@ -2829,7 +2829,7 @@ p{
   /* styles specifically for phones smaller or equal to 540px */
 
 
-@media screen and (max-width:540px){
+@media screen and (max-width:600px){
 
 .list-wrapper{
     grid-template-columns:1fr;
