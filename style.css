@@ -2826,8 +2826,10 @@ p{
 
 }
 
-@media (max-width: 540px) {
   /* styles specifically for phones smaller or equal to 540px */
+
+
+@media screen and (max-width:540px){
 
 .list-wrapper{
     grid-template-columns:1fr;
@@ -2846,9 +2848,6 @@ p{
 }
 
 }
-
-
-
 
 
 
