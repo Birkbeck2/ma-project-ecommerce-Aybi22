@@ -2758,6 +2758,9 @@ p{
    
    
 }
+body{
+    background-color:pink;
+}
 
 .product-display {
     flex-direction: row;
@@ -2822,14 +2825,16 @@ p{
     height: 100%;
     object-fit: cover;
   }
-
+h2{
+    font-size:2rem;
+}
 
 }
 
   /* styles specifically for phones smaller or equal to 540px */
 
 
-@media screen and (max-width:800px){
+@media screen and (max-width:540px){
 
 .list-wrapper{
     grid-template-columns:1fr;
