@@ -67,6 +67,7 @@ h1{
     font-family:roboto;
     margin-top:33px;
     
+    
 
 }
 li.phone,li.mail{
@@ -107,7 +108,8 @@ h2{
     text-transform: capitalize;
     min-height:1rem;
     line-height:1.6;
-    font-size:3.5rem;
+    font-size:3rem;
+    text-transform:uppercase;
     
    }
    
