@@ -2844,7 +2844,8 @@ p{
   display:flex;
   flex-direction: column;
   margin:auto;
-
+  justify-content: center;
+  place-items: center;
 }
 
 }
