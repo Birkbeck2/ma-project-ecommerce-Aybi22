@@ -4,6 +4,8 @@
     --champagne:#EEE0CB;
     --cambridge-blue:#839788;
    --white:#FFFFFF;
+   --section-padding:40px 20px;
+   --section-margin:1rem;
 }
 /*general style*/
 *{
@@ -39,11 +41,7 @@
      
 
    
-   #home section{
-   
-   padding:2rem;
-    width:100%;
-   } 
+ 
   
   
    
@@ -99,12 +97,12 @@ body{
 
 
 h2{
-    text-decoration:underline;
+    
     text-decoration-color: var(--champagne);
     text-decoration-thickness:4px;
     text-underline-offset: 19px;
     text-align:center;
-    padding:21px;
+   
     text-transform: capitalize;
     min-height:1rem;
     line-height:1.6;
@@ -1014,9 +1012,7 @@ section{
    
   }
 
-.section-title{
-    margin-top:97px;
-}
+
 
 
 h4{
@@ -1413,7 +1409,7 @@ li.phone{
 #about{
     display:flex;
     flex-direction:column;
-    gap:30px;
+  
 }
 
 
@@ -1586,6 +1582,7 @@ object-fit:cover;
     gap:22px;
     align-items:center;
     padding-bottom:83px;
+    margin:auto;
     
     
     
@@ -2564,12 +2561,6 @@ form .send-btn{
 }
 
 
-#contact,#home,#about{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    gap:44px;
-}
 
 #shop footer{
     margin-top:43px;
@@ -2737,6 +2728,27 @@ p{
     cursor:pointer;
 }
 
+section{
+   padding:var(--section-padding);
+   margin-bottom:var(--section-margin);
+}
+
+/*  #home section{
+   
+   padding:2rem;
+    width:100%;
+   } 
+
+
+
+
+#contact,#home,#about{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:44px;
+}
+    */
 
 /*media queries*/
 
