@@ -2392,17 +2392,19 @@ form .send-btn{
 
 
 .section-text{
-    font-size:2rem;
+    font-size:1.3rem;
     text-transform:uppercase;
     text-align:center;
-    max-width:600px;
-    font-size:15px;
+    max-width:800px;
+    font-weight:800px;
     margin:auto;
-    text-transform:capitalize;
+    text-transform:uppercase;
     line-height:40px;
     font-family:verdana;
     color:var(--black);
     padding:22px;
+    margin-bottom:1rem;
+  
     
     }
 
