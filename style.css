@@ -393,6 +393,8 @@ a.btn{
        width:100%;
        display:block;
        height:auto;
+     
+      
     }
    
    
@@ -628,7 +630,8 @@ header p{
     justify-content:center;
     align-items:center;
     width:100%;
-   
+     margin-bottom:var(--section-margin);
+    padding-top:3rem;
 }
 
 .list-wrapper{
@@ -674,6 +677,7 @@ header p{
         margin:auto;
         background:linear-gradient(to right,#EEE0CB,#888074);
         padding:33px;
+        padding:var(--section-padding);
         margin-bottom: 0;
      
      }
@@ -2320,28 +2324,36 @@ cursor:pointer;
 
 .info-box{
     max-width:500px;
-    margin-top:60px;
+    
+  display:flex;
+  flex-direction:column;
+}
+   
    
     
-}
+
 
 .contact-wrapper{
     
     display:flex;
+    align-items: center;
   flex-wrap:wrap;
-  
+  max-width:1200px;
     gap:22px;
    justify-content: center;
-  
-    margin-bottom:74px;
+  margin:auto;
+ 
+   
 }
 
-
-
+.info-box h3{
+    font-size:1.3rem;
+}
 
 .info-box p{
-    font-size:12px;
-}
+    font-size:1rem;
+    line-height:2rem;
+}   
 
 #contact.main-text{
     padding:22px;
@@ -2361,6 +2373,7 @@ form{
     background:var(--cambridge-blue);
     padding:33px;
     width:100%;
+   
 }
 .form-section{
    max-width:600px;
@@ -2758,9 +2771,9 @@ section{
 /*media queries*/
 
 
-
-
-
+p{
+    font-size:0.9rem;
+}
 
 @media screen and (min-width:768px) and (max-width:1203px){
     .shop-container,.suit-container,.shoe-container,.blazer-container{
