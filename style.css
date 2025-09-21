@@ -851,6 +851,9 @@ gap:33px;
 .main-text p{
     max-width:600px;
     width:100%;
+    font-size:1.3rem;
+    text-transform:uppercase;
+    line-height:2.5rem;
 }
 
 .product-name{
