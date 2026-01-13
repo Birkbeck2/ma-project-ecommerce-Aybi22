@@ -283,7 +283,7 @@ const detail = () => {
     <div class="item-container">
        <article class="section-list">
         <h3>suit</h3>
-        <a href="/details.html?id=10">
+        <a href="details.html?id=10">
     <div class="image">
         <img src='images/velvetjacket.jpg' width="300"  height="300"  alt="velvet jacket image">
     </div>
@@ -296,14 +296,14 @@ const detail = () => {
         </div>
  
     </a>
-     <a class="btn"  href="/details.html?id=10">view product</a>
+     <a class="btn"  href="details.html?id=10">view product</a>
     
 </article>
     
     
 <article class="section-list">
     <h3>suit</h3>
-   <a href="/details.html?id=12">
+   <a href="details.html?id=12">
     <div class="image">
         
         
@@ -318,7 +318,7 @@ const detail = () => {
     
     </a>
 
- <a class="btn"  href="/details.html?id=12">view product</a>
+ <a class="btn"  href="details.html?id=12">view product</a>
 
 
    </article> 
@@ -341,7 +341,7 @@ const detail = () => {
         </div>
     </a>
         
-        <a class="btn"  href="/details.html?id=13">view product</a> 
+        <a class="btn"  href="details.html?id=13">view product</a> 
         
     
     </article>
@@ -350,7 +350,7 @@ const detail = () => {
     <article class="section-list">
         <h3>suit</h3>
     
-    <a href="/details.html?id=14">
+    <a href="details.html?id=14">
     <div class="image">
         <img src='images/blazerjacket.jpg' width="300"  height="300" alt="blazer jacket image">
     </div>
@@ -363,7 +363,7 @@ const detail = () => {
         </div>
     
     </a>
-     <a class="btn"  href="/details.html?id=14">view product</a>
+     <a class="btn"  href="details.html?id=14">view product</a>
 </article>
     </div>
     
