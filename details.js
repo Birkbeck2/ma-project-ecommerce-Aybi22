@@ -329,7 +329,7 @@ const detail = () => {
     <article class="section-list">
         <h3>suit</h3>
     
-      <a href="/details.html?id=13">
+      <a href="details.html?id=13">
         <div class="image">
         <img src='images/navypanamasuit.jpg' width="300"  height="300"  alt="navy panama suit image">
     </div>
