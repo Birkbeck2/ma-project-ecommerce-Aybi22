@@ -308,6 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  
   let overSixHundred = document.querySelector(".oversixhundred");
   console.log(overSixHundred);
   overSixHundred.addEventListener("click", filterByPriceOver);
