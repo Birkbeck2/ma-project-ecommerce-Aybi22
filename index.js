@@ -26,6 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
   activateCartButtons();
 });
 
+if (e.target.closest(".search-btn")) {
+  findItem(e);
+  renderProducts("shopContainer", filtered);
+}
+
 //This function is called when the page loads to display the cart items and update the total price.
 
 fetch("./template.html")
@@ -258,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (categoryId) {
       document.querySelector(".category-title").textContent = categoryId;
       const filtered = products.filter(
-        (product) => product.category === categoryId
+        (product) => product.category === categoryId,
       );
 
       renderProducts(".shop-container", filtered);
@@ -308,7 +313,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  
   let overSixHundred = document.querySelector(".oversixhundred");
   console.log(overSixHundred);
   overSixHundred.addEventListener("click", filterByPriceOver);
@@ -566,3 +570,14 @@ function removeItems(productId) {
 }
 
 export { addToCart };
+
+let searchInput = document.querySelector("search");
+function findItem() {
+  let filteredItems = products.filter((product) => {
+    if (
+      product.name.toLowerCase().includes(searchInput.value.toLowerCase().trim)
+    )
+      return true;
+    return false;
+  });
+}
