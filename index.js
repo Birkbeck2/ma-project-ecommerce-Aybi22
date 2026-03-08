@@ -25,7 +25,7 @@ function categoryTotalPrice() {
     (currentTotal, amount) => currentTotal + amount,
   );
   let priceBox = document.querySelector(".category-box");
-  priceBox.textContent = categoryTotal;
+  priceBox.textContent = "£" + categoryTotal;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
