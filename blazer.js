@@ -3,6 +3,7 @@ function filteredByCategoryBlazer(category) {
   let filteredBlazerProducts = products.filter(
     (product) => product.category === category,
   );
+
   let blazerContainer = document.querySelector(".blazer-container");
 
   blazerContainer.innerHTML = filteredBlazerProducts

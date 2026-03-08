@@ -10,34 +10,27 @@ import { filteredByCategoryRegular } from "./suit.js";
 
 detail();
 
+let filtered = products;
+
 document.addEventListener("DOMContentLoaded", () => {
   //DOMContentLoaded only fires once,
   filteredByCategoryBlazer("blazer");
+
   activateCartButtons();
-  productNum();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   filteredByCategoryLeatherShoe("leathershoe");
   activateCartButtons();
-  productNum();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   filteredByCategoryRegular("regular");
   activateCartButtons();
-  productNum();
 });
 
 //This function is called when the page loads to display the cart items and update the total price.
-document.addEventListener("click", (e) => {
-  if (e.target.closest(".search-btn")) {
-    document.body.style.backgroundColor = "pink";
-    findItem();
-    filteredByCategoryBlazer();
-    renderProducts(".shop-container", filtered);
-  }
-});
+
 fetch("./template.html")
   .then((response) => response.text())
   .then((html) => {
@@ -267,13 +260,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (categoryId) {
       document.querySelector(".category-title").textContent = categoryId;
-      const filtered = products.filter(
-        (product) => product.category === categoryId,
-      );
+      filtered = products.filter((product) => product.category === categoryId);
 
       renderProducts(".shop-container", filtered);
 
       activateCartButtons();
+      productNum();
     }
   }
 
@@ -306,6 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   activateCartButtons();
+  productNum();
 
   function activateCartButtons() {
     let btn = document.querySelectorAll("a.btn");
@@ -323,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
   overSixHundred.addEventListener("click", filterByPriceOver);
 
   function filterByPriceOver() {
-    let filtered = products.filter((product) => product.price > 600);
+    filtered = products.filter((product) => product.price > 600);
 
     renderProducts(".shop-container", filtered);
     activateCartButtons();
@@ -333,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let underSixHundred = document.querySelector(".undersixhundred");
   underSixHundred.addEventListener("click", filterByPrice);
   function filterByPrice() {
-    let filtered = products.filter((product) => product.price <= 600);
+    filtered = products.filter((product) => product.price <= 600);
 
     renderProducts(".shop-container", filtered);
     activateCartButtons();
@@ -347,7 +340,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let li = event.target;
 
     if (li.classList.contains("low-high")) {
-      let filtered = [...products].sort((a, b) => a.price - b.price); //make a copy first before sorting/filtering.
+      filtered = [...products].sort((a, b) => a.price - b.price); //make a copy first before sorting/filtering.
       // because.sort() mutates the original array (products) permanently!
 
       renderProducts(".shop-container", filtered);
@@ -356,6 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let filtered = [...products].sort((a, b) => b.price - a.price);
       renderProducts(".shop-container", filtered);
       activateCartButtons();
+      productNum();
     }
   }
 });
@@ -578,6 +572,8 @@ function removeItems(productId) {
 
 export { addToCart };
 
+/*
+
 let searchInput = document.getElementById("search");
 
 function findItem() {
@@ -594,7 +590,8 @@ function findItem() {
 
   return filtered;
 }
-
+*/
+/*
 document.addEventListener("click", (e) => {
   if (e.target.closest(".search-btn")) {
     const filtered = findItem();
@@ -602,8 +599,14 @@ document.addEventListener("click", (e) => {
     renderProducts(".shop-container", filtered);
   }
 });
+*/
 function productNum() {
   let numBox = document.querySelector(".num-box");
   let productNumber = filtered.length;
-  numBox.textContent = productNumber;
+  numBox.textContent += productNumber;
 }
+/*
+function productNum() {
+  document.querySelector(".num-box").textContent = filtered.length;
+}
+*/
