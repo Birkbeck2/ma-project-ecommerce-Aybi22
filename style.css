@@ -2170,6 +2170,7 @@ textarea:focus-within{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     max-width:1200px;
+      row-gap:2rem;
     width:100%;
   margin:0 auto;
    
