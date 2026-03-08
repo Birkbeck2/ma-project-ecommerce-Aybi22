@@ -11,22 +11,41 @@ import { filteredByCategoryRegular } from "./suit.js";
 detail();
 
 let filtered = products;
+productNum();
+function productNum() {
+  let numBox = document.querySelector(".num-box");
+
+  let productNumber = filtered.length;
+  numBox.innerHTML = productNumber + " items";
+}
+
+function categoryTotalPrice() {
+  let categoryPrice = filtered.map((product) => product.price);
+  let categoryTotal = categoryPrice.reduce(
+    (currentTotal, amount) => currentTotal + amount,
+  );
+  let priceBox = document.querySelector(".category-box");
+  priceBox.textContent = categoryTotal;
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   //DOMContentLoaded only fires once,
   filteredByCategoryBlazer("blazer");
-
+  productNum();
   activateCartButtons();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   filteredByCategoryLeatherShoe("leathershoe");
+  productNum();
+
   activateCartButtons();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   filteredByCategoryRegular("regular");
   activateCartButtons();
+  productNum();
 });
 
 //This function is called when the page loads to display the cart items and update the total price.
@@ -249,6 +268,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // renderProducts with full products array immediately.
 
   renderProducts(".shop-container", products);
+  productNum();
+  categoryTotalPrice();
   activateCartButtons();
 
   let categoryList = document.querySelector(".category-list");
@@ -263,9 +284,9 @@ document.addEventListener("DOMContentLoaded", () => {
       filtered = products.filter((product) => product.category === categoryId);
 
       renderProducts(".shop-container", filtered);
-
-      activateCartButtons();
       productNum();
+      categoryTotalPrice();
+      activateCartButtons();
     }
   }
 
@@ -298,7 +319,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   activateCartButtons();
-  productNum();
 
   function activateCartButtons() {
     let btn = document.querySelectorAll("a.btn");
@@ -319,8 +339,9 @@ document.addEventListener("DOMContentLoaded", () => {
     filtered = products.filter((product) => product.price > 600);
 
     renderProducts(".shop-container", filtered);
-    activateCartButtons();
     productNum();
+    categoryTotalPrice();
+    activateCartButtons();
   }
 
   let underSixHundred = document.querySelector(".undersixhundred");
@@ -329,8 +350,9 @@ document.addEventListener("DOMContentLoaded", () => {
     filtered = products.filter((product) => product.price <= 600);
 
     renderProducts(".shop-container", filtered);
-    activateCartButtons();
     productNum();
+    categoryTotalPrice();
+    activateCartButtons();
   }
 
   let priceList = document.querySelector(".price-list");
@@ -344,12 +366,14 @@ document.addEventListener("DOMContentLoaded", () => {
       // because.sort() mutates the original array (products) permanently!
 
       renderProducts(".shop-container", filtered);
+      productNum();
+      categoryTotalPrice();
       activateCartButtons();
     } else if (li.classList.contains("high-low")) {
       let filtered = [...products].sort((a, b) => b.price - a.price);
       renderProducts(".shop-container", filtered);
-      activateCartButtons();
       productNum();
+      activateCartButtons();
     }
   }
 });
@@ -600,11 +624,7 @@ document.addEventListener("click", (e) => {
   }
 });
 */
-function productNum() {
-  let numBox = document.querySelector(".num-box");
-  let productNumber = filtered.length;
-  numBox.textContent += productNumber;
-}
+
 /*
 function productNum() {
   document.querySelector(".num-box").textContent = filtered.length;

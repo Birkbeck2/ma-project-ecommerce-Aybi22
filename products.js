@@ -11,7 +11,7 @@ const products = [
     quantity: 1,
     category: "regular",
     h3: "regular",
-    color:"beige"
+    color: "beige",
   },
 
   {
@@ -25,7 +25,7 @@ const products = [
     quantity: 1,
     category: "regular",
     h3: "regular",
-    color:"black"
+    color: "black",
   },
 
   {
@@ -39,7 +39,7 @@ const products = [
     quantity: 1,
     category: "regular",
     h3: "regular",
-    color:"grey"
+    color: "grey",
   },
 
   {
@@ -54,7 +54,7 @@ const products = [
 
     category: "regular",
     h3: "regular",
-    color:"black"
+    color: "black",
   },
 
   {
@@ -68,7 +68,7 @@ const products = [
     quantity: 1,
     category: "regular",
     h3: "regular",
-    color:"green"
+    color: "green",
   },
 
   {
@@ -82,7 +82,7 @@ const products = [
     quantity: 1,
     category: "regular",
     h3: "regular",
-    color:"blue"
+    color: "blue",
   },
 
   {
@@ -96,7 +96,7 @@ const products = [
     quantity: 1,
     category: "regular",
     h3: "regular",
-    color:"blue"
+    color: "blue",
   },
 
   {
@@ -110,7 +110,7 @@ const products = [
     quantity: 1,
     category: "regular",
     h3: "regular",
-    color:"blue"
+    color: "blue",
   },
 
   {
@@ -124,7 +124,7 @@ const products = [
     quantity: 1,
     category: "regular",
     h3: "regular",
-    color:"red";
+    color: "red",
   },
 
   {
@@ -138,7 +138,7 @@ const products = [
     quantity: 1,
     category: "regular",
     h3: "regular",
-    color:"grey"
+    color: "grey",
   },
 
   {
@@ -152,7 +152,7 @@ const products = [
     quantity: 1,
     category: "regular",
     h3: "regular",
-    color:"navy"
+    color: "navy",
   },
 
   {
