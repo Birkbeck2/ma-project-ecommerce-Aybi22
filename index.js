@@ -26,13 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
   activateCartButtons();
 });
 
-if (e.target.closest(".search-btn")) {
-  findItem(e);
-  renderProducts("shopContainer", filtered);
-}
-
 //This function is called when the page loads to display the cart items and update the total price.
-
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".search-btn")) {
+    document.body.style.backgroundColor = "pink";
+    findItem();
+    filteredByCategoryBlazer();
+    renderProducts(".shop-container", filtered);
+  }
+});
 fetch("./template.html")
   .then((response) => response.text())
   .then((html) => {
@@ -571,13 +573,27 @@ function removeItems(productId) {
 
 export { addToCart };
 
-let searchInput = document.querySelector("search");
+let searchInput = document.getElementById("search");
+
 function findItem() {
-  let filteredItems = products.filter((product) => {
+  const filtered = products.filter((product) => {
     if (
-      product.name.toLowerCase().includes(searchInput.value.toLowerCase().trim)
-    )
+      product.name
+        .toLowerCase()
+        .includes(searchInput.value.toLowerCase().trim())
+    ) {
       return true;
+    }
     return false;
   });
+
+  return filtered;
 }
+
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".search-btn")) {
+    const filtered = findItem();
+
+    renderProducts(".shop-container", filtered);
+  }
+});
