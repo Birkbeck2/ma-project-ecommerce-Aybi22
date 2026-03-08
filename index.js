@@ -14,16 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
   //DOMContentLoaded only fires once,
   filteredByCategoryBlazer("blazer");
   activateCartButtons();
+  productNum();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   filteredByCategoryLeatherShoe("leathershoe");
   activateCartButtons();
+  productNum();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   filteredByCategoryRegular("regular");
   activateCartButtons();
+  productNum();
 });
 
 //This function is called when the page loads to display the cart items and update the total price.
@@ -324,6 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderProducts(".shop-container", filtered);
     activateCartButtons();
+    productNum();
   }
 
   let underSixHundred = document.querySelector(".undersixhundred");
@@ -333,6 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderProducts(".shop-container", filtered);
     activateCartButtons();
+    productNum();
   }
 
   let priceList = document.querySelector(".price-list");
@@ -597,3 +602,8 @@ document.addEventListener("click", (e) => {
     renderProducts(".shop-container", filtered);
   }
 });
+function productNum() {
+  let numBox = document.querySelector(".num-box");
+  let productNumber = filtered.length;
+  numBox.textContent = productNumber;
+}

@@ -1,15 +1,13 @@
+import products from "./products.js";
+function filteredByCategoryBlazer(category) {
+  let filteredBlazerProducts = products.filter(
+    (product) => product.category === category,
+  );
+  let blazerContainer = document.querySelector(".blazer-container");
 
-import products from'./products.js'
- function filteredByCategoryBlazer(category){
- 
-    let filteredBlazerProducts= products.filter(product=>product.category===category);
-    let blazerContainer=document.querySelector('.blazer-container');
-    
-    
-     
-    blazerContainer.innerHTML=
-    filteredBlazerProducts.map(product=>
-       
+  blazerContainer.innerHTML = filteredBlazerProducts
+    .map(
+      (product) =>
         `
         <article class="section-list">
         <h3>${product.h3}</h3>
@@ -32,9 +30,9 @@ import products from'./products.js'
         
     </article>
                
-    `).join(''); 
-    
-    }
+    `,
+    )
+    .join("");
+}
 
-   export {filteredByCategoryBlazer}
-  
+export { filteredByCategoryBlazer };
