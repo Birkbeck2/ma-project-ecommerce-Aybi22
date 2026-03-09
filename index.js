@@ -18,13 +18,15 @@ function categoryTotalPrice() {
     (currentTotal, amount) => currentTotal + amount,
   );
   let priceBox = document.querySelector(".category-box");
-  priceBox.textContent = "£" + categoryTotal;
+  priceBox.textContent = "Total price: " + "£" + categoryTotal;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   //DOMContentLoaded only fires once,
   filteredByCategoryBlazer("blazer");
   productNum();
+
+  categoryTotalPrice();
   activateCartButtons();
 });
 
@@ -32,11 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
   filteredByCategoryLeatherShoe("leathershoe");
   productNum();
 
+  categoryTotalPrice();
   activateCartButtons();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   filteredByCategoryRegular("regular");
+
+  categoryTotalPrice();
   activateCartButtons();
   productNum();
 });
@@ -308,6 +313,9 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
          `;
       container.appendChild(newPara);
+      productNum();
+
+      categoryTotalPrice();
     });
   }
 

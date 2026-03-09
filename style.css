@@ -73,7 +73,7 @@ li.phone,li.mail{
 }
 
 .circle{
-    font-size:11px;
+    font-size:7px;
     color:var(--cambridge-blue);
     margin-left:13px;
     white-space: nowrap;
@@ -847,9 +847,7 @@ gap:33px;
 
 .price-container{
     display:flex;
-   
-    border-right: 1px solid gainsboro;
-   padding:7px;
+    padding:7px;
     text-transform:capitalize;
 }
 
@@ -1545,7 +1543,10 @@ object-fit:cover;
   }
 
   
-
+.num-box{
+    font-size:1rem;
+    font-weight:700;
+}
 
 .seller-wrapper a.btn{
     
