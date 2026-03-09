@@ -11,13 +11,6 @@ import { filteredByCategoryRegular } from "./suit.js";
 detail();
 
 let filtered = products;
-productNum();
-function productNum() {
-  let numBox = document.querySelector(".num-box");
-
-  let productNumber = filtered.length;
-  numBox.innerHTML = productNumber + " items";
-}
 
 function categoryTotalPrice() {
   let categoryPrice = filtered.map((product) => product.price);
@@ -630,3 +623,10 @@ function productNum() {
   document.querySelector(".num-box").textContent = filtered.length;
 }
 */
+
+function productNum() {
+  let numBox = document.querySelector(".num-box");
+
+  let productNumber = filtered.length;
+  numBox.innerHTML = productNumber + " items";
+}
