@@ -2162,13 +2162,16 @@ textarea:focus-within{
     text-align:center;
     margin:auto;
     font-size:13px;
-    margin-bottom: 33px;
+    margin-bottom:1rem;
   } 
-  
+  .info-box h3{
+    font-size:.0.9rem;
+    width:75%;
+  }
  
   .shop-container-wrapper{
    
-    margin-top:33px;
+    margin-top:2rem;
   }
   
   
@@ -2357,9 +2360,7 @@ cursor:pointer;
    
 }
 
-.info-box h3{
-    font-size:1.3rem;
-}
+
 
 .info-box p{
     font-size:1rem;
@@ -3064,11 +3065,32 @@ body,html{
         .tablet-container{
             grid-template-columns: 1fr;
         }
+
+        .category-title{
+            margin-bottom:1rem;
+        }
      .main-text{
     
         display:flex;
         flex-direction:column;
         align-items:center;
+     }
+     section{
+        padding:1.5rem,0.5rem;
+        margin:0;
+     }
+
+     .product-list section{
+        margin:0;
+        padding:0;
+     }
+     .shop-container-wrapper{
+        margin:0;
+     }
+
+     .shop-container .image, .shoe-container .image{
+       
+        padding-bottom:1rem;
      }
      .main-text h1{
         font-size:3rem;
@@ -3115,7 +3137,15 @@ body,html{
         white-space: nowrap;
      }
      
-     
+    .product-list h2{
+        white-space: wrap;
+        
+    }
+     .product-list h2{
+       display:flex;
+       flex-direction:column;
+     }
+
 .filter-section-wrapper{
     display: flex;
     flex-direction: column;
@@ -3125,10 +3155,10 @@ body,html{
 
 .price-list li, .category-list li{
     
-    font-size:0.7rem;
+    font-size:0.9rem;
 }
 .price-container p{
-    font-size:0.6rem;
+    font-size:0.8rem;
 }       
        .container{
         grid-template-columns: 1fr;
@@ -3291,10 +3321,7 @@ body,html{
   }
  
 
-  .info-box{
-    margin:13px;
-   
-}
+
 
   
 .ratings{
