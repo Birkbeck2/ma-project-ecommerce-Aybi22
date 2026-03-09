@@ -2008,7 +2008,7 @@ margin: auto;
 
 
 .resp{
-    max-width:70%;
+   
     width:100%;
     font-size:13px;
     padding:9px;
@@ -2031,9 +2031,9 @@ margin: auto;
     }
 
 .q-container{
-      padding:73px;
+     
       max-width:100%;
-      margin:auto;
+     
       
       
     }
@@ -3069,6 +3069,15 @@ body,html{
         .category-title{
             margin-bottom:1rem;
         }
+        q.container{
+            padding:2rem;
+        }
+
+        .resp{
+            width:100%;
+            
+           
+        }
      .main-text{
     
         display:flex;
@@ -3104,6 +3113,8 @@ body,html{
      }
      .section-text{
         font-size:1rem;
+        padding:1rem;
+        margin-bottom: 0.5rem;
      }
 
      .image-text h3{
