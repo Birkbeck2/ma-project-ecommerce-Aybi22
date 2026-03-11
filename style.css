@@ -2002,24 +2002,30 @@ margin: auto;
 .item-container .image{
  flex:0 0 24%;
    }
- .search-section{
-    max-width:100%;
-    width:100%;
-    
- }
+
+.search-section{
+    display:flex;
+    justify-content: center;
+    margin-bottom:1rem;
+   
+}
+
 #search{
-    padding:1rem;
-    max-width:500px;
-    width:100%;
-    margin:auto;
+   padding:0.7rem;
+   width:500px;
    }
 
    .search-btn{
-    padding:1rem;
+    margin:0;
+    padding:0;
     border:none;
     background:var(--cambridge-blue);
     color:black;
     cursor:pointer;
+    padding:0.7rem; 
+    width:150px;
+    font-weight:900;
+    text-transform: capitalize;
    }
 
 .resp{
