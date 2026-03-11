@@ -6,7 +6,7 @@ const products = [
     image1: "images/texturesuit1.jpg",
     image2: "images/texturesuit2.jpg",
     alt: " A man wearing a tan suit and a white shirt",
-    name: "texture suit",
+    name: "texture",
     price: 250,
     quantity: 1,
     category: "regular",

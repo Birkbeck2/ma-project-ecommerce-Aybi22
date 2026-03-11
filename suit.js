@@ -1,12 +1,10 @@
 import products from "./products.js";
 
 function filteredByCategoryRegular(category) {
-  let filteredRegularProducts = products.filter(
-    (product) => product.category === category
-  );
+  let filtered = products.filter((product) => product.category === category);
   let regularContainer = document.querySelector(".suit-container");
-
-  regularContainer.innerHTML = filteredRegularProducts
+  if (!regularContainer) return;
+  regularContainer.innerHTML = filtered
     .map(
       (product) =>
         `
@@ -31,7 +29,7 @@ function filteredByCategoryRegular(category) {
         
     </article>
                
-    `
+    `,
     )
     .join("");
 }

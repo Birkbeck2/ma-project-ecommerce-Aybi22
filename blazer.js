@@ -1,8 +1,10 @@
 import products from "./products.js";
+
 function filteredByCategoryBlazer(category) {
   let filtered = products.filter((product) => product.category === category);
 
   let blazerContainer = document.querySelector(".blazer-container");
+  if (!blazerContainer) return; //prevent the error
 
   blazerContainer.innerHTML = filtered
     .map(

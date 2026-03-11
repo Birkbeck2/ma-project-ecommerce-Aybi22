@@ -1,11 +1,9 @@
 import products from "./products.js";
 function filteredByCategoryLeatherShoe(category) {
-  let filteredBlazerProducts = products.filter(
-    (product) => product.category === category
-  );
+  let filtered = products.filter((product) => product.category === category);
   let shoeContainer = document.querySelector(".shoe-container");
-
-  shoeContainer.innerHTML = filteredBlazerProducts
+  if (!shoeContainer) return;
+  shoeContainer.innerHTML = filtered
     .map(
       (product) =>
         `
@@ -30,7 +28,7 @@ function filteredByCategoryLeatherShoe(category) {
         
     </article>
                
-    `
+    `,
     )
     .join("");
 }

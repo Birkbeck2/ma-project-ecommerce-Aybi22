@@ -2004,8 +2004,18 @@ margin: auto;
 .item-container .image{
  flex:0 0 24%;
    }
- 
-
+ .search-section{
+    max-width:100%;
+    width:100%;
+    
+ }
+#search{
+    padding:1rem;
+    max-width:500px;
+    width:100%;
+    margin:auto;
+   
+}
 
 .resp{
    

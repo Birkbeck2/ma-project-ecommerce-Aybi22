@@ -16,6 +16,7 @@ function categoryTotalPrice() {
   let categoryPrice = filtered.map((product) => product.price);
   let categoryTotal = categoryPrice.reduce(
     (currentTotal, amount) => currentTotal + amount,
+    0,
   );
   let priceBox = document.querySelector(".category-box");
   priceBox.textContent = "Total price: " + "£" + categoryTotal;
@@ -24,6 +25,7 @@ function categoryTotalPrice() {
 document.addEventListener("DOMContentLoaded", () => {
   //DOMContentLoaded only fires once,
   filteredByCategoryBlazer("blazer");
+
   productNum();
 
   categoryTotalPrice();
@@ -44,6 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
   categoryTotalPrice();
   activateCartButtons();
   productNum();
+});
+
+let searchInput = document.getElementById("search");
+searchInput.addEventListener("input", () => {
+  findItem();
+  renderProducts("shop-container", filtered);
+
+  categoryTotalPrice();
 });
 
 //This function is called when the page loads to display the cart items and update the total price.
@@ -261,6 +271,51 @@ function showNext() {
   }
 }
 
+function renderProducts(containerSelector, filtered) {
+  let container = document.querySelector(containerSelector);
+
+  container.innerHTML = ""; // Clear any old content
+  filtered.forEach((product) => {
+    let newPara = document.createElement("div");
+    newPara.classList.add("section-list");
+    newPara.innerHTML = `
+  
+<a href="details.html?id=${product.id}">
+      <div class="image">
+      <img src= ${product.image} alt=${product.alt}>
+      </div>
+      </a>
+      <div class="item-title">
+         <div class='item-name'>${product.name}</div>
+         <div class='item-price'data-id=${product.price}>£${product.price}</div>
+      </div>    
+        
+      
+       <a  href="#" class="btn" data-id=${product.id}>add to cart</a>
+      
+      
+      </div>
+         `;
+    container.appendChild(newPara);
+    productNum();
+
+    categoryTotalPrice();
+  });
+}
+
+activateCartButtons();
+
+function activateCartButtons() {
+  let btn = document.querySelectorAll("a.btn");
+  btn.forEach((btns) => {
+    btns.addEventListener("click", (e) => {
+      const productId = e.target.dataset.id;
+
+      addToCart(productId);
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   //At page load (DOMContentLoaded) →
   // renderProducts with full products array immediately.
@@ -286,50 +341,6 @@ document.addEventListener("DOMContentLoaded", () => {
       categoryTotalPrice();
       activateCartButtons();
     }
-  }
-
-  function renderProducts(containerSelector, filtered) {
-    let container = document.querySelector(containerSelector);
-    container.innerHTML = ""; // Clear any old content
-    filtered.forEach((product) => {
-      let newPara = document.createElement("div");
-      newPara.classList.add("section-list");
-      newPara.innerHTML = `
-  
-<a href="details.html?id=${product.id}">
-      <div class="image">
-      <img src= ${product.image} alt=${product.alt}>
-      </div>
-      </a>
-      <div class="item-title">
-         <div class='item-name'>${product.name}</div>
-         <div class='item-price'data-id=${product.price}>£${product.price}</div>
-      </div>    
-        
-      
-       <a  href="#" class="btn" data-id=${product.id}>add to cart</a>
-      
-      
-      </div>
-         `;
-      container.appendChild(newPara);
-      productNum();
-
-      categoryTotalPrice();
-    });
-  }
-
-  activateCartButtons();
-
-  function activateCartButtons() {
-    let btn = document.querySelectorAll("a.btn");
-    btn.forEach((btns) => {
-      btns.addEventListener("click", (e) => {
-        const productId = e.target.dataset.id;
-
-        addToCart(productId);
-      });
-    });
   }
 
   let overSixHundred = document.querySelector(".oversixhundred");
@@ -378,7 +389,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-
 /*     
    
 let categoryList=document.querySelector('.category-list');
@@ -598,35 +608,6 @@ function removeItems(productId) {
 export { addToCart };
 
 /*
-
-let searchInput = document.getElementById("search");
-
-function findItem() {
-  const filtered = products.filter((product) => {
-    if (
-      product.name
-        .toLowerCase()
-        .includes(searchInput.value.toLowerCase().trim())
-    ) {
-      return true;
-    }
-    return false;
-  });
-
-  return filtered;
-}
-*/
-/*
-document.addEventListener("click", (e) => {
-  if (e.target.closest(".search-btn")) {
-    const filtered = findItem();
-
-    renderProducts(".shop-container", filtered);
-  }
-});
-*/
-
-/*
 function productNum() {
   document.querySelector(".num-box").textContent = filtered.length;
 }
@@ -637,4 +618,13 @@ function productNum() {
 
   let productNumber = filtered.length;
   numBox.innerHTML = productNumber + " items";
+}
+
+function findItem() {
+  let searchText = searchInput.value;
+  filtered = products.filter((product) => {
+    if (product.name.toLowerCase().includes(searchText.toLowerCase().trim()))
+      return true;
+    return false;
+  });
 }
