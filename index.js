@@ -11,6 +11,9 @@ import { filteredByCategoryRegular } from "./suit.js";
 detail();
 
 let filtered = products;
+function allItems() {
+  filtered = products;
+}
 
 function categoryTotalPrice() {
   let categoryPrice = filtered.map((product) => product.price);
@@ -52,8 +55,15 @@ document.addEventListener("click", (e) => {
   if (e.target.closest(".search-btn")) {
     findItem();
     renderProducts(".shop-container", filtered);
-    productNum();
+
     categoryTotalPrice();
+  }
+  if (e.target.closest(".all-items")) {
+    allItems();
+    const clicked = e.target;
+    let itemName = clicked.dataset.category;
+    document.querySelector(".category-title").textContent = itemName;
+    renderProducts(".shop-container", filtered);
   }
 });
 /*
@@ -286,7 +296,7 @@ function renderProducts(containerSelector, filtered) {
 
   container.innerHTML = ""; // Clear any old content
   if (filtered.length === 0) {
-    container.innerHTML = `<p class="error-text>No product found </p>`;
+    container.innerHTML = `<p class="error-text">No product found </p>`;
   }
 
   filtered.forEach((product) => {
@@ -328,6 +338,12 @@ function activateCartButtons() {
       addToCart(productId);
     });
   });
+}
+
+function clearInput() {
+  let input = document.getElementById("search");
+
+  input.value = "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
