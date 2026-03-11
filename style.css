@@ -529,7 +529,11 @@ figure{
     
 }
 
-
+.error-text{
+    color:red;
+    font-style:italic;
+    text-align:center;
+}
 .stars{
     color:var(--champagne);
     font-weight:bold;
@@ -3096,8 +3100,11 @@ body,html{
 
         .resp{
             width:100%;
-            
-           
+            }
+
+        .search-section{
+            width:80%;
+            margin:auto;
         }
      .main-text{
     

@@ -50,16 +50,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("click", (e) => {
   if (e.target.closest(".search-btn")) {
-    document.body.style.backgroundColor = "pink";
     findItem();
-    renderProducts("shopContainer", filtered);
+    renderProducts(".shop-container", filtered);
+    productNum();
+    categoryTotalPrice();
   }
 });
 /*
 let searchInput = document.getElementById("search");
 searchInput.addEventListener("input", () => {
   findItem();
-  renderProducts("shop-container", filtered);
+  renderProducts(".shop-container", filtered);
 
   categoryTotalPrice();
 });
@@ -284,6 +285,10 @@ function renderProducts(containerSelector, filtered) {
   let container = document.querySelector(containerSelector);
 
   container.innerHTML = ""; // Clear any old content
+  if (filtered.length === 0) {
+    container.innerHTML = `<p class="error-text>No product found </p>`;
+  }
+
   filtered.forEach((product) => {
     let newPara = document.createElement("div");
     newPara.classList.add("section-list");
@@ -630,6 +635,7 @@ function productNum() {
 }
 
 function findItem() {
+  let searchInput = document.getElementById("search");
   let searchText = searchInput.value;
   filtered = products.filter((product) => {
     if (product.name.toLowerCase().includes(searchText.toLowerCase().trim()))
