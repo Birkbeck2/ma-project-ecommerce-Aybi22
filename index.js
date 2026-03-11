@@ -55,8 +55,9 @@ document.addEventListener("click", (e) => {
   if (e.target.closest(".search-btn")) {
     findItem();
     renderProducts(".shop-container", filtered);
-
+    displayCategory(e);
     categoryTotalPrice();
+    clearInput();
   }
   if (e.target.closest(".all-items")) {
     allItems();
@@ -342,8 +343,9 @@ function activateCartButtons() {
 
 function clearInput() {
   let input = document.getElementById("search");
-
-  input.value = "";
+  if (input.value) {
+    input.value = "";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -370,6 +372,7 @@ document.addEventListener("DOMContentLoaded", () => {
       productNum();
       categoryTotalPrice();
       activateCartButtons();
+      clearInput();
     }
   }
 
@@ -384,6 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
     productNum();
     categoryTotalPrice();
     activateCartButtons();
+    clearInput();
   }
 
   let underSixHundred = document.querySelector(".undersixhundred");
@@ -395,6 +399,7 @@ document.addEventListener("DOMContentLoaded", () => {
     productNum();
     categoryTotalPrice();
     activateCartButtons();
+    clearInput();
   }
 
   let priceList = document.querySelector(".price-list");
@@ -411,11 +416,13 @@ document.addEventListener("DOMContentLoaded", () => {
       productNum();
       categoryTotalPrice();
       activateCartButtons();
+      clearInput();
     } else if (li.classList.contains("high-low")) {
       let filtered = [...products].sort((a, b) => b.price - a.price);
       renderProducts(".shop-container", filtered);
       productNum();
       activateCartButtons();
+      clearInput();
     }
   }
 });
@@ -649,7 +656,10 @@ function productNum() {
   let productNumber = filtered.length;
   numBox.innerHTML = productNumber + " items";
 }
-
+let input = document.getElementById("search");
+input.addEventListener("input", () => {
+  input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
+});
 function findItem() {
   let searchInput = document.getElementById("search");
   let searchText = searchInput.value;
