@@ -48,6 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
   productNum();
 });
 
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".search-btn")) {
+    document.body.style.backgroundColor = "pink";
+    findItem();
+    renderProducts("shopContainer", filtered);
+  }
+});
+/*
 let searchInput = document.getElementById("search");
 searchInput.addEventListener("input", () => {
   findItem();
@@ -55,6 +63,7 @@ searchInput.addEventListener("input", () => {
 
   categoryTotalPrice();
 });
+*/
 
 //This function is called when the page loads to display the cart items and update the total price.
 

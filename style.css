@@ -97,9 +97,7 @@ body{
     min-height: 100vh;
     
 }
-.numBox{
-    background-color:red;
-}
+
 
 h2{
     
@@ -2014,8 +2012,15 @@ margin: auto;
     max-width:500px;
     width:100%;
     margin:auto;
-   
-}
+   }
+
+   .search-btn{
+    padding:1rem;
+    border:none;
+    background:var(--cambridge-blue);
+    color:black;
+    cursor:pointer;
+   }
 
 .resp{
    
