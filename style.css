@@ -158,6 +158,7 @@ a.btn{
    .allNum-box, .num-box{
     font-size:1rem;
     text-transform: capitalize;
+    font-weight: lighter;
 }
 
 a.btn:hover{

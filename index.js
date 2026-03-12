@@ -79,6 +79,7 @@ document.addEventListener("click", (e) => {
     let itemName = clicked.dataset.category;
     document.querySelector(".category-title").textContent = itemName;
     filterByPriceOver();
+
     productNum();
   }
 });
@@ -373,6 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
   productNum();
   categoryTotalPrice();
   activateCartButtons();
+  document.querySelector(".num-box").textContent = "";
 
   let categoryList = document.querySelector(".category-list");
   categoryList.addEventListener("click", displayCategory);
@@ -396,7 +398,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function filterByPriceOver() {
     filtered = products.filter((product) => product.price > 600);
-
     renderProducts(".shop-container", filtered);
     productNum();
     categoryTotalPrice();
@@ -404,8 +405,6 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInput();
   }
 
-  let underSixHundred = document.querySelector(".undersixhundred");
-  underSixHundred.addEventListener("click", filterByPrice);
   function filterByPrice() {
     filtered = products.filter((product) => product.price <= 600);
 
