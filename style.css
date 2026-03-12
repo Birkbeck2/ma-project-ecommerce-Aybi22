@@ -2825,7 +2825,9 @@ p{
    
    
 }
-
+.shop-container .image{
+    padding-bottom: 1rem;
+}
 
 .product-display {
     flex-direction: row;

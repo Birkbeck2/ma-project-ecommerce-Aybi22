@@ -66,6 +66,19 @@ document.addEventListener("click", (e) => {
     document.querySelector(".category-title").textContent = itemName;
     renderProducts(".shop-container", filtered);
   }
+
+  if (
+    e.target.closest(".oversixhundred") ||
+    e.target.closest(".undersixhundred") ||
+    e.target.closest(".high-low") ||
+    e.target.closest(".low-high")
+  ) {
+    const clicked = e.target;
+    let itemName = clicked.dataset.category;
+    document.querySelector(".category-title").textContent = itemName;
+    filterByPriceOver();
+    productNum();
+  }
 });
 /*
 let searchInput = document.getElementById("search");
@@ -298,6 +311,7 @@ function renderProducts(containerSelector, filtered) {
   container.innerHTML = ""; // Clear any old content
   if (filtered.length === 0) {
     container.innerHTML = `<p class="error-text">No product found </p>`;
+    numBox.innerHTML = "";
   }
 
   filtered.forEach((product) => {
@@ -366,6 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (categoryId) {
       document.querySelector(".category-title").textContent = categoryId;
+
       filtered = products.filter((product) => product.category === categoryId);
 
       renderProducts(".shop-container", filtered);
@@ -375,10 +390,6 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInput();
     }
   }
-
-  let overSixHundred = document.querySelector(".oversixhundred");
-  console.log(overSixHundred);
-  overSixHundred.addEventListener("click", filterByPriceOver);
 
   function filterByPriceOver() {
     filtered = products.filter((product) => product.price > 600);
@@ -649,10 +660,8 @@ function productNum() {
   document.querySelector(".num-box").textContent = filtered.length;
 }
 */
-
+let numBox = document.querySelector(".num-box");
 function productNum() {
-  let numBox = document.querySelector(".num-box");
-
   let productNumber = filtered.length;
   numBox.innerHTML = productNumber + " items";
 }
