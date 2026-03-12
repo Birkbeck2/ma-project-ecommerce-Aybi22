@@ -157,10 +157,9 @@ a.btn{
 
    .allNum-box, .num-box{
     font-size:1rem;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
-  
 a.btn:hover{
     box-shadow:inset 200px 0 0 0 var(--black);
     transition:ease-in-out 0.5s; 
@@ -2188,13 +2187,19 @@ textarea:focus-within{
 
 }
 .category-title{
-    max-width:500px;
-    width:100%;
-    text-align:center;
-    margin:auto;
-    font-size:13px;
-    margin-bottom:1rem;
+   font-size:1.4rem;
+   
   } 
+  .num-box{
+    font-weight:lighter;
+  }
+  .item-info{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    gap:1rem;
+    margin-bottom:1rem;
+  }
   .info-box h3{
     font-size:.0.9rem;
     width:75%;

@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("click", (e) => {
   if (e.target.closest(".search-btn")) {
+    document.querySelector(".category-title").textContent = searchText;
     findItem();
     renderProducts(".shop-container", filtered);
     displayCategory(e);
@@ -680,10 +681,13 @@ input.addEventListener("input", () => {
 function findItem() {
   let searchInput = document.getElementById("search");
   let searchText = searchInput.value;
-  if (!searchText)
-    filtered = products.filter((product) => {
-      if (product.name.toLowerCase().includes(searchText.toLowerCase().trim()))
-        return true;
-      return false;
-    });
+  if (!searchText) {
+    return;
+  }
+
+  filtered = products.filter((product) => {
+    if (product.name.toLowerCase().includes(searchText.toLowerCase().trim()))
+      return true;
+    return false;
+  });
 }
