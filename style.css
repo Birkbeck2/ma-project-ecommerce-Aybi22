@@ -154,6 +154,12 @@ a.btn{
     margin-top:2rem;
    
    }
+
+   .allNum-box, .num-box{
+    font-size:1rem;
+    text-transform: uppercase;
+}
+
   
 a.btn:hover{
     box-shadow:inset 200px 0 0 0 var(--black);
@@ -2825,6 +2831,7 @@ p{
    
    
 }
+
 .shop-container .image{
     padding-bottom: 1rem;
 }

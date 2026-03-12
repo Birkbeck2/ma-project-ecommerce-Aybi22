@@ -13,6 +13,7 @@ detail();
 let filtered = products;
 function allItems() {
   filtered = products;
+  allNum();
 }
 
 function categoryTotalPrice() {
@@ -367,6 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // renderProducts with full products array immediately.
 
   renderProducts(".shop-container", products);
+  allNum();
   productNum();
   categoryTotalPrice();
   activateCartButtons();
@@ -665,6 +667,12 @@ function productNum() {
   let productNumber = filtered.length;
   numBox.innerHTML = productNumber + " items";
 }
+function allNum() {
+  let productNumber = filtered.length;
+  let allNumBox = document.querySelector(".allNum-box");
+  allNumBox.innerHTML = productNumber + " items";
+}
+
 let input = document.getElementById("search");
 input.addEventListener("input", () => {
   input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
@@ -672,9 +680,10 @@ input.addEventListener("input", () => {
 function findItem() {
   let searchInput = document.getElementById("search");
   let searchText = searchInput.value;
-  filtered = products.filter((product) => {
-    if (product.name.toLowerCase().includes(searchText.toLowerCase().trim()))
-      return true;
-    return false;
-  });
+  if (!searchText)
+    filtered = products.filter((product) => {
+      if (product.name.toLowerCase().includes(searchText.toLowerCase().trim()))
+        return true;
+      return false;
+    });
 }
