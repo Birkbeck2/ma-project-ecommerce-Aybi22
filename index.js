@@ -111,7 +111,26 @@ document.addEventListener("click", (e) => {
     filterByColor("black");
     renderProducts(".shop-container", filtered);
   }
+
+  if (e.target.closest(".red")) {
+    addText(e);
+    filterByColor("red");
+    renderProducts(".shop-container", filtered);
+  }
+
+  if (e.target.closest(".green")) {
+    addText(e);
+    filterByColor("green");
+    renderProducts(".shop-container", filtered);
+  }
+
+  if (e.target.closest(".blue")) {
+    addText(e);
+    filterByColor("blue");
+    renderProducts(".shop-container", filtered);
+  }
 });
+
 function addText(e) {
   const clicked = e.target;
   let itemName = clicked.dataset.category;

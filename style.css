@@ -13,11 +13,29 @@
     margin:0;
     padding:0;
 }
-
 .shop-wrapper{
 display:flex;
 }
 
+.color-circle{
+    width:17px;
+    height:17px;
+   
+}
+
+.color{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    text-transform:capitalize;
+}
+
+.filter-box{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    padding:2rem;
+}
 
    .price-btn{
     width:150px;
@@ -48,14 +66,7 @@ display:flex;
         min-height: 100vh;
       }
 
-     
-
-   
- 
-  
-  
-   
-    p{
+p{
     line-height:25px;
     
 }
@@ -74,11 +85,9 @@ h1{
     text-transform:capitalize;
     font-family:roboto;
     margin-top:33px;
-    
-    
+    }
 
-}
-li.phone,li.mail{
+    li.phone,li.mail{
     display:flex;
 }
 
@@ -88,9 +97,6 @@ li.phone,li.mail{
     margin-left:13px;
     white-space: nowrap;
 }
-
-
-
 
 hr{
     border-top:5px solid var(--champagne);
@@ -105,8 +111,7 @@ body{
     display:flex;
     flex-direction:column;
     min-height: 100vh;
-    
-}
+    }
 
 
 h2{
@@ -267,8 +272,6 @@ h4{
 
 
 }
-
-
 
 .tablet-container{
     display:grid;
@@ -827,8 +830,6 @@ gap:1rem;
     display:flex;
 }
 
-
-
 .filter-section-wrapper{
     display:flex;
     max-width:100%;
@@ -866,9 +867,6 @@ gap:1rem;
     align-items:center;
     text-transform:capitalize;
 }
-
-
-
 
 
 .main-text p{
@@ -956,7 +954,6 @@ section{
     flex:1;
     font-size:64px;
     text-align:center;
-    
 }
 
 .box{
@@ -968,8 +965,6 @@ section{
     width:100%;
     display:flex;
     background-color:var(--black);
-  
-    
 }
 .pay-info-text{
     color:var(--white);
@@ -1038,9 +1033,6 @@ section{
    
   }
 
-
-
-
 h4{
     text-transform: capitalize;;
 }
@@ -1048,8 +1040,6 @@ h4{
 .product-list section{
     display:flex;
     flex-direction:column;
-    margin-top:73px;
-    padding:22px;
 }
 
 .icon p{
@@ -1424,7 +1414,7 @@ li.phone{
 #home{
     display:flex;
     flex-direction:column;
-   
+  
 }
 .footer-icons{
     display:flex;
@@ -1864,10 +1854,7 @@ object-fit:cover;
    
    
   }
-section{
- 
-    
-}
+
 
 
 .right-side p{
@@ -2216,7 +2203,7 @@ textarea:focus-within{
  
   .shop-container-wrapper{
    
-    margin-top:2rem;
+   border:2px solid red;
   }
   
   
@@ -2949,9 +2936,7 @@ h2{
 
 .main-text{
         margin-left:11px;
-       
-       
-    }
+       }
    
 
  .staff-section{
@@ -2968,11 +2953,6 @@ body,html{
     overflow-x:hidden;
     
 }
-
-
-
-
-
 
 .main-text h1{
         font-size:39px;
@@ -3378,12 +3358,7 @@ body,html{
     .logo p{
     font-size:15px;
   }
- 
-
-
-
-  
-.ratings{
+ .ratings{
     grid-template-columns: 1fr;
 }
 .item-container{
