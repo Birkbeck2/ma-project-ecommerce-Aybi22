@@ -3319,15 +3319,15 @@ body,html{
     .shop-container, .shoe-container,.suit-container,.blazer-container{
             grid-template-columns:1fr;
         
-           
-           
-        }
+    }
+    .search-section{
+        margin-bottom:1rem;
+    }
 
- 
-
-
-
-
+.item-info{
+    display:flex;
+    align-items:center;
+}
         
     .blazer-gallery{
             flex-direction: column;

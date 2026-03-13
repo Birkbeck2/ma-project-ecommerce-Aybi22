@@ -16,6 +16,8 @@ function allItems() {
   allNum();
 }
 
+let itemInfo = document.querySelector(".item-info");
+
 function categoryTotalPrice() {
   let categoryPrice = filtered.map((product) => product.price);
   let categoryTotal = categoryPrice.reduce(
@@ -54,12 +56,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("click", (e) => {
   if (e.target.closest(".search-btn")) {
-    document.querySelector(".category-title").textContent = searchText;
-    findItem();
-    renderProducts(".shop-container", filtered);
-    displayCategory(e);
-    categoryTotalPrice();
-    clearInput();
+    let searchInput = document.getElementById("search");
+    let searchText = searchInput.value;
+    if (searchText) {
+      document.querySelector(".category-title").textContent = searchText;
+
+      findItem();
+      renderProducts(".shop-container", filtered);
+      displayCategory(e);
+      categoryTotalPrice();
+      clearInput();
+    }
   }
   if (e.target.closest(".all-items")) {
     allItems();
@@ -67,20 +74,17 @@ document.addEventListener("click", (e) => {
     let itemName = clicked.dataset.category;
     document.querySelector(".category-title").textContent = itemName;
     renderProducts(".shop-container", filtered);
+    clearInput();
   }
 
-  if (
-    e.target.closest(".oversixhundred") ||
-    e.target.closest(".undersixhundred") ||
-    e.target.closest(".high-low") ||
-    e.target.closest(".low-high")
-  ) {
+  if (e.target.closest(".oversixhundred")) {
     const clicked = e.target;
     let itemName = clicked.dataset.category;
     document.querySelector(".category-title").textContent = itemName;
-    filterByPriceOver();
 
+    renderProducts(".shop-container", filtered);
     productNum();
+    filterByPriceOver();
   }
 });
 /*
@@ -315,8 +319,8 @@ function renderProducts(containerSelector, filtered) {
   if (filtered.length === 0) {
     container.innerHTML = `<p class="error-text">No product found </p>`;
     numBox.innerHTML = "";
+    document.querySelector(".category-title").textContent = "";
   }
-
   filtered.forEach((product) => {
     let newPara = document.createElement("div");
     newPara.classList.add("section-list");
@@ -395,50 +399,51 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInput();
     }
   }
-
-  function filterByPriceOver() {
-    filtered = products.filter((product) => product.price > 600);
-    renderProducts(".shop-container", filtered);
-    productNum();
-    categoryTotalPrice();
-    activateCartButtons();
-    clearInput();
-  }
-
-  function filterByPrice() {
-    filtered = products.filter((product) => product.price <= 600);
-
-    renderProducts(".shop-container", filtered);
-    productNum();
-    categoryTotalPrice();
-    activateCartButtons();
-    clearInput();
-  }
-
-  let priceList = document.querySelector(".price-list");
-  priceList.addEventListener("click", filterProductsByPrice);
-
-  function filterProductsByPrice(event) {
-    let li = event.target;
-
-    if (li.classList.contains("low-high")) {
-      filtered = [...products].sort((a, b) => a.price - b.price); //make a copy first before sorting/filtering.
-      // because.sort() mutates the original array (products) permanently!
-
-      renderProducts(".shop-container", filtered);
-      productNum();
-      categoryTotalPrice();
-      activateCartButtons();
-      clearInput();
-    } else if (li.classList.contains("high-low")) {
-      let filtered = [...products].sort((a, b) => b.price - a.price);
-      renderProducts(".shop-container", filtered);
-      productNum();
-      activateCartButtons();
-      clearInput();
-    }
-  }
 });
+
+function filterByPriceOver() {
+  filtered = products.filter((product) => product.price > 600);
+  renderProducts(".shop-container", filtered);
+  productNum();
+  categoryTotalPrice();
+  activateCartButtons();
+  clearInput();
+}
+
+function filterByPrice() {
+  filtered = products.filter((product) => product.price <= 600);
+
+  renderProducts(".shop-container", filtered);
+  productNum();
+  categoryTotalPrice();
+  activateCartButtons();
+  clearInput();
+}
+
+let priceList = document.querySelector(".price-list");
+priceList.addEventListener("click", filterProductsByPrice);
+
+function filterProductsByPrice(event) {
+  let li = event.target;
+
+  if (li.classList.contains("low-high")) {
+    filtered = [...products].sort((a, b) => a.price - b.price); //make a copy first before sorting/filtering.
+    // because.sort() mutates the original array (products) permanently!
+
+    renderProducts(".shop-container", filtered);
+    productNum();
+    categoryTotalPrice();
+    activateCartButtons();
+    clearInput();
+  } else if (li.classList.contains("high-low")) {
+    let filtered = [...products].sort((a, b) => b.price - a.price);
+    renderProducts(".shop-container", filtered);
+    productNum();
+    activateCartButtons();
+    clearInput();
+  }
+}
+
 /*     
    
 let categoryList=document.querySelector('.category-list');
@@ -677,6 +682,7 @@ let input = document.getElementById("search");
 input.addEventListener("input", () => {
   input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
 });
+
 function findItem() {
   let searchInput = document.getElementById("search");
   let searchText = searchInput.value;
