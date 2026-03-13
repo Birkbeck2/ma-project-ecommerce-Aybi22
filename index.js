@@ -70,17 +70,13 @@ document.addEventListener("click", (e) => {
   }
   if (e.target.closest(".all-items")) {
     allItems();
-    const clicked = e.target;
-    let itemName = clicked.dataset.category;
-    document.querySelector(".category-title").textContent = itemName;
+    addText();
     renderProducts(".shop-container", filtered);
     clearInput();
   }
 
   if (e.target.closest(".oversixhundred")) {
-    const clicked = e.target;
-    let itemName = clicked.dataset.category;
-    document.querySelector(".category-title").textContent = itemName;
+    addText();
 
     renderProducts(".shop-container", filtered);
     productNum();
@@ -88,9 +84,7 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.closest(".undersixhundred")) {
-    const clicked = e.target;
-    let itemName = clicked.dataset.category;
-    document.querySelector(".category-title").textContent = itemName;
+    addText();
 
     renderProducts(".shop-container", filtered);
     productNum();
@@ -98,9 +92,7 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.closest(".low-high")) {
-    const clicked = e.target;
-    let itemName = clicked.dataset.category;
-    document.querySelector(".category-title").textContent = itemName;
+    addText();
 
     renderProducts(".shop-container", filtered);
     productNum();
@@ -108,15 +100,24 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.closest(".high-low")) {
-    const clicked = e.target;
-    let itemName = clicked.dataset.category;
-    document.querySelector(".category-title").textContent = itemName;
-
+    addText();
     renderProducts(".shop-container", filtered);
     productNum();
     sortByPriceHigh();
   }
+
+  if (e.target.closest(".color-btn")) {
+    const clicked = e.target;
+    let itemName = clicked.dataset.category;
+    document.querySelector(".category-title").textContent = itemName;
+    filterByColor();
+  }
 });
+function addText() {
+  const clicked = e.target;
+  let itemName = clicked.dataset.category;
+  document.querySelector(".category-title").textContent = itemName;
+}
 /*
 let searchInput = document.getElementById("search");
 searchInput.addEventListener("input", () => {
@@ -448,6 +449,12 @@ function filterByPriceUnder() {
   categoryTotalPrice();
   activateCartButtons();
   clearInput();
+}
+
+function filterByColor(color) {
+  if ((filtered = products.filter((product) => product.color === color)))
+    return true;
+  return false;
 }
 
 function sortByPriceLow() {
