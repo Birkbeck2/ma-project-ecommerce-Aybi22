@@ -76,7 +76,7 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.closest(".oversixhundred")) {
-    addText();
+    addText(e);
 
     renderProducts(".shop-container", filtered);
     productNum();
@@ -84,7 +84,7 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.closest(".undersixhundred")) {
-    addText();
+    addText(e);
 
     renderProducts(".shop-container", filtered);
     productNum();
@@ -100,20 +100,19 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.closest(".high-low")) {
-    addText();
+    addText(e);
     renderProducts(".shop-container", filtered);
     productNum();
     sortByPriceHigh();
   }
 
-  if (e.target.closest(".color-btn")) {
-    const clicked = e.target;
-    let itemName = clicked.dataset.category;
-    document.querySelector(".category-title").textContent = itemName;
-    filterByColor();
+  if (e.target.closest(".black")) {
+    addText(e);
+    filterByColor("black");
+    renderProducts(".shop-container", filtered);
   }
 });
-function addText() {
+function addText(e) {
   const clicked = e.target;
   let itemName = clicked.dataset.category;
   document.querySelector(".category-title").textContent = itemName;
