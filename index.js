@@ -11,9 +11,10 @@ import { filteredByCategoryRegular } from "./suit.js";
 detail();
 
 let filtered = products;
-function allItems() {
+function allItems(e) {
   filtered = products;
   allNum();
+  addText(e);
 }
 
 let itemInfo = document.querySelector(".item-info");
@@ -69,8 +70,8 @@ document.addEventListener("click", (e) => {
     }
   }
   if (e.target.closest(".all-items")) {
-    allItems();
-    addText();
+    allItems(e);
+    addText(e);
     renderProducts(".shop-container", filtered);
     clearInput();
   }
@@ -92,16 +93,15 @@ document.addEventListener("click", (e) => {
   }
 
   if (e.target.closest(".low-high")) {
-    addText();
+    addText(e);
 
-    renderProducts(".shop-container", filtered);
     productNum();
     sortByPriceLow();
   }
 
   if (e.target.closest(".high-low")) {
     addText(e);
-    renderProducts(".shop-container", filtered);
+
     productNum();
     sortByPriceHigh();
   }
