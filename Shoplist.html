@@ -36,9 +36,17 @@
     <div id="app"></div>
 
 
+
+
+
+ <main id="shop">
+<div class="filter-modal">
+<p>filter price</p>
+<p>filter category</p>
+<p>filter colour</p>
+</div>
 <div class="top-info">
-           
-    <h1>shop</h1>
+     
 
     <div class="product-links">
 
@@ -47,13 +55,19 @@
         <a href="shoplist.html">shop</a> 
         
 </div>
+      
+     <div class="search-section">
+  
+<input type="text" id="search" placeholder="Search an item">
+<button type="button" class="search-btn">search</button>
 
+</div>
 
 <p class="category-box"></p>
 
             </div>
-           
-<section class="product-list">
+
+  <section class="product-list">
         
     <h2>all our suits and shoes 
    <span class="allNum-box"></span>
@@ -61,14 +75,10 @@
   
     <p class="section-text">Discover the suits and shoes offered at Your favorite men fashion store</p>
  
-   </section> 
+   </section>          
 
-   <div class="search-section">
+
   
-<input type="text" id="search" placeholder="enter product name">
-<button type="button" class="search-btn">search</button>
-
-</div>
     
  <div class="item-info">
     
@@ -77,7 +87,11 @@
 
  </div>     
 </section>   
-            <section class="filter-section-wrapper">
+      <div class="mobile-filter active">
+<button class="filter-btn mobile">Filter</button>
+<button class="filter-btn  mobile">Sort</button>
+</div>      
+<section class="filter-section-wrapper active">
 
                 <article class="filter-price">
                     
@@ -112,7 +126,7 @@
                 </div>
 
 <div class="shop-wrapper">
-<div class="filter-box">
+<div class="filter-box active">
   <button class="black  color  filter-btn  "  data-category="black">
     <span class="color-circle"></span>
     black </button>
@@ -121,11 +135,16 @@
  <button class="navy  color  filter-btn  "  data-category="navy"><span class="color-circle"></span>navy</button>
  <button class="blue color  filter-btn  "  data-category="blue"><span class="color-circle"></span>blue</button>
 </div>
+
+
+
+
+
 <div class="shop-container">
 </div>
   
 </div>
-
+</main>
 
 <footer>
         
