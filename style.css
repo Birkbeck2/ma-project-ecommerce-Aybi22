@@ -193,9 +193,7 @@ a.btn.new{
 a.btn.new:hover{
     color:var(--white);
 }
-  .filter-modal{
-            display:none;
-        }
+  
 
 .cart-items{
     max-width:100%;
@@ -2008,12 +2006,28 @@ margin: auto;
    }
 
    .filter-modal{
-    width:100%;
+    width:0%;
     height:100%;
     top:0;
     bottom:0;
     left:0;
     position:fixed;
+    background:var(--champagne);
+    transition:0.3s;
+    background-color: pink;
+    overflow: hidden;
+    
+   }
+   .close-filter-modal{
+    position:absolute;
+    top:5px;
+    right:10px;
+    font-size:1.5rem;
+    font-weight:900;
+    cursor:pointer;
+   }
+   .open-filter-modal{
+    width:100%;
    }
 
 .item-container .image{

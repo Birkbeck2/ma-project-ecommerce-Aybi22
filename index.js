@@ -54,8 +54,24 @@ document.addEventListener("DOMContentLoaded", () => {
   activateCartButtons();
   productNum();
 });
+let filterModal = document.querySelector(".filter-modal");
+
+function openFilterModal() {
+  filterModal.classList.add("open-filter-modal");
+}
+function closeFilterModal() {
+  filterModal.classList.remove("open-filter-modal");
+}
 
 document.addEventListener("click", (e) => {
+  if (e.target.closest(".mobile")) {
+    openFilterModal();
+  }
+
+  if (e.target.closest(".close-filter-modal")) {
+    closeFilterModal();
+  }
+
   if (e.target.closest(".search-btn")) {
     let searchInput = document.getElementById("search");
     let searchText = searchInput.value;
