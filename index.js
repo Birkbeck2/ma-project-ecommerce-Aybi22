@@ -89,6 +89,7 @@ document.addEventListener("click", (e) => {
     allItems(e);
     addText(e);
     renderProducts(".shop-container", filtered);
+    closeFilterModal();
     clearInput();
   }
 
@@ -98,11 +99,12 @@ document.addEventListener("click", (e) => {
     renderProducts(".shop-container", filtered);
     productNum();
     filterByPriceOver();
+    closeFilterModal();
   }
 
   if (e.target.closest(".undersixhundred")) {
     addText(e);
-
+    closeFilterModal();
     renderProducts(".shop-container", filtered);
     productNum();
     filterByPriceUnder();
@@ -110,14 +112,15 @@ document.addEventListener("click", (e) => {
 
   if (e.target.closest(".low-high")) {
     addText(e);
-
+    closeFilterModal();
     productNum();
     sortByPriceLow();
+    closeFilterModal();
   }
 
   if (e.target.closest(".high-low")) {
     addText(e);
-
+    closeFilterModal();
     productNum();
     sortByPriceHigh();
   }
@@ -126,24 +129,28 @@ document.addEventListener("click", (e) => {
     addText(e);
     filterByColor("black");
     renderProducts(".shop-container", filtered);
+    closeFilterModal();
   }
 
   if (e.target.closest(".red")) {
     addText(e);
     filterByColor("red");
     renderProducts(".shop-container", filtered);
+    closeFilterModal();
   }
 
   if (e.target.closest(".green")) {
     addText(e);
     filterByColor("green");
     renderProducts(".shop-container", filtered);
+    closeFilterModal();
   }
 
   if (e.target.closest(".blue")) {
     addText(e);
     filterByColor("blue");
     renderProducts(".shop-container", filtered);
+    closeFilterModal();
   }
 });
 
@@ -462,6 +469,7 @@ document.addEventListener("DOMContentLoaded", () => {
       categoryTotalPrice();
       activateCartButtons();
       clearInput();
+      closeFilterModal();
     }
   }
 });

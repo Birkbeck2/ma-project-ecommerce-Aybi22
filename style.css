@@ -2014,7 +2014,7 @@ margin: auto;
     position:fixed;
     background:var(--champagne);
     transition:0.3s;
-    background-color: pink;
+   
     overflow: hidden;
     
    }
@@ -2028,6 +2028,12 @@ margin: auto;
    }
    .open-filter-modal{
     width:100%;
+   }
+   .smallscreen{
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+    border: 3px solid red;
    }
 
 .item-container .image{
@@ -2046,7 +2052,7 @@ margin: auto;
    
   }
   .mobile-filter.active{
-  
+   
     display:flex;
     justify-content: center;
   }
@@ -2866,7 +2872,11 @@ p{
     .shop-container,.suit-container,.shoe-container,.blazer-container{
         grid-template-columns: repeat(2,1fr);
     }
-   
+    .mobile-filter{
+        display:flex;
+        justify-content:center;
+        width:100%;
+      }
  .tablet-container{
     grid-template-columns: repeat(2,1fr);
  }
@@ -2883,9 +2893,7 @@ p{
     display:none;
 }
   
-     .mobile-filter{
-    display:block;
-  }
+    
 
 
 .shop-container .image{
@@ -3163,10 +3171,13 @@ body,html{
             width:100%;
             }
 
-      .mobile-filter.active{
+      .mobile-filter{
         display:flex;
         justify-content:center;
+        width:100%;
       }
+
+     
       
      .main-text{
     
@@ -3374,7 +3385,7 @@ body,html{
 
 .item-info{
     display:flex;
-    align-items:center;
+    align-items:baseline;
 }
         
     .blazer-gallery{
