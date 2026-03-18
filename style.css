@@ -2965,7 +2965,7 @@ font-size:1rem;
 .shop-container .image{
         width:100%;
         overflow: hidden;
-        aspect-ratio:1/1
+        aspect-ratio:2/3;
     }
 
  .shop-container .image img {
@@ -2974,7 +2974,7 @@ font-size:1rem;
     object-fit: cover;
   }
 h2{
-    font-size:2rem;
+    font-size:1.7rem;
 }
 
 }
