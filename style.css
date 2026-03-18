@@ -3156,7 +3156,8 @@ body,html{
 .blazer{
     display:flex;
     flex-direction:column;
-    align-items: center;
+    margin:auto;
+    border:7px solid blue;
 }
 
 
