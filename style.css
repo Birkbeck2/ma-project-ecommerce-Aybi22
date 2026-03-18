@@ -740,7 +740,7 @@ header p{
          width:100%;
          margin:auto;
          background: var(--champagne);
-         padding: 33px;
+         padding: 2rem;
      }
      
      
@@ -3399,8 +3399,9 @@ body,html{
 }
         
     .blazer-gallery{
-            flex-direction: column;
-            width: 100%;
+        display:flex;
+        flex-direction: column;
+        width: 100%;
         }
         
     nav ul{
@@ -3459,6 +3460,7 @@ body,html{
 
 .blazer-container{
     grid-template-columns: 1fr;
+    margin:auto;
     width:100%;
 }
 
