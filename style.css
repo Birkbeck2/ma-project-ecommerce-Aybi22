@@ -745,7 +745,7 @@ header p{
      
      
      
-     .blazer-gallery a.btn{
+     .blazer a.btn{
          margin-top:31px;
          display:block;
          width:100%;
@@ -3012,6 +3012,7 @@ h2{
 
 .main-text{
         margin-left:11px;
+        border:8px solid red;
        }
    
 
