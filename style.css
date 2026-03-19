@@ -3195,6 +3195,9 @@ body,html{
         .category-title{
             margin-bottom:1rem;
         }
+       .filter-modal{
+        overflow-y: scroll;
+       }
         q.container{
             padding:2rem;
         }
