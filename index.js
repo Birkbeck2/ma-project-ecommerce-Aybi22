@@ -745,7 +745,9 @@ function productNum() {
 let numBox = document.querySelector(".num-box");
 function productNum() {
   let productNumber = filtered.length;
-  numBox.innerHTML = productNumber + " items";
+  productNumber > 1
+    ? (numBox.innerHTML = productNumber + " items")
+    : (numBox.innerHTML = productNumber + "item");
 }
 function allNum() {
   let productNumber = filtered.length;
