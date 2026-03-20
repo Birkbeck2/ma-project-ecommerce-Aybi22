@@ -22,57 +22,28 @@ const detail = () => {
         <div class="product-display">
        
         <div class="left-gallery">
-    
     <div class="image">
     <img src=${thisProduct.image} width="150" height="150" class="small-pic" alt="texture suit image">
-    
-    
     </div>
     
     <div class="image">
         <img src=${thisProduct.image1} width="150" height="150" class="small-pic" alt="texture suit image">
-        
-        
-        </div>
-    
-    
-        <div class="image">
+    </div>
+    <div class="image">
             <img src=${thisProduct.image2} width="150" height="150" class="small-pic"    alt="texture suit image">
-            
-            
-            </div>
-    
-    
-    
-    
+    </div>
     </div>
     
     
     <div class="left-side">
-    
-    
-    
-            <div class="image">
-                
-               <img src=${thisProduct.image} id="main-pic" width="500" height="500" alt="texture suit image"> 
-                
-                
-           
-                </div>
+    <div class="image">
+      <img src=${thisProduct.image} id="main-pic" width="500" height="500" alt="texture suit image"> 
+    </div>
+</div>
         
-        
-        </div>
-        
-        
-        
-         
-              
-        
-    <div class="right-side">
+<div class="right-side">
 
 <h1>${thisProduct.name}<span class="item-price">£${thisProduct.price}</span></h1>
-
-
 <span class="stock">in stock</span>
 
 <div class="p-review">
@@ -111,9 +82,6 @@ const detail = () => {
     <div class="shipping-info">
         <p>FREE STANDARD DELIVERY ON ALL ORDERS</p>
         <i class="fa-solid fa-truck"></i>
-    
-    
-    
     </div>
     <div class="product-detail">
         <fieldset> 
@@ -181,12 +149,7 @@ const detail = () => {
     
         <div class="rating-image">
     <img src="images/rating1.jpg"  class="round"  width="100"  height="50"  alt="rating1 image">
-    
-    
     </div>
-    
-    
-    
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     
     
@@ -195,11 +158,7 @@ const detail = () => {
     
     </article>
     
-    
-    
-    
-    
-    <article>
+<article>
         <h3>rating</h3>
         
         <div class="stars">
@@ -261,25 +220,16 @@ const detail = () => {
         <img src="images/customer1.jpg"  class="round"  width="100"  height="50"  alt="customer1 image">
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        
-    
-    </div>     
+        </div>     
     <span class="name">John henry</span>
        
     </article>
-    
-    
-    
-    
-    
     </div>
     </section>
     
 <section class="related-items">
     <h2>related products<i class="fa-solid fa-circle circle"></i><i class="fa-solid fa-circle circle"></i></h2>
     <p class="section-text">Discover other items you may also like at Your favorite men fashion store</p>
-    
-    
     <div class="item-container">
        <article class="section-list">
         <h3>suit</h3>
@@ -305,27 +255,16 @@ const detail = () => {
     <h3>suit</h3>
    <a href="details.html?id=12">
     <div class="image">
-        
-        
         <img src='images/greycheckjacket.jpg'  width="300"  height="300" alt="grey check jacket image">
     </div>
         <div class="item-title">
             <div class="item-name">grey check jacket</div>
             <div class="item-price">£415</div>
-            
-      
-        </div>
-    
-    </a>
+            </div>
+ </a>
 
  <a class="btn"  href="details.html?id=12">view product</a>
-
-
-   </article> 
-    
-    
-
-    
+</article> 
     <article class="section-list">
         <h3>suit</h3>
     
@@ -336,17 +275,11 @@ const detail = () => {
         <div class="item-title">
             <div class="item-name">navy panama suit</div>
             <div class="item-price">£625</div>
-            
-      
-        </div>
+            </div>
     </a>
         
         <a class="btn"  href="details.html?id=13">view product</a> 
-        
-    
-    </article>
-    
-    
+        </article>
     <article class="section-list">
         <h3>suit</h3>
     
@@ -358,30 +291,17 @@ const detail = () => {
      <div class="item-title">
             <div class="item-name">blazer jacket</div>
             <div class="item-price">£565</div>
-            
-      
-        </div>
+            </div>
     
     </a>
      <a class="btn"  href="details.html?id=14">view product</a>
 </article>
     </div>
     
-    
-   
-    
-    
-    </section>
-    
-
-
-<section class="questions">
-
-
-    <h2>frequently asked questions<i class="fa-solid fa-circle circle"></i><i class="fa-solid fa-circle circle"></i></h2>
+</section>
+    <section class="questions">
+<h2>frequently asked questions<i class="fa-solid fa-circle circle"></i><i class="fa-solid fa-circle circle"></i></h2>
     <p class="section-text">Discover the frequently asked questions at Your favorite men fashion store</p>
-    
-    
     <div class="q-container">
 
   <div class="qtitle">
@@ -391,9 +311,7 @@ const detail = () => {
           
             <span class="plus">
              <i class="fa-regular fa-square-plus "></i> 
-            
-            
-          </span>
+            </span>
           <span class="minus">
             <i class="fa-regular fa-square-minus "></i> 
          </span>
@@ -401,14 +319,9 @@ const detail = () => {
         </h3>
         
         <p class="resp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-        
-        
-      </div>
-
-        
-      <div class="qtitle">
+        </div>
+<div class="qtitle">
         <h3>what is your return policy?
-          
           <span class="q-btn">
             <span class="plus">
              <i class="fa-regular fa-square-plus "></i> 
@@ -421,8 +334,6 @@ const detail = () => {
         </span>
         
         </h3>
-        
-        
         <p class="resp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         
       </div>
@@ -458,17 +369,10 @@ const detail = () => {
         
     <div class="footer-top-text">
 
-    
-    <div class="logo">
-
-        <p>SUITME<span class="log">Fashion</span></p>
+ <div class="logo">
+<p>SUITME<span class="log">Fashion</span></p>
       </div>
-      
-
-
-    <ul class="footer-links">
-
-    
+      <ul class="footer-links">
 <li class="bold-text">Quick links</li>
         <li><a href="index.html">Home</a></li>
         <li><a href="About.html">About</a></li>
@@ -476,15 +380,8 @@ const detail = () => {
         <li><a href="Contact.html">Contact</a></li>
 
     </ul>
-
-
-
-  
-   
-   <ul class="conditions">
-   
-
-    <li class="bold-text">Terms and conditions</li>
+<ul class="conditions">
+   <li class="bold-text">Terms and conditions</li>
         <li>Privacy</li>
         <li>Accessbility</li>
         <li>Blog</li>
@@ -493,45 +390,24 @@ const detail = () => {
     </ul>
 
     <ul class="support">
-   
-
-        <li class="bold-text">support</li>
+   <li class="bold-text">support</li>
             <li>Contact us</li>
             <li>Delivery</li>
             <li>Return and exchanges</li>
             <li>Terms and use</li>
-    
-        </ul>
+    </ul>
    
     <ul class="contacts">
 
 <li class="bold-text">Contacts</li>
 <li>Tel:00 222 444 555</li>
 <li>Email:suitme@gmail.com</li>
-
-
 </ul>
 
-
-
-
-
-
-
 </div>
-
-
-
 <div class="footer-bottom">
-                
-    <p>Copyright.2024|power by IBK</p>
-                
-                
-    
-               
-                
-                       
-    <div class="media">
+<p>Copyright.2024|power by IBK</p>
+<div class="media">
                         
             <i class="fa-brands fa-square-facebook"></i>
                         <i class="fa-brands fa-square-instagram"></i>
@@ -561,33 +437,13 @@ const detail = () => {
             
         </div>
     </div>
-  
-            
-                
-                
-                </div>
+  </div>
         
        </footer>
-
-
-
-
-       <script src="index.js"></script> 
+<script src="index.js"></script> 
 
 
 </body>
-            
-             
-               
-      
-            
-            
-            
-            
-            
-            
-
-
 </html>`;
 
     let pics = [

@@ -15,6 +15,7 @@ function allItems(e) {
   filtered = products;
   allNum();
   addText(e);
+  activateCartButtons();
 }
 
 let itemInfo = document.querySelector(".item-info");
@@ -36,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
   productNum();
 
   categoryTotalPrice();
-  activateCartButtons();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -44,16 +44,17 @@ document.addEventListener("DOMContentLoaded", () => {
   productNum();
 
   categoryTotalPrice();
-  activateCartButtons();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   filteredByCategoryRegular("regular");
 
   categoryTotalPrice();
-  activateCartButtons();
+
   productNum();
+  activateCartButtons();
 });
+
 let filterModal = document.querySelector(".filter-modal");
 
 function openFilterModal() {
@@ -80,17 +81,20 @@ document.addEventListener("click", (e) => {
 
       findItem();
       renderProducts(".shop-container", filtered);
+      activateCartButtons();
       displayCategory(e);
       categoryTotalPrice();
       clearInput();
     }
   }
+
   if (e.target.closest(".all-items")) {
     allItems(e);
     addText(e);
     renderProducts(".shop-container", filtered);
     closeFilterModal();
     clearInput();
+    activateCartButtons();
   }
 
   if (e.target.closest(".oversixhundred")) {
@@ -100,6 +104,7 @@ document.addEventListener("click", (e) => {
     productNum();
     filterByPriceOver();
     closeFilterModal();
+    activateCartButtons();
   }
 
   if (e.target.closest(".undersixhundred")) {
@@ -108,6 +113,7 @@ document.addEventListener("click", (e) => {
     renderProducts(".shop-container", filtered);
     productNum();
     filterByPriceUnder();
+    activateCartButtons();
   }
 
   if (e.target.closest(".low-high")) {
@@ -116,6 +122,7 @@ document.addEventListener("click", (e) => {
     productNum();
     sortByPriceLow();
     closeFilterModal();
+    activateCartButtons();
   }
 
   if (e.target.closest(".high-low")) {
@@ -123,6 +130,7 @@ document.addEventListener("click", (e) => {
     closeFilterModal();
     productNum();
     sortByPriceHigh();
+    activateCartButtons();
   }
 
   if (e.target.closest(".black")) {
@@ -130,6 +138,7 @@ document.addEventListener("click", (e) => {
     filterByColor("black");
     renderProducts(".shop-container", filtered);
     closeFilterModal();
+    activateCartButtons();
   }
 
   if (e.target.closest(".red")) {
@@ -137,6 +146,7 @@ document.addEventListener("click", (e) => {
     filterByColor("red");
     renderProducts(".shop-container", filtered);
     closeFilterModal();
+    activateCartButtons();
   }
 
   if (e.target.closest(".green")) {
@@ -144,6 +154,7 @@ document.addEventListener("click", (e) => {
     filterByColor("green");
     renderProducts(".shop-container", filtered);
     closeFilterModal();
+    activateCartButtons();
   }
 
   if (e.target.closest(".blue")) {
@@ -151,6 +162,7 @@ document.addEventListener("click", (e) => {
     filterByColor("blue");
     renderProducts(".shop-container", filtered);
     closeFilterModal();
+    activateCartButtons();
   }
 });
 
@@ -421,8 +433,6 @@ function renderProducts(containerSelector, filtered) {
   });
 }
 
-activateCartButtons();
-
 function activateCartButtons() {
   let btn = document.querySelectorAll("a.btn");
   btn.forEach((btns) => {
@@ -449,6 +459,7 @@ document.addEventListener("DOMContentLoaded", () => {
   allNum();
   productNum();
   categoryTotalPrice();
+
   activateCartButtons();
   document.querySelector(".num-box").textContent = "";
 
@@ -467,7 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderProducts(".shop-container", filtered);
       productNum();
       categoryTotalPrice();
-      activateCartButtons();
+
       clearInput();
       closeFilterModal();
     }
@@ -479,7 +490,7 @@ function filterByPriceOver() {
   renderProducts(".shop-container", filtered);
   productNum();
   categoryTotalPrice();
-  activateCartButtons();
+
   clearInput();
 }
 
@@ -489,7 +500,7 @@ function filterByPriceUnder() {
   renderProducts(".shop-container", filtered);
   productNum();
   categoryTotalPrice();
-  activateCartButtons();
+
   clearInput();
 }
 
@@ -506,7 +517,6 @@ function sortByPriceLow() {
   renderProducts(".shop-container", filtered);
   productNum();
   categoryTotalPrice();
-  activateCartButtons();
 
   clearInput();
 }
@@ -515,7 +525,7 @@ function sortByPriceHigh() {
   let filtered = [...products].sort((a, b) => b.price - a.price);
   renderProducts(".shop-container", filtered);
   productNum();
-  activateCartButtons();
+
   clearInput();
 }
 
@@ -623,20 +633,10 @@ function displayCartItems() {
             <div class="del-btn">
            
             <i class="fa-solid fa-trash"></i>
-            
-            
             </div>
-            
-           
-            
-            
-            
-            </div>
+          </div>
 </div>
      
-
-
-
 `;
     cartItems.appendChild(newCart);
   });
@@ -658,7 +658,6 @@ function updateTotal() {
   }, 0);
 
   total.textContent = `subtotal :£${reduceSum}`;
-  console.log(reduceSum);
 }
 
 document.addEventListener("click", function (e) {
@@ -772,4 +771,5 @@ function findItem() {
       return true;
     return false;
   });
+  activateCartButtons();
 }
