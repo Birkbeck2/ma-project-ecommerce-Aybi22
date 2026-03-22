@@ -92,9 +92,10 @@ document.addEventListener("click", (e) => {
     allItems(e);
     addText(e);
     renderProducts(".shop-container", filtered);
-    closeFilterModal();
+
     clearInput();
     activateCartButtons();
+    productNum();
   }
 
   if (e.target.closest(".oversixhundred")) {
@@ -463,24 +464,26 @@ document.addEventListener("DOMContentLoaded", () => {
   activateCartButtons();
   document.querySelector(".num-box").textContent = "";
 
-  let categoryList = document.querySelector(".category-list");
-  categoryList.addEventListener("click", displayCategory);
-
+  let categoryList = document.querySelectorAll(".category-list");
+  categoryList.forEach((list) => {
+    list.addEventListener("click", displayCategory);
+  });
   function displayCategory(event) {
     const clicked = event.target;
-    const categoryId = clicked.getAttribute("id");
+    const categoryData = clicked.dataset.category;
 
-    if (categoryId) {
-      document.querySelector(".category-title").textContent = categoryId;
+    if (categoryData) {
+      document.querySelector(".category-title").textContent = categoryData;
 
-      filtered = products.filter((product) => product.category === categoryId);
+      filtered = products.filter(
+        (product) => product.category === categoryData,
+      );
 
       renderProducts(".shop-container", filtered);
       productNum();
       categoryTotalPrice();
-
-      clearInput();
       closeFilterModal();
+      clearInput();
     }
   }
 });
@@ -607,17 +610,11 @@ function displayCartItems() {
          <div class="product" data-id='${product.id}'>
           
          <div class="product-items">
-
- 
-
 <div class="image-box">
          <div class="image">
              <img src="${product.image}">
-          
-         
-             </div>
+          </div>
 <div class='item-name'>${product.name}</div>
-
 </div>
               <div class="cart-action">    
             <div class="counter">
@@ -625,14 +622,9 @@ function displayCartItems() {
                 <input type="button" value="${product.quantity}"  class="quantity">
                 <input type="button" value="+" class="increase">
             </div>
-            
-           
-           
-          <div class='item-price'>£${product.price}</div>
-            
-            <div class="del-btn">
-           
-            <i class="fa-solid fa-trash"></i>
+            <div class='item-price'>£${product.price}</div>
+          <div class="del-btn">
+           <i class="fa-solid fa-trash"></i>
             </div>
           </div>
 </div>
