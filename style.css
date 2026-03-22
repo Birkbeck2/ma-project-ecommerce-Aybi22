@@ -1546,8 +1546,6 @@ object-fit:cover;
     margin-bottom:0.6rem;
 }
 .seller-wrapper article{
-    
-    
     display:flex;
     flex-direction:column;
     gap:2rem;
@@ -2899,6 +2897,10 @@ section{
 
 p{
     font-size:0.9rem;
+}
+.image{
+    padding-bottom: 1rem;
+   
 }
 
 @media screen and (min-width:768px) and (max-width:1204px){
