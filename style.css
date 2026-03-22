@@ -2285,10 +2285,13 @@ textarea:focus-within{
  
   .shop-container-wrapper{
    
-   border:2px solid red;
+   
   }
   
-  
+  a.shop{
+    color:black;
+    font-weight:900;
+  }
   .shop-container,.suit-container{
     display:grid;
     grid-template-columns:repeat(4,1fr);

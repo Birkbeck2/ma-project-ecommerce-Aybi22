@@ -17,7 +17,6 @@ function allItems(e) {
   addText(e);
   activateCartButtons();
 }
-localStorage.clear();
 
 let itemInfo = document.querySelector(".item-info");
 
@@ -192,7 +191,6 @@ fetch("./template.html")
     app.innerHTML = html;
 
     let cartBtn = document.querySelector(".cart-btn");
-    console.log(cartBtn);
 
     cartBtn.addEventListener("click", emptyCart);
     function emptyCart() {
@@ -205,6 +203,7 @@ fetch("./template.html")
         cartItems.textContent =
           "Check out was successfull , Thank you for your purchase";
         total.innerHTML = `£0`;
+        cartBtn.style.display = "none";
       } else {
         cartItems.textContent = "Fill cart before checking out";
       }
