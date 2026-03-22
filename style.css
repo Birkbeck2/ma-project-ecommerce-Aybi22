@@ -1543,7 +1543,14 @@ object-fit:cover;
 }
 
 .seller-wrapper img{
-    margin-bottom:1rem;
+    margin-bottom:0.6rem;
+}
+.seller-wrapper article{
+    
+    
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
 }
 
 
@@ -1564,17 +1571,13 @@ object-fit:cover;
     height:100%;
 }
 
-.seller-wrapper article{
-    display:flex;
-    flex-direction:column;
-   
-}
+
 .item-title{
     
     max-width:100%;
     display:flex;
     width:100%;
-    margin-top:1rem;
+  
   }
 
   
@@ -1585,7 +1588,7 @@ object-fit:cover;
 
 .seller-wrapper a.btn{
     
-    margin-top:2rem;
+    
 }
 
 
