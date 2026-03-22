@@ -405,7 +405,7 @@ a.btn{
     flex-direction:column;
     justify-content: center;
     padding:2rem;
-    border:4px solid blue;
+    
   
 }
 
@@ -3189,7 +3189,7 @@ body,html{
     display:flex;
     flex-direction:column;
     margin:auto;
-    border:7px solid blue;
+  
 }
 
 

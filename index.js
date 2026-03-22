@@ -17,6 +17,7 @@ function allItems(e) {
   addText(e);
   activateCartButtons();
 }
+localStorage.clear();
 
 let itemInfo = document.querySelector(".item-info");
 
