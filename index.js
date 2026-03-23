@@ -776,3 +776,13 @@ function showDropNav() {
 
 let colorCircle = document.querySelectorAll(".color-circle");
 console.log(colorCircle);
+function showColor() {
+  let buttons = document.querySelectorAll(".color");
+  buttons.forEach((button) => {
+    let color = button.dataset.category;
+    let circle = button.querySelector(".color-circle"); //Target ONLY the circle inside that button
+
+    circle.style.backgroundColor = color;
+  });
+}
+showColor();
