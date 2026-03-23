@@ -165,6 +165,14 @@ document.addEventListener("click", (e) => {
     closeFilterModal();
     activateCartButtons();
   }
+
+  if (e.target.closest(".grey")) {
+    addText(e);
+    filterByColor("grey");
+    renderProducts(".shop-container", filtered);
+    closeFilterModal();
+    activateCartButtons();
+  }
 });
 
 function addText(e) {

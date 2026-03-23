@@ -328,6 +328,7 @@ const products = [
     quantity: 1,
     h3: "blazer",
     category: "blazer",
+    color: "navy",
   },
 
   {
@@ -340,6 +341,7 @@ const products = [
     quantity: 1,
     h3: "blazer",
     category: "blazer",
+    color: "navy",
   },
 
   {

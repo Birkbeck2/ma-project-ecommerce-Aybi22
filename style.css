@@ -2288,7 +2288,9 @@ textarea:focus-within{
    
   }
   
-  
+  .filter-box p{
+    font-weight:900;
+  }
   a.shop{
     color:black;
     font-weight:900;
