@@ -173,6 +173,14 @@ document.addEventListener("click", (e) => {
     closeFilterModal();
     activateCartButtons();
   }
+
+  if (e.target.closest(".navy")) {
+    addText(e);
+    filterByColor("navy");
+    renderProducts(".shop-container", filtered);
+    closeFilterModal();
+    activateCartButtons();
+  }
 });
 
 function addText(e) {
@@ -448,6 +456,7 @@ function activateCartButtons() {
   let btn = document.querySelectorAll("a.btn");
   btn.forEach((btns) => {
     btns.addEventListener("click", (e) => {
+      e.preventDefault();
       const productId = e.target.dataset.id;
 
       addToCart(productId);
@@ -743,13 +752,17 @@ function productNum() {
   document.querySelector(".num-box").textContent = filtered.length;
 }
 */
-let numBox = document.querySelector(".num-box");
+let numBox = document.querySelectorAll(".num-box");
+let productNumber = filtered.length;
 function productNum() {
-  let productNumber = filtered.length;
-  productNumber > 1
-    ? (numBox.innerHTML = productNumber + " items")
-    : (numBox.innerHTML = productNumber + "item");
+  numBox.forEach((box) => {
+    let productNumber = filtered.length;
+    productNumber > 1
+      ? (box.innerHTML = productNumber + " items")
+      : (box.innerHTML = productNumber + "item");
+  });
 }
+
 function allNum() {
   let productNumber = filtered.length;
   let allNumBox = document.querySelector(".allNum-box");
@@ -794,3 +807,9 @@ function showColor() {
   });
 }
 showColor();
+function showNums() {
+  let nums = document.querySelector(".nums");
+
+  nums.textContent = productNumber;
+}
+showNums();
