@@ -232,7 +232,9 @@ fetch("./template.html")
 
     let deleteBtn = document.querySelectorAll(".del-btn");
     console.log(deleteBtn);
-
+    let menuItem = document.querySelector(".menu-item");
+    console.log(menuItem);
+    menuItem.addEventListener("click", showDropNav);
     let topIcon = document.querySelector(".top-icons");
     topIcon.addEventListener("click", showCart);
     let overlay = document.querySelector(".overlay");
@@ -765,3 +767,12 @@ function findItem() {
   });
   activateCartButtons();
 }
+
+function showDropNav() {
+  modal.body.style.backgroundColor = "pink";
+  let dropNav = document.querySelector(".drop-nav");
+  dropNav.classList.toggle("show-drop");
+}
+
+let colorCircle = document.querySelectorAll(".color-circle");
+console.log(colorCircle);

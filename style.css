@@ -2288,6 +2288,7 @@ textarea:focus-within{
    
   }
   
+  
   a.shop{
     color:black;
     font-weight:900;
@@ -2457,10 +2458,6 @@ textarea:focus-within{
   flex-direction:column;
 }
    
-   
-    
-
-
 .contact-wrapper{
     
     display:flex;
@@ -2470,11 +2467,15 @@ textarea:focus-within{
     gap:22px;
    justify-content: center;
   margin:auto;
- 
-   
+ }
+
+
+.show-drop {
+    display:block;
 }
-
-
+.drop-nav{
+    display:none;
+}
 
 .info-box p{
     font-size:1rem;
