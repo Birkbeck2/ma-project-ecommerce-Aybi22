@@ -126,6 +126,10 @@ document.addEventListener("click", (e) => {
     activateCartButtons();
   }
 
+  if (e.target.closest(".mobile-sort")) {
+    showSortList();
+  }
+
   if (e.target.closest(".high-low")) {
     addText(e);
     closeFilterModal();
@@ -817,3 +821,8 @@ function showNums() {
   });
 }
 showNums();
+
+function showSortList() {
+  let sortContent = document.querySelector(".sort-content");
+  sortContent.classList.toggle = "show-sortlist";
+}

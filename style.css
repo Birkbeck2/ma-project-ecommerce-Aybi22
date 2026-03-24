@@ -404,19 +404,30 @@ a.btn{
 .filter-modal p{
     font-weight:900;
     text-transform:capitalize;
-    margin-bottom:1rem;
+    width:100%;
+   padding:1rem;
+   
+   
 }
 .filter-modal-container{
     
     display:flex;
     flex-direction:column;
-    justify-content: center;
-    padding:2rem;
-    
-  
+   align-items: flex-start;
+   padding:0;
+   margin:0;
+   width:100%;
+   
+    }
+
+.filter-section, .filter-modal-container> div{
+    display:flex;
+    flex-direction:column;
+    align-items: start;
+    border-bottom: 1px solid grey;
+    max-width:100%;
+    width:100%;
 }
-
-
 
 
  
@@ -2052,9 +2063,16 @@ margin: auto;
     position:fixed;
     background:var(--champagne);
     transition:0.3s;
-   
+  
     overflow: hidden;
     
+   }
+ .filter-modal button{
+    border:none;
+    
+ }
+   .price-container{
+  
    }
    .close-filter-modal{
     position:absolute;
@@ -2089,10 +2107,23 @@ margin: auto;
     max-width: 100%;
    
   }
+  .filter-category{
+    border:none;
+  }
   .mobile-filter.active{
    
     display:flex;
     justify-content: center;
+  }
+  .show-sortlist{
+    display:block;
+  }
+  .sort-content{
+    display:none;
+  }
+  .sort-wrapper{
+    display:flex;
+    flex-direction: column;
   }
   .mobile{
     max-width:50%;

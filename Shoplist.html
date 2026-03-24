@@ -37,34 +37,29 @@
 
 
 <div class="filter-modal">
-     <div class="filter-modal-container">
-                    <div class="price-container  modalist">
-                       
-                   <p>price:</p>
-<div class="price-list modalist">
     
-  <button class="low-high filter-btn" data-category="Low-High">low-high</button>
-  <button class="high-low  filter-btn  " data-category="High-Low">high-low</button>
+                    
+             <div class="filter-modal-container">         
+                   
+
+  <div class="price filter">
+  <p>Price Filter:</p>
   <button class="undersixhundred  filter-btn  "data-category="0-£600">0–£600</button>
   <button class="oversixhundred  filter-btn   "  data-category="£600+">£600+</button>
-  
-</div>
-</div>  
+  </div> 
 
-<article class="filter-category ">
-  <div class="price-container ">
-    <p>category:</p>
-    <div class="category-list modalist">
+ <div class="category-list filter-section">
+     <p>Category filter:</p>
+
     <button class="all-items filter-btn"  data-category="AllItems">All Items</button>
-      <button class="filter-btn" data-category="blazer">Blazer </button>
-      <button  class="filter-btn"  data-category="regular">Regular</button>
+      <button class="  filter-btn" data-category="blazer">Blazer </button>
+      <button  class=" filter-btn"  data-category="regular">Regular</button>
       <button class="filter-btn " data-category="leathershoe">Shoe</button>
-      
-    </div>
+     </div>
  
-</article>
-<div class="filter-box active">
-    <p>Colours filter</p>
+ <div class="color-filter">
+<p>color filter:</p>
+    
   <button class="black  color  filter-btn"data-category="black">
     <span class="color-circle"></span>
     black <span class="item-total"></span></button>
@@ -73,7 +68,7 @@
  <button class="navy  color  filter-btn  "  data-category="navy"><span class="color-circle"></span>navy<span class="item-total"></span></button>
  <button class="blue color  filter-btn  "  data-category="blue"><span class="color-circle"></span>blue<span class="item-total"></span></button>
 </div>
-
+<span class="close-filter-modal">&times;</span>
 </div>
 </div>
 
@@ -121,7 +116,16 @@
 
 <div class="mobile-filter">
 <button class="filter-btn mobile">Filter</button>
-<button class="filter-btn  mobile">Sort</button>
+<div class="sort-wrapper">
+<button class="filter-btn mobile-sort">sort</button>
+<div class="sort-content">
+
+<p class="Low-high">low-high</p>
+<p class="high-low">high-low</p>
+</div>
+</div>
+
+
 </div>      
 <section class="filter-section-wrapper active ">
 
