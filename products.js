@@ -12,6 +12,7 @@ const products = [
     category: "regular",
     h3: "regular",
     color: "beige",
+    status: "best seller",
   },
 
   {
@@ -205,6 +206,7 @@ const products = [
     quantity: 1,
     h3: "blazer",
     category: "blazer",
+    status: "best seller",
   },
 
   {
@@ -329,6 +331,7 @@ const products = [
     h3: "blazer",
     category: "blazer",
     color: "navy",
+    status: "best seller",
   },
 
   {
@@ -342,6 +345,7 @@ const products = [
     h3: "blazer",
     category: "blazer",
     color: "navy",
+    status: "best seller",
   },
 
   {

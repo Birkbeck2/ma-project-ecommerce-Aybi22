@@ -185,6 +185,14 @@ document.addEventListener("click", (e) => {
     closeFilterModal();
     activateCartButtons();
   }
+
+  if (e.target.closest(".best-seller")) {
+    addText(e);
+    statusSort();
+    renderProducts(".shop-container", filtered);
+    closeFilterModal();
+    activateCartButtons();
+  }
 });
 
 function addText(e) {
@@ -825,4 +833,10 @@ showNums();
 function showSortList() {
   let sortContent = document.querySelector(".sort-content");
   sortContent.classList.toggle = "show-sortlist";
+}
+
+function statusSort() {
+  let para = document.querySelector(".best-seller");
+  let statusvalue = para.dataset.status;
+  filtered = products.filter((product) => product.status === statusvalue);
 }
