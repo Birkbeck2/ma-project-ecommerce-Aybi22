@@ -29,6 +29,9 @@ display:flex;
     gap:1rem;
     text-transform:capitalize;
 }
+.item-total{
+    margin-left:auto;
+}
 
 .filter-box{
     display:flex;
@@ -36,6 +39,10 @@ display:flex;
     gap:1rem;
     padding-left: 2.5rem;
   
+}
+.color-box{
+    font-size:0.3rem;
+    color:red;
 }
 
    .price-btn{

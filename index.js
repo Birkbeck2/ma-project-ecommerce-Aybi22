@@ -752,15 +752,13 @@ function productNum() {
   document.querySelector(".num-box").textContent = filtered.length;
 }
 */
-let numBox = document.querySelectorAll(".num-box");
+let numBox = document.querySelector(".num-box");
 let productNumber = filtered.length;
 function productNum() {
-  numBox.forEach((box) => {
-    let productNumber = filtered.length;
-    productNumber > 1
-      ? (box.innerHTML = productNumber + " items")
-      : (box.innerHTML = productNumber + "item");
-  });
+  let productNumber = filtered.length;
+  productNumber > 1
+    ? (numBox.innerHTML = productNumber + " items")
+    : (numBox.innerHTML = productNumber + "item");
 }
 
 function allNum() {
@@ -808,8 +806,14 @@ function showColor() {
 }
 showColor();
 function showNums() {
-  let nums = document.querySelector(".nums");
+  let buttons = document.querySelectorAll(".color");
 
-  nums.textContent = productNumber;
+  buttons.forEach((button) => {
+    let number = button.dataset.category;
+    let itemTotal = button.querySelector(".item-total");
+    let filtered = products.filter((product) => product.color === number);
+
+    itemTotal.innerHTML = `(${filtered.length})`;
+  });
 }
 showNums();
