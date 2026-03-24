@@ -185,14 +185,6 @@ document.addEventListener("click", (e) => {
     closeFilterModal();
     activateCartButtons();
   }
-
-  if (e.target.closest(".best-seller")) {
-    addText(e);
-    statusSort();
-    renderProducts(".shop-container", filtered);
-    closeFilterModal();
-    activateCartButtons();
-  }
 });
 
 function addText(e) {
@@ -835,8 +827,13 @@ function showSortList() {
   sortContent.classList.toggle = "show-sortlist";
 }
 
-function statusSort() {
-  let para = document.querySelector(".best-seller");
-  let statusvalue = para.dataset.status;
-  filtered = products.filter((product) => product.status === statusvalue);
-}
+let paras = document.querySelectorAll(".status-item");
+paras.forEach((para) => {
+  let statusValue = para.dataset.status;
+  para.addEventListener("click", () => {
+    filtered = products.filter((product) => product.status === statusValue);
+    renderProducts(".shop-container", filtered);
+    activateCartButtons();
+    document.querySelector(".category-title").textContent = statusValue;
+  });
+});

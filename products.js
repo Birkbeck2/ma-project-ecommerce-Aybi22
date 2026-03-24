@@ -70,6 +70,7 @@ const products = [
     category: "regular",
     h3: "regular",
     color: "green",
+    status: "new arrival",
   },
 
   {
@@ -358,6 +359,7 @@ const products = [
     quantity: 1,
     h3: "regular",
     category: "regular",
+    status: "new arrival",
   },
 
   {
