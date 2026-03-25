@@ -376,14 +376,15 @@ const products = [
 
   {
     id: 31,
-    image: "images/twillsuit.webp",
-    image1: "images/twillsuit1.webp",
-    image2: "images/twillsuit2.webp",
-    name: "fit twill suit",
+    image: "images/tailoredgreensuit1.webp",
+    image1: "images/tailoredgreensuit.webp",
+    image2: "images/tailoredgreensuit2.webp",
+    name: "tailored green suit",
     price: 630,
     quantity: 1,
     h3: "regular",
     category: "regular",
+    color: "green",
   },
 ];
 
