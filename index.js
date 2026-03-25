@@ -65,12 +65,12 @@ function closeFilterModal() {
 }
 
 document.addEventListener("click", (e) => {
-  if (e.target.closest(".mobile")) {
-    openFilterModal();
-  }
-
   if (e.target.closest(".close-filter-modal")) {
     closeFilterModal();
+  }
+
+  if (e.target.closest(".mobile")) {
+    openFilterModal();
   }
 
   if (e.target.closest(".search-btn")) {
@@ -124,10 +124,6 @@ document.addEventListener("click", (e) => {
     sortByPriceLow();
     closeFilterModal();
     activateCartButtons();
-  }
-
-  if (e.target.closest(".mobile-sort")) {
-    showSortList();
   }
 
   if (e.target.closest(".high-low")) {
@@ -185,6 +181,10 @@ document.addEventListener("click", (e) => {
     closeFilterModal();
     activateCartButtons();
   }
+
+  if (e.target.closest(".sort")) {
+    openFilterModal();
+  }
 });
 
 function addText(e) {
@@ -192,6 +192,7 @@ function addText(e) {
   let itemName = clicked.dataset.category;
   document.querySelector(".category-title").textContent = itemName;
 }
+
 /*
 let searchInput = document.getElementById("search");
 searchInput.addEventListener("input", () => {
@@ -791,12 +792,6 @@ function findItem() {
   activateCartButtons();
 }
 
-function showDropNav() {
-  modal.body.style.backgroundColor = "pink";
-  let dropNav = document.querySelector(".drop-nav");
-  dropNav.classList.toggle("show-drop");
-}
-
 let colorCircle = document.querySelectorAll(".color-circle");
 console.log(colorCircle);
 function showColor() {
@@ -821,12 +816,6 @@ function showNums() {
   });
 }
 showNums();
-
-function showSortList() {
-  let sortContent = document.querySelector(".sort-content");
-  sortContent.classList.toggle = "show-sortlist";
-}
-
 let paras = document.querySelectorAll(".status-item");
 paras.forEach((para) => {
   let statusValue = para.dataset.status;
@@ -837,3 +826,9 @@ paras.forEach((para) => {
     document.querySelector(".category-title").textContent = statusValue;
   });
 });
+
+function showDropNav() {
+  modal.body.style.backgroundColor = "pink";
+  let dropNav = document.querySelector(".drop-nav");
+  dropNav.classList.toggle("show-drop");
+}

@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
   console.log(addBtn);
   addBtn.addEventListener("click", (e) => {
+    let addCartIcon = document.querySelector(".fa-check");
+    addCartIcon.style.display = "block";
     const productId = e.target.dataset.id;
     addToCart(productId);
   });
@@ -74,6 +76,7 @@ const detail = () => {
     <a class="add-btn" href="#" data-id="${thisProduct.id}">
         
         add to cart
+<i class="fa-solid fa-check"></i>
 
     </a>
     
