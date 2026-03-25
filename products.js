@@ -373,6 +373,18 @@ const products = [
     h3: "regular",
     category: "regular",
   },
+
+  {
+    id: 31,
+    image: "images/twillsuit.webp",
+    image1: "images/twillsuit1.webp",
+    image2: "images/twillsuit2.webp",
+    name: "fit twill suit",
+    price: 630,
+    quantity: 1,
+    h3: "regular",
+    category: "regular",
+  },
 ];
 
 export default products;

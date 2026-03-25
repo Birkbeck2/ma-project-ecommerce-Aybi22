@@ -428,7 +428,7 @@ a.btn{
     max-width:100%;
     width:100%;
 }
-.mobile,.mobile-sort{
+.mobile{
     display:flex;
     justify-content:center;
     gap:1rem;
