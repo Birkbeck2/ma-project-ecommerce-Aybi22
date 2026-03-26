@@ -2275,6 +2275,26 @@ margin: auto;
     gap:37px;
     flex-wrap: wrap;
 }
+.check-message{
+
+color:green;
+transform:translateY(-100%);
+   transition:transform 0.3s ease;
+display:flex;
+align-items: center;
+gap:0.5rem;
+top:0px;
+left:0px;
+z-index:9999;
+
+   
+   }
+
+   .add-btn.show{
+   color:white;
+   background:#4CAF50;
+   }
+
 
 .add-btn{
 background:#FFD700;
@@ -2866,7 +2886,7 @@ p{
 }
 
 .fa-check{
-    display:none;
+   font-size:1rem;
 }
 
     

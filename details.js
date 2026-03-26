@@ -5,12 +5,22 @@ document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
   console.log(addBtn);
   addBtn.addEventListener("click", (e) => {
-    let addCartIcon = document.querySelector(".fa-check");
-    addCartIcon.style.display = "block";
     const productId = e.target.dataset.id;
     addToCart(productId);
+    addCartCheck();
   });
 });
+
+function addCartCheck() {
+  let addBtn = document.querySelector(".add-btn");
+  addBtn.classList.add("show");
+  addBtn.innerHTML = `<i class="fa-solid fa-check"></i>item added to cart`;
+
+  setTimeout(() => {
+    addBtn.classList.remove("show");
+    addBtn.textContent = "add to cart";
+  }, 2500);
+}
 
 const detail = () => {
   let productId = new URLSearchParams(window.location.search).get("id");
@@ -20,7 +30,7 @@ const detail = () => {
 
   if (thisProduct) {
     productDetails.innerHTML = `
-        
+      
         <div class="product-display">
        
         <div class="left-gallery">
@@ -76,7 +86,7 @@ const detail = () => {
     <a class="add-btn" href="#" data-id="${thisProduct.id}">
         
         add to cart
-<i class="fa-solid fa-check"></i>
+
 
     </a>
     
