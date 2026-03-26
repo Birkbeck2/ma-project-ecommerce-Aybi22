@@ -622,7 +622,6 @@ function addToCart(productId) {
   updateTotal();
   displayCartItems();
   updateCartIcon();
-  localStorage.setItem("cart", JSON.stringify(cart));
 }
 //this function push new items to the cart array if the item is not already in the cart
 
@@ -709,6 +708,7 @@ document.addEventListener("click", function (e) {
     // Update cart total
     updateTotal();
     updateCartIcon();
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
 });
 

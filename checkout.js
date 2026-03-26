@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   cartBtn.addEventListener("click", orderRecap);
   console.log(cartBtn);
 });
+
 function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
 
@@ -19,7 +20,9 @@ function orderRecap() {
          <div class="image">
              <img src="${product.image}">
           </div>
-<div class='item-name'>${product.name}</div>
+<div class='item-name'>Product name:${product.name}</div>
+<div class='item-price'> Price:£${product.price * product.quantity}</div>
+<div class='item-quantity'>Quantity:${product.quantity}</div>
 </div>
   </div>
   
