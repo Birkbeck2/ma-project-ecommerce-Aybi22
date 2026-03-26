@@ -3,9 +3,11 @@ import { addToCart } from "./index.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
+
   console.log(addBtn);
   addBtn.addEventListener("click", (e) => {
-    const productId = e.target.dataset.id;
+    const productId = e.currentTarget.dataset.id;
+    stopButton();
     addToCart(productId);
     addCartCheck();
   });
@@ -13,13 +15,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function addCartCheck() {
   let addBtn = document.querySelector(".add-btn");
+
   addBtn.classList.add("show");
   addBtn.innerHTML = `<i class="fa-solid fa-check"></i>item added to cart`;
 
   setTimeout(() => {
     addBtn.classList.remove("show");
     addBtn.textContent = "add to cart";
-  }, 2500);
+  }, 4500);
+}
+function stopButton() {
+  let addBtn = document.querySelector(".add-btn");
+  addBtn.disabled = true;
+  setTimeout(() => {
+    addBtn.disabled = false;
+  }, 4500);
 }
 
 const detail = () => {
@@ -83,12 +93,12 @@ const detail = () => {
    
    <div class="add-cart">
    
-    <a class="add-btn" href="#" data-id="${thisProduct.id}">
+    <button class="add-btn" href="#" data-id="${thisProduct.id}">
         
         add to cart
 
 
-    </a>
+    </button>
     
 </div>
 

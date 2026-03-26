@@ -166,6 +166,12 @@ h2{
     cursor:pointer;
  }
 
+ .add-btn.disabled{
+    pointer-events: none;
+    opacity:0.6;
+    cursor:not-allowed;
+ }
+
 a.btn{
     color:var(--black);
     font-weight:bold;
@@ -2305,12 +2311,13 @@ it depends on the parent container. If the parent is fixed width,
 the button won’t fully respond.*/
 text-align:center;
 text-transform:capitalize;
-font-weight:900;
+font-weight:700;
 width:100%;
 display:flex;
 align-items:center;
 justify-content:center;
 gap:0.5rem;
+border:none;
 }
 .cart-title{
     font-size:23px;
@@ -2732,7 +2739,7 @@ form .send-btn{
     margin-left:auto;
 }
 .right-side .item-price{
-    font-weight: 200;
+    font-weight: 600;
     font-size:1.5rem;
 }
 .stock-info{
