@@ -1,11 +1,17 @@
 let savedCart = JSON.parse(localStorage.getItem("cart"));
 console.log(savedCart);
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMcontentLoaded", () => {
   let cartBtn = document.querySelector(".cart-btn");
-  cartBtn.addEventListener("click", orderRecap);
-  console.log(cartBtn);
-});
 
+  console.log(cartBtn);
+  cartBtn.addEventListener("click", orderRecap);
+});
+let savedPrices = savedCart.map((product) => product.price);
+let totalPrices = savedPrices.reduce((currentTotal, product) => {
+  return currentTotal + product.price * product.quantity;
+});
+let total = document.querySelector(".total");
+total.innerHTML = `Total: £${totalPrices}`;
 function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
 
@@ -14,7 +20,7 @@ function orderRecap() {
       return `
   
   <div class="product" data-id='${product.id}'>
-          
+      
          <div class="product-items">
 <div class="image-box">
          <div class="image">

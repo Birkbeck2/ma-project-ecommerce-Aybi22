@@ -212,7 +212,6 @@ fetch("./template.html")
     app.innerHTML = html;
     let cartBtn = document.querySelector(".cart-btn");
     console.log(cartBtn);
-
     /*
     
     function emptyCart() {
