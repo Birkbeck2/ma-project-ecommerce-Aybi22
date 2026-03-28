@@ -2569,7 +2569,7 @@ height:100%;
 }
 
 
-form{
+.contact-form{
     display:flex;
     flex-direction:column;
     gap:17px;
@@ -2588,7 +2588,28 @@ form .send-btn{
     color:black;
     
 }
+.billing{
+display:flex;
+flex-direction:column;
+gap:2rem;
+}
+.billing input{
+  border:1px solid gainsboro;
+}
 
+.recap div{
+    display:flex;
+    flex-direction:column;
+   
+    gap:0.5rem;
+}
+.billing label{
+    font-weight:700;
+  
+}
+.billing h2{
+    text-transform: capitalize;
+}
 
 .form-section input{
     padding:11px;
@@ -2812,7 +2833,7 @@ h2{
    
 }
 
-  .cart-footer.total{
+  .cart-footer .total{
     
     display:flex;
     justify-content: space-between;
@@ -2820,10 +2841,18 @@ h2{
     width:100%;
     margin:auto;
     font-size:1rem;
-   
+   }
+
+.checkout-container{
+    display:flex;
+    justify-content:center;
+    border:2px solid gainsboro;
+    gap:1rem;
 }
-
-
+.recap-container{
+    border:1px solid gainsboro;
+    height:auto;
+}
 
 a.cart-btn{
     background:#FFD700;
