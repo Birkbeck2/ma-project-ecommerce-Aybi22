@@ -1,17 +1,13 @@
 let savedCart = JSON.parse(localStorage.getItem("cart"));
 console.log(savedCart);
+
 document.addEventListener("DOMcontentLoaded", () => {
   let cartBtn = document.querySelector(".cart-btn");
 
   console.log(cartBtn);
   cartBtn.addEventListener("click", orderRecap);
 });
-let savedPrices = savedCart.map((product) => product.price);
-let totalPrices = savedPrices.reduce((currentTotal, product) => {
-  return currentTotal + product.price * product.quantity;
-});
-let total = document.querySelector(".total");
-total.innerHTML = `Total: £${totalPrices}`;
+
 function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
 
@@ -21,14 +17,17 @@ function orderRecap() {
   
   <div class="product" data-id='${product.id}'>
       
-         <div class="product-items">
-<div class="image-box">
-         <div class="image">
+         <div class="recap-items">
+<div class="recap-box">
+         <div class="recap-image">
              <img src="${product.image}">
           </div>
-<div class='item-name'>Product name:${product.name}</div>
-<div class='item-price'> Price:£${product.price * product.quantity}</div>
-<div class='item-quantity'>Quantity:${product.quantity}</div>
+          <div class="recap-infos">
+<div class='recap-name'>${product.name}</div>
+<div class='recap-quantity'>Quantity: ${product.quantity}</div>
+<div class='recap-price'> £${product.price * product.quantity}</div>
+
+</div>
 </div>
   </div>
   

@@ -1,8 +1,6 @@
 import detail from "./details.js";
 import products from "./products.js";
 
-detail();
-
 export function showCart() {
   let cart = document.querySelector(".cart");
   let overlay = document.querySelector(".overlay");

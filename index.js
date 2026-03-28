@@ -7,7 +7,6 @@ import { showCart, closeOver, closeModal } from "./cart.js";
 import { filteredByCategoryBlazer } from "./blazer.js";
 import { filteredByCategoryLeatherShoe } from "./leathershoe.js";
 import { filteredByCategoryRegular } from "./suit.js";
-
 detail();
 
 let filtered = products;
@@ -213,7 +212,6 @@ fetch("./template.html")
     let cartBtn = document.querySelector(".cart-btn");
     console.log(cartBtn);
     /*
-    
     function emptyCart() {
       let total = document.querySelector(".total");
       localStorage.removeItem("cart");
@@ -229,8 +227,7 @@ fetch("./template.html")
         cartItems.textContent = "Fill cart before checking out";
       }
     }
-      */
-
+*/
     let hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", showMobileMenu);
     function showMobileMenu() {
@@ -672,8 +669,9 @@ function updateTotal() {
   let reduceSum = cart.reduce((currentTotal, product) => {
     return currentTotal + product.price * product.quantity;
   }, 0);
+  let subTotal = `£${reduceSum}`;
 
-  total.textContent = `subtotal :£${reduceSum}`;
+  total.textContent = subTotal;
 }
 
 document.addEventListener("click", function (e) {

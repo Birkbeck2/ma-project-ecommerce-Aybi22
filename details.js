@@ -1,6 +1,7 @@
 import products from "./products.js";
 import { addToCart } from "./index.js";
 
+
 document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
 
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stopButton();
     addToCart(productId);
     addCartCheck();
+   
   });
 });
 
