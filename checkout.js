@@ -66,3 +66,11 @@ function orderRecap() {
     .join("");
 }
 orderRecap();
+function stopCheckout() {
+  let cartBtn = document.querySelector(".cart-btn");
+
+  savedCart.children.length === 0
+    ? (cartBtn.disabled = true)
+    : (cartBtn.disabled = false);
+}
+stopCheckout();
