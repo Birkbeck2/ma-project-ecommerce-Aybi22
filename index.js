@@ -209,8 +209,7 @@ fetch("./template.html")
   .then((html) => {
     let app = document.getElementById("app");
     app.innerHTML = html;
-    let cartBtn = document.querySelector(".cart-btn");
-    console.log(cartBtn);
+
     /*
     function emptyCart() {
       let total = document.querySelector(".total");
@@ -652,6 +651,7 @@ function displayCartItems() {
      
 `;
     cartItems.appendChild(newCart);
+    localStorage.setItem("cart", JSON.stringify(cart));
   });
   attachDeleteEvents(); // re-attach event listeners to new delete buttons
 }
