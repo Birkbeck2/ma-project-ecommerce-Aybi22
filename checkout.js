@@ -38,7 +38,10 @@ function removeItems(productId) {
 
 function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
-
+  if (savedCart.length === 0) {
+    sumContainer.innerHTML = `<p class="red-message">Add items before placing an order!</p>`;
+    return;
+  }
   sumContainer.innerHTML = savedCart
     .map((product) => {
       return `
@@ -67,10 +70,10 @@ function orderRecap() {
 }
 orderRecap();
 function stopCheckout() {
-  let cartBtn = document.querySelector(".cart-btn");
-
-  savedCart.children.length === 0
-    ? (cartBtn.disabled = true)
-    : (cartBtn.disabled = false);
+  let cart = document.querySelector(".cart");
+  let sumContainer = document.querySelector(".sum-container");
+  if (sumContainer.children.length === 0) {
+    cart.body.style.backgroundColor = "pink";
+  }
 }
 stopCheckout();

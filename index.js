@@ -209,8 +209,10 @@ fetch("./template.html")
   .then((html) => {
     let app = document.getElementById("app");
     app.innerHTML = html;
+    let cartBtn = document.querySelector(".cart-btn");
 
-    /*
+    console.log(cartBtn);
+    cartBtn.addEventListener("click", emptyCart);
     function emptyCart() {
       let total = document.querySelector(".total");
       localStorage.removeItem("cart");
@@ -226,7 +228,7 @@ fetch("./template.html")
         cartItems.textContent = "Fill cart before checking out";
       }
     }
-*/
+
     let hamburger = document.querySelector(".hamburger");
     hamburger.addEventListener("click", showMobileMenu);
     function showMobileMenu() {

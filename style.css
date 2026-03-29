@@ -1128,7 +1128,12 @@ text-transform:capitalize;
 margin-top:20px;
 font-size:16px;
 font-family:verdana;
+}
 
+.red-message{
+    color:red;
+    text-align:center;
+    font-style:italic;
 }
 
 .social i{
