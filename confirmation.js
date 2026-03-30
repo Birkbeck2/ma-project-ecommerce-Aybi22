@@ -1,6 +1,21 @@
 let savedCart = JSON.parse(localStorage.getItem("cart"));
 console.log(savedCart);
 
+document.addEventListener("DOMContentLoaded", () => {
+  let savedName = localStorage.getItem("firstname");
+  if (savedName) {
+    let customerName = document.querySelector(".detail-name");
+    console.log(customerName);
+    customerName.textContent = ` Name: ${savedName}`;
+  }
+
+  let savedPhone = localStorage.getItem("phone");
+  if (savedPhone) {
+    let phoneNum = document.querySelector(".phone");
+    phoneNum.textContent = `Telephone number: ${savedPhone}`;
+  }
+});
+
 function updateOrderTotal() {
   let reduceSum = savedCart.reduce((currentTotal, product) => {
     return currentTotal + product.price * product.quantity;
@@ -10,7 +25,7 @@ function updateOrderTotal() {
   totalCost.innerHTML = ` Order Total: <span class="amount">${subTotal}</span>`;
 }
 
-function confirm() {
+function confirmOrder() {
   let confirmedInfos = document.querySelector(".confirmation-infos");
 
   confirmedInfos.innerHTML = savedCart
@@ -29,4 +44,4 @@ function confirm() {
     .join("");
 }
 updateOrderTotal();
-confirm();
+confirmOrder();

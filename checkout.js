@@ -1,7 +1,7 @@
 let savedCart = JSON.parse(localStorage.getItem("cart"));
 console.log(savedCart);
 
-document.addEventListener("DOMcontentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   let cartBtn = document.querySelector(".cart-btn");
 
   console.log(cartBtn);
@@ -79,8 +79,18 @@ function updateOrderTotal() {
   OrderTotal.innerHTML = `  Total: <span class="amount">${subTotal}</span>`;
 }
 updateOrderTotal();
-document.addEventListener("DOMcontentLoaded", () => {
-  let input = document.querySelector(".first-name");
-  let customerName = input.value;
-  localStorage.setItem("firstname", customerName);
+document.addEventListener("DOMContentLoaded", () => {
+  let placeBtn = document.querySelector(".place-btn");
+  console.log(placeBtn);
+  placeBtn.addEventListener("click", saveName);
 });
+function saveName() {
+  let input = document.querySelector(".first-name");
+  console.log(input);
+  let customername = input.value;
+  localStorage.setItem("firstname", customername); //Only save data when the user performs an action
+
+  let telInput = document.querySelector(".phone");
+  let customerphone = telInput.value;
+  localStorage.setItem("phone", customerphone);
+}
