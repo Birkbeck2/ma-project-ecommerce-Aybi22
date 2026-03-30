@@ -36,7 +36,7 @@ function removeItems(productId) {
   }
 }
 
-export function orderRecap() {
+function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
   if (savedCart.length === 0) {
     sumContainer.innerHTML = `<p class="red-message">Add items before placing an order!</p>`;
@@ -79,3 +79,8 @@ function updateOrderTotal() {
   OrderTotal.innerHTML = `  Total: <span class="amount">${subTotal}</span>`;
 }
 updateOrderTotal();
+document.addEventListener("DOMcontentLoaded", () => {
+  let input = document.querySelector(".first-name");
+  let customerName = input.value;
+  localStorage.setItem("firstname", customerName);
+});

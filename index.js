@@ -214,13 +214,11 @@ fetch("./template.html")
     console.log(cartBtn);
     cartBtn.addEventListener("click", emptyCart);
     function emptyCart(e) {
-      let total = document.querySelector(".total");
-
       let cartItems = document.querySelector(".cart-items");
-      if (cartItems && total && cartItems.children.length === 0) {
+      if (cartItems.children.length === 0) {
         //element.children.length	Number
 
-        cartItems.innerHTML = `<p class="error">please fill cart before checking out"<span class="error-icon">X</span></p>`;
+        cartItems.textContent = "Please fill cart before checking out";
         e.preventDefault();
       }
     }
