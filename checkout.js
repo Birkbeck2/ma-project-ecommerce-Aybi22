@@ -75,6 +75,7 @@ function updateOrderTotal() {
     return currentTotal + product.price * product.quantity;
   }, 0);
   let subTotal = `£${reduceSum}`;
-  let OrderTotal = document.querySelector(".order-total");
-  OrderTotal.textContent = subTotal;
+  let OrderTotal = document.querySelector(".sum-total");
+  OrderTotal.innerHTML = `  Total: <span class="amount">${subTotal}</span>`;
 }
+updateOrderTotal();

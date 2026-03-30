@@ -1151,6 +1151,20 @@ font-family:verdana;
   width:100%;
   margin-bottom:1rem;
 }
+.sum-total{
+    max-width:100%;
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+
+    border-bottom:1px solid gainsboro;
+    padding-bottom:1rem;
+
+   
+}
+.amount{
+    margin-right:auto;
+}
 
 .error{
     display:flex;
