@@ -213,19 +213,15 @@ fetch("./template.html")
 
     console.log(cartBtn);
     cartBtn.addEventListener("click", emptyCart);
-    function emptyCart() {
+    function emptyCart(e) {
       let total = document.querySelector(".total");
-      localStorage.removeItem("cart");
+
       let cartItems = document.querySelector(".cart-items");
-      if (cartItems && total && cartItems.children.length > 0) {
+      if (cartItems && total && cartItems.children.length === 0) {
         //element.children.length	Number
-        // Number of child elements
-        cartItems.textContent =
-          "Check out was successfull , Thank you for your purchase";
-        total.innerHTML = `£0`;
-        cartBtn.style.display = "none";
-      } else {
-        cartItems.textContent = "Fill cart before checking out";
+
+        cartItems.innerHTML = `<p class="error">please fill cart before checking out"<span class="error-icon">X</span></p>`;
+        e.preventDefault();
       }
     }
 
@@ -437,6 +433,7 @@ function renderProducts(containerSelector, filtered) {
       <div class="image">
       <img src= ${product.image} alt=${product.alt}>
       </div>
+      
       </a>
       <div class="item-title">
          <div class='item-name'>${product.name}</div>

@@ -4,7 +4,6 @@ import { addToCart } from "./index.js";
 document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
 
-  console.log(addBtn);
   addBtn.addEventListener("click", (e) => {
     const productId = e.currentTarget.dataset.id;
     stopButton();

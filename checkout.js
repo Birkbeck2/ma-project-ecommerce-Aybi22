@@ -69,11 +69,12 @@ function orderRecap() {
     .join("");
 }
 orderRecap();
-function stopCheckout() {
-  let cart = document.querySelector(".cart");
-  let sumContainer = document.querySelector(".sum-container");
-  if (sumContainer.children.length === 0) {
-    cart.body.style.backgroundColor = "pink";
-  }
+
+function updateOrderTotal() {
+  let reduceSum = savedCart.reduce((currentTotal, product) => {
+    return currentTotal + product.price * product.quantity;
+  }, 0);
+  let subTotal = `£${reduceSum}`;
+  let OrderTotal = document.querySelector(".order-total");
+  OrderTotal.textContent = subTotal;
 }
-stopCheckout();
