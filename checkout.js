@@ -36,7 +36,7 @@ function removeItems(productId) {
   }
 }
 
-function orderRecap() {
+export function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
   if (savedCart.length === 0) {
     sumContainer.innerHTML = `<p class="red-message">Add items before placing an order!</p>`;

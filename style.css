@@ -2924,6 +2924,40 @@ a.cart-btn.place-btn:hover{
  color:white;
 }
 
+.infos-box{
+    border:2px solid gainsboro;
+    max-width:600px;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    gap:0.5rem;
+    margin:auto;
+    padding:1rem;
+    
+}
+.infos-text{
+    font-weight:800;
+    text-transform:capitalize;
+}
+
+
+.success {
+  color: #155724;
+  background: #d4edda;
+  border-left: 4px solid #28a745;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: normal;
+  max-width:600px;
+  width:100%;
+  margin-bottom:1rem;
+}
+
+.success{
+    color:#155724;
+}
+
 a.cart-btn{
     background:#FFD700;
     border:none;
