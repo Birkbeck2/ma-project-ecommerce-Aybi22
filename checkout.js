@@ -82,7 +82,8 @@ updateOrderTotal();
 document.addEventListener("DOMContentLoaded", () => {
   let placeBtn = document.querySelector(".place-btn");
   console.log(placeBtn);
-  placeBtn.addEventListener("click", saveName);
+  placeBtn.addEventListener("click", stopOrder);
+  placeBtn.addEventListener("click", saveUserData);
 });
 function saveUserData() {
   let firstNameInput = document.querySelector(".first-name");
@@ -93,4 +94,27 @@ function saveUserData() {
   let phoneInput = document.querySelector(".phone");
   let userPhone = phoneInput.value;
   localStorage.setItem("phone", userPhone);
+
+  let emailInput = document.querySelector(".email");
+  let userEmail = emailInput.value;
+  localStorage.setItem("email", userEmail);
+
+  let lastNameInput = document.querySelector(".lastname");
+  let userLastName = lastNameInput.value;
+  localStorage.setItem("lastname", userLastName);
+
+  let addressInput = document.querySelector(".address");
+  let userAddress = addressInput.value;
+  localStorage.setItem("address", userAddress);
+}
+function stopOrder(e) {
+  let AllInput = document.getElementsByTagName("input");
+  for (let i = 0; i < AllInput.length; i++) {
+    if (!AllInput[i].value.trim()) {
+      console.log(AllInput[i]);
+      e.preventDefault();
+      let orderErrorMessage = document.querySelector(".order-error-message");
+      orderErrorMessage.style.display = "block";
+    }
+  }
 }

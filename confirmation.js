@@ -2,19 +2,40 @@ let savedCart = JSON.parse(localStorage.getItem("cart"));
 console.log(savedCart);
 
 document.addEventListener("DOMContentLoaded", () => {
-  let savedFirstName = localStorage.getItem("firstname");
-  if (savedFirstName) {
+  let savedUserFirstName = localStorage.getItem("firstname");
+  if (savedUserFirstName) {
     let firstNameDisplay = document.querySelector(".first-name-display");
     console.log(firstNameDisplay);
-    firstNameDisplay.textContent = ` Name: ${savedFirstName}`;
+    firstNameDisplay.textContent = `firstname: ${savedUserFirstName}`;
   }
-
   let savedUserPhone = localStorage.getItem("phone");
   if (savedUserPhone) {
     let phoneNum = document.querySelector(".phone-display");
     phoneNum.textContent = `Telephone number: ${savedUserPhone}`;
   }
+  let savedUserEmail = localStorage.getItem("email");
+  if (savedUserEmail) {
+    let emailDisplay = document.querySelector(".email-display");
+    emailDisplay.textContent = `Email: ${savedUserEmail}`;
+  }
+  let savedUserLastName = localStorage.getItem("lastname");
+  if (savedUserLastName) {
+    let lastNameDisplay = document.querySelector(".last-name-display");
+    lastNameDisplay.textContent = `Lastname:${savedUserLastName}`;
+  }
+
+  let savedUserAddress = localStorage.getItem("address");
+  if (savedUserAddress) {
+    let addressDisplay = document.querySelector(".address-display");
+    addressDisplay.textContent = `Address:${savedUserAddress}`;
+  }
 });
+function getUserData() {
+  let savedData = JSON.parse(localStorage.getItem("userData"));
+  if (savedData) {
+    console.log(savedData);
+  }
+}
 
 function updateOrderTotal() {
   let reduceSum = savedCart.reduce((currentTotal, product) => {

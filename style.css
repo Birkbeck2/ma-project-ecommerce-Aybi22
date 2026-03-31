@@ -1850,6 +1850,15 @@ object-fit:cover;
     outline:2px solid orange;
      box-shadow: 2px 3px 2px  orange;
 }
+.customer-infos-content{
+    border:1px solid red;
+}
+.order-error-message{
+    color:red;
+    font-style:italic;
+    display:none;
+    text-align: center;
+}
 
 .review-message, .error{
     display:none;
@@ -2959,6 +2968,7 @@ a.cart-btn.place-btn:hover{
   margin-bottom:1rem;
   display:flex;
   align-items:center;
+  justify-content:center;
   gap:3px;
 }
 
