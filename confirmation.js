@@ -2,17 +2,17 @@ let savedCart = JSON.parse(localStorage.getItem("cart"));
 console.log(savedCart);
 
 document.addEventListener("DOMContentLoaded", () => {
-  let savedName = localStorage.getItem("firstname");
-  if (savedName) {
-    let customerName = document.querySelector(".detail-name");
-    console.log(customerName);
-    customerName.textContent = ` Name: ${savedName}`;
+  let savedFirstName = localStorage.getItem("firstname");
+  if (savedFirstName) {
+    let firstNameDisplay = document.querySelector(".first-name-display");
+    console.log(firstNameDisplay);
+    firstNameDisplay.textContent = ` Name: ${savedFirstName}`;
   }
 
-  let savedPhone = localStorage.getItem("phone");
-  if (savedPhone) {
-    let phoneNum = document.querySelector(".phone");
-    phoneNum.textContent = `Telephone number: ${savedPhone}`;
+  let savedUserPhone = localStorage.getItem("phone");
+  if (savedUserPhone) {
+    let phoneNum = document.querySelector(".phone-display");
+    phoneNum.textContent = `Telephone number: ${savedUserPhone}`;
   }
 });
 

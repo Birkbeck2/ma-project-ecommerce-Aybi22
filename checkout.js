@@ -84,13 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(placeBtn);
   placeBtn.addEventListener("click", saveName);
 });
-function saveName() {
-  let input = document.querySelector(".first-name");
+function saveUserData() {
+  let firstNameInput = document.querySelector(".first-name");
   console.log(input);
-  let customername = input.value;
-  localStorage.setItem("firstname", customername); //Only save data when the user performs an action
+  let userFirstName = firstNameInput.value;
+  localStorage.setItem("firstname", userFirstName); //Only save data when the user performs an action
 
-  let telInput = document.querySelector(".phone");
-  let customerphone = telInput.value;
-  localStorage.setItem("phone", customerphone);
+  let phoneInput = document.querySelector(".phone");
+  let userPhone = phoneInput.value;
+  localStorage.setItem("phone", userPhone);
 }
