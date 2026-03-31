@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 function saveUserData() {
   let firstNameInput = document.querySelector(".first-name");
-  console.log(input);
+
   let userFirstName = firstNameInput.value;
   localStorage.setItem("firstname", userFirstName); //Only save data when the user performs an action
 
@@ -99,13 +99,17 @@ function saveUserData() {
   let userEmail = emailInput.value;
   localStorage.setItem("email", userEmail);
 
-  let lastNameInput = document.querySelector(".lastname");
+  let lastNameInput = document.querySelector(".last-name");
   let userLastName = lastNameInput.value;
   localStorage.setItem("lastname", userLastName);
 
   let addressInput = document.querySelector(".address");
   let userAddress = addressInput.value;
   localStorage.setItem("address", userAddress);
+
+  let postCodeInput=document.querySelector('.postcode');
+  let userPostCode=postCodeInput.value;
+  localStorage.setItem('postcode', userPostCode);
 }
 function stopOrder(e) {
   let AllInput = document.getElementsByTagName("input");
@@ -115,6 +119,7 @@ function stopOrder(e) {
       e.preventDefault();
       let orderErrorMessage = document.querySelector(".order-error-message");
       orderErrorMessage.style.display = "block";
+      return; // stop function immediately
     }
   }
 }

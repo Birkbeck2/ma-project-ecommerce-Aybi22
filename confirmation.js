@@ -3,10 +3,11 @@ console.log(savedCart);
 
 document.addEventListener("DOMContentLoaded", () => {
   let savedUserFirstName = localStorage.getItem("firstname");
+  console.log(savedUserFirstName);
   if (savedUserFirstName) {
     let firstNameDisplay = document.querySelector(".first-name-display");
-    console.log(firstNameDisplay);
-    firstNameDisplay.textContent = `firstname: ${savedUserFirstName}`;
+    console.log(savedUserFirstName);
+    firstNameDisplay.textContent = `Firstname: ${savedUserFirstName}`;
   }
   let savedUserPhone = localStorage.getItem("phone");
   if (savedUserPhone) {
@@ -28,6 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (savedUserAddress) {
     let addressDisplay = document.querySelector(".address-display");
     addressDisplay.textContent = `Address:${savedUserAddress}`;
+  }
+  
+  let savedUserPostCode = localStorage.getItem('postcode');
+  if(savedUserPostCode){
+    let postCodeDisplay=document.querySelector('.postcode-display');
+    postCodeDisplay.textContent=`Postcode: ${savedUserPostCode}`
   }
 });
 function getUserData() {

@@ -1852,6 +1852,9 @@ object-fit:cover;
 }
 .customer-infos-content{
     border:1px solid red;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
 }
 .order-error-message{
     color:red;
