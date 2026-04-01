@@ -207,7 +207,11 @@ a.btn.new{
 a.btn.new:hover{
     color:var(--white);
 }
-  
+  .product-content{
+   
+    display:flex; 
+    justify-content:space-between;
+}
 
 .cart-items{
     max-width:100%;
@@ -218,41 +222,43 @@ a.btn.new:hover{
    flex-direction:column;
    align-items:center;
    }
-.product .image{
-   width:100%;
-}
+
 .product-items{
-   
-    width:400px;
+   max-width:500px;
+    width:100%;
     margin-bottom:1rem;
     display:flex;
     align-items:center;
-    justify-content: flex-start;
-    padding:2rem;
-    gap:21px;
+    justify-content: space-between;
+    padding:1rem;
+   gap:5px;
     border:1px solid gainsboro;
   
 }
 .product-items .item-price{
     color:grey;
     font-weight:lighter;
-    flex:1;
+   
 }
 .product-items .item-name{
     font-weight:800;
     font-size:0.7rem;
+    width:60%;
+   
 }
 
 
 .image-box{
     display:flex;
     flex-direction:column;
-   width:200px;
-    gap:7px;
+    width:100px;
+    gap:2px;
+ 
+    
 }
 .del-btn{
  
-    margin-right:auto;
+    
     cursor:pointer;
 }
 .product-items .item-title{
@@ -281,14 +287,18 @@ h4{
 
 
 
-.product {
+.product{
     display: flex;
     flex-direction:column;
     align-items: center; /* vertically align all flex items */
     gap: 10px; /* spacing between flex children */
+    min-width:600px;
+    width:100%;
+  }
 
-
-}
+  .product.recap-list{
+    max-width:100%;
+  }
 
 .tablet-container{
     display:grid;
@@ -324,13 +334,16 @@ h4{
 
 
 .product .image {
-    flex: 0 0 60px; /* fixed width box for image */
+    width:100px; /* fixed width box for image */
+    display:block;
+    height:150px;
  
 }
   
  .product .image img {
     width: 100%; /* fill .image container */
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block; /* remove inline gap */
   }
  
@@ -1100,6 +1113,7 @@ h4{
 .product-list section{
     display:flex;
     flex-direction:column;
+
 }
 
 .icon p{
@@ -3217,15 +3231,25 @@ p{
     display:flex;
     align-items:flex-start;
     border:1px solid gainsboro;
-    max-width:600px;
+  
     width:100%;
+   
     }
 
 .recap-items{
-    width:500px;
-    
+    max-width:100%;
+    gap:1rem;
     display:flex;
     flex-direction:column;
+    align-items: center;
+   
+    gap:1rem;
+}
+
+.product-recap{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
 }
 
     .recap-infos{

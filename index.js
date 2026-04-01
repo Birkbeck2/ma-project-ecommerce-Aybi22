@@ -624,9 +624,10 @@ function displayCartItems() {
     let newCart = document.createElement("div");
 
     newCart.innerHTML = `
-         <div class="product" data-id='${product.id}'>
+         <div class="product cart-data" data-id='${product.id}'>
           
          <div class="product-items">
+         <div class="product-content">
 <div class="image-box">
          <div class="image">
              <img src="${product.image}">
@@ -642,6 +643,7 @@ function displayCartItems() {
             <div class='item-price'>£${product.price}</div>
           <div class="del-btn">
            <i class="fa-solid fa-trash"></i>
+            </div>
             </div>
           </div>
 </div>
@@ -666,9 +668,14 @@ function updateTotal() {
   let reduceSum = cart.reduce((currentTotal, product) => {
     return currentTotal + product.price * product.quantity;
   }, 0);
-  let subTotal = `£${reduceSum}`;
 
-  total.textContent = subTotal;
+  reduceSum = Math.round(reduceSum * 100) / 100;
+  let formatted = reduceSum.toLocaleString("en-GB", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  });
+
+  total.textContent = `£${formatted}`;
 }
 
 document.addEventListener("click", function (e) {

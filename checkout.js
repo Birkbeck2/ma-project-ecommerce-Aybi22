@@ -46,7 +46,7 @@ function orderRecap() {
     .map((product) => {
       return `
   
-  <div class="product" data-id='${product.id}'>
+  <div class="product-recap" data-id='${product.id}'>
       
          <div class="recap-items">
 <div class="recap-box">
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(placeBtn);
   placeBtn.addEventListener("click", stopOrder);
   placeBtn.addEventListener("click", saveUserData);
-  placeBtn.addEventListener("click", deleteCartContent);
+  placeBtn.addEventListener("click", orderProcessing);
 });
 function saveUserData() {
   let firstNameInput = document.querySelector(".first-name");
@@ -125,6 +125,19 @@ function stopOrder(e) {
   }
 }
 
+function orderProcessing() {
+  let placeBtn = document.querySelector(".place-btn"); //button should not be selected in the loop
+
+  if (savedCart) {
+    placeBtn.textContent = "processing...";
+  }
+
+  setTimeout(() => {
+    window.location.href = "confirmation.html";
+  }, 1900);
+}
+
+/*
 function deleteCartContent(e) {
   let sumContainer = document.querySelector(".sum-container");
   if (savedCart) {
@@ -143,3 +156,4 @@ function deleteCartContent(e) {
     e.preventDefault();
   }
 }
+  */
