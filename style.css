@@ -1850,11 +1850,25 @@ object-fit:cover;
     outline:2px solid orange;
      box-shadow: 2px 3px 2px  orange;
 }
-.customer-infos-content{
-    border:1px solid red;
+
+
+.customer-info{
+    display:flex;
+    flex-direction: column;
+    margin:auto;
+    max-width:600px;
+    width:100%;
+    gap:0.5rem;
+}
+.customer-info span{
+    font-weight:900;
+}
+.confirmation-info-wrapper{
+   
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    gap:1rem;
+    margin-bottom:2rem;
 }
 .order-error-message{
     color:red;
@@ -3165,7 +3179,7 @@ p{
 }
 .total-cost{
     text-align:center;
-    margin-bottom:2rem;
+   
 }
 
 .recap-name{

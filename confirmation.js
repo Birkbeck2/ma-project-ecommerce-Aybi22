@@ -7,34 +7,34 @@ document.addEventListener("DOMContentLoaded", () => {
   if (savedUserFirstName) {
     let firstNameDisplay = document.querySelector(".first-name-display");
     console.log(savedUserFirstName);
-    firstNameDisplay.textContent = `Firstname: ${savedUserFirstName}`;
+    firstNameDisplay.innerHTML = `Firstname: <span> ${savedUserFirstName}</span>`;
   }
   let savedUserPhone = localStorage.getItem("phone");
   if (savedUserPhone) {
     let phoneNum = document.querySelector(".phone-display");
-    phoneNum.textContent = `Telephone number: ${savedUserPhone}`;
+    phoneNum.innerHTML = `Telephone number: <span>${savedUserPhone}</span>`;
   }
   let savedUserEmail = localStorage.getItem("email");
   if (savedUserEmail) {
     let emailDisplay = document.querySelector(".email-display");
-    emailDisplay.textContent = `Email: ${savedUserEmail}`;
+    emailDisplay.innerHTML = `Email: <span> ${savedUserEmail}</span>`;
   }
   let savedUserLastName = localStorage.getItem("lastname");
   if (savedUserLastName) {
     let lastNameDisplay = document.querySelector(".last-name-display");
-    lastNameDisplay.textContent = `Lastname:${savedUserLastName}`;
+    lastNameDisplay.innerHTML = `Lastname: <span>${savedUserLastName}</span>`;
   }
 
   let savedUserAddress = localStorage.getItem("address");
   if (savedUserAddress) {
     let addressDisplay = document.querySelector(".address-display");
-    addressDisplay.textContent = `Address:${savedUserAddress}`;
+    addressDisplay.innerHTML = `Address: <span>${savedUserAddress}</span>`;
   }
-  
-  let savedUserPostCode = localStorage.getItem('postcode');
-  if(savedUserPostCode){
-    let postCodeDisplay=document.querySelector('.postcode-display');
-    postCodeDisplay.textContent=`Postcode: ${savedUserPostCode}`
+
+  let savedUserPostCode = localStorage.getItem("postcode");
+  if (savedUserPostCode) {
+    let postCodeDisplay = document.querySelector(".postcode-display");
+    postCodeDisplay.innerHTML = `Postcode: <span>${savedUserPostCode}</span>`;
   }
 });
 function getUserData() {
