@@ -2993,6 +2993,10 @@ a.cart-btn.place-btn:hover{
 .success{
     color:#155724;
 }
+.success-box{
+    display:flex;
+    gap:1rem;
+}
 
 a.cart-btn{
     background:#FFD700;
@@ -3512,7 +3516,11 @@ body,html{
            #confirmation{
             padding:1rem;
            }
-
+      .success-box{
+       display:flex;
+       flex-direction:column;
+       gap:1rem;
+}
         .category-title{
             margin-bottom:1rem;
         }
