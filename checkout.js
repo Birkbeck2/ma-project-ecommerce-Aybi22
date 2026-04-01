@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(placeBtn);
   placeBtn.addEventListener("click", stopOrder);
   placeBtn.addEventListener("click", saveUserData);
-  placeBtn.addEventListener("click", orderProcessing);
 });
 function saveUserData() {
   let firstNameInput = document.querySelector(".first-name");
@@ -124,18 +123,22 @@ function stopOrder(e) {
     }
   }
 }
-
-function orderProcessing() {
+/*
+function orderProcessing(e) {
   let placeBtn = document.querySelector(".place-btn"); //button should not be selected in the loop
-
-  if (savedCart) {
-    placeBtn.textContent = "processing...";
-  }
+  let AllInput = document.querySelectorAll(".input");
+  AllInput.forEach((input) => {
+    if (savedCart && input.value) {
+      e.preventDefault();
+      placeBtn.textContent = "processing...";
+    }
+  });
 
   setTimeout(() => {
     window.location.href = "confirmation.html";
   }, 1900);
 }
+  */
 
 /*
 function deleteCartContent(e) {
