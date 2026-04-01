@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(placeBtn);
   placeBtn.addEventListener("click", stopOrder);
   placeBtn.addEventListener("click", saveUserData);
+  placeBtn.addEventListener("click", deleteCartContent);
 });
 function saveUserData() {
   let firstNameInput = document.querySelector(".first-name");
@@ -107,9 +108,9 @@ function saveUserData() {
   let userAddress = addressInput.value;
   localStorage.setItem("address", userAddress);
 
-  let postCodeInput=document.querySelector('.postcode');
-  let userPostCode=postCodeInput.value;
-  localStorage.setItem('postcode', userPostCode);
+  let postCodeInput = document.querySelector(".postcode");
+  let userPostCode = postCodeInput.value;
+  localStorage.setItem("postcode", userPostCode);
 }
 function stopOrder(e) {
   let AllInput = document.getElementsByTagName("input");
@@ -121,5 +122,24 @@ function stopOrder(e) {
       orderErrorMessage.style.display = "block";
       return; // stop function immediately
     }
+  }
+}
+
+function deleteCartContent(e) {
+  let sumContainer = document.querySelector(".sum-container");
+  if (savedCart) {
+    sumContainer.innerHTML = "";
+    let OrderTotal = document.querySelector(".sum-total");
+    OrderTotal.innerHTML = "";
+    let cartItems = document.querySelector(".cart-items");
+    if (cartItems) {
+      cartItems.innerHTML = "";
+
+      const numberOfItems = document.querySelector(".noOfItems");
+      numberOfItems.innerText = 0;
+      let total = document.querySelector(".total");
+      total.innerHTML = "";
+    }
+    e.preventDefault();
   }
 }
