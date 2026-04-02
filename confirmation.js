@@ -63,8 +63,12 @@ function confirmOrder() {
       
     <div class="infos-box"> 
     
-<p><span class=" infos-text">${product.name}</span>x<span> ${product.quantity}</span>
-<span class=" infos-price">£${product.quantity * product.price}</span> </p>
+<div class="info-list">
+<p class=" infos-text">${product.name}</p>
+<p> x${product.quantity}</p>
+<p class=" infos-price">£${product.quantity * product.price}</p> 
+
+</div>
 
 
 </div>

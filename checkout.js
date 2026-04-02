@@ -40,7 +40,7 @@ function orderRecap() {
     })
     .join("");
 }
-
+updateOrderTotal();
 orderRecap();
 
 function updateCartIcon() {
@@ -74,13 +74,31 @@ function removeSavedItems(productId) {
   let productPosition = savedCart.findIndex((product) => product.id === id); //find product position
   if (productPosition !== -1) {
     savedCart.splice(productPosition, 1); // removes the item at that index
-
+    localStorage.setItem("cart", JSON.stringify(savedCart));
     // updates the cart view
 
     orderRecap();
     updateOrderTotal(); // updates the total cost
     updateCartIcon(); // updates the cart icon count
   }
+}
+
+function orderDate() {
+  let today = new Date();
+  let orderTime = document.querySelector(".order-time");
+  let formattedHour;
+  let formattedMin;
+  if (today.getHours() < 10) {
+    formattedHour = `0${today.getHours()}`;
+  } else {
+    formattedHour = `${today.getHours()}`;
+  }
+  if (today.getMinutes() < 10) {
+    formattedMin = `0${today.getMinutes()}`;
+  } else {
+    formattedMin = `${today.getMinutes()}`;
+  }
+  orderTime.textContent += formattedHour + ":" + formattedMin;
 }
 
 function updateOrderTotal() {
@@ -97,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(placeBtn);
   placeBtn.addEventListener("click", stopOrder);
   placeBtn.addEventListener("click", saveUserData);
+  placeBtn.addEventListener("click", orderDate);
 });
 function saveUserData() {
   let firstNameInput = document.querySelector(".first-name");
