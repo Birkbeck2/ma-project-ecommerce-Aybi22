@@ -2352,13 +2352,13 @@ margin: auto;
 
 }
 .counter .decrease{
-    background:var(--cambridge-blue);
+    
     color:var(--black);
     font-weight:900;
   
 }
 .counter .increase{
-    background:var(--champagne);
+    
     color:var(--black);
      font-weight:900;
 }
