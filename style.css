@@ -259,6 +259,7 @@ a.btn.new:hover{
 .del-btn{
  cursor:pointer;
  margin-left:auto;
+ 
 }
 .product-items .item-title{
     max-width:200px;
@@ -285,7 +286,7 @@ h4{
     align-items: center;
     gap:1rem;
     padding:1rem;
-    max-width:300px;
+    min-width:300px;
     width:100%;
 }
 
@@ -293,7 +294,7 @@ h4{
     display: flex;
     flex-direction:column;
     align-items: center; /* vertically align all flex items */
-    gap: 10px; /* spacing between flex children */
+    gap: 4px; /* spacing between flex children */
     min-width:600px;
     width:100%;
     margin:1rem;
@@ -3206,12 +3207,13 @@ p{
     border-bottom:1px solid gainsboro;
     padding-bottom:2rem;
 }
-.del-btn.order{
+.del-button{
     background:none;
     padding:4px 6px;
     text-transform:capitalize;
     border:1px solid black;
     margin-top:auto;
+    cursor:pointer;
 }
 
 #blue{
@@ -3306,6 +3308,7 @@ p{
     display:flex;
     flex-direction:column;
     gap:1rem;
+   
 }
 
     .recap-infos{
@@ -3610,6 +3613,10 @@ body,html{
         }
         .product{
             min-width:400px;
+        }
+
+        .cart-action{
+            min-width: 200px;
         }
         .checkout-container{
             display:flex;

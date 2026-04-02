@@ -8,34 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   cartBtn.addEventListener("click", orderRecap);
 });
 
-const deleteBtns = document.querySelectorAll(".del-btn");
-deleteBtns.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const productId = e.target.closest(".product").dataset.id; //e.target refers to the
-    // clicked button.
-    //closest('.product') finds the closest ancestor element with the class 'product'.
-    // dataset.id retrieves the value of the data-id attribute of that element.
-    // This gives us the id of the product to be removed.
-    //.closest('.product') moves up the DOM tree to find the container with class product,
-    // which holds the data-id of the product.
-
-    removeItems(productId);
-  });
-});
-
-function removeItems(productId) {
-  const id = parseInt(productId);
-  //parseInt converts the string to an integer
-  let productPosition = savedCart.findIndex((product) => product.id === id); //find product position
-  if (productPosition !== -1) {
-    cart.splice(productPosition, 1); // removes the item at that index
-    localStorage.setItem("cart", JSON.stringify(cart));
-    displayCartItems(); // updates the cart view
-    updateTotal(); // updates the total cost
-    updateCartIcon(); // updates the cart icon count
-  }
-}
-
 function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
   if (savedCart.length === 0) {
@@ -58,9 +30,9 @@ function orderRecap() {
 <div class='recap-quantity'>Quantity: ${product.quantity}</div>
 <div class='recap-price'> £${product.price * product.quantity}</div>
 
-<button class="del-btn order">remove</button>
+<button class="del-button">remove</button>
 
-</div>
+
 </div>
   </div>
   
@@ -68,7 +40,48 @@ function orderRecap() {
     })
     .join("");
 }
+
 orderRecap();
+
+function updateCartIcon() {
+  const numberOfItems = document.querySelector(".noOfItems");
+  if (!numberOfItems) return; // Check if the element exists
+
+  const totalQuantity = savedCart.reduce((sum, item) => sum + item.quantity, 0);
+  numberOfItems.innerText = totalQuantity;
+}
+
+document.addEventListener("click", (e) => {
+  let button = e.target.closest(".del-button");
+  if (button) {
+    const productId = button.closest(".product-recap").dataset.id;
+
+    //e.target refers to the
+    // clicked button.
+    //closest('.product') finds the closest ancestor element with the class 'product'.
+    // dataset.id retrieves the value of the data-id attribute of that element.
+    // This gives us the id of the product to be removed.
+    //.closest('.product') moves up the DOM tree to find the container with class product,
+    // which holds the data-id of the product.
+
+    removeSavedItems(productId);
+  }
+});
+
+function removeSavedItems(productId) {
+  const id = parseInt(productId);
+  //parseInt converts the string to an integer
+  let productPosition = savedCart.findIndex((product) => product.id === id); //find product position
+  if (productPosition !== -1) {
+    savedCart.splice(productPosition, 1); // removes the item at that index
+
+    // updates the cart view
+
+    orderRecap();
+    updateOrderTotal(); // updates the total cost
+    updateCartIcon(); // updates the cart icon count
+  }
+}
 
 function updateOrderTotal() {
   let reduceSum = savedCart.reduce((currentTotal, product) => {
@@ -78,7 +91,7 @@ function updateOrderTotal() {
   let OrderTotal = document.querySelector(".sum-total");
   OrderTotal.innerHTML = `  Total: <span class="amount">${subTotal}</span>`;
 }
-updateOrderTotal();
+
 document.addEventListener("DOMContentLoaded", () => {
   let placeBtn = document.querySelector(".place-btn");
   console.log(placeBtn);
