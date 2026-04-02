@@ -2987,6 +2987,33 @@ a.cart-btn.shop{
     border:1px solid black;
     color:black;
 }
+
+
+a.cart-btn.back{
+    background:black;
+   
+    color:white;
+   margin:0;
+     display: block;
+    width:250px;
+   
+}
+.print{
+    background:none;
+    border:1px solid black;
+    color:black;
+    width:250px;
+    padding:11px;
+    cursor: pointer;
+    display:block;
+}
+.buttons-box{
+   
+    display:flex;
+    justify-content:center;
+    gap:1rem;
+}
+
 a.cart-btn.shop:hover{
     background:black;
     color:white;
