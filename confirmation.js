@@ -76,3 +76,11 @@ function confirmOrder() {
 }
 updateOrderTotal();
 confirmOrder();
+
+let printBtn = document.querySelector(".print");
+if (printBtn) {
+  print.addEventListener("click", printOrder);
+}
+function printOrder() {
+  window.print();
+}

@@ -2995,14 +2995,16 @@ a.cart-btn.back{
     color:white;
    margin:0;
      display: block;
-    width:250px;
+    max-width:250px;
+    width:100%;
    
 }
 .print{
     background:none;
     border:1px solid black;
     color:black;
-    width:250px;
+    max-width:250px;
+    width:100%;
     padding:11px;
     cursor: pointer;
     display:block;
@@ -3012,6 +3014,9 @@ a.cart-btn.back{
     display:flex;
     justify-content:center;
     gap:1rem;
+}
+.confirmation-header{
+   
 }
 
 a.cart-btn.shop:hover{
