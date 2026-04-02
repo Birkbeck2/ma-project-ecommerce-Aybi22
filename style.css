@@ -257,9 +257,7 @@ a.btn.new:hover{
     
 }
 .del-btn{
- 
-    
-    cursor:pointer;
+ cursor:pointer;
 }
 .product-items .item-title{
     max-width:200px;
@@ -3551,6 +3549,9 @@ body,html{
     @media screen and (max-width:767px){
         .tablet-container{
             grid-template-columns: 1fr;
+        }
+        .product{
+            min-width:400px;
         }
         .checkout-container{
             display:flex;
