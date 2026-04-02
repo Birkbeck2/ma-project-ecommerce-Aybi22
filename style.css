@@ -258,6 +258,7 @@ a.btn.new:hover{
 }
 .del-btn{
  cursor:pointer;
+ margin-left:auto;
 }
 .product-items .item-title{
     max-width:200px;
@@ -276,14 +277,17 @@ h4{
     font-size:33px;
 }
 
+
+
 .cart-action{
+    
     display:flex;
-    align-items:center;
-    gap:11px;
-   
+    align-items: center;
+    gap:1rem;
+    padding:1rem;
+    max-width:300px;
+    width:100%;
 }
-
-
 
 .product{
     display: flex;
@@ -292,6 +296,7 @@ h4{
     gap: 10px; /* spacing between flex children */
     min-width:600px;
     width:100%;
+    margin:1rem;
   }
 
   .product.recap-list{
