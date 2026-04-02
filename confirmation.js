@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (savedUserFirstName) {
     let firstNameDisplay = document.querySelector(".first-name-display");
     console.log(savedUserFirstName);
-    firstNameDisplay.innerHTML = `Firstname: <span> ${savedUserFirstName}</span>`;
+    firstNameDisplay.innerHTML = `Firstname: <span class="user-firstname"> ${savedUserFirstName}</span>`;
   }
   let savedUserPhone = localStorage.getItem("phone");
   if (savedUserPhone) {
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let savedUserLastName = localStorage.getItem("lastname");
   if (savedUserLastName) {
     let lastNameDisplay = document.querySelector(".last-name-display");
-    lastNameDisplay.innerHTML = `Lastname: <span>${savedUserLastName}</span>`;
+    lastNameDisplay.innerHTML = `Lastname: <span class="user-surname">${savedUserLastName}</span>`;
   }
 
   let savedUserAddress = localStorage.getItem("address");
@@ -61,10 +61,13 @@ function confirmOrder() {
     .map((product) => {
       return `
       
-    <div class="infos-box">  
-<p>Product name:<span class=" infos-text">${product.name}</span> X<span> ${product.quantity}</span></p>
+    <div class="infos-box"> 
+    
+<p><span class=" infos-text">${product.name}</span>x<span> ${product.quantity}</span>
+<span class=" infos-price">£${product.quantity * product.price}</span> </p>
 
-<p>Product price:<span class=" infos-text">£${product.quantity * product.price}</span> </p>
+
+</div>
 <div>
 
 `;
