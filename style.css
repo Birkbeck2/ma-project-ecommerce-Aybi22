@@ -2977,8 +2977,9 @@ h2{
 }
 a.cart-btn.place-btn{
   margin:auto;
-  border:1px solid black;
-  background:none;
+  color: black;
+  background:#FFD700;
+  
  
 }
 a.cart-btn.place-btn:hover{
