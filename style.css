@@ -98,6 +98,9 @@ h1{
     li.phone,li.mail{
     display:flex;
 }
+.order-time{
+    text-align:center;
+}
 
 .circle{
     font-size:7px;

@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+  displayOrderTime();
+});
+
 let savedCart = JSON.parse(localStorage.getItem("cart"));
 console.log(savedCart);
 
@@ -102,5 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function printOrder() {
   window.print();
 }
-
-orderDate();
+function displayOrderTime() {
+  let savedTime = localStorage.getItem("orderTime");
+  let OrderTime = document.querySelector(".order-time");
+  if (savedTime) {
+    OrderTime.textContent = `Order time: ${savedTime}`;
+  }
+}

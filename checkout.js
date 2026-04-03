@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function orderDate() {
   let today = new Date();
-  let orderTime = document.querySelector(".order-time");
+
   let formattedHour;
   let formattedMin;
   if (today.getHours() < 10) {
@@ -120,8 +120,11 @@ function orderDate() {
   } else {
     formattedMin = `${today.getMinutes()}`;
   }
-  orderTime.textContent += formattedHour + ":" + formattedMin;
+  let formattedTime = formattedHour + ":" + formattedMin;
+
+  localStorage.setItem("orderTime", formattedTime);
 }
+
 function saveUserData() {
   let firstNameInput = document.querySelector(".first-name");
 
