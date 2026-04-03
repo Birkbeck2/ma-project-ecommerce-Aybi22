@@ -3028,6 +3028,16 @@ a.cart-btn.back{
 .confirmation-header{
    
 }
+.info-list{
+    display: flex;
+    max-width:600px;
+    width:100%;
+    justify-content: space-between;
+
+}
+.info-list p{
+    margin-bottom:1rem;
+}
 
 a.cart-btn.shop:hover{
     background:black;
@@ -3040,7 +3050,7 @@ a.cart-btn.shop:hover{
    width:100%;
 }
 .infos-price{
-    margin-left:auto;
+   
 }
 a.cart-btn.print{
     background:black;
