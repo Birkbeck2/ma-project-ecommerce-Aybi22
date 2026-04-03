@@ -109,7 +109,7 @@ function orderDate() {
   let today = new Date();
   let formattedHour;
   let formattedMin;
-
+  let formattedDayNumber;
   let days = [
     "Sunday",
     "Monday",
@@ -134,8 +134,13 @@ function orderDate() {
     "November",
     "December",
   ];
-
+  let dayNumber = today.getDate();
   let year = today.getFullYear();
+  if (dayNumber < 10) {
+    formattedDayNumber = `0${today.getDate()}`;
+  } else {
+    formattedDayNumber = `${today.getDate()}`;
+  }
   if (today.getHours() < 10) {
     formattedHour = `0${today.getHours()}`;
   } else {
@@ -153,12 +158,15 @@ function orderDate() {
 
   let formattedDate =
     formattedDay +
-    "/" +
+    "," +
+    " " +
+    formattedDayNumber +
+    " " +
     formattedMonth +
-    "/" +
+    " " +
     year +
     "," +
-    "" +
+    " " +
     formattedHour +
     ":" +
     formattedMin;
