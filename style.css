@@ -98,7 +98,7 @@ h1{
     li.phone,li.mail{
     display:flex;
 }
-.order-time{
+.date-display{
     text-align:center;
 }
 

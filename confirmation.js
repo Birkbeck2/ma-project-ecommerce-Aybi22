@@ -107,9 +107,9 @@ function printOrder() {
   window.print();
 }
 function displayOrderTime() {
-  let savedTime = localStorage.getItem("orderTime");
-  let OrderTime = document.querySelector(".order-time");
-  if (savedTime) {
-    OrderTime.textContent = `Order time: ${savedTime}`;
+  let savedDate = localStorage.getItem("orderTime");
+  let dateDisplay = document.querySelector(".date-display");
+  if (savedDate) {
+    dateDisplay.textContent = `Order Date: ${savedDate}`;
   }
 }

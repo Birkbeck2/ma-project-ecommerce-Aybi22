@@ -107,9 +107,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function orderDate() {
   let today = new Date();
-
   let formattedHour;
   let formattedMin;
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  let year = today.getFullYear();
   if (today.getHours() < 10) {
     formattedHour = `0${today.getHours()}`;
   } else {
@@ -120,9 +146,24 @@ function orderDate() {
   } else {
     formattedMin = `${today.getMinutes()}`;
   }
-  let formattedTime = formattedHour + ":" + formattedMin;
 
-  localStorage.setItem("orderTime", formattedTime);
+  formattedDay = `${days[today.getDay()]}`;
+
+  formattedMonth = `${months[today.getMonth()]}`;
+
+  let formattedDate =
+    formattedDay +
+    "/" +
+    formattedMonth +
+    "/" +
+    year +
+    "," +
+    "" +
+    formattedHour +
+    ":" +
+    formattedMin;
+
+  localStorage.setItem("orderTime", formattedDate);
 }
 
 function saveUserData() {
