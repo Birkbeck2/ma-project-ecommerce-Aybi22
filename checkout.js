@@ -7,10 +7,9 @@ document.addEventListener("click", (e) => {
 });
 
 function orderRecap() {
-  let sumContainer = document.querySelector(".sum-container");
   if (savedCart.length === 0) {
+    let sumContainer = document.querySelector(".sum-container");
     sumContainer.innerHTML = `<p class="red-message">Add items before placing an order!</p>`;
-
     return;
   }
   sumContainer.innerHTML = savedCart

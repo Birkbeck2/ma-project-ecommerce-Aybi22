@@ -236,8 +236,10 @@ a.btn.new:hover{
     padding:1rem;
    gap:5px;
     border:1px solid gainsboro;
+   
   
 }
+
 .product-items .item-price{
     color:grey;
     font-weight:lighter;
@@ -607,6 +609,13 @@ a.cart-btn{
     padding:11px;
     text-align:center;
     margin:11px;
+}
+.summary-buttons{
+    box-sizing: border-box;
+    align-items:center;
+    display:flex;
+    flex-direction: column;
+    padding-top:1rem;
 }
 
 .modal p{
@@ -1838,7 +1847,9 @@ object-fit:cover;
    flex-direction:column;
    align-content:center;
    justify-content: space-between;
-   
+  
+   margin:0;
+   padding:0;
    height: auto;
    overflow-y: visible;
   
@@ -2934,17 +2945,14 @@ h2{
     margin:auto;
 
 }
-.cart-footer{
-    max-width:100%;
-   
-}
+
 
   .cart-footer{
     
     display:flex;
     justify-content: space-between;
     padding:1rem;
-    max-width:100%;
+    max-width:500%;
     width:100%;
     border-bottom: 1px solid gainsboro;
    
