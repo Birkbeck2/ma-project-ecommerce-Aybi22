@@ -270,14 +270,7 @@ a.btn.new:hover{
     max-width:200px;
 }
 
-.order-total{
-    font-size:1rem;
-    font-weight:600;
-  
-    text-transform:capitalize;
-    border-bottom:1px solid gainsboro;
-    padding-bottom:2rem;
-}
+
 
 h4{
     font-size:33px;
@@ -1181,19 +1174,20 @@ font-family:verdana;
   width:100%;
   margin-bottom:1rem;
 }
-.sum-total{
+.order-total{
     max-width:100%;
+    width:100%;
     display:flex;
     justify-content:center;
-    gap:2rem;
-
+    
+    
     border-bottom:1px solid gainsboro;
     padding-bottom:1rem;
 
    
 }
 .amount{
-    margin-right:auto;
+    margin-left:auto;
     font-weight:900;
 }
 .user-firstname, 
@@ -2721,9 +2715,8 @@ width:100%;
     gap:0.5rem;
 }
 .billing label{
-    font-weight:700;
-  
-}
+    font-weight:normal;
+  }
 .billing h2{
     text-transform: capitalize;
 }
@@ -2982,7 +2975,7 @@ h2{
    }
 
 .footer-icons p{
-    font-weight:900;
+    
     font-family:verdana;
 }
 a.cart-btn.place-btn{

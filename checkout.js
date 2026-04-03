@@ -6,9 +6,10 @@ document.addEventListener("click", (e) => {
   updateOrderTotal();
 });
 
+let sumContainer = document.querySelector(".sum-container");
+
 function orderRecap() {
   if (savedCart.length === 0) {
-    let sumContainer = document.querySelector(".sum-container");
     sumContainer.innerHTML = `<p class="red-message">Add items before placing an order!</p>`;
     return;
   }
@@ -82,7 +83,7 @@ function removeSavedItems(productId) {
 }
 
 function updateOrderTotal() {
-  let OrderTotal = document.querySelector(".sum-total");
+  let OrderTotal = document.querySelector(".order-total");
 
   let reduceSum = savedCart.reduce((currentTotal, product) => {
     return currentTotal + product.price * product.quantity;
@@ -92,7 +93,8 @@ function updateOrderTotal() {
     minimumFractionDigits: 0,
     maximumFractionDigits: 2,
   });
-  OrderTotal.innerHTML = `  Total: <span class="amount">£${formatted}</span>`;
+  OrderTotal.innerHTML = `  <p>Total:</p> 
+  <p class="amount">£${formatted}</p>`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {

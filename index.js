@@ -216,11 +216,10 @@ fetch("./template.html")
     function blockCheckOut(e) {
       let cartItems = document.querySelector(".cart-items");
 
-      console.log(cartError);
       if (cartItems.children.length === 0) {
         //element.children.length	Number
 
-        cartItems.textContent = "Please fill cart before checking out</p>";
+        cartItems.textContent = "Please fill cart before checking out";
         e.preventDefault();
       }
     }
