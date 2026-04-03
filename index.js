@@ -669,7 +669,6 @@ function updateTotal() {
     return currentTotal + product.price * product.quantity;
   }, 0);
 
-  reduceSum = Math.round(reduceSum * 100) / 100;
   let formatted = reduceSum.toLocaleString("en-GB", {
     minimumFractionDigits: 0,
     maximumFractionDigits: 2,

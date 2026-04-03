@@ -84,12 +84,17 @@ function removeSavedItems(productId) {
 }
 
 function updateOrderTotal() {
+  let OrderTotal = document.querySelector(".sum-total");
+
   let reduceSum = savedCart.reduce((currentTotal, product) => {
     return currentTotal + product.price * product.quantity;
   }, 0);
-  let subTotal = `£${reduceSum}`;
-  let OrderTotal = document.querySelector(".sum-total");
-  OrderTotal.innerHTML = `  Total: <span class="amount">${subTotal}</span>`;
+
+  let formatted = reduceSum.toLocaleString("en-GB", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  });
+  OrderTotal.innerHTML = `  Total: <span class="amount">£${formatted}</span>`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {

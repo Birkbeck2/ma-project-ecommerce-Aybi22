@@ -45,12 +45,18 @@ function getUserData() {
 }
 
 function updateOrderTotal() {
+  let totalCost = document.querySelector(".total-cost");
+
   let reduceSum = savedCart.reduce((currentTotal, product) => {
     return currentTotal + product.price * product.quantity;
   }, 0);
-  let subTotal = `£${reduceSum}`;
-  let totalCost = document.querySelector(".total-cost");
-  totalCost.innerHTML = ` Order Total: <span class="amount">${subTotal}</span>`;
+
+  let formatted = reduceSum.toLocaleString("en-GB", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  });
+
+  totalCost.innerHTML = `  Total: <span class="amount">£${formatted}</span>`;
 }
 
 function confirmOrder() {
@@ -59,6 +65,12 @@ function confirmOrder() {
   confirmedInfos.innerHTML = savedCart
 
     .map((product) => {
+      let itemPrice = product.quantity * product.price;
+      let formatted = itemPrice.toLocaleString("en-GB", {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2,
+      });
+
       return `
       
     <div class="infos-box"> 
@@ -66,7 +78,7 @@ function confirmOrder() {
 <div class="info-list">
 <p class=" infos-text">${product.name}</p>
 <p> x${product.quantity}</p>
-<p class=" infos-price">£${product.quantity * product.price}</p> 
+<p class=" infos-price">£${formatted}</p> 
 
 </div>
 
