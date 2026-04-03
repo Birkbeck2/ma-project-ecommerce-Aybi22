@@ -2406,7 +2406,7 @@ z-index:9999;
 
 
 .add-btn{
-background:#FFD700;
+background:#f8bd19;
 color:var(--black);
 padding:11px;
 max-width:400px;/*Even though width: 100% makes it flexible, 
@@ -2939,13 +2939,15 @@ h2{
    
 }
 
-  .cart-footer .total{
+  .cart-footer{
     
     display:flex;
     justify-content: space-between;
-   
+    padding:1rem;
+    max-width:100%;
     width:100%;
-    margin:auto;
+    border-bottom: 1px solid gainsboro;
+   
     font-size:1rem;
    }
 
@@ -2978,9 +2980,12 @@ h2{
 a.cart-btn.place-btn{
   margin:auto;
   color: black;
-  background:#FFD700;
-  
- 
+  background:#f8bd19;
+  }
+.cart-error{
+    color:red;
+    font-style:italic;
+
 }
 a.cart-btn.place-btn:hover{
  background:black;
@@ -3036,7 +3041,8 @@ a.cart-btn.back{
     display: flex;
     max-width:600px;
     width:100%;
-    justify-content: space-between;
+    justify-content:center;
+
 
 }
 .info-list p{
@@ -3110,7 +3116,7 @@ a.cart-btn.print{
 
 
 a.cart-btn{
-    background:#FFD700;
+    background:#f8bd19;
     border:none;
     padding:11px;
     color:var(--black);
@@ -3298,7 +3304,9 @@ p{
     text-align:center;
    
 }
-
+.total{
+    font-weight:900;
+}
 .recap-name{
     text-transform: capitalize;
     font-weight:900;

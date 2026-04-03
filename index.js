@@ -212,13 +212,15 @@ fetch("./template.html")
     let cartBtn = document.querySelector(".cart-btn");
 
     console.log(cartBtn);
-    cartBtn.addEventListener("click", emptyCart);
-    function emptyCart(e) {
+    cartBtn.addEventListener("click", blockCheckOut);
+    function blockCheckOut(e) {
       let cartItems = document.querySelector(".cart-items");
+
+      console.log(cartError);
       if (cartItems.children.length === 0) {
         //element.children.length	Number
 
-        cartItems.textContent = "Please fill cart before checking out";
+        cartItems.textContent = "Please fill cart before checking out</p>";
         e.preventDefault();
       }
     }
@@ -674,7 +676,7 @@ function updateTotal() {
     maximumFractionDigits: 2,
   });
 
-  total.textContent = `£${formatted}`;
+  total.textContent = ` £${formatted}`;
 }
 
 document.addEventListener("click", function (e) {

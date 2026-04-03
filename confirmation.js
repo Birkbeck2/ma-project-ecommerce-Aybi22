@@ -63,7 +63,7 @@ function updateOrderTotal() {
   totalCost.innerHTML = `  Total: <span class="amount">£${formatted}</span>`;
 }
 
-function confirmOrder() {
+function confirmedOrder() {
   let confirmedInfos = document.querySelector(".confirmation-infos");
 
   confirmedInfos.innerHTML = savedCart
@@ -95,7 +95,7 @@ function confirmOrder() {
     .join("");
 }
 updateOrderTotal();
-confirmOrder();
+confirmedOrder();
 document.addEventListener("DOMContentLoaded", () => {
   let printBtn = document.querySelector(".print");
   console.log(printBtn);

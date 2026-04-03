@@ -1,17 +1,16 @@
 let savedCart = JSON.parse(localStorage.getItem("cart"));
 console.log(savedCart);
 
-document.addEventListener("DOMContentLoaded", () => {
-  let cartBtn = document.querySelector(".cart-btn");
-
-  console.log(cartBtn);
-  cartBtn.addEventListener("click", orderRecap);
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".basket")) orderRecap();
+  updateOrderTotal();
 });
 
 function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
   if (savedCart.length === 0) {
     sumContainer.innerHTML = `<p class="red-message">Add items before placing an order!</p>`;
+
     return;
   }
   sumContainer.innerHTML = savedCart
@@ -40,8 +39,8 @@ function orderRecap() {
     })
     .join("");
 }
-updateOrderTotal();
 orderRecap();
+updateOrderTotal();
 
 function updateCartIcon() {
   const numberOfItems = document.querySelector(".noOfItems");
@@ -103,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
   placeBtn.addEventListener("click", stopOrder);
   placeBtn.addEventListener("click", saveUserData);
   placeBtn.addEventListener("click", orderDate);
+  placeBtn.addEventListener("click", confirmedOrder());
 });
 
 function orderDate() {
