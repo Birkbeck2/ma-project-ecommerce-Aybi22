@@ -147,9 +147,9 @@ function orderDate() {
     formattedMin = `${today.getMinutes()}`;
   }
 
-  formattedDay = `${days[today.getDay()]}`;
+  let formattedDay = `${days[today.getDay()]}`;
 
-  formattedMonth = `${months[today.getMonth()]}`;
+  let formattedMonth = `${months[today.getMonth()]}`;
 
   let formattedDate =
     formattedDay +
