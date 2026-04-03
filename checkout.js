@@ -83,6 +83,23 @@ function removeSavedItems(productId) {
   }
 }
 
+function updateOrderTotal() {
+  let reduceSum = savedCart.reduce((currentTotal, product) => {
+    return currentTotal + product.price * product.quantity;
+  }, 0);
+  let subTotal = `£${reduceSum}`;
+  let OrderTotal = document.querySelector(".sum-total");
+  OrderTotal.innerHTML = `  Total: <span class="amount">${subTotal}</span>`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  let placeBtn = document.querySelector(".place-btn");
+  console.log(placeBtn);
+  placeBtn.addEventListener("click", stopOrder);
+  placeBtn.addEventListener("click", saveUserData);
+  placeBtn.addEventListener("click", orderDate);
+});
+
 function orderDate() {
   let today = new Date();
   let orderTime = document.querySelector(".order-time");
@@ -100,23 +117,6 @@ function orderDate() {
   }
   orderTime.textContent += formattedHour + ":" + formattedMin;
 }
-
-function updateOrderTotal() {
-  let reduceSum = savedCart.reduce((currentTotal, product) => {
-    return currentTotal + product.price * product.quantity;
-  }, 0);
-  let subTotal = `£${reduceSum}`;
-  let OrderTotal = document.querySelector(".sum-total");
-  OrderTotal.innerHTML = `  Total: <span class="amount">${subTotal}</span>`;
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  let placeBtn = document.querySelector(".place-btn");
-  console.log(placeBtn);
-  placeBtn.addEventListener("click", stopOrder);
-  placeBtn.addEventListener("click", saveUserData);
-  placeBtn.addEventListener("click", orderDate);
-});
 function saveUserData() {
   let firstNameInput = document.querySelector(".first-name");
 

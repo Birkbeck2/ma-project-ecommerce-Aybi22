@@ -1728,10 +1728,14 @@ object-fit:cover;
     align-items:center;
     padding-bottom:83px;
     margin:auto;
-    
-    
-    
-}
+    }
+
+    @media print {
+        .print{
+            display:none;
+        }
+    }
+
 
 .staff .image{
     height:100%;

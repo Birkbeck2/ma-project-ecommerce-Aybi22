@@ -80,11 +80,15 @@ function confirmOrder() {
 }
 updateOrderTotal();
 confirmOrder();
-
-let printBtn = document.querySelector(".print");
-if (printBtn) {
-  print.addEventListener("click", printOrder);
-}
+document.addEventListener("DOMContentLoaded", () => {
+  let printBtn = document.querySelector(".print");
+  console.log(printBtn);
+  if (printBtn) {
+    printBtn.addEventListener("click", printOrder);
+  }
+});
 function printOrder() {
   window.print();
 }
+
+orderDate();
