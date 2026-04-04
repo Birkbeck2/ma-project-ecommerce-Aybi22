@@ -1,18 +1,27 @@
 let savedCart = JSON.parse(localStorage.getItem("cart"));
 console.log(savedCart);
-
+/*
 document.addEventListener("click", (e) => {
   if (e.target.closest(".basket")) orderRecap();
   updateOrderTotal();
 });
+*/
+/*
+function blockOrder(e) {
+  if (!savedCart) {
+    e.preventDefault();
+    let sumError = document.querySelector(".sum-error");
+    sumError.textContent = "Add items before placing an order!";
+    return;
+  }
+}
+  */
 
 let sumContainer = document.querySelector(".sum-container");
 
 function orderRecap() {
-  if (savedCart.length === 0) {
-    sumContainer.innerHTML = `<p class="red-message">Add items before placing an order!</p>`;
-    return;
-  }
+  let sumContainer = document.querySelector(".sum-container");
+
   sumContainer.innerHTML = savedCart
     .map((product) => {
       return `
@@ -41,7 +50,6 @@ function orderRecap() {
 }
 orderRecap();
 updateOrderTotal();
-
 function updateCartIcon() {
   const numberOfItems = document.querySelector(".noOfItems");
   if (!numberOfItems) return; // Check if the element exists
@@ -103,7 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
   placeBtn.addEventListener("click", stopOrder);
   placeBtn.addEventListener("click", saveUserData);
   placeBtn.addEventListener("click", orderDate);
-  placeBtn.addEventListener("click", confirmedOrder());
+  placeBtn.addEventListener("click", confirmedOrder);
+  placeBtn.addEventListener("click", orderRecap);
 });
 
 function orderDate() {
@@ -205,31 +214,56 @@ function stopOrder(e) {
   let AllInput = document.getElementsByTagName("input");
   for (let i = 0; i < AllInput.length; i++) {
     if (!AllInput[i].value.trim()) {
-      console.log(AllInput[i]);
       e.preventDefault();
+
       let orderErrorMessage = document.querySelector(".order-error-message");
+
       orderErrorMessage.style.display = "block";
-      return; // stop function immediately
+      // stop function immediately
+      return;
+    }
+
+    if (sumContainer.innerHTML === "" && !AllInput[i].value.trim()) {
+      e.preventDefault();
+      document.body.style.backgroundColor = "red";
+      return;
     }
   }
+
+  if (sumContainer.innerHTML === "") {
+    e.preventDefault();
+    let sumError = document.querySelector(".sum-error");
+
+    sumError.style.display = "block";
+    return;
+  }
 }
+
+/*
+function redBody() {
+  if (sumContainer.innerHTML === "") {
+    document.body.style.backgroundColor = "red";
+  } else {
+    document.body.style.backgroundColor = "blue";
+  }
+}
+redBody();
+*/
 /*
 function orderProcessing(e) {
-  let placeBtn = document.querySelector(".place-btn"); //button should not be selected in the loop
-  let AllInput = document.querySelectorAll(".input");
-  AllInput.forEach((input) => {
-    if (savedCart && input.value) {
-      e.preventDefault();
-      placeBtn.textContent = "processing...";
-    }
-  });
+  //button should not be selected in the loop
 
-  setTimeout(() => {
-    window.location.href = "confirmation.html";
-  }, 1900);
+  if (savedCart.length > 0) {
+    e.preventDefault();
+    let placeBtn = document.querySelector(".place-btn");
+
+    placeBtn.textContent = "processing...";
+  }
 }
-  */
-
+setTimeout(() => {
+  window.location.href = "confirmation.html";
+}, 1900);
+*/
 /*
 function deleteCartContent(e) {
   let sumContainer = document.querySelector(".sum-container");
