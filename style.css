@@ -3121,7 +3121,10 @@ a.cart-btn.print{
 }
 
 .sizes{
+ max-width:500px;
+ width:100%;
   display:flex;
+  flex-wrap: wrap;
   gap:1rem;
 }
 

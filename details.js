@@ -88,6 +88,21 @@ const detail = () => {
         <span class="medium  size">M</span>
         <span class="large size size">L</span>
         <span class="extralarge  size">XL</span>
+         <span class="xsmall  size">38</span>
+        <span class="small  size">39</span>
+        <span class="medium  size">40</span>
+        <span class="large size size">41</span>
+        <span class="extralarge  size">42</span>
+         <span class="xsmall  size">44</span>
+        <span class="small  size">45</span>
+        <span class="medium  size">46</span>
+        <span class="large size size">47</span>
+        <span class="extralarge  size">X48</span>
+         <span class="xsmall  size">50</span>
+        <span class="small  size">51</span>
+        <span class="medium  size">52</span>
+        <span class="large size size">54</span>
+       
         
         </div>
    
@@ -493,8 +508,9 @@ const detail = () => {
       clickedSize.style.backgroundColor = "black";
       clickedSize.style.color = "white";
       let sizeDisplay = document.querySelector(".size-display");
-      let sizeSelected = e.currentTarget.textContent;
-      sizeDisplay.textContent = `Size selected: ${sizeSelected}`;
+      let selectedSize = e.currentTarget.textContent;
+      sizeDisplay.textContent = `Size selected: ${selectedSize}`;
+      localStorage.setItem("size", selectedSize);
       addBtn.disabled = false;
     }
 
