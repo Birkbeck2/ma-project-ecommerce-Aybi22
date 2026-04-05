@@ -634,7 +634,7 @@ function displayCartItems() {
              <img src="${product.image}">
           </div>
 <div class='item-name'>${product.name}</div>
-<div class="item-size"></div>
+
 </div>
               <div class="cart-action">    
             <div class="counter">
@@ -657,9 +657,10 @@ function displayCartItems() {
   attachDeleteEvents(); // re-attach event listeners to new delete buttons
 }
 
-let savedSize = localStorage.getItem("selectedSize");
+let savedSize = localStorage.getItem("size");
 if (savedSize) {
   let itemSize = document.querySelector(".item-size");
+  console.log(itemSize);
   itemSize.textContent = savedSize;
 }
 

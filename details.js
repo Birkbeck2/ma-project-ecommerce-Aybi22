@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addBtn.addEventListener("click", (e) => {
     const productId = e.currentTarget.dataset.id;
-    stopButton();
+
     addToCart(productId);
     addCartCheck();
   });
