@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/*
+
 function addCartCheck() {
   let addBtn = document.querySelector(".add-btn");
 
@@ -21,7 +23,7 @@ function addCartCheck() {
   setTimeout(() => {
     addBtn.classList.remove("show");
     addBtn.textContent = "add to cart";
-  }, 4500);
+  }, 2500);
 }
 function stopButton() {
   let addBtn = document.querySelector(".add-btn");
@@ -30,7 +32,7 @@ function stopButton() {
     addBtn.disabled = false;
   }, 4500);
 }
-
+*/
 const detail = () => {
   let productId = new URLSearchParams(window.location.search).get("id");
   let thisProduct = products.filter((value) => value.id == productId)[0];
@@ -79,13 +81,13 @@ const detail = () => {
 <div class="review-num">1200 customer's reviews</div>
 </div>
 
-
-<div class="size">
-        <span class="xsmall">XS</span>
-        <span class="small">S</span>
-        <span class="medium">M</span>
-        <span class="large">L</span>
-        <span class="extralarge">XL</span>
+<p class="size-display"></p>
+<div class="sizes">
+        <span class="xsmall  size">XS</span>
+        <span class="small  size">S</span>
+        <span class="medium  size">M</span>
+        <span class="large size size">L</span>
+        <span class="extralarge  size">XL</span>
         
         </div>
    
@@ -467,6 +469,30 @@ const detail = () => {
 
 </body>
 </html>`;
+
+    function stopAddBtn() {
+      let addBtn = document.querySelector(".add-btn");
+      addBtn.disabled = true;
+    }
+    stopAddBtn();
+
+    let sizes = document.querySelectorAll(".size");
+    sizes.forEach((size) => {
+      size.addEventListener("click", selectSize);
+    });
+    function selectSize(e) {
+      let addBtn = document.querySelector(".add-btn");
+      addBtn.disabled = true;
+      let allSize = document.getElementsByClassName("size");
+      for (let i = 0; i < allSize.length; i++) {
+        allSize[i].style.backgroundColor = "white";
+      }
+
+      let clickedSize = e.currentTarget;
+      clickedSize.style.backgroundColor = "black";
+      clickedSize.style.color = "white";
+      addBtn.disabled = false;
+    }
 
     let pics = [
       `${thisProduct.image}`,
