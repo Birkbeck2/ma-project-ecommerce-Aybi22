@@ -486,11 +486,15 @@ const detail = () => {
       let allSize = document.getElementsByClassName("size");
       for (let i = 0; i < allSize.length; i++) {
         allSize[i].style.backgroundColor = "white";
+        allSize[i].style.color = "black";
       }
 
       let clickedSize = e.currentTarget;
       clickedSize.style.backgroundColor = "black";
       clickedSize.style.color = "white";
+      let sizeDisplay = document.querySelector(".size-display");
+      let sizeSelected = e.currentTarget.textContent;
+      sizeDisplay.textContent = `Size selected: ${sizeSelected}`;
       addBtn.disabled = false;
     }
 
