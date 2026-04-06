@@ -9,8 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const productId = e.currentTarget.dataset.id;
 
     addToCart(productId);
-    addCartCheck();
     showCart();
+    addCartCheck();
   });
 });
 

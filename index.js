@@ -56,6 +56,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 let filterModal = document.querySelector(".filter-modal");
 
+function sortModal() {
+  filterModal.innerHTML = `
+  <div class="sort-category">
+    <p>sort by price</p>
+  <button class="low-high filter-btn" data-category="Low-High">Low-High</button>
+  <button class="high-low  filter-btn  " data-category="High-Low">High-Low</button>
+  <span class="close-filter-modal">&times;</span>
+</div>
+  `;
+}
 function openFilterModal() {
   filterModal.classList.add("open-filter-modal");
 }
@@ -70,6 +80,10 @@ document.addEventListener("click", (e) => {
 
   if (e.target.closest(".mobile")) {
     openFilterModal();
+  }
+
+  if (e.target.closest(".sort")) {
+    sortModal();
   }
 
   if (e.target.closest(".search-btn")) {
@@ -440,7 +454,7 @@ function renderProducts(containerSelector, filtered) {
       </div>    
         
       
-       <a  href="#" class="btn" data-id=${product.id}>add to cart</a>
+       <a  href="details.html?id=${product.id}" class="btn">View product</a>
       
       
       </div>
