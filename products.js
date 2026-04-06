@@ -236,7 +236,7 @@ const products = [
     quantity: 1,
     h3: "shoe",
     category: "leathershoe",
-    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    sizes: [6, 7, 8, 9, 10, 11, 12],
   },
 
   {
@@ -250,7 +250,7 @@ const products = [
     quantity: 1,
     h3: "shoe",
     category: "leathershoe",
-    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    sizes: [6, 7, 8, 9, 10, 11, 12],
   },
 
   {
@@ -264,7 +264,7 @@ const products = [
     quantity: 1,
     h3: "shoe",
     category: "leathershoe",
-    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    sizes: [6, 7, 8, 9, 10, 11, 12],
   },
 
   {
@@ -277,7 +277,7 @@ const products = [
     quantity: 1,
     h3: "shoe",
     category: "leathershoe",
-    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    sizes: [6, 7, 8, 9, 10, 11, 12],
   },
 
   {
@@ -290,7 +290,7 @@ const products = [
     quantity: 1,
     h3: "shoe",
     category: "leathershoe",
-    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    sizes: [6, 7, 8, 9, 10, 11, 12],
   },
 
   {
@@ -303,7 +303,7 @@ const products = [
     quantity: 1,
     h3: "shoe",
     category: "leathershoe",
-    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    sizes: [6, 7, 8, 9, 10, 11, 12],
   },
 
   {
