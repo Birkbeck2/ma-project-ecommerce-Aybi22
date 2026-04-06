@@ -465,19 +465,16 @@ function renderProducts(containerSelector, filtered) {
     categoryTotalPrice();
   });
 }
-
+/*
 function activateCartButtons() {
   let btn = document.querySelectorAll("a.btn");
   btn.forEach((btns) => {
     btns.addEventListener("click", (e) => {
-      e.preventDefault();
       const productId = e.target.dataset.id;
-
-      addToCart(productId);
-      showCart();
     });
   });
 }
+  */
 
 function clearInput() {
   let input = document.getElementById("search");
