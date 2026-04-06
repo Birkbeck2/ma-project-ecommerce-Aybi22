@@ -21,7 +21,7 @@ let sumContainer = document.querySelector(".sum-container");
 
 function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
-
+  let savedSize = localStorage.getItem("size");
   sumContainer.innerHTML = savedCart
     .map((product) => {
       return `
@@ -35,10 +35,11 @@ function orderRecap() {
           </div>
           <div class="recap-infos">
 <div class='recap-name'>${product.name}</div>
+<div class='item-size'> size: ${savedSize}</div>7
 <div class='recap-quantity'>Quantity: ${product.quantity}</div>
 <div class='recap-price'> £${product.price * product.quantity}</div>
 
-<button class="del-button">remove</button>
+
 
 
 </div>

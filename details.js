@@ -1,5 +1,6 @@
 import products from "./products.js";
 import { addToCart } from "./index.js";
+import { showCart } from "./cart.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
@@ -9,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addToCart(productId);
     addCartCheck();
+    showCart();
   });
 });
 
@@ -83,28 +85,14 @@ const detail = () => {
 
 <p class="size-display"></p>
 <div class="sizes">
-        <span class="xsmall  size">XS</span>
-        <span class="small  size">S</span>
-        <span class="medium  size">M</span>
-        <span class="large size size">L</span>
-        <span class="extralarge  size">XL</span>
-         <span class="xsmall  size">38</span>
-        <span class="small  size">39</span>
-        <span class="medium  size">40</span>
-        <span class="large size size">41</span>
-        <span class="extralarge  size">42</span>
-         <span class="xsmall  size">44</span>
-        <span class="small  size">45</span>
-        <span class="medium  size">46</span>
-        <span class="large size size">47</span>
-        <span class="extralarge  size">X48</span>
-         <span class="xsmall  size">50</span>
-        <span class="small  size">51</span>
-        <span class="medium  size">52</span>
-        <span class="large size size">54</span>
-       
-        
-        </div>
+  <span class="size">XS</span>
+  <span class="size">S</span>
+  <span class="size">M</span>
+  <span class="size">L</span>
+  <span class="size">XL</span>
+  <span class="size">XXL</span>
+  <span class="size">XXS</span>
+</div>
    
    
    <div class="add-cart">
@@ -510,8 +498,9 @@ const detail = () => {
       let sizeDisplay = document.querySelector(".size-display");
       let selectedSize = e.currentTarget.textContent;
       sizeDisplay.textContent = `Size selected: ${selectedSize}`;
-      localStorage.setItem("size", selectedSize);
+
       addBtn.disabled = false;
+      localStorage.setItem("size", selectedSize);
     }
 
     let pics = [

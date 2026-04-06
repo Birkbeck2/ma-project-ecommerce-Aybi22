@@ -1936,7 +1936,9 @@ object-fit:cover;
    
 }
 
-
+.item-size{
+    font-size: 0.9rem;
+}
 
 .show-message{
     display:block;
@@ -3121,11 +3123,12 @@ a.cart-btn.print{
 }
 
 .sizes{
- max-width:500px;
+ max-width:300px;
  width:100%;
   display:flex;
   flex-wrap: wrap;
   gap:1rem;
+  font-size: 0.7rem;
 }
 
 

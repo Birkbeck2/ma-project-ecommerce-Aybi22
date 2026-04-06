@@ -460,6 +460,7 @@ function activateCartButtons() {
       const productId = e.target.dataset.id;
 
       addToCart(productId);
+      showCart();
     });
   });
 }
@@ -620,6 +621,7 @@ function addToCart(productId) {
 
 function displayCartItems() {
   let cartItems = document.querySelector(".cart-items");
+  let savedSize = localStorage.getItem("size");
   cartItems.innerHTML = "";
   cart.forEach((product) => {
     let newCart = document.createElement("div");
@@ -634,6 +636,7 @@ function displayCartItems() {
              <img src="${product.image}">
           </div>
 <div class='item-name'>${product.name}</div>
+<div class='item-size'> size: ${savedSize}</div>
 
 </div>
               <div class="cart-action">    
@@ -654,14 +657,8 @@ function displayCartItems() {
     cartItems.appendChild(newCart);
     localStorage.setItem("cart", JSON.stringify(cart));
   });
-  attachDeleteEvents(); // re-attach event listeners to new delete buttons
-}
-
-let savedSize = localStorage.getItem("size");
-if (savedSize) {
-  let itemSize = document.querySelector(".item-size");
-  console.log(itemSize);
-  itemSize.textContent = savedSize;
+  attachDeleteEvents();
+  // re-attach event listeners to new delete buttons
 }
 
 function updateCartIcon() {
