@@ -20,7 +20,7 @@ function filteredByCategoryLeatherShoe(category) {
            <div class='item-price'data-id=${product.price}>£${product.price}</div>
        </div>    
           
-       <a class="btn"  data-id=${product.id}>add to cart</a>
+       <a class="btn"  href="details.html?id=${product.id}">View product</a>
        </div> 
         
         </div>
