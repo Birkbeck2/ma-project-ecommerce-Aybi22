@@ -2675,6 +2675,7 @@ textarea:focus-within{
 overflow:hidden;
     background:white;
     height:0;
+    transition:0.4s;
 }
 
 .info-box p{
