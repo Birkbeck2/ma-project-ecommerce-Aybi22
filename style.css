@@ -173,6 +173,7 @@ h2{
     pointer-events: none;
     opacity:0.6;
     cursor:not-allowed;
+    z-index: -999;
  }
 
 a.btn{
@@ -1847,7 +1848,7 @@ object-fit:cover;
    padding:0;
    height: auto;
    overflow-y: visible;
-  
+   z-index: 999;
     
    
 }
