@@ -874,9 +874,11 @@ paras.forEach((para) => {
     document.querySelector(".category-title").textContent = statusValue;
   });
 });
+let menuItem = document.querySelector(".menu-item");
+console.log(menuItem);
+menuItem.addEventListener("click", showDropNav);
 
 function showDropNav() {
-  modal.body.style.backgroundColor = "pink";
   let dropNav = document.querySelector(".drop-nav");
   dropNav.classList.toggle("show-drop");
 }

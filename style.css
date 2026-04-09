@@ -132,7 +132,7 @@ h2{
     text-decoration-thickness:4px;
     text-underline-offset: 19px;
     text-align:center;
-   
+    margin-bottom:1rem;
     text-transform: capitalize;
     min-height:1rem;
     line-height:1.6;
@@ -2661,11 +2661,20 @@ textarea:focus-within{
  }
 
 
-.show-drop {
-    display:block;
+.show-drop.drop-nav{
+   height:200px;
+}
+.menu-item{
+  
+}
+.drop-nav li a{
+    border-bottom: none;
 }
 .drop-nav{
-    display:none;
+    
+overflow:hidden;
+    background:white;
+    height:0;
 }
 
 .info-box p{
@@ -2760,7 +2769,7 @@ width:100%;
     line-height:40px;
     font-family:verdana;
     color:var(--black);
-    
+    margin-bottom: 1rem;
   }
 
 
