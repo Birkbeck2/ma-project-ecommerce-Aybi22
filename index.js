@@ -66,14 +66,6 @@ document.addEventListener("click", (e) => {
     closeFilterModal();
   }
 
-  if (e.target.closest(".mobile")) {
-    openFilterModal();
-  }
-
-  if (e.target.closest(".sort")) {
-    sortModal();
-  }
-
   if (e.target.closest(".search-btn")) {
     let searchInput = document.getElementById("search");
     let searchText = searchInput.value;
@@ -175,10 +167,17 @@ document.addEventListener("click", (e) => {
 
   if (e.target.closest(".sort")) {
     openFilterModal();
+    sortModalDisplay();
+  }
+
+  if (e.target.closest(".filter")) {
+    openFilterModal();
+    filterModalDisplay();
   }
 });
 
-function sortModal() {
+function sortModalDisplay() {
+  filterModal.innerHTML = "";
   filterModal.innerHTML = `
   <div class="sort-category">
     <p>sort by price</p>
@@ -187,6 +186,48 @@ function sortModal() {
   <span class="close-filter-modal">&times;</span>
 </div>
   `;
+}
+
+function filterModalDisplay() {
+  filterModal.innerHTML = "";
+  filterModal.innerHTML = `
+
+ <div class="filter-modal-container">
+
+
+            <div class="price filter">
+                <p>Price Filter:</p>
+                <button class="undersixhundred  filter-btn  " data-category="0-£600">0–£600</button>
+                <button class="oversixhundred  filter-btn   " data-category="£600+">£600+</button>
+            </div>
+
+            <div class="category-list filter-section">
+                <p>Category filter:</p>
+
+                <button class="all-items filter-btn" data-category="AllItems">All Items</button>
+                <button class="  filter-btn" data-category="blazer">Blazer </button>
+                <button class=" filter-btn" data-category="regular">Regular</button>
+                <button class="filter-btn " data-category="leathershoe">Shoe</button>
+            </div>
+
+            <div class="color-filter">
+                <p>color filter:</p>
+
+                <button class="black  color  filter-btn" data-category="black">
+                    <span class="color-circle"></span>
+                    black <span class="item-total"></span></button>
+                <button class="grey  color  filter-btn  " data-category="grey"><span
+                        class="color-circle"></span>grey<span class="item-total"></span></button>
+                <button class="green color  filter-btn  " data-category="green"><span
+                        class="color-circle"></span>green<span class="item-total"></span></button>
+                <button class="navy  color  filter-btn  " data-category="navy"><span
+                        class="color-circle"></span>navy<span class="item-total"></span></button>
+                <button class="blue color  filter-btn  " data-category="blue"><span
+                        class="color-circle"></span>blue<span class="item-total"></span></button>
+            </div>
+            <span class="close-filter-modal">&times;</span>
+        </div>
+`;
 }
 
 function addText(e) {
