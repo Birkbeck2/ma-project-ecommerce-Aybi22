@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addBtn.addEventListener("click", (e) => {
     const productId = e.currentTarget.dataset.id;
-
-    addToCart(productId);
+    let selectedSize = localStorage.getItem("selectedSize");
+    addToCart(productId, selectedSize);
     showCart();
     addCartCheck();
   });
@@ -39,7 +39,6 @@ function stopButton() {
 const detail = () => {
   let productId = new URLSearchParams(window.location.search).get("id");
   let thisProduct = products.filter((product) => product.id == productId)[0];
-  console.log(thisProduct);
 
   if (thisProduct) {
     const productDetails = document.querySelector(".details");
@@ -86,7 +85,10 @@ const detail = () => {
 
 <p class="size-display"></p>
 <div class="sizes">
-   
+
+    
+        
+        
 </div>
   
    
@@ -157,23 +159,19 @@ const detail = () => {
     function sizeFormat() {
       let productSizes = thisProduct.sizes;
       let sizes = document.querySelector(".sizes");
-      productSizes.forEach((size) => {
-        sizes.innerHTML += `
+
+      sizes.innerHTML = productSizes
+        .map((size) => {
+          return `
     <span class="size">${size}</span>`;
-      });
+        })
+        .join("");
     }
     sizeFormat();
 
-    let addBtn = document.querySelector(".add-btn");
-
-    function stopAddBtn() {
-      addBtn.disabled = true;
-    }
-    stopAddBtn();
-
     let sizes = document.querySelectorAll(".size");
-    sizes.forEach((size) => {
-      size.addEventListener("click", selectSize);
+    sizes.forEach((productSizes) => {
+      productSizes.addEventListener("click", selectSize);
     });
     function selectSize(e) {
       let addBtn = document.querySelector(".add-btn");
@@ -191,10 +189,16 @@ const detail = () => {
       let sizeDisplay = document.querySelector(".size-display");
       let selectedSize = e.currentTarget.textContent;
       sizeDisplay.textContent = `Size selected: ${selectedSize}`;
-
+      localStorage.setItem("selectedSize", selectedSize);
       addBtn.disabled = false;
-      localStorage.setItem("size", selectedSize);
     }
+
+    let addBtn = document.querySelector(".add-btn");
+
+    function stopAddBtn() {
+      addBtn.disabled = true;
+    }
+    stopAddBtn();
 
     let pics = [
       `${thisProduct.image}`,

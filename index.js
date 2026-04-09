@@ -14,7 +14,6 @@ function allItems(e) {
   filtered = products;
   allNum();
   addText(e);
-  activateCartButtons();
 }
 
 let itemInfo = document.querySelector(".item-info");
@@ -51,21 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
   categoryTotalPrice();
 
   productNum();
-  activateCartButtons();
 });
 
 let filterModal = document.querySelector(".filter-modal");
 
-function sortModal() {
-  filterModal.innerHTML = `
-  <div class="sort-category">
-    <p>sort by price</p>
-  <button class="low-high filter-btn" data-category="Low-High">Low-High</button>
-  <button class="high-low  filter-btn  " data-category="High-Low">High-Low</button>
-  <span class="close-filter-modal">&times;</span>
-</div>
-  `;
-}
 function openFilterModal() {
   filterModal.classList.add("open-filter-modal");
 }
@@ -94,7 +82,7 @@ document.addEventListener("click", (e) => {
 
       findItem();
       renderProducts(".shop-container", filtered);
-      activateCartButtons();
+
       displayCategory(e);
       categoryTotalPrice();
       clearInput();
@@ -107,7 +95,7 @@ document.addEventListener("click", (e) => {
     renderProducts(".shop-container", filtered);
 
     clearInput();
-    activateCartButtons();
+
     productNum();
   }
 
@@ -118,7 +106,6 @@ document.addEventListener("click", (e) => {
     productNum();
     filterByPriceOver();
     closeFilterModal();
-    activateCartButtons();
   }
 
   if (e.target.closest(".undersixhundred")) {
@@ -127,7 +114,6 @@ document.addEventListener("click", (e) => {
     renderProducts(".shop-container", filtered);
     productNum();
     filterByPriceUnder();
-    activateCartButtons();
   }
 
   if (e.target.closest(".low-high")) {
@@ -136,7 +122,6 @@ document.addEventListener("click", (e) => {
     productNum();
     sortByPriceLow();
     closeFilterModal();
-    activateCartButtons();
   }
 
   if (e.target.closest(".high-low")) {
@@ -144,7 +129,6 @@ document.addEventListener("click", (e) => {
     closeFilterModal();
     productNum();
     sortByPriceHigh();
-    activateCartButtons();
   }
 
   if (e.target.closest(".black")) {
@@ -152,7 +136,6 @@ document.addEventListener("click", (e) => {
     filterByColor("black");
     renderProducts(".shop-container", filtered);
     closeFilterModal();
-    activateCartButtons();
   }
 
   if (e.target.closest(".red")) {
@@ -160,7 +143,6 @@ document.addEventListener("click", (e) => {
     filterByColor("red");
     renderProducts(".shop-container", filtered);
     closeFilterModal();
-    activateCartButtons();
   }
 
   if (e.target.closest(".green")) {
@@ -168,7 +150,6 @@ document.addEventListener("click", (e) => {
     filterByColor("green");
     renderProducts(".shop-container", filtered);
     closeFilterModal();
-    activateCartButtons();
   }
 
   if (e.target.closest(".blue")) {
@@ -176,7 +157,6 @@ document.addEventListener("click", (e) => {
     filterByColor("blue");
     renderProducts(".shop-container", filtered);
     closeFilterModal();
-    activateCartButtons();
   }
 
   if (e.target.closest(".grey")) {
@@ -184,7 +164,6 @@ document.addEventListener("click", (e) => {
     filterByColor("grey");
     renderProducts(".shop-container", filtered);
     closeFilterModal();
-    activateCartButtons();
   }
 
   if (e.target.closest(".navy")) {
@@ -192,13 +171,23 @@ document.addEventListener("click", (e) => {
     filterByColor("navy");
     renderProducts(".shop-container", filtered);
     closeFilterModal();
-    activateCartButtons();
   }
 
   if (e.target.closest(".sort")) {
     openFilterModal();
   }
 });
+
+function sortModal() {
+  filterModal.innerHTML = `
+  <div class="sort-category">
+    <p>sort by price</p>
+  <button class="low-high filter-btn" data-category="Low-High">Low-High</button>
+  <button class="high-low  filter-btn  " data-category="High-Low">High-Low</button>
+  <span class="close-filter-modal">&times;</span>
+</div>
+  `;
+}
 
 function addText(e) {
   const clicked = e.target;
@@ -492,7 +481,6 @@ document.addEventListener("DOMContentLoaded", () => {
   productNum();
   categoryTotalPrice();
 
-  activateCartButtons();
   document.querySelector(".num-box").textContent = "";
 
   let categoryList = document.querySelectorAll(".category-list");
@@ -612,16 +600,17 @@ function displayCategory(event){
 }
 */
 
-function addToCart(productId) {
+function addToCart(productId, selectedSize) {
   //This function is called when a user wants to add a product to the shopping cart,
   // using that product's id (passed as productId).
+
   let product = products.find((product) => product.id == productId); // find the product in the products array using the id.
   //The find() method returns the value of the first element in the array that satisfies the provided testing function.
   let existingProduct = cart.find((item) => item.id == productId);
   if (existingProduct) {
     existingProduct.quantity += 1;
   } else {
-    cart.push({ ...product, quantity: 1 }); //...product copies all properties of the product
+    cart.push({ ...product, selectedSize, quantity: 1 }); //...product copies all properties of the product
     // into the new object.
   }
   updateTotal();
@@ -632,7 +621,7 @@ function addToCart(productId) {
 
 function displayCartItems() {
   let cartItems = document.querySelector(".cart-items");
-  let savedSize = localStorage.getItem("size");
+
   cartItems.innerHTML = "";
   cart.forEach((product) => {
     let newCart = document.createElement("div");
@@ -647,8 +636,8 @@ function displayCartItems() {
              <img src="${product.image}">
           </div>
 <div class='item-name'>${product.name}</div>
-<div class='item-size'> size: ${savedSize}</div>
-
+<div class='item-size'>size: ${product.selectedSize}</div>
+  
 </div>
               <div class="cart-action">    
             <div class="counter">
@@ -663,7 +652,7 @@ function displayCartItems() {
             </div>
           </div>
 </div>
-     
+    
 `;
     cartItems.appendChild(newCart);
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -779,14 +768,14 @@ function productNum() {
 let numBox = document.querySelector(".num-box");
 let productNumber = filtered.length;
 function productNum() {
-  let productNumber = filtered.length;
+  productNumber = filtered.length;
   productNumber > 1
     ? (numBox.innerHTML = productNumber + " items")
     : (numBox.innerHTML = productNumber + "item");
 }
 
 function allNum() {
-  let productNumber = filtered.length;
+  productNumber = filtered.length;
   let allNumBox = document.querySelector(".allNum-box");
   allNumBox.innerHTML = productNumber + " items";
 }
@@ -808,7 +797,6 @@ function findItem() {
       return true;
     return false;
   });
-  activateCartButtons();
 }
 
 let colorCircle = document.querySelectorAll(".color-circle");
@@ -841,7 +829,7 @@ paras.forEach((para) => {
   para.addEventListener("click", () => {
     filtered = products.filter((product) => product.status === statusValue);
     renderProducts(".shop-container", filtered);
-    activateCartButtons();
+
     document.querySelector(".category-title").textContent = statusValue;
   });
 });
