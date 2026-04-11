@@ -44,6 +44,7 @@ function orderRecap() {
 
 </div>
   </div>
+  </div>
   
   `;
     })

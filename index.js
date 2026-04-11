@@ -85,7 +85,7 @@ document.addEventListener("click", (e) => {
     allItems(e);
     addText(e);
     renderProducts(".shop-container", filtered);
-
+    closeFilterModal();
     clearInput();
 
     productNum();
@@ -194,22 +194,34 @@ function filterModalDisplay() {
 
  <div class="filter-modal-container">
 
+ <article class="filter-price ">
 
-            <div class="price filter">
-                <p>Price Filter:</p>
-                <button class="undersixhundred  filter-btn  " data-category="0-£600">0–£600</button>
-                <button class="oversixhundred  filter-btn   " data-category="£600+">£600+</button>
-            </div>
+                <div class="price-container">
 
-            <div class="category-list filter-section">
-                <p>Category filter:</p>
+                    <p>price:</p>
+                    <div class="price-list mobile-modal">
 
-                <button class="all-items filter-btn" data-category="AllItems">All Items</button>
-                <button class="  filter-btn" data-category="blazer">Blazer </button>
-                <button class=" filter-btn" data-category="regular">Regular</button>
-                <button class="filter-btn " data-category="leathershoe">Shoe</button>
-            </div>
+                       
+                        <button class="undersixhundred  filter-btn  " data-category="0-£600">0–£600</button>
+                        <button class="oversixhundred  filter-btn   " data-category="£600+">£600+</button>
 
+                    </div>
+
+            </article>
+<article class="filter-category ">
+               <div class="price-container  mobile-modal"> 
+                    <p>category:</p>
+              
+                    <div class="category-list ">
+                        <button class="all-items filter-btn" data-category="AllItems">All Items</button>
+                        <button class="filter-btn" data-category="blazer">Blazer </button>
+                        <button class="filter-btn" data-category="regular">Regular</button>
+                        <button class="filter-btn " data-category="leathershoe">Shoe</button>
+
+                    </div>
+                 
+
+            </article>
             <div class="color-filter">
                 <p>color filter:</p>
 
@@ -229,6 +241,20 @@ function filterModalDisplay() {
         </div>
 `;
 }
+
+let colorCircle = document.querySelectorAll(".color-circle");
+console.log(colorCircle);
+function showColor() {
+  let buttons = document.querySelectorAll(".color");
+  buttons.forEach((button) => {
+    let color = button.dataset.category;
+
+    let circle = button.querySelector(".color-circle"); //Target ONLY the circle inside that button
+
+    circle.style.backgroundColor = color;
+  });
+}
+showColor();
 
 function addText(e) {
   const clicked = e.target;
@@ -525,6 +551,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".num-box").textContent = "";
 
   let categoryList = document.querySelectorAll(".category-list");
+  console.log(categoryList);
   categoryList.forEach((list) => {
     list.addEventListener("click", displayCategory);
   });
@@ -840,18 +867,6 @@ function findItem() {
   });
 }
 
-let colorCircle = document.querySelectorAll(".color-circle");
-console.log(colorCircle);
-function showColor() {
-  let buttons = document.querySelectorAll(".color");
-  buttons.forEach((button) => {
-    let color = button.dataset.category;
-    let circle = button.querySelector(".color-circle"); //Target ONLY the circle inside that button
-
-    circle.style.backgroundColor = color;
-  });
-}
-showColor();
 function showNums() {
   let buttons = document.querySelectorAll(".color");
 
