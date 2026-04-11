@@ -3677,7 +3677,9 @@ body,html{
             grid-template-columns: 1fr;
         }
 
-
+        .item-size{
+            font-size:0.7rem;
+        }
       
 
         .cart-action{
@@ -3693,11 +3695,7 @@ body,html{
            #confirmation{
             padding:1rem;
            }
-      .order-error-message{
-       display:flex;
-       flex-direction:column;
-       gap:1rem;
-}
+  
         .category-title{
             margin-bottom:1rem;
         }
