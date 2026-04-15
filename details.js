@@ -85,69 +85,43 @@ const detail = () => {
 
 <p class="size-display"></p>
 <div class="sizes">
-
-    
-        
-        
 </div>
-  
-   
-   <div class="add-cart">
+  <div class="add-cart">
    
     <button class="add-btn" href="#" data-id="${thisProduct.id}">
         
         add to cart
-
-
-    </button>
-    
-</div>
-
-
-
-
- <div class="shipping-info">
-        <p>FREE STANDARD DELIVERY ON ALL ORDERS</p>
-        <i class="fa-solid fa-truck"></i>
+        </button>
     </div>
+
+
     <div class="product-detail">
         <fieldset> 
             <legend> description </legend>
            <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-              
-              </p> 
+            </p> 
           </fieldset>      
              </div>
    
-        
-       <div class="payments">
-        <p class="pay">Payment:</p>
-    
-        <div class="paypal-icon">
+<div class="delivery-infos">
+<h3>Delivery & returns <i class="fa-solid fa-truck"></i> <i class="fa-solid fa-arrow-left-long"></i>  </h3>
+<p class="info-title">Standard Delivery<span class="delivery-cost">£4.95</span></p>
+<p>Delivery in 3-5 working days</p>
 
-    <img src="images/paypal.svg" width="50" alt="paypal card">
-    </div>
-<div class="visa-icon">
-    <img src="images/visa.svg" width="50" alt="visa card">
-    </div>
-    <div class="klarna-icon">
-        <img src="images/klarna.svg" width="50" alt="klarna card" >
-</div>
-<div class="master-icon">
-    <img src="images/mastercard.svg"  width="50" alt="mastercard card">
+<p class="info-title">Next day delivery<span class="delivery-cost">£4.95</span></p>
+<p>Delivery Delivery on next working day</p>
 
-</div>
-<div class="amex-icon">
-    <img src="images/americanexpress.svg" width="50" alt="amex card">
-    
-</div>
+
+<p class="info-title">Click & Collect<span class="delivery-cost" >Free</span></p>
+<p>Delivery within 3 - 6 working days</p>
+
+<p class="info-title">Returns</p>
+<p>You can return any item for up to 6 months</p>
 </div>
 
-</div>
+
 
 </div>
 
