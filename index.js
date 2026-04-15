@@ -835,7 +835,8 @@ function showNums() {
 showNums();
 let paras = document.querySelectorAll(".status-item");
 paras.forEach((para) => {
-  let statusValue = para.dataset.status;
+  let clicked = e.target;
+  let statusValue = clicked.dataset.status;
   para.addEventListener("click", () => {
     filtered = products.filter((product) => product.status === statusValue);
     renderProducts(".shop-container", filtered);
