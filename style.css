@@ -424,18 +424,20 @@ a.btn{
     align-items: flex-start;
     gap:1rem;
     margin:0;
-    padding:0;
-
-}
+    padding:0;}
 .filter-modal p{
     font-weight:900;
     text-transform:capitalize;
     width:100%;
    padding:1rem;
-   
-   
+   }
+
+.filter-price-display{
+    display:flex;
+    flex-direction:column;
 }
-.filter-modal-container{
+
+   .filter-modal-container{
     
     display:flex;
     flex-direction:column;

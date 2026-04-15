@@ -16,6 +16,10 @@ function allItems(e) {
   addText(e);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  showColor();
+});
+
 let itemInfo = document.querySelector(".item-info");
 
 function categoryTotalPrice() {
@@ -193,13 +197,12 @@ function filterModalDisplay() {
   filterModal.innerHTML = `
 
  <div class="filter-modal-container">
-
- <article class="filter-price ">
+<h3>filters</h3>
 
                 <div class="price-container">
 
                     <p>price:</p>
-                    <div class="price-list mobile-modal">
+                    <div class="filter-price-display">
 
                        
                         <button class="undersixhundred  filter-btn  " data-category="0-£600">0–£600</button>
@@ -207,12 +210,12 @@ function filterModalDisplay() {
 
                     </div>
 
-            </article>
-<article class="filter-category ">
-               <div class="price-container  mobile-modal"> 
+           
+<div class="filter-category ">
+              
                     <p>category:</p>
               
-                    <div class="category-list ">
+                    <div class="category-list  filter-section">
                         <button class="all-items filter-btn" data-category="AllItems">All Items</button>
                         <button class="filter-btn" data-category="blazer">Blazer </button>
                         <button class="filter-btn" data-category="regular">Regular</button>
@@ -221,7 +224,7 @@ function filterModalDisplay() {
                     </div>
                  
 
-            </article>
+            </div>
             <div class="color-filter">
                 <p>color filter:</p>
 
@@ -618,55 +621,6 @@ function sortByPriceHigh() {
 
   clearInput();
 }
-
-/*     
-   
-let categoryList=document.querySelector('.category-list');
-categoryList.addEventListener('click',displayCategory);
-function displayCategory(event){
-   
-   let categoryTitle=document.querySelector('.category-title');
-   let text=event.target.getAttribute('id');
-   if(text){
-      categoryTitle.textContent=text;
-      
-   }
-   
-   let filterByCategoryList;
-   
-    let allCategory=document.getElementsByTagName('input');
-    let model=event.target;
-    for(model of allCategory){
-    if (event.target===model){
-     
-       filterByCategoryList=products.filter(product=>product.category===model.getAttribute('id')); 
-       let container=document.querySelector('.shop-container');
-   container.innerHTML=
-   filterByCategoryList.map(product=>
-      `
-      
-      <div class="section-list">
-   <a href="details.html?id=${product.id}">
-
-<img src= ${product.image}>
-</a>
-<div class="item-title">
-   <div class='item-name'>${product.name}</div>
-   <div class='item-price'data-id=${product.price}>£${product.price}</div>
-</div>    
-   
-<a class="btn"  data-id=${product.id}>add to cart</a>
-
-</div>
-
-
-
-   `).join('');
-   
-   }
-}
-}
-*/
 
 function addToCart(productId, selectedSize) {
   //This function is called when a user wants to add a product to the shopping cart,
