@@ -422,7 +422,7 @@ const products = [
     image1: "images/LinenSuit1.webp",
     image2: "images/LinenSuit2.webp",
     name: "Linen suit",
-    price: 430,
+    price: 30,
     quantity: 1,
     h3: "regular",
     category: "regular",
