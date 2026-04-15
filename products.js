@@ -415,6 +415,20 @@ const products = [
     color: "green",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
   },
+
+  {
+    id: 32,
+    image: "images/LinenSuit.webp",
+    image1: "images/LinenSuit1.webp",
+    image2: "images/LinenSuit2.webp",
+    name: "Linen suit",
+    price: 430,
+    quantity: 1,
+    h3: "regular",
+    category: "regular",
+    color: "green",
+    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+  },
 ];
 
 export default products;
