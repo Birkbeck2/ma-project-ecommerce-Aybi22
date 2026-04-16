@@ -18,6 +18,7 @@ function allItems(e) {
 
 document.addEventListener("DOMContentLoaded", () => {
   showColor();
+  displayCategory(e);
 });
 
 let itemInfo = document.querySelector(".item-info");
@@ -93,10 +94,6 @@ document.addEventListener("click", (e) => {
     clearInput();
 
     productNum();
-  }
-
-  if (e.target.closest(".list")) {
-    closeFilterModal();
   }
 
   if (e.target.closest(".oversixhundred")) {
@@ -570,14 +567,13 @@ document.addEventListener("DOMContentLoaded", () => {
   categoryTotalPrice();
 
   document.querySelector(".num-box").textContent = "";
-
   let categoryList = document.querySelectorAll(".category-list");
   console.log(categoryList);
   categoryList.forEach((list) => {
     list.addEventListener("click", displayCategory);
   });
-  function displayCategory(event) {
-    const clicked = event.target;
+  function displayCategory(e) {
+    const clicked = e.target;
     const categoryData = clicked.dataset.category;
 
     if (categoryData) {
