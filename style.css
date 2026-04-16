@@ -3254,7 +3254,7 @@ p{
 .left-side{
    max-width:600px;
    width:100%;
-   height:700px;
+  
 }
 
 .fa-check{
@@ -3526,16 +3526,10 @@ font-size:1rem;
 h2{
     font-size:1.7rem;
 }
-.left-side{
-    height:700px;
-}
+
+
     
-.left-side .image {
-    width:auto;
-    max-width: 100%;
- 
-    
-  }
+
 
   .left-side .image img {
     width: 100%;
@@ -3545,7 +3539,7 @@ h2{
   }}
   /* styles specifically for phones smaller or equal to 540px */
 
-
+/*
 @media screen and (max-width:540px){
 
 .list-wrapper{
@@ -3567,7 +3561,7 @@ h2{
 
 }
 
-
+*/
 
 
 
@@ -3687,26 +3681,14 @@ body,html{
     
 }
 
- .left-side .image{
-    height:500px;
-    width:auto;
-    
- }
+ 
  .left-side img{
     object-fit:cover;
     display:block;
     width:100%;
     height:100%;
  }
- .left-gallery{
-
- }
-
- .left-gallery .image{
-   
-    
-   
- }
+ 
 
 
 .blazer-container{
@@ -3744,7 +3726,7 @@ body,html{
         
       }
       .product-display{
-     
+gap:1rem;
       }
 
         .cart-action{
