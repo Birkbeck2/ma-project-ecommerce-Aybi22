@@ -95,6 +95,10 @@ document.addEventListener("click", (e) => {
     productNum();
   }
 
+  if (e.target.closest(".list")) {
+    closeFilterModal();
+  }
+
   if (e.target.closest(".oversixhundred")) {
     addText(e);
 
@@ -243,6 +247,9 @@ function filterModalDisplay() {
             <span class="close-filter-modal">&times;</span>
         </div>
 `;
+
+  showColor();
+  showNums();
 }
 
 let colorCircle = document.querySelectorAll(".color-circle");
@@ -257,7 +264,18 @@ function showColor() {
     circle.style.backgroundColor = color;
   });
 }
-showColor();
+
+function showNums() {
+  let buttons = document.querySelectorAll(".color");
+
+  buttons.forEach((button) => {
+    let number = button.dataset.category;
+    let itemTotal = button.querySelector(".item-total");
+    let filtered = products.filter((product) => product.color === number);
+
+    itemTotal.innerHTML = `(${filtered.length})`;
+  });
+}
 
 function addText(e) {
   const clicked = e.target;
@@ -821,23 +839,12 @@ function findItem() {
   });
 }
 
-function showNums() {
-  let buttons = document.querySelectorAll(".color");
-
-  buttons.forEach((button) => {
-    let number = button.dataset.category;
-    let itemTotal = button.querySelector(".item-total");
-    let filtered = products.filter((product) => product.color === number);
-
-    itemTotal.innerHTML = `(${filtered.length})`;
-  });
-}
 showNums();
 let paras = document.querySelectorAll(".status-item");
 paras.forEach((para) => {
-  let clicked = e.target;
-  let statusValue = clicked.dataset.status;
-  para.addEventListener("click", () => {
+  para.addEventListener("click", (e) => {
+    let clicked = e.target;
+    let statusValue = clicked.dataset.status;
     filtered = products.filter((product) => product.status === statusValue);
     renderProducts(".shop-container", filtered);
 
