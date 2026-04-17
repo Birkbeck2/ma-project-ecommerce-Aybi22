@@ -127,7 +127,7 @@ const detail = () => {
 
 </section>
 
-<section>
+
 `;
 
     function sizeFormat() {

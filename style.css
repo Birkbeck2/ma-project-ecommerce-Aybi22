@@ -475,9 +475,11 @@ a.btn{
     display:flex;
     flex-direction:column;
     align-items: start;
-    border-bottom: 1px solid grey;
+    
     max-width:100%;
     width:100%;
+    padding:0;
+    margin:0;
 }
 .mobile{
     display:flex;
@@ -927,6 +929,7 @@ h3{
     font-weight:900;
     
 }
+
 
 .price-list,.category-list{
 display:flex;
@@ -2214,7 +2217,7 @@ margin: auto;
     position:fixed;
     background:var(--champagne);
     transition:0.3s;
-  
+   overflow-y: scroll;
     overflow: hidden;
     
    }
@@ -3539,7 +3542,6 @@ h2{
   }}
   /* styles specifically for phones smaller or equal to 540px */
 
-/*
 @media screen and (max-width:540px){
 
 .list-wrapper{
@@ -3561,7 +3563,6 @@ h2{
 
 }
 
-*/
 
 
 
@@ -3720,6 +3721,10 @@ body,html{
         .item-size{
             font-size:0.7rem;
         }
+        .checkout-title{
+            font-size:3rem;
+            padding:1rem;
+        }
       
       .left-side .image{
         height:auto;
@@ -3839,11 +3844,16 @@ gap:1rem;
       .questions h2{
         font-size:18px;
       }
+
+      
       h2{
         font-size:1.5rem;
         white-space: nowrap;
      }
-     
+     .section-title h2{
+       display:flex;
+       flex-direction:column;
+     }
     .product-list h2{
         white-space: wrap;
         

@@ -18,8 +18,9 @@ function allItems(e) {
 
 document.addEventListener("DOMContentLoaded", () => {
   showColor();
-  displayCategory(e);
 });
+
+document.addEventListener("DOMContentLoaded", () => {});
 
 let itemInfo = document.querySelector(".item-info");
 
@@ -135,6 +136,9 @@ document.addEventListener("click", (e) => {
     closeFilterModal();
   }
 
+  if (e.target.closest(".filter-btn")) {
+  }
+
   if (e.target.closest(".red")) {
     addText(e);
     filterByColor("red");
@@ -210,9 +214,8 @@ function filterModalDisplay() {
                         <button class="oversixhundred  filter-btn   " data-category="£600+">£600+</button>
 
                     </div>
-
-           
-<div class="filter-category ">
+   
+<div class="filter-category">
               
                     <p>category:</p>
               
@@ -223,7 +226,7 @@ function filterModalDisplay() {
                         <button class="filter-btn " data-category="leathershoe">Shoe</button>
 
                     </div>
-                 
+                
 
             </div>
             <div class="color-filter">
@@ -248,6 +251,29 @@ function filterModalDisplay() {
   showColor();
   showNums();
 }
+
+let categoryList = document.querySelectorAll(".category-list");
+
+categoryList.forEach((list) => {
+  list.addEventListener("click", (e) => {
+    const clicked = e.target;
+    const categoryData = clicked.dataset.category;
+
+    if (categoryData) {
+      document.querySelector(".category-title").textContent = categoryData;
+
+      filtered = products.filter(
+        (product) => product.category === categoryData,
+      );
+      openFilterModal();
+      renderProducts(".shop-container", filtered);
+      productNum();
+      categoryTotalPrice();
+
+      clearInput();
+    }
+  });
+});
 
 let colorCircle = document.querySelectorAll(".color-circle");
 console.log(colorCircle);
@@ -567,29 +593,6 @@ document.addEventListener("DOMContentLoaded", () => {
   categoryTotalPrice();
 
   document.querySelector(".num-box").textContent = "";
-  let categoryList = document.querySelectorAll(".category-list");
-  console.log(categoryList);
-  categoryList.forEach((list) => {
-    list.addEventListener("click", displayCategory);
-  });
-  function displayCategory(e) {
-    const clicked = e.target;
-    const categoryData = clicked.dataset.category;
-
-    if (categoryData) {
-      document.querySelector(".category-title").textContent = categoryData;
-
-      filtered = products.filter(
-        (product) => product.category === categoryData,
-      );
-
-      renderProducts(".shop-container", filtered);
-      productNum();
-      categoryTotalPrice();
-      closeFilterModal();
-      clearInput();
-    }
-  }
 });
 
 function filterByPriceOver() {
