@@ -2012,8 +2012,8 @@ object-fit:cover;
     width:100%;
     display:flex;
     flex-direction:column;
-   gap:9px;
-   max-height:700px;
+   gap:5px;
+ 
    
     margin:0;
     padding:0;
@@ -2050,8 +2050,8 @@ object-fit:cover;
 
   .product-display{
     display:flex;
-    gap:22px;
-    align-items:flex-start;
+    gap:1rem;
+    align-items:stretch;
    margin:auto;
     margin-top:53px;
     max-width:1200px;
@@ -3255,7 +3255,7 @@ p{
     }
 
 .left-side{
-   max-width:600px;
+   max-width:700px;
    width:100%;
   
 }
@@ -3265,7 +3265,7 @@ p{
 }
 
 .left-side .image{
-    width:100%;
+    max-width:100%;
     height:100%;
    
 }
@@ -3463,7 +3463,8 @@ p{
 .product-display {
     flex-direction: row;
     align-items: flex-start;
-    justify-content: center;
+   justify-content:center;
+    
   }
 
   .left-gallery {

@@ -265,7 +265,7 @@ categoryList.forEach((list) => {
       filtered = products.filter(
         (product) => product.category === categoryData,
       );
-      openFilterModal();
+      closeFilterModal();
       renderProducts(".shop-container", filtered);
       productNum();
       categoryTotalPrice();
