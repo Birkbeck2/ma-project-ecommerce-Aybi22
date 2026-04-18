@@ -468,10 +468,18 @@ a.btn{
    padding:0;
    margin:0;
    width:100%;
-   
-    }
+   }
 
-.filter-section, .filter-modal-container> div{
+.checkout-text{
+    margin:auto;
+    margin-bottom:2rem;
+    max-width:600px;
+    color:#222;
+}
+
+
+
+   .filter-section, .filter-modal-container> div{
     display:flex;
     flex-direction:column;
     align-items: start;
