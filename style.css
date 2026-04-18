@@ -667,7 +667,8 @@ figure{
 }
 
 .error-text{
-    color:red;
+    color:#b71c1c;
+    background-color: #fdecea;
     font-style:italic;
     text-align:center;
 }
