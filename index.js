@@ -136,9 +136,6 @@ document.addEventListener("click", (e) => {
     closeFilterModal();
   }
 
-  if (e.target.closest(".filter-btn")) {
-  }
-
   if (e.target.closest(".red")) {
     addText(e);
     filterByColor("red");
@@ -221,7 +218,7 @@ function filterModalDisplay() {
               
                     <div class="category-list  filter-section">
                         <button class="all-items filter-btn" data-category="AllItems">All Items</button>
-                        <button class="filter-btn" data-category="blazer">Blazer </button>
+                        <button class="filter-btn " data-category="blazer">Blazer </button>
                         <button class="filter-btn" data-category="regular">Regular</button>
                         <button class="filter-btn " data-category="leathershoe">Shoe</button>
 
@@ -229,6 +226,7 @@ function filterModalDisplay() {
                 
 
             </div>
+             
             <div class="color-filter">
                 <p>color filter:</p>
 
@@ -250,30 +248,30 @@ function filterModalDisplay() {
 
   showColor();
   showNums();
+
+  let categoryList = document.querySelectorAll(".category-list");
+
+  categoryList.forEach((list) => {
+    list.addEventListener("click", displayCategory);
+  });
 }
 
-let categoryList = document.querySelectorAll(".category-list");
+function displayCategory(e) {
+  const clicked = e.target;
+  const categoryData = clicked.dataset.category;
 
-categoryList.forEach((list) => {
-  list.addEventListener("click", (e) => {
-    const clicked = e.target;
-    const categoryData = clicked.dataset.category;
+  if (categoryData) {
+    document.querySelector(".category-title").textContent = categoryData;
 
-    if (categoryData) {
-      document.querySelector(".category-title").textContent = categoryData;
+    filtered = products.filter((product) => product.category === categoryData);
+    closeFilterModal();
+    renderProducts(".shop-container", filtered);
+    productNum();
+    categoryTotalPrice();
 
-      filtered = products.filter(
-        (product) => product.category === categoryData,
-      );
-      closeFilterModal();
-      renderProducts(".shop-container", filtered);
-      productNum();
-      categoryTotalPrice();
-
-      clearInput();
-    }
-  });
-});
+    clearInput();
+  }
+}
 
 let colorCircle = document.querySelectorAll(".color-circle");
 console.log(colorCircle);
