@@ -3729,6 +3729,14 @@ body,html{
         .tablet-container{
             grid-template-columns: 1fr;
         }
+        .error-text{
+            font-size:0.5rem;
+        }
+
+        .checkout-text{
+            font-size:0.9rem;
+            width:80%;
+        }
 
         .item-size{
             font-size:0.7rem;
