@@ -671,6 +671,7 @@ figure{
     background-color: #fdecea;
     font-style:italic;
     text-align:center;
+    padding:0.5rem;
 }
 .stars{
     color:var(--champagne);
