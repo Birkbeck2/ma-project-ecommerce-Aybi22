@@ -3485,7 +3485,19 @@ p{
   .left-gallery {
     flex-direction: column; /* Make gallery vertical */
    
+   
+   gap:0.5rem;
     align-items: center;
+  }
+  .left-gallery .image{
+    width:fit-content;
+    height:160px;
+  }
+  .left-gallery img{
+    width:100%;
+    height:100%;
+    object-fit :cover;
+    display:block;
   }
 
 
