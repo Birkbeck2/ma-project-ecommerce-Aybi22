@@ -13,9 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     addCartCheck();
   });
 });
-
-/*
-
 function addCartCheck() {
   let addBtn = document.querySelector(".add-btn");
 
@@ -34,7 +31,6 @@ function stopButton() {
     addBtn.disabled = false;
   }, 4500);
 }
-*/
 
 const detail = () => {
   let productId = new URLSearchParams(window.location.search).get("id");
@@ -126,8 +122,6 @@ const detail = () => {
 </div>
 
 </section>
-
-
 `;
 
     function sizeFormat() {

@@ -113,9 +113,19 @@ document.addEventListener("DOMContentLoaded", () => {
   placeBtn.addEventListener("click", stopOrder);
   placeBtn.addEventListener("click", saveUserData);
   placeBtn.addEventListener("click", orderDate);
-  placeBtn.addEventListener("click", confirmedOrder);
+
   placeBtn.addEventListener("click", orderRecap);
+  placeBtn.addEventListener("click", clearCart);
 });
+function clearCart() {
+  let numberOfItems = document.querySelector(".noOfItems");
+  let cartItems = document.querySelector(".cart-items");
+  console.log(cartItems);
+  sumContainer = document.querySelector(".sum-container");
+  sumContainer.innerHTML = "";
+  cartItems.innerHTML = "";
+  numberOfItems.innerText = "";
+}
 
 function orderDate() {
   let today = new Date();

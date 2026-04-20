@@ -2032,7 +2032,7 @@ object-fit:cover;
 
 .left-gallery .image{
     max-width:140px;
-    max-height:233px;
+    max-height:200px;
 }
 
 .left-gallery img{
@@ -3440,6 +3440,10 @@ p{
     .shop-container,.suit-container,.shoe-container,.blazer-container{
         grid-template-columns: repeat(2,1fr);
     }
+
+     .banner{
+            padding-left:1rem;
+        }
     .mobile-filter{
         display:flex;
         justify-content:center;
@@ -3732,6 +3736,7 @@ body,html{
         .error-text{
             font-size:0.5rem;
         }
+       
 
         .checkout-text{
             font-size:0.9rem;
