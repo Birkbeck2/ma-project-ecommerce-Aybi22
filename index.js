@@ -643,13 +643,17 @@ function addToCart(productId, selectedSize) {
 
   let product = products.find((product) => product.id == productId); // find the product in the products array using the id.
   //The find() method returns the value of the first element in the array that satisfies the provided testing function.
-  let existingProduct = cart.find((item) => item.id == productId);
+  let existingProduct = cart.find(
+    (item) => item.id == productId && item.selectedSize == selectedSize,
+  );
+  console.log(existingProduct);
+  if (!existingProduct) {
+    cart.push({ ...product, selectedSize, quantity: 1 });
+  }
   if (existingProduct) {
     existingProduct.quantity += 1;
-  } else {
-    cart.push({ ...product, selectedSize, quantity: 1 }); //...product copies all properties of the product
-    // into the new object.
   }
+
   updateTotal();
   displayCartItems();
   updateCartIcon();
@@ -673,6 +677,7 @@ function displayCartItems() {
              <img src="${product.image}">
           </div>
 <div class='item-name'>${product.name}</div>
+
 <div class='item-size'>size: ${product.selectedSize}</div>
   
 </div>
