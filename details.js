@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   addBtn.addEventListener("click", (e) => {
     const productId = e.currentTarget.dataset.id;
     let selectedSize = localStorage.getItem("selectedSize");
+
     addToCart(productId, selectedSize);
+
     showCart();
     addCartCheck();
   });

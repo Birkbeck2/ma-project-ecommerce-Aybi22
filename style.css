@@ -2535,7 +2535,7 @@ textarea:focus-within{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     max-width:1200px;
-    row-gap:2rem;
+    row-gap:80px;
     width:100%;
     margin:0 auto;
    
@@ -2613,7 +2613,7 @@ textarea:focus-within{
  
   justify-content: center;
     margin: auto;
-    row-gap:137px;
+    row-gap:80px;
     margin-bottom:141px;
  
    }

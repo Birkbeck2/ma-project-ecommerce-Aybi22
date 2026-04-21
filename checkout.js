@@ -116,16 +116,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   placeBtn.addEventListener("click", orderRecap);
 });
-
 /*
 function clearCart() {
-  let numberOfItems = document.querySelector(".noOfItems");
-  let cartItems = document.querySelector(".cart-items");
-  console.log(cartItems);
-  sumContainer = document.querySelector(".sum-container");
-  sumContainer.innerHTML = "";
-  cartItems.innerHTML = "";
-  numberOfItems.innerText = 0;
+  setTimeout(() => {
+    let numberOfItems = document.querySelector(".noOfItems");
+    let cartItems = document.querySelector(".cart-items");
+    console.log(cartItems);
+    sumContainer = document.querySelector(".sum-container");
+    sumContainer.innerHTML = "";
+    cartItems.innerHTML = "";
+    numberOfItems.innerText = 0;
+    let cart = document.querySelector(".cart");
+    cart = [];
+  }, 5400);
 }
   */
 

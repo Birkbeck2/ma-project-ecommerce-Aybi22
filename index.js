@@ -739,7 +739,10 @@ document.addEventListener("click", function (e) {
     const quantityInput = productDiv.querySelector(".quantity");
     let currentQuantity = parseInt(quantityInput.value);
 
-    if (e.target.classList.contains("increase")) {
+    if (
+      e.target.classList.contains("increase") ||
+      e.target.classList.contains("add-btn")
+    ) {
       currentQuantity++;
     } else if (e.target.classList.contains("decrease") && currentQuantity > 1) {
       currentQuantity--;
