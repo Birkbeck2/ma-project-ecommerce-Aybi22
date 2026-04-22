@@ -256,6 +256,12 @@ function filterModalDisplay() {
   });
 }
 
+let categoryList = document.querySelectorAll(".category-list");
+
+categoryList.forEach((list) => {
+  list.addEventListener("click", displayCategory);
+});
+
 function displayCategory(e) {
   const clicked = e.target;
   const categoryData = clicked.dataset.category;
@@ -526,7 +532,7 @@ function showNext() {
   }
 }
 
-function renderProducts(containerSelector, filtered) {
+export function renderProducts(containerSelector, filtered) {
   let container = document.querySelector(containerSelector);
 
   container.innerHTML = ""; // Clear any old content
@@ -593,7 +599,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".num-box").textContent = "";
 });
 
-function filterByPriceOver() {
+export function filterByPriceOver() {
   filtered = products.filter((product) => product.price > 600);
   renderProducts(".shop-container", filtered);
   productNum();
@@ -602,7 +608,7 @@ function filterByPriceOver() {
   clearInput();
 }
 
-function filterByPriceUnder() {
+export function filterByPriceUnder() {
   filtered = products.filter((product) => product.price <= 600);
 
   renderProducts(".shop-container", filtered);
