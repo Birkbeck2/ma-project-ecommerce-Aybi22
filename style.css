@@ -2380,9 +2380,6 @@ legend {
     max-width: 100%;
 }
 
-
-
-
 .filter-category {
     border: none;
 }
@@ -2478,12 +2475,11 @@ legend {
 
 
 .q-container h3 {
-    text-transform: capitalize;
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
+    font-size:1rem;
 }
 
 .show-text .resp {
@@ -2693,26 +2689,12 @@ a.shop {
     margin: 1rem auto 0;
 }
 
-
-
-
-
-
-
-
-
-
 h4 {
     font-size: 9px;
     text-transform: uppercase;
 
     font-weight: bold;
 }
-
-
-
-
-
 
 .section-list h3 {
     background: var(--cambridge-blue);
@@ -3530,6 +3512,7 @@ p {
 section {
     padding: var(--section-padding);
     margin-bottom: var(--section-margin);
+   
 }
 
 /*  #home section{
