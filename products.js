@@ -134,6 +134,7 @@ const products = [
     category: "regular",
     h3: "regular",
     color: "red",
+    status: "new arrival",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
   },
 
@@ -149,6 +150,7 @@ const products = [
     category: "regular",
     h3: "regular",
     color: "grey",
+    status: "new arrival",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
   },
 
