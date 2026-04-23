@@ -1793,6 +1793,7 @@ footer a {
     display: flex;
     width: 100%;
 
+margin-bottom:1rem;
 }
 
 
@@ -2469,9 +2470,19 @@ legend {
     color: var(--cambridge-blue);
     padding: 5px;
     text-align: center;
-
-
 }
+/*
+.parallax{
+  
+    background-image: url('images/parallaxpic1.webp');
+    height:80vh;
+    width:100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   background-size:cover;
+    background-position: center 10%;
+}
+*/
 
 
 .q-container h3 {
@@ -3688,10 +3699,9 @@ p {
     .item-title {
         display: flex;
         justify-content: center;
-
-
-        width: 100%;
+       width: 100%;
         margin: auto;
+        
     }
 
     .main-text h1 {
