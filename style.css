@@ -770,7 +770,8 @@ article>.stars {
     font-size: 15px;
     color: var(--black);
     color:#333;
-    }
+    
+}
 
 .story-box {
     display: flex;

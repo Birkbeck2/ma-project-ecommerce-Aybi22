@@ -431,6 +431,20 @@ const products = [
     color: "green",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
   },
+
+  {
+    id: 33,
+    image: "images/blueleathershoe.webp",
+    image1: "images/blueleathershoe1.webp",
+    image2: "images/blueleathershoe2.webp",
+    name: "blue leather shoe",
+    price: 30,
+    quantity: 1,
+    h3: "shoe",
+    category: "leathershoe",
+    color: "green",
+    sizes: [6, 7, 8, 9, 10, 11, 12],
+  },
 ];
 
 export default products;
