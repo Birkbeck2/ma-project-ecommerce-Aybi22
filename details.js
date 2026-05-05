@@ -125,7 +125,49 @@ const detail = () => {
 
 </section>
 `;
+    //Use filter for object removal — use indexOf only for primitive values like numbers or strings.
+    function displayRelatedProducts() {
+      let relatedItems = document.querySelector(".item-container");
+      let filtered = products.filter(
+        (product) => product.category === thisProduct.category,
+      );
+      let filteredCategory = filtered.filter(
+        (product) => product.id !== thisProduct.id,
+      );
 
+      const productToDisplay = filteredCategory.slice(0, 4);
+      console.log(productToDisplay);
+      relatedItems.innerHTML = productToDisplay
+        .map((product) => {
+          return `
+         
+<article class="section-list">
+                <h3>suit</h3>
+                <a href="details.html?id=33">
+                    <div class="image">
+                        <img src=${product.image}>
+                    </div>
+
+                    <div class="item-title">
+                        <div class="item-name">${product.name}</div>
+                        <div class="item-price">${product.price}</div>
+
+
+                    </div>
+
+                </a>
+                <a class="btn" href="details.html?id=10">view product</a>
+
+            </article>
+
+
+
+
+`;
+        })
+        .join("");
+    }
+    displayRelatedProducts();
     function sizeFormat() {
       let productSizes = thisProduct.sizes;
       let sizes = document.querySelector(".sizes");

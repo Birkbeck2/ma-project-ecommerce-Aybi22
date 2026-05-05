@@ -14,6 +14,7 @@ const products = [
     color: "beige",
     status: "best seller",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -28,6 +29,7 @@ const products = [
     category: "regular",
     h3: "regular",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -43,6 +45,7 @@ const products = [
     h3: "regular",
     color: "grey",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -59,6 +62,7 @@ const products = [
     h3: "regular",
     color: "black",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -90,6 +94,7 @@ const products = [
     h3: "regular",
     color: "blue",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -105,6 +110,7 @@ const products = [
     h3: "regular",
     color: "blue",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -120,6 +126,8 @@ const products = [
     h3: "regular",
     color: "blue",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+
+    type: "suit",
   },
 
   {
@@ -136,6 +144,7 @@ const products = [
     color: "red",
     status: "new arrival",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -152,6 +161,7 @@ const products = [
     color: "grey",
     status: "new arrival",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -167,6 +177,7 @@ const products = [
     h3: "regular",
     color: "navy",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -181,6 +192,7 @@ const products = [
     h3: "blazer",
     category: "blazer",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -196,6 +208,7 @@ const products = [
     category: "blazer",
 
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -210,6 +223,7 @@ const products = [
     h3: "blazer",
     category: "blazer",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -225,6 +239,7 @@ const products = [
     category: "blazer",
     status: "best seller",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -319,6 +334,7 @@ const products = [
     h3: "blazer",
     category: "blazer",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -332,6 +348,7 @@ const products = [
     h3: "blazer",
     category: "blazer",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -345,6 +362,7 @@ const products = [
     h3: "regular",
     category: "regular",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -360,6 +378,8 @@ const products = [
     color: "navy",
     status: "best seller",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+
+    type: "suit",
   },
 
   {
@@ -375,6 +395,7 @@ const products = [
     color: "navy",
     status: "best seller",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -389,6 +410,7 @@ const products = [
     category: "regular",
     status: "new arrival",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -402,6 +424,7 @@ const products = [
     h3: "regular",
     category: "regular",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -416,6 +439,7 @@ const products = [
     category: "regular",
     color: "green",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
@@ -430,6 +454,7 @@ const products = [
     category: "regular",
     color: "green",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 
   {
