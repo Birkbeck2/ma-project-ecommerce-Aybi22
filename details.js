@@ -127,7 +127,7 @@ const detail = () => {
 `;
     //Use filter for object removal — use indexOf only for primitive values like numbers or strings.
     function displayRelatedProducts() {
-      let relatedItems = document.querySelector(".item-container");
+      let relatedItems = document.querySelector(".related-items");
       let filtered = products.filter(
         (product) => product.category === thisProduct.category,
       );
@@ -136,27 +136,29 @@ const detail = () => {
       );
 
       const productToDisplay = filteredCategory.slice(0, 4);
-      console.log(productToDisplay);
-      relatedItems.innerHTML = productToDisplay
+      let newContainer = document.createElement("div");
+      newContainer.classList.add("items-container");
+
+      newContainer.innerHTML = productToDisplay
         .map((product) => {
           return `
          
 <article class="section-list">
-                <h3>suit</h3>
-                <a href="details.html?id=33">
+                <h3>${product.category}</h3>
+                <a href="details.html?id=${product.id}" >
                     <div class="image">
-                        <img src=${product.image}>
+                        <img src="${product.image}" alt="${product.description}" >
                     </div>
 
                     <div class="item-title">
                         <div class="item-name">${product.name}</div>
-                        <div class="item-price">${product.price}</div>
+                        <div class="item-price">£${product.price}</div>
 
 
                     </div>
 
                 </a>
-                <a class="btn" href="details.html?id=10">view product</a>
+                <a class="btn" href="details.html?id=${product.id}">view product</a>
 
             </article>
 
@@ -166,6 +168,8 @@ const detail = () => {
 `;
         })
         .join("");
+
+      relatedItems.appendChild(newContainer);
     }
     displayRelatedProducts();
     function sizeFormat() {
