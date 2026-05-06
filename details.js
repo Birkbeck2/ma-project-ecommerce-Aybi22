@@ -1,7 +1,6 @@
 import products from "./products.js";
 import { addToCart } from "./index.js";
 import { showCart } from "./cart.js";
-
 document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
 
@@ -134,22 +133,29 @@ const detail = () => {
       let filteredCategory = filtered.filter(
         (product) => product.id !== thisProduct.id,
       );
-
       const productToDisplay = filteredCategory.slice(0, 4);
       let newContainer = document.createElement("div");
       newContainer.classList.add("items-container");
-
       newContainer.innerHTML = productToDisplay
         .map((product) => {
+          let className; //A const must be assigned immediately
+          if (product.category === "regular" || product.category === "blazer") {
+            className = "item-suit";
+          }
+          if (product.category === "leathershoe") {
+            className = "item-shoe";
+          }
           return `
          
 <article class="section-list">
                 <h3>${product.category}</h3>
                 <a href="details.html?id=${product.id}" >
-                    <div class="image">
+                  
+                    <div class="image ${className}">
                         <img src="${product.image}" alt="${product.description}" >
                     </div>
-
+          
+        
                     <div class="item-title">
                         <div class="item-name">${product.name}</div>
                         <div class="item-price">£${product.price}</div>
@@ -161,17 +167,15 @@ const detail = () => {
                 <a class="btn" href="details.html?id=${product.id}">view product</a>
 
             </article>
-
-
-
-
-`;
+            `;
         })
+
         .join("");
 
       relatedItems.appendChild(newContainer);
     }
     displayRelatedProducts();
+
     function sizeFormat() {
       let productSizes = thisProduct.sizes;
       let sizes = document.querySelector(".sizes");

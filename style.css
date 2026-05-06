@@ -2331,19 +2331,39 @@ legend {
     display:grid;
     grid-template-columns: repeat(4,1fr);
     margin:auto;
+   
 }
 
-.items-container .image{
-        aspect-ratio: 2/3;
-        width:100%;
-        overflow:hidden;
+.image.item-suit{
+     aspect-ratio: 2/3;
+     width:100%;
+     overflow: hidden;
+     
     }
-.items-container img{
+img.item-suit{
     object-fit: cover;
     width:100%;
     height:100%;
     display:block;
 }
+ .image.item-shoe{
+    aspect-ratio: 5/4;
+    width:100%;
+    overflow:hidden;
+    
+}
+img.item-shoe{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit: cover;
+      }
+
+
+
+
+
+
 .items-container .item-title{
    
     padding-bottom:1rem;
@@ -2694,12 +2714,13 @@ a.shop {
 
 }
 
+
 .section-list {
     /*Inline content (text, inline elements like <span>, <a>)	
     text-align: center on the parent*/
     display: flex;
     flex-direction: column;
-   
+
     padding: 1rem;
     text-align: center;
     gap:1rem;
