@@ -59,7 +59,7 @@
 
 .filter-btn {
     background: none;
-    border: 1px solid black;
+    border: 2px solid gainsboro;
     padding: 13px 15px;
     width: 150px;
     cursor: pointer;
