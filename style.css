@@ -2017,18 +2017,30 @@ li {
 .customer-info {
     display: flex;
     flex-direction: column;
-    margin: auto;
+    padding:2rem;
     max-width: 600px;
     width: 100%;
     gap: 1rem;
+    border:1px solid gainsboro;
 }
 
-.customer-info span {}
+.confirmation-details{
+   border:1px solid gainsboro;
+    max-width:700px;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    padding:2rem;
+
+}
 
 .confirmation-info-wrapper {
-
+max-width:1400px;
+width:100%;
     display: flex;
-    flex-direction: column;
+   justify-content: center;
+   margin:auto;
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -2360,14 +2372,20 @@ img.item-shoe{
       }
 
   
+  
+.items-container .section-list{
+display:flex;
+flex-direction: column;
+gap:1rem;
+}
 
 
 
 .items-container .item-title{
 
    width:80%;
- 
-   margin:auto;
+ padding:0;
+   margin:0 auto;
     padding-bottom:1rem;
 }
 
@@ -3288,13 +3306,20 @@ a.cart-btn.back {
 }
 
 .buttons-box {
-
+    max-width:100%;
+    width:100%;
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
 
-.confirmation-header {}
+#confirmation h1 {
+  font-size:2rem;
+}
+
+#confirmation h2 {
+  font-size:1rem;
+}
 
 .info-list {
     display: flex;
@@ -3357,7 +3382,12 @@ a.cart-btn.print {
     text-transform: capitalize;
     text-align: center;
 }
+#confirmation .success{
+    margin: 2rem auto;
+    font-size:1rem;
+    font-weight:700;
 
+}
 .success {
     color: #155724;
     background: #d4edda;
@@ -3502,7 +3532,9 @@ p {
 }
 
 
-
+.section-title{
+    border:1px solid pink;
+}
 
 .picture {
     border: 9px solid blue;
@@ -3992,6 +4024,10 @@ p {
 @media screen and (max-width:767px) {
     .tablet-container {
         grid-template-columns: 1fr;
+    }
+    .confirmation-info-wrapper{
+        display:flex;
+        flex-direction: column;
     }
 
     .error-text {

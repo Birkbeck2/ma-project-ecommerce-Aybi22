@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   displayOrderTime();
+  namedMessage();
 });
 
 let savedCart = JSON.parse(localStorage.getItem("cart"));
@@ -12,6 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let firstNameDisplay = document.querySelector(".first-name-display");
     console.log(savedUserFirstName);
     firstNameDisplay.innerHTML = `Firstname: <span class="user-firstname"> ${savedUserFirstName}</span>`;
+
+    let successMessage = document.querySelector(".success");
+    successMessage.innerHTML = `Thank you ${savedUserFirstName} , your order is now placed<i class="fa-solid fa-check"></i>`;
   }
   let savedUserPhone = localStorage.getItem("phone");
   if (savedUserPhone) {
