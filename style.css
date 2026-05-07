@@ -2359,13 +2359,15 @@ img.item-shoe{
     object-fit: cover;
       }
 
-
-
+  
 
 
 
 .items-container .item-title{
-   
+
+   width:80%;
+ 
+   margin:auto;
     padding-bottom:1rem;
 }
 
