@@ -1713,17 +1713,6 @@ footer a {
     flex-direction: column;
     align-items: center;
 }
-
-
-
-
-
-
-
-
-
-
-
 .message {
     font-size: 73px;
     font-family: "dancing script";
@@ -2236,9 +2225,6 @@ width:100%;
     gap: 27px;
     margin: 33px auto;
     flex-wrap: wrap;
-
-
-
 }
 
 
@@ -2727,11 +2713,14 @@ a.shop {
 .shop-container,
 .suit-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit,minmax(200px,350px));
+    max-width: 100%;
     row-gap: 80px;
     width: 100%;
-    margin: 0 auto;
+    justify-content:center;
+    margin:0 auto;
+   
+
 
 }
 
@@ -3534,7 +3523,7 @@ p {
 
 
 .section-title{
-    border:1px solid pink;
+    border:1px solid gainsboro;
 }
 
 .picture {
@@ -3700,7 +3689,7 @@ p {
     .suit-container,
     .shoe-container,
     .blazer-container {
-        grid-template-columns: repeat(2, 1fr);
+       grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     }
 
     .banner {
@@ -3736,7 +3725,9 @@ p {
 
 
     .shop-container .image {
-        padding-bottom: 1rem;
+     padding-bottom: 1rem;
+   
+     overflow:hidden;
     }
 
     .product-display {
@@ -3814,27 +3805,13 @@ p {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .shop-container .image {
-        width: 100%;
-        overflow: hidden;
-        aspect-ratio: 2/3;
-    }
-
-    .shop-container .image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
     h2 {
         font-size: 1.7rem;
     }
 
 
-
-
-
-    .left-side .image img {
+.left-side .image img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -3849,7 +3826,9 @@ p {
     .list-wrapper {
         grid-template-columns: 1fr;
     }
-
+.shop-container{
+    grid-template-columns: repeat(2,1fr);
+}
     .item-title {
         width: 70%;
         margin: auto;
@@ -4001,7 +3980,7 @@ p {
 
 
     .blazer-container {
-        grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
 
     }
 
@@ -4134,9 +4113,12 @@ p {
     .shop-container .image,
     .shoe-container .image {
 
+
         padding-bottom: 1rem;
     }
 
+
+    
     .main-text h1 {
         font-size: 3rem;
         width: 90%;
@@ -4341,23 +4323,12 @@ p {
     .shoe-container,
     .suit-container,
     .blazer-container {
-        display: grid;
-        grid-template-columns: 1fr;
-
-
+       margin:0;
+       padding:0;
         width: 100%;
-
-
-
     }
 
 
-    .shop-container .image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
 
     .search-section {
         margin-bottom: 1rem;
@@ -4462,6 +4433,11 @@ p {
 
     .left-gallery .image {
         width: fit-content;
+    }
+
+    .shop-container{
+        
+  grid-template-columns: 1fr;
     }
 
 }

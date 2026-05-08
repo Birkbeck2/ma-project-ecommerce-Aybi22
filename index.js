@@ -262,7 +262,7 @@ categoryList.forEach((list) => {
   list.addEventListener("click", displayCategory);
 });
 
-function displayCategory(e) {
+export function displayCategory(e) {
   const clicked = e.target;
   const categoryData = clicked.dataset.category;
 
@@ -292,7 +292,7 @@ function showColor() {
   });
 }
 
-function showNums() {
+export function showNums() {
   let buttons = document.querySelectorAll(".color");
 
   buttons.forEach((button) => {
