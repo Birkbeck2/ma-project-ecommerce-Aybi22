@@ -1,9 +1,6 @@
 import products from "./products.js";
 import { displayCategory } from "./index.js";
 import { showNums } from "./index.js";
-document.addEventListener("DOMContentLoaded", () => {
-  displayCategory(e);
-});
 
 document.addEventListener("DOMContentLoaded", () => {
   showNums();

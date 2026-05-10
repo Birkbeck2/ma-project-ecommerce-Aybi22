@@ -389,10 +389,39 @@ fetch("./template.html")
     let previous = document.getElementById("previous");
     previous.addEventListener("click", prev);
 
+    function displaySubMenu() {
+      console.log(sub);
+      let subBox = document.querySelectorAll(".sub-box");
+      subBox.forEach((box) => {
+        let categoryItem = box.dataset.category;
+
+        let thisCategory = products.find(
+          (product) => product.category === categoryItem,
+        );
+
+        box.innerHTML = `
+ 
+  <a href="ShopList.html?category=${thisCategory.category}">
+ 
+       <h3>${thisCategory.category}</h3>
+    
+    
+    
+    <div class="image">
+        <img src="${thisCategory.image}" width="500"    height="281">
+    </div>
+    
+   </a>
+ `;
+      });
+    }
+    displaySubMenu();
+
     // Define these functions INSIDE this block or BEFORE it
     function showSub() {
       sub.style.height = "300px";
       overlay.style.width = "100%";
+      displaySubMenu(e);
     }
 
     function hideSub() {
