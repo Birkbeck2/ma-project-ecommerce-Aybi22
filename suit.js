@@ -1,10 +1,4 @@
 import products from "./products.js";
-import { displayCategory } from "./index.js";
-import { showNums } from "./index.js";
-
-document.addEventListener("DOMContentLoaded", () => {
-  showNums();
-});
 
 function filteredByCategoryRegular(category) {
   let filtered = products.filter((product) => product.category === category);

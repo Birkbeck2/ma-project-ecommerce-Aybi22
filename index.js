@@ -15,7 +15,9 @@ function allItems(e) {
   allNum();
   addText(e);
 }
-
+document.addEventListener("DOMContentLoaded", () => {
+  displaySubMenuContent();
+});
 document.addEventListener("DOMContentLoaded", () => {
   showColor();
 });
@@ -86,7 +88,9 @@ document.addEventListener("click", (e) => {
       clearInput();
     }
   }
-
+  if (e.target.closest(".sub-box")) {
+    displaySubMenuContent();
+  }
   if (e.target.closest(".all-items")) {
     allItems(e);
     addText(e);
@@ -262,7 +266,7 @@ categoryList.forEach((list) => {
   list.addEventListener("click", displayCategory);
 });
 
-export function displayCategory(e) {
+function displayCategory(e) {
   const clicked = e.target;
   const categoryData = clicked.dataset.category;
 
@@ -292,7 +296,7 @@ function showColor() {
   });
 }
 
-export function showNums() {
+function showNums() {
   let buttons = document.querySelectorAll(".color");
 
   buttons.forEach((button) => {
@@ -400,42 +404,44 @@ fetch("./template.html")
         );
 
         box.innerHTML = `
- 
-  <a href="ShopList.html?category=${thisCategory.category}">
- 
+ <a href='Shoplist.html?category=${thisCategory.category}'>
        <h3>${thisCategory.category}</h3>
-    
-    
-    
     <div class="image">
         <img src="${thisCategory.image}" width="500"    height="281">
     </div>
-    
-   </a>
+    </a>
+   
  `;
       });
     }
     displaySubMenu();
 
+    /*let subBox = document.querySelectorAll(".sub-box");
+    subBox.forEach((boxes) => {
+      boxes.addEventListener("click", displaySubMenuContent);
+    });
+    */
+
     // Define these functions INSIDE this block or BEFORE it
     function showSub() {
+      let sub = document.querySelector(".sub");
       sub.style.height = "300px";
-      overlay.style.width = "100%";
-      displaySubMenu(e);
     }
 
     function hideSub() {
+      let sub = document.querySelector(".sub");
       sub.style.height = "0px";
       overlay.style.width = "0";
     }
 
     function showSub() {
-      let overlay = document.querySelector(".overlay");
+      let sub = document.querySelector(".sub");
+
       sub.style.height = "300px";
-      overlay.style.width = "100";
     }
 
     function hideSub() {
+      let sub = document.querySelector(".sub");
       sub.style.height = "0px";
     }
   });
@@ -561,7 +567,7 @@ function showNext() {
   }
 }
 
-export function renderProducts(containerSelector, filtered) {
+function renderProducts(containerSelector, filtered) {
   let container = document.querySelector(containerSelector);
 
   container.innerHTML = ""; // Clear any old content
@@ -620,7 +626,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //At page load (DOMContentLoaded) →
   // renderProducts with full products array immediately.
 
-  renderProducts(".shop-container", products);
+  renderProducts(".shop-container", filtered);
   allNum();
   productNum();
   categoryTotalPrice();
@@ -628,7 +634,22 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".num-box").textContent = "";
 });
 
-export function filterByPriceOver() {
+function displaySubMenuContent() {
+  let params = new URLSearchParams(window.location.search);
+  let itemCategory = params.get("category");
+  console.log(itemCategory);
+  if (itemCategory) {
+    filtered = products.filter((product) => product.category == itemCategory);
+    console.log(filtered);
+
+    renderProducts(".shop-container", filtered);
+    allNum();
+    productNum();
+    categoryTotalPrice();
+  }
+}
+
+function filterByPriceOver() {
   filtered = products.filter((product) => product.price > 600);
   renderProducts(".shop-container", filtered);
   productNum();
@@ -637,7 +658,7 @@ export function filterByPriceOver() {
   clearInput();
 }
 
-export function filterByPriceUnder() {
+function filterByPriceUnder() {
   filtered = products.filter((product) => product.price <= 600);
 
   renderProducts(".shop-container", filtered);
@@ -892,7 +913,7 @@ paras.forEach((para) => {
   });
 });
 let menuItem = document.querySelector(".menu-item");
-console.log(menuItem);
+
 menuItem.addEventListener("click", showDropNav);
 
 function showDropNav() {
