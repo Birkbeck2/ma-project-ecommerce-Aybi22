@@ -375,15 +375,19 @@ fetch("./template.html")
         let thisCategory = products.find(
           (product) => product.category === categoryItem,
         );
+        let className;
+        if (box.classList.contains("mobile-item")) {
+          className = "nopic";
+        }
 
         box.innerHTML = `
  <a href='Shoplist.html?category=${thisCategory.category}'>
        <h3>${thisCategory.category}</h3>
-    <div class="image ">
+    <div class="image ${className}" >
         <img src="${thisCategory.image}" width="500"    height="281">
     </div>
     </a>
-   
+        
  `;
       });
     }
