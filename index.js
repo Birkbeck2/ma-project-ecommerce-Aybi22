@@ -4,9 +4,7 @@ import products from "./products.js";
 import detail from "./details.js";
 
 import { showCart, closeOver, closeModal } from "./cart.js";
-import { filteredByCategoryBlazer } from "./blazer.js";
-import { filteredByCategoryLeatherShoe } from "./leathershoe.js";
-import { filteredByCategoryRegular } from "./suit.js";
+
 detail();
 
 let filtered = products;
@@ -15,6 +13,7 @@ function allItems(e) {
   allNum();
   addText(e);
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   displaySubMenuContent();
 });
@@ -35,30 +34,6 @@ function categoryTotalPrice() {
   let priceBox = document.querySelector(".category-box");
   priceBox.textContent = "Total price: " + "£" + categoryTotal;
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  //DOMContentLoaded only fires once,
-  filteredByCategoryBlazer("blazer");
-
-  productNum();
-
-  categoryTotalPrice();
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  filteredByCategoryLeatherShoe("leathershoe");
-  productNum();
-
-  categoryTotalPrice();
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  filteredByCategoryRegular("regular");
-
-  categoryTotalPrice();
-
-  productNum();
-});
 
 let filterModal = document.querySelector(".filter-modal");
 
@@ -88,9 +63,7 @@ document.addEventListener("click", (e) => {
       clearInput();
     }
   }
-  if (e.target.closest(".sub-box")) {
-    displaySubMenuContent();
-  }
+
   if (e.target.closest(".all-items")) {
     allItems(e);
     addText(e);
@@ -332,7 +305,7 @@ fetch("./template.html")
     let app = document.getElementById("app");
     app.innerHTML = html;
     let cartBtn = document.querySelector(".cart-btn");
-
+    displaySubMenu();
     console.log(cartBtn);
     cartBtn.addEventListener("click", blockCheckOut);
     function blockCheckOut(e) {
@@ -394,8 +367,8 @@ fetch("./template.html")
     previous.addEventListener("click", prev);
 
     function displaySubMenu() {
-      console.log(sub);
       let subBox = document.querySelectorAll(".sub-box");
+
       subBox.forEach((box) => {
         let categoryItem = box.dataset.category;
 
@@ -406,7 +379,7 @@ fetch("./template.html")
         box.innerHTML = `
  <a href='Shoplist.html?category=${thisCategory.category}'>
        <h3>${thisCategory.category}</h3>
-    <div class="image">
+    <div class="image ">
         <img src="${thisCategory.image}" width="500"    height="281">
     </div>
     </a>
@@ -414,7 +387,6 @@ fetch("./template.html")
  `;
       });
     }
-    displaySubMenu();
 
     /*let subBox = document.querySelectorAll(".sub-box");
     subBox.forEach((boxes) => {
@@ -604,6 +576,7 @@ function renderProducts(containerSelector, filtered) {
     categoryTotalPrice();
   });
 }
+
 /*
 function activateCartButtons() {
   let btn = document.querySelectorAll("a.btn");
@@ -638,13 +611,15 @@ function displaySubMenuContent() {
   let params = new URLSearchParams(window.location.search);
   let itemCategory = params.get("category");
   console.log(itemCategory);
+
   if (itemCategory) {
     filtered = products.filter((product) => product.category == itemCategory);
     console.log(filtered);
 
+    document.querySelector(".category-title").textContent = itemCategory;
+
     renderProducts(".shop-container", filtered);
-    allNum();
-    productNum();
+
     categoryTotalPrice();
   }
 }
@@ -876,7 +851,7 @@ function productNum() {
 }
 
 function allNum() {
-  productNumber = filtered.length;
+  productNumber = products.length;
   let allNumBox = document.querySelector(".allNum-box");
   allNumBox.innerHTML = productNumber + " items";
 }
