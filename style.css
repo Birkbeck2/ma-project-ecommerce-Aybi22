@@ -4441,6 +4441,8 @@ p {
     .shop-container{
         
   grid-template-columns: 1fr;
+  row-gap:40px;
+
     }
 
 }
