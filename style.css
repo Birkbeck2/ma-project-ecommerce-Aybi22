@@ -1653,12 +1653,13 @@ li.phone {
     flex-wrap: wrap;
 }
 
-#home , #about,#contact{
+#home , #about,#contact,#detail-page{
     display: flex;
     flex-direction: column;
     gap:3rem;
 
 }
+
 
 .footer-icons {
     display: flex;
@@ -2224,7 +2225,7 @@ width:100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 27px;
-    margin: 33px auto;
+    margin: auto;
     flex-wrap: wrap;
 }
 
