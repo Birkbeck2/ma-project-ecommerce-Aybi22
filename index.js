@@ -70,7 +70,7 @@ document.addEventListener("click", (e) => {
     renderProducts(".shop-container", filtered);
     closeFilterModal();
     clearInput();
-
+    addColorToSquares();
     productNum();
   }
 
@@ -251,7 +251,7 @@ function displayCategory(e) {
     renderProducts(".shop-container", filtered);
     productNum();
     categoryTotalPrice();
-
+    addColorToSquares();
     clearInput();
   }
 }
@@ -555,11 +555,17 @@ function renderProducts(containerSelector, filtered) {
   filtered.forEach((product) => {
     let newPara = document.createElement("div");
     newPara.classList.add("section-list");
+
+    let className = product.id === 5 ? "showquare" : "nosquare";
+    let imageId;
+    if (product.id === 5 && className === "showquare") {
+      imageId = "image-container";
+    }
     newPara.innerHTML = `
   
 <a href="details.html?id=${product.id}">
       <div class="image">
-      <img src= ${product.image} alt=${product.alt}>
+      <img src= "${product.image}"   alt="${product.alt}"  id="${imageId}">
       </div>
       
       </a>
@@ -567,19 +573,24 @@ function renderProducts(containerSelector, filtered) {
          <div class='item-name'>${product.name}</div>
          <div class='item-price'data-id=${product.price}>£${product.price}</div>
       </div>    
-        <div class="color-square">
+        <div class="color-square  ${className}">
 <span class="square" id="blue"></span>
 <span class="square" id="black"></span>
 <span class="square"  id="grey"></span>
         </div>
       
        <a  href="details.html?id=${product.id}" class="btn">View product</a>
-      
-      
       </div>
          `;
 
     container.appendChild(newPara);
+    let squares = document.querySelectorAll(".square");
+
+    console.log(squares);
+
+    squares.forEach((square) => {
+      square.addEventListener("mouseover", displayItemByColor);
+    });
 
     productNum();
 
@@ -597,7 +608,8 @@ function activateCartButtons() {
   });
 }
   */
-window.addEventListener("DOMContentLoaded", addColorToSquares); //Wait until ALL HTML is fully loaded, THEN run my code.
+
+//Wait until ALL HTML is fully loaded, THEN run my code.
 function addColorToSquares() {
   let squares = document.querySelectorAll(".square");
   console.log(squares);
@@ -606,6 +618,41 @@ function addColorToSquares() {
     square.style.backgroundColor = squareColor;
   });
 }
+
+window.addEventListener("DOMContentLoaded", addColorToSquares); //Wait until ALL HTML is fully loaded, THEN run my code.
+
+let itemDisplay = [
+  { image: "images/specialoffer.webp", color: "grey" },
+  { image: "images/regularfitblue.jpg", color: "blue" },
+  { image: "images/regularfitblack.jpg", color: "black" },
+];
+
+function displayItemByColor(e) {
+  let imageContainer = document.getElementById("image-container"); //should be outside the loop
+  let squareColor = e.target.getAttribute("id"); //this can also be used
+
+  for (let i = 0; i < itemDisplay.length; i++) {
+    if (itemDisplay[i].color === squareColor)
+      imageContainer.src = itemDisplay[i].image;
+    console.log(imageContainer);
+  }
+}
+/*
+function displayItemByColor(e) {
+  let imageContainer = document.getElementById("image-container");
+
+  let match = itemDisplay.find(
+    (item) => item.color === e.target.id
+  );
+
+  imageContainer.src = match.image;
+}
+
+
+
+*/
+
+//Wait until ALL HTML is fully loaded, THEN run my code.
 
 function clearInput() {
   let input = document.getElementById("search");
@@ -675,7 +722,7 @@ function sortByPriceLow() {
   renderProducts(".shop-container", filtered);
   productNum();
   categoryTotalPrice();
-
+  addColorToSquares();
   clearInput();
 }
 
@@ -683,7 +730,7 @@ function sortByPriceHigh() {
   let filtered = [...products].sort((a, b) => b.price - a.price);
   renderProducts(".shop-container", filtered);
   productNum();
-
+  addColorToSquares();
   clearInput();
 }
 
