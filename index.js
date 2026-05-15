@@ -567,14 +567,20 @@ function renderProducts(containerSelector, filtered) {
          <div class='item-name'>${product.name}</div>
          <div class='item-price'data-id=${product.price}>£${product.price}</div>
       </div>    
-        
+        <div class="color-square">
+<span class="square" id="blue"></span>
+<span class="square" id="black"></span>
+<span class="square"  id="grey"></span>
+        </div>
       
        <a  href="details.html?id=${product.id}" class="btn">View product</a>
       
       
       </div>
          `;
+
     container.appendChild(newPara);
+
     productNum();
 
     categoryTotalPrice();
@@ -591,6 +597,15 @@ function activateCartButtons() {
   });
 }
   */
+window.addEventListener("DOMContentLoaded", addColorToSquares); //Wait until ALL HTML is fully loaded, THEN run my code.
+function addColorToSquares() {
+  let squares = document.querySelectorAll(".square");
+  console.log(squares);
+  squares.forEach((square) => {
+    let squareColor = square.getAttribute("id");
+    square.style.backgroundColor = squareColor;
+  });
+}
 
 function clearInput() {
   let input = document.getElementById("search");
