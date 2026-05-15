@@ -574,9 +574,9 @@ function renderProducts(containerSelector, filtered) {
          <div class='item-price'data-id=${product.price}>£${product.price}</div>
       </div>    
         <div class="color-square  ${className}">
-<span class="square" id="blue"></span>
-<span class="square" id="black"></span>
-<span class="square"  id="grey"></span>
+<span class="square" id="blue" title="blue"></span>
+<span class="square" id="black" title="black"></span>
+<span class="square"  id="grey" title="grey"></span>
         </div>
       
        <a  href="details.html?id=${product.id}" class="btn">View product</a>
