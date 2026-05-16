@@ -2,7 +2,7 @@ import products from "./products.js";
 import { addToCart } from "./index.js";
 import { closeOver, showCart } from "./cart.js";
 import { addColorToSquares } from "./index.js";
-
+import { itemDisplay } from "./products.js";
 document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
 

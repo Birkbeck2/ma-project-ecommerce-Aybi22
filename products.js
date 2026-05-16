@@ -9,7 +9,7 @@ const products = [
     name: "texture",
     price: 250,
     quantity: 1,
-    hasColors: true,
+
     category: "regular",
     h3: "regular",
     color: "beige",
@@ -471,6 +471,22 @@ const products = [
     category: "leathershoe",
 
     sizes: [6, 7, 8, 9, 10, 11, 12],
+  },
+
+  {
+    id: 34,
+    image: "images/blacktexturedsuitjacket.webp",
+    image1: "images/bluetexturedsuitjacket.webp",
+    image2: "images/brightbluetexturedsuitjacket.webp",
+    name: "texture suit jacket",
+    price: 30,
+    hasColors: true,
+    quantity: 1,
+    h3: "regular",
+    category: "regular",
+
+    sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
+    type: "suit",
   },
 ];
 

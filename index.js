@@ -556,9 +556,9 @@ function renderProducts(containerSelector, filtered) {
     let newPara = document.createElement("div");
     newPara.classList.add("section-list");
 
-    let className = product.id === 5 ? "showquare" : "nosquare";
+    let className = product.hasColors ? "showquare" : "nosquare";
     let imageId;
-    if (product.id === 5 && className === "showquare") {
+    if (product.hasColors && className === "showquare") {
       imageId = "image-container";
     }
     newPara.innerHTML = `
@@ -577,7 +577,7 @@ function renderProducts(containerSelector, filtered) {
 <span class="square" id="blue" title="blue"></span>
 <span class="square" id="black" title="black"></span>
 <span class="square"  id="grey" title="grey"></span>
-        </div>
+  </div>
       
        <a  href="details.html?id=${product.id}" class="btn">View product</a>
       </div>
@@ -621,20 +621,25 @@ export function addColorToSquares() {
 
 window.addEventListener("DOMContentLoaded", addColorToSquares); //Wait until ALL HTML is fully loaded, THEN run my code.
 
-let itemDisplay = [
+export let itemDisplay = [
   { image: "images/specialoffer.webp", color: "grey" },
   { image: "images/regularfitblue.jpg", color: "blue" },
   { image: "images/regularfitblack.jpg", color: "black" },
+  { image: "images/blacktexturedsuitjacket.webp", color: "black" },
+  { image: "images/bluetexturedsuitjacket.webp", color: "blue" },
+  { image: "images/brightbluetexturedsuitjacket.webp", color: "brightblue" },
 ];
 
 function displayItemByColor(e) {
-  let imageContainer = document.getElementById("image-container"); //should be outside the loop
+  let imageContainer = document.querySelectorAll(".image-container"); //should be outside the loop
   let squareColor = e.target.getAttribute("id"); //this can also be used
 
   for (let i = 0; i < itemDisplay.length; i++) {
     if (itemDisplay[i].color === squareColor)
-      imageContainer.src = itemDisplay[i].image;
-    console.log(imageContainer);
+      for (let i = 0; i < imageContainer.length; i++) {
+        imageContainer[i].src = itemDisplay[i].image;
+        console.log(imageContainer);
+      }
   }
 }
 /*
