@@ -9,6 +9,7 @@ const products = [
     name: "texture",
     price: 250,
     quantity: 1,
+    hasColors: true,
     category: "regular",
     h3: "regular",
     color: "beige",
@@ -57,7 +58,7 @@ const products = [
     name: "regular fit suit",
     price: 400,
     quantity: 1,
-
+    hasColors: true,
     category: "regular",
     h3: "regular",
     color: "black",

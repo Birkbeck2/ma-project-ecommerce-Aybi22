@@ -1,6 +1,8 @@
 import products from "./products.js";
 import { addToCart } from "./index.js";
 import { showCart } from "./cart.js";
+import { addColorToSquares } from "./index.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
 
@@ -38,6 +40,8 @@ const detail = () => {
   let thisProduct = products.filter((product) => product.id == productId)[0];
 
   if (thisProduct) {
+    let className = thisProduct.hasColors ? "showsquare" : "nosquare";
+
     const productDetails = document.querySelector(".details");
     productDetails.innerHTML = `
       
@@ -79,7 +83,11 @@ const detail = () => {
 
 <div class="review-num">1200 customer's reviews</div>
 </div>
-
+  <div class="color-square-list  ${className} ">
+<span class="square" id="blue" title="blue"></span>
+<span class="square" id="black" title="black"></span>
+<span class="square"  id="grey" title="grey"></span>
+        </div>
 <p class="size-display"></p>
 <div class="sizes">
 </div>
@@ -124,6 +132,7 @@ const detail = () => {
 
 </section>
 `;
+    addColorToSquares();
     //Use filter for object removal — use indexOf only for primitive values like numbers or strings.
     function displayRelatedProducts() {
       let relatedItems = document.querySelector(".related-items");

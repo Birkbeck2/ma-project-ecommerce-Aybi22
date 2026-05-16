@@ -610,7 +610,7 @@ function activateCartButtons() {
   */
 
 //Wait until ALL HTML is fully loaded, THEN run my code.
-function addColorToSquares() {
+export function addColorToSquares() {
   let squares = document.querySelectorAll(".square");
   console.log(squares);
   squares.forEach((square) => {
