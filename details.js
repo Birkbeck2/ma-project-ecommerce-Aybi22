@@ -1,6 +1,6 @@
 import products from "./products.js";
 import { addToCart } from "./index.js";
-import { showCart } from "./cart.js";
+import { closeOver, showCart } from "./cart.js";
 import { addColorToSquares } from "./index.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -83,6 +83,8 @@ const detail = () => {
 
 <div class="review-num">1200 customer's reviews</div>
 </div>
+
+<p class="color-selected"></p>
   <div class="color-square-list  ${className} ">
 <span class="square" id="blue" title="blue"></span>
 <span class="square" id="black" title="black"></span>
@@ -133,6 +135,16 @@ const detail = () => {
 </section>
 `;
     addColorToSquares();
+    let colorSelected = document.querySelector(".color-selected");
+    console.log(colorSelected);
+    let colorList = document.querySelector(".color-square-list");
+    colorList.addEventListener("click", (e) => {
+      let colorCliked = e.target;
+      console.log(colorCliked);
+
+      colorSelected.textContent = `${colorCliked.id}`;
+    });
+
     //Use filter for object removal — use indexOf only for primitive values like numbers or strings.
     function displayRelatedProducts() {
       let relatedItems = document.querySelector(".related-items");
@@ -242,7 +254,7 @@ const detail = () => {
       function showMainPic() {
         const img = document.getElementById("main-pic");
 
-        img.setAttribute("src", pics[i]);
+        img.setAttribute("src", pics[i]); //img.src=pics[i];
 
         let smallPic = document.getElementsByTagName("img");
         for (let i = 0; i < smallPic.length; i++) {

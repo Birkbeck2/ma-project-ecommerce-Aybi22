@@ -54,6 +54,7 @@ const products = [
     image: "images/specialoffer.webp",
     image1: "images/regularfitblue.jpg",
     image2: "images/regularfitblack.jpg",
+
     alt: " A man dressed in a black suit and tie",
     name: "regular fit suit",
     price: 400,

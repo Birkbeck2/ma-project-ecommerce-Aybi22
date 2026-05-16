@@ -2243,11 +2243,13 @@ display: flex;
 }
 .color-square.showsquare{
     display:block;
-
-    
 }
 
-.color-square.list{
+.color-selected{
+    text-transform:capitalize;
+}
+
+.color-square-list{
     display:flex;
 
     gap:0.5rem;
