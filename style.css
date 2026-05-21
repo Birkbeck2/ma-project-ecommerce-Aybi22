@@ -1927,7 +1927,9 @@ li {
     display: block;
     width: 500px;
 }
-
+.picture-box{
+  
+}
 
 .mobileModal {
     height: 100%;
@@ -2236,6 +2238,7 @@ display: flex;
     height:25px;
     border:1px solid gainsboro;
     cursor:pointer;
+    
 
 }
 .color-square.nosquare{
@@ -4476,5 +4479,7 @@ section{
     margin:0;
     padding:1rem;
 }
-
+.item-title{
+    margin-bottom:1rem;
+}
 }

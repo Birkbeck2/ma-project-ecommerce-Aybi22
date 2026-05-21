@@ -2,7 +2,7 @@ import products from "./products.js";
 import { addToCart } from "./index.js";
 import { closeOver, showCart } from "./cart.js";
 import { addColorToSquares } from "./index.js";
-import { itemDisplay } from "./products.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
 
@@ -41,22 +41,24 @@ const detail = () => {
 
   if (thisProduct) {
     let className = thisProduct.hasColors ? "showsquare" : "nosquare";
-
+if(thisProduct.hasColors && thisProduct.className==="showsquare"){
+  className="colored-pic";
+}
     const productDetails = document.querySelector(".details");
     productDetails.innerHTML = `
       
         <div class="product-display">
        
-        <div class="left-gallery">
+        <div class="left-gallery" data-id="${thisProduct.id}">
     <div class="image">
     <img src=${thisProduct.image} width="150" height="150" class="small-pic" alt="texture suit image">
     </div>
     
     <div class="image">
-        <img src=${thisProduct.image1} widh="150" height="150" class="small-pic" alt="texture suit image">
+        <img src=${thisProduct.image1} widh="150" height="150" class="small-pic" class="${className}" alt="texture suit image">
     </div>
     <div class="image">
-            <img src=${thisProduct.image2} width="150" height="150" class="small-pic"    alt="texture suit image">
+            <img src=${thisProduct.image2} width="150" height="150" class="small-pic" class="${className}"   alt="texture suit image">
     </div>
     </div>
     
@@ -134,6 +136,8 @@ const detail = () => {
 
 </section>
 `;
+    let squares = document.querySelectorAll(".square");
+
     addColorToSquares();
     let colorSelected = document.querySelector(".color-selected");
     console.log(colorSelected);
@@ -142,8 +146,29 @@ const detail = () => {
       let colorCliked = e.target;
       console.log(colorCliked);
 
-      colorSelected.textContent = `${colorCliked.id}`;
+      colorSelected.textContent = ` color selected: ${colorCliked.id}`;
     });
+
+    squares.forEach((square)=>{
+      square.addEventListener('click',displayColoredPic);
+    });
+
+    function displayColoredPic(e) {
+      let squareColor=e.target.id;
+      let galleryList = document.querySelector(".left-gallery");
+      let thisgalleryList=e.target.closest('.left-gallery');
+      console.log(thisgalleryList);
+      let thisPictureBox = thisgalleryList(".colored-pic");
+      
+        let thisPicId = thisgalleryList.dataset.id;
+        let product = products.find((product) => product.id == thisPicId);
+        console.log(product);
+        
+          thisPictureBox.src = product.colorImage[squareColor];
+        }
+      }
+    }
+    
 
     //Use filter for object removal — use indexOf only for primitive values like numbers or strings.
     function displayRelatedProducts() {

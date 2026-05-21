@@ -557,17 +557,21 @@ function renderProducts(containerSelector, filtered) {
     newPara.classList.add("section-list");
 
     let className = product.hasColors ? "showquare" : "nosquare";
-    let imageId;
+
     if (product.hasColors && className === "showquare") {
-      imageId = "image-container";
+      className = "picture-box";
+      let colorImage;
     }
     newPara.innerHTML = `
-  
-<a href="details.html?id=${product.id}">
+
+   
+  <div class="section-list" data-id="${product.id}"}
+
+    <a href="details.html?id=${product.id}">
       <div class="image">
-      <img src= "${product.image}"   alt="${product.alt}"  id="${imageId}">
+      <img src= ${product.image}  alt="${product.alt}"  class="${className}">
       </div>
-      
+   
       </a>
       <div class="item-title">
          <div class='item-name'>${product.name}</div>
@@ -577,19 +581,21 @@ function renderProducts(containerSelector, filtered) {
 <span class="square" id="blue" title="blue"></span>
 <span class="square" id="black" title="black"></span>
 <span class="square"  id="grey" title="grey"></span>
+
   </div>
       
-       <a  href="details.html?id=${product.id}" class="btn">View product</a>
+     
+      </div>
+
+        <a  href="details.html?id=${product.id}" class="btn">View product</a>
       </div>
          `;
 
     container.appendChild(newPara);
     let squares = document.querySelectorAll(".square");
 
-    console.log(squares);
-
     squares.forEach((square) => {
-      square.addEventListener("mouseover", displayItemByColor);
+      square.addEventListener("click", displayItemByColor);
     });
 
     productNum();
@@ -612,7 +618,7 @@ function activateCartButtons() {
 //Wait until ALL HTML is fully loaded, THEN run my code.
 export function addColorToSquares() {
   let squares = document.querySelectorAll(".square");
-  console.log(squares);
+
   squares.forEach((square) => {
     let squareColor = square.getAttribute("id");
     square.style.backgroundColor = squareColor;
@@ -621,27 +627,22 @@ export function addColorToSquares() {
 
 window.addEventListener("DOMContentLoaded", addColorToSquares); //Wait until ALL HTML is fully loaded, THEN run my code.
 
-export let itemDisplay = [
-  { image: "images/specialoffer.webp", color: "grey" },
-  { image: "images/regularfitblue.jpg", color: "blue" },
-  { image: "images/regularfitblack.jpg", color: "black" },
-  { image: "images/blacktexturedsuitjacket.webp", color: "black" },
-  { image: "images/bluetexturedsuitjacket.webp", color: "blue" },
-  { image: "images/brightbluetexturedsuitjacket.webp", color: "brightblue" },
-];
-
 function displayItemByColor(e) {
-  let imageContainer = document.querySelectorAll(".image-container"); //should be outside the loop
-  let squareColor = e.target.getAttribute("id"); //this can also be used
+  //should be outside the loop
+  let squareColor = e.target.id; //this can also be used
+  let sectionList = document.querySelector(".section-list");
+  let thisSectionList = e.target.closest(".section-list");
+  let thisProductId = Number(thisSectionList.dataset.id); //returns a string, not product object
+  let product = products.find((product) => product.id == thisProductId);
+  console.log(product);
+  console.log("SECTION:", thisSectionList);
+  console.log("DATA ID:", thisSectionList?.dataset?.id);
+  let pictureBox = thisSectionList.querySelector(".picture-box");
 
-  for (let i = 0; i < itemDisplay.length; i++) {
-    if (itemDisplay[i].color === squareColor)
-      for (let i = 0; i < imageContainer.length; i++) {
-        imageContainer[i].src = itemDisplay[i].image;
-        console.log(imageContainer);
-      }
-  }
+  console.log(pictureBox);
+  pictureBox.src = product.colorImage[squareColor];
 }
+
 /*
 function displayItemByColor(e) {
   let imageContainer = document.getElementById("image-container");

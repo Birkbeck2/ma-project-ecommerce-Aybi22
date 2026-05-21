@@ -54,7 +54,11 @@ const products = [
     image: "images/specialoffer.webp",
     image1: "images/regularfitblue.jpg",
     image2: "images/regularfitblack.jpg",
-
+    colorImage: {
+      grey: "images/specialoffer.webp",
+      blue: "images/regularfitblue.jpg",
+      black: "images/regularfitblack.jpg",
+    },
     alt: " A man dressed in a black suit and tie",
     name: "regular fit suit",
     price: 400,
@@ -477,7 +481,13 @@ const products = [
     id: 34,
     image: "images/blacktexturedsuitjacket.webp",
     image1: "images/bluetexturedsuitjacket.webp",
-    image2: "images/brightbluetexturedsuitjacket.webp",
+    image2: "images/greytexturedsuitjacket.webp",
+
+    colorImage: {
+      black: "images/blacktexturedsuitjacket.webp",
+      blue: "images/bluetexturedsuitjacket.webp",
+      grey: "images/greytexturedsuitjacket.webp",
+    },
     name: "texture suit jacket",
     price: 30,
     hasColors: true,
