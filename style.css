@@ -2251,6 +2251,9 @@ display: flex;
 .color-selected{
     text-transform:capitalize;
 }
+.color-square-list.nosquare{
+    display:none;
+}
 
 .color-square-list{
     display:flex;

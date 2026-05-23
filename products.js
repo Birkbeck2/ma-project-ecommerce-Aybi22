@@ -52,8 +52,7 @@ const products = [
   {
     id: 5,
     image: "images/specialoffer.webp",
-    image1: "images/regularfitblue.jpg",
-    image2: "images/regularfitblack.jpg",
+
     colorImage: {
       grey: "images/specialoffer.webp",
       blue: "images/regularfitblue.jpg",
@@ -480,8 +479,6 @@ const products = [
   {
     id: 34,
     image: "images/blacktexturedsuitjacket.webp",
-    image1: "images/bluetexturedsuitjacket.webp",
-    image2: "images/greytexturedsuitjacket.webp",
 
     colorImage: {
       black: "images/blacktexturedsuitjacket.webp",

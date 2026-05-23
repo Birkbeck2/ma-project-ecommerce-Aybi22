@@ -40,25 +40,25 @@ const detail = () => {
   let thisProduct = products.filter((product) => product.id == productId)[0];
 
   if (thisProduct) {
-    let className = thisProduct.hasColors ? "showsquare" : "nosquare";
-if(thisProduct.hasColors && thisProduct.className==="showsquare"){
-  className="colored-pic";
-}
+    //HTML does NOT support multiple class attributes.
+    let coloredBoxes = thisProduct.hasColors ? "showsquare" : "nosquare";
+    let imgBoxes = thisProduct.hasColors ? "colored-pic" : "";
+
     const productDetails = document.querySelector(".details");
     productDetails.innerHTML = `
       
-        <div class="product-display">
+        <div class="product-display"  data-id="${thisProduct.id}">
        
-        <div class="left-gallery" data-id="${thisProduct.id}">
+        <div class="left-gallery" >
     <div class="image">
-    <img src=${thisProduct.image} width="150" height="150" class="small-pic" alt="texture suit image">
+    <img src=${thisProduct.image} width="150" height="150" class="small-pic colored-pic" alt="texture suit image">
     </div>
     
     <div class="image">
-        <img src=${thisProduct.image1} widh="150" height="150" class="small-pic" class="${className}" alt="texture suit image">
+        <img src=${thisProduct.image1} widh="150" height="150" class="small-pic colored-pic" alt="texture suit image">
     </div>
     <div class="image">
-            <img src=${thisProduct.image2} width="150" height="150" class="small-pic" class="${className}"   alt="texture suit image">
+            <img src=${thisProduct.image2} width="150" height="150" class="small-pic colored-pic"  alt="texture suit image">
     </div>
     </div>
     
@@ -87,7 +87,7 @@ if(thisProduct.hasColors && thisProduct.className==="showsquare"){
 </div>
 
 <p class="color-selected"></p>
-  <div class="color-square-list  ${className} ">
+  <div class="color-square-list  ${coloredBoxes} ">
 <span class="square" id="blue" title="blue"></span>
 <span class="square" id="black" title="black"></span>
 <span class="square"  id="grey" title="grey"></span>
@@ -149,26 +149,30 @@ if(thisProduct.hasColors && thisProduct.className==="showsquare"){
       colorSelected.textContent = ` color selected: ${colorCliked.id}`;
     });
 
-    squares.forEach((square)=>{
-      square.addEventListener('click',displayColoredPic);
-    });
+    function displayColoredPic() {
+      let imgBoxes = document.querySelectorAll(".colored-pic");
+      console.log(imgBoxes);
+      for (let i = 0; i < imgBoxes.length; i++) {
+        let thisGalleryList = imgBoxes[i].closest(".product-display");
+        console.log(thisGalleryList);
 
-    function displayColoredPic(e) {
-      let squareColor=e.target.id;
-      let galleryList = document.querySelector(".left-gallery");
-      let thisgalleryList=e.target.closest('.left-gallery');
-      console.log(thisgalleryList);
-      let thisPictureBox = thisgalleryList(".colored-pic");
-      
-        let thisPicId = thisgalleryList.dataset.id;
+        let thisPicId = thisGalleryList.dataset.id;
+        console.log(thisPicId);
         let product = products.find((product) => product.id == thisPicId);
         console.log(product);
-        
-          thisPictureBox.src = product.colorImage[squareColor];
+        let colorImage = product.colorImage;
+        console.log(colorImage);
+
+        let keys = Object.keys(colorImage);
+        for (let i = 0; i < keys.length; i++) {
+          imgBoxes[i].src = product.colorImage[keys[i]];
         }
       }
     }
-    
+
+    document.addEventListener("DOMContentLoaded", () => {
+      displayColoredPic();
+    });
 
     //Use filter for object removal — use indexOf only for primitive values like numbers or strings.
     function displayRelatedProducts() {
