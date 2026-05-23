@@ -177,7 +177,12 @@ const detail = () => {
 
         let keys = Object.keys(colorImage);
         for (let i = 0; i < keys.length; i++) {
-          imgBoxes[i].src = product.colorImage[keys[i]];
+          let galleryPic = product.colorImage[keys[i]];
+          imgBoxes[i].src = galleryPic;
+          imgBoxes[i].addEventListener("click", () => {
+            let img = document.getElementById("main-pic");
+            img.src = galleryPic;
+          });
         }
       }
     }
@@ -292,7 +297,6 @@ const detail = () => {
           `${thisProduct.image1}`,
           `${thisProduct.image2}`,
         );
-
         const img = document.getElementById("main-pic");
 
         img.setAttribute("src", pics[i]); //img.src=pics[i];
