@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     addCartCheck();
   });
 });
+let colorImage;
+let product;
 function addCartCheck() {
   let addBtn = document.querySelector(".add-btn");
 
@@ -34,7 +36,7 @@ function stopButton() {
     addBtn.disabled = false;
   }, 4500);
 }
-
+let pics = [];
 const detail = () => {
   let productId = new URLSearchParams(window.location.search).get("id");
   let thisProduct = products.filter((product) => product.id == productId)[0];
@@ -136,6 +138,7 @@ const detail = () => {
 
 </section>
 `;
+
     let squares = document.querySelectorAll(".square");
 
     addColorToSquares();
@@ -145,8 +148,17 @@ const detail = () => {
     colorList.addEventListener("click", (e) => {
       let colorCliked = e.target;
       console.log(colorCliked);
+      let img = document.getElementById("main-pic");
+      console.log(img);
+      colorImage = product.colorImage;
+      let keys = Object.keys(colorImage);
+      for (let i = 0; i < keys.length; i++) {
+        if (colorCliked.id === keys[i]) {
+          img.src = colorImage[keys[i]];
+        }
 
-      colorSelected.textContent = ` color selected: ${colorCliked.id}`;
+        colorSelected.textContent = ` color selected: ${colorCliked.id}`;
+      }
     });
 
     function displayColoredPic() {
@@ -158,9 +170,9 @@ const detail = () => {
 
         let thisPicId = thisGalleryList.dataset.id;
         console.log(thisPicId);
-        let product = products.find((product) => product.id == thisPicId);
+        product = products.find((product) => product.id == thisPicId);
         console.log(product);
-        let colorImage = product.colorImage;
+        colorImage = product.colorImage;
         console.log(colorImage);
 
         let keys = Object.keys(colorImage);
@@ -169,7 +181,6 @@ const detail = () => {
         }
       }
     }
-
     document.addEventListener("DOMContentLoaded", () => {
       displayColoredPic();
     });
@@ -270,17 +281,18 @@ const detail = () => {
     }
     stopAddBtn();
 
-    let pics = [
-      `${thisProduct.image}`,
-      `${thisProduct.image1}`,
-      `${thisProduct.image2}`,
-    ];
-
     let smallPic = document.getElementsByClassName("small-pic");
+    console.log(smallPic);
     for (let i = 0; i < smallPic.length; i++) {
       smallPic[i].addEventListener("click", showMainPic);
 
       function showMainPic() {
+        pics.push(
+          `${thisProduct.image}`,
+          `${thisProduct.image1}`,
+          `${thisProduct.image2}`,
+        );
+
         const img = document.getElementById("main-pic");
 
         img.setAttribute("src", pics[i]); //img.src=pics[i];
