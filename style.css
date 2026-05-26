@@ -2225,6 +2225,17 @@ width:100%;
     display:none;
    
 }
+
+ <div class="color-square  ${coloredSquare}">
+    <p data-name="blue" class="square-shape">
+      blue
+    </p>
+    <p data-name="black" class="square-shape">
+      black
+    </p>
+  </div>;
+
+
 .color-square{
 display: flex;
 

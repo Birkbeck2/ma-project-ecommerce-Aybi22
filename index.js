@@ -542,7 +542,7 @@ function showNext() {
       '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> ';
   }
 }
-let colorSquare;
+
 function renderProducts(containerSelector, filtered) {
   let container = document.querySelector(containerSelector);
 
@@ -560,7 +560,6 @@ function renderProducts(containerSelector, filtered) {
     let className;
     if (product.hasColors && coloredSquare) {
       className = "picture-box";
-      let colorImage;
     }
     newPara.innerHTML = `
 
@@ -623,7 +622,7 @@ function renderProducts(containerSelector, filtered) {
       keys.forEach((key) => {
         let square = document.createElement("p");
         square.classList.add("square-shape");
-
+        square.setAttribute("data-name", key);
         coloredSquare.appendChild(square);
 
         square.style.backgroundColor = key;
@@ -631,6 +630,29 @@ function renderProducts(containerSelector, filtered) {
     }
   }
   showColoredSquares();
+  let squareShape = document.querySelectorAll(".square-shape");
+  for (let i = 0; i < squareShape.length; i++) {
+    let thisSectionList = squareShape[i].closest(".section-list");
+    let coloredSquare = thisSectionList.querySelector(".color-square");
+    coloredSquare.addEventListener("click", (e) => {
+      const clicked = e.target;
+      thisSectionList = squareShape[i].closest(".section-list");
+      let thisProduct = thisSectionList.dataset.id;
+      console.log(thisProduct);
+      console.log(clicked, "was clicked");
+      let product = products.find((product) => product.id == thisProduct);
+      let colorImage = product.colorImage;
+
+      let clickedSquare = e.target.dataset.name;
+
+      let imgBox = thisSectionList.querySelector(".picture-box");
+      console.log(imgBox);
+
+      if (clicked.closest(".square-shape")) {
+        imgBox.src = colorImage[clickedSquare];
+      }
+    });
+  }
 }
 
 /*
