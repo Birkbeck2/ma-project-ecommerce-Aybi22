@@ -542,7 +542,7 @@ function showNext() {
       '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> ';
   }
 }
-
+let colorSquare;
 function renderProducts(containerSelector, filtered) {
   let container = document.querySelector(containerSelector);
 
@@ -556,35 +556,32 @@ function renderProducts(containerSelector, filtered) {
     let newPara = document.createElement("div");
     newPara.classList.add("section-list");
 
-    let className = product.hasColors ? "showquare" : "nosquare";
-
-    if (product.hasColors && className === "showquare") {
+    let coloredSquare = product.hasColors ? "showquare" : "";
+    let className;
+    if (product.hasColors && coloredSquare) {
       className = "picture-box";
       let colorImage;
     }
     newPara.innerHTML = `
 
    
-  <div class="section-list" data-id="${product.id}"}
+  <div class="section-list" data-id="${product.id}">
 
     <a href="details.html?id=${product.id}">
       <div class="image">
       <img src= ${product.image}  alt="${product.alt}"  class="${className}">
       </div>
-   
+    
       </a>
       <div class="item-title">
          <div class='item-name'>${product.name}</div>
          <div class='item-price'data-id=${product.price}>£${product.price}</div>
       </div>    
-        <div class="color-square  ${className}">
-<span class="square" id="blue" title="blue"></span>
-<span class="square" id="black" title="black"></span>
-<span class="square"  id="grey" title="grey"></span>
-
-  </div>
-      
-     
+        
+       <div class="color-square  ${coloredSquare}">
+  
+       </div>
+   
       </div>
 
         <a  href="details.html?id=${product.id}" class="btn">View product</a>
@@ -592,16 +589,48 @@ function renderProducts(containerSelector, filtered) {
          `;
 
     container.appendChild(newPara);
+
+    /*
+    let squareColor = document.querySelector(".square-color");
+    console.log(squareColor);
     let squares = document.querySelectorAll(".square");
 
     squares.forEach((square) => {
       square.addEventListener("click", displayItemByColor);
     });
+    */
 
     productNum();
 
     categoryTotalPrice();
   });
+
+  function showColoredSquares() {
+    let imgBoxes = document.querySelectorAll(".picture-box");
+    console.log(imgBoxes);
+    for (let i = 0; i < imgBoxes.length; i++) {
+      let thisSectionList = imgBoxes[i].closest(".section-list");
+      console.log(thisSectionList);
+
+      let thisProductId = thisSectionList.dataset.id; //returns a string, not product object
+      let product = products.find((product) => product.id == thisProductId);
+      let coloredSquare = thisSectionList.querySelector(".color-square");
+      console.log(product);
+
+      let colorImage = product.colorImage;
+
+      let keys = Object.keys(colorImage);
+      keys.forEach((key) => {
+        let square = document.createElement("p");
+        square.classList.add("square-shape");
+
+        coloredSquare.appendChild(square);
+
+        square.style.backgroundColor = key;
+      });
+    }
+  }
+  showColoredSquares();
 }
 
 /*
@@ -616,6 +645,8 @@ function activateCartButtons() {
   */
 
 //Wait until ALL HTML is fully loaded, THEN run my code.
+/*
+
 export function addColorToSquares() {
   let squares = document.querySelectorAll(".square");
 
@@ -624,9 +655,10 @@ export function addColorToSquares() {
     square.style.backgroundColor = squareColor;
   });
 }
+  */
 
-window.addEventListener("DOMContentLoaded", addColorToSquares); //Wait until ALL HTML is fully loaded, THEN run my code.
-
+//Wait until ALL HTML is fully loaded, THEN run my code.
+/*
 function displayItemByColor(e) {
   //should be outside the loop
   let squareColor = e.target.id; //this can also be used
@@ -642,6 +674,7 @@ function displayItemByColor(e) {
   console.log(pictureBox);
   pictureBox.src = product.colorImage[squareColor];
 }
+  */
 
 /*
 function displayItemByColor(e) {
@@ -740,14 +773,17 @@ function sortByPriceHigh() {
   clearInput();
 }
 
-function addToCart(productId, selectedSize) {
+function addToCart(productId, selectedSize, chosenColor) {
   //This function is called when a user wants to add a product to the shopping cart,
   // using that product's id (passed as productId).
 
   let product = products.find((product) => product.id == productId); // find the product in the products array using the id.
   //The find() method returns the value of the first element in the array that satisfies the provided testing function.
   let existingProduct = cart.find(
-    (item) => item.id == productId && item.selectedSize == selectedSize,
+    (item) =>
+      item.id == productId &&
+      item.selectedSize == selectedSize &&
+      item.chosenColor == chosenColor,
   );
   console.log(existingProduct);
   if (!existingProduct) {
@@ -782,7 +818,7 @@ function displayCartItems() {
 <div class='item-name'>${product.name}</div>
 
 <div class='item-size'>size: ${product.selectedSize}</div>
-  
+  <div class='item-color'>color: ${product.chosenColor}</div>
 </div>
               <div class="cart-action">    
             <div class="counter">

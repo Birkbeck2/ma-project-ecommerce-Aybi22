@@ -1,7 +1,6 @@
 import products from "./products.js";
 import { addToCart } from "./index.js";
 import { closeOver, showCart } from "./cart.js";
-import { addColorToSquares } from "./index.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
@@ -9,8 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   addBtn.addEventListener("click", (e) => {
     const productId = e.currentTarget.dataset.id;
     let selectedSize = localStorage.getItem("selectedSize");
-
-    addToCart(productId, selectedSize);
+    let chosenColor = localStorage.getItem("color");
+    addToCart(productId, selectedSize, chosenColor);
 
     showCart();
     addCartCheck();
@@ -141,7 +140,6 @@ const detail = () => {
 
     let squares = document.querySelectorAll(".square");
 
-    addColorToSquares();
     let colorSelected = document.querySelector(".color-selected");
     console.log(colorSelected);
     let colorList = document.querySelector(".color-square-list");
@@ -156,8 +154,9 @@ const detail = () => {
         if (colorCliked.id === keys[i]) {
           img.src = colorImage[keys[i]];
         }
-
-        colorSelected.textContent = ` color selected: ${colorCliked.id}`;
+        let chosenColor = colorCliked.id;
+        colorSelected.textContent = ` color selected: ${chosenColor}`;
+        localStorage.setItem("color", chosenColor);
       }
     });
 

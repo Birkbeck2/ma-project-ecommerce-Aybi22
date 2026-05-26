@@ -2233,7 +2233,7 @@ display: flex;
     margin-bottom:1rem;
     justify-content: flex-start;
 }
-.square{
+.square-shape{
     width:30px;
     height:25px;
     border:1px solid gainsboro;
@@ -2241,9 +2241,7 @@ display: flex;
     
 
 }
-.color-square.nosquare{
-    display:none;
-}
+
 .color-square.showsquare{
     display:block;
 }

@@ -58,6 +58,7 @@ const products = [
       blue: "images/regularfitblue.jpg",
       black: "images/regularfitblack.jpg",
     },
+
     alt: " A man dressed in a black suit and tie",
     name: "regular fit suit",
     price: 400,
@@ -484,6 +485,7 @@ const products = [
       black: "images/blacktexturedsuitjacket.webp",
       blue: "images/bluetexturedsuitjacket.webp",
       grey: "images/greytexturedsuitjacket.webp",
+      navy: "images/navytexturedsuitjacket.webp",
     },
     name: "texture suit jacket",
     price: 30,
