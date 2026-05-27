@@ -13,7 +13,8 @@ function allItems(e) {
   allNum();
   addText(e);
 }
-
+let chosenColor = localStorage.getItem("color");
+console.log(chosenColor);
 document.addEventListener("DOMContentLoaded", () => {
   displaySubMenuContent();
 });
@@ -808,7 +809,7 @@ function addToCart(productId, selectedSize, chosenColor) {
   );
   console.log(existingProduct);
   if (!existingProduct) {
-    cart.push({ ...product, selectedSize, quantity: 1 });
+    cart.push({ ...product, selectedSize, chosenColor, quantity: 1 });
   }
   if (existingProduct) {
     existingProduct.quantity += 1;

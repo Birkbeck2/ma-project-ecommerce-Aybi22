@@ -2253,7 +2253,10 @@ display: flex;
 .color-selected{
     text-transform:capitalize;
 }
-
+.item-color{
+    text-transform:capitalize;
+    font-size:0.9rem;
+}
 
 .color-square-list.showsquare{
     display:flex;

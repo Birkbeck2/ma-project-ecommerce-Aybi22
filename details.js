@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productId = e.currentTarget.dataset.id;
     let selectedSize = localStorage.getItem("selectedSize");
     let chosenColor = localStorage.getItem("color");
+    console.log(chosenColor);
     addToCart(productId, selectedSize, chosenColor);
 
     showCart();
