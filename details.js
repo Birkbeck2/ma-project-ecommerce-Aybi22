@@ -146,24 +146,26 @@ const detail = () => {
         let thisPicId = thisGalleryList.dataset.id;
         console.log(thisPicId);
         let thisProduct = products.find((product) => product.id == thisPicId);
-        console.log(thisProduct);
-        let colorImage = thisProduct.colorImage;
-        console.log(colorImage);
+
         let coloredSquareList =
           thisGalleryList.querySelector(".color-square-list");
-        let keys = Object.keys(colorImage);
-        console.log(keys.length);
+
         coloredSquareList.innerHTML = "";
-        keys.forEach((key) => {
-          let square = document.createElement("p");
+        if (thisProduct.hasColors) {
+          let colorImage = thisProduct.colorImage;
+          console.log(colorImage);
+          let keys = Object.keys(colorImage);
+          keys.forEach((key) => {
+            let square = document.createElement("p");
 
-          coloredSquareList.appendChild(square);
-          console.log(coloredSquareList);
-          square.classList.add("square-shape");
-          square.setAttribute("data-name", key);
+            coloredSquareList.appendChild(square);
+            console.log(coloredSquareList);
+            square.classList.add("square-shape");
+            square.setAttribute("data-name", key);
 
-          square.style.backgroundColor = key;
-        });
+            square.style.backgroundColor = key;
+          });
+        }
       }
     }
     showSquares();

@@ -2249,6 +2249,9 @@ display: flex;
 .color-square.showsquare{
     display:block;
 }
+.color-square-list.nosquare{
+    display:none;
+}
 
 .color-selected{
     text-transform:capitalize;
