@@ -15,8 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addCartCheck();
   });
 });
-let colorImage;
-let product;
+
 function addCartCheck() {
   let addBtn = document.querySelector(".add-btn");
 
@@ -42,7 +41,7 @@ const detail = () => {
 
   if (thisProduct) {
     //HTML does NOT support multiple class attributes.
-    let coloredBoxes = thisProduct.hasColors ? "showsquare" : "nosquare";
+    let coloredBoxes = thisProduct.hasColors ? "showsquare" : "";
     let imgBoxes = thisProduct.hasColors ? "colored-pic" : "";
 
     const productDetails = document.querySelector(".details");
@@ -89,9 +88,7 @@ const detail = () => {
 
 <p class="color-selected"></p>
   <div class="color-square-list  ${coloredBoxes} ">
-<span class="square" id="blue" title="blue"></span>
-<span class="square" id="black" title="black"></span>
-<span class="square"  id="grey" title="grey"></span>
+
         </div>
 <p class="size-display"></p>
 <div class="sizes">
@@ -138,7 +135,37 @@ const detail = () => {
 </section>
 `;
 
-    let squares = document.querySelectorAll(".square");
+    function showSquares() {
+      let imgBoxes = document.querySelectorAll(".colored-pic");
+      console.log(imgBoxes);
+      for (let i = 0; i < imgBoxes.length; i++) {
+        let thisGalleryList = imgBoxes[i].closest(".product-display");
+        console.log(thisGalleryList);
+
+        let thisPicId = thisGalleryList.dataset.id;
+        console.log(thisPicId);
+        let thisProduct = products.find((product) => product.id == thisPicId);
+        console.log(thisProduct);
+        let colorImage = thisProduct.colorImage;
+        console.log(colorImage);
+        let coloredSquareList =
+          thisGalleryList.querySelector(".color-square-list");
+        let keys = Object.keys(colorImage);
+        console.log(keys.length);
+        coloredSquareList.innerHTML = "";
+        keys.forEach((key) => {
+          let square = document.createElement("p");
+
+          coloredSquareList.appendChild(square);
+          console.log(coloredSquareList);
+          square.classList.add("square-shape");
+          square.setAttribute("data-name", key);
+
+          square.style.backgroundColor = key;
+        });
+      }
+    }
+    showSquares();
 
     let colorSelected = document.querySelector(".color-selected");
     console.log(colorSelected);
@@ -148,13 +175,13 @@ const detail = () => {
       console.log(colorCliked);
       let img = document.getElementById("main-pic");
       console.log(img);
-      colorImage = product.colorImage;
+      let colorImage = thisProduct.colorImage;
       let keys = Object.keys(colorImage);
       for (let i = 0; i < keys.length; i++) {
-        if (colorCliked.id === keys[i]) {
+        if (colorCliked.dataset.name === keys[i]) {
           img.src = colorImage[keys[i]];
         }
-        let chosenColor = colorCliked.id;
+        let chosenColor = colorCliked.dataset.name;
         colorSelected.textContent = ` color selected: ${chosenColor}`;
         localStorage.setItem("color", chosenColor);
       }
@@ -169,9 +196,9 @@ const detail = () => {
 
         let thisPicId = thisGalleryList.dataset.id;
         console.log(thisPicId);
-        product = products.find((product) => product.id == thisPicId);
+        let product = products.find((product) => product.id == thisPicId);
         console.log(product);
-        colorImage = product.colorImage;
+        let colorImage = product.colorImage;
         console.log(colorImage);
 
         let keys = Object.keys(colorImage);

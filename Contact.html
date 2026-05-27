@@ -367,4 +367,28 @@ or live chat, our team is ready to assist you.
 
 
 
-  
+    let imgBoxes = document.querySelectorAll(".picture-box");
+    console.log(imgBoxes);
+    for (let i = 0; i < imgBoxes.length; i++) {
+      let thisSectionList = imgBoxes[i].closest(".section-list");
+      console.log(thisSectionList);
+
+      let thisProductId = thisSectionList.dataset.id; //returns a string, not product object
+      let product = products.find((product) => product.id == thisProductId);
+      let coloredSquare = thisSectionList.querySelector(".color-square");
+      console.log(product);
+
+      let colorImage = product.colorImage;
+
+      let keys = Object.keys(colorImage);
+      keys.forEach((key) => {
+        let square = document.createElement("p");
+        square.classList.add("square-shape");
+        square.setAttribute("data-name", key);
+        coloredSquare.appendChild(square);
+
+        square.style.backgroundColor = key;
+      });
+    }
+  }
+  showColoredSquares();

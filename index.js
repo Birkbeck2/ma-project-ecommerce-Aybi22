@@ -607,9 +607,8 @@ function renderProducts(containerSelector, filtered) {
   function showColoredSquares() {
     let imgBoxes = document.querySelectorAll(".picture-box");
     console.log(imgBoxes);
-    for (let i = 0; i < imgBoxes.length; i++) {
-      let thisSectionList = imgBoxes[i].closest(".section-list");
-      console.log(thisSectionList);
+    imgBoxes.forEach((imgBox) => {
+      let thisSectionList = imgBox.closest(".section-list");
 
       let thisProductId = thisSectionList.dataset.id; //returns a string, not product object
       let product = products.find((product) => product.id == thisProductId);
@@ -621,22 +620,22 @@ function renderProducts(containerSelector, filtered) {
       let keys = Object.keys(colorImage);
       keys.forEach((key) => {
         let square = document.createElement("p");
+
         square.classList.add("square-shape");
         square.setAttribute("data-name", key);
         coloredSquare.appendChild(square);
 
         square.style.backgroundColor = key;
       });
-    }
+    });
   }
   showColoredSquares();
-  let squareShape = document.querySelectorAll(".square-shape");
-  for (let i = 0; i < squareShape.length; i++) {
-    let thisSectionList = squareShape[i].closest(".section-list");
-    let coloredSquare = thisSectionList.querySelector(".color-square");
-    coloredSquare.addEventListener("click", (e) => {
+
+  let coloredSquare = document.querySelectorAll(".color-square");
+  coloredSquare.forEach((squares) => {
+    squares.addEventListener("click", (e) => {
       const clicked = e.target;
-      thisSectionList = squareShape[i].closest(".section-list");
+      let thisSectionList = clicked.closest(".section-list");
       let thisProduct = thisSectionList.dataset.id;
       console.log(thisProduct);
       console.log(clicked, "was clicked");
@@ -652,7 +651,7 @@ function renderProducts(containerSelector, filtered) {
         imgBox.src = colorImage[clickedSquare];
       }
     });
-  }
+  });
 }
 
 /*

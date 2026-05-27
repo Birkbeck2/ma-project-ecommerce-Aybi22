@@ -2226,14 +2226,7 @@ width:100%;
    
 }
 
- <div class="color-square  ${coloredSquare}">
-    <p data-name="blue" class="square-shape">
-      blue
-    </p>
-    <p data-name="black" class="square-shape">
-      black
-    </p>
-  </div>;
+
 
 
 .color-square{
@@ -2260,11 +2253,9 @@ display: flex;
 .color-selected{
     text-transform:capitalize;
 }
-.color-square-list.nosquare{
-    display:none;
-}
 
-.color-square-list{
+
+.color-square-list.showsquare{
     display:flex;
 
     gap:0.5rem;
