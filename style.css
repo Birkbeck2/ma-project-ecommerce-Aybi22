@@ -770,8 +770,9 @@ article>.stars {
     font-size: 15px;
     color: var(--black);
     color:#333;
-    
-}
+    }
+
+   
 
 .story-box {
     display: flex;
@@ -2244,6 +2245,10 @@ display: flex;
     cursor:pointer;
     
 
+}
+
+.hide-color{
+    display:none;
 }
 
 .color-square.showsquare{
@@ -4051,7 +4056,9 @@ p {
         display:flex;
         flex-direction: column;
     }
-
+ .product-title{
+        font-size:1rem;
+    }
     .error-text {
         font-size: 0.5rem;
     }

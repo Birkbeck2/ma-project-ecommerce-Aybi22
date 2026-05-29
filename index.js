@@ -795,21 +795,19 @@ function sortByPriceHigh() {
   clearInput();
 }
 
-function addToCart(productId, selectedSize, chosenColor) {
+function addToCart(productId, selectedSize) {
   //This function is called when a user wants to add a product to the shopping cart,
   // using that product's id (passed as productId).
 
   let product = products.find((product) => product.id == productId); // find the product in the products array using the id.
   //The find() method returns the value of the first element in the array that satisfies the provided testing function.
+
   let existingProduct = cart.find(
-    (item) =>
-      item.id == productId &&
-      item.selectedSize == selectedSize &&
-      item.chosenColor == chosenColor,
+    (item) => item.id == productId && item.selectedSize == selectedSize,
   );
-  console.log(existingProduct);
+
   if (!existingProduct) {
-    cart.push({ ...product, selectedSize, chosenColor, quantity: 1 });
+    cart.push({ ...product, selectedSize, quantity: 1 });
   }
   if (existingProduct) {
     existingProduct.quantity += 1;
@@ -835,12 +833,12 @@ function displayCartItems() {
          <div class="product-content">
 <div class="image-box">
          <div class="image">
-             <img src="${product.image}">
+             <img src="${product.image}  ">
           </div>
 <div class='item-name'>${product.name}</div>
 
 <div class='item-size'>size: ${product.selectedSize}</div>
-  <div class='item-color'>color: ${product.chosenColor}</div>
+  
 </div>
               <div class="cart-action">    
             <div class="counter">

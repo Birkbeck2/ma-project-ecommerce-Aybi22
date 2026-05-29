@@ -1,16 +1,16 @@
 import products from "./products.js";
 import { addToCart } from "./index.js";
 import { closeOver, showCart } from "./cart.js";
-
+let colorCliked;
+let clickedSize;
 document.addEventListener("DOMContentLoaded", () => {
   let addBtn = document.querySelector(".add-btn");
 
   addBtn.addEventListener("click", (e) => {
     const productId = e.currentTarget.dataset.id;
     let selectedSize = localStorage.getItem("selectedSize");
-    let chosenColor = localStorage.getItem("color");
-    console.log(chosenColor);
-    addToCart(productId, selectedSize, chosenColor);
+
+    addToCart(productId, selectedSize);
 
     showCart();
     addCartCheck();
@@ -72,7 +72,7 @@ const detail = () => {
         
 <div class="right-side">
 
-<h1>${thisProduct.name}<span class="item-price">£${thisProduct.price}</span></h1>
+<h1 class="product-title">${thisProduct.name}<span class="item-price">£${thisProduct.price}</span></h1>
 <span class="stock">in stock</span>
 
 <div class="p-review">
@@ -170,26 +170,6 @@ const detail = () => {
     }
     showSquares();
 
-    let colorSelected = document.querySelector(".color-selected");
-    console.log(colorSelected);
-    let colorList = document.querySelector(".color-square-list");
-    colorList.addEventListener("click", (e) => {
-      let colorCliked = e.target;
-      console.log(colorCliked);
-      let img = document.getElementById("main-pic");
-      console.log(img);
-      let colorImage = thisProduct.colorImage;
-      let keys = Object.keys(colorImage);
-      for (let i = 0; i < keys.length; i++) {
-        if (colorCliked.dataset.name === keys[i]) {
-          img.src = colorImage[keys[i]];
-        }
-        let chosenColor = colorCliked.dataset.name;
-        colorSelected.textContent = ` color selected: ${chosenColor}`;
-        localStorage.setItem("color", chosenColor);
-      }
-    });
-
     function displayColoredPic() {
       let imgBoxes = document.querySelectorAll(".colored-pic");
       console.log(imgBoxes);
@@ -283,7 +263,8 @@ const detail = () => {
         .join("");
     }
     sizeFormat();
-
+    let chosenColor;
+    let selectedSize;
     let sizes = document.querySelectorAll(".size");
     sizes.forEach((productSizes) => {
       productSizes.addEventListener("click", selectSize);
@@ -302,15 +283,47 @@ const detail = () => {
       clickedSize.style.backgroundColor = "black";
       clickedSize.style.color = "white";
       let sizeDisplay = document.querySelector(".size-display");
-      let selectedSize = e.currentTarget.textContent;
+      selectedSize = e.currentTarget.textContent;
       sizeDisplay.textContent = `Size selected: ${selectedSize}`;
-      localStorage.setItem("selectedSize", selectedSize);
-      addBtn.disabled = false;
+      upDateUI();
     }
 
+    let colorList = document.querySelector(".color-square-list");
+    colorList.addEventListener("click", selectColor);
+    function selectColor(e) {
+      let colorCliked = e.target;
+      chosenColor = colorCliked.dataset.name;
+      console.log(colorCliked);
+      let img = document.getElementById("main-pic");
+      console.log(img);
+      let colorImage = thisProduct.colorImage;
+      let keys = Object.keys(colorImage);
+      for (let i = 0; i < keys.length; i++) {
+        if (colorCliked.dataset.name === keys[i]) {
+          img.src = colorImage[keys[i]];
+
+          let colorSelected = document.querySelector(".color-selected");
+          console.log(colorSelected);
+          colorSelected.textContent = ` color selected: ${chosenColor}`;
+        }
+      }
+      upDateUI();
+    }
     let addBtn = document.querySelector(".add-btn");
 
+    function upDateUI() {
+      if (selectedSize && chosenColor) {
+        addBtn.disabled = false;
+      } else if (!thisProduct.hasColors) {
+        addBtn.disabled = false;
+      } else {
+        addBtn.disabled = true;
+      }
+    }
+
     function stopAddBtn() {
+      let addBtn = document.querySelector(".add-btn");
+
       addBtn.disabled = true;
     }
     stopAddBtn();
