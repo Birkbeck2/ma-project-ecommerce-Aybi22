@@ -9,8 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
   addBtn.addEventListener("click", (e) => {
     const productId = e.currentTarget.dataset.id;
     let selectedSize = localStorage.getItem("selectedSize");
-
-    addToCart(productId, selectedSize);
+    let chosenColor = localStorage.getItem("color");
+    let thisProduct = products.find((product) => product.id == productId);
+    if (thisProduct.hasColors) {
+      addToCart(productId, selectedSize, chosenColor);
+    } else {
+      addToCart(productId, selectedSize);
+    }
 
     showCart();
     addCartCheck();
@@ -305,6 +310,7 @@ const detail = () => {
           let colorSelected = document.querySelector(".color-selected");
           console.log(colorSelected);
           colorSelected.textContent = ` color selected: ${chosenColor}`;
+          localStorage.setItem("color", chosenColor);
         }
       }
       upDateUI();

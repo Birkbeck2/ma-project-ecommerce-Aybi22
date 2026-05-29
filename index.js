@@ -795,7 +795,7 @@ function sortByPriceHigh() {
   clearInput();
 }
 
-function addToCart(productId, selectedSize) {
+function addToCart(productId, selectedSize, chosenColor) {
   //This function is called when a user wants to add a product to the shopping cart,
   // using that product's id (passed as productId).
 
@@ -803,11 +803,14 @@ function addToCart(productId, selectedSize) {
   //The find() method returns the value of the first element in the array that satisfies the provided testing function.
 
   let existingProduct = cart.find(
-    (item) => item.id == productId && item.selectedSize == selectedSize,
+    (item) =>
+      item.id == productId &&
+      item.selectedSize == selectedSize &&
+      item.chosenColor == chosenColor,
   );
 
   if (!existingProduct) {
-    cart.push({ ...product, selectedSize, quantity: 1 });
+    cart.push({ ...product, selectedSize, chosenColor, quantity: 1 });
   }
   if (existingProduct) {
     existingProduct.quantity += 1;
@@ -819,13 +822,19 @@ function addToCart(productId, selectedSize) {
 }
 //this function push new items to the cart array if the item is not already in the cart
 
-function displayCartItems() {
+function displayCartItems(productId) {
   let cartItems = document.querySelector(".cart-items");
-
+  let chosenColor = localStorage.getItem("color");
+  console.log(chosenColor);
+  
   cartItems.innerHTML = "";
   cart.forEach((product) => {
     let newCart = document.createElement("div");
-
+ 
+  let className;
+  if (!product.hasColors) {
+     className = "hidecolor";
+  }
     newCart.innerHTML = `
          <div class="product cart-data" data-id='${product.id}'>
           
@@ -833,12 +842,12 @@ function displayCartItems() {
          <div class="product-content">
 <div class="image-box">
          <div class="image">
-             <img src="${product.image}  ">
+             <img src="${product.image}">
           </div>
 <div class='item-name'>${product.name}</div>
 
 <div class='item-size'>size: ${product.selectedSize}</div>
-  
+  <div class='item-color  ${className}'>color: ${product.chosenColor}</div>
 </div>
               <div class="cart-action">    
             <div class="counter">

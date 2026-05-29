@@ -1000,8 +1000,12 @@ h3 {
 .price-list li {
     display: flex;
 }
-
-
+.displayColor{
+    display:block;
+}
+.item-color.hidecolor{
+    display:none;
+}
 .filter-section-wrapper {
     display: flex;
     max-width: 100%;
