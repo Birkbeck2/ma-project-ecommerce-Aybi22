@@ -826,15 +826,16 @@ function displayCartItems(productId) {
   let cartItems = document.querySelector(".cart-items");
   let chosenColor = localStorage.getItem("color");
   console.log(chosenColor);
-  
+
   cartItems.innerHTML = "";
   cart.forEach((product) => {
     let newCart = document.createElement("div");
- 
-  let className;
-  if (!product.hasColors) {
-     className = "hidecolor";
-  }
+
+    let className;
+    if (!product.hasColors) {
+      className = "hidecolor";
+    }
+
     newCart.innerHTML = `
          <div class="product cart-data" data-id='${product.id}'>
           
@@ -842,7 +843,7 @@ function displayCartItems(productId) {
          <div class="product-content">
 <div class="image-box">
          <div class="image">
-             <img src="${product.image}">
+             <img src="${product.image}" class="${className}">
           </div>
 <div class='item-name'>${product.name}</div>
 
@@ -866,6 +867,18 @@ function displayCartItems(productId) {
 `;
     cartItems.appendChild(newCart);
     localStorage.setItem("cart", JSON.stringify(cart));
+
+    function updateCartImage() {
+      let coloredPicture = document.querySelector(".colored-picture");
+      let colorImage = product.colorImage;
+
+      let chosenColor = localStorage.getItem("color");
+
+      if (chosenColor) {
+        coloredPicture.src = colorImage[chosenColor];
+      }
+    }
+    updateCartImage();
   });
   attachDeleteEvents();
   // re-attach event listeners to new delete buttons
