@@ -1854,11 +1854,13 @@ margin-bottom:1rem;
 }
 
 @media print {
-    .print {
+    header, footer {
         display: none;
     }
+    .hide{
+        display:none;
+    }
 }
-
 
 .staff .image {
     height: 100%;

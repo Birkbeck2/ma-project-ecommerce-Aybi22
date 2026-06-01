@@ -88,7 +88,7 @@ function confirmedOrder() {
   
 <div class="info-list">
 <p class=" infos-text">${product.name}</p>
-<p class="color  ${className}">color:${product.chosenColor}</p>
+<p class="color  ${className}">color: ${product.chosenColor}</p>
 <p> x${product.quantity}</p>
 <p class=" infos-price">£${formatted}</p> 
 
