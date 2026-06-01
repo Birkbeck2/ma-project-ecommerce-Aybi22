@@ -6,7 +6,8 @@ import detail from "./details.js";
 import { showCart, closeOver, closeModal } from "./cart.js";
 
 detail();
-
+let numBox = document.querySelector(".num-box");
+let productNumber;
 let filtered = products;
 function allItems(e) {
   filtered = products;
@@ -795,7 +796,7 @@ function sortByPriceHigh() {
   clearInput();
 }
 
-function addToCart(productId, selectedSize, chosenColor) {
+function addToCart(productId, selectedSize, chosenColor, coloredImage) {
   //This function is called when a user wants to add a product to the shopping cart,
   // using that product's id (passed as productId).
 
@@ -806,11 +807,18 @@ function addToCart(productId, selectedSize, chosenColor) {
     (item) =>
       item.id == productId &&
       item.selectedSize == selectedSize &&
-      item.chosenColor == chosenColor,
+      item.chosenColor == chosenColor &&
+      item.coloredImage == coloredImage,
   );
 
   if (!existingProduct) {
-    cart.push({ ...product, selectedSize, chosenColor, quantity: 1 });
+    cart.push({
+      ...product,
+      selectedSize,
+      chosenColor,
+      coloredImage,
+      quantity: 1,
+    });
   }
   if (existingProduct) {
     existingProduct.quantity += 1;
@@ -822,10 +830,8 @@ function addToCart(productId, selectedSize, chosenColor) {
 }
 //this function push new items to the cart array if the item is not already in the cart
 
-function displayCartItems(productId) {
+function displayCartItems() {
   let cartItems = document.querySelector(".cart-items");
-  let chosenColor = localStorage.getItem("color");
-  console.log(chosenColor);
 
   cartItems.innerHTML = "";
   cart.forEach((product) => {
@@ -835,7 +841,6 @@ function displayCartItems(productId) {
     if (!product.hasColors) {
       className = "hidecolor";
     }
-
     newCart.innerHTML = `
          <div class="product cart-data" data-id='${product.id}'>
           
@@ -843,12 +848,13 @@ function displayCartItems(productId) {
          <div class="product-content">
 <div class="image-box">
          <div class="image">
-             <img src="${product.image}" class="${className}">
+             <img src=" ${product.coloredImage}">
           </div>
 <div class='item-name'>${product.name}</div>
 
 <div class='item-size'>size: ${product.selectedSize}</div>
-  <div class='item-color  ${className}'>color: ${product.chosenColor}</div>
+<div class='item-color  ${className}'>color: ${product.chosenColor}</div>
+  
 </div>
               <div class="cart-action">    
             <div class="counter">
@@ -867,23 +873,11 @@ function displayCartItems(productId) {
 `;
     cartItems.appendChild(newCart);
     localStorage.setItem("cart", JSON.stringify(cart));
-
-    function updateCartImage() {
-      let coloredPicture = document.querySelector(".colored-picture");
-      let colorImage = product.colorImage;
-
-      let chosenColor = localStorage.getItem("color");
-
-      if (chosenColor) {
-        coloredPicture.src = colorImage[chosenColor];
-      }
-    }
-    updateCartImage();
   });
   attachDeleteEvents();
   // re-attach event listeners to new delete buttons
 }
-
+displayCartItems();
 function updateCartIcon() {
   const numberOfItems = document.querySelector(".noOfItems");
   if (!numberOfItems) return; // Check if the element exists
@@ -991,8 +985,7 @@ function productNum() {
   document.querySelector(".num-box").textContent = filtered.length;
 }
 */
-let numBox = document.querySelector(".num-box");
-let productNumber = filtered.length;
+
 function productNum() {
   productNumber = filtered.length;
   productNumber > 1

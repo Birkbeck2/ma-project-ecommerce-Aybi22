@@ -1,26 +1,8 @@
 import products from "./products.js";
 import { addToCart } from "./index.js";
 import { closeOver, showCart } from "./cart.js";
-let colorCliked;
-let clickedSize;
-document.addEventListener("DOMContentLoaded", () => {
-  let addBtn = document.querySelector(".add-btn");
-
-  addBtn.addEventListener("click", (e) => {
-    const productId = e.currentTarget.dataset.id;
-    let selectedSize = localStorage.getItem("selectedSize");
-    let chosenColor = localStorage.getItem("color");
-    let thisProduct = products.find((product) => product.id == productId);
-    if (thisProduct.hasColors) {
-      addToCart(productId, selectedSize, chosenColor);
-    } else {
-      addToCart(productId, selectedSize);
-    }
-
-    showCart();
-    addCartCheck();
-  });
-});
+let chosenColor;
+let selectedSize;
 
 function addCartCheck() {
   let addBtn = document.querySelector(".add-btn");
@@ -268,8 +250,7 @@ const detail = () => {
         .join("");
     }
     sizeFormat();
-    let chosenColor;
-    let selectedSize;
+
     let sizes = document.querySelectorAll(".size");
     sizes.forEach((productSizes) => {
       productSizes.addEventListener("click", selectSize);
@@ -290,6 +271,7 @@ const detail = () => {
       let sizeDisplay = document.querySelector(".size-display");
       selectedSize = e.currentTarget.textContent;
       sizeDisplay.textContent = `Size selected: ${selectedSize}`;
+      localStorage.setItem("size", selectedSize);
       upDateUI();
     }
 
@@ -326,6 +308,26 @@ const detail = () => {
         addBtn.disabled = true;
       }
     }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      let addBtn = document.querySelector(".add-btn");
+      let coloredImage;
+      addBtn.addEventListener("click", (e) => {
+        const productId = e.currentTarget.dataset.id;
+
+        let thisProduct = products.find((product) => product.id == productId);
+        if (thisProduct.hasColors && chosenColor) {
+          coloredImage = thisProduct.colorImage[chosenColor];
+        } else {
+          coloredImage = thisProduct.image;
+        }
+
+        addToCart(productId, selectedSize, chosenColor, coloredImage);
+
+        showCart();
+        addCartCheck();
+      });
+    });
 
     function stopAddBtn() {
       let addBtn = document.querySelector(".add-btn");

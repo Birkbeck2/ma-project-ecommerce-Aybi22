@@ -1015,9 +1015,10 @@ h3 {
     gap: 2rem;
    
     margin-bottom: 11px;
-
 }
-
+.color.no-color{
+    visibility:hidden;
+}
 .filter-section-wrapper input {
     display: flex;
     align-items: center;

@@ -69,10 +69,13 @@ function updateOrderTotal() {
 
 function confirmedOrder() {
   let confirmedInfos = document.querySelector(".confirmation-infos");
-
+  let className;
   confirmedInfos.innerHTML = savedCart
 
     .map((product) => {
+      if (!product.hasColors) {
+        className = "no-color";
+      }
       let itemPrice = product.quantity * product.price;
       let formatted = itemPrice.toLocaleString("en-GB", {
         minimumFractionDigits: 0,
@@ -82,9 +85,10 @@ function confirmedOrder() {
       return `
       
     <div class="infos-box"> 
-    
+  
 <div class="info-list">
 <p class=" infos-text">${product.name}</p>
+<p class="color  ${className}">color:${product.chosenColor}</p>
 <p> x${product.quantity}</p>
 <p class=" infos-price">£${formatted}</p> 
 

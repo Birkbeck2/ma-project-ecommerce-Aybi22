@@ -32,7 +32,7 @@ function orderRecap() {
          <div class="recap-items">
 <div class="recap-box">
          <div class="recap-image">
-             <img src="${product.image}">
+             <img src="${product.coloredImage}">
           </div>
           <div class="recap-infos">
 <div class='recap-name'>${product.name}</div>
