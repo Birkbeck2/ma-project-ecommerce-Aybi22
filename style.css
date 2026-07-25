@@ -1857,8 +1857,11 @@ margin-bottom:1rem;
     header, footer {
         display: none;
     }
-    .hide{
-        display:none;
+    button{
+        display:none !important;
+    }
+    .print{
+        display:none !important;
     }
 }
 

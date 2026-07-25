@@ -8,6 +8,9 @@ import { showCart, closeOver, closeModal } from "./cart.js";
 detail();
 let numBox = document.querySelector(".num-box");
 let productNumber;
+
+
+
 let filtered = products;
 function allItems(e) {
   filtered = products;
