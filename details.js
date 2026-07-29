@@ -209,7 +209,7 @@ const detail = () => {
           }
           return `
          
-<article class="section-list">
+<article class="section-list related">
                 <h3>${product.category}</h3>
                 <a href="details.html?id=${product.id}" >
                   

@@ -2808,7 +2808,22 @@ a.shop {
 
     padding: 1rem;
     text-align: center;
+  
     
+}
+.section-list.related{
+    min-height: 750px;
+     display: flex;
+    flex-direction: column;
+
+   gap:1rem;
+    text-align: center;
+    
+    
+}
+.section-list.related a.btn{
+  
+    margin-top:auto;
 }
 
 .section-list img {
