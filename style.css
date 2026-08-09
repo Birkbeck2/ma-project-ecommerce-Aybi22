@@ -24,6 +24,16 @@
     height: 17px;
 
 }
+.fa-circle-check{
+font-size:107px;
+color:#28a745;
+text-align:center;
+}
+.success-section{
+    display:flex;
+    flex-direction:column;
+   gap:1rem;
+}
 
 .color {
     display: flex;

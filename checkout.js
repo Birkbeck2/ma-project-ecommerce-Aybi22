@@ -203,6 +203,31 @@ function orderDate() {
   localStorage.setItem("orderTime", formattedDate);
 }
 
+function orderTiming() {
+  let today = new Date();
+  if (today.getHours() < 10) {
+    formattedHour = `0${today.getHours()}`;
+  } else {
+    formattedHour = `${today.getHours()}`;
+  }
+  if (today.getMinutes() < 10) {
+    formattedMin = `0${today.getMinutes()}`;
+  } else {
+    formattedMin = `${today.getMinutes()}`;
+  }
+
+  if (today.getSeconds() < 10) {
+    formattedSec = `0${today.getseconds()}`;
+  } else {
+    formattedSec = `${today.getseconds()}`;
+  }
+
+  let formattedTiming = formattedHour + ":" + formattedMin + ";" + formattedSec;
+
+  localStorage.setItem("orderSlot", formattedTiming);
+}
+orderTiming();
+
 function saveUserData() {
   let firstNameInput = document.querySelector(".first-name");
 

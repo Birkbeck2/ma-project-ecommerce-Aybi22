@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   namedMessage();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  createOrderNumber();
+});
+
 let savedCart = JSON.parse(localStorage.getItem("cart"));
 console.log(savedCart);
 
@@ -15,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     firstNameDisplay.innerHTML = `Firstname: <span class="user-firstname"> ${savedUserFirstName}</span>`;
 
     let successMessage = document.querySelector(".success");
-    successMessage.innerHTML = `Thank you ${savedUserFirstName} , your order is now placed<i class="fa-solid fa-check"></i>`;
+    successMessage.innerHTML = `Thank you ${savedUserFirstName} , your order is now placed`;
   }
   let savedUserPhone = localStorage.getItem("phone");
   if (savedUserPhone) {
@@ -119,5 +123,13 @@ function displayOrderTime() {
   let dateDisplay = document.querySelector(".date-display");
   if (savedDate) {
     dateDisplay.textContent = `Order Date: ${savedDate}`;
+  }
+}
+
+function createOrderNumber() {
+  let savedTiming = localStorage.getItem("orderSlot");
+  let orderNum = document.querySelector(".ordernum-display");
+  if (savedTiming) {
+    orderNum.textContent = `Order number: ORD-${savedTiming.replaceAll(":", "")}`;
   }
 }
