@@ -1,14 +1,13 @@
+let savedCart = JSON.parse(localStorage.getItem("cart"));
+console.log(savedCart);
+
 document.addEventListener("DOMContentLoaded", () => {
   displayOrderTime();
-  namedMessage();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   createOrderNumber();
 });
-
-let savedCart = JSON.parse(localStorage.getItem("cart"));
-console.log(savedCart);
 
 document.addEventListener("DOMContentLoaded", () => {
   let savedUserFirstName = localStorage.getItem("firstname");
@@ -53,6 +52,16 @@ function getUserData() {
   let savedData = JSON.parse(localStorage.getItem("userData"));
   if (savedData) {
     console.log(savedData);
+  }
+}
+
+function createOrderNumber() {
+  let savedTiming = localStorage.getItem("orderSlot");
+  console.log(savedTiming);
+  let orderNum = document.querySelector(".ordernum-display");
+  console.log(orderNum);
+  if (savedTiming) {
+    orderNum.textContent += `Order number: ORD-${savedTiming.replaceAll(":", "")}`;
   }
 }
 
@@ -123,13 +132,5 @@ function displayOrderTime() {
   let dateDisplay = document.querySelector(".date-display");
   if (savedDate) {
     dateDisplay.textContent = `Order Date: ${savedDate}`;
-  }
-}
-
-function createOrderNumber() {
-  let savedTiming = localStorage.getItem("orderSlot");
-  let orderNum = document.querySelector(".ordernum-display");
-  if (savedTiming) {
-    orderNum.textContent = `Order number: ORD-${savedTiming.replaceAll(":", "")}`;
   }
 }

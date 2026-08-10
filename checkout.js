@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   placeBtn.addEventListener("click", stopOrder);
   placeBtn.addEventListener("click", saveUserData);
   placeBtn.addEventListener("click", orderDate);
-
+  placeBtn.addEventListener("click", orderTiming);
   placeBtn.addEventListener("click", orderRecap);
 });
 /*
@@ -205,6 +205,9 @@ function orderDate() {
 
 function orderTiming() {
   let today = new Date();
+  let formattedHour;
+  let formattedMin;
+  let formattedSec;
   if (today.getHours() < 10) {
     formattedHour = `0${today.getHours()}`;
   } else {
@@ -217,16 +220,15 @@ function orderTiming() {
   }
 
   if (today.getSeconds() < 10) {
-    formattedSec = `0${today.getseconds()}`;
+    formattedSec = `0${today.getSeconds()}`;
   } else {
-    formattedSec = `${today.getseconds()}`;
+    formattedSec = `${today.getSeconds()}`;
   }
 
-  let formattedTiming = formattedHour + ":" + formattedMin + ";" + formattedSec;
+  let formattedTiming = formattedHour + ":" + formattedMin + ":" + formattedSec;
 
   localStorage.setItem("orderSlot", formattedTiming);
 }
-orderTiming();
 
 function saveUserData() {
   let firstNameInput = document.querySelector(".first-name");
