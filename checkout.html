@@ -42,39 +42,119 @@
 
 <article class="form-section recap">
 
-       
+    
 
-<form class="billing">
+<form class="billing" id="billing-form">
     
         <h2>Billing information</h2>
+          <h3>shipping details</h3>
+        <div class="form-content">
+          
     <div>
 <label for="Firstname">First name</label>
-<input type="text" name="firstname" class="first-name" required>
+<input type="text" name="firstname" class="first-name" required >
 </div>
 
 <div>
 <label for="Firstname">Last name</label>
 <input type="text" name="lastname" class="last-name" required>
 </div>
+
 <div>
 <label for="Email">Email address</label>
-<input type="text" name="Email" class="email"required>
+<input type="text" name="Email" class="email" required >
 </div>
 <div>
 <label for="phone">Phone number</label>
-<input type="text" name="phone" class="phone" required>
+<input type="text" name="phone" class="phone"  required>
 </div>
-<div>
+<div class="expand">
+   
+       
 <label for="address">Address</label>
 <input type="text" name="address" class="address" required>
 </div>
+</div>
+<div class="column3">
 <div>
 <label for="postcode">Postcode</label>
+<input type="text" name="postcode" class="postcode"required >
+</div>
+<div>
+<label for="postcode">City</label>
+<input type="text" name="postcode" class="postcode" required >
+</div>
+<div>
+<label for="postcode">county</label>
 <input type="text" name="postcode" class="postcode" required>
 </div>
-</form>
-</article>
 
+
+</div>
+</form>
+
+
+
+<h3>payment option</h3>
+<form class="debit"  id="debit-form">
+
+<div class="form-info">
+<p class="span-input">
+<label for="card">card number:</label>
+<input type="text" class="card" id="card" required>
+
+</p>
+</div>
+
+    <div class="column2">
+<p>
+<label for="expiration">expiration date:</label>
+<input type="month" class="expiration"  required>
+</p>
+<p>
+<label for="code">CVV:</label>
+<input type="text" class="code" id="code" required>
+
+</p>
+</div>
+
+
+<p class="span-input">
+<label for="holder">Name on the card:</label>
+<input type="text" class="holder" id="holder" required>
+
+</p>
+
+</form>
+
+</div>
+<div class="paypal-form" style="display: none;">
+<p>
+<label for="email">Email:</label>
+<input type="text" class="email" id="email" required >
+</p>
+
+<p>
+<label for="password">Password:</label>
+<input type="password" class="password" id="password" required>
+</p>
+<button class="pay">continue with paypal</button>
+</div>
+
+
+<div class="summary-buttons">
+<button type="submit" class="cart-btn place-btn " id="placeOrder">Place order</button>
+<a href="Shoplist.html" class="cart-btn shop">back to shopping</a>
+</div>
+
+
+    
+
+
+
+
+
+</article>
 
     
 <article class="recap-container">
@@ -85,42 +165,8 @@
 </div>
 <p class="order-total"></p>
 
-
-<div class="footer-icons"> 
-      <p>Payment options:</p>      
-    <div class="paypal-icon">
-     <img src="images/paypal.svg" width="50" alt="paypal card">
-     </div>
-    
-    <div class="visa-icon">
-     <img src="images/visa.svg" width="50" alt="visa card">
-     </div>
-        
-    <div class="klarna-icon">
-        <img src="images/klarna.svg" width="50" alt="klarna card" >
-    </div>
-    
-    <div class="master-icon">
-        <img src="images/mastercard.svg"  width="50" alt="mastercard card">
-    </div>
-    
-    <div class="amex-icon">
-        <img src="images/americanexpress.svg" width="50" alt="amex card">
-    </div>
-
-</div>
-
-<p class="order-error-message  error-text">Please enter your full details before placing an order!</p>
-<p class="sum-error  error-text">Please add items before placing an order!</p>
-<div class="summary-buttons">
-<a href="confirmation.html" class="cart-btn place-btn">Place order</a>
-<a href="Shoplist.html" class="cart-btn shop">back to shopping</a>
-</div>
-
 </article>
 </section>
-    
-
  <footer>
         
     <div class="footer-top-text">

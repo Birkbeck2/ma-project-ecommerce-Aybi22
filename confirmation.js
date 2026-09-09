@@ -134,3 +134,9 @@ function displayOrderTime() {
     dateDisplay.textContent = `Order Date: ${savedDate}`;
   }
 }
+
+document.querySelector(".footer-icons").addEventListener("click", (e) => {
+  if (e.target.closest(".visa")) {
+    document.body.style.backgroundColor = "pink";
+  }
+});

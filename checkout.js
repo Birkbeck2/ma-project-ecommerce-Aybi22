@@ -110,13 +110,27 @@ function updateOrderTotal() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  let placeBtn = document.querySelector(".place-btn");
-  console.log(placeBtn);
-  placeBtn.addEventListener("click", stopOrder);
+  let placeBtn = document.querySelector(".cart-btn.place-btn");
+
   placeBtn.addEventListener("click", saveUserData);
   placeBtn.addEventListener("click", orderDate);
   placeBtn.addEventListener("click", orderTiming);
   placeBtn.addEventListener("click", orderRecap);
+});
+
+let billingForm = document.getElementById("billing-form");
+console.log(billingForm);
+let debitForm = document.getElementById("debit-form");
+console.log(debitForm);
+
+document.querySelector(".cart-btn.place-btn").addEventListener("click", () => {
+  if (debitForm.checkValidity() && billingForm.checkValidity()) {
+    document.body.style.backgroundColor = "pink";
+    window.location.href = "confirmation.html";
+  } else {
+    billingForm.reportValidity();
+    debitForm.reportValidity();
+  }
 });
 /*
 function clearCart() {
@@ -256,34 +270,6 @@ function saveUserData() {
   let userPostCode = postCodeInput.value;
   localStorage.setItem("postcode", userPostCode);
 }
-function stopOrder(e) {
-  let AllInput = document.getElementsByTagName("input");
-  for (let i = 0; i < AllInput.length; i++) {
-    if (!AllInput[i].value.trim()) {
-      e.preventDefault();
-
-      let orderErrorMessage = document.querySelector(".order-error-message");
-
-      orderErrorMessage.style.display = "block";
-      // stop function immediately
-      return;
-    }
-
-    if (sumContainer.innerHTML === "" && !AllInput[i].value.trim()) {
-      e.preventDefault();
-      document.body.style.backgroundColor = "red";
-      return;
-    }
-  }
-
-  if (sumContainer.innerHTML === "") {
-    e.preventDefault();
-    let sumError = document.querySelector(".sum-error");
-
-    sumError.style.display = "block";
-    return;
-  }
-}
 
 /*
 function redBody() {
@@ -330,3 +316,21 @@ function deleteCartContent(e) {
   }
 }
   */
+document.querySelector(".footer-icons").addEventListener("click", (e) => {
+  if (
+    e.target.closest(".visa") ||
+    e.target.closest(".master") ||
+    e.target.closest("am-express")
+  ) {
+    let paypalForm = document.querySelector(".paypal-form");
+    let debitForm = document.querySelector(".debit-form");
+    debitForm.style.display = "block";
+    paypalForm.style.display = "none";
+  }
+  if (e.target.closest(".paypal")) {
+    let paypalForm = document.querySelector(".paypal-form");
+    let debitForm = document.querySelector(".debit-form");
+    debitForm.style.display = "none";
+    paypalForm.style.display = "block";
+  }
+});
