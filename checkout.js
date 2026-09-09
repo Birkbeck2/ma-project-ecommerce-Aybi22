@@ -124,7 +124,7 @@ let debitForm = document.getElementById("debit-form");
 console.log(debitForm);
 
 document.querySelector(".cart-btn.place-btn").addEventListener("click", () => {
-  if (debitForm.checkValidity() && billingForm.checkValidity()) {
+  if (billingForm.checkValidity() && debitForm.checkValidity()) {
     document.body.style.backgroundColor = "pink";
     window.location.href = "confirmation.html";
   } else {
@@ -222,6 +222,7 @@ function orderTiming() {
   let formattedHour;
   let formattedMin;
   let formattedSec;
+
   if (today.getHours() < 10) {
     formattedHour = `0${today.getHours()}`;
   } else {

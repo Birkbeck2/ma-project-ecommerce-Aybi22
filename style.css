@@ -3151,7 +3151,7 @@ input{
 }
 
 .billing input {
-    border: 1px solid gainsboro; solid gainsboro!important;
+    border: 1px solid gainsboro!important;
 }
 
 .recap div {
@@ -3164,7 +3164,10 @@ input{
 .billing label {
     font-weight: normal;
 }
-
+label{
+    font-size:0.8rem;
+    text-transform:capitalize;
+}
 .billing h2 {
     text-transform: capitalize;
 }
