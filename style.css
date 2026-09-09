@@ -2844,6 +2844,7 @@ the button won’t fully respond.*/
     font-size: 23px;
     font-weight: 900;
     margin: 11px;
+    text-transform:uppercase;
 }
 
 .stock {
