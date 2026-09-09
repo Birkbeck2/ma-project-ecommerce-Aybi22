@@ -1744,7 +1744,7 @@ li.phone {
     display: flex;
     align-items: end;
     gap: 11px;
-   
+  
 }
 
 /*About page styling*/
@@ -2771,6 +2771,7 @@ gap:1rem;
 
     color: var(--black);
     font-weight: 900;
+    cursor:pointer;
 
 }
 
@@ -2778,6 +2779,7 @@ gap:1rem;
 
     color: var(--black);
     font-weight: 900;
+    cursor:pointer;
 }
 
 .add-cart {
@@ -2961,9 +2963,6 @@ h4 {
 
 }
 
-
-
-
 .blazer-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -3116,8 +3115,6 @@ h4 {
     background: var(--cambridge-blue);
     padding: 33px;
     width: 100%;
-
-
 }
 
 .form-section {
@@ -3405,7 +3402,7 @@ h2 {
     padding: 1rem;
     max-width: 500%;
     width: 100%;
-    border-bottom: 1px solid gainsboro; solid gainsboro;
+    border-bottom: 1px solid gainsboro; 
 
     font-size: 1rem;
 }
@@ -3415,12 +3412,12 @@ h2 {
     justify-content: center;
     border: 2px solid gainsboro;
     align-items: baseline;
-
+   
     gap: 1rem;
 }
 
 .recap-container {
-    border: 1px solid gainsboro; solid gainsboro;
+    border: 1px solid gainsboro; 
     height: auto;
     display: flex;
     flex-direction: column;
@@ -3461,14 +3458,16 @@ a.cart-btn.basket {
 
 a.cart-btn.basket:hover {
     background: none;
-    border: 1px solid gainsboro; solid black;
+    border: 1px solid gainsboro; 
     color: black;
 }
 
 a.cart-btn.shop {
     background: none;
-    border: 1px solid gainsboro; solid black;
+    border: 1px solid gainsboro; 
     color: black;
+    max-width:100%;
+    width:100%;
 }
 
 

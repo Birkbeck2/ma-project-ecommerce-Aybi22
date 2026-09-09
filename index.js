@@ -9,8 +9,6 @@ detail();
 let numBox = document.querySelector(".num-box");
 let productNumber;
 
-
-
 let filtered = products;
 function allItems(e) {
   filtered = products;
@@ -835,7 +833,9 @@ function addToCart(productId, selectedSize, chosenColor, coloredImage) {
 
 function displayCartItems() {
   let cartItems = document.querySelector(".cart-items");
-
+  if (!cartItems) {
+    return;
+  }
   cartItems.innerHTML = "";
   cart.forEach((product) => {
     let newCart = document.createElement("div");
@@ -880,7 +880,7 @@ function displayCartItems() {
   attachDeleteEvents();
   // re-attach event listeners to new delete buttons
 }
-displayCartItems();
+
 function updateCartIcon() {
   const numberOfItems = document.querySelector(".noOfItems");
   if (!numberOfItems) return; // Check if the element exists
@@ -891,6 +891,9 @@ function updateCartIcon() {
 
 function updateTotal() {
   let total = document.querySelector(".total");
+  if (!total) {
+    return;
+  }
   let reduceSum = cart.reduce((currentTotal, product) => {
     return currentTotal + product.price * product.quantity;
   }, 0);
@@ -902,6 +905,7 @@ function updateTotal() {
 
   total.textContent = ` £${formatted}`;
 }
+updateTotal();
 
 document.addEventListener("click", function (e) {
   if (
@@ -916,6 +920,7 @@ document.addEventListener("click", function (e) {
 
     const quantityInput = productDiv.querySelector(".quantity");
     let currentQuantity = parseInt(quantityInput.value);
+    console.log(currentQuantity);
 
     if (
       e.target.classList.contains("increase") ||
