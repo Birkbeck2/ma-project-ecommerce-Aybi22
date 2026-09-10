@@ -246,6 +246,8 @@ function orderTiming() {
 }
 
 function saveUserData() {
+  let cardNumber = document.querySelector(".card-num");
+  localStorage.setItem("card-digits", cardNumber.value);
   let firstNameInput = document.querySelector(".first-name");
 
   let userFirstName = firstNameInput.value;

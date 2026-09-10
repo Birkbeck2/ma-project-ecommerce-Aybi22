@@ -317,8 +317,15 @@ fetch("./template.html")
       if (cartItems.children.length === 0) {
         //element.children.length	Number
 
+        let emptyCartText = document.querySelector(".empty-cart-text");
+        if (emptyCartText) {
+          emptyCartText.style.display = "block";
+        }
+
         cartItems.textContent = "Please fill cart before checking out";
         e.preventDefault();
+      } else {
+        emptyCartText.style.display = "none";
       }
     }
 
@@ -881,6 +888,30 @@ function displayCartItems() {
   // re-attach event listeners to new delete buttons
 }
 
+function updateCartLength() {
+  let itemNumber = document.querySelector(".items-number");
+  if (itemNumber && cart) {
+    itemNumber.textContent = `${cart.length}`;
+  }
+}
+updateCartLength();
+
+let cartItems = document.querySelector(".cart-items");
+if (cartItems) {
+  displayCartText();
+}
+function displayCartText() {
+  if (cartItems.children.length === 0) {
+    document.body.style.backgroundColor = "yellow";
+    let emptyCartText = document.querySelector("empty-cart-text");
+    enptyCartText.style.display = "block";
+  } else if (cartItems.children.length >= 1) {
+    document.body.style.backgroundColor = "violet";
+    let emptyCartText = document.querySelector("empty-cart-text");
+    enptyCartText.style.display = "none";
+  }
+}
+
 function updateCartIcon() {
   const numberOfItems = document.querySelector(".noOfItems");
   if (!numberOfItems) return; // Check if the element exists
@@ -1008,9 +1039,11 @@ function allNum() {
 }
 
 let input = document.getElementById("search");
-input.addEventListener("input", () => {
-  input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
-});
+if (input) {
+  input.addEventListener("input", () => {
+    input.value = input.value.replace(/[^a-zA-Z\s]/g, "");
+  });
+}
 
 function findItem() {
   let searchInput = document.getElementById("search");
@@ -1039,8 +1072,9 @@ paras.forEach((para) => {
   });
 });
 let menuItem = document.querySelector(".menu-item");
-
-menuItem.addEventListener("click", showDropNav);
+if (menuItem) {
+  menuItem.addEventListener("click", showDropNav);
+}
 
 function showDropNav() {
   let dropNav = document.querySelector(".drop-nav");

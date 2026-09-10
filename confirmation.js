@@ -20,6 +20,38 @@ document.addEventListener("DOMContentLoaded", () => {
     let successMessage = document.querySelector(".success");
     successMessage.innerHTML = `Thank you ${savedUserFirstName} , your order is now placed`;
   }
+
+  let savedCardNumber = localStorage.getItem("card-digits");
+  let displayCardNumber = document.querySelector(".card-number-display");
+  if (savedCardNumber) {
+    console.log(savedCardNumber);
+
+    let formattedNumber = savedCardNumber.toString();
+    console.log(formattedNumber);
+    let lastFourDigits = formattedNumber.slice(-4);
+    if (formattedNumber.charAt(0) === 4) {
+      displayCardNumber.innerHTML = `Payment method: visa*** ${lastFourDigits}`;
+    }
+    if (
+      ((formattedNumber.charAt(0) === "3" &&
+        formattedNumber.charAt(1) === "4") ||
+        (formattedNumber.charAt(0) === "3" &&
+          formattedNumber.charAt(1) === "7")) &&
+      formattedNumber.length === 15
+    ) {
+      displayCardNumber.innerHTML = `Payment method: amex*** ${lastFourDigits}`;
+    }
+    let sixFirstDigits = formattedNumber.slice(0, 6);
+    let firstTwoDigits = formattedNumber.slice(0, 2);
+    if (
+      ((firstTwoDigits >= "51" && firstTwoDigits <= "55") ||
+        (sixFirstDigits >= "222100" && sixFirstDigits <= "272099")) &&
+      formattedNumber.length === 16
+    ) {
+      displayCardNumber.innerHTML = `Payment method: mastercard*** ${lastFourDigits}`;
+    }
+  }
+
   let savedUserPhone = localStorage.getItem("phone");
   if (savedUserPhone) {
     let phoneNum = document.querySelector(".phone-display");
