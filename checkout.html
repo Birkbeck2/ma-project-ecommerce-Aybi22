@@ -66,7 +66,9 @@
 </div>
 <div>
 <label for="phone">Phone number</label>
-<input type="text" name="phone" class="phone"  required>
+<input type="text" name="phone" class="phone"  required
+inputmode="numeric" pattern="[0-9]*"
+>
 </div>
 <div class="expand">
    
@@ -120,7 +122,8 @@
 <div class="form-info">
 <p class="span-input">
 <label for="card-num">card number:</label>
-<input type="text" class="card-num" id="card-num" required>
+<input type="text" class="card-num" id="card-num" required minlength="15" 
+inputmode="numeric" pattern="[0-9]*">
 
 </p>
 </div>
@@ -132,7 +135,10 @@
 </p>
 <p>
 <label for="code">CVV:</label>
-<input type="text" class="code" id="code" required>
+<input type="text" class="code" id="code" required  minlength="3"  maxlength="4"
+inputmode="numeric" pattern="[0-9]*"
+
+>
 
 </p>
 </div>
