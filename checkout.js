@@ -106,7 +106,14 @@ function updateOrderTotal() {
   OrderSumTotal.innerHTML = `<span>Total</span>
   <span class="amount">£${formatted}</span>`;
 }
-
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".paypal")) {
+    let paypalForm = document.querySelector(".paypal-form");
+    if (paypalForm) {
+      paypalForm.style.display = "block";
+    }
+  }
+});
 document.addEventListener("DOMContentLoaded", () => {
   let placeBtn = document.querySelector(".cart-btn.place-btn");
 
