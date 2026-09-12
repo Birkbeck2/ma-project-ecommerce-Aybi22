@@ -36,7 +36,7 @@
 
 <body>
 <div id="app"></div>
-    <h1 class="checkout-title">checkout</h1>
+    
 <p class="checkout-text">Review your order and enter your billing details to complete your purchase.</p>
     <section class="checkout-container">
 
@@ -151,8 +151,26 @@ inputmode="numeric" pattern="[0-9]*"
 </p>
 
 </form>
+<div class="delivery-options">
+    <p>Please choose an option before checking out</p>
+
+    
+  <p>     
+<input type="radio" class="delivery" name="delivery">
+<p>Delivery<span class="fee">£3.99</span></p>
+  </p>
+<p>
+<input type="radio" class="collect" name="delivery">
+<p>Click & Collect<span class="fee">Free</p>
+
+
 
 </div>
+</div>
+
+
+
+
 <div class="paypal-form" style="display: none;">
 <p>
 <label for="email">Email:</label>
@@ -169,6 +187,9 @@ inputmode="numeric" pattern="[0-9]*"
 
 <div class="summary-buttons">
 <button type="submit" class="cart-btn place-btn " id="placeOrder">Place order</button>
+<button type="submit" class="cart-btn place-btn paypal" id="placeOrder">Pay with paypal</button>
+<button type="submit" class="cart-btn place-btn klarna" id="placeOrder"><span class="klarna-text">Pay with klarna</span></button>
+
 <a href="Shoplist.html" class="cart-btn shop">back to shopping</a>
 </div>
 
@@ -181,16 +202,50 @@ inputmode="numeric" pattern="[0-9]*"
 
 </article>
 
-    
+    <div class="recap-wrapper">
 <article class="recap-container">
     <h2>Order summary</h2>
 
 
 <div class="sum-container">
 </div>
-<p class="order-total"></p>
+<div class="total-section">
+<p class="order-sub-total"></p>
+<p class="delivery-fee">Delivery/Click & Collect</p>
+<p class="order-sum-total"></p>
+</div>
+</article>
+
+<article class="order-info">
+    <div>
+<p class="order-info-title"><i class="fa-solid fa-right-left"></i>3-months return</h3>
+<p>return or exchange your items up to six months after receiving them.</p>
+
+</div>
+
+<div>
+<p class="order-info-title"><i class="fa-solid fa-truck"></i>Delivery </h3>
+<p>Free delivery for all first purchase and next day delivery also available
+    if purchase is made before 3PM
+</p>
+</div>
+
+<div>
+<p class="order-info-title"><i class="fa-solid fa-phone"></i>Contact</h3>
+<p>Do you have some issues with your order? Do not hesitate to contact us:00 222 444 555</p>
+</p>
+</article>
+
 
 </article>
+
+</div>
+
+
+
+</article>
+
+
 </section>
  <footer>
         

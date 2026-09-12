@@ -40,10 +40,6 @@ function orderRecap() {
 <div class='item-size'> color: ${product.chosenColor}</div>
 <div class='recap-quantity'>Quantity: ${product.quantity}</div>
 <div class='recap-price'> £${product.price * product.quantity}</div>
-
-
-
-
 </div>
   </div>
   </div>
@@ -95,8 +91,8 @@ function removeSavedItems(productId) {
 }
 
 function updateOrderTotal() {
-  let OrderTotal = document.querySelector(".order-total");
-
+  let OrderSubTotal = document.querySelector(".order-sub-total");
+  let OrderSumTotal = document.querySelector(".order-sum-total");
   let reduceSum = savedCart.reduce((currentTotal, product) => {
     return currentTotal + product.price * product.quantity;
   }, 0);
@@ -105,8 +101,10 @@ function updateOrderTotal() {
     minimumFractionDigits: 0,
     maximumFractionDigits: 2,
   });
-  OrderTotal.innerHTML = `  <p>Total:</p> 
-  <p class="amount">£${formatted}</p>`;
+  OrderSubTotal.innerHTML = `<span>SubTotal</span>
+  <span class="amount">£${formatted}</span>`;
+  OrderSumTotal.innerHTML = `<span>Total</span>
+  <span class="amount">£${formatted}</span>`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -125,7 +123,6 @@ console.log(debitForm);
 
 document.querySelector(".cart-btn.place-btn").addEventListener("click", () => {
   if (billingForm.checkValidity() && debitForm.checkValidity()) {
-    document.body.style.backgroundColor = "pink";
     window.location.href = "confirmation.html";
   } else {
     billingForm.reportValidity();
