@@ -106,14 +106,17 @@ function updateOrderTotal() {
   OrderSumTotal.innerHTML = `<span>Total</span>
   <span class="amount">£${formatted}</span>`;
 }
-document.addEventListener("click", (e) => {
-  if (e.target.closest(".paypal")) {
-    let paypalForm = document.querySelector(".paypal-form");
+window.addEventListener("click", (e) => {
+  let paypalForm = document.querySelector(".paypal-form");
+  if (e.target.closest(".paypal-form") || e.target.closest(".paypal")) {
     if (paypalForm) {
       paypalForm.style.display = "block";
     }
+  } else {
+    paypalForm.style.display = "none";
   }
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   let placeBtn = document.querySelector(".cart-btn.place-btn");
 
