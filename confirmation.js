@@ -79,6 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let postCodeDisplay = document.querySelector(".postcode-display");
     postCodeDisplay.innerHTML = `Postcode: <span>${savedUserPostCode}</span>`;
   }
+  let savedPayOption = localStorage.getItem("paypal-option");
+  if (savedPayOption) {
+    let displayCardNumbercard = document.querySelector(".card-num-display");
+    displayCardNumber.innerHTML = ` Payment method: ${savedPayOption}`;
+  }
 });
 function getUserData() {
   let savedData = JSON.parse(localStorage.getItem("userData"));

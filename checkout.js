@@ -106,17 +106,23 @@ function updateOrderTotal() {
   OrderSumTotal.innerHTML = `<span>Total</span>
   <span class="amount">£${formatted}</span>`;
 }
+let billingForm = document.getElementById("billing-form");
+console.log(billingForm);
+let debitForm = document.getElementById("debit-form");
+console.log(debitForm);
 window.addEventListener("click", (e) => {
   let paypalForm = document.querySelector(".paypal-form");
-  if (e.target.closest(".paypal-form") || e.target.closest(".paypal")) {
-    if (paypalForm) {
-      paypalForm.style.display = "block";
-    }
+  if (
+    (e.target.closest(".paypal-form") || e.target.closest(".paypal")) &&
+    billingForm.checkValidity()
+  ) {
+    paypalForm.style.display = "block";
   } else {
     paypalForm.style.display = "none";
+    billingForm.reportValidity();
   }
 });
-
+/*
 document.addEventListener("DOMContentLoaded", () => {
   let placeBtn = document.querySelector(".cart-btn.place-btn");
 
@@ -125,11 +131,16 @@ document.addEventListener("DOMContentLoaded", () => {
   placeBtn.addEventListener("click", orderTiming);
   placeBtn.addEventListener("click", orderRecap);
 });
+*/
 
-let billingForm = document.getElementById("billing-form");
-console.log(billingForm);
-let debitForm = document.getElementById("debit-form");
-console.log(debitForm);
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".place-btn") || e.target.closest(".modal-btn")) {
+    saveUserData();
+    orderDate();
+    orderTiming();
+    orderRecap();
+  }
+});
 
 document.querySelector(".cart-btn.place-btn").addEventListener("click", () => {
   if (billingForm.checkValidity() && debitForm.checkValidity()) {
@@ -139,6 +150,16 @@ document.querySelector(".cart-btn.place-btn").addEventListener("click", () => {
     debitForm.reportValidity();
   }
 });
+document.addEventListener("click", (e) => {
+  let paypalForm = document.querySelector(".paypal-form");
+  let formTitle = document.querySelector(".form-title");
+  if (e.target.closest(".modal-btn") && paypalForm.checkValidity()) {
+    localStorage.setItem("paypal-option", formTitle.textContent);
+    e.preventDefault();
+    window.location.href = "confirmation.html";
+  }
+});
+
 /*
 function clearCart() {
   setTimeout(() => {
