@@ -3697,7 +3697,7 @@ a.cart-btn.place-btn.disabled{
     padding:1rem;
 }
 .cart-btn.place-btn.klarna{
-    background:pink;
+    background:black;
 }
 .cart-btn.place-btn.paypal{
     background:#0070BA;
@@ -3766,8 +3766,8 @@ padding:1.5rem;
 }
 
 .klarna-text{
-    background:black;
-    color:#fff;
+    background:pink;
+    color:black;
     padding:0.6rem;
     border-radius:12px;
     max-width:200px;
