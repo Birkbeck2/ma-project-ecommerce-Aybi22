@@ -122,6 +122,20 @@ window.addEventListener("click", (e) => {
     billingForm.reportValidity();
   }
 });
+
+window.addEventListener("click", (e) => {
+  let klarnaForm = document.querySelector(".klarna-form");
+  if (
+    (e.target.closest(".klarna-form") || e.target.closest(".klarna")) &&
+    billingForm.checkValidity()
+  ) {
+    klarnaForm.style.display = "block";
+  } else {
+    klarnaForm.style.display = "none";
+    billingForm.reportValidity();
+  }
+});
+
 /*
 document.addEventListener("DOMContentLoaded", () => {
   let placeBtn = document.querySelector(".cart-btn.place-btn");
@@ -160,6 +174,15 @@ document.addEventListener("click", (e) => {
   }
 });
 
+document.addEventListener("click", (e) => {
+  let klarnaForm = document.querySelector(".klarna-form");
+  let KlarnaFormTitle = document.querySelector(".klarna-form-title");
+  if (e.target.closest(".klarna-btn") && paypalForm.checkValidity()) {
+    localStorage.setItem("klarna-option", KlarnaFormTitle.textContent);
+    e.preventDefault();
+    window.location.href = "confirmation.html";
+  }
+});
 /*
 function clearCart() {
   setTimeout(() => {

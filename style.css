@@ -1053,7 +1053,7 @@ width:100%;
 .paypal-form label{
     width:100px;
 }
-.paypal-form input{
+.paypal-form input, .klarna-form input{
     padding:0.6rem;
     width:300px;
     margin-bottom: 1rem;
@@ -3712,7 +3712,22 @@ a.cart-btn.place-btn.disabled{
     background:lightgrey;
     padding:1rem;
 }
-.paypal-form{
+.klarna-infos p{
+    color:#ccc;
+    font-size:0.9rem;
+   
+}
+.klarna-form-title{
+    display:inline-block;
+    font-weight:800;
+    text-align:center;
+    background:pink;
+    margin: 1rem auto;
+    font-size:1.5rem;
+    color:black;
+    padding:0.5rem;
+}
+.paypal-form, .klarna-form{
     background:white;
      box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.4);
      padding:1rem;
@@ -3727,12 +3742,15 @@ a.cart-btn.place-btn.disabled{
    
       transition:all 0.3s;
 }
-.paypal-form-content{
+.paypal-form-content, .klarna-form-content{
     display:flex;
     flex-direction: column;
     gap:1rem;
     align-items:center;
     padding:1rem;
+}
+.klarna-form{
+    height:auto;
 }
 .form-title{
     font-size:2rem;
@@ -3755,7 +3773,7 @@ a.cart-btn.place-btn.disabled{
     color:#0070BA;
     
 }
-.paypal-form input{
+.paypal-form input, .klarna-form input{
 width:480px!important;
 width:100%;
 padding:1.5rem;
@@ -3773,6 +3791,14 @@ padding:1.5rem;
     max-width:200px;
     width:100%;
    
+}
+.klarna-form{
+ 
+}
+.klarna-form .form-title{
+    background:pink;
+    color:black;
+    padding:0.5rem;
 }
 .form-content{
     max-width:100%;
