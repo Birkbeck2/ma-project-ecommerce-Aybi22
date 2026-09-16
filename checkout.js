@@ -211,6 +211,22 @@ function clearCart() {
 }
   */
 
+document.addEventListener("click", (e) => {
+  let deliveryDisplay = document.querySelector(".delivery-fee");
+  let shippingFee = document.querySelector(".shipping-fee");
+  let collectionFee = document.querySelector(".collection-fee");
+  let clicked = e.target;
+  if (clicked.closest(".delivery")) {
+    deliveryDisplay.innerHTML = `<span>${clicked.className}</span>
+  <span class="amount">${shippingFee.textContent}</span>`;
+    localStorage.setItem("deliver-option", clicked.className);
+  } else if (e.target.closest(".collection")) {
+    deliveryDisplay.innerHTML = `<span>${clicked.className}</span>
+  <span class="amount">${collectionFee.textContent}</span>`;
+    localStorage.setItem("collect-option", clicked.className);
+  }
+});
+
 function orderDate() {
   let today = new Date();
   let formattedHour;

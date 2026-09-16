@@ -4043,13 +4043,16 @@ p {
     padding:1rem;
 
 }
-.order-sub-total,.order-sum-total{
+.order-sub-total,.order-sum-total, .delivery-fee{
   
     display:flex;
    justify-content:space-between;
 }
 .total-section p{
    
+}
+.total-section span{
+    text-transform:capitalize;
 }
 .recap-items {
     display: flex;

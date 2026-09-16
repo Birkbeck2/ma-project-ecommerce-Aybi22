@@ -10,6 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  let deliveryOptionDisplay = document.querySelector(
+    ".delivery-option-display",
+  );
+  let savedDeliveryOption = localStorage.getItem("deliver-option");
+  if (savedDeliveryOption) {
+    deliveryOptionDisplay.innerHTML = ` Shipping method: ${savedDeliveryOption}`;
+  }
+
+  let savedCollectionOption = localStorage.getItem("collect-option");
+  if (savedCollectionOption) {
+    deliveryOptionDisplay.innerHTML = `Shipping method: ${savedCollectionOption}`;
+  }
   let savedUserFirstName = localStorage.getItem("firstname");
   console.log(savedUserFirstName);
   if (savedUserFirstName) {
