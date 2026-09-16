@@ -23,8 +23,20 @@ function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
   let selectedSize = localStorage.getItem("selectedSize");
   let chosenColor = localStorage.getItem("color");
+  let className;
+
   sumContainer.innerHTML = savedCart
     .map((product) => {
+      /*
+      if (product.chosenColor) {
+        className = "show-chosen-color";
+      } else {
+        className = "hide-chosen-color";
+      }
+     */
+      let className = product.chosenColor
+        ? "show-chosen-color"
+        : "hide-chosen-color";
       return `
   
   <div class="product-recap" data-id='${product.id}'>
@@ -37,7 +49,7 @@ function orderRecap() {
           <div class="recap-infos">
 <div class='recap-name'>${product.name}</div>
 <div class='item-size'> size: ${product.selectedSize}</div>
-<div class='item-size'> color: ${product.chosenColor}</div>
+<div class="item-color ${className}"> color: ${product.chosenColor}</div>
 <div class='recap-quantity'>Quantity: ${product.quantity}</div>
 <div class='recap-price'> £${product.price * product.quantity}</div>
 </div>
@@ -126,7 +138,7 @@ window.addEventListener("click", (e) => {
 window.addEventListener("click", (e) => {
   let klarnaForm = document.querySelector(".klarna-form");
   if (
-    (e.target.closest(".klarna-form") || e.target.closest(".klarna")) &&
+    (e.target.closest(".klarna-form") || e.target.closest(".klarna-btn")) &&
     billingForm.checkValidity()
   ) {
     klarnaForm.style.display = "block";
@@ -177,7 +189,7 @@ document.addEventListener("click", (e) => {
 document.addEventListener("click", (e) => {
   let klarnaForm = document.querySelector(".klarna-form");
   let KlarnaFormTitle = document.querySelector(".klarna-form-title");
-  if (e.target.closest(".klarna-btn") && paypalForm.checkValidity()) {
+  if (e.target.closest(".klarna-btn") && klarnaForm.checkValidity()) {
     localStorage.setItem("klarna-option", KlarnaFormTitle.textContent);
     e.preventDefault();
     window.location.href = "confirmation.html";
