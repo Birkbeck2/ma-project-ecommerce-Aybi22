@@ -128,7 +128,6 @@ let savedDeliveryTotal = localStorage.getItem("delivery-total");
 let savedCollectionTotal = localStorage.getItem("collection-total");
 if (savedDeliveryTotal) {
   savedCollectionTotal = "";
-  document.body.style.backgroundColor = "orange";
 
   let allTotal = document.querySelector(".purchase-total");
   console.log(allTotal);
