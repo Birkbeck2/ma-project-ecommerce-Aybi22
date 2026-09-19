@@ -9,116 +9,154 @@ document.addEventListener("DOMContentLoaded", () => {
   createOrderNumber();
 });
 
+/*
 document.addEventListener("DOMContentLoaded", () => {
-  let deliveryOptionDisplay = document.querySelector(
-    ".delivery-option-display",
-  );
-  let savedDeliveryOption = localStorage.getItem("deliver-option");
   if (savedDeliveryOption) {
-    deliveryOptionDisplay.innerHTML = ` Shipping method: ${savedDeliveryOption}`;
-  }
-
-  let savedCollectionOption = localStorage.getItem("collect-option");
-  if (savedCollectionOption) {
-    deliveryOptionDisplay.innerHTML = `Shipping method: ${savedCollectionOption}`;
-  }
-  let savedUserFirstName = localStorage.getItem("firstname");
-  console.log(savedUserFirstName);
-  if (savedUserFirstName) {
-    let firstNameDisplay = document.querySelector(".first-name-display");
-    console.log(savedUserFirstName);
-    firstNameDisplay.innerHTML = `Firstname: <span class="user-firstname"> ${savedUserFirstName}</span>`;
-
-    let successMessage = document.querySelector(".success");
-    successMessage.innerHTML = `Thank you ${savedUserFirstName} , your order is now placed`;
-  }
-
-  let savedUserPhone = localStorage.getItem("phone");
-  if (savedUserPhone) {
-    let phoneNum = document.querySelector(".phone-display");
-    phoneNum.innerHTML = `Telephone number: <span>${savedUserPhone}</span>`;
-  }
-  let savedUserEmail = localStorage.getItem("email");
-  if (savedUserEmail) {
-    let emailDisplay = document.querySelector(".email-display");
-    emailDisplay.innerHTML = `Email: <span> ${savedUserEmail}</span>`;
-  }
-  let savedUserLastName = localStorage.getItem("lastname");
-  if (savedUserLastName) {
-    let lastNameDisplay = document.querySelector(".last-name-display");
-    lastNameDisplay.innerHTML = `Lastname: <span class="user-surname">${savedUserLastName}</span>`;
-  }
-
-  let savedUserAddress = localStorage.getItem("address");
-  if (savedUserAddress) {
-    let addressDisplay = document.querySelector(".address-display");
-    addressDisplay.innerHTML = `Address: <span>${savedUserAddress}</span>`;
-  }
-
-  let savedUserPostCode = localStorage.getItem("postcode");
-  if (savedUserPostCode) {
-    let postCodeDisplay = document.querySelector(".postcode-display");
-    postCodeDisplay.innerHTML = `Postcode: <span>${savedUserPostCode}</span>`;
-  }
-
-  let savedKlarnaOption = localStorage.getItem("klarna-option");
-  let savedPaypalOption = localStorage.getItem("paypal-option");
-  let savedCardNumber = localStorage.getItem("card-digits");
-  if (savedCardNumber) {
-    console.log(savedCardNumber);
-
-    let formattedNumber = savedCardNumber.toString();
-    console.log(formattedNumber);
-    let lastFourDigits = formattedNumber.slice(-4);
-    if (formattedNumber.charAt(0) === 4) {
-      let displayCardNumber = document.querySelector(".card-number-display");
-      displayCardNumber.innerHTML = `Payment method: visa*** ${lastFourDigits}`;
-    }
-    if (
-      ((formattedNumber.charAt(0) === "3" &&
-        formattedNumber.charAt(1) === "4") ||
-        (formattedNumber.charAt(0) === "3" &&
-          formattedNumber.charAt(1) === "7")) &&
-      formattedNumber.length === 15
-    ) {
-      let displayCardNumber = document.querySelector(".card-number-display");
-      displayCardNumber.innerHTML = `Payment method: amex*** ${lastFourDigits}`;
-    }
-    let sixFirstDigits = formattedNumber.slice(0, 6);
-    let firstTwoDigits = formattedNumber.slice(0, 2);
-    if (
-      ((firstTwoDigits >= "51" && firstTwoDigits <= "55") ||
-        (sixFirstDigits >= "222100" && sixFirstDigits <= "272099")) &&
-      formattedNumber.length === 16
-    ) {
-      let displayCardNumber = document.querySelector(".card-number-display");
-      displayCardNumber.innerHTML = `Payment method: mastercard*** ${lastFourDigits}`;
-    }
-  } else if (savedPaypalOption) {
-    localStorage.removeItem("klarna-option");
-    let displayCardNumber = document.querySelector(".card-number-display");
-    displayCardNumber.innerHTML = ` Payment method: ${savedPaypalOption}`;
-  } else if (savedKlarnaOption) {
-    localStorage.removeItem("paypal-option");
-    let displayCardNumber = document.querySelector(".card-number-display");
-
-    displayCardNumber.innerHTML = ` Payment method: ${savedKlarnaOption}`;
+    localStorage.removeItem("collect-option");
+  } else if (savedCollectionOption) {
+    localStorage.removeItem("deliver-option");
   }
 });
+*/
+
+let savedCollectionAmount = localStorage.getItem("collection-amount");
+let savedDeliveryAmount = localStorage.getItem("delivery-amount");
+let shippingAmountDisplay = document.querySelector(".delivery-option-fee");
+if (savedDeliveryAmount && shippingAmountDisplay) {
+  shippingAmountDisplay.innerHTML = `<span>Shipping fee:</span>£${savedDeliveryAmount}`;
+} else if (savedCollectionAmount && shippingAmountDisplay) {
+  let shippingAmountDisplay = document.querySelector(".delivery-option-fee");
+
+  shippingAmountDisplay.innerHTML = `<span>Shipping fee:</span> £${savedCollectionAmount}`;
+}
+
+let deliveryOptionDisplay = document.querySelector(".delivery-option-display");
+
+let savedDeliveryOption = localStorage.getItem("deliver-option");
+let savedCollectionOption = localStorage.getItem("collect-option");
+if (savedDeliveryOption) {
+  savedCollectionOption = "";
+  deliveryOptionDisplay.innerHTML = `<span> Shipping method:</span> ${savedDeliveryOption}`;
+} else if (savedCollectionOption) {
+  savedDeliveryOption = "";
+  deliveryOptionDisplay.innerHTML = `<span>Shipping method:</span> ${savedCollectionOption}`;
+}
+let savedUserFirstName = localStorage.getItem("firstname");
+console.log(savedUserFirstName);
+if (savedUserFirstName) {
+  let firstNameDisplay = document.querySelector(".first-name-display");
+  console.log(savedUserFirstName);
+  firstNameDisplay.innerHTML = `Firstname: <span class="user-firstname"> ${savedUserFirstName}</span>`;
+
+  let successMessage = document.querySelector(".success");
+  successMessage.innerHTML = `Thank you ${savedUserFirstName} , your order is now placed`;
+}
+
+let savedUserPhone = localStorage.getItem("phone");
+if (savedUserPhone) {
+  let phoneNum = document.querySelector(".phone-display");
+  phoneNum.innerHTML = `Telephone number: <span>${savedUserPhone}</span>`;
+}
+let savedUserEmail = localStorage.getItem("email");
+if (savedUserEmail) {
+  let emailDisplay = document.querySelector(".email-display");
+  emailDisplay.innerHTML = `Email: <span> ${savedUserEmail}</span>`;
+}
+let savedUserLastName = localStorage.getItem("lastname");
+if (savedUserLastName) {
+  let lastNameDisplay = document.querySelector(".last-name-display");
+  lastNameDisplay.innerHTML = `Lastname: <span class="user-surname">${savedUserLastName}</span>`;
+}
+
+let savedUserAddress = localStorage.getItem("address");
+if (savedUserAddress) {
+  let addressDisplay = document.querySelector(".address-display");
+  addressDisplay.innerHTML = `Address: <span>${savedUserAddress}</span>`;
+}
+
+let savedUserPostCode = localStorage.getItem("postcode");
+if (savedUserPostCode) {
+  let postCodeDisplay = document.querySelector(".postcode-display");
+  postCodeDisplay.innerHTML = `Postcode: <span>${savedUserPostCode}</span>`;
+}
+
+let savedKlarnaOption = localStorage.getItem("klarna-option");
+let savedPaypalOption = localStorage.getItem("paypal-option");
+let savedCardNumber = localStorage.getItem("card-digits");
+if (savedCardNumber) {
+  console.log(savedCardNumber);
+
+  let formattedNumber = savedCardNumber.toString();
+  console.log(formattedNumber);
+  let lastFourDigits = formattedNumber.slice(-4);
+  if (formattedNumber.charAt(0) === 4) {
+    let displayCardNumber = document.querySelector(".card-number-display");
+    displayCardNumber.innerHTML = `<span>Payment method:</span> visa*** ${lastFourDigits}`;
+  }
+  if (
+    ((formattedNumber.charAt(0) === "3" && formattedNumber.charAt(1) === "4") ||
+      (formattedNumber.charAt(0) === "3" &&
+        formattedNumber.charAt(1) === "7")) &&
+    formattedNumber.length === 15
+  ) {
+    let displayCardNumber = document.querySelector(".card-number-display");
+    displayCardNumber.innerHTML = `<span>Payment method:</span> amex*** ${lastFourDigits}`;
+  }
+  let sixFirstDigits = formattedNumber.slice(0, 6);
+  let firstTwoDigits = formattedNumber.slice(0, 2);
+  if (
+    ((firstTwoDigits >= "51" && firstTwoDigits <= "55") ||
+      (sixFirstDigits >= "222100" && sixFirstDigits <= "272099")) &&
+    formattedNumber.length === 16
+  ) {
+    let displayCardNumber = document.querySelector(".card-number-display");
+    displayCardNumber.innerHTML = `<span>Payment method:</span> mastercard*** ${lastFourDigits}`;
+  }
+  let savedPaypalOption = localStorage.getItem("paypal-option");
+} else if (savedPaypalOption) {
+  localStorage.removeItem("klarna-option");
+  let displayCardNumber = document.querySelector(".card-number-display");
+  displayCardNumber.innerHTML = `<span> Payment method:</span> ${savedPaypalOption}`;
+} else if (savedKlarnaOption) {
+  localStorage.removeItem("paypal-option");
+  let displayCardNumber = document.querySelector(".card-number-display");
+
+  displayCardNumber.innerHTML = ` <span>Payment method:</span> ${savedKlarnaOption}`;
+}
+
+let savedDeliveryTotal = localStorage.getItem("delivery-total");
+let savedCollectionTotal = localStorage.getItem("collection-total");
+if (savedDeliveryTotal) {
+  savedCollectionTotal = "";
+  document.body.style.backgroundColor = "orange";
+
+  let allTotal = document.querySelector(".purchase-total");
+  console.log(allTotal);
+  allTotal.innerHTML = `<span>Total:</span>£${savedDeliveryTotal}`;
+} else if (savedCollectionTotal) {
+  savedDeliveryOption = "";
+
+  let allTotal = document.querySelector(".purchase-total");
+  allTotal.innerHTML = `<span>Total:</span> £${savedCollectionTotal}`;
+  savedCollectionTotal = "";
+}
+let savedTiming = localStorage.getItem("orderSlot");
+console.log(savedTiming);
+let orderNum = document.querySelector(".ordernum-display");
+console.log(orderNum);
+if (savedTiming) {
+  orderNum.innerHTML = `<span>Order number:</span> ORD-${savedTiming.replaceAll(":", "")}`;
+}
+let savedDate = localStorage.getItem("orderTime");
+let dateDisplay = document.querySelector(".date-display");
+if (savedDate) {
+  dateDisplay.innerHTML = `<span>Order Date:</span> ${savedDate}`;
+}
+
 function getUserData() {
   let savedData = JSON.parse(localStorage.getItem("userData"));
   if (savedData) {
     console.log(savedData);
-  }
-}
-
-function createOrderNumber() {
-  let savedTiming = localStorage.getItem("orderSlot");
-  console.log(savedTiming);
-  let orderNum = document.querySelector(".ordernum-display");
-  console.log(orderNum);
-  if (savedTiming) {
-    orderNum.textContent += `Order number: ORD-${savedTiming.replaceAll(":", "")}`;
   }
 }
 
@@ -134,7 +172,7 @@ function updateOrderTotal() {
     maximumFractionDigits: 2,
   });
 
-  totalCost.innerHTML = `  Total: <span class="amount">£${formatted}</span>`;
+  totalCost.innerHTML = `  <span>SubTotal:</span> £${formatted}`;
 }
 
 function confirmedOrder() {
@@ -184,12 +222,23 @@ document.addEventListener("DOMContentLoaded", () => {
 function printOrder() {
   window.print();
 }
+
+/*
 function displayOrderTime() {
   let savedDate = localStorage.getItem("orderTime");
   let dateDisplay = document.querySelector(".date-display");
   if (savedDate) {
-    dateDisplay.textContent = `Order Date: ${savedDate}`;
+    dateDisplay.innerHTML = `<span>Order Date:</span> ${savedDate}`;
   }
 }
-
+displayOrderTime();
+*/
+/*
+let returnCartBtn = document.querySelector(".cart-btn.back");
+console.log(returnCartBtn);
+returnCartBtn.addEventListener("click", (e) => {
+  localStorage.clear();
+});
+*/
+localStorage.clear();
 localStorage.removeItem("cart");

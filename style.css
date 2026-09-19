@@ -122,7 +122,7 @@ li.mail {
 }
 
 .date-display {
-    text-align: center;
+ 
 }
 
 .circle {
@@ -4007,8 +4007,15 @@ p {
 }
 
 .total-cost {
-    text-align: center;
+    
 
+}
+.confirmation-details p{
+    display:flex;
+}
+.confirmation-details span{
+    width:150px;
+    
 }
 
 .total {

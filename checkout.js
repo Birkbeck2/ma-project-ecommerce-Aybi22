@@ -102,19 +102,24 @@ function removeSavedItems(productId) {
   }
 }
 
+let reduceSum = savedCart.reduce((currentTotal, product) => {
+  return currentTotal + product.price * product.quantity;
+}, 0);
+
 function updateOrderTotal() {
   let OrderSubTotal = document.querySelector(".order-sub-total");
   let OrderSumTotal = document.querySelector(".order-sum-total");
   let reduceSum = savedCart.reduce((currentTotal, product) => {
     return currentTotal + product.price * product.quantity;
   }, 0);
-
   let formatted = reduceSum.toLocaleString("en-GB", {
     minimumFractionDigits: 0,
     maximumFractionDigits: 2,
   });
+
   OrderSubTotal.innerHTML = `<span>SubTotal</span>
   <span class="amount">£${formatted}</span>`;
+  localStorage.getItem("sub-total", formatted);
   OrderSumTotal.innerHTML = `<span>Total</span>
   <span class="amount">£${formatted}</span>`;
 }
@@ -212,6 +217,9 @@ function clearCart() {
   */
 
 document.addEventListener("click", (e) => {
+  let reduceSum = savedCart.reduce((currentTotal, product) => {
+    return currentTotal + product.price * product.quantity;
+  }, 0);
   let deliveryDisplay = document.querySelector(".delivery-fee");
   let shippingFee = document.querySelector(".shipping-fee");
   let collectionFee = document.querySelector(".collection-fee");
@@ -219,11 +227,40 @@ document.addEventListener("click", (e) => {
   if (clicked.closest(".delivery")) {
     deliveryDisplay.innerHTML = `<span>${clicked.className}</span>
   <span class="amount">${shippingFee.textContent}</span>`;
+
+    let deliveryAmount = Number(shippingFee.textContent);
+    localStorage.setItem("delivery-amount", deliveryAmount);
+    let OrderSumTotal = document.querySelector(".order-sum-total");
+
+    console.log(deliveryAmount);
+
+    let totalFormatted = reduceSum + Number(deliveryAmount);
+    let formatted = totalFormatted.toLocaleString("en-GB", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2,
+    });
+    OrderSumTotal.innerHTML = `<span>Total</span>
+  <span class="amount">£${formatted}</span>`;
+    localStorage.setItem("delivery-total", formatted);
+
     localStorage.setItem("deliver-option", clicked.className);
   } else if (e.target.closest(".collection")) {
     deliveryDisplay.innerHTML = `<span>${clicked.className}</span>
   <span class="amount">${collectionFee.textContent}</span>`;
     localStorage.setItem("collect-option", clicked.className);
+    let collectionAmount = Number(collectionFee.textContent);
+    localStorage.setItem("collection-amount", collectionAmount);
+    let totalFormatted = reduceSum + Number(collectionAmount);
+    console.log(totalFormatted);
+    let formatted = totalFormatted.toLocaleString("en-GB", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 2,
+    });
+    let OrderSumTotal = document.querySelector(".order-sum-total");
+
+    OrderSumTotal.innerHTML = `<span>Total</span>
+  <span class="amount">£${formatted}</span>`;
+    localStorage.setItem("collection-total", formatted);
   }
 });
 
