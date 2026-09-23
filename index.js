@@ -1080,3 +1080,59 @@ function showDropNav() {
   let dropNav = document.querySelector(".drop-nav");
   dropNav.classList.toggle("show-drop");
 }
+
+function counterProducer() {
+  let count = 0;
+
+  return {
+    firstCounter() {
+      return (count += 1);
+    },
+    secondCounter() {
+      return (count += 1);
+    },
+  };
+}
+
+const Counter1 = counterProducer();
+const Counter2 = counterProducer();
+console.log(Counter1.firstCounter());
+console.log(Counter1.firstCounter());
+console.log(Counter1.firstCounter());
+console.log(Counter1.firstCounter());
+console.log(Counter1.firstCounter());
+
+console.log(Counter2.secondCounter());
+console.log(Counter2.secondCounter());
+
+function bankAccount() {
+  let balance = 0;
+
+  return {
+    deposit(amount) {
+      return (balance += amount);
+    },
+
+    withdraw(amount) {
+      return (balance -= amount);
+    },
+    getBalance() {
+      return balance;
+    },
+  };
+}
+
+const user1 = bankAccount(); //Each time bankAccount() is called, a new private balance is created
+const user2 = bankAccount();
+user1.deposit(900);
+console.log("user1 balance", user1.getBalance());
+user1.withdraw(500);
+console.log("user1 balance", user1.getBalance());
+
+user2.deposit(1000);
+user2.withdraw(800);
+console.log("user2 balance", user2.getBalance());
+
+//One returned function remembers one private variable.
+
+//Multiple functions can share one private variable, and separate calls to the producer create separate private variables.

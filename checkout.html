@@ -97,9 +97,9 @@ inputmode="numeric" pattern="[0-9]*"
 
 
 
-<h3>payment option</h3>
+<h3>payment options</h3>
 <div class="pay-options"> 
-      <p class="cards-list">debit/ credit card</p>      
+      <p class="cards-list">Debit/Credit card</p>      
    
     
     <div class="visa-icon">
@@ -122,7 +122,7 @@ inputmode="numeric" pattern="[0-9]*"
 <div class="form-info">
 <p class="span-input">
 <label for="card-num">card number:</label>
-<input type="text" class="card-num" id="card-num" required minlength="15" 
+<input type="text" class="card-num  card-pic" id="card-num" required minlength="15" 
 inputmode="numeric" pattern="[0-9]*">
 
 </p>
@@ -155,26 +155,32 @@ inputmode="numeric" pattern="[0-9]*"
     <p>Please choose an option before checking out</p>
 
     
-  <p>     
-<input type="radio" class="delivery" name="delivery">
-<p>Delivery<span class="shipping-fee">4.95</span></p>
-  </p>
-<p>
-<input type="radio" class="collection" name="delivery">
-<p>Click & Collect<span class="collection-fee">0.00</p>
-
+   <div class="delivery-option">
+<input type="radio" class="delivery" name="delivery" value="delivery">
+<label for="delivery">Delivery<span class="shipping-fee">£4.95</span></label>
+ </div>
+<div class="delivery-option">
+<input type="radio" class="collection" name="delivery" value="collection">
+<label for="collection">Collection<span class="collection-fee">£0.00</span></label>
+</div>
 
 
 </div>
 </div>
-
+<p class="collection-message"> Collection is available in our store everyday from 10AM to 5PM.
+    Please come with a valid Id and your purchase receipt</p>
+</p>
 
 
 
 
 
 <div class="summary-buttons">
-<button type="submit" class="cart-btn place-btn " id="placeOrder">Place order</button>
+<button type="submit" class="cart-btn place-btn " id="placeOrder"><span class="pay-text">Pay with debit card </span>
+ 
+    
+
+</button>
 <button type="submit" class="cart-btn place-btn paypal" id="placeOrder">Pay with paypal</button>
 <button type="submit" class="cart-btn place-btn klarna-btn" id="placeOrder"><span class="klarna-text">Pay with klarna</span></button>
 

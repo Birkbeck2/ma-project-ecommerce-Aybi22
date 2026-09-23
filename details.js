@@ -316,6 +316,7 @@ const detail = () => {
         const productId = e.currentTarget.dataset.id;
 
         let thisProduct = products.find((product) => product.id == productId);
+
         if (thisProduct.hasColors && chosenColor) {
           coloredImage = thisProduct.colorImage[chosenColor];
         } else {

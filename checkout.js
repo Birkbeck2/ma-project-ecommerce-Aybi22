@@ -16,7 +16,7 @@ function blockOrder(e) {
   }
 }
   */
-
+let cardPic = document.querySelector(".card-pic");
 let sumContainer = document.querySelector(".sum-container");
 
 function orderRecap() {
@@ -119,7 +119,7 @@ function updateOrderTotal() {
 
   OrderSubTotal.innerHTML = `<span>SubTotal</span>
   <span class="amount">£${formatted}</span>`;
-  localStorage.getItem("sub-total", formatted);
+  localStorage.setItem("sub-total", formatted);
   OrderSumTotal.innerHTML = `<span>Total</span>
   <span class="amount">£${formatted}</span>`;
 }
@@ -181,6 +181,9 @@ document.querySelector(".cart-btn.place-btn").addEventListener("click", () => {
     debitForm.reportValidity();
   }
 });
+
+let savedKlarnaOption = localStorage.getItem("klarna-option");
+let savedCardNumber = localStorage.getItem("card-digits");
 document.addEventListener("click", (e) => {
   let paypalForm = document.querySelector(".paypal-form");
   let formTitle = document.querySelector(".form-title");
@@ -188,6 +191,7 @@ document.addEventListener("click", (e) => {
     localStorage.setItem("paypal-option", formTitle.textContent);
     e.preventDefault();
     window.location.href = "confirmation.html";
+    localStorage.removeItem("klarna-option");
   }
 });
 
@@ -196,8 +200,10 @@ document.addEventListener("click", (e) => {
   let KlarnaFormTitle = document.querySelector(".klarna-form-title");
   if (e.target.closest(".klarna-btn") && klarnaForm.checkValidity()) {
     localStorage.setItem("klarna-option", KlarnaFormTitle.textContent);
+
     e.preventDefault();
     window.location.href = "confirmation.html";
+    localStorage.removeItem("paypal-option");
   }
 });
 /*
@@ -215,7 +221,12 @@ function clearCart() {
   }, 5400);
 }
   */
-
+let savedCollectionAmount = localStorage.getItem("collection-amount");
+let savedDeliveryAmount = localStorage.getItem("delivery-amount");
+let savedDeliveryOption = localStorage.getItem("deliver-option");
+let savedCollectionOption = localStorage.getItem("collect-option");
+let savedDeliveryTotal = localStorage.getItem("delivery-total");
+let savedCollectionTotal = localStorage.getItem("collection-total");
 document.addEventListener("click", (e) => {
   let reduceSum = savedCart.reduce((currentTotal, product) => {
     return currentTotal + product.price * product.quantity;
@@ -225,10 +236,14 @@ document.addEventListener("click", (e) => {
   let collectionFee = document.querySelector(".collection-fee");
   let clicked = e.target;
   if (clicked.closest(".delivery")) {
+    localStorage.removeItem("collect-option");
+    localStorage.removeItem("collection-amount");
+    localStorage.removeItem("collection-total");
+
     deliveryDisplay.innerHTML = `<span>${clicked.className}</span>
   <span class="amount">${shippingFee.textContent}</span>`;
 
-    let deliveryAmount = Number(shippingFee.textContent);
+    let deliveryAmount = Number(shippingFee.textContent.replace("£", ""));
     localStorage.setItem("delivery-amount", deliveryAmount);
     let OrderSumTotal = document.querySelector(".order-sum-total");
 
@@ -245,10 +260,14 @@ document.addEventListener("click", (e) => {
 
     localStorage.setItem("deliver-option", clicked.className);
   } else if (e.target.closest(".collection")) {
+    localStorage.removeItem("deliver-option");
+    localStorage.removeItem("delivery-amount");
+
+    localStorage.removeItem("delivery-total");
     deliveryDisplay.innerHTML = `<span>${clicked.className}</span>
   <span class="amount">${collectionFee.textContent}</span>`;
     localStorage.setItem("collect-option", clicked.className);
-    let collectionAmount = Number(collectionFee.textContent);
+    let collectionAmount = Number(collectionFee.textContent.replace("£", ""));
     localStorage.setItem("collection-amount", collectionAmount);
     let totalFormatted = reduceSum + Number(collectionAmount);
     console.log(totalFormatted);
