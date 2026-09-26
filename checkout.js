@@ -18,15 +18,41 @@ function blockOrder(e) {
   */
 let cardPic = document.querySelector(".card-pic");
 let sumContainer = document.querySelector(".sum-container");
-
+let percentage;
+let itemDiscounted;
 function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
   let selectedSize = localStorage.getItem("selectedSize");
   let chosenColor = localStorage.getItem("color");
   let className;
-
   sumContainer.innerHTML = savedCart
     .map((product) => {
+      if (product.discounted == true && product.chosenColor) {
+        let thisPrice = product.price * product.quantity;
+        className = "show-discount-info slash show-chosen-color";
+        percentage = 50;
+        const discountedRate = showDiscount(percentage);
+
+        console.log(discountedRate);
+
+        itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
+      } else if (product.discounted == true && !product.chosenColor) {
+        className = "show-discount-info slash hide-chosen-color";
+        let thisPrice = product.price * product.quantity;
+        className = "show-discount-info slash hide-chosen-color";
+        percentage = 50;
+        const discountedRate = showDiscount(percentage);
+
+        console.log(discountedRate);
+
+        itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
+      } else {
+        itemDiscounted = "";
+        percentage = "";
+        className =
+          "hide-discount-info no-slash hide-reduced-price hide-chosen-color";
+      }
+
       /*
       if (product.chosenColor) {
         className = "show-chosen-color";
@@ -34,9 +60,11 @@ function orderRecap() {
         className = "hide-chosen-color";
       }
      */
-      let className = product.chosenColor
+      /*
+     className = product.chosenColor
         ? "show-chosen-color"
         : "hide-chosen-color";
+        */
       return `
   
   <div class="product-recap" data-id='${product.id}'>
@@ -51,7 +79,11 @@ function orderRecap() {
 <div class='item-size'> size: ${product.selectedSize}</div>
 <div class="item-color ${className}"> color: ${product.chosenColor}</div>
 <div class='recap-quantity'>Quantity: ${product.quantity}</div>
-<div class='recap-price'> £${product.price * product.quantity}</div>
+<p class="item-price ${className}"> £${product.price * product.quantity}</p>
+ <p class="discount-info ${className}">${percentage}%off</p>
+<p class="reduced-price ${className}">${itemDiscounted}</p>
+
+            
 </div>
   </div>
   </div>
@@ -59,9 +91,25 @@ function orderRecap() {
   `;
     })
     .join("");
+  updateOrderTotal();
+  let discountInfo = document.querySelector(".discount-info");
+  console.log(discountInfo);
 }
 orderRecap();
-updateOrderTotal();
+
+function showDiscount(percentage) {
+  return {
+    discountCalculation(price) {
+      let discountedProduct = price;
+      let calculation = (discountedProduct * percentage) / 100;
+
+      let discountedPrice = `${discountedProduct - calculation}`;
+      return discountedPrice;
+    },
+  };
+}
+
+showDiscount();
 function updateCartIcon() {
   const numberOfItems = document.querySelector(".noOfItems");
   if (!numberOfItems) return; // Check if the element exists
@@ -110,7 +158,19 @@ function updateOrderTotal() {
   let OrderSubTotal = document.querySelector(".order-sub-total");
   let OrderSumTotal = document.querySelector(".order-sum-total");
   let reduceSum = savedCart.reduce((currentTotal, product) => {
-    return currentTotal + product.price * product.quantity;
+    if (product.discounted == true) {
+      let thisPrice = product.price;
+
+      percentage = 50;
+      const discountedRate = showDiscount(percentage);
+
+      console.log(discountedRate);
+
+      let itemDiscounted = discountedRate.discountCalculation(thisPrice);
+      return currentTotal + itemDiscounted * product.quantity;
+    } else {
+      return currentTotal + product.price * product.quantity;
+    }
   }, 0);
   let formatted = reduceSum.toLocaleString("en-GB", {
     minimumFractionDigits: 0,

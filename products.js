@@ -9,7 +9,7 @@ const products = [
     name: "texture",
     price: 250,
     quantity: 1,
-
+ discounted: true,
     category: "regular",
     h3: "regular",
     color: "beige",
@@ -26,6 +26,7 @@ const products = [
     image2: "images/blacksuit2.jpg",
     alt: "A man dressed in a black tuxedo and bow tie",
     price: 370,
+    discounted: true,
     quantity: 1,
     category: "regular",
     h3: "regular",
@@ -47,12 +48,13 @@ const products = [
     color: "grey",
     sizes: ["XXS", "XS", "S", "M", "L", "XL", "XXL"],
     type: "suit",
+    discounted: true,
   },
 
   {
     id: 5,
     image: "images/specialoffer.webp",
-
+    discounted: true,
     colorImage: {
       grey: "images/specialoffer.webp",
       blue: "images/regularfitblue.jpg",

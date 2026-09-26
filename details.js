@@ -1,8 +1,21 @@
 import products from "./products.js";
 import { addToCart } from "./index.js";
 import { closeOver, showCart } from "./cart.js";
+
 let chosenColor;
 let selectedSize;
+
+function showDiscount(percentage) {
+  return {
+    discountCalculation(price) {
+      let discountedProduct = price;
+      let calculation = (discountedProduct * percentage) / 100;
+
+      let discountedPrice = `£${discountedProduct - calculation}`;
+      return discountedPrice;
+    },
+  };
+}
 
 function addCartCheck() {
   let addBtn = document.querySelector(".add-btn");
@@ -22,6 +35,7 @@ function stopButton() {
     addBtn.disabled = false;
   }, 4500);
 }
+let percentage;
 let pics = [];
 const detail = () => {
   let productId = new URLSearchParams(window.location.search).get("id");
@@ -31,6 +45,21 @@ const detail = () => {
     //HTML does NOT support multiple class attributes.
     let coloredBoxes = thisProduct.hasColors ? "showsquare" : "";
     let imgBoxes = thisProduct.hasColors ? "colored-pic" : "";
+    let itemDiscounted;
+    let className;
+    if (thisProduct.discounted == true) {
+      let thisPrice = thisProduct.price;
+      className = "show-discount-info slash";
+      percentage = 50;
+      const discountedRate = showDiscount(percentage);
+
+      console.log(discountedRate);
+
+      itemDiscounted = discountedRate.discountCalculation(thisPrice);
+    } else {
+      itemDiscounted = "";
+      className = "hide-discount-info no-slash hide-reduced-price";
+    }
 
     const productDetails = document.querySelector(".details");
     productDetails.innerHTML = `
@@ -59,7 +88,10 @@ const detail = () => {
         
 <div class="right-side">
 
-<h1 class="product-title">${thisProduct.name}<span class="item-price">£${thisProduct.price}</span></h1>
+<h1 class="product-title">${thisProduct.name}
+ <p class=" discount-info ${className}">${percentage}%off</p>
+<p class="reduced-price">${itemDiscounted}</p>
+<span class="item-price ${className}">£${thisProduct.price}</span></h1>
 <span class="stock">in stock</span>
 
 <div class="p-review">

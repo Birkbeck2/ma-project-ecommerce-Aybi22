@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let savedUserAddress = localStorage.getItem("address");
   if (savedUserAddress) {
     let addressDisplay = document.querySelector(".address-display");
-    addressDisplay.innerHTML = `Biling address: <span>${savedUserAddress}</span>`;
+    addressDisplay.innerHTML = `Billing address: <span>${savedUserAddress}</span>`;
   }
 
   let savedUserPostCode = localStorage.getItem("postcode");
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("delivery-total");
 
     let allTotal = document.querySelector(".purchase-total");
-    allTotal.innerHTML = `<span>Total:</span> £${savedCollectionTotal}`;
+    allTotal.innerHTML = `<span>Total:</span> <span class="bold">£${savedCollectionTotal}</span>`;
     savedCollectionTotal = "";
   }
   let savedTiming = localStorage.getItem("orderSlot");
@@ -345,3 +345,15 @@ console.log(firstCounter);
 
 console.log(secondCounter);
 console.log(secondCounter);
+
+function greeting() {
+  let name = "Marcos";
+
+  return {
+    createGreeting() {
+      return `hello ${name}`;
+    },
+  };
+}
+const greet = greeting();
+console.log(greet.createGreeting());

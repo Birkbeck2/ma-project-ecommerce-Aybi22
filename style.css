@@ -14,6 +14,24 @@
     margin: 0;
     padding: 0;
 }
+.slash.item-price{
+   text-decoration:line-through;
+   
+}
+
+.recap-infos .reduced-price{
+    font-size:0.9rem;
+}
+.item-price.no-slash{
+    text-decoration: none;
+}
+.reduced-price{
+    color:green;
+    font-weight:800;
+}
+.reduced-price.hide-reduced-price{
+    display:none;
+}
 
 .shop-wrapper {
     display: flex;
@@ -777,9 +795,10 @@ article>.stars {
     max-width: 200px;
     text-transform: capitalize;
     font-style: normal;
-    font-size: 15px;
+    font-size: 13px;
     color: var(--black);
     color:#333;
+    font-weight: 700;
     }
 
    
@@ -1086,6 +1105,7 @@ width:100%;
 }
 .form-info input{
     padding:0.6rem;
+
     
 }
 .span-input{
@@ -1094,9 +1114,11 @@ width:100%;
  }
 
  .column3{
+    max-width:100%;
+    width:100%;
   display:grid;
   grid-template-columns: repeat(3,1fr);
-  gap:0.5rem;
+ gap:0.5rem;
  }
 
 .filter-section-wrapper p {
@@ -1883,6 +1905,8 @@ footer a {
 
     max-width: 100%;
     display: flex;
+    align-items: center!important;
+    gap:1rem!important;
     width: 100%;
 
 margin-bottom:1rem;
@@ -2884,10 +2908,10 @@ the button won’t fully respond.*/
     max-width:600px;
     width:100%;
 }
-.show-chosen-color{
+.show-chosen-color.item-color{
     display:block;
 }
-.hide-chosen-color{
+.hide-chosen-color.item-color{
     display:none;
 }
 .order-info-title{
@@ -3203,10 +3227,19 @@ form .send-btn {
 }
     */
 
-    .form-content, .pay-options{
+     .pay-options{
         border:1px solid gainsboro;
         border-radius:13px;
+        
+    }
+    .debit-pay-wrapper, .form-content-wrapper{
+        background-color: #f8f9fa;
         padding:1rem;
+        border-radius:13px;
+        margin-bottom:1rem;
+    }
+    .bold{
+        font-weight:800!important;
     }
     
 .checkout-container h3{
@@ -3389,12 +3422,50 @@ legend {
 
 .item-price {
     font-weight: 600;
-    margin-left: auto;
+   
+}
+.discount-info{
+ color: #155724;
+    background: #d4edda;
+    width:60px;
+    border-radius:13px;
+    font-size:0.6rem;
+    text-align:center;
+    display: block;
+       
 }
 
+.reduced-price{
+    display:block;
+}
+
+
+.hide-discount-info.discount-info{
+    display:none;
+    
+}
+
+
+.discount-box{
+    display:block;
+}
+.discount-box.hide-discount-box{
+    display:none;
+}
+.show-discount-info{
+    display:block;
+    
+}
 .right-side .item-price {
     font-weight: 600;
     font-size: 1.5rem;
+}
+.item-price{
+    font-size:0.8rem!important;
+    font-weight:normal!important;
+}
+.reduced-price{
+    font-size:1rem;
 }
 
 .stock-info {
@@ -3855,13 +3926,14 @@ padding:1.5rem;
     width:100%;
     display:grid!important;
     grid-template-columns: repeat(2,1fr)!important;
-    gap:0.2rem;
+    gap:0.5rem;
 }
 .form-content div, .column3 div{
     display:flex;
     flex-direction:column;
     gap:0.5rem;
 }
+
 .cards-list{
     flex:1;
     text-transform:capitalize;
@@ -4216,6 +4288,7 @@ p {
     .item-title {
         display: flex;
         justify-content: center;
+        align-items: center;
        width: 100%;
         margin: auto;
         

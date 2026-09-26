@@ -552,7 +552,7 @@ function showNext() {
       '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> ';
   }
 }
-
+let percentage;
 function renderProducts(containerSelector, filtered) {
   let container = document.querySelector(containerSelector);
 
@@ -571,6 +571,23 @@ function renderProducts(containerSelector, filtered) {
     if (product.hasColors && coloredSquare) {
       className = "picture-box";
     }
+
+    let itemDiscounted;
+    className;
+    if (product.discounted == true) {
+      let thisPrice = product.price;
+      className = "show-discount-info slash";
+      percentage = 50;
+      const discountedRate = showDiscount(percentage);
+
+      console.log(discountedRate);
+
+      itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
+    } else {
+      itemDiscounted = "";
+      className = "hide-discount-info no-slash hide-reduced-price";
+    }
+
     newPara.innerHTML = `
 
    
@@ -584,8 +601,13 @@ function renderProducts(containerSelector, filtered) {
       </a>
       <div class="item-title">
          <div class='item-name'>${product.name}</div>
-         <div class='item-price'data-id=${product.price}>£${product.price}</div>
-      </div>    
+         <p class=" discount-info ${className}">${percentage}%off</p>
+         <p class="reduced-price">${itemDiscounted}</p>
+         <div class="item-price ${className}" data-id=${product.price}>£${product.price}</div>
+         
+      
+      
+         </div>    
         
        <div class="color-square  ${coloredSquare}">
   
@@ -611,6 +633,7 @@ function renderProducts(containerSelector, filtered) {
 
     productNum();
 
+    showDiscount();
     categoryTotalPrice();
   });
 
@@ -851,6 +874,22 @@ function displayCartItems() {
     if (!product.hasColors) {
       className = "hidecolor";
     }
+
+    let itemDiscounted;
+    className;
+    if (product.discounted == true) {
+      let thisPrice = product.price;
+      className = "show-discount-info slash";
+      percentage = 50;
+      const discountedRate = showDiscount(percentage);
+
+      console.log(discountedRate);
+
+      itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
+    } else {
+      itemDiscounted = "";
+      className = "hide-discount-info no-slash hide-reduced-price";
+    }
     newCart.innerHTML = `
          <div class="product cart-data" data-id='${product.id}'>
           
@@ -863,7 +902,7 @@ function displayCartItems() {
 <div class='item-name'>${product.name}</div>
 
 <div class='item-size'>size: ${product.selectedSize}</div>
-<div class='item-color  ${className}'>color: ${product.chosenColor}</div>
+<div class="item-color  ${className}">color: ${product.chosenColor}</div>
   
 </div>
               <div class="cart-action">    
@@ -872,7 +911,10 @@ function displayCartItems() {
                 <input type="button" value="${product.quantity}"  class="quantity">
                 <input type="button" value="+" class="increase">
             </div>
-            <div class='item-price'>£${product.price}</div>
+            <p class="item-price">£${product.price}</p>
+              <p class=" discount-info ${className}">${percentage}%off</p>
+         <p class="reduced-price">${itemDiscounted}</p>
+            
           <div class="del-btn">
            <i class="fa-solid fa-trash"></i>
             </div>
@@ -925,8 +967,18 @@ function updateTotal() {
   if (!total) {
     return;
   }
+
   let reduceSum = cart.reduce((currentTotal, product) => {
-    return currentTotal + product.price * product.quantity;
+    if (product.discounted == true) {
+      let thisPrice = product.price;
+
+      percentage = 50;
+      const discountedRate = showDiscount(percentage);
+      let itemDiscounted = discountedRate.discountCalculation(thisPrice);
+      return currentTotal + itemDiscounted * product.quantity;
+    } else {
+      return currentTotal + product.price * product.quantity;
+    }
   }, 0);
 
   let formatted = reduceSum.toLocaleString("en-GB", {
@@ -967,9 +1019,20 @@ document.addEventListener("click", function (e) {
 
     // Update item total price
 
-    const itemPrice = productDiv.querySelector(".item-price");
-    itemPrice.textContent = `£${(product.price * currentQuantity).toFixed(2)}`;
+    if (product.discounted == true) {
+      let thisPrice = product.price;
 
+      percentage = 50;
+      const discountedRate = showDiscount(percentage);
+      let itemDiscounted = discountedRate.discountCalculation(thisPrice);
+      let reducedPrice = productDiv.querySelector(".reduced-price");
+      let itemDiscountedPrice = `£${(itemDiscounted * currentQuantity).toFixed(2)}`;
+      reducedPrice.textContent = itemDiscountedPrice;
+      localStorage.setItem("discounted-product", itemDiscountedPrice);
+    } else {
+      let itemPrice = productDiv.querySelector(".item-price");
+      itemPrice.textContent = `£${(product.price * currentQuantity).toFixed(2)}`;
+    }
     // Update cart total
     updateTotal();
     updateCartIcon();
@@ -1136,3 +1199,43 @@ console.log("user2 balance", user2.getBalance());
 //One returned function remembers one private variable.
 
 //Multiple functions can share one private variable, and separate calls to the producer create separate private variables.
+function greeting() {
+  let name = "Marcos";
+
+  return {
+    createGreeting() {
+      return `hello ${name}`;
+    },
+  };
+}
+const greet = greeting(); //greet stores that returned object.
+console.log(greet.createGreeting());
+
+function multiplier(number) {
+  return {
+    newNumber(num) {
+      return number * num;
+    },
+  };
+}
+
+const calculation1 = multiplier(2);
+console.log(calculation1.newNumber(2));
+
+const calculation2 = multiplier(5);
+console.log(calculation2.newNumber(5));
+
+function showDiscount(percentage) {
+  return {
+    discountCalculation(price) {
+      let discountedProduct = price;
+      let calculation = (discountedProduct * percentage) / 100;
+
+      let discountedPrice = `${discountedProduct - calculation}`;
+      return discountedPrice;
+    },
+  };
+}
+
+showDiscount();
+//Each call to showDiscount() creates a new closure with its own remembered percentage.
