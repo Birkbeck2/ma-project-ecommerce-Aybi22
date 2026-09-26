@@ -180,8 +180,8 @@ function updateOrderTotal() {
   OrderSubTotal.innerHTML = `<span>SubTotal</span>
   <span class="amount">£${formatted}</span>`;
   localStorage.setItem("sub-total", formatted);
-  OrderSumTotal.innerHTML = `<span>Total</span>
-  <span class="amount">£${formatted}</span>`;
+  OrderSumTotal.innerHTML = `<span class="total-text">Order Total</span>
+  <span class="amount-num">£${formatted}</span>`;
 }
 let billingForm = document.getElementById("billing-form");
 console.log(billingForm);
@@ -314,8 +314,8 @@ document.addEventListener("click", (e) => {
       minimumFractionDigits: 0,
       maximumFractionDigits: 2,
     });
-    OrderSumTotal.innerHTML = `<span>Total</span>
-  <span class="amount">£${formatted}</span>`;
+    OrderSumTotal.innerHTML = `<span class="total-text"> Order total</span>
+  <span class="amount-num">£${formatted}</span>`;
     localStorage.setItem("delivery-total", formatted);
 
     localStorage.setItem("deliver-option", clicked.className);
@@ -337,8 +337,8 @@ document.addEventListener("click", (e) => {
     });
     let OrderSumTotal = document.querySelector(".order-sum-total");
 
-    OrderSumTotal.innerHTML = `<span>Total</span>
-  <span class="amount">£${formatted}</span>`;
+    OrderSumTotal.innerHTML = `<span class="total-text"> Order total</span>
+  <span class="amount-num">£${formatted}</span>`;
     localStorage.setItem("collection-total", formatted);
   }
 });

@@ -2886,10 +2886,10 @@ the button won’t fully respond.*/
 }
 
 .checkout-container h2{
-    font-size:1.5rem;
+    font-size:1.3rem;
 }
 
-.order-info p{
+.order-info p, .delivery-note{
     font-size:0.8rem;
 }
 .cart-title {
@@ -2899,7 +2899,7 @@ the button won’t fully respond.*/
     text-transform:uppercase;
 }
 .order-info{
-    background:#EEE0CB;
+    background:#fff;
   
     padding:1rem;
     display:flex;
@@ -3209,6 +3209,10 @@ h4 {
     max-width: 600px;
     width: 100%;
 }
+.form-section.recap{
+   
+   
+}
 
 form .send-btn {
     background: var(--champagne);
@@ -3233,7 +3237,7 @@ form .send-btn {
         
     }
     .debit-pay-wrapper, .form-content-wrapper{
-        background-color: #f8f9fa;
+        background-color:#fff;
         padding:1rem;
         border-radius:13px;
         margin-bottom:1rem;
@@ -3281,9 +3285,7 @@ label{
     width: 100%;
 }
 
-.form-section {
-    margin-top: 31px;
-}
+
 
 
 .form-section textarea {
@@ -3557,16 +3559,18 @@ h2 {
    
     align-items: baseline;
    
+    background-color: #e0e0e0;
+     background:#f8f9fa;
     gap: 1rem;
 }
 
 .recap-container {
- padding:1rem;
-   
+
+   background:#fff;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-   background:#EEE0CB;
+
     max-width: 600px;
     width: 100%;
 }
@@ -3574,6 +3578,13 @@ h2 {
     display:flex;
     flex-direction:column;
     gap:1rem;
+}
+.recap-wrapper h2{
+    font-size: 1.3rem !important;
+}
+.total-text,.amount-num{
+    font-weight:800;
+    font-size:1.2rem;
 }
 
 .recap-container h2 {
@@ -3815,7 +3826,7 @@ a.cart-btn.place-btn.disabled{
 
 .delivery-options{
     border:1px solid gainsboro;
-    background:#EEE0CB;
+    background:#fff;
     padding:1rem;
     display:flex;
     flex-direction: column;
