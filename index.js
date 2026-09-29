@@ -552,7 +552,10 @@ function showNext() {
       '<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> ';
   }
 }
+
 let percentage;
+let itemDiscounted;
+
 function renderProducts(containerSelector, filtered) {
   let container = document.querySelector(containerSelector);
 
@@ -562,30 +565,29 @@ function renderProducts(containerSelector, filtered) {
     numBox.innerHTML = "";
     document.querySelector(".category-title").textContent = "";
   }
+
   filtered.forEach((product) => {
     let newPara = document.createElement("div");
     newPara.classList.add("section-list");
-
-    let coloredSquare = product.hasColors ? "showquare" : "";
     let className;
-    if (product.hasColors && coloredSquare) {
-      className = "picture-box";
-    }
-
-    let itemDiscounted;
-    className;
-    if (product.discounted == true) {
+    let coloredSquare = product.hasColors ? "showsquare" : "";
+    let imgBoxes = product.hasColors ? "picturebox" : "";
+    if (
+      (product.discounted == true && product.hasColors && coloredSquare) ||
+      (product.discounted == true && !product.hasColors)
+    ) {
       let thisPrice = product.price;
-      className = "show-discount-info slash";
+      className = " show-discount-info slash show-reduced-price";
       percentage = 50;
       const discountedRate = showDiscount(percentage);
-
       console.log(discountedRate);
 
       itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
+    } else if (!product.discounted && product.hasColors && coloredSquare) {
+      className = "hide-discount-info ";
     } else {
       itemDiscounted = "";
-      className = "hide-discount-info no-slash hide-reduced-price";
+      className = "hide-discount-info no-slash hide-reduced-price  ";
     }
 
     newPara.innerHTML = `
@@ -595,22 +597,19 @@ function renderProducts(containerSelector, filtered) {
 
     <a href="details.html?id=${product.id}">
       <div class="image">
-      <img src= ${product.image}  alt="${product.alt}"  class="${className}">
+      <img src= ${product.image}  alt="${product.alt}" class= "${imgBoxes}">
       </div>
     
       </a>
       <div class="item-title">
          <div class='item-name'>${product.name}</div>
-         <p class=" discount-info ${className}">${percentage}%off</p>
-         <p class="reduced-price">${itemDiscounted}</p>
+   <p class="discount-info ${className}">${percentage}%off</p>
+<p class="reduced-price ${className}">${itemDiscounted}</p>
          <div class="item-price ${className}" data-id=${product.price}>£${product.price}</div>
-         
-      
-      
          </div>    
         
-       <div class="color-square  ${coloredSquare}">
-  
+       <div class="color-square ${coloredSquare}">
+ 
        </div>
    
       </div>
@@ -620,72 +619,75 @@ function renderProducts(containerSelector, filtered) {
          `;
 
     container.appendChild(newPara);
-
-    /*
-    let squareColor = document.querySelector(".square-color");
-    console.log(squareColor);
-    let squares = document.querySelectorAll(".square");
-
-    squares.forEach((square) => {
-      square.addEventListener("click", displayItemByColor);
-    });
-    */
-
-    productNum();
-
-    showDiscount();
-    categoryTotalPrice();
   });
 
-  function showColoredSquares() {
-    let imgBoxes = document.querySelectorAll(".picture-box");
-    console.log(imgBoxes);
-    imgBoxes.forEach((imgBox) => {
-      let thisSectionList = imgBox.closest(".section-list");
+  productNum();
 
-      let thisProductId = thisSectionList.dataset.id; //returns a string, not product object
-      let product = products.find((product) => product.id == thisProductId);
-      let coloredSquare = thisSectionList.querySelector(".color-square");
-      console.log(product);
+  showDiscount();
+  categoryTotalPrice();
 
-      let colorImage = product.colorImage;
-
-      let keys = Object.keys(colorImage);
-      keys.forEach((key) => {
-        let square = document.createElement("p");
-
-        square.classList.add("square-shape");
-        square.setAttribute("data-name", key);
-        coloredSquare.appendChild(square);
-
-        square.style.backgroundColor = key;
-      });
-    });
-  }
   showColoredSquares();
+}
 
-  let coloredSquare = document.querySelectorAll(".color-square");
-  coloredSquare.forEach((squares) => {
-    squares.addEventListener("click", (e) => {
-      const clicked = e.target;
-      let thisSectionList = clicked.closest(".section-list");
-      let thisProduct = thisSectionList.dataset.id;
-      console.log(thisProduct);
-      console.log(clicked, "was clicked");
-      let product = products.find((product) => product.id == thisProduct);
-      let colorImage = product.colorImage;
+/*
+  let squareColor = document.querySelector(".square-color");
+  console.log(squareColor);
+  let squares = document.querySelectorAll(".square");
 
-      let clickedSquare = e.target.dataset.name;
+  squares.forEach((square) => {
+    square.addEventListener("click", displayItemByColor);
+  });
+*/
 
-      let imgBox = thisSectionList.querySelector(".picture-box");
-      console.log(imgBox);
+function showColoredSquares() {
+  let imgBoxes = document.querySelectorAll(".picturebox");
+  console.log(imgBoxes);
+  imgBoxes.forEach((imgBox) => {
+    let thisSectionList = imgBox.closest(".section-list");
 
-      if (clicked.closest(".square-shape")) {
-        imgBox.src = colorImage[clickedSquare];
-      }
+    let thisProductId = thisSectionList.dataset.id; //returns a string, not product object
+    let product = products.find((product) => product.id == thisProductId);
+    console.log(product);
+    let coloredSquare = thisSectionList.querySelector(".color-square");
+    console.log(coloredSquare);
+    console.log(product);
+
+    let colorImage = product.colorImage;
+
+    let keys = Object.keys(colorImage);
+    keys.forEach((key) => {
+      let square = document.createElement("p");
+
+      square.classList.add("square-shape");
+      square.setAttribute("data-name", key);
+      coloredSquare.appendChild(square);
+      console.log(coloredSquare);
+      square.style.backgroundColor = key;
     });
   });
 }
+
+let coloredSquare = document.querySelectorAll(".color-square");
+coloredSquare.forEach((squares) => {
+  squares.addEventListener("click", (e) => {
+    const clicked = e.target;
+    let thisSectionList = clicked.closest(".section-list");
+    let thisProduct = thisSectionList.dataset.id;
+    console.log(thisProduct);
+    console.log(clicked, "was clicked");
+    let product = products.find((product) => product.id == thisProduct);
+    let colorImage = product.colorImage;
+
+    let clickedSquare = e.target.dataset.name;
+
+    let imgBox = thisSectionList.querySelector(".picturebox");
+    console.log(imgBox);
+
+    if (clicked.closest(".square-shape")) {
+      imgBox.src = colorImage[clickedSquare];
+    }
+  });
+});
 
 /*
 function activateCartButtons() {
@@ -870,16 +872,11 @@ function displayCartItems() {
   cart.forEach((product) => {
     let newCart = document.createElement("div");
 
-    let className;
-    if (!product.hasColors) {
-      className = "hidecolor";
-    }
-
     let itemDiscounted;
-    className;
-    if (product.discounted == true) {
+    let className;
+    if (product.discounted == true && !product.hasColors) {
       let thisPrice = product.price;
-      className = "show-discount-info slash";
+      className = "show-discount-info slash hidecolor";
       percentage = 50;
       const discountedRate = showDiscount(percentage);
 
@@ -1098,7 +1095,7 @@ function productNum() {
 function allNum() {
   productNumber = products.length;
   let allNumBox = document.querySelector(".allNum-box");
-  allNumBox.innerHTML = productNumber + " items";
+  allNumBox.innerHTML = `${productNumber + " items"}`;
 }
 
 let input = document.getElementById("search");
@@ -1239,3 +1236,52 @@ function showDiscount(percentage) {
 
 showDiscount();
 //Each call to showDiscount() creates a new closure with its own remembered percentage.
+/*
+
+Exercise 7 — Function with a private history
+
+Create a function that keeps track of values passed to it.
+
+Requirements:
+
+Each time the returned function is called, give it a value.
+The function remembers all previous values.
+Provide a way to retrieve the accumulated values.
+The stored history should not be directly accessible.
+
+Goal: Understand that a closure can preserve an entire piece of state, not just one value.
+
+Exercise 8 — Closure debugging
+
+Consider this situation conceptually:
+
+An outer function creates a variable.
+It creates an inner function that uses that variable.
+The outer function finishes.
+Later, the inner function is called.
+
+Answer these questions without running the code:
+
+Does the variable still exist?
+Why?
+What keeps it available?
+What would happen if there were no inner function referring to it?
+If two inner functions were returned, could they access the same variable?
+Exercise 9 — Your own checkout example
+
+Use something similar to your current project.
+
+Create a function that represents a checkout session.
+
+It should remember:
+
+the selected delivery method
+the shipping fee
+the order total
+
+The information should be accessible through functions, but the variables themselves should not be directly accessible outside the outer function.
+
+Goal: Connect closures to something you've 
+already been working on rather than treating 
+them as an isolated JavaScript topic.
+*/

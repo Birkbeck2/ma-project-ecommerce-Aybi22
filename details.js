@@ -168,6 +168,7 @@ const detail = () => {
 
         let coloredSquareList =
           thisGalleryList.querySelector(".color-square-list");
+        console.log(coloredSquareList);
 
         coloredSquareList.innerHTML = "";
         if (thisProduct.hasColors) {

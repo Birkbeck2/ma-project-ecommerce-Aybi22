@@ -92,8 +92,7 @@ function orderRecap() {
     })
     .join("");
   updateOrderTotal();
-  let discountInfo = document.querySelector(".discount-info");
-  console.log(discountInfo);
+  localStorage.setItem("saved-order", JSON.stringify(savedCart));
 }
 orderRecap();
 
@@ -166,7 +165,7 @@ function updateOrderTotal() {
 
       console.log(discountedRate);
 
-      let itemDiscounted = discountedRate.discountCalculation(thisPrice);
+      itemDiscounted = discountedRate.discountCalculation(thisPrice);
       return currentTotal + itemDiscounted * product.quantity;
     } else {
       return currentTotal + product.price * product.quantity;
@@ -281,6 +280,7 @@ function clearCart() {
   }, 5400);
 }
   */
+
 let savedCollectionAmount = localStorage.getItem("collection-amount");
 let savedDeliveryAmount = localStorage.getItem("delivery-amount");
 let savedDeliveryOption = localStorage.getItem("deliver-option");
@@ -288,14 +288,26 @@ let savedCollectionOption = localStorage.getItem("collect-option");
 let savedDeliveryTotal = localStorage.getItem("delivery-total");
 let savedCollectionTotal = localStorage.getItem("collection-total");
 document.addEventListener("click", (e) => {
-  let reduceSum = savedCart.reduce((currentTotal, product) => {
-    return currentTotal + product.price * product.quantity;
-  }, 0);
   let deliveryDisplay = document.querySelector(".delivery-fee");
   let shippingFee = document.querySelector(".shipping-fee");
   let collectionFee = document.querySelector(".collection-fee");
   let clicked = e.target;
   if (clicked.closest(".delivery")) {
+    let reduceSum = savedCart.reduce((currentTotal, product) => {
+      if (product.discounted == true) {
+        let thisPrice = product.price;
+
+        let percentage = 50;
+        const discountedRate = showDiscount(percentage);
+
+        console.log(discountedRate);
+
+        itemDiscounted = discountedRate.discountCalculation(thisPrice);
+        return currentTotal + itemDiscounted * product.quantity;
+      } else {
+        return currentTotal + product.price * product.quantity;
+      }
+    }, 0);
     localStorage.removeItem("collect-option");
     localStorage.removeItem("collection-amount");
     localStorage.removeItem("collection-total");
@@ -320,6 +332,21 @@ document.addEventListener("click", (e) => {
 
     localStorage.setItem("deliver-option", clicked.className);
   } else if (e.target.closest(".collection")) {
+    let reduceSum = savedCart.reduce((currentTotal, product) => {
+      if (product.discounted == true) {
+        let thisPrice = product.price;
+
+        let percentage = 50;
+        const discountedRate = showDiscount(percentage);
+
+        console.log(discountedRate);
+
+        let itemDiscounted = discountedRate.discountCalculation(thisPrice);
+        return currentTotal + itemDiscounted * product.quantity;
+      } else {
+        return currentTotal + product.price * product.quantity;
+      }
+    }, 0);
     localStorage.removeItem("deliver-option");
     localStorage.removeItem("delivery-amount");
 
@@ -342,6 +369,7 @@ document.addEventListener("click", (e) => {
     localStorage.setItem("collection-total", formatted);
   }
 });
+updateOrderTotal();
 
 function orderDate() {
   let today = new Date();

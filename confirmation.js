@@ -1,5 +1,7 @@
-let savedCart = JSON.parse(localStorage.getItem("cart"));
+let savedCart = JSON.parse(localStorage.getItem("cart")) || [];
 console.log(savedCart);
+let savedOrder = JSON.parse(localStorage.getItem("saved-order")) || [];
+console.log(savedOrder);
 
 document.addEventListener("DOMContentLoaded", () => {
   let savedDeliveryOption = localStorage.getItem("deliver-option");
@@ -27,13 +29,7 @@ if (savedDeliveryOption) {
 
   deliveryOptionDisplay.innerHTML = `<span> Shipping method:</span> ${savedDeliveryOption}`;
 }
-let savedTotal = localStorage.getItem("sub-total");
 
-if (savedTotal) {
-  console.log(savedTotal);
-  let subTotal = document.querySelector(".total-cost");
-  subTotal.innerHTML = `<span>Subtotal:</span> £${savedTotal}`;
-}
 let savedCollectionOption = localStorage.getItem("collect-option");
 if (savedCollectionOption) {
   localStorage.removeItem("deliver-option");
@@ -200,12 +196,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let allTotal = document.querySelector(".purchase-total");
     console.log(allTotal);
-    allTotal.innerHTML = `<span>Total:</span>£${savedDeliveryTotal}`;
+    allTotal.innerHTML = `<span class="total-text">Order Total:</span>£${savedDeliveryTotal}`;
   } else if (savedCollectionTotal) {
     localStorage.removeItem("delivery-total");
 
     let allTotal = document.querySelector(".purchase-total");
-    allTotal.innerHTML = `<span>Total:</span> <span class="bold">£${savedCollectionTotal}</span>`;
+    allTotal.innerHTML = `<span class="total-text">Order total:</span> <span class="bold">£${savedCollectionTotal}</span>`;
     savedCollectionTotal = "";
   }
   let savedTiming = localStorage.getItem("orderSlot");
@@ -228,7 +224,38 @@ function getUserData() {
     console.log(savedData);
   }
 }
+let percentage;
+let itemDiscounted;
+function updateOrderTotal() {
+  let OrderSubTotal = document.querySelector(".order-sub-total");
 
+  let reduceSum = savedCart.reduce((currentTotal, product) => {
+    if (product.discounted == true) {
+      let thisPrice = product.price;
+
+      percentage = 50;
+      const discountedRate = showDiscount(percentage);
+
+      console.log(discountedRate);
+
+      itemDiscounted = discountedRate.discountCalculation(thisPrice);
+      return currentTotal + itemDiscounted * product.quantity;
+    } else {
+      return currentTotal + product.price * product.quantity;
+    }
+  }, 0);
+  let formatted = reduceSum.toLocaleString("en-GB", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  });
+
+  OrderSubTotal.innerHTML = `<span>SubTotal</span>
+  <span>£${formatted}</span>`;
+  localStorage.setItem("sub-total", formatted);
+}
+updateOrderTotal();
+
+/*
 function updateOrderTotal() {
   let totalCost = document.querySelector(".total-cost");
 
@@ -243,19 +270,48 @@ function updateOrderTotal() {
 
   totalCost.innerHTML = `  <span>SubTotal:</span> £${formatted}`;
 }
-
-updateOrderTotal();
+  */
 
 function confirmedOrder() {
   let confirmedInfos = document.querySelector(".confirmation-infos");
   let selectedSize = localStorage.getItem("selectedSize");
+
+  let chosenColor = localStorage.getItem("color");
   let className;
-  confirmedInfos.innerHTML = savedCart
+  confirmedInfos.innerHTML = savedOrder
 
     .map((product) => {
+      if (product.discounted == true && product.chosenColor) {
+        let thisPrice = product.price * product.quantity;
+        className = "show-discount-info slash show-chosen-color";
+        percentage = 50;
+        const discountedRate = showDiscount(percentage);
+
+        console.log(discountedRate);
+
+        itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
+      } else if (product.discounted == true && !product.chosenColor) {
+        className = "show-discount-info slash hide-chosen-color";
+        let thisPrice = product.price * product.quantity;
+        className = "show-discount-info slash hide-chosen-color";
+        percentage = 50;
+        const discountedRate = showDiscount(percentage);
+
+        console.log(discountedRate);
+
+        itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
+      } else {
+        itemDiscounted = "";
+        percentage = "";
+        className =
+          "hide-discount-info no-slash hide-reduced-price hide-chosen-color";
+      }
+
+      /*
       if (!product.hasColors) {
         className = "no-color";
       }
+        */
       let itemPrice = product.quantity * product.price;
       let formatted = itemPrice.toLocaleString("en-GB", {
         minimumFractionDigits: 0,
@@ -271,7 +327,11 @@ function confirmedOrder() {
 <p>Size: ${product.selectedSize}</p>
 <p class="color  ${className}">color: ${product.chosenColor}</p>
 <p>Quantity: ${product.quantity}</p>
-<p class=" infos-price"> £${formatted}</p> 
+<p class="item-price ${className}"> £${product.price * product.quantity}</p>
+
+<p class="discount-info ${className}">${percentage}%off</p>
+<p class="reduced-price ${className}">${itemDiscounted}</p>
+
 </div>
 
 
@@ -281,6 +341,18 @@ function confirmedOrder() {
 }
 updateOrderTotal();
 confirmedOrder();
+
+function showDiscount(percentage) {
+  return {
+    discountCalculation(price) {
+      let discountedProduct = price;
+      let calculation = (discountedProduct * percentage) / 100;
+
+      let discountedPrice = `${discountedProduct - calculation}`;
+      return discountedPrice;
+    },
+  };
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   let printBtn = document.querySelector(".print");
