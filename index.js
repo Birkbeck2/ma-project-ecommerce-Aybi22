@@ -627,9 +627,8 @@ function renderProducts(containerSelector, filtered) {
   categoryTotalPrice();
 
   showColoredSquares();
-}
 
-/*
+  /*
   let squareColor = document.querySelector(".square-color");
   console.log(squareColor);
   let squares = document.querySelectorAll(".square");
@@ -639,56 +638,56 @@ function renderProducts(containerSelector, filtered) {
   });
 */
 
-function showColoredSquares() {
-  let imgBoxes = document.querySelectorAll(".picturebox");
-  console.log(imgBoxes);
-  imgBoxes.forEach((imgBox) => {
-    let thisSectionList = imgBox.closest(".section-list");
+  function showColoredSquares() {
+    let imgBoxes = document.querySelectorAll(".picturebox");
+    console.log(imgBoxes);
+    imgBoxes.forEach((imgBox) => {
+      let thisSectionList = imgBox.closest(".section-list");
 
-    let thisProductId = thisSectionList.dataset.id; //returns a string, not product object
-    let product = products.find((product) => product.id == thisProductId);
-    console.log(product);
-    let coloredSquare = thisSectionList.querySelector(".color-square");
-    console.log(coloredSquare);
-    console.log(product);
-
-    let colorImage = product.colorImage;
-
-    let keys = Object.keys(colorImage);
-    keys.forEach((key) => {
-      let square = document.createElement("p");
-
-      square.classList.add("square-shape");
-      square.setAttribute("data-name", key);
-      coloredSquare.appendChild(square);
+      let thisProductId = thisSectionList.dataset.id; //returns a string, not product object
+      let product = products.find((product) => product.id == thisProductId);
+      console.log(product);
+      let coloredSquare = thisSectionList.querySelector(".color-square");
       console.log(coloredSquare);
-      square.style.backgroundColor = key;
+      console.log(product);
+
+      let colorImage = product.colorImage;
+
+      let keys = Object.keys(colorImage);
+      keys.forEach((key) => {
+        let square = document.createElement("p");
+
+        square.classList.add("square-shape");
+        square.setAttribute("data-name", key);
+        coloredSquare.appendChild(square);
+        console.log(coloredSquare);
+        square.style.backgroundColor = key;
+      });
+    });
+  }
+
+  let coloredSquare = document.querySelectorAll(".color-square");
+  coloredSquare.forEach((squares) => {
+    squares.addEventListener("click", (e) => {
+      const clicked = e.target;
+      let thisSectionList = clicked.closest(".section-list");
+      let thisProduct = thisSectionList.dataset.id;
+      console.log(thisProduct);
+      console.log(clicked, "was clicked");
+      let product = products.find((product) => product.id == thisProduct);
+      let colorImage = product.colorImage;
+
+      let clickedSquare = e.target.dataset.name;
+
+      let imgBox = thisSectionList.querySelector(".picturebox");
+      console.log(imgBox);
+
+      if (clicked.closest(".square-shape")) {
+        imgBox.src = colorImage[clickedSquare];
+      }
     });
   });
 }
-
-let coloredSquare = document.querySelectorAll(".color-square");
-coloredSquare.forEach((squares) => {
-  squares.addEventListener("click", (e) => {
-    const clicked = e.target;
-    let thisSectionList = clicked.closest(".section-list");
-    let thisProduct = thisSectionList.dataset.id;
-    console.log(thisProduct);
-    console.log(clicked, "was clicked");
-    let product = products.find((product) => product.id == thisProduct);
-    let colorImage = product.colorImage;
-
-    let clickedSquare = e.target.dataset.name;
-
-    let imgBox = thisSectionList.querySelector(".picturebox");
-    console.log(imgBox);
-
-    if (clicked.closest(".square-shape")) {
-      imgBox.src = colorImage[clickedSquare];
-    }
-  });
-});
-
 /*
 function activateCartButtons() {
   let btn = document.querySelectorAll("a.btn");
@@ -876,7 +875,16 @@ function displayCartItems() {
     let className;
     if (product.discounted == true && !product.hasColors) {
       let thisPrice = product.price;
-      className = "show-discount-info slash hidecolor";
+      className = "show-discount-info show-reduced-price slash hidecolor";
+      percentage = 50;
+      const discountedRate = showDiscount(percentage);
+
+      console.log(discountedRate);
+
+      itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
+    } else if (product.discounted == true && product.hasColors) {
+      let thisPrice = product.price;
+      className = "show-discount-info slash show-reduced-price  ";
       percentage = 50;
       const discountedRate = showDiscount(percentage);
 
@@ -885,7 +893,7 @@ function displayCartItems() {
       itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
     } else {
       itemDiscounted = "";
-      className = "hide-discount-info no-slash hide-reduced-price";
+      className = "hide-discount-info no-slash hide-reduced-price hidecolor";
     }
     newCart.innerHTML = `
          <div class="product cart-data" data-id='${product.id}'>
@@ -896,11 +904,12 @@ function displayCartItems() {
          <div class="image">
              <img src=" ${product.coloredImage}">
           </div>
+          <div class="product-text">
 <div class='item-name'>${product.name}</div>
 
 <div class='item-size'>size: ${product.selectedSize}</div>
 <div class="item-color  ${className}">color: ${product.chosenColor}</div>
-  
+ </div> 
 </div>
               <div class="cart-action">    
             <div class="counter">
@@ -908,13 +917,13 @@ function displayCartItems() {
                 <input type="button" value="${product.quantity}"  class="quantity">
                 <input type="button" value="+" class="increase">
             </div>
-            <p class="item-price">£${product.price}</p>
+            <p class="item-price ${className}">£${product.price}</p>
               <p class=" discount-info ${className}">${percentage}%off</p>
          <p class="reduced-price">${itemDiscounted}</p>
             
-          <div class="del-btn">
+          <p class="del-btn">
            <i class="fa-solid fa-trash"></i>
-            </div>
+            </p>
             </div>
           </div>
 </div>
@@ -930,7 +939,7 @@ function displayCartItems() {
 function updateCartLength() {
   let itemNumber = document.querySelector(".items-number");
   if (itemNumber && cart) {
-    itemNumber.textContent = `${cart.length}`;
+    itemNumber.textContent = `(${cart.length})`;
   }
 }
 updateCartLength();
@@ -1285,3 +1294,26 @@ Goal: Connect closures to something you've
 already been working on rather than treating 
 them as an isolated JavaScript topic.
 */
+
+function privateHistory() {
+  let noteBook = [];
+
+  return {
+    addValue(data) {
+      noteBook.push(data);
+    },
+    displayData() {
+      return noteBook;
+    },
+  };
+}
+
+const addDevices = privateHistory(); //Every time you call the outer function, you create a new private variable and a new closure around it.
+addDevices.addValue("phone");
+console.log(addDevices.displayData());
+addDevices.addValue("laptop");
+console.log(addDevices.displayData());
+
+const addFood = privateHistory();
+addFood.addValue("milk");
+console.log(addFood.displayData());

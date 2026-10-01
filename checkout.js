@@ -79,10 +79,14 @@ function orderRecap() {
 <div class='item-size'> size: ${product.selectedSize}</div>
 <div class="item-color ${className}"> color: ${product.chosenColor}</div>
 <div class='recap-quantity'>Quantity: ${product.quantity}</div>
+<div class="price-box">
 <p class="item-price ${className}"> £${product.price * product.quantity}</p>
  <p class="discount-info ${className}">${percentage}%off</p>
 <p class="reduced-price ${className}">${itemDiscounted}</p>
-
+ <div class="del-btn checkout">
+           <i class="fa-solid fa-trash"></i>
+            </div>
+</div>
             
 </div>
   </div>
@@ -92,6 +96,7 @@ function orderRecap() {
     })
     .join("");
   updateOrderTotal();
+  removeSavedItems();
   localStorage.setItem("saved-order", JSON.stringify(savedCart));
 }
 orderRecap();

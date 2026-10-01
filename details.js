@@ -45,11 +45,12 @@ const detail = () => {
     //HTML does NOT support multiple class attributes.
     let coloredBoxes = thisProduct.hasColors ? "showsquare" : "";
     let imgBoxes = thisProduct.hasColors ? "colored-pic" : "";
+    let thisbig = !thisProduct.discounted ? "big" : "";
     let itemDiscounted;
     let className;
     if (thisProduct.discounted == true) {
       let thisPrice = thisProduct.price;
-      className = "show-discount-info slash";
+      className = "show-discount-info slash ";
       percentage = 50;
       const discountedRate = showDiscount(percentage);
 
@@ -58,7 +59,7 @@ const detail = () => {
       itemDiscounted = discountedRate.discountCalculation(thisPrice);
     } else {
       itemDiscounted = "";
-      className = "hide-discount-info no-slash hide-reduced-price";
+      className = "hide-discount-info no-slash hide-reduced-price big";
     }
 
     const productDetails = document.querySelector(".details");
@@ -87,11 +88,14 @@ const detail = () => {
 </div>
         
 <div class="right-side">
+<div class="product-pricing">
+<h1 class="product-title">${thisProduct.name}</h1>
+ <p class="item-price ${className} ${thisbig}">£${thisProduct.price}</p>
 
-<h1 class="product-title">${thisProduct.name}
- <p class=" discount-info ${className}">${percentage}%off</p>
-<p class="reduced-price">${itemDiscounted}</p>
-<span class="item-price ${className}">£${thisProduct.price}</span></h1>
+<p class=" discount-info ${className}">${percentage}%off</p>
+<p class="reduced-price ">${itemDiscounted}</p>
+</div>
+
 <span class="stock">in stock</span>
 
 <div class="p-review">

@@ -283,7 +283,8 @@ function confirmedOrder() {
     .map((product) => {
       if (product.discounted == true && product.chosenColor) {
         let thisPrice = product.price * product.quantity;
-        className = "show-discount-info slash show-chosen-color";
+        className =
+          "show-discount-info slash show-reduced-price show-chosen-color";
         percentage = 50;
         const discountedRate = showDiscount(percentage);
 
@@ -293,7 +294,7 @@ function confirmedOrder() {
       } else if (product.discounted == true && !product.chosenColor) {
         className = "show-discount-info slash hide-chosen-color";
         let thisPrice = product.price * product.quantity;
-        className = "show-discount-info slash hide-chosen-color";
+
         percentage = 50;
         const discountedRate = showDiscount(percentage);
 
@@ -323,15 +324,16 @@ function confirmedOrder() {
     <div class="infos-box"> 
   
 
-<p> ${product.name}</p>
+<p class="item-name"> ${product.name}</p>
 <p>Size: ${product.selectedSize}</p>
-<p class="color  ${className}">color: ${product.chosenColor}</p>
+<p class="item-color  ${className}">color: ${product.chosenColor}</p>
 <p>Quantity: ${product.quantity}</p>
+<div class="price-box">
 <p class="item-price ${className}"> £${product.price * product.quantity}</p>
 
 <p class="discount-info ${className}">${percentage}%off</p>
 <p class="reduced-price ${className}">${itemDiscounted}</p>
-
+</div>
 </div>
 
 
