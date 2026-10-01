@@ -277,37 +277,40 @@ a.btn.new:hover {
 }
 
 .cart-items {
-    max-width: 100%;
+    max-width: 600px;
     width: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
+    
 }
 
 .product-items {
-    min-width: 400px;
+   
     width: 100%;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+   border-bottom: 1px solid gainsboro;
     gap: 5px;
-    border: 1px solid red;
-
-
+    padding-bottom: 1rem;
+  
+    
 }
 
 .product-items .item-price {
     color: grey;
     font-weight: lighter;
+    font-size:1rem;
 }
 
 .product-items .item-name {
     font-weight: 800;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    width:100%;
     
 }
 
@@ -315,14 +318,14 @@ a.btn.new:hover {
 .image-box {
     display: flex;
   gap:1rem;
-  max-width:500px;
+
   width:100%;
 }
 
 .product-items .del-btn {
     cursor: pointer;
     margin-left: auto;
-    color:red;
+   
 }
 
 .product-items .item-title {
@@ -364,13 +367,14 @@ h4 {
     display:flex;
   
     align-items: center;
-    max-width:500px;
-    display:block;
-    width:100%;
-   border:2px solid blue;
+ 
+   width:100%;
+   justify-content: space-between;
+   gap:2rem;
+   
       
 }
-.cart-action .del-btn{
+ .del-btn{
     margin-left:auto!important;
 }
 .cart-action p{
@@ -380,15 +384,16 @@ h4 {
 .product {
     display: flex;
     flex-direction: column;
-    align-items: center;
+   
     /* vertically align all flex items */
     gap: 4px;
     /* spacing between flex children */
-    max-width: 600px;
+    max-width: 600px!important;
     width: 100%;
     margin: 1rem;
-}
 
+}
+ 
 .product.recap-list {
     max-width: 100%;
 }
@@ -429,10 +434,11 @@ h4 {
 
 
 .product .image {
-    width: 100px;
+    width: 70px;
     /* fixed width box for image */
     display: block;
-    height: 150px;
+    height: 120px;
+
 
 }
 
@@ -2826,19 +2832,20 @@ gap:1rem;
 }
 
 .count-box {
-    border: 1px solid gainsboro; solid black;
+    border: 1px solid gainsboro; 
     width: 20px;
 }
 
 .counter {
     display: flex;
+    font-size:0.7rem;
 }
 
 .counter input {
     all: unset;
-    border: 1px solid gainsboro; solid gainsboro;
-    padding: 3px;
-    width: 25px;
+    border: 1px solid gainsboro; 
+    padding: 1px;
+    width: 20px;
     text-align: center;
 
 }
@@ -2846,7 +2853,7 @@ gap:1rem;
 .counter .decrease {
 
     color: var(--black);
-    font-weight: 900;
+    font-weight: 700;
     cursor:pointer;
 
 }
@@ -2854,8 +2861,8 @@ gap:1rem;
 .counter .increase {
 
     color: var(--black);
-    font-weight: 900;
-    cursor:pointer;F
+    font-weight: 700;
+    cursor:pointer;
 }
 
 .add-cart {
@@ -3634,7 +3641,7 @@ h2 {
     display:flex;
     gap:1rem;
     align-items: center;
-    max-width:390px;
+  
     width:100%;
     
 }

@@ -896,9 +896,12 @@ function displayCartItems() {
       className = "hide-discount-info no-slash hide-reduced-price hidecolor";
     }
     newCart.innerHTML = `
+
+     
          <div class="product cart-data" data-id='${product.id}'>
           
-         <div class="product-items">
+       
+      <div class="product-items">
          <div class="product-content">
 <div class="image-box">
          <div class="image">
@@ -909,7 +912,15 @@ function displayCartItems() {
 
 <div class='item-size'>size: ${product.selectedSize}</div>
 <div class="item-color  ${className}">color: ${product.chosenColor}</div>
- </div> 
+<div class="price-box">
+   <p class="item-price ${className}">£${product.price}</p>
+              <p class=" discount-info ${className}">${percentage}%off</p>
+         <p class="reduced-price">${itemDiscounted}</p>
+         </div>
+
+</div> 
+
+   
 </div>
               <div class="cart-action">    
             <div class="counter">
@@ -917,9 +928,7 @@ function displayCartItems() {
                 <input type="button" value="${product.quantity}"  class="quantity">
                 <input type="button" value="+" class="increase">
             </div>
-            <p class="item-price ${className}">£${product.price}</p>
-              <p class=" discount-info ${className}">${percentage}%off</p>
-         <p class="reduced-price">${itemDiscounted}</p>
+          
             
           <p class="del-btn">
            <i class="fa-solid fa-trash"></i>
