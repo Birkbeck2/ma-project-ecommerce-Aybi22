@@ -1,5 +1,7 @@
 let savedCart = JSON.parse(localStorage.getItem("cart"));
 console.log(savedCart);
+let percentage = 50;
+
 /*
 document.addEventListener("click", (e) => {
   if (e.target.closest(".basket")) orderRecap();
@@ -18,7 +20,7 @@ function blockOrder(e) {
   */
 let cardPic = document.querySelector(".card-pic");
 let sumContainer = document.querySelector(".sum-container");
-let percentage;
+
 let itemDiscounted;
 function orderRecap() {
   let sumContainer = document.querySelector(".sum-container");
@@ -30,7 +32,7 @@ function orderRecap() {
       if (product.discounted == true && product.chosenColor) {
         let thisPrice = product.price * product.quantity;
         className = "show-discount-info slash show-chosen-color";
-        percentage = 50;
+
         const discountedRate = showDiscount(percentage);
 
         console.log(discountedRate);
@@ -40,11 +42,7 @@ function orderRecap() {
         className = "show-discount-info slash hide-chosen-color";
         let thisPrice = product.price * product.quantity;
         className = "show-discount-info slash hide-chosen-color";
-        percentage = 50;
         const discountedRate = showDiscount(percentage);
-
-        console.log(discountedRate);
-
         itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
       } else {
         itemDiscounted = "";
@@ -82,7 +80,7 @@ function orderRecap() {
 <div class="price-box">
 <p class="item-price ${className}"> £${product.price * product.quantity}</p>
  <p class="discount-info ${className}">${percentage}%off</p>
-<p class="reduced-price ${className}">${itemDiscounted}</p>
+<p class="reduced-price  ${className}">${itemDiscounted}</p>
  <div class="del-btn checkout">
            <i class="fa-solid fa-trash"></i>
             </div>
@@ -100,7 +98,6 @@ function orderRecap() {
   localStorage.setItem("saved-order", JSON.stringify(savedCart));
 }
 orderRecap();
-
 function showDiscount(percentage) {
   return {
     discountCalculation(price) {
@@ -165,7 +162,6 @@ function updateOrderTotal() {
     if (product.discounted == true) {
       let thisPrice = product.price;
 
-      percentage = 50;
       const discountedRate = showDiscount(percentage);
 
       console.log(discountedRate);
@@ -187,32 +183,58 @@ function updateOrderTotal() {
   OrderSumTotal.innerHTML = `<span class="total-text">Order Total</span>
   <span class="amount-num">£${formatted}</span>`;
 }
+
 let billingForm = document.getElementById("billing-form");
 console.log(billingForm);
 let debitForm = document.getElementById("debit-form");
 console.log(debitForm);
 window.addEventListener("click", (e) => {
   let paypalForm = document.querySelector(".paypal-form");
+  let paypalFormContent = document.querySelector(".paypal-form-content");
   if (
-    (e.target.closest(".paypal-form") || e.target.closest(".paypal")) &&
+    (e.target.closest(".paypal-form-content") || e.target.closest(".paypal")) &&
     billingForm.checkValidity()
   ) {
     paypalForm.style.display = "block";
   } else {
     paypalForm.style.display = "none";
     billingForm.reportValidity();
+    let checkoutOverlay = document.querySelector(".checkout-overlay");
+    checkoutOverlay.style.display = "none";
+  }
+});
+
+document.addEventListener("click", (e) => {
+  let billingForm = document.getElementById("billing-form");
+  if (
+    (e.target.closest(".paypal") ||
+      e.target.closest(".klarna-btn") ||
+      e.target.closest(".klarna-form") ||
+      e.target.closest(".paypal-form")) &&
+    billingForm.checkValidity()
+  ) {
+    let checkoutOverlay = document.querySelector(".checkout-overlay");
+    checkoutOverlay.style.display = "block";
+  } else {
+    let checkoutOverlay = document.querySelector(".checkout-overlay");
+    checkoutOverlay.style.display = "none";
+    billingForm.reportValidity();
   }
 });
 
 window.addEventListener("click", (e) => {
+  let klarnaFormContent = document.querySelector(".klarna-form-content");
   let klarnaForm = document.querySelector(".klarna-form");
   if (
-    (e.target.closest(".klarna-form") || e.target.closest(".klarna-btn")) &&
+    (e.target.closest(".klarna-form-content") ||
+      e.target.closest(".klarna-btn")) &&
     billingForm.checkValidity()
   ) {
     klarnaForm.style.display = "block";
   } else {
+    let checkoutOverlay = document.querySelector(".checkout-overlay");
     klarnaForm.style.display = "none";
+    checkoutOverlay.style.display = "none";
     billingForm.reportValidity();
   }
 });
@@ -302,7 +324,6 @@ document.addEventListener("click", (e) => {
       if (product.discounted == true) {
         let thisPrice = product.price;
 
-        let percentage = 50;
         const discountedRate = showDiscount(percentage);
 
         console.log(discountedRate);
@@ -341,7 +362,6 @@ document.addEventListener("click", (e) => {
       if (product.discounted == true) {
         let thisPrice = product.price;
 
-        let percentage = 50;
         const discountedRate = showDiscount(percentage);
 
         console.log(discountedRate);

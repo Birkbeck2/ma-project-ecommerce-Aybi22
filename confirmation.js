@@ -2,6 +2,7 @@ let savedCart = JSON.parse(localStorage.getItem("cart")) || [];
 console.log(savedCart);
 let savedOrder = JSON.parse(localStorage.getItem("saved-order")) || [];
 console.log(savedOrder);
+let percentage = 50;
 
 document.addEventListener("DOMContentLoaded", () => {
   let savedDeliveryOption = localStorage.getItem("deliver-option");
@@ -16,7 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
   let savedCollectionTotal = localStorage.getItem("collection-total");
   let savedProductName = localStorage.getItem("product-name");
   let savedProductQuantity = localStorage.getItem("product-quantity");
+  let savedSubTotal = localStorage.getItem("first-total");
+  updateOrderTotal();
 });
+
+let savedSubTotal = localStorage.getItem("first-total");
+if (savedSubTotal) {
+  console.log(savedSubTotal);
+  let orderSubTotal = document.querySelector(".order-sub-total");
+  orderSubTotal.innerHTML = `<span class="red">Subtotal:</span>${savedSubTotal}`;
+}
 
 let savedDeliveryOption = localStorage.getItem("deliver-option");
 
@@ -224,16 +234,15 @@ function getUserData() {
     console.log(savedData);
   }
 }
-let percentage;
+
 let itemDiscounted;
 function updateOrderTotal() {
   let OrderSubTotal = document.querySelector(".order-sub-total");
 
-  let reduceSum = savedCart.reduce((currentTotal, product) => {
+  let reduceSum = savedOrder.reduce((currentTotal, product) => {
     if (product.discounted == true) {
       let thisPrice = product.price;
 
-      percentage = 50;
       const discountedRate = showDiscount(percentage);
 
       console.log(discountedRate);
@@ -251,7 +260,7 @@ function updateOrderTotal() {
 
   OrderSubTotal.innerHTML = `<span>SubTotal</span>
   <span>£${formatted}</span>`;
-  localStorage.setItem("sub-total", formatted);
+  localStorage.setItem("first-total", formatted);
 }
 updateOrderTotal();
 
@@ -285,7 +294,7 @@ function confirmedOrder() {
         let thisPrice = product.price * product.quantity;
         className =
           "show-discount-info slash show-reduced-price show-chosen-color";
-        percentage = 50;
+
         const discountedRate = showDiscount(percentage);
 
         console.log(discountedRate);
@@ -295,7 +304,6 @@ function confirmedOrder() {
         className = "show-discount-info slash hide-chosen-color";
         let thisPrice = product.price * product.quantity;
 
-        percentage = 50;
         const discountedRate = showDiscount(percentage);
 
         console.log(discountedRate);

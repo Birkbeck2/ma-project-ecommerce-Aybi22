@@ -361,19 +361,21 @@ h4 {
 .delivery-cost {
     font-weight: normal;
 }
-
+.reduced-price.cart{
+    font-size:0.8rem!important;
+    color:red;
+}
 .cart-action {
 
     display:flex;
   
     align-items: center;
- 
-   width:100%;
+
+   width:400px;
+   
    justify-content: space-between;
    gap:2rem;
-   
-      
-}
+   }
  .del-btn{
     margin-left:auto!important;
 }
@@ -1093,11 +1095,7 @@ width:100%;
 .paypal-form label{
     width:100px;
 }
-.paypal-form input, .klarna-form input{
-    padding:0.6rem;
-    width:300px;
-    margin-bottom: 1rem;
-}
+
 
 .span-input{
     grid-column:span 2;
@@ -2277,7 +2275,7 @@ width:100%;
 }
 
 #shop h1 {
-    border-bottom: 1px solid gainsboro; solid var(--champagne);
+    border-bottom: 1px solid gainsboro; 
     margin: 33px;
 }
 
@@ -3955,7 +3953,8 @@ a.cart-btn.place-btn.disabled{
 }
 .paypal-form, .klarna-form{
     background:white;
-     box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.4);
+     box-shadow: 0px 0px 19.2px -5px rgba(0, 0, 0, .15);
+     border-radius:13px;
      padding:1rem;
      display:none;
      position:fixed;
@@ -3963,10 +3962,9 @@ a.cart-btn.place-btn.disabled{
       left:50%;
     transform:translate(-50%, -50%);
      max-width:600px;
-     width:100%;
+     width:80%;
      height:400px;
    
-      transition:all 0.3s;
 }
 .paypal-form-content, .klarna-form-content{
     display:flex;
@@ -3974,9 +3972,33 @@ a.cart-btn.place-btn.disabled{
     gap:1rem;
     align-items:center;
     padding:1rem;
+    position:relative;
 }
 .klarna-form{
     height:auto;
+}
+
+.close-box{
+    
+}
+.klarna-form-content{
+  
+}
+.close-box{
+    position:absolute;
+    font-size:1.7rem;
+    top:17px;
+    right:17px;
+    background: #F2F4F7;
+   
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    border-radius: 50%;
+    cursor:pointer;
+ 
 }
 .form-title{
     font-size:2rem;
@@ -4000,9 +4022,10 @@ a.cart-btn.place-btn.disabled{
     
 }
 .paypal-form input, .klarna-form input{
-width:480px!important;
+max-width:450px!important;
 width:100%;
-padding:1.5rem;
+padding:1rem;
+
 }
 .place-btn.paypal.modal{
     max-width:480px;
@@ -4182,12 +4205,20 @@ p {
     background: none;
     padding: 4px 6px;
     text-transform: capitalize;
-    border: 1px solid gainsboro; solid black;
+    border: 1px solid gainsboro; 
     margin-top: auto;
     cursor: pointer;
 }
 
-
+.checkout-overlay{
+    background:rgba(0, 0, 0, 0.4);
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    bottom:0;
+    display:none;
+}
 
 
 
@@ -4643,6 +4674,15 @@ border-bottom:1px solid gainsboro;
     .step{
         font-size:0.7rem;
     }
+
+    .paypal-form, .klarna-form{
+        height:auto;
+    }
+
+    .paypal-form input, .klarna-form input{
+        padding:1rem;
+    }
+
     ol{
         display:flex;
         gap:0.5rem;

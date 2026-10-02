@@ -1,8 +1,10 @@
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
+if (cart) {
+  console.log(cart);
+}
 import products from "./products.js";
 import detail from "./details.js";
-
+let percentage = 50;
 import { showCart, closeOver, closeModal } from "./cart.js";
 
 detail();
@@ -553,7 +555,6 @@ function showNext() {
   }
 }
 
-let percentage;
 let itemDiscounted;
 
 function renderProducts(containerSelector, filtered) {
@@ -578,7 +579,7 @@ function renderProducts(containerSelector, filtered) {
     ) {
       let thisPrice = product.price;
       className = " show-discount-info slash show-reduced-price";
-      percentage = 50;
+
       const discountedRate = showDiscount(percentage);
       console.log(discountedRate);
 
@@ -861,7 +862,7 @@ function addToCart(productId, selectedSize, chosenColor, coloredImage) {
   updateCartIcon();
 }
 //this function push new items to the cart array if the item is not already in the cart
-
+let thisDiscountedItem;
 function displayCartItems() {
   let cartItems = document.querySelector(".cart-items");
   if (!cartItems) {
@@ -872,27 +873,31 @@ function displayCartItems() {
     let newCart = document.createElement("div");
 
     let itemDiscounted;
+
     let className;
     if (product.discounted == true && !product.hasColors) {
       let thisPrice = product.price;
       className = "show-discount-info show-reduced-price slash hidecolor";
-      percentage = 50;
+
       const discountedRate = showDiscount(percentage);
 
       console.log(discountedRate);
 
-      itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
+      itemDiscounted = `${discountedRate.discountCalculation(thisPrice)}`;
+      thisDiscountedItem = `£${itemDiscounted * product.quantity}`;
     } else if (product.discounted == true && product.hasColors) {
       let thisPrice = product.price;
       className = "show-discount-info slash show-reduced-price  ";
-      percentage = 50;
+
       const discountedRate = showDiscount(percentage);
 
       console.log(discountedRate);
 
-      itemDiscounted = `£${discountedRate.discountCalculation(thisPrice)}`;
+      itemDiscounted = `${discountedRate.discountCalculation(thisPrice)}`;
+      thisDiscountedItem = `£${itemDiscounted * product.quantity}`;
     } else {
-      itemDiscounted = "";
+      thisDiscountedItem = "";
+
       className = "hide-discount-info no-slash hide-reduced-price hidecolor";
     }
     newCart.innerHTML = `
@@ -913,9 +918,9 @@ function displayCartItems() {
 <div class='item-size'>size: ${product.selectedSize}</div>
 <div class="item-color  ${className}">color: ${product.chosenColor}</div>
 <div class="price-box">
-   <p class="item-price ${className}">£${product.price}</p>
+   <p class="item-price ${className}">£${product.price * product.quantity}</p>
               <p class=" discount-info ${className}">${percentage}%off</p>
-         <p class="reduced-price">${itemDiscounted}</p>
+         <p class="reduced-price cart">${thisDiscountedItem}</p>
          </div>
 
 </div> 
@@ -939,7 +944,9 @@ function displayCartItems() {
     
 `;
     cartItems.appendChild(newCart);
-    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateTotal();
+    updateCartIcon();
   });
   attachDeleteEvents();
   // re-attach event listeners to new delete buttons
@@ -987,7 +994,6 @@ function updateTotal() {
     if (product.discounted == true) {
       let thisPrice = product.price;
 
-      percentage = 50;
       const discountedRate = showDiscount(percentage);
       let itemDiscounted = discountedRate.discountCalculation(thisPrice);
       return currentTotal + itemDiscounted * product.quantity;
@@ -1002,9 +1008,9 @@ function updateTotal() {
   });
 
   total.textContent = ` £${formatted}`;
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 updateTotal();
-
 document.addEventListener("click", function (e) {
   if (
     e.target.classList.contains("increase") ||
@@ -1037,21 +1043,22 @@ document.addEventListener("click", function (e) {
     if (product.discounted == true) {
       let thisPrice = product.price;
 
-      percentage = 50;
       const discountedRate = showDiscount(percentage);
       let itemDiscounted = discountedRate.discountCalculation(thisPrice);
       let reducedPrice = productDiv.querySelector(".reduced-price");
       let itemDiscountedPrice = `£${(itemDiscounted * currentQuantity).toFixed(2)}`;
       reducedPrice.textContent = itemDiscountedPrice;
+      let itemPrice = productDiv.querySelector(".item-price");
+      itemPrice.textContent = `£${(product.price * currentQuantity).toFixed(2)}`;
       localStorage.setItem("discounted-product", itemDiscountedPrice);
     } else {
       let itemPrice = productDiv.querySelector(".item-price");
       itemPrice.textContent = `£${(product.price * currentQuantity).toFixed(2)}`;
     }
     // Update cart total
+
     updateTotal();
     updateCartIcon();
-    localStorage.setItem("cart", JSON.stringify(cart));
   }
 });
 

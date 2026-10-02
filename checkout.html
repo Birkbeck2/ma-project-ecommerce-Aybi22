@@ -36,6 +36,12 @@
 
 <body>
 <div id="app"></div>
+
+
+
+<div class="checkout-overlay">
+
+</div>
     <p class="checkout-text">
     Enter your delivery and payment information to complete your purchase securely.
 </p>
@@ -359,19 +365,23 @@ inputmode="numeric" pattern="[0-9]*"
 <form class="paypal-form">
     <div class="paypal-form-content">
     <p class="form-title"><span class="dark-blue">Pay<span class="light">pal</span></p>
-<p>
+
 
 <input type="text" class="email" id="email" placeholder="Email" required >
-</p>
 
-<p>
+
+
 
 <input type="password" class="password" id="password" placeholder="Password" required>
-</p>
+
 <input type="submit" class="cart-btn place-btn paypal modal-btn" id="placeOrder" value="pay with paypal">
 <p class="modal-info">Cancel and return to suitme suits</p>
 
 </div>
+
+<div class="close-box">&times;</div>
+
+
 </form>
 
     
@@ -384,16 +394,17 @@ inputmode="numeric" pattern="[0-9]*"
 <p><i class="fa-solid fa-check"></i> pay in 6-36 instalments:interest applies</p>
 </div>
 <input type="text" class="email" id="email" placeholder="Email" required >
-</p>
 
-<p>
+
+
 
 <input type="password" class="password" id="password" placeholder="Password" required>
-</p>
+
 <button type="submit" class="cart-btn place-btn klarna-btn" id="placeOrder"><span class="klarna-text">Pay with klarna</span></button>
 <p class="modal-info">Cancel and return to suitme suits</p>
-
 </div>
+<div class="close-box">&times;</div>
+
 </form>
 
 </body>
