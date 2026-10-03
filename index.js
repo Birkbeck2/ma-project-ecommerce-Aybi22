@@ -920,7 +920,7 @@ function displayCartItems() {
 <div class="price-box">
    <p class="item-price ${className}">£${product.price * product.quantity}</p>
               <p class=" discount-info ${className}">${percentage}%off</p>
-         <p class="reduced-price cart">${thisDiscountedItem}</p>
+         <p class="reduced-price ">${thisDiscountedItem}</p>
          </div>
 
 </div> 

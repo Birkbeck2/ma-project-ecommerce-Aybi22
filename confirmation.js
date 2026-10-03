@@ -259,7 +259,7 @@ function updateOrderTotal() {
   });
 
   OrderSubTotal.innerHTML = `<span>SubTotal</span>
-  <span>£${formatted}</span>`;
+  £${formatted}`;
   localStorage.setItem("first-total", formatted);
 }
 updateOrderTotal();

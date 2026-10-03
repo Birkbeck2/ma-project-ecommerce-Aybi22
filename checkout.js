@@ -181,24 +181,29 @@ function updateOrderTotal() {
   <span class="amount">£${formatted}</span>`;
   localStorage.setItem("sub-total", formatted);
   OrderSumTotal.innerHTML = `<span class="total-text">Order Total</span>
-  <span class="amount-num">£${formatted}</span>`;
+  <span class="amount amount-num">£${formatted}</span>`;
 }
 
 let billingForm = document.getElementById("billing-form");
 console.log(billingForm);
+let paypalForm = document.querySelector(".paypal-form");
+let paypalFormContent = document.querySelector(".paypal-form-content");
+let klarnaFormContent = document.querySelector(".klarna-form-content");
+let klarnaForm = document.querySelector(".klarna-form");
 let debitForm = document.getElementById("debit-form");
 console.log(debitForm);
 window.addEventListener("click", (e) => {
-  let paypalForm = document.querySelector(".paypal-form");
-  let paypalFormContent = document.querySelector(".paypal-form-content");
   if (
-    (e.target.closest(".paypal-form-content") || e.target.closest(".paypal")) &&
-    billingForm.checkValidity()
+    ((e.target.closest(".paypal-form-content") ||
+      e.target.closest(".paypal")) &&
+      billingForm.checkValidity()) ||
+    ((e.target.closest(".klarna-form-content") ||
+      e.target.closest(".klarna-btn")) &&
+      billingForm.checkValidity())
   ) {
-    paypalForm.style.display = "block";
+    let checkoutOverlay = document.querySelector(".checkout-overlay");
+    checkoutOverlay.style.display = "block";
   } else {
-    paypalForm.style.display = "none";
-    billingForm.reportValidity();
     let checkoutOverlay = document.querySelector(".checkout-overlay");
     checkoutOverlay.style.display = "none";
   }
@@ -215,13 +220,32 @@ document.addEventListener("click", (e) => {
   ) {
     let checkoutOverlay = document.querySelector(".checkout-overlay");
     checkoutOverlay.style.display = "block";
+    billingForm.reportValidity();
   } else {
     let checkoutOverlay = document.querySelector(".checkout-overlay");
     checkoutOverlay.style.display = "none";
     billingForm.reportValidity();
   }
+
+  if (
+    e.target.closest(".paypal-form-content") ||
+    (e.target.closest(".paypal") && billingForm.checkValidity())
+  ) {
+    paypalForm.style.display = "block";
+  } else {
+    paypalForm.style.display = "none";
+  }
+  if (
+    e.target.closest(".klarna-form-content") ||
+    (e.target.closest(".klarna-btn") && billingForm.checkValidity())
+  ) {
+    klarnaForm.style.display = "block";
+  } else {
+    klarnaForm.style.display = "none";
+  }
 });
 
+/*
 window.addEventListener("click", (e) => {
   let klarnaFormContent = document.querySelector(".klarna-form-content");
   let klarnaForm = document.querySelector(".klarna-form");
@@ -238,6 +262,7 @@ window.addEventListener("click", (e) => {
     billingForm.reportValidity();
   }
 });
+*/
 
 /*
 document.addEventListener("DOMContentLoaded", () => {
@@ -261,7 +286,13 @@ document.addEventListener("click", (e) => {
 
 document.querySelector(".cart-btn.place-btn").addEventListener("click", () => {
   if (billingForm.checkValidity() && debitForm.checkValidity()) {
-    window.location.href = "confirmation.html";
+    let checkoutOverlay = document.querySelector(".checkout-overlay");
+    let placeBtn = document.querySelector(".place-btn");
+    checkoutOverlay.style.display = "block";
+    placeBtn.textContent = "processing...";
+    setTimeout(() => {
+      window.location.href = "confirmation.html";
+    }, 5000);
   } else {
     billingForm.reportValidity();
     debitForm.reportValidity();
@@ -276,7 +307,12 @@ document.addEventListener("click", (e) => {
   if (e.target.closest(".modal-btn") && paypalForm.checkValidity()) {
     localStorage.setItem("paypal-option", formTitle.textContent);
     e.preventDefault();
-    window.location.href = "confirmation.html";
+    let paypalBtnModal = document.querySelector(".modal-btn");
+    paypalBtnModal.value = "processing...";
+    setTimeout(() => {
+      window.location.href = "confirmation.html";
+    }, 5000);
+
     localStorage.removeItem("klarna-option");
   }
 });
@@ -284,11 +320,15 @@ document.addEventListener("click", (e) => {
 document.addEventListener("click", (e) => {
   let klarnaForm = document.querySelector(".klarna-form");
   let KlarnaFormTitle = document.querySelector(".klarna-form-title");
-  if (e.target.closest(".klarna-btn") && klarnaForm.checkValidity()) {
+  if (e.target.closest(".klarna-btn-modal") && klarnaForm.checkValidity()) {
     localStorage.setItem("klarna-option", KlarnaFormTitle.textContent);
+    let klarnaTextModal = document.querySelector(".klarna-text-modal");
 
     e.preventDefault();
-    window.location.href = "confirmation.html";
+    klarnaTextModal.textContent = "processing...";
+    setTimeout(() => {
+      window.location.href = "confirmation.html";
+    }, 5000);
     localStorage.removeItem("paypal-option");
   }
 });
@@ -531,8 +571,7 @@ function redBody() {
   }
 }
 redBody();
-*/
-/*
+
 function orderProcessing(e) {
   //button should not be selected in the loop
 
@@ -545,9 +584,8 @@ function orderProcessing(e) {
 }
 setTimeout(() => {
   window.location.href = "confirmation.html";
-}, 1900);
-*/
-/*
+}, 6900);
+
 function deleteCartContent(e) {
   let sumContainer = document.querySelector(".sum-container");
   if (savedCart) {
@@ -566,7 +604,8 @@ function deleteCartContent(e) {
     e.preventDefault();
   }
 }
-  */
+  
+
 document.querySelector(".footer-icons").addEventListener("click", (e) => {
   if (
     e.target.closest(".visa") ||
@@ -585,3 +624,5 @@ document.querySelector(".footer-icons").addEventListener("click", (e) => {
     paypalForm.style.display = "block";
   }
 });
+
+*/

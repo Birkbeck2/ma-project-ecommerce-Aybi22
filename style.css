@@ -3911,8 +3911,9 @@ a.cart-btn.place-btn.disabled{
 .pay-text{
     text-align:center;
 }
-.cart-btn.place-btn.klarna-btn{
+.cart-btn.place-btn.klarna-btn, .klarna-btn-modal{
     background:black;
+  
 }
 .cart-btn.place-btn.paypal{
     background:#0070BA;
@@ -4035,7 +4036,7 @@ padding:1rem;
     width:38px;
 }
 
-.klarna-text{
+.klarna-text, .klarna-text-modal{
     background:pink;
     color:black;
     padding:0.6rem;
@@ -4193,6 +4194,7 @@ p {
     margin-bottom:1rem;
     border-bottom:1px solid gainsboro;
     padding-bottom:1rem;
+
 }
 
 .sum-container {
@@ -4318,11 +4320,13 @@ border-bottom:1px solid gainsboro;
   
     display:flex;
    justify-content:space-between;
-   
-   width:300px;
+
+   width:400px;
 }
-.total-section p{
-   
+.amount{
+  
+    margin-left:auto;
+    text-align:left;
 }
 .total-section span{
     text-transform:capitalize;
