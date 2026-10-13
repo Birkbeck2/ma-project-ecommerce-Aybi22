@@ -925,7 +925,7 @@ function displayCartItems() {
 
 </div> 
 
-   
+
 </div>
               <div class="cart-action">    
             <div class="counter">
@@ -1333,3 +1333,34 @@ console.log(addDevices.displayData());
 const addFood = privateHistory();
 addFood.addValue("milk");
 console.log(addFood.displayData());
+
+function UserAccount(username) {
+  let pin = 220785;
+  return {
+    displayUserName() {
+      return username;
+    },
+
+    changeUserPin(newPin) {
+      pin = newPin;
+      return pin;
+    },
+
+    checkPin(userPin) {
+      if (userPin === pin) {
+        return `this pin is OKAY`;
+      } else {
+        return `this pin is wrong`;
+      }
+    },
+  };
+}
+
+const account1 = UserAccount("mike");
+console.log(account1.displayUserName());
+console.log(account1.changeUserPin(897566));
+console.log(account1.checkPin(897566));
+const account2 = UserAccount("jeremy");
+console.log(account2.displayUserName());
+console.log(account2.changeUserPin(220785));
+console.log(account2.checkPin(220785));

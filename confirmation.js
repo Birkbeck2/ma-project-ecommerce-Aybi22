@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let allTotal = document.querySelector(".purchase-total");
     console.log(allTotal);
-    allTotal.innerHTML = `<span class="total-text">Order Total:</span>£${savedDeliveryTotal}`;
+    allTotal.innerHTML = `<span class="total-text">Order Total:</span> £${savedDeliveryTotal}`;
   } else if (savedCollectionTotal) {
     localStorage.removeItem("delivery-total");
 
@@ -264,7 +264,6 @@ function updateOrderTotal() {
 }
 updateOrderTotal();
 
-/*
 function updateOrderTotal() {
   let totalCost = document.querySelector(".total-cost");
 
@@ -279,7 +278,6 @@ function updateOrderTotal() {
 
   totalCost.innerHTML = `  <span>SubTotal:</span> £${formatted}`;
 }
-  */
 
 function confirmedOrder() {
   let confirmedInfos = document.querySelector(".confirmation-infos");

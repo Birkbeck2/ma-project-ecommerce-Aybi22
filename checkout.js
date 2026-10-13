@@ -1,6 +1,61 @@
 let savedCart = JSON.parse(localStorage.getItem("cart"));
-console.log(savedCart);
+
 let percentage = 50;
+
+document.addEventListener("DOMContentLoaded", () => {
+  inactiveDebitButton();
+  inactivePaypalButton();
+});
+function inactiveDebitButton() {
+  let debitBtn = document.querySelector(".debit-btn");
+  debitBtn.disabled = true;
+}
+inactiveDebitButton();
+function activateDebitButton() {
+  let paypalBtn = document.querySelector(".paypal");
+  let debitForm = document.getElementById("debit-form");
+  let billingForm = document.getElementById("billing-form");
+  if (debitForm.checkValidity() && billingForm.checkValidity()) {
+    let debitBtn = document.querySelector(".debit-btn");
+    debitBtn.disabled = false;
+  }
+}
+activateDebitButton();
+function inactivePaypalButton() {
+  let paypalBtn = document.querySelector(".paypal");
+  paypalBtn.disabled = true;
+}
+inactivePaypalButton();
+
+function inactiveKlarnaButton() {
+  let klarnaBtn = document.querySelector(".klarna-btn");
+  klarnaBtn.disabled = true;
+}
+inactiveKlarnaButton();
+
+function activatePaypalButton() {
+  let klarnaBtn = document.querySelector(".klarna-btn");
+  let billingForm = document.getElementById("billing-form");
+  if (billingForm.checkValidity()) {
+    let paypalBtn = document.querySelector(".paypal");
+    paypalBtn.disabled = false;
+    klarnaBtn.disabled = false;
+  }
+}
+
+document.addEventListener("input", () => {
+  activateDebitButton();
+  activatePaypalButton();
+  let debitForm = document.getElementById("debit-form");
+  let billingForm = document.getElementById("billing-form");
+  if (!debitForm.checkValidity() || !billingForm.checkValidity()) {
+    inactiveDebitButton();
+  }
+  if (!billingForm.checkValidity() || debitForm.checkValidity()) {
+    inactivePaypalButton();
+    inactiveKlarnaButton();
+  }
+});
 
 /*
 document.addEventListener("click", (e) => {
@@ -93,11 +148,12 @@ function orderRecap() {
   `;
     })
     .join("");
-  updateOrderTotal();
+
   removeSavedItems();
   localStorage.setItem("saved-order", JSON.stringify(savedCart));
 }
 orderRecap();
+
 function showDiscount(percentage) {
   return {
     discountCalculation(price) {
@@ -120,7 +176,7 @@ function updateCartIcon() {
 }
 
 document.addEventListener("click", (e) => {
-  let button = e.target.closest(".del-button");
+  let button = e.target.closest(".del-btn.checkout");
   if (button) {
     const productId = button.closest(".product-recap").dataset.id;
 
@@ -184,7 +240,9 @@ function updateOrderTotal() {
   <span class="amount amount-num">£${formatted}</span>`;
 }
 
+/*
 let billingForm = document.getElementById("billing-form");
+console.log(billingForm.checkValidity());
 console.log(billingForm);
 let paypalForm = document.querySelector(".paypal-form");
 let paypalFormContent = document.querySelector(".paypal-form-content");
@@ -193,97 +251,110 @@ let klarnaForm = document.querySelector(".klarna-form");
 let debitForm = document.getElementById("debit-form");
 console.log(debitForm);
 window.addEventListener("click", (e) => {
+  let checkoutOverlay = document.querySelector(".checkout-overlay");
   if (
     ((e.target.closest(".paypal-form-content") ||
       e.target.closest(".paypal")) &&
       billingForm.checkValidity()) ||
     ((e.target.closest(".klarna-form-content") ||
+      (e.target.closest(".debit-btn") && debitForm.checkValidity()) ||
       e.target.closest(".klarna-btn")) &&
-      billingForm.checkValidity())
+      billingForm.checkValidity()) ||
+    e.target.classList.contains("active")
   ) {
-    let checkoutOverlay = document.querySelector(".checkout-overlay");
     checkoutOverlay.style.display = "block";
-  } else {
-    let checkoutOverlay = document.querySelector(".checkout-overlay");
+  } else if (!checkoutOverlay.classList.contains("active")) {
     checkoutOverlay.style.display = "none";
   }
 });
-
+*/
+let paypalForm = document.querySelector(".paypal-form");
+let klarnaForm = document.querySelector(".klarna-form");
+let checkoutOverlay = document.querySelector(".checkout-overlay");
 document.addEventListener("click", (e) => {
   let billingForm = document.getElementById("billing-form");
-  if (
-    (e.target.closest(".paypal") ||
-      e.target.closest(".klarna-btn") ||
-      e.target.closest(".klarna-form") ||
-      e.target.closest(".paypal-form")) &&
-    billingForm.checkValidity()
-  ) {
-    let checkoutOverlay = document.querySelector(".checkout-overlay");
-    checkoutOverlay.style.display = "block";
-    billingForm.reportValidity();
-  } else {
-    let checkoutOverlay = document.querySelector(".checkout-overlay");
-    checkoutOverlay.style.display = "none";
-    billingForm.reportValidity();
-  }
 
   if (
-    e.target.closest(".paypal-form-content") ||
-    (e.target.closest(".paypal") && billingForm.checkValidity())
+    e.target.closest(".paypal") ||
+    ((e.target.closest(".paypal-form") ||
+      e.target.closest(".klarna-btn") ||
+      e.target.closest(".klarna-form")) &&
+      billingForm.checkValidity()) ||
+    e.target.classList.contains(".active")
   ) {
+    checkoutOverlay.style.visibility = "visible";
+  }
+
+  if (e.target.closest(".paypal-form-content") || e.target.closest(".paypal")) {
     paypalForm.style.display = "block";
+    checkoutOverlay.style.visibility = "visible";
   } else {
     paypalForm.style.display = "none";
   }
   if (
     e.target.closest(".klarna-form-content") ||
-    (e.target.closest(".klarna-btn") && billingForm.checkValidity())
+    e.target.closest(".klarna-btn")
   ) {
     klarnaForm.style.display = "block";
-  } else {
+    checkoutOverlay.style.visibility = "visible";
+  } else if (
+    e.target.closest(".checkout-overlay") ||
+    e.target.closest(".close-box")
+  ) {
     klarnaForm.style.display = "none";
+    checkoutOverlay.style.visibility = "hidden";
   }
 });
 
-/*
 window.addEventListener("click", (e) => {
   let klarnaFormContent = document.querySelector(".klarna-form-content");
   let klarnaForm = document.querySelector(".klarna-form");
   if (
-    (e.target.closest(".klarna-form-content") ||
-      e.target.closest(".klarna-btn")) &&
-    billingForm.checkValidity()
+    e.target.closest(".klarna-form-content") ||
+    e.target.closest(".klarna-btn")
   ) {
     klarnaForm.style.display = "block";
-  } else {
-    let checkoutOverlay = document.querySelector(".checkout-overlay");
+  } else if (
+    e.target.closest(".checkout-overlay") ||
+    e.target.closest(".close-box")
+  ) {
     klarnaForm.style.display = "none";
-    checkoutOverlay.style.display = "none";
-    billingForm.reportValidity();
+    checkoutOverlay.style.visibility = "hidden";
   }
 });
-*/
 
-/*
 document.addEventListener("DOMContentLoaded", () => {
-  let placeBtn = document.querySelector(".cart-btn.place-btn");
+  let debitBtn = document.querySelector(".debit-btn");
 
-  placeBtn.addEventListener("click", saveUserData);
-  placeBtn.addEventListener("click", orderDate);
-  placeBtn.addEventListener("click", orderTiming);
-  placeBtn.addEventListener("click", orderRecap);
+  debitBtn.addEventListener("click", saveUserData);
+  debitBtn.addEventListener("click", orderDate);
+  debitBtn.addEventListener("click", orderTiming);
+  debitBtn.addEventListener("click", orderRecap);
 });
-*/
 
 document.addEventListener("click", (e) => {
-  if (e.target.closest(".place-btn") || e.target.closest(".modal-btn")) {
+  if (e.target.closest(".debit-btn") || e.target.closest(".modal-btn")) {
     saveUserData();
     orderDate();
     orderTiming();
     orderRecap();
   }
+  let billingForm = document.getElementById("billing-form");
+  let debitForm = document.getElementById("debit-form");
+  let checkoutOverlay = document.querySelector(".checkout-overlay");
+
+  if (e.target.closest(".debit-btn")) {
+    checkoutOverlay.style.visibility = "visible";
+    checkoutOverlay.innerHTML = `<p class="overlay-text"> Please wait,your order is being processed...</p>`;
+    checkoutOverlay.classList.add("active");
+
+    setTimeout(() => {
+      window.location.href = "confirmation.html";
+    }, 3500);
+  }
 });
 
+/*
 document.querySelector(".cart-btn.place-btn").addEventListener("click", () => {
   if (billingForm.checkValidity() && debitForm.checkValidity()) {
     let checkoutOverlay = document.querySelector(".checkout-overlay");
@@ -298,20 +369,24 @@ document.querySelector(".cart-btn.place-btn").addEventListener("click", () => {
     debitForm.reportValidity();
   }
 });
-
+*/
 let savedKlarnaOption = localStorage.getItem("klarna-option");
 let savedCardNumber = localStorage.getItem("card-digits");
+
 document.addEventListener("click", (e) => {
   let paypalForm = document.querySelector(".paypal-form");
   let formTitle = document.querySelector(".form-title");
   if (e.target.closest(".modal-btn") && paypalForm.checkValidity()) {
     localStorage.setItem("paypal-option", formTitle.textContent);
+    paypalForm.style.display = "none";
     e.preventDefault();
-    let paypalBtnModal = document.querySelector(".modal-btn");
-    paypalBtnModal.value = "processing...";
+
+    checkoutOverlay.style.visibility = "visible";
+    checkoutOverlay.innerHTML = `<p class="overlay-text">Please wait, while your payment is being processed...</p>`;
+    checkoutOverlay.classList.add("active");
     setTimeout(() => {
       window.location.href = "confirmation.html";
-    }, 5000);
+    }, 3500);
 
     localStorage.removeItem("klarna-option");
   }
@@ -322,16 +397,87 @@ document.addEventListener("click", (e) => {
   let KlarnaFormTitle = document.querySelector(".klarna-form-title");
   if (e.target.closest(".klarna-btn-modal") && klarnaForm.checkValidity()) {
     localStorage.setItem("klarna-option", KlarnaFormTitle.textContent);
-    let klarnaTextModal = document.querySelector(".klarna-text-modal");
+
+    klarnaForm.style.display = "none";
 
     e.preventDefault();
-    klarnaTextModal.textContent = "processing...";
+    checkoutOverlay.style.visibility = "visible";
+    checkoutOverlay.innerHTML = `<p class="overlay-text">Please wait, while your payment is being processed...</p>`;
+    checkoutOverlay.classList.add("active");
     setTimeout(() => {
       window.location.href = "confirmation.html";
-    }, 5000);
+    }, 3500);
     localStorage.removeItem("paypal-option");
   }
 });
+
+/*
+document.addEventListener("click", (e) => {
+  let checkoutOverlay = document.querySelector(".checkout-overlay");
+  if (
+    (e.target.closest(".klarna-btn-modal") && klarnaForm.checkValidity()) ||
+    (e.target.closest(".modal-btn") && paypalForm.checkValidity())
+  ) {
+    checkoutOverlay.style.display = "block";
+    checkoutOverlay.classList.add("active");
+
+    checkoutOverlay.innerHTML = `<p class="overlay-text">Please wait, while your payment is being processed...</p>`;
+
+    setTimeout(() => {
+      window.location.href = "confirmation.html";
+    }, 4000);
+  }
+    */
+
+/*
+  let paypalBtn = document.querySelector(".paypal");
+  let klarnaBtn = document.querySelector(".klarna-btn");
+  if (debitForm.checkValidity()) {
+    paypalBtn.disabled = true;
+    klarnaBtn.disabled = true;
+  } else {
+    paypalBtn.disabled = false;
+    klarnaBtn.disabled = false;
+  }
+    */
+/*
+  if (
+    e.target.closest(".debit-btn") &&
+    debitForm.checkValidity() &&
+    billingForm.checkValidity()
+  ) {
+    checkoutOverlay.innerHTML = `<p class="overlay-text">Please wait, while your payment is being processed...</p>`;
+    checkoutOverlay.classList.add("active");
+
+    setTimeout(() => {
+      window.location.href = "confirmation.html";
+    }, 4000);
+  } else if (
+    (e.target.closest(".debit-btn") && !debitForm.checkValidity()) ||
+    !debitForm.checkValidity()
+  ) {
+    debitForm.reportValidity();
+    billingForm.checkValidity();
+  }
+
+  if (e.target.closest(".klarna-btn-modal") && klarnaForm.checkValidity()) {
+    let KlarnaFormTitle = document.querySelector(".klarna-form-title");
+    localStorage.setItem("klarna-option", KlarnaFormTitle.textContent);
+    klarnaForm.style.display = "none";
+
+    localStorage.removeItem("paypal-option");
+  }
+
+  if (e.target.closest(".modal-btn") && paypalForm.checkValidity()) {
+    let formTitle = document.querySelector(".form-title");
+    localStorage.setItem("paypal-option", formTitle.textContent);
+    paypalForm.style.display = "none";
+
+    localStorage.removeItem("klarna-option");
+  }
+});
+*/
+
 /*
 function clearCart() {
   setTimeout(() => {
