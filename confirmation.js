@@ -263,7 +263,7 @@ function updateOrderTotal() {
   localStorage.setItem("first-total", formatted);
 }
 updateOrderTotal();
-
+/*
 function updateOrderTotal() {
   let totalCost = document.querySelector(".total-cost");
 
@@ -278,6 +278,7 @@ function updateOrderTotal() {
 
   totalCost.innerHTML = `  <span>SubTotal:</span> £${formatted}`;
 }
+  */
 
 function confirmedOrder() {
   let confirmedInfos = document.querySelector(".confirmation-infos");
